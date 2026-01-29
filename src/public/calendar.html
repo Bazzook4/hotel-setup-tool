@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hotel Tools - Holiday & Wedding Calendar 2026</title>
+  <script src="js/calendar-data.js"></script>
   <style>
     * {
       margin: 0;
@@ -950,25 +951,54 @@
     <!-- Regional Festivals Note -->
     <div class="section-card">
       <h2>Regional Considerations</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
-        <div style="padding: 1rem; background: #fafbfc; border-radius: 8px;">
-          <h4 style="color: var(--primary); margin-bottom: 0.5rem;">North India</h4>
-          <p style="font-size: 0.85rem; color: #666;">Lohri (Jan 13), Baisakhi (Apr 13), Karwa Chauth (Oct), Chhath (Nov)</p>
-        </div>
-        <div style="padding: 1rem; background: #fafbfc; border-radius: 8px;">
-          <h4 style="color: var(--primary); margin-bottom: 0.5rem;">South India</h4>
-          <p style="font-size: 0.85rem; color: #666;">Pongal (Jan), Ugadi (Mar), Onam (Aug-Sep), Vishu (Apr)</p>
-        </div>
-        <div style="padding: 1rem; background: #fafbfc; border-radius: 8px;">
-          <h4 style="color: var(--primary); margin-bottom: 0.5rem;">East India</h4>
-          <p style="font-size: 0.85rem; color: #666;">Durga Puja (Oct), Rath Yatra (Jun), Bihu (Apr), Chhath (Nov)</p>
-        </div>
-        <div style="padding: 1rem; background: #fafbfc; border-radius: 8px;">
-          <h4 style="color: var(--primary); margin-bottom: 0.5rem;">West India</h4>
-          <p style="font-size: 0.85rem; color: #666;">Ganesh Chaturthi (Sep), Gudi Padwa (Mar), Goa Carnival (Feb)</p>
-        </div>
+      <div id="regionalConsiderations" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+        <!-- Populated by JavaScript from shared data -->
       </div>
     </div>
   </div>
+
+  <script>
+    // Initialize calendar page with shared CalendarData
+    document.addEventListener('DOMContentLoaded', () => {
+      // Update stats from shared data
+      const longWeekends = CalendarData.getLongWeekends();
+      const totalWeddingDays = CalendarData.getTotalWeddingDays();
+      const nationalHolidays = CalendarData.nationalEvents.filter(e => e.type === 'national').length;
+      const festivals = CalendarData.nationalEvents.filter(e => e.type === 'festival').length;
+
+      // Update stat cards if elements exist
+      const statCards = document.querySelectorAll('.stat-card .stat-value');
+      if (statCards.length >= 4) {
+        statCards[0].textContent = longWeekends.length;
+        statCards[1].textContent = nationalHolidays;
+        statCards[2].textContent = festivals + '+';
+        statCards[3].textContent = totalWeddingDays + '+';
+      }
+
+      // Populate regional wedding patterns from shared data
+      const regionalContainer = document.getElementById('regionalConsiderations');
+      if (regionalContainer && CalendarData.regionalWeddingPatterns) {
+        let html = '';
+        Object.entries(CalendarData.regionalWeddingPatterns).forEach(([region, data]) => {
+          html += `
+            <div style="padding: 1rem; background: #fafbfc; border-radius: 8px;">
+              <h4 style="color: var(--primary); margin-bottom: 0.5rem;">${region}</h4>
+              <p style="font-size: 0.85rem; color: #666;"><strong>Peak:</strong> ${data.peak}</p>
+              <p style="font-size: 0.85rem; color: #888;"><strong>Avoid:</strong> ${data.avoid}</p>
+            </div>
+          `;
+        });
+        regionalContainer.innerHTML = html;
+      }
+
+      console.log('Calendar initialized with shared CalendarData:', {
+        longWeekends: longWeekends.length,
+        nationalHolidays,
+        festivals,
+        weddingDays: totalWeddingDays,
+        year: CalendarData.year
+      });
+    });
+  </script>
 </body>
 </html>

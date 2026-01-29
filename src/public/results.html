@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hotel Tools - Results Dashboard</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/calendar-data.js"></script>
   <style>
     * {
       margin: 0;
@@ -1693,102 +1694,8 @@
       'budget': 'budget'
     };
 
-    // Special dates with enhanced strategic advice - 2026 FOCUS
-    const specialDates2026 = [
-      { name: 'Republic Day Weekend', start: '2026-01-24', end: '2026-01-26', multiplier: 1.25, isLongWeekend: true, duration: 3, strategy: 'Saturday to Monday long weekend. Patriotic tourism spike.' },
-      { name: 'Holi Weekend', start: '2026-03-06', end: '2026-03-08', multiplier: 1.3, isLongWeekend: true, duration: 3, strategy: 'Friday to Sunday. Leisure destinations peak. City hotels may dip.' },
-      { name: 'Good Friday Weekend', start: '2026-04-03', end: '2026-04-05', multiplier: 1.25, isLongWeekend: true, duration: 3, strategy: 'Friday to Sunday. Beach and hill stations popular.' },
-      { name: 'Baisakhi / Tamil New Year', start: '2026-04-13', end: '2026-04-14', multiplier: 1.2, isLongWeekend: true, duration: 2, strategy: 'Monday-Tuesday. Regional surge in Punjab and Tamil Nadu.' },
-      { name: 'May Day Extended Weekend', start: '2026-05-01', end: '2026-05-03', multiplier: 1.35, isLongWeekend: true, duration: 3, strategy: 'Friday to Sunday. Summer vacation kickoff. Hill stations at capacity.' },
-      { name: 'Independence Day Weekend', start: '2026-08-15', end: '2026-08-16', multiplier: 1.25, isLongWeekend: true, duration: 2, strategy: 'Saturday-Sunday. Patriotic destinations see surge.' },
-      { name: 'Gandhi Jayanti Extended Weekend', start: '2026-10-02', end: '2026-10-04', multiplier: 1.3, isLongWeekend: true, duration: 3, strategy: 'Friday to Sunday. Coincides with Navratri. Premium pricing.' },
-      { name: 'Diwali Extended Weekend', start: '2026-11-07', end: '2026-11-09', multiplier: 1.45, isLongWeekend: true, duration: 3, strategy: 'Saturday to Monday. Festival peak with long weekend advantage.' },
-      { name: 'Christmas Extended Weekend', start: '2026-12-24', end: '2026-12-28', multiplier: 1.4, isLongWeekend: true, duration: 5, strategy: 'Thursday to Monday. Peak winter season. Maximum rates.' },
-      { name: 'New Year 2027 Weekend', start: '2026-12-31', end: '2027-01-03', multiplier: 1.5, isLongWeekend: true, duration: 4, strategy: 'Thursday to Sunday. Absolute peak. Gala packages essential.' },
-      { name: 'Summer Vacation Peak', start: '2026-05-01', end: '2026-05-15', multiplier: 1.3, isLongWeekend: false, strategy: 'School holidays. Family packages.' },
-      { name: 'Eid ul-Fitr', start: '2026-03-20', end: '2026-03-21', multiplier: 1.15, isLongWeekend: false, strategy: 'Friday-Saturday. Community travel spike.' },
-      { name: 'Raksha Bandhan', start: '2026-08-28', end: '2026-08-28', multiplier: 1.1, isLongWeekend: false, strategy: 'Friday. Short family visits.' },
-      { name: 'Janmashtami', start: '2026-09-04', end: '2026-09-04', multiplier: 1.1, isLongWeekend: false, strategy: 'Friday. Mathura-Vrindavan pilgrimage surge.' },
-      { name: 'Navratri Season', start: '2026-10-18', end: '2026-10-26', multiplier: 1.15, isLongWeekend: false, strategy: 'Sunday to Monday. 9-day festival. Extended bookings.' },
-      { name: 'Durga Puja', start: '2026-10-20', end: '2026-10-23', multiplier: 1.25, isLongWeekend: false, strategy: 'Tuesday to Friday. Bengal region peak.' },
-      { name: 'Dussehra', start: '2026-10-21', end: '2026-10-21', multiplier: 1.2, isLongWeekend: false, strategy: 'Wednesday. North India celebrates. Mysore Dasara famous.' },
-      { name: 'Pongal/Makar Sankranti', start: '2026-01-14', end: '2026-01-16', multiplier: 1.15, isLongWeekend: false, strategy: 'Wednesday to Friday. Harvest festival. Regional surge.' }
-    ];
-
-    const regionalDates = {
-      'Goa': [
-        { name: 'Goa Carnival', start: '2026-02-14', end: '2026-02-17', multiplier: 1.4, isLongWeekend: false, strategy: 'Saturday to Tuesday. Unique Goan celebration.' },
-        { name: 'Sunburn Festival', start: '2026-12-28', end: '2026-12-30', multiplier: 1.5, isLongWeekend: false, strategy: 'Monday to Wednesday. Asia\'s biggest EDM festival.' }
-      ],
-      'Kerala': [
-        { name: 'Onam', start: '2026-08-23', end: '2026-08-26', multiplier: 1.3, isLongWeekend: false, strategy: 'Sunday to Wednesday. Kerala\'s harvest festival.' },
-        { name: 'Nehru Trophy Boat Race', start: '2026-08-08', end: '2026-08-08', multiplier: 1.25, isLongWeekend: false, strategy: 'Saturday. Famous boat race in Alleppey.' }
-      ],
-      'West Bengal': [
-        { name: 'Durga Puja (Regional Peak)', start: '2026-10-20', end: '2026-10-25', multiplier: 1.5, isLongWeekend: false, strategy: 'Tuesday to Sunday. Kolkata transforms. Book months ahead.' }
-      ],
-      'Tamil Nadu': [
-        { name: 'Pongal', start: '2026-01-14', end: '2026-01-17', multiplier: 1.3, isLongWeekend: false, strategy: 'Wednesday to Saturday. Harvest festival. Family gatherings.' },
-        { name: 'Chithirai Festival', start: '2026-04-14', end: '2026-04-25', multiplier: 1.2, isLongWeekend: false, strategy: 'Tuesday to Saturday. Madurai Meenakshi temple festival.' }
-      ],
-      'Punjab': [
-        { name: 'Baisakhi', start: '2026-04-13', end: '2026-04-14', multiplier: 1.25, isLongWeekend: false, strategy: 'Monday-Tuesday. Sikh new year. Golden Temple footfall.' },
-        { name: 'Guru Nanak Jayanti', start: '2026-11-24', end: '2026-11-24', multiplier: 1.3, isLongWeekend: false, strategy: 'Tuesday. Amritsar fully booked.' }
-      ],
-      'Gujarat': [
-        { name: 'Navratri Garba', start: '2026-10-18', end: '2026-10-26', multiplier: 1.4, isLongWeekend: false, strategy: 'Sunday to Monday. 9 nights of Garba.' },
-        { name: 'Rann Utsav', start: '2026-11-01', end: '2027-02-28', multiplier: 1.3, isLongWeekend: false, strategy: 'Sunday onwards. 4-month cultural festival in Kutch.' }
-      ],
-      'Rajasthan': [
-        { name: 'Pushkar Fair', start: '2026-11-23', end: '2026-11-27', multiplier: 1.5, isLongWeekend: false, strategy: 'Monday to Friday. Iconic camel fair. 100% occupancy.' },
-        { name: 'Desert Festival Jaisalmer', start: '2026-02-05', end: '2026-02-07', multiplier: 1.3, isLongWeekend: false, strategy: 'Thursday to Saturday. Desert culture showcase.' }
-      ],
-      'Maharashtra': [
-        { name: 'Ganesh Chaturthi', start: '2026-09-15', end: '2026-09-25', multiplier: 1.35, isLongWeekend: false, strategy: 'Tuesday to Friday. Mumbai & Pune peak. Massive festival.' },
-        { name: 'Gudi Padwa', start: '2026-03-21', end: '2026-03-21', multiplier: 1.15, isLongWeekend: false, strategy: 'Saturday. Marathi New Year celebrations.' }
-      ],
-      'Karnataka': [
-        { name: 'Mysore Dasara', start: '2026-10-17', end: '2026-10-21', multiplier: 1.4, isLongWeekend: false, strategy: 'Saturday to Wednesday. Grand Mysore palace celebrations.' },
-        { name: 'Hampi Festival', start: '2026-01-09', end: '2026-01-11', multiplier: 1.25, isLongWeekend: false, strategy: 'Friday to Sunday. Cultural festival at ruins.' }
-      ],
-      'Odisha': [
-        { name: 'Rath Yatra', start: '2026-06-20', end: '2026-06-28', multiplier: 1.4, isLongWeekend: false, strategy: 'Saturday to Sunday. Puri temple chariot festival.' },
-        { name: 'Konark Dance Festival', start: '2026-12-01', end: '2026-12-05', multiplier: 1.25, isLongWeekend: false, strategy: 'Tuesday to Saturday. Classical dance at Sun Temple.' }
-      ],
-      'Assam': [
-        { name: 'Bihu', start: '2026-04-14', end: '2026-04-16', multiplier: 1.3, isLongWeekend: false, strategy: 'Tuesday to Thursday. Assamese New Year. Regional peak.' }
-      ],
-      'Bihar': [
-        { name: 'Chhath Puja', start: '2026-11-18', end: '2026-11-21', multiplier: 1.35, isLongWeekend: false, strategy: 'Wednesday to Saturday. Major Bihar festival. High footfall.' }
-      ],
-      'Uttarakhand': [
-        { name: 'Char Dham Yatra Season', start: '2026-05-01', end: '2026-10-31', multiplier: 1.3, isLongWeekend: false, strategy: 'Friday onwards. 6-month pilgrimage season. Book ahead.' },
-        { name: 'Ganga Dussehra', start: '2026-06-11', end: '2026-06-11', multiplier: 1.2, isLongWeekend: false, strategy: 'Thursday. Haridwar/Rishikesh surge.' }
-      ],
-      'Himachal Pradesh': [
-        { name: 'Kullu Dussehra', start: '2026-10-21', end: '2026-10-28', multiplier: 1.35, isLongWeekend: false, strategy: 'Wednesday to Wednesday. Famous week-long celebration.' }
-      ],
-      'Ladakh': [
-        { name: 'Hemis Festival', start: '2026-07-12', end: '2026-07-13', multiplier: 1.4, isLongWeekend: false, strategy: 'Sunday-Monday. Largest monastery festival.' },
-        { name: 'Ladakh Festival', start: '2026-09-01', end: '2026-09-15', multiplier: 1.3, isLongWeekend: false, strategy: 'Tuesday onwards. Cultural showcase in Leh.' }
-      ],
-      'Jammu & Kashmir': [
-        { name: 'Tulip Festival', start: '2026-03-20', end: '2026-04-10', multiplier: 1.35, isLongWeekend: false, strategy: 'Friday to Friday. Srinagar tulip garden peak.' },
-        { name: 'Shikara Festival', start: '2026-07-18', end: '2026-07-21', multiplier: 1.25, isLongWeekend: false, strategy: 'Saturday to Tuesday. Dal Lake celebrations.' }
-      ],
-      'Andaman & Nicobar Islands': [
-        { name: 'Island Tourism Festival', start: '2026-01-05', end: '2026-01-14', multiplier: 1.3, isLongWeekend: false, strategy: 'Monday to Wednesday. Cultural and adventure activities.' }
-      ],
-      'Sikkim': [
-        { name: 'Losar Festival', start: '2026-02-17', end: '2026-02-18', multiplier: 1.25, isLongWeekend: false, strategy: 'Tuesday-Wednesday. Tibetan New Year celebrations.' }
-      ],
-      'Meghalaya': [
-        { name: 'Shillong Cherry Blossom', start: '2026-11-13', end: '2026-11-15', multiplier: 1.3, isLongWeekend: false, strategy: 'Friday to Sunday. Cherry blossom festival.' }
-      ],
-      'Nagaland': [
-        { name: 'Hornbill Festival', start: '2026-12-01', end: '2026-12-10', multiplier: 1.5, isLongWeekend: false, strategy: 'Tuesday to Thursday. Festival of Festivals. Major cultural event.' }
-      ]
-    };
+    // NOTE: Special dates & regional events data moved to shared file: js/calendar-data.js
+    // Access via CalendarData.nationalEvents, CalendarData.regionalEvents, CalendarData.getEventsForState(state)
 
     // =============================================
     // LOAD DATA & INITIALIZE
@@ -2036,17 +1943,8 @@
     function generateSpecialDatesResults() {
       const state = savedData.state || '';
 
-      // Combine national and regional dates
-      let allDates = [...specialDates2026];
-      if (state && regionalDates[state]) {
-        allDates = [...allDates, ...regionalDates[state]];
-      }
-
-      // Remove duplicates and sort by date
-      allDates = allDates.filter((date, index, self) =>
-        index === self.findIndex((d) => d.name === date.name && d.start === date.start)
-      );
-      allDates.sort((a, b) => new Date(a.start) - new Date(b.start));
+      // Use shared CalendarData - combines national and regional dates
+      const allDates = CalendarData.getEventsForState(state);
 
       const longWeekendsList = document.getElementById('longWeekendsList');
       const specialEventsList = document.getElementById('specialEventsList');
