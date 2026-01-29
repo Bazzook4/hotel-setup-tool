@@ -1,0 +1,23 @@
+{
+  "name": "rms-setup-tool",
+  "version": "1.0.0",
+  "description": "Hotel Revenue Management System Setup Tool - Smart configuration assistant for dynamic pricing",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [
+    "hotel",
+    "rms",
+    "revenue-management",
+    "dynamic-pricing",
+    "occupancy"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

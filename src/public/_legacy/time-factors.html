@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Based Factors - RMS Setup Tool</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      opacity: 0.9;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-tab {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      background: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      text-decoration: none;
+      color: #333;
+    }
+
+    .nav-tab:hover {
+      background: #667eea;
+      color: white;
+    }
+
+    .nav-tab.active {
+      background: #667eea;
+      color: white;
+    }
+
+    .nav-tab.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+      margin-bottom: 1.5rem;
+    }
+
+    .card h2 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .step-indicator {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .step-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #e1e5eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: #666;
+    }
+
+    .step.active .step-circle {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .step.completed .step-circle {
+      background: #28a745;
+      color: white;
+    }
+
+    .step-label {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .step.active .step-label {
+      color: #667eea;
+      font-weight: 600;
+    }
+
+    .step-line {
+      width: 100px;
+      height: 2px;
+      background: #e1e5eb;
+      margin: 0 1rem;
+    }
+
+    .step-line.completed {
+      background: #28a745;
+    }
+
+    .question-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+      margin-bottom: 1.5rem;
+    }
+
+    .question-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .question-icon {
+      font-size: 2rem;
+    }
+
+    .question-text h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .question-text p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .input-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #555;
+    }
+
+    .input-group input,
+    .input-group select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid #e1e5eb;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    .input-group input:focus,
+    .input-group select:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    .input-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .input-hint {
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: 0.25rem;
+    }
+
+    /* 7-Day Lead Time Grid */
+    .lead-time-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .lead-time-item {
+      text-align: center;
+      background: #f8f9fa;
+      padding: 1rem 0.5rem;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .lead-time-item:hover {
+      border-color: #667eea;
+    }
+
+    .lead-time-item label {
+      display: block;
+      font-size: 0.85rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .lead-time-item input {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .lead-time-item .unit {
+      font-size: 0.75rem;
+      color: #888;
+      margin-top: 0.25rem;
+    }
+
+    /* Hour Input Grid - 2 hour slots */
+    .hour-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .hour-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .hour-item {
+      text-align: center;
+      background: #f8f9fa;
+      padding: 0.75rem 0.5rem;
+      border-radius: 6px;
+    }
+
+    .hour-item label {
+      display: block;
+      font-size: 0.75rem;
+      color: #666;
+      margin-bottom: 0.25rem;
+    }
+
+    .hour-item input {
+      width: 100%;
+      padding: 0.4rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-secondary {
+      background: #f8f9fa;
+      color: #333;
+      border: 2px solid #e1e5eb;
+    }
+
+    .btn-secondary:hover {
+      background: #e1e5eb;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+      margin-top: 2rem;
+    }
+
+    .chart-container {
+      height: 180px;
+      margin: 1rem 0;
+    }
+
+    .suggestion-card {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+      border: 1px solid rgba(102, 126, 234, 0.2);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .suggestion-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .suggestion-header h4 {
+      margin: 0;
+      color: #667eea;
+      font-size: 0.95rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .lead-time-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* ============================================
+       SUGGESTIONS PAGE STYLES - COMPACT TABLE VIEW
+       ============================================ */
+
+    .suggestions-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .suggestions-header h2 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    .property-summary {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .property-summary span {
+      font-size: 0.85rem;
+      opacity: 0.95;
+    }
+
+    /* Compact Stats Row */
+    .stats-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-pill {
+      background: white;
+      border: 1px solid #e1e5eb;
+      border-radius: 20px;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .stat-pill strong {
+      color: #667eea;
+    }
+
+    .stat-pill.highlight {
+      background: #fff3e0;
+      border-color: #ffb74d;
+    }
+
+    .stat-pill.highlight strong {
+      color: #e65100;
+    }
+
+    /* Compact Table */
+    .suggestions-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      font-size: 0.85rem;
+    }
+
+    .suggestions-table th {
+      background: #f8f9fa;
+      padding: 0.6rem 0.75rem;
+      text-align: left;
+      font-weight: 600;
+      color: #555;
+      border-bottom: 2px solid #e1e5eb;
+      white-space: nowrap;
+    }
+
+    .suggestions-table td {
+      padding: 0.55rem 0.75rem;
+      border-bottom: 1px solid #f0f0f0;
+      vertical-align: middle;
+    }
+
+    .suggestions-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .suggestions-table tr:hover {
+      background: #fafbfc;
+    }
+
+    /* Day Badge */
+    .day-cell {
+      font-weight: 600;
+      color: #333;
+    }
+
+    .day-cell.today {
+      color: #667eea;
+    }
+
+    .day-cell.tomorrow {
+      color: #7c4dff;
+    }
+
+    /* Time Badge */
+    .time-cell {
+      font-weight: 600;
+      color: #333;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 0.8rem;
+    }
+
+    /* Condition */
+    .condition-cell {
+      color: #666;
+      font-size: 0.8rem;
+      max-width: 180px;
+    }
+
+    /* Price Cells */
+    .price-cell {
+      font-weight: 700;
+      font-family: 'Monaco', 'Consolas', monospace;
+      white-space: nowrap;
+    }
+
+    .price-cell.base {
+      color: #888;
+    }
+
+    .price-cell.suggested {
+      font-size: 0.95rem;
+    }
+
+    .price-cell.suggested.discount {
+      color: #2e7d32;
+    }
+
+    .price-cell.suggested.premium {
+      color: #e65100;
+    }
+
+    /* Effect Badge */
+    .effect-badge {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.75rem;
+      white-space: nowrap;
+    }
+
+    .effect-badge.discount {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .effect-badge.premium {
+      background: #fff3e0;
+      color: #e65100;
+    }
+
+    /* Reasoning - shown on hover via title, or in compact form */
+    .reasoning-cell {
+      font-size: 0.75rem;
+      color: #888;
+      max-width: 280px;
+      line-height: 1.3;
+    }
+
+    /* Section Headers in Table */
+    .section-row td {
+      background: #f0f4ff;
+      padding: 0.4rem 0.75rem;
+      font-weight: 600;
+      color: #667eea;
+      font-size: 0.8rem;
+    }
+
+    /* Export Section - Compact */
+    .export-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+    }
+
+    .export-btn {
+      background: #667eea;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .export-btn:hover {
+      background: #5a6fd6;
+    }
+
+    .config-json {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #2d3748;
+      color: #68d391;
+      border-radius: 8px;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 0.75rem;
+      overflow-x: auto;
+      display: none;
+      white-space: pre-wrap;
+      max-height: 300px;
+    }
+
+    .config-json.show {
+      display: block;
+    }
+
+    /* Key Insight - Inline */
+    .key-insight-inline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #fff8e1;
+      border-radius: 6px;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.8rem;
+      color: #e65100;
+    }
+
+    .key-insight-inline.critical {
+      background: #ffebee;
+      color: #c62828;
+    }
+
+    .key-insight-inline.success {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    @media (max-width: 900px) {
+      .suggestions-table {
+        font-size: 0.75rem;
+      }
+      .suggestions-table th,
+      .suggestions-table td {
+        padding: 0.4rem 0.5rem;
+      }
+      .reasoning-cell {
+        display: none;
+      }
+      .condition-cell {
+        max-width: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Hotel RMS Setup Tool</h1>
+    <p>Smart Configuration Assistant for Dynamic Pricing</p>
+  </div>
+
+  <div class="container">
+    <div class="nav-tabs">
+      <a href="index.html" class="nav-tab" style="text-decoration:none;">Occupancy Based Pricing</a>
+      <a href="inventory.html" class="nav-tab" style="text-decoration:none;">Inventory Reallocation</a>
+      <a href="time-factors.html" class="nav-tab active" style="text-decoration:none;">Time Based Factors</a>
+      <a href="demand-factors.html" class="nav-tab" style="text-decoration:none;">Demand Factors</a>
+      <span class="nav-tab disabled">Market Demand</span>
+      <span class="nav-tab disabled">Competition</span>
+    </div>
+
+    <!-- Step Indicator (2 Steps) -->
+    <div class="step-indicator">
+      <div class="step active" id="step1">
+        <div class="step-circle">1</div>
+        <span class="step-label">Property Data</span>
+      </div>
+      <div class="step-line" id="line1"></div>
+      <div class="step" id="step2">
+        <div class="step-circle">2</div>
+        <span class="step-label">Pricing Suggestions</span>
+      </div>
+    </div>
+
+    <!-- Step 1: Property & Booking Data -->
+    <div id="page1" class="question-card">
+      <div class="question-header">
+        <span class="question-icon">🏨</span>
+        <div class="question-text">
+          <h3>Property Setup</h3>
+          <p>Enter your property details and booking patterns for the next 7 days.</p>
+        </div>
+      </div>
+
+      <div class="input-row" style="margin-bottom: 2rem;">
+        <div class="input-group">
+          <label>Total Room Inventory</label>
+          <input type="number" id="totalInventory" value="24" min="1">
+          <p class="input-hint">Total sellable rooms</p>
+        </div>
+        <div class="input-group">
+          <label>Base Rate (₹)</label>
+          <input type="number" id="baseRate" value="3500" min="100">
+          <p class="input-hint">Your standard room rate</p>
+        </div>
+      </div>
+
+      <hr style="margin: 2rem 0; border: none; border-top: 1px solid #eee;">
+
+      <div class="question-header">
+        <span class="question-icon">📊</span>
+        <div class="question-text">
+          <h3>Lead Time Distribution (7 Days)</h3>
+          <p>What percentage of bookings come at each lead time? Enter values that add up to ~100%</p>
+        </div>
+      </div>
+
+      <div class="suggestion-card">
+        <div class="suggestion-header">
+          <span>💡</span>
+          <h4>This helps determine which days need time-sensitive pricing</h4>
+        </div>
+      </div>
+
+      <div class="lead-time-grid">
+        <div class="lead-time-item">
+          <label>Today</label>
+          <input type="number" id="lead0" value="37" min="0" max="100">
+          <div class="unit">% bookings</div>
+        </div>
+        <div class="lead-time-item">
+          <label>Tomorrow</label>
+          <input type="number" id="lead1" value="11" min="0" max="100">
+          <div class="unit">% bookings</div>
+        </div>
+        <div class="lead-time-item">
+          <label>Day 3</label>
+          <input type="number" id="lead2" value="6" min="0" max="100">
+          <div class="unit">% bookings</div>
+        </div>
+        <div class="lead-time-item">
+          <label>Day 4</label>
+          <input type="number" id="lead3" value="3" min="0" max="100">
+          <div class="unit">% bookings</div>
+        </div>
+        <div class="lead-time-item">
+          <label>Day 5</label>
+          <input type="number" id="lead4" value="5" min="0" max="100">
+          <div class="unit">% bookings</div>
+        </div>
+        <div class="lead-time-item">
+          <label>Day 6</label>
+          <input type="number" id="lead5" value="4" min="0" max="100">
+          <div class="unit">% bookings</div>
+        </div>
+        <div class="lead-time-item">
+          <label>Day 7</label>
+          <input type="number" id="lead6" value="4" min="0" max="100">
+          <div class="unit">% bookings</div>
+        </div>
+      </div>
+      <p class="input-hint" id="leadTimeTotal" style="text-align: center; margin-top: 0.75rem; font-size: 0.9rem;">Total: 70% (remaining 30% is 7+ days advance)</p>
+
+      <div class="chart-container">
+        <canvas id="leadTimeChart"></canvas>
+      </div>
+
+      <hr style="margin: 2rem 0; border: none; border-top: 1px solid #eee;">
+
+      <div class="question-header">
+        <span class="question-icon">⏰</span>
+        <div class="question-text">
+          <h3>Same-Day Booking Pattern (2-Hour Slots)</h3>
+          <p>For same-day bookings, what % come at each time window?</p>
+        </div>
+      </div>
+
+      <div class="hour-grid">
+        <div class="hour-item">
+          <label>6-8 AM</label>
+          <input type="number" id="hour6" value="2" min="0" max="100">
+        </div>
+        <div class="hour-item">
+          <label>8-10 AM</label>
+          <input type="number" id="hour8" value="8" min="0" max="100">
+        </div>
+        <div class="hour-item">
+          <label>10-12 PM</label>
+          <input type="number" id="hour10" value="15" min="0" max="100">
+        </div>
+        <div class="hour-item">
+          <label>12-2 PM</label>
+          <input type="number" id="hour12" value="12" min="0" max="100">
+        </div>
+        <div class="hour-item">
+          <label>2-4 PM</label>
+          <input type="number" id="hour14" value="18" min="0" max="100">
+        </div>
+        <div class="hour-item">
+          <label>4-6 PM</label>
+          <input type="number" id="hour16" value="20" min="0" max="100">
+        </div>
+        <div class="hour-item">
+          <label>6-8 PM</label>
+          <input type="number" id="hour18" value="15" min="0" max="100">
+        </div>
+        <div class="hour-item">
+          <label>8-10 PM</label>
+          <input type="number" id="hour20" value="7" min="0" max="100">
+        </div>
+        <div class="hour-item">
+          <label>10-12 AM</label>
+          <input type="number" id="hour22" value="3" min="0" max="100">
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="hourChart"></canvas>
+      </div>
+
+      <div class="button-row">
+        <button class="btn btn-primary" onclick="generateSuggestions()">Get Pricing Suggestions →</button>
+      </div>
+    </div>
+
+    <!-- Step 2: Actionable Suggestions -->
+    <div id="page2" class="hidden">
+
+      <div class="suggestions-header">
+        <h2>Time-Based Pricing Suggestions</h2>
+        <div class="property-summary">
+          <span><strong>Inventory:</strong> <span id="summaryInventory">24</span> rooms</span>
+          <span><strong>Base Rate:</strong> ₹<span id="summaryBaseRate">3,500</span></span>
+          <span><strong>Same-Day:</strong> <span id="summarySameDay">37</span>%</span>
+        </div>
+      </div>
+
+      <!-- Compact Stats + Insights Row -->
+      <div class="stats-row">
+        <div class="stat-pill"><span>Total:</span> <strong id="statTotalSuggestions">0</strong></div>
+        <div class="stat-pill"><span>Discounts:</span> <strong id="statDiscounts">0</strong></div>
+        <div class="stat-pill"><span>Premiums:</span> <strong id="statPremiums">0</strong></div>
+        <div class="stat-pill highlight"><span>Max Discount:</span> <strong id="statMaxDiscount">0%</strong></div>
+        <div id="keyInsights" style="display: contents;"></div>
+      </div>
+
+      <!-- Compact Table -->
+      <table class="suggestions-table">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Condition</th>
+            <th>Base</th>
+            <th>Suggested</th>
+            <th>Change</th>
+            <th>Why</th>
+          </tr>
+        </thead>
+        <tbody id="suggestionsTableBody">
+        </tbody>
+      </table>
+
+      <!-- Export Row -->
+      <div class="export-row">
+        <button class="btn btn-secondary" onclick="goToStep(1)">← Modify Inputs</button>
+        <button class="export-btn" onclick="toggleExport()">Export JSON</button>
+      </div>
+      <pre class="config-json" id="configJson"></pre>
+    </div>
+  </div>
+
+  <script>
+    let currentStep = 1;
+    let config = {
+      totalInventory: 24,
+      baseRate: 3500
+    };
+    let suggestions = [];
+    let leadTimeChart, hourChart;
+
+    function formatCurrency(amount) {
+      return amount.toLocaleString('en-IN');
+    }
+
+    function goToStep(step) {
+      document.getElementById(`page${currentStep}`).classList.add('hidden');
+      document.getElementById(`page${step}`).classList.remove('hidden');
+
+      for (let i = 1; i <= 2; i++) {
+        const stepEl = document.getElementById(`step${i}`);
+        const lineEl = document.getElementById(`line${i}`);
+        stepEl.classList.remove('active', 'completed');
+        if (lineEl) lineEl.classList.remove('completed');
+
+        if (i < step) {
+          stepEl.classList.add('completed');
+          if (lineEl) lineEl.classList.add('completed');
+        } else if (i === step) {
+          stepEl.classList.add('active');
+        }
+      }
+
+      currentStep = step;
+    }
+
+    function generateSuggestions() {
+      config.totalInventory = parseInt(document.getElementById('totalInventory').value) || 24;
+      config.baseRate = parseInt(document.getElementById('baseRate').value) || 3500;
+
+      const inventory = config.totalInventory;
+      const baseRate = config.baseRate;
+
+      // Get lead time data
+      const leadData = {
+        today: parseInt(document.getElementById('lead0').value) || 0,
+        tomorrow: parseInt(document.getElementById('lead1').value) || 0,
+        'day 3': parseInt(document.getElementById('lead2').value) || 0,
+        'day 4': parseInt(document.getElementById('lead3').value) || 0,
+        'day 5': parseInt(document.getElementById('lead4').value) || 0,
+        'day 6': parseInt(document.getElementById('lead5').value) || 0,
+        'day 7': parseInt(document.getElementById('lead6').value) || 0
+      };
+
+      // Get hourly booking pattern for same-day
+      const hourlyData = {
+        '06:00': parseInt(document.getElementById('hour6').value) || 0,
+        '08:00': parseInt(document.getElementById('hour8').value) || 0,
+        '10:00': parseInt(document.getElementById('hour10').value) || 0,
+        '12:00': parseInt(document.getElementById('hour12').value) || 0,
+        '14:00': parseInt(document.getElementById('hour14').value) || 0,
+        '16:00': parseInt(document.getElementById('hour16').value) || 0,
+        '18:00': parseInt(document.getElementById('hour18').value) || 0,
+        '20:00': parseInt(document.getElementById('hour20').value) || 0,
+        '22:00': parseInt(document.getElementById('hour22').value) || 0
+      };
+
+      suggestions = [];
+
+      const sameDayPercent = leadData.today;
+
+      // Calculate cumulative booking probability
+      let cumulative = 0;
+      const cumulativeByHour = {};
+      Object.entries(hourlyData).forEach(([hour, pct]) => {
+        cumulative += pct;
+        cumulativeByHour[hour] = cumulative;
+      });
+
+      // Find peak hours
+      const hourlyEntries = Object.entries(hourlyData).sort((a, b) => b[1] - a[1]);
+      const peakHours = hourlyEntries.slice(0, 3).map(e => e[0]);
+
+      // ============================================
+      // GENERATE SAME-DAY SUGGESTIONS
+      // ============================================
+
+      if (sameDayPercent >= 10) {
+        const morningTrigger = peakHours.includes('10:00') || peakHours.includes('08:00') ? '09:00' : '10:00';
+        const morningOccThreshold = Math.round(inventory * 0.5);
+
+        // Morning low occupancy
+        suggestions.push({
+          day: 'Today',
+          time: morningTrigger,
+          timeLabel: morningTrigger.replace(':00', '') + ':00 AM',
+          condition: `Slow morning (under ${Math.round(morningOccThreshold/inventory*100)}% full)`,
+          conditionType: 'low_occ',
+          occThreshold: morningOccThreshold,
+          scale: 0.95,
+          originalPrice: baseRate,
+          suggestedPrice: Math.round(baseRate * 0.95),
+          discount: 5,
+          type: 'discount',
+          reasoning: `With ${sameDayPercent}% of your bookings happening same-day, mornings are crucial. If occupancy is below ${Math.round(morningOccThreshold/inventory*100)}% by ${morningTrigger.replace(':00', '')}:00, a 5% discount can stimulate early demand without heavily cutting into revenue.`
+        });
+
+        // Morning high occupancy premium
+        if (sameDayPercent > 25) {
+          const highOccMorning = Math.round(inventory * 0.7);
+          suggestions.push({
+            day: 'Today',
+            time: morningTrigger,
+            timeLabel: morningTrigger.replace(':00', '') + ':00 AM',
+            condition: `Busy morning (over ${Math.round(highOccMorning/inventory*100)}% full)`,
+            conditionType: 'high_occ',
+            occThreshold: highOccMorning,
+            scale: 1.05,
+            originalPrice: baseRate,
+            suggestedPrice: Math.round(baseRate * 1.05),
+            premium: 5,
+            type: 'premium',
+            reasoning: `Strong morning demand (>${Math.round(highOccMorning/inventory*100)}% occupied) signals high interest. Capture additional value with a 5% premium - remaining rooms are scarce and guests will pay for availability.`
+          });
+        }
+
+        // Midday
+        const middayBookingPct = cumulativeByHour['12:00'] || 40;
+        const middayOccThreshold = Math.round(inventory * 0.65);
+        suggestions.push({
+          day: 'Today',
+          time: '12:00',
+          timeLabel: '12:00 PM',
+          condition: `Still slow at noon (under ${Math.round(middayOccThreshold/inventory*100)}% full)`,
+          conditionType: 'low_occ',
+          occThreshold: middayOccThreshold,
+          scale: 0.92,
+          originalPrice: baseRate,
+          suggestedPrice: Math.round(baseRate * 0.92),
+          discount: 8,
+          type: 'discount',
+          reasoning: `By noon, ~${middayBookingPct}% of same-day bookings have typically occurred. If still below ${Math.round(middayOccThreshold/inventory*100)}% occupancy, the afternoon booking window is shrinking. An 8% discount increases urgency.`
+        });
+
+        // Afternoon
+        const afternoonBookingPct = cumulativeByHour['16:00'] || 70;
+        suggestions.push({
+          day: 'Today',
+          time: '15:00',
+          timeLabel: '3:00 PM',
+          condition: 'Any empty rooms',
+          conditionType: 'all',
+          scale: 0.90,
+          originalPrice: baseRate,
+          suggestedPrice: Math.round(baseRate * 0.90),
+          discount: 10,
+          type: 'discount',
+          reasoning: `Check-in time is approaching. ~${afternoonBookingPct}% of same-day bookings are done by now. A 10% discount on remaining inventory prioritizes occupancy - an empty room tonight earns nothing.`
+        });
+
+        // Evening
+        const eveningBookingPct = cumulativeByHour['18:00'] || 85;
+        suggestions.push({
+          day: 'Today',
+          time: '18:00',
+          timeLabel: '6:00 PM',
+          condition: 'Any empty rooms',
+          conditionType: 'all',
+          scale: 0.85,
+          originalPrice: baseRate,
+          suggestedPrice: Math.round(baseRate * 0.85),
+          discount: 15,
+          type: 'discount',
+          reasoning: `Past standard check-in time. ~${eveningBookingPct}% of daily bookings are complete. 15% discount targets late arrivals, business travelers, and walk-ins who need a room tonight.`
+        });
+
+        // Late night
+        const lateNightPct = hourlyData['20:00'] + hourlyData['22:00'];
+        if (lateNightPct > 5) {
+          suggestions.push({
+            day: 'Today',
+            time: '20:00',
+            timeLabel: '8:00 PM',
+            condition: 'Any empty rooms',
+            conditionType: 'all',
+            scale: 0.80,
+            originalPrice: baseRate,
+            suggestedPrice: Math.round(baseRate * 0.80),
+            discount: 20,
+            type: 'discount',
+            reasoning: `${lateNightPct}% of same-day bookings happen after 8 PM at your property. This is distressed inventory - a 20% discount is better than an empty room. Any revenue > zero revenue.`
+          });
+        }
+
+        // Very late
+        if (hourlyData['22:00'] > 2) {
+          suggestions.push({
+            day: 'Today',
+            time: '22:00',
+            timeLabel: '10:00 PM',
+            condition: 'Any empty rooms',
+            conditionType: 'all',
+            scale: 0.75,
+            originalPrice: baseRate,
+            suggestedPrice: Math.round(baseRate * 0.75),
+            discount: 25,
+            type: 'discount',
+            reasoning: `Last booking window. ${hourlyData['22:00']}% of guests book after 10 PM. Maximum 25% discount - the room will otherwise go empty and generate zero revenue.`
+          });
+        }
+      }
+
+      // ============================================
+      // TOMORROW SUGGESTIONS
+      // ============================================
+
+      if (leadData.tomorrow >= 8) {
+        const tomorrowLowThreshold = Math.round(inventory * 0.4);
+        suggestions.push({
+          day: 'Tomorrow',
+          time: '10:00',
+          timeLabel: '10:00 AM',
+          condition: `Tomorrow looks slow (under ${Math.round(tomorrowLowThreshold/inventory*100)}% booked)`,
+          conditionType: 'low_occ',
+          occThreshold: tomorrowLowThreshold,
+          scale: 0.95,
+          originalPrice: baseRate,
+          suggestedPrice: Math.round(baseRate * 0.95),
+          discount: 5,
+          type: 'discount',
+          reasoning: `${leadData.tomorrow}% of your bookings are for tomorrow. If tomorrow's occupancy is below ${Math.round(tomorrowLowThreshold/inventory*100)}% by morning, a 5% early-bird discount can capture planners booking a day ahead.`
+        });
+
+        const tomorrowHighThreshold = Math.round(inventory * 0.75);
+        suggestions.push({
+          day: 'Tomorrow',
+          time: '18:00',
+          timeLabel: '6:00 PM',
+          condition: `Tomorrow filling up (over ${Math.round(tomorrowHighThreshold/inventory*100)}% booked)`,
+          conditionType: 'high_occ',
+          occThreshold: tomorrowHighThreshold,
+          scale: 1.05,
+          originalPrice: baseRate,
+          suggestedPrice: Math.round(baseRate * 1.05),
+          premium: 5,
+          type: 'premium',
+          reasoning: `Strong advance demand for tomorrow (>${Math.round(tomorrowHighThreshold/inventory*100)}% booked by evening) indicates confirmed interest. Capture 5% premium - late bookers are committed.`
+        });
+      }
+
+      // ============================================
+      // DAY 3-7 SUGGESTIONS
+      // ============================================
+
+      ['day 3', 'day 4', 'day 5', 'day 6', 'day 7'].forEach((day, idx) => {
+        const dayPercent = leadData[day];
+        const daysOut = idx + 3;
+
+        if (dayPercent >= 4) {
+          const highThreshold = Math.round(inventory * (0.6 + idx * 0.05));
+          const premiumScale = 1 + (0.01 * (daysOut - 2));
+          const premiumPct = Math.round((premiumScale - 1) * 100);
+
+          suggestions.push({
+            day: `Day ${daysOut}`,
+            time: '12:00',
+            timeLabel: '12:00 PM',
+            condition: `High demand (over ${Math.round(highThreshold/inventory*100)}% booked)`,
+            conditionType: 'high_occ',
+            occThreshold: highThreshold,
+            scale: parseFloat(premiumScale.toFixed(2)),
+            originalPrice: baseRate,
+            suggestedPrice: Math.round(baseRate * premiumScale),
+            premium: premiumPct,
+            type: 'premium',
+            reasoning: `${dayPercent}% of bookings happen ${daysOut} days out. If >${Math.round(highThreshold/inventory*100)}% occupied at this lead time, demand is strong. A ${premiumPct}% premium captures this value.`
+          });
+        }
+      });
+
+      // Update UI
+      renderSuggestions(leadData, hourlyData);
+      goToStep(2);
+    }
+
+    function renderSuggestions(leadData, hourlyData) {
+      const inventory = config.totalInventory;
+      const baseRate = config.baseRate;
+      const sameDayPercent = leadData.today;
+
+      // Update summary
+      document.getElementById('summaryInventory').textContent = inventory;
+      document.getElementById('summaryBaseRate').textContent = formatCurrency(baseRate);
+      document.getElementById('summarySameDay').textContent = sameDayPercent;
+
+      // Update stats
+      const discounts = suggestions.filter(s => s.type === 'discount');
+      const premiums = suggestions.filter(s => s.type === 'premium');
+      const maxDiscount = discounts.length > 0 ? Math.max(...discounts.map(s => s.discount)) : 0;
+
+      document.getElementById('statTotalSuggestions').textContent = suggestions.length;
+      document.getElementById('statDiscounts').textContent = discounts.length;
+      document.getElementById('statPremiums').textContent = premiums.length;
+      document.getElementById('statMaxDiscount').textContent = maxDiscount + '%';
+
+      // Render compact inline insights
+      const insightsHtml = [];
+      if (sameDayPercent > 35) {
+        insightsHtml.push(`<div class="key-insight-inline critical">High same-day (${sameDayPercent}%) - pricing critical</div>`);
+      } else if (sameDayPercent > 20) {
+        insightsHtml.push(`<div class="key-insight-inline">${sameDayPercent}% same-day bookings</div>`);
+      }
+
+      // Peak hour insight
+      const peakHour = Object.entries(hourlyData).sort((a, b) => b[1] - a[1])[0];
+      const peakTimeFormatted = parseInt(peakHour[0].replace(':00', ''));
+      const peakTimeLabel = peakTimeFormatted >= 12 ? `${peakTimeFormatted > 12 ? peakTimeFormatted - 12 : 12} PM` : `${peakTimeFormatted} AM`;
+      insightsHtml.push(`<div class="key-insight-inline success">Peak: ${peakTimeLabel} (${peakHour[1]}%)</div>`);
+
+      document.getElementById('keyInsights').innerHTML = insightsHtml.join('');
+
+      // Group suggestions by day
+      const byDay = {};
+      suggestions.forEach(s => {
+        if (!byDay[s.day]) byDay[s.day] = [];
+        byDay[s.day].push(s);
+      });
+
+      // Render compact table rows
+      let tableHtml = '';
+      let currentDay = '';
+
+      suggestions.forEach(s => {
+        // Add section header when day changes
+        if (s.day !== currentDay) {
+          currentDay = s.day;
+          const dayClass = s.day === 'Today' ? 'today' : s.day === 'Tomorrow' ? 'tomorrow' : '';
+          tableHtml += `<tr class="section-row"><td colspan="7">${s.day} (${byDay[s.day].length} suggestions)</td></tr>`;
+        }
+
+        const effectBadgeClass = s.type === 'discount' ? 'discount' : 'premium';
+        const effectText = s.type === 'discount' ? `-${s.discount}%` : `+${s.premium}%`;
+        const priceClass = s.type === 'discount' ? 'discount' : 'premium';
+
+        // Shorten reasoning for display
+        const shortReason = s.reasoning.length > 80 ? s.reasoning.substring(0, 77) + '...' : s.reasoning;
+
+        tableHtml += `
+          <tr>
+            <td class="day-cell ${s.day.toLowerCase()}">${s.day}</td>
+            <td class="time-cell">${s.timeLabel}</td>
+            <td class="condition-cell" title="${s.reasoning}">${s.condition}</td>
+            <td class="price-cell base">₹${formatCurrency(s.originalPrice)}</td>
+            <td class="price-cell suggested ${priceClass}">₹${formatCurrency(s.suggestedPrice)}</td>
+            <td><span class="effect-badge ${effectBadgeClass}">${effectText}</span></td>
+            <td class="reasoning-cell" title="${s.reasoning}">${shortReason}</td>
+          </tr>
+        `;
+      });
+
+      document.getElementById('suggestionsTableBody').innerHTML = tableHtml;
+
+      // Generate export JSON
+      document.getElementById('configJson').textContent = JSON.stringify({
+        timeBasedPricing: {
+          enabled: true,
+          property: {
+            totalInventory: config.totalInventory,
+            baseRate: config.baseRate
+          },
+          suggestions: suggestions.map(s => ({
+            day: s.day,
+            triggerTime: s.time,
+            condition: s.condition,
+            conditionType: s.conditionType,
+            occupancyThreshold: s.occThreshold || null,
+            scale: s.scale,
+            originalPrice: s.originalPrice,
+            suggestedPrice: s.suggestedPrice,
+            type: s.type,
+            percentageChange: s.type === 'discount' ? -s.discount : s.premium
+          }))
+        },
+        metadata: {
+          generatedAt: new Date().toISOString(),
+          inputData: {
+            leadTimeDistribution: {
+              today: parseInt(document.getElementById('lead0').value) || 0,
+              tomorrow: parseInt(document.getElementById('lead1').value) || 0,
+              day3: parseInt(document.getElementById('lead2').value) || 0,
+              day4: parseInt(document.getElementById('lead3').value) || 0,
+              day5: parseInt(document.getElementById('lead4').value) || 0,
+              day6: parseInt(document.getElementById('lead5').value) || 0,
+              day7: parseInt(document.getElementById('lead6').value) || 0
+            },
+            sameDayHourlyPattern: {
+              '06:00': parseInt(document.getElementById('hour6').value) || 0,
+              '08:00': parseInt(document.getElementById('hour8').value) || 0,
+              '10:00': parseInt(document.getElementById('hour10').value) || 0,
+              '12:00': parseInt(document.getElementById('hour12').value) || 0,
+              '14:00': parseInt(document.getElementById('hour14').value) || 0,
+              '16:00': parseInt(document.getElementById('hour16').value) || 0,
+              '18:00': parseInt(document.getElementById('hour18').value) || 0,
+              '20:00': parseInt(document.getElementById('hour20').value) || 0,
+              '22:00': parseInt(document.getElementById('hour22').value) || 0
+            }
+          }
+        }
+      }, null, 2);
+    }
+
+    function toggleExport() {
+      document.getElementById('configJson').classList.toggle('show');
+    }
+
+    // Initialize charts
+    function initCharts() {
+      const leadCtx = document.getElementById('leadTimeChart').getContext('2d');
+      leadTimeChart = new Chart(leadCtx, {
+        type: 'bar',
+        data: {
+          labels: ['Today', 'Tomorrow', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
+          datasets: [{
+            label: '% of Bookings',
+            data: [37, 11, 6, 3, 5, 4, 4],
+            backgroundColor: 'rgba(102, 126, 234, 0.7)',
+            borderColor: 'rgba(102, 126, 234, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: { y: { beginAtZero: true, max: 50 } }
+        }
+      });
+
+      const hourCtx = document.getElementById('hourChart').getContext('2d');
+      hourChart = new Chart(hourCtx, {
+        type: 'line',
+        data: {
+          labels: ['6-8', '8-10', '10-12', '12-2', '2-4', '4-6', '6-8', '8-10', '10-12'],
+          datasets: [{
+            label: '% of Same-Day',
+            data: [2, 8, 15, 12, 18, 20, 15, 7, 3],
+            borderColor: 'rgba(118, 75, 162, 1)',
+            backgroundColor: 'rgba(118, 75, 162, 0.1)',
+            fill: true,
+            tension: 0.4
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: { y: { beginAtZero: true, max: 30 } }
+        }
+      });
+    }
+
+    function updateLeadTimeTotal() {
+      const total = parseInt(document.getElementById('lead0').value || 0) +
+                    parseInt(document.getElementById('lead1').value || 0) +
+                    parseInt(document.getElementById('lead2').value || 0) +
+                    parseInt(document.getElementById('lead3').value || 0) +
+                    parseInt(document.getElementById('lead4').value || 0) +
+                    parseInt(document.getElementById('lead5').value || 0) +
+                    parseInt(document.getElementById('lead6').value || 0);
+
+      const remaining = 100 - total;
+      const totalEl = document.getElementById('leadTimeTotal');
+      totalEl.textContent = `Total: ${total}% (remaining ${remaining}% is 7+ days advance)`;
+      totalEl.style.color = total <= 100 ? '#28a745' : '#dc3545';
+    }
+
+    function updateCharts() {
+      if (leadTimeChart) {
+        leadTimeChart.data.datasets[0].data = [
+          parseInt(document.getElementById('lead0').value) || 0,
+          parseInt(document.getElementById('lead1').value) || 0,
+          parseInt(document.getElementById('lead2').value) || 0,
+          parseInt(document.getElementById('lead3').value) || 0,
+          parseInt(document.getElementById('lead4').value) || 0,
+          parseInt(document.getElementById('lead5').value) || 0,
+          parseInt(document.getElementById('lead6').value) || 0
+        ];
+        leadTimeChart.update();
+      }
+
+      if (hourChart) {
+        hourChart.data.datasets[0].data = [
+          parseInt(document.getElementById('hour6').value) || 0,
+          parseInt(document.getElementById('hour8').value) || 0,
+          parseInt(document.getElementById('hour10').value) || 0,
+          parseInt(document.getElementById('hour12').value) || 0,
+          parseInt(document.getElementById('hour14').value) || 0,
+          parseInt(document.getElementById('hour16').value) || 0,
+          parseInt(document.getElementById('hour18').value) || 0,
+          parseInt(document.getElementById('hour20').value) || 0,
+          parseInt(document.getElementById('hour22').value) || 0
+        ];
+        hourChart.update();
+      }
+    }
+
+    // Event listeners
+    document.querySelectorAll('.lead-time-item input').forEach(input => {
+      input.addEventListener('input', () => {
+        updateLeadTimeTotal();
+        updateCharts();
+      });
+    });
+
+    document.querySelectorAll('.hour-item input').forEach(input => {
+      input.addEventListener('input', updateCharts);
+    });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      initCharts();
+      updateLeadTimeTotal();
+    });
+  </script>
+</body>
+</html>
