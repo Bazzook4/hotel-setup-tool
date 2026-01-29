@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RMS Setup Tool - Hotel Revenue Management</title>
+  <title>Hotel Tools - Revenue Management Setup</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     * {
@@ -19,8 +19,18 @@
       line-height: 1.6;
     }
 
+    /* 3-Color Theme: Navy (#1e3a5f), Teal (#2d8a8a), Gold (#d4a854) */
+    :root {
+      --primary: #1e3a5f;    /* Navy - headers, primary buttons */
+      --secondary: #2d8a8a;  /* Teal - accents, hover states */
+      --accent: #d4a854;     /* Gold - highlights, active states */
+      --primary-light: rgba(30, 58, 95, 0.1);
+      --secondary-light: rgba(45, 138, 138, 0.1);
+      --accent-light: rgba(212, 168, 84, 0.2);
+    }
+
     .header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       color: white;
       padding: 2rem;
       text-align: center;
@@ -62,12 +72,12 @@
     }
 
     .nav-tab:hover {
-      background: #667eea;
+      background: var(--secondary);
       color: white;
     }
 
     .nav-tab.active {
-      background: #667eea;
+      background: var(--primary);
       color: white;
     }
 
@@ -113,12 +123,12 @@
     }
 
     .progress-step.active .step-number {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       color: white;
     }
 
     .progress-step.completed .step-number {
-      background: #28a745;
+      background: var(--secondary);
       color: white;
     }
 
@@ -129,7 +139,7 @@
     }
 
     .progress-step.active .step-title {
-      color: #667eea;
+      color: var(--primary);
       font-weight: 600;
     }
 
@@ -203,7 +213,7 @@
     .form-group input:focus,
     .form-group select:focus {
       outline: none;
-      border-color: #667eea;
+      border-color: var(--secondary);
     }
 
     .form-group .hint {
@@ -237,7 +247,7 @@
 
     .room-type-item input:focus {
       outline: none;
-      border-color: #667eea;
+      border-color: var(--secondary);
     }
 
     .add-room-type {
@@ -285,7 +295,7 @@
     }
 
     .lead-time-item:hover {
-      border-color: #667eea;
+      border-color: var(--secondary);
     }
 
     .lead-time-item label {
@@ -367,14 +377,15 @@
     }
 
     .hotel-type-card:hover {
-      border-color: #667eea;
+      border-color: var(--secondary);
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+      box-shadow: 0 4px 12px rgba(45, 138, 138, 0.2);
     }
 
     .hotel-type-card.selected {
-      border-color: #667eea;
-      background: #f0f4ff;
+      border-color: var(--accent);
+      background: var(--accent-light);
+      box-shadow: 0 4px 12px rgba(212, 168, 84, 0.3);
     }
 
     .hotel-type-card h3 {
@@ -409,13 +420,13 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       color: white;
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+      box-shadow: 0 4px 12px rgba(30, 58, 95, 0.4);
     }
 
     .btn-secondary {
@@ -429,12 +440,12 @@
     }
 
     .btn-success {
-      background: #28a745;
+      background: var(--secondary);
       color: white;
     }
 
     .btn-success:hover {
-      background: #218838;
+      background: #247a7a;
     }
 
     .btn-danger {
@@ -474,13 +485,28 @@
 
     /* Tip Box */
     .tip-box {
-      background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
-      border: 1px solid rgba(102, 126, 234, 0.2);
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+      border: 1px solid rgba(30, 58, 95, 0.2);
       border-radius: 8px;
       padding: 0.75rem 1rem;
       margin-bottom: 1rem;
       font-size: 0.9rem;
-      color: #667eea;
+      color: var(--primary);
+    }
+
+    /* Why Box - explains purpose */
+    .why-box {
+      background: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+      color: #5a4a2a;
+    }
+
+    .why-box strong {
+      color: var(--primary);
     }
 
     /* Location Inputs */
@@ -513,24 +539,40 @@
     }
 
     .lead-total.valid {
-      color: #28a745;
+      color: var(--secondary);
     }
 
     .lead-total.invalid {
       color: #dc3545;
     }
+
+    /* Property type details */
+    .hotel-type-card .details {
+      font-size: 0.75rem;
+      color: #888;
+      margin-top: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .hotel-type-card .examples {
+      font-size: 0.7rem;
+      color: #999;
+      font-style: italic;
+      margin-top: 0.25rem;
+    }
   </style>
 </head>
 <body>
   <div class="header">
-    <h1>Hotel RMS Setup Tool</h1>
-    <p>Smart Configuration Assistant for Dynamic Pricing</p>
+    <h1>Hotel Tools</h1>
+    <p>Revenue Management Setup - Configure Smart Dynamic Pricing</p>
   </div>
 
   <div class="container">
     <div class="nav-tabs">
       <a href="setup.html" class="nav-tab active">Setup</a>
       <a href="results.html" class="nav-tab">Results</a>
+      <a href="calendar.html" class="nav-tab">Calendar</a>
     </div>
 
     <!-- Progress Bar -->
@@ -557,6 +599,12 @@
           <h2>Room Types & Inventory</h2>
           <p>Add your room types - this determines your total inventory and base pricing</p>
         </div>
+      </div>
+
+      <div class="why-box">
+        <strong>Why we need this:</strong> Your room types and pricing form the foundation of revenue management.
+        The system uses your base rate to calculate occupancy-based pricing slabs, and inventory size determines
+        how aggressive your pricing can be. Larger inventory allows more gradual price increases.
       </div>
 
       <div class="tip-box">
@@ -600,23 +648,32 @@
         </div>
       </div>
 
+      <div class="why-box">
+        <strong>Why we need this:</strong> Your location and property type determine seasonal demand patterns,
+        peak periods, and pricing strategies. A beach resort in Goa has very different demand patterns than
+        a business hotel in Mumbai. This helps us recommend the right pricing approach for your property.
+      </div>
+
       <div class="form-row">
         <div class="form-group">
-          <label for="stateSelect">State</label>
+          <label for="stateSelect">State / Union Territory</label>
           <select id="stateSelect" onchange="updateCities()">
             <option value="">Select State</option>
           </select>
+          <div class="hint">All 28 states and 8 UTs covered</div>
         </div>
         <div class="form-group">
-          <label for="citySelect">City</label>
+          <label for="citySelect">City / Area</label>
           <select id="citySelect" disabled>
             <option value="">Select City</option>
           </select>
+          <div class="hint">Major tourist and business destinations</div>
         </div>
       </div>
 
       <div class="subsection">
-        <h3>Select Property Type</h3>
+        <h3>Select Your Property Type</h3>
+        <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Choose the category that best describes your hotel. This determines your typical guest profile and demand patterns.</p>
         <div class="hotel-type-grid" id="hotelTypeGrid">
           <!-- Dynamic cards will be inserted here -->
         </div>
@@ -638,48 +695,54 @@
         </div>
       </div>
 
+      <div class="why-box">
+        <strong>Why we need this:</strong> Understanding when your bookings come helps optimize pricing.
+        If most bookings are same-day, you can price higher for last-minute availability. If guests book
+        weeks ahead, early-bird discounts might work better. This data drives your lead-time pricing strategy.
+      </div>
+
       <div class="subsection" style="margin-top: 0; padding-top: 0; border-top: none;">
-        <h3>Lead Time Distribution (7 Days)</h3>
-        <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">What percentage of bookings come at each lead time?</p>
+        <h3>Lead Time Distribution (Next 7 Days)</h3>
+        <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">What percentage of your bookings come at each lead time? (e.g., Day 1 = booking made today for today's stay)</p>
 
         <div class="lead-time-grid">
           <div class="lead-time-item">
-            <label>Today</label>
+            <label>Day 1</label>
             <input type="number" id="lead0" value="37" min="0" max="100">
-            <div class="unit">%</div>
+            <div class="unit">% (same day)</div>
           </div>
           <div class="lead-time-item">
-            <label>Tomorrow</label>
+            <label>Day 2</label>
             <input type="number" id="lead1" value="11" min="0" max="100">
-            <div class="unit">%</div>
+            <div class="unit">% (1 day ahead)</div>
           </div>
           <div class="lead-time-item">
             <label>Day 3</label>
             <input type="number" id="lead2" value="6" min="0" max="100">
-            <div class="unit">%</div>
+            <div class="unit">% (2 days ahead)</div>
           </div>
           <div class="lead-time-item">
             <label>Day 4</label>
             <input type="number" id="lead3" value="3" min="0" max="100">
-            <div class="unit">%</div>
+            <div class="unit">% (3 days ahead)</div>
           </div>
           <div class="lead-time-item">
             <label>Day 5</label>
             <input type="number" id="lead4" value="5" min="0" max="100">
-            <div class="unit">%</div>
+            <div class="unit">% (4 days ahead)</div>
           </div>
           <div class="lead-time-item">
             <label>Day 6</label>
             <input type="number" id="lead5" value="4" min="0" max="100">
-            <div class="unit">%</div>
+            <div class="unit">% (5 days ahead)</div>
           </div>
           <div class="lead-time-item">
             <label>Day 7</label>
             <input type="number" id="lead6" value="4" min="0" max="100">
-            <div class="unit">%</div>
+            <div class="unit">% (6 days ahead)</div>
           </div>
         </div>
-        <p id="leadTimeTotal" class="lead-total valid">Total: 70% (remaining 30% is 7+ days advance)</p>
+        <p id="leadTimeTotal" class="lead-total valid">Total: 70% (remaining 30% is 7+ days advance bookings)</p>
 
         <div class="chart-container">
           <canvas id="leadTimeChart"></canvas>
@@ -792,16 +855,80 @@
       'Puducherry': ['Pondicherry', 'Auroville', 'Karaikal', 'Mahe', 'Yanam']
     };
 
-    // Hotel Types
+    // Hotel Types with detailed descriptions
     const hotelTypes = [
-      { id: 'business', icon: '🏢', name: 'Business Hotel', description: 'Corporate travelers, MICE', pattern: 'metro_business' },
-      { id: 'leisure', icon: '🏖️', name: 'Leisure/Resort', description: 'Families, weekend travelers', pattern: 'leisure' },
-      { id: 'hillstation', icon: '⛰️', name: 'Hill Station', description: 'Mountain resorts', pattern: 'hill_station' },
-      { id: 'beach', icon: '🏝️', name: 'Beach Resort', description: 'Coastal properties', pattern: 'beach' },
-      { id: 'pilgrimage', icon: '🕉️', name: 'Pilgrimage', description: 'Temple towns', pattern: 'pilgrimage' },
-      { id: 'wildlife', icon: '🐅', name: 'Wildlife Lodge', description: 'Safari, national parks', pattern: 'wildlife' },
-      { id: 'heritage', icon: '🏛️', name: 'Heritage/Boutique', description: 'Palaces, havelis', pattern: 'heritage' },
-      { id: 'budget', icon: '💰', name: 'Budget/Economy', description: 'Value travelers', pattern: 'budget' }
+      {
+        id: 'business',
+        icon: '🏢',
+        name: 'Business Hotel',
+        description: 'Corporate travelers, MICE events',
+        details: 'High weekday demand, corporate rates. Peak: Mon-Thu. Low: weekends.',
+        examples: 'Marriott, Hyatt, ITC, Taj Business hotels',
+        pattern: 'metro_business'
+      },
+      {
+        id: 'leisure',
+        icon: '🏖️',
+        name: 'Leisure Resort',
+        description: 'Families, couples, weekend getaways',
+        details: 'High weekend demand. Seasonal peaks during holidays & school vacations.',
+        examples: 'Club Mahindra, Sterling, weekend resorts',
+        pattern: 'leisure'
+      },
+      {
+        id: 'hillstation',
+        icon: '⛰️',
+        name: 'Hill Station',
+        description: 'Mountain & hill retreats',
+        details: 'Peak: Apr-Jun (summer), Oct (post-monsoon). Low: monsoon months.',
+        examples: 'Shimla, Manali, Ooty, Mussoorie properties',
+        pattern: 'hill_station'
+      },
+      {
+        id: 'beach',
+        icon: '🏝️',
+        name: 'Beach Resort',
+        description: 'Coastal & beachside properties',
+        details: 'Peak: Oct-Feb (winter). Low: monsoon (Jun-Sep). International tourists.',
+        examples: 'Goa resorts, Kerala backwaters, Andaman',
+        pattern: 'beach'
+      },
+      {
+        id: 'pilgrimage',
+        icon: '🕉️',
+        name: 'Pilgrimage',
+        description: 'Religious & spiritual destinations',
+        details: 'Demand spikes during festivals & auspicious dates. Year-round steady flow.',
+        examples: 'Varanasi, Tirupati, Shirdi, Haridwar hotels',
+        pattern: 'pilgrimage'
+      },
+      {
+        id: 'wildlife',
+        icon: '🐅',
+        name: 'Wildlife Lodge',
+        description: 'Safari & national park stays',
+        details: 'Seasonal: Oct-Jun only. Closed during monsoon. Premium pricing.',
+        examples: 'Jim Corbett, Ranthambore, Bandhavgarh lodges',
+        pattern: 'wildlife'
+      },
+      {
+        id: 'heritage',
+        icon: '🏛️',
+        name: 'Heritage/Boutique',
+        description: 'Palaces, havelis, unique stays',
+        details: 'Premium segment, experience-focused. High wedding season demand.',
+        examples: 'Rajasthan palaces, Neemrana, boutique properties',
+        pattern: 'heritage'
+      },
+      {
+        id: 'budget',
+        icon: '💰',
+        name: 'Budget/Economy',
+        description: 'Value-conscious travelers',
+        details: 'Price-sensitive guests. High volume, lower ADR. OTA dependent.',
+        examples: 'OYO, FabHotels, Treebo, budget chains',
+        pattern: 'budget'
+      }
     ];
 
     let selectedHotelType = null;
@@ -819,13 +946,18 @@
         stateSelect.appendChild(option);
       });
 
-      // Load hotel types
+      // Load hotel types with detailed descriptions
       const hotelTypeGrid = document.getElementById('hotelTypeGrid');
       hotelTypes.forEach(type => {
         const card = document.createElement('div');
         card.className = 'hotel-type-card';
         card.dataset.type = type.id;
-        card.innerHTML = `<h3>${type.icon} ${type.name}</h3><p>${type.description}</p>`;
+        card.innerHTML = `
+          <h3>${type.icon} ${type.name}</h3>
+          <p>${type.description}</p>
+          <div class="details">${type.details}</div>
+          <div class="examples">${type.examples}</div>
+        `;
         card.onclick = () => selectHotelType(type.id);
         hotelTypeGrid.appendChild(card);
       });
@@ -995,12 +1127,12 @@
       leadTimeChart = new Chart(leadCtx, {
         type: 'bar',
         data: {
-          labels: ['Today', 'Tomorrow', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
+          labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
           datasets: [{
             label: '% of Bookings',
             data: [37, 11, 6, 3, 5, 4, 4],
-            backgroundColor: 'rgba(102, 126, 234, 0.7)',
-            borderColor: 'rgba(102, 126, 234, 1)',
+            backgroundColor: 'rgba(30, 58, 95, 0.7)',
+            borderColor: 'rgba(30, 58, 95, 1)',
             borderWidth: 1
           }]
         },
@@ -1020,8 +1152,8 @@
           datasets: [{
             label: '% of Same-Day',
             data: [2, 8, 15, 12, 18, 20, 15, 7, 3],
-            borderColor: 'rgba(118, 75, 162, 1)',
-            backgroundColor: 'rgba(118, 75, 162, 0.1)',
+            borderColor: 'rgba(45, 138, 138, 1)',
+            backgroundColor: 'rgba(45, 138, 138, 0.1)',
             fill: true,
             tension: 0.4
           }]

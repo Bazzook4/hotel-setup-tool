@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RMS Results - Hotel Revenue Management</title>
+  <title>Hotel Tools - Results Dashboard</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     * {
@@ -19,8 +19,18 @@
       line-height: 1.6;
     }
 
+    /* 3-Color Theme: Navy (#1e3a5f), Teal (#2d8a8a), Gold (#d4a854) */
+    :root {
+      --primary: #1e3a5f;    /* Navy - headers, primary buttons */
+      --secondary: #2d8a8a;  /* Teal - accents, hover states */
+      --accent: #d4a854;     /* Gold - highlights, active states */
+      --primary-light: rgba(30, 58, 95, 0.1);
+      --secondary-light: rgba(45, 138, 138, 0.1);
+      --accent-light: rgba(212, 168, 84, 0.2);
+    }
+
     .header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       color: white;
       padding: 2rem;
       text-align: center;
@@ -62,18 +72,18 @@
     }
 
     .nav-tab:hover {
-      background: #667eea;
+      background: var(--secondary);
       color: white;
     }
 
     .nav-tab.active {
-      background: #667eea;
+      background: var(--primary);
       color: white;
     }
 
     /* Results Header */
     .results-header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       color: white;
       padding: 1.5rem;
       border-radius: 12px;
@@ -132,7 +142,7 @@
     }
 
     .summary-card {
-      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
       border-radius: 10px;
       padding: 1.25rem;
       text-align: center;
@@ -141,7 +151,7 @@
     .summary-card .value {
       font-size: 1.75rem;
       font-weight: 700;
-      color: #667eea;
+      color: var(--primary);
     }
 
     .summary-card .label {
@@ -239,11 +249,11 @@
       background: #f8f9fa;
       border-radius: 8px;
       margin-bottom: 0.75rem;
-      border-left: 4px solid #667eea;
+      border-left: 4px solid var(--primary);
     }
 
-    .recommendation.success { border-left-color: #28a745; }
-    .recommendation.warning { border-left-color: #ffc107; }
+    .recommendation.success { border-left-color: var(--secondary); }
+    .recommendation.warning { border-left-color: var(--accent); }
     .recommendation.danger { border-left-color: #dc3545; }
 
     .recommendation .icon {
@@ -758,7 +768,7 @@
 </head>
 <body>
   <div class="header">
-    <h1>Hotel RMS Setup Tool</h1>
+    <h1>Hotel Tools</h1>
     <p>Smart Configuration Assistant for Dynamic Pricing</p>
   </div>
 
@@ -766,6 +776,7 @@
     <div class="nav-tabs">
       <a href="setup.html" class="nav-tab">Setup</a>
       <a href="results.html" class="nav-tab active">Results</a>
+      <a href="calendar.html" class="nav-tab">Calendar</a>
     </div>
 
     <!-- No Data State -->
