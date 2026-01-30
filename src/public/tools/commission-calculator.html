@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hotel Tools - OTA Commission Calculator</title>
+  <title>OTA Commission Calculator - Know Your Exact Hotel Settlement | Hotel Playbook</title>
+  <meta name="description" content="Free OTA commission calculator for Indian hotels. Calculate MakeMyTrip, Booking.com, Goibibo settlements. Understand GST, TDS, TCS deductions on hotel bookings.">
+  <meta name="keywords" content="OTA commission calculator, hotel OTA settlement, MakeMyTrip commission, Booking.com hotel fees, GST on hotel, TDS TCS hotel, OTA deductions India">
+  <link rel="canonical" href="https://hotelplaybook.in/tools/commission-calculator.html">
   <style>
     * {
       margin: 0;
@@ -50,34 +53,95 @@
       padding: 2rem;
     }
 
-    .nav-tabs {
-      display: flex;
-      gap: 0.5rem;
+    /* SEO Intro Section */
+    .seo-intro {
+      background: linear-gradient(135deg, var(--accent-light) 0%, rgba(255,255,255,0.9) 100%);
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      padding: 1.5rem;
       margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .seo-question {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .seo-intro p {
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .seo-benefits {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
       flex-wrap: wrap;
     }
 
-    .nav-tab {
-      padding: 0.75rem 1.5rem;
-      border: none;
-      background: white;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 0.95rem;
-      transition: all 0.2s;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      text-decoration: none;
-      color: #333;
-    }
-
-    .nav-tab:hover {
+    .seo-benefits span {
       background: var(--secondary);
       color: white;
+      padding: 0.4rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
     }
 
-    .nav-tab.active {
-      background: var(--primary);
-      color: white;
+    /* Explore More Tools */
+    .explore-tools {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+    }
+
+    .explore-tools h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .tools-grid-mini {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .tool-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s;
+    }
+
+    .tool-link:hover {
+      background: var(--secondary-light);
+      transform: translateX(4px);
+    }
+
+    .tool-link .icon {
+      font-size: 1.5rem;
+    }
+
+    .tool-link .text h4 {
+      color: var(--primary);
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .tool-link .text p {
+      color: #666;
+      font-size: 0.8rem;
     }
 
     /* Section Card */
@@ -523,11 +587,15 @@
   </div>
 
   <div class="container">
-    <div class="nav-tabs">
-      <a href="revenue-setup.html" class="nav-tab">Setup</a>
-      <a href="revenue-results.html" class="nav-tab">Results</a>
-      <a href="/calendar.html" class="nav-tab">Calendar</a>
-      <a href="commission-calculator.html" class="nav-tab active">Commission</a>
+    <!-- SEO Intro Section -->
+    <div class="seo-intro">
+      <div class="seo-question">Do you really know how much you earn from each OTA booking?</div>
+      <p>After commission, GST on commission, TDS, and TCS deductions, your <strong>actual settlement can be 20-30% less</strong> than the room rate. Calculate your exact earnings below.</p>
+      <div class="seo-benefits">
+        <span>GST: 5% or 18% based on rate</span>
+        <span>Commission + GST on commission</span>
+        <span>TDS 0.1% + TCS 0.5%</span>
+      </div>
     </div>
 
     <div class="info-box">
@@ -728,6 +796,27 @@
             <td class="positive" id="annualSettlement">-</td>
           </tr>
         </table>
+      </div>
+
+      <!-- Explore More Tools -->
+      <div class="explore-tools">
+        <h3>Explore More Tools</h3>
+        <div class="tools-grid-mini">
+          <a href="revenue-setup.html" class="tool-link">
+            <span class="icon">📊</span>
+            <div class="text">
+              <h4>Revenue Management Setup</h4>
+              <p>Set dynamic pricing for your hotel</p>
+            </div>
+          </a>
+          <a href="/calendar.html" class="tool-link">
+            <span class="icon">📅</span>
+            <div class="text">
+              <h4>Demand Calendar 2026</h4>
+              <p>Plan for peak pricing dates</p>
+            </div>
+          </a>
+        </div>
       </div>
 
     </div>

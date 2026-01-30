@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hotel Tools - Results Dashboard</title>
+  <title>Your Hotel Revenue Results - Dynamic Pricing Impact | Hotel Playbook</title>
+  <meta name="description" content="See your hotel's revenue potential with dynamic pricing. View projected room night increases, weekly and monthly revenue growth from optimized pricing strategy.">
+  <meta name="keywords" content="hotel revenue results, dynamic pricing impact, RevPAR calculator, hotel room night increase, revenue optimization results">
+  <link rel="canonical" href="https://hotelplaybook.in/tools/revenue-results.html">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="js/calendar-data.js"></script>
   <style>
@@ -52,34 +55,57 @@
       padding: 2rem;
     }
 
-    .nav-tabs {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .nav-tab {
-      padding: 0.75rem 1.5rem;
-      border: none;
+    /* Explore More Tools */
+    .explore-tools {
       background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+    }
+
+    .explore-tools h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .tools-grid-mini {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .tool-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: #f8f9fa;
       border-radius: 8px;
-      cursor: pointer;
-      font-size: 0.95rem;
-      transition: all 0.2s;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       text-decoration: none;
-      color: #333;
+      color: inherit;
+      transition: all 0.2s;
     }
 
-    .nav-tab:hover {
-      background: var(--secondary);
-      color: white;
+    .tool-link:hover {
+      background: var(--secondary-light);
+      transform: translateX(4px);
     }
 
-    .nav-tab.active {
-      background: var(--primary);
-      color: white;
+    .tool-link .icon {
+      font-size: 1.5rem;
+    }
+
+    .tool-link .text h4 {
+      color: var(--primary);
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .tool-link .text p {
+      color: #666;
+      font-size: 0.8rem;
     }
 
     /* Results Header */
@@ -838,12 +864,6 @@
   </div>
 
   <div class="container">
-    <div class="nav-tabs">
-      <a href="revenue-setup.html" class="nav-tab">Setup</a>
-      <a href="revenue-results.html" class="nav-tab active">Results</a>
-      <a href="/calendar.html" class="nav-tab">Calendar</a>
-      <a href="commission-calculator.html" class="nav-tab">Commission</a>
-    </div>
 
     <!-- No Data State -->
     <div id="noDataState" class="result-section no-data" style="display: none;">
@@ -991,6 +1011,34 @@
           <h4>Special Events & Festivals</h4>
           <div id="specialEventsList"></div>
         </div>
+      </div>
+    </div>
+
+    <!-- Explore More Tools -->
+    <div class="explore-tools">
+      <h3>Explore More Tools</h3>
+      <div class="tools-grid-mini">
+        <a href="commission-calculator.html" class="tool-link">
+          <span class="icon">💰</span>
+          <div class="text">
+            <h4>OTA Commission Calculator</h4>
+            <p>Know your exact OTA settlement</p>
+          </div>
+        </a>
+        <a href="/calendar.html" class="tool-link">
+          <span class="icon">📅</span>
+          <div class="text">
+            <h4>Demand Calendar 2026</h4>
+            <p>Plan for peak pricing dates</p>
+          </div>
+        </a>
+        <a href="revenue-setup.html" class="tool-link">
+          <span class="icon">⚙️</span>
+          <div class="text">
+            <h4>Modify Setup</h4>
+            <p>Adjust your configuration</p>
+          </div>
+        </a>
       </div>
     </div>
 

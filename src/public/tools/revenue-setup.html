@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hotel Tools - Revenue Management Setup</title>
+  <title>Hotel Revenue Management Setup Tool - Dynamic Pricing Calculator | Hotel Playbook</title>
+  <meta name="description" content="Free hotel revenue management setup wizard. Calculate optimal room rates, set occupancy-based pricing, and increase RevPAR by 15-25%. Made for Indian hotels.">
+  <meta name="keywords" content="hotel revenue management, dynamic pricing tool, hotel pricing calculator, RevPAR optimization, occupancy based pricing, hotel rate strategy India">
+  <link rel="canonical" href="https://hotelplaybook.in/tools/revenue-setup.html">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     * {
@@ -51,35 +54,6 @@
       padding: 2rem;
     }
 
-    .nav-tabs {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .nav-tab {
-      padding: 0.75rem 1.5rem;
-      border: none;
-      background: white;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 0.95rem;
-      transition: all 0.2s;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      text-decoration: none;
-      color: #333;
-    }
-
-    .nav-tab:hover {
-      background: var(--secondary);
-      color: white;
-    }
-
-    .nav-tab.active {
-      background: var(--primary);
-      color: white;
-    }
 
     /* Progress Steps */
     .progress-bar {
@@ -561,6 +535,97 @@
       margin-top: 0.25rem;
     }
 
+    /* SEO Intro Section */
+    .seo-intro {
+      background: linear-gradient(135deg, var(--accent-light) 0%, rgba(255,255,255,0.9) 100%);
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .seo-question {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .seo-intro p {
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .seo-benefits {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .seo-benefits span {
+      background: var(--secondary);
+      color: white;
+      padding: 0.4rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* Explore More Tools */
+    .explore-tools {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+    }
+
+    .explore-tools h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .tools-grid-mini {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .tool-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s;
+    }
+
+    .tool-link:hover {
+      background: var(--secondary-light);
+      transform: translateX(4px);
+    }
+
+    .tool-link .icon {
+      font-size: 1.5rem;
+    }
+
+    .tool-link .text h4 {
+      color: var(--primary);
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .tool-link .text p {
+      color: #666;
+      font-size: 0.8rem;
+    }
+
     /* Site Navigation */
     .site-nav {
       background: white;
@@ -633,11 +698,15 @@
   </div>
 
   <div class="container">
-    <div class="nav-tabs">
-      <a href="revenue-setup.html" class="nav-tab active">Setup</a>
-      <a href="revenue-results.html" class="nav-tab">Results</a>
-      <a href="/calendar.html" class="nav-tab">Calendar</a>
-      <a href="commission-calculator.html" class="nav-tab">Commission</a>
+    <!-- SEO Intro Section -->
+    <div class="seo-intro">
+      <div class="seo-question">Are you leaving money on the table with flat room rates?</div>
+      <p>Most hotels lose <strong>15-25% potential revenue</strong> by not adjusting prices based on demand. This free tool helps you set up smart dynamic pricing in under 5 minutes.</p>
+      <div class="seo-benefits">
+        <span>Increase RevPAR by 15-25%</span>
+        <span>Capture peak demand pricing</span>
+        <span>Optimize occupancy-based rates</span>
+      </div>
     </div>
 
     <!-- Progress Bar -->
@@ -865,6 +934,27 @@
       <div class="button-row">
         <button class="btn btn-secondary" onclick="prevSection(2)">Back</button>
         <button class="btn btn-primary" onclick="generateAndGoToResults()">Generate Results</button>
+      </div>
+    </div>
+
+    <!-- Explore More Tools -->
+    <div class="explore-tools">
+      <h3>Explore More Tools</h3>
+      <div class="tools-grid-mini">
+        <a href="commission-calculator.html" class="tool-link">
+          <span class="icon">💰</span>
+          <div class="text">
+            <h4>OTA Commission Calculator</h4>
+            <p>Know your exact OTA settlement</p>
+          </div>
+        </a>
+        <a href="/calendar.html" class="tool-link">
+          <span class="icon">📅</span>
+          <div class="text">
+            <h4>Demand Calendar 2026</h4>
+            <p>Plan for peak pricing dates</p>
+          </div>
+        </a>
       </div>
     </div>
   </div>
