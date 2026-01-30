@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Hotel Tools - Revenue Calculator, OTA Commission Calculator | Hotel Playbook</title>
+  <meta name="description" content="Free hotel revenue management tools for Indian hoteliers. Calculate OTA commissions, set dynamic pricing, and plan seasonal rates. No signup required.">
+  <meta name="keywords" content="hotel revenue calculator, OTA commission calculator, dynamic pricing tool, hotel tools India, free hotel software">
+  <link rel="canonical" href="https://hotelplaybook.in/tools/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Free Hotel Revenue Management Tools">
+  <meta property="og:description" content="Free tools to calculate OTA commissions, set dynamic pricing, and optimize hotel revenue. Made for Indian hoteliers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hotelplaybook.in/tools/">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    :root {
+      --primary: #1e3a5f;
+      --secondary: #2d8a8a;
+      --accent: #d4a854;
+      --primary-light: rgba(30, 58, 95, 0.1);
+      --secondary-light: rgba(45, 138, 138, 0.1);
+      --accent-light: rgba(212, 168, 84, 0.2);
+    }
+
+    /* Navigation */
+    .nav {
+      background: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--secondary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--secondary);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    /* Tools Grid */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .tool-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .tool-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .tool-card h2 {
+      color: var(--primary);
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .tool-card p {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .tool-features {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .tool-features li {
+      padding: 0.4rem 0;
+      color: #555;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tool-features li::before {
+      content: "✓";
+      color: var(--secondary);
+      font-weight: bold;
+    }
+
+    .tool-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--primary);
+      padding: 0.875rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .tool-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(212, 168, 84, 0.4);
+    }
+
+    .tool-tag {
+      display: inline-block;
+      background: var(--secondary-light);
+      color: var(--secondary);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    /* Info Section */
+    .info-section {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-top: 3rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+    }
+
+    .info-section h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .info-section p {
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--primary);
+      color: white;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Hotel<span>Playbook</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/calendar.html">Calendar</a></li>
+        <li><a href="/tools/" class="active">Tools</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Free Hotel Tools</h1>
+    <p>Powerful revenue management tools designed for Indian hoteliers. No signup required.</p>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container">
+
+    <div class="tools-grid">
+
+      <!-- Revenue Setup Tool -->
+      <div class="tool-card">
+        <div class="tool-icon">📊</div>
+        <span class="tool-tag">Revenue Management</span>
+        <h2>Revenue Management Setup</h2>
+        <p>Configure smart dynamic pricing for your hotel. Set room types, occupancy-based pricing slabs, and seasonal adjustments.</p>
+        <ul class="tool-features">
+          <li>Occupancy-based pricing tiers</li>
+          <li>Day-of-week adjustments</li>
+          <li>Special date pricing</li>
+          <li>State-specific demand calendar</li>
+        </ul>
+        <a href="revenue-setup.html" class="tool-btn">Start Setup</a>
+      </div>
+
+      <!-- Commission Calculator -->
+      <div class="tool-card">
+        <div class="tool-icon">💰</div>
+        <span class="tool-tag">OTA Finance</span>
+        <h2>OTA Commission Calculator</h2>
+        <p>Understand exactly what you receive from OTA bookings. Complete breakup of commissions, GST, TDS, and TCS deductions.</p>
+        <ul class="tool-features">
+          <li>GST calculation (5% / 18%)</li>
+          <li>Commission + GST on commission</li>
+          <li>TDS (0.1%) & TCS (0.5%)</li>
+          <li>Net settlement amount</li>
+        </ul>
+        <a href="commission-calculator.html" class="tool-btn">Calculate Now</a>
+      </div>
+
+    </div>
+
+    <!-- Info Section -->
+    <section class="info-section">
+      <h2>Why These Tools?</h2>
+      <p>Many hotel owners in India struggle with understanding OTA settlements and setting up proper revenue management strategies. Our tools are designed to demystify these complex calculations and help you make data-driven decisions.</p>
+      <p>All tools are <strong>100% free</strong>, work entirely in your browser, and <strong>require no signup</strong>. Your data stays on your device.</p>
+      <p style="margin-top: 1.5rem;">
+        <a href="/guides/" style="color: var(--secondary); font-weight: 500;">Learn more in our Guides →</a>
+      </p>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2025 Hotel Playbook. Made for Indian Hoteliers.</p>
+      <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+        <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Hotel Playbook - Free Hotel Tools for Indian Hoteliers</title>
+  <meta name="description" content="Hotel Playbook provides free revenue management tools and educational guides for Indian hotel owners. Learn about our mission to help hotels maximize profitability.">
+  <link rel="canonical" href="https://hotelplaybook.in/about/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="About Hotel Playbook">
+  <meta property="og:description" content="Free hotel revenue management tools and guides for Indian hoteliers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hotelplaybook.in/about/">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    :root {
+      --primary: #1e3a5f;
+      --secondary: #2d8a8a;
+      --accent: #d4a854;
+      --primary-light: rgba(30, 58, 95, 0.1);
+      --secondary-light: rgba(45, 138, 138, 0.1);
+      --accent-light: rgba(212, 168, 84, 0.2);
+    }
+
+    /* Navigation */
+    .nav {
+      background: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--secondary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--secondary);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .content-section {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+      margin-bottom: 2rem;
+    }
+
+    .content-section h2 {
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #f0f0f0;
+    }
+
+    .content-section p {
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .content-section ul {
+      margin-left: 1.5rem;
+      color: #555;
+    }
+
+    .content-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Contact Box */
+    .contact-box {
+      background: var(--primary-light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-box h3 {
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-box p {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-box a {
+      color: var(--secondary);
+      font-weight: 500;
+    }
+
+    /* Values Grid */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .value-item {
+      text-align: center;
+      padding: 1.5rem;
+      background: #f8f9fa;
+      border-radius: 12px;
+    }
+
+    .value-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .value-item h3 {
+      color: var(--primary);
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .value-item p {
+      font-size: 0.9rem;
+      color: #666;
+      margin: 0;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--primary);
+      color: white;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Hotel<span>Playbook</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/calendar.html">Calendar</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/about/" class="active">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>About Hotel Playbook</h1>
+    <p>Free tools and knowledge for Indian hotel owners</p>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container">
+
+    <!-- Mission Section -->
+    <section class="content-section">
+      <h2>Our Mission</h2>
+      <p>Hotel Playbook was created to help Indian hotel owners navigate the complexities of modern hospitality. From understanding OTA commission structures to implementing effective revenue management strategies, we provide the tools and knowledge you need to succeed.</p>
+      <p>We believe that every hotel owner, regardless of property size or budget, should have access to professional-grade revenue management tools and insights.</p>
+    </section>
+
+    <!-- What We Offer -->
+    <section class="content-section">
+      <h2>What We Offer</h2>
+      <p><strong>Free Tools</strong> - Our revenue management and OTA commission calculators are completely free. No signup, no hidden costs. Your data stays on your device.</p>
+      <p><strong>Educational Guides</strong> - We're building a comprehensive library of guides covering OTA optimization, revenue management strategies, and hotel software tutorials - all tailored for the Indian market.</p>
+      <p><strong>Practical Focus</strong> - Everything we create is designed to be actionable. No theory overload - just practical strategies you can implement immediately.</p>
+    </section>
+
+    <!-- Our Values -->
+    <section class="content-section">
+      <h2>Our Values</h2>
+      <div class="values-grid">
+        <div class="value-item">
+          <div class="value-icon">🎯</div>
+          <h3>Practical First</h3>
+          <p>Tools and guides that work in real-world scenarios</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🇮🇳</div>
+          <h3>India Focused</h3>
+          <p>Built specifically for Indian hotels and OTAs</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🔓</div>
+          <h3>Always Free</h3>
+          <p>Core tools remain free forever</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🔒</div>
+          <h3>Privacy First</h3>
+          <p>Your data never leaves your browser</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="content-section">
+      <h2>Disclaimer</h2>
+      <p>The tools and information provided on Hotel Playbook are for educational and informational purposes only. While we strive to keep our information accurate and up-to-date, we make no guarantees about the completeness, reliability, or accuracy of this information.</p>
+      <p>Tax rates and regulations (GST, TDS, TCS) may change. Always consult with a qualified accountant or tax professional for financial decisions. OTA commission structures and policies may vary and are subject to change by the respective platforms.</p>
+    </section>
+
+    <!-- Contact -->
+    <section class="content-section">
+      <h2>Contact Us</h2>
+      <p>We'd love to hear from you! Whether you have feedback, suggestions, or questions, feel free to reach out.</p>
+      <div class="contact-box">
+        <h3>Get in Touch</h3>
+        <p>For inquiries, feedback, or partnership opportunities:</p>
+        <p>Email: <a href="mailto:hello@hotelplaybook.in">hello@hotelplaybook.in</a></p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2025 Hotel Playbook. Made for Indian Hoteliers.</p>
+      <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+        <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

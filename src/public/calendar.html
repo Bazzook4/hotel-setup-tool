@@ -354,20 +354,84 @@
       background: var(--primary);
       color: white;
     }
+
+    /* Site Navigation */
+    .site-nav {
+      background: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .site-nav .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--secondary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--secondary);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- Site Navigation -->
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Hotel<span>Playbook</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/calendar.html" class="active">Calendar</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <div class="header">
-    <h1>Hotel Tools</h1>
-    <p>Holiday & Wedding Calendar 2026 - Plan Your Peak Pricing</p>
+    <h1>Holiday & Wedding Calendar 2026</h1>
+    <p>Plan Your Peak Pricing with Long Weekends & Wedding Dates</p>
   </div>
 
   <div class="container">
     <div class="nav-tabs">
-      <a href="setup.html" class="nav-tab">Setup</a>
-      <a href="results.html" class="nav-tab">Results</a>
-      <a href="calendar.html" class="nav-tab active">Calendar</a>
-      <a href="commission.html" class="nav-tab">Commission</a>
+      <a href="/tools/revenue-setup.html" class="nav-tab">Setup</a>
+      <a href="/tools/revenue-results.html" class="nav-tab">Results</a>
+      <a href="/calendar.html" class="nav-tab active">Calendar</a>
+      <a href="/tools/commission-calculator.html" class="nav-tab">Commission</a>
     </div>
 
     <div class="info-box">
