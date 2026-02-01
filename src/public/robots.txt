@@ -1,0 +1,10 @@
+# robots.txt for hotelplaybook.in
+
+User-agent: *
+Allow: /
+
+# Disallow legacy pages
+Disallow: /_legacy/
+
+# Sitemap location
+Sitemap: https://hotelplaybook.in/sitemap.xml
