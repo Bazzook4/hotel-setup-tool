@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Occupancy Rate: Formula, Calculation & Benchmarks | Hotel Playbook</title>
+  <meta name="description" content="Learn how to calculate hotel occupancy rate. Understand what's a good occupancy, how to improve it, and why occupancy alone isn't enough. Simple guide with examples.">
+  <meta name="keywords" content="occupancy rate, hotel occupancy, occupancy formula, occupancy calculation, hotel occupancy rate, room occupancy">
+  <link rel="canonical" href="https://hotelplaybook.in/guides/revenue/occupancy.html">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f7fa; color: #333; line-height: 1.7; }
+    :root { --primary: #1e3a5f; --secondary: #2d8a8a; --accent: #d4a854; --secondary-light: rgba(45, 138, 138, 0.1); --accent-light: rgba(212, 168, 84, 0.2); }
+    .nav { background: white; padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+    .nav-logo span { color: var(--secondary); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: #555; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: var(--secondary); }
+    .breadcrumb { background: white; padding: 1rem 2rem; border-bottom: 1px solid #eee; }
+    .breadcrumb-container { max-width: 900px; margin: 0 auto; font-size: 0.9rem; color: #666; }
+    .breadcrumb a { color: var(--secondary); text-decoration: none; }
+    .article-container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    .article-header { margin-bottom: 2rem; }
+    .article-header h1 { font-size: 2.25rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.3; }
+    .article-meta { display: flex; gap: 1.5rem; color: #666; font-size: 0.9rem; }
+    .article-content { background: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.07); }
+    .article-content h2 { font-size: 1.5rem; color: var(--primary); margin: 2rem 0 1rem; padding-top: 1rem; border-top: 1px solid #eee; }
+    .article-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .article-content p { margin-bottom: 1rem; color: #444; }
+    .article-content ul, .article-content ol { margin: 1rem 0 1.5rem 1.5rem; color: #444; }
+    .article-content li { margin-bottom: 0.5rem; }
+    .quick-answer { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; }
+    .quick-answer h2 { color: white !important; border: none !important; margin: 0 0 1rem 0 !important; padding: 0 !important; font-size: 1.3rem; }
+    .quick-answer .big-text { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .formula-box { background: var(--primary); color: white; padding: 1.5rem; border-radius: 8px; text-align: center; margin: 1.5rem 0; font-size: 1.2rem; }
+    .highlight-box { background: var(--secondary-light); border-left: 4px solid var(--secondary); padding: 1.25rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .highlight-box.tip { background: var(--accent-light); border-left-color: var(--accent); }
+    .highlight-box.warning { background: #fff3cd; border-left-color: #ffc107; }
+    .example-box { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+    .example-box h4 { color: var(--primary); margin-bottom: 1rem; }
+    .calc-row { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px dashed #ddd; }
+    .calc-row:last-child { border-bottom: none; font-weight: 700; color: var(--secondary); }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+    .comparison-table th, .comparison-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
+    .comparison-table th { background: var(--primary); color: white; }
+    .related-section { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin-top: 2rem; }
+    .related-section h3 { color: var(--primary); margin: 0 0 1rem; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .related-links a { background: white; color: var(--secondary); padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-size: 0.9rem; border: 1px solid #ddd; }
+    .related-links a:hover { background: var(--secondary); color: white; }
+    .footer { background: var(--primary); color: white; padding: 2rem; margin-top: 3rem; text-align: center; }
+    .footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 768px) { .nav-links { display: none; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Hotel<span>Playbook</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/guides/" class="active">Guides</a></li>
+        <li><a href="/calendar.html">Calendar</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; <a href="/guides/revenue/">Revenue</a> &rsaquo; Occupancy
+    </div>
+  </div>
+
+  <article class="article-container">
+    <header class="article-header">
+      <h1>Hotel Occupancy Rate: Formula & Benchmarks</h1>
+      <div class="article-meta">
+        <span>By Hotel Playbook Team</span>
+        <span>5 min read</span>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="quick-answer">
+        <h2>What is Occupancy Rate?</h2>
+        <div class="big-text">Occupancy = Rooms Sold ÷ Rooms Available</div>
+        <p>The percentage of available rooms that are sold on a given night, week, month, or year.</p>
+      </div>
+
+      <h2>Occupancy Formula</h2>
+
+      <div class="formula-box">
+        Occupancy Rate = (Rooms Sold ÷ Total Available Rooms) × 100
+      </div>
+
+      <h2>Occupancy Calculation Example</h2>
+
+      <div class="example-box">
+        <h4>Example: Saturday Night</h4>
+        <div class="calc-row"><span>Total Rooms in Hotel</span><span>100</span></div>
+        <div class="calc-row"><span>Out of Order Rooms</span><span>5</span></div>
+        <div class="calc-row"><span>Available Rooms</span><span>95</span></div>
+        <div class="calc-row"><span>Rooms Sold</span><span>76</span></div>
+        <div class="calc-row"><span><strong>Occupancy Rate</strong></span><span><strong>80%</strong></span></div>
+      </div>
+
+      <p><strong>Calculation:</strong> 76 ÷ 95 × 100 = 80% occupancy</p>
+
+      <div class="highlight-box">
+        <strong>Note:</strong> Out of Order (OOO) rooms are typically excluded from available inventory when calculating occupancy.
+      </div>
+
+      <h2>What's a Good Occupancy Rate?</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Hotel Type</th>
+          <th>Good Annual Occupancy</th>
+        </tr>
+        <tr>
+          <td>City Business Hotels</td>
+          <td>65-75%</td>
+        </tr>
+        <tr>
+          <td>Leisure Resorts</td>
+          <td>55-70%</td>
+        </tr>
+        <tr>
+          <td>Budget Hotels</td>
+          <td>70-85%</td>
+        </tr>
+        <tr>
+          <td>Airport Hotels</td>
+          <td>70-80%</td>
+        </tr>
+        <tr>
+          <td>Pilgrimage Destinations</td>
+          <td>50-65% (seasonal)</td>
+        </tr>
+      </table>
+
+      <div class="highlight-box warning">
+        <strong>Warning:</strong> 100% occupancy is NOT always good! It often means you're pricing too low and leaving money on the table. You could have charged more.
+      </div>
+
+      <h2>Where Occupancy is Used</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Use Case</th>
+          <th>Example</th>
+        </tr>
+        <tr>
+          <td>Daily Operations</td>
+          <td>"We're at 45% for tonight - should we drop rates?"</td>
+        </tr>
+        <tr>
+          <td>Staffing Decisions</td>
+          <td>"80% occupancy means we need full housekeeping staff"</td>
+        </tr>
+        <tr>
+          <td>Forecasting</td>
+          <td>"Last Diwali we hit 95%, expect similar this year"</td>
+        </tr>
+        <tr>
+          <td>Owner Reports</td>
+          <td>"Monthly occupancy: 68%, up from 62% last year"</td>
+        </tr>
+        <tr>
+          <td>Loan Applications</td>
+          <td>Banks want to see historical occupancy trends</td>
+        </tr>
+      </table>
+
+      <h2>Occupancy vs RevPAR</h2>
+
+      <p>Occupancy alone can be misleading. Compare these two scenarios:</p>
+
+      <div class="example-box">
+        <h4>Hotel A: High Occupancy, Low Rates</h4>
+        <div class="calc-row"><span>Occupancy</span><span>90%</span></div>
+        <div class="calc-row"><span>ADR</span><span>₹2,000</span></div>
+        <div class="calc-row"><span>RevPAR</span><span>₹1,800</span></div>
+      </div>
+
+      <div class="example-box">
+        <h4>Hotel B: Moderate Occupancy, Good Rates</h4>
+        <div class="calc-row"><span>Occupancy</span><span>65%</span></div>
+        <div class="calc-row"><span>ADR</span><span>₹4,000</span></div>
+        <div class="calc-row"><span>RevPAR</span><span>₹2,600</span></div>
+      </div>
+
+      <p><strong>Hotel B earns ₹800 more per available room</strong> despite 25% lower occupancy!</p>
+
+      <h2>How to Improve Occupancy</h2>
+
+      <ol>
+        <li><strong>Dynamic Pricing:</strong> Lower rates during low demand periods</li>
+        <li><strong>OTA Visibility:</strong> Optimize listings, respond to reviews, update photos</li>
+        <li><strong>Last-Minute Deals:</strong> Offer discounts for same-day bookings</li>
+        <li><strong>Corporate Contracts:</strong> Secure regular business from companies</li>
+        <li><strong>Group Bookings:</strong> Target weddings, conferences, tour groups</li>
+        <li><strong>Marketing:</strong> Run campaigns during traditionally slow periods</li>
+        <li><strong>Extended Stays:</strong> Offer weekly/monthly rates to fill gaps</li>
+      </ol>
+
+      <div class="highlight-box tip">
+        <strong>Pro Tip:</strong> Track occupancy by day of week. Most hotels see patterns (busy weekends, slow Tuesdays). Create day-specific strategies.
+      </div>
+
+      <h2>Occupancy by Day of Week (Typical Pattern)</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Day</th>
+          <th>Business Hotel</th>
+          <th>Leisure Resort</th>
+        </tr>
+        <tr>
+          <td>Monday</td>
+          <td>75%</td>
+          <td>40%</td>
+        </tr>
+        <tr>
+          <td>Tuesday</td>
+          <td>80%</td>
+          <td>35%</td>
+        </tr>
+        <tr>
+          <td>Wednesday</td>
+          <td>80%</td>
+          <td>35%</td>
+        </tr>
+        <tr>
+          <td>Thursday</td>
+          <td>75%</td>
+          <td>45%</td>
+        </tr>
+        <tr>
+          <td>Friday</td>
+          <td>55%</td>
+          <td>70%</td>
+        </tr>
+        <tr>
+          <td>Saturday</td>
+          <td>45%</td>
+          <td>90%</td>
+        </tr>
+        <tr>
+          <td>Sunday</td>
+          <td>40%</td>
+          <td>60%</td>
+        </tr>
+      </table>
+
+      <h2>Common Occupancy Mistakes</h2>
+
+      <ul>
+        <li><strong>Chasing 100%:</strong> You probably underpriced if you're always full</li>
+        <li><strong>Ignoring comp rooms:</strong> Include complimentary rooms in sold count</li>
+        <li><strong>Wrong base:</strong> Use available rooms (minus OOO), not total rooms</li>
+        <li><strong>Not tracking patterns:</strong> Without history, you can't forecast</li>
+      </ul>
+
+      <div class="related-section">
+        <h3>Related Guides</h3>
+        <div class="related-links">
+          <a href="/guides/revenue/revpar.html">RevPAR Guide</a>
+          <a href="/guides/revenue/adr.html">ADR Guide</a>
+          <a href="/guides/revenue/room-night.html">Room Nights</a>
+          <a href="/guides/revenue/">All Revenue Guides</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <p>&copy; 2025 Hotel Playbook. Made for Indian Hoteliers.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+      <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a>
+    </p>
+  </footer>
+</body>
+</html>
