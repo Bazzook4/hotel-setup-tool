@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTA Dependency Calculator - Analyze Your Channel Mix | Hotel Playbook</title>
+  <meta name="description" content="Free OTA dependency calculator for Indian hotels. Analyze your booking channel mix, calculate revenue leakage to OTAs, and see how much you could save with more direct bookings.">
+  <meta name="keywords" content="OTA dependency calculator, hotel channel mix, direct booking vs OTA, hotel revenue leakage, reduce OTA commission, hotel distribution strategy">
+  <link rel="canonical" href="https://hotelplaybook.in/tools/ota-dependency-calculator.html">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* 3-Color Theme: Navy (#1e3a5f), Teal (#2d8a8a), Gold (#d4a854) */
+    :root {
+      --primary: #1e3a5f;
+      --secondary: #2d8a8a;
+      --accent: #d4a854;
+      --primary-light: rgba(30, 58, 95, 0.1);
+      --secondary-light: rgba(45, 138, 138, 0.1);
+      --accent-light: rgba(212, 168, 84, 0.2);
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      opacity: 0.9;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* SEO Intro Section */
+    .seo-intro {
+      background: linear-gradient(135deg, var(--accent-light) 0%, rgba(255,255,255,0.9) 100%);
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .seo-question {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .seo-intro p {
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .seo-benefits {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .seo-benefits span {
+      background: var(--secondary);
+      color: white;
+      padding: 0.4rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* Explore More Tools */
+    .explore-tools {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+    }
+
+    .explore-tools h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .tools-grid-mini {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .tool-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s;
+    }
+
+    .tool-link:hover {
+      background: var(--secondary-light);
+      transform: translateX(4px);
+    }
+
+    .tool-link .icon {
+      font-size: 1.5rem;
+    }
+
+    .tool-link .text h4 {
+      color: var(--primary);
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .tool-link .text p {
+      color: #666;
+      font-size: 0.8rem;
+    }
+
+    /* Section Card */
+    .section-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-card h2 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #f0f0f0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Info Box */
+    .info-box {
+      background: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: #5a4a2a;
+    }
+
+    /* Form Elements */
+    .input-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 0;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #555;
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid #e1e5eb;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus, .form-group select:focus {
+      outline: none;
+      border-color: var(--secondary);
+    }
+
+    .form-group .hint {
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 0.25rem;
+    }
+
+    /* Channel Inputs */
+    .channel-input {
+      display: grid;
+      grid-template-columns: 1fr 100px 100px;
+      gap: 1rem;
+      align-items: center;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
+    }
+
+    .channel-input .channel-name {
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    .channel-input .channel-name span {
+      display: block;
+      font-size: 0.75rem;
+      color: #888;
+      font-weight: 400;
+    }
+
+    .channel-input input {
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    /* Button */
+    .btn {
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(30, 58, 95, 0.4);
+    }
+
+    /* Results */
+    .results-container {
+      display: none;
+    }
+
+    .results-container.show {
+      display: block;
+    }
+
+    /* Dependency Gauge */
+    .dependency-gauge {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      border-radius: 12px;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+
+    .gauge-label {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-bottom: 0.5rem;
+    }
+
+    .gauge-value {
+      font-size: 4rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .gauge-status {
+      font-size: 1.25rem;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      display: inline-block;
+    }
+
+    .gauge-subtitle {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-top: 1rem;
+    }
+
+    /* Channel Mix Visual */
+    .channel-mix-bar {
+      height: 40px;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      margin: 1rem 0;
+    }
+
+    .channel-mix-bar .segment {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 0.85rem;
+      min-width: 40px;
+    }
+
+    .segment-ota { background: #e65100; }
+    .segment-direct { background: #2e7d32; }
+    .segment-walkin { background: #1565c0; }
+    .segment-corporate { background: #7b1fa2; }
+
+    .channel-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .legend-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
+
+    /* Breakdown Cards */
+    .breakdown-card {
+      background: #f8f9fa;
+      padding: 1.25rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .breakdown-card h3 {
+      margin: 0 0 1rem 0;
+      color: var(--primary);
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px dashed #e0e0e0;
+      font-size: 0.95rem;
+    }
+
+    .breakdown-row:last-child {
+      border-bottom: none;
+    }
+
+    .breakdown-row .label {
+      color: #666;
+    }
+
+    .breakdown-row .value {
+      font-weight: 600;
+    }
+
+    .highlight-box {
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 0.75rem 0;
+    }
+
+    .highlight-green {
+      background: #e8f5e9;
+    }
+
+    .highlight-green .value {
+      color: #2e7d32;
+      font-size: 1.2rem;
+    }
+
+    .highlight-red {
+      background: #ffebee;
+    }
+
+    .highlight-red .value {
+      color: #d32f2f;
+      font-size: 1.2rem;
+    }
+
+    .highlight-blue {
+      background: var(--primary-light);
+    }
+
+    .highlight-blue .value {
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+
+    /* Savings Section */
+    .savings-card {
+      background: linear-gradient(135deg, #2e7d32 0%, #43a047 100%);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+
+    .savings-card h3 {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-bottom: 0.5rem;
+    }
+
+    .savings-card .big-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    .savings-card .subtitle {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-top: 0.5rem;
+    }
+
+    /* Comparison Table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .comparison-table tr {
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .comparison-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .comparison-table td {
+      padding: 0.75rem 0;
+    }
+
+    .comparison-table td:first-child {
+      color: #666;
+    }
+
+    .comparison-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+    }
+
+    .comparison-table .positive {
+      color: #2e7d32;
+    }
+
+    .comparison-table .negative {
+      color: #d32f2f;
+    }
+
+    /* Recommendations */
+    .recommendations {
+      background: #fff8e1;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .recommendations h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .recommendation-item {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #ffe0b2;
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .recommendation-item:last-child {
+      border-bottom: none;
+    }
+
+    .recommendation-item .icon {
+      font-size: 1.25rem;
+    }
+
+    .recommendation-item .text {
+      flex: 1;
+    }
+
+    .recommendation-item .text strong {
+      color: var(--primary);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .input-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .channel-input {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+
+      .gauge-value {
+        font-size: 3rem;
+      }
+    }
+
+    /* Site Navigation */
+    .site-nav {
+      background: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .site-nav .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--secondary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--secondary);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Site Navigation -->
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Hotel<span>Playbook</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/calendar.html">Calendar</a></li>
+        <li><a href="/tools/" class="active">Tools</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="header">
+    <h1>OTA Dependency Calculator</h1>
+    <p>Analyze Your Channel Mix & Revenue Leakage</p>
+  </div>
+
+  <div class="container">
+    <!-- SEO Intro Section -->
+    <div class="seo-intro">
+      <div class="seo-question">How dependent is your hotel on OTAs?</div>
+      <p>High OTA dependency means <strong>more commission paid, less profit retained</strong>. Calculate your channel mix and see how much you could save by shifting bookings to direct channels.</p>
+      <div class="seo-benefits">
+        <span>Channel Mix Analysis</span>
+        <span>Revenue Leakage Report</span>
+        <span>Savings Calculator</span>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <strong>Why This Matters:</strong> Hotels with 70%+ OTA dependency typically lose 15-20% of room revenue to commissions. Reducing OTA dependency by even 10% can significantly improve profitability.
+    </div>
+
+    <!-- Input Section -->
+    <div class="section-card">
+      <h2>📊 Enter Your Monthly Booking Data</h2>
+
+      <div class="input-grid">
+        <div class="form-group">
+          <label for="totalRooms">Total Rooms</label>
+          <input type="number" id="totalRooms" placeholder="e.g., 50" min="1">
+          <div class="hint">Your hotel's room inventory</div>
+        </div>
+        <div class="form-group">
+          <label for="avgAdr">Average Daily Rate (ADR)</label>
+          <input type="number" id="avgAdr" placeholder="e.g., 3500" min="1">
+          <div class="hint">Average room rate in INR</div>
+        </div>
+        <div class="form-group">
+          <label for="avgOccupancy">Average Occupancy %</label>
+          <input type="number" id="avgOccupancy" placeholder="e.g., 65" min="1" max="100">
+          <div class="hint">Monthly average occupancy</div>
+        </div>
+      </div>
+
+      <h3 style="color: var(--primary); margin: 1.5rem 0 1rem; font-size: 1rem;">Booking Channel Mix (% of total bookings)</h3>
+
+      <div class="channel-input">
+        <div class="channel-name">OTA Bookings <span>MakeMyTrip, Booking.com, Goibibo, etc.</span></div>
+        <input type="number" id="otaPercent" placeholder="%" min="0" max="100">
+        <div class="form-group" style="margin:0;">
+          <input type="number" id="otaCommission" placeholder="Comm %" min="0" max="50" value="21">
+        </div>
+      </div>
+
+      <div class="channel-input">
+        <div class="channel-name">Direct Bookings <span>Website, phone, email</span></div>
+        <input type="number" id="directPercent" placeholder="%" min="0" max="100">
+        <div style="text-align: center; color: #2e7d32; font-weight: 500;">0% comm</div>
+      </div>
+
+      <div class="channel-input">
+        <div class="channel-name">Walk-ins <span>Guests without reservation</span></div>
+        <input type="number" id="walkinPercent" placeholder="%" min="0" max="100">
+        <div style="text-align: center; color: #1565c0; font-weight: 500;">0% comm</div>
+      </div>
+
+      <div class="channel-input">
+        <div class="channel-name">Corporate/Travel Agent <span>B2B contracts</span></div>
+        <input type="number" id="corporatePercent" placeholder="%" min="0" max="100">
+        <div class="form-group" style="margin:0;">
+          <input type="number" id="corporateCommission" placeholder="Comm %" min="0" max="30" value="10">
+        </div>
+      </div>
+
+      <div id="percentWarning" style="color: #d32f2f; font-size: 0.9rem; margin: 1rem 0; display: none;">
+        Total must equal 100%. Currently: <span id="currentTotal">0</span>%
+      </div>
+
+      <button class="btn btn-primary" id="calculateBtn">Analyze Channel Dependency</button>
+    </div>
+
+    <!-- Results Section -->
+    <div class="results-container" id="resultsContainer">
+
+      <!-- Dependency Gauge -->
+      <div class="dependency-gauge">
+        <div class="gauge-label">Your OTA Dependency Score</div>
+        <div class="gauge-value" id="dependencyScore">0%</div>
+        <div class="gauge-status" id="dependencyStatus">Calculating...</div>
+        <div class="gauge-subtitle" id="dependencySubtitle"></div>
+      </div>
+
+      <!-- Channel Mix Visual -->
+      <div class="section-card">
+        <h2>📈 Channel Mix Breakdown</h2>
+
+        <div class="channel-mix-bar" id="channelMixBar">
+          <!-- Dynamically filled -->
+        </div>
+
+        <div class="channel-legend">
+          <div class="legend-item"><div class="legend-color segment-ota"></div> OTA</div>
+          <div class="legend-item"><div class="legend-color segment-direct"></div> Direct</div>
+          <div class="legend-item"><div class="legend-color segment-walkin"></div> Walk-in</div>
+          <div class="legend-item"><div class="legend-color segment-corporate"></div> Corporate</div>
+        </div>
+
+        <div class="breakdown-card" style="margin-top: 1.5rem;">
+          <h3>Monthly Booking Distribution</h3>
+          <div class="breakdown-row">
+            <span class="label">Total Room Nights Sold</span>
+            <span class="value" id="totalRoomNights">-</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="label">OTA Bookings</span>
+            <span class="value" id="otaRoomNights">-</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="label">Direct Bookings</span>
+            <span class="value" id="directRoomNights">-</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="label">Walk-in Bookings</span>
+            <span class="value" id="walkinRoomNights">-</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="label">Corporate Bookings</span>
+            <span class="value" id="corporateRoomNights">-</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Revenue Leakage -->
+      <div class="section-card">
+        <h2>💸 Revenue Leakage Analysis</h2>
+
+        <div class="breakdown-card">
+          <h3>Monthly Revenue</h3>
+          <div class="breakdown-row">
+            <span class="label">Gross Room Revenue</span>
+            <span class="value" id="grossRevenue">-</span>
+          </div>
+          <div class="highlight-box highlight-red">
+            <div class="breakdown-row">
+              <span class="label"><strong>Total Commission Paid</strong></span>
+              <span class="value" id="totalCommission">-</span>
+            </div>
+          </div>
+          <div class="breakdown-row">
+            <span class="label">OTA Commission</span>
+            <span class="value" id="otaCommissionAmount">-</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="label">Corporate/TA Commission</span>
+            <span class="value" id="corporateCommissionAmount">-</span>
+          </div>
+          <div class="highlight-box highlight-green">
+            <div class="breakdown-row">
+              <span class="label"><strong>Net Revenue After Commission</strong></span>
+              <span class="value" id="netRevenue">-</span>
+            </div>
+          </div>
+        </div>
+
+        <table class="comparison-table">
+          <tr>
+            <td>Commission as % of Revenue</td>
+            <td class="negative" id="commissionPercent">-</td>
+          </tr>
+          <tr>
+            <td>Revenue Retained</td>
+            <td class="positive" id="retainedPercent">-</td>
+          </tr>
+          <tr>
+            <td>Annual Commission Leakage</td>
+            <td class="negative" id="annualLeakage">-</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- What-If Savings -->
+      <div class="section-card">
+        <h2>🎯 Potential Savings Scenario</h2>
+
+        <p style="color: #666; margin-bottom: 1rem;">If you shift <strong>10% of OTA bookings to direct</strong>, here's what you could save:</p>
+
+        <div class="savings-card">
+          <h3>Annual Savings Potential</h3>
+          <div class="big-number" id="potentialSavings">-</div>
+          <div class="subtitle">By converting 10% OTA to direct bookings</div>
+        </div>
+
+        <div class="breakdown-card">
+          <h3>Scenario Details</h3>
+          <div class="breakdown-row">
+            <span class="label">Room nights shifted to direct</span>
+            <span class="value" id="shiftedNights">-</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="label">Commission saved per room night</span>
+            <span class="value" id="savedPerNight">-</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="label">Monthly savings</span>
+            <span class="value positive" id="monthlySavings">-</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="label">New OTA dependency</span>
+            <span class="value" id="newDependency">-</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recommendations -->
+      <div class="recommendations" id="recommendations">
+        <h3>💡 Recommendations</h3>
+        <!-- Dynamically filled -->
+      </div>
+
+      <!-- Explore More Tools -->
+      <div class="explore-tools">
+        <h3>Explore More Tools</h3>
+        <div class="tools-grid-mini">
+          <a href="commission-calculator.html" class="tool-link">
+            <span class="icon">💰</span>
+            <div class="text">
+              <h4>OTA Commission Calculator</h4>
+              <p>Calculate exact OTA settlement</p>
+            </div>
+          </a>
+          <a href="discount-calculator.html" class="tool-link">
+            <span class="icon">🏷️</span>
+            <div class="text">
+              <h4>Discount Calculator</h4>
+              <p>Impact of hotel-funded discounts</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const calculateBtn = document.getElementById('calculateBtn');
+      const resultsContainer = document.getElementById('resultsContainer');
+
+      // Inputs
+      const totalRoomsInput = document.getElementById('totalRooms');
+      const avgAdrInput = document.getElementById('avgAdr');
+      const avgOccupancyInput = document.getElementById('avgOccupancy');
+      const otaPercentInput = document.getElementById('otaPercent');
+      const otaCommissionInput = document.getElementById('otaCommission');
+      const directPercentInput = document.getElementById('directPercent');
+      const walkinPercentInput = document.getElementById('walkinPercent');
+      const corporatePercentInput = document.getElementById('corporatePercent');
+      const corporateCommissionInput = document.getElementById('corporateCommission');
+      const percentWarning = document.getElementById('percentWarning');
+      const currentTotalSpan = document.getElementById('currentTotal');
+
+      // Auto-calculate remaining percentage
+      const channelInputs = [otaPercentInput, directPercentInput, walkinPercentInput, corporatePercentInput];
+      channelInputs.forEach(input => {
+        input.addEventListener('input', validateTotal);
+      });
+
+      function validateTotal() {
+        const total = getTotal();
+        currentTotalSpan.textContent = total;
+        if (total !== 100 && total > 0) {
+          percentWarning.style.display = 'block';
+        } else {
+          percentWarning.style.display = 'none';
+        }
+      }
+
+      function getTotal() {
+        return (parseFloat(otaPercentInput.value) || 0) +
+               (parseFloat(directPercentInput.value) || 0) +
+               (parseFloat(walkinPercentInput.value) || 0) +
+               (parseFloat(corporatePercentInput.value) || 0);
+      }
+
+      calculateBtn.addEventListener('click', calculate);
+
+      function calculate() {
+        const totalRooms = parseFloat(totalRoomsInput.value) || 0;
+        const avgAdr = parseFloat(avgAdrInput.value) || 0;
+        const avgOccupancy = parseFloat(avgOccupancyInput.value) || 0;
+        const otaPercent = parseFloat(otaPercentInput.value) || 0;
+        const otaCommission = parseFloat(otaCommissionInput.value) || 21;
+        const directPercent = parseFloat(directPercentInput.value) || 0;
+        const walkinPercent = parseFloat(walkinPercentInput.value) || 0;
+        const corporatePercent = parseFloat(corporatePercentInput.value) || 0;
+        const corporateCommission = parseFloat(corporateCommissionInput.value) || 10;
+
+        // Validation
+        if (totalRooms <= 0 || avgAdr <= 0 || avgOccupancy <= 0) {
+          alert('Please enter valid room count, ADR, and occupancy');
+          return;
+        }
+
+        const total = otaPercent + directPercent + walkinPercent + corporatePercent;
+        if (total !== 100) {
+          alert('Channel percentages must total 100%');
+          return;
+        }
+
+        // Calculate monthly room nights
+        const daysInMonth = 30;
+        const totalRoomNights = Math.round(totalRooms * (avgOccupancy / 100) * daysInMonth);
+
+        const otaRoomNights = Math.round(totalRoomNights * (otaPercent / 100));
+        const directRoomNights = Math.round(totalRoomNights * (directPercent / 100));
+        const walkinRoomNights = Math.round(totalRoomNights * (walkinPercent / 100));
+        const corporateRoomNights = Math.round(totalRoomNights * (corporatePercent / 100));
+
+        // Calculate revenue
+        const grossRevenue = totalRoomNights * avgAdr;
+        const otaRevenue = otaRoomNights * avgAdr;
+        const corporateRevenue = corporateRoomNights * avgAdr;
+
+        // Calculate commissions
+        const otaCommissionAmount = otaRevenue * (otaCommission / 100);
+        const corporateCommissionAmount = corporateRevenue * (corporateCommission / 100);
+        const totalCommissionAmount = otaCommissionAmount + corporateCommissionAmount;
+        const netRevenue = grossRevenue - totalCommissionAmount;
+
+        // Percentages
+        const commissionPercent = (totalCommissionAmount / grossRevenue * 100).toFixed(1);
+        const retainedPercent = (100 - parseFloat(commissionPercent)).toFixed(1);
+        const annualLeakage = totalCommissionAmount * 12;
+
+        // Dependency score (OTA %)
+        const dependencyScore = otaPercent;
+
+        // Potential savings (shift 10% of OTA to direct)
+        const shiftedNights = Math.round(otaRoomNights * 0.1);
+        const savedPerNight = avgAdr * (otaCommission / 100);
+        const monthlySavings = shiftedNights * savedPerNight;
+        const annualSavings = monthlySavings * 12;
+        const newOtaDependency = (otaPercent * 0.9).toFixed(1);
+
+        // Update UI - Dependency Gauge
+        document.getElementById('dependencyScore').textContent = dependencyScore + '%';
+        const statusEl = document.getElementById('dependencyStatus');
+        const subtitleEl = document.getElementById('dependencySubtitle');
+
+        if (dependencyScore >= 70) {
+          statusEl.textContent = 'High Dependency';
+          statusEl.style.background = 'rgba(211, 47, 47, 0.3)';
+          subtitleEl.textContent = 'Critical: Most of your revenue goes to OTA commissions';
+        } else if (dependencyScore >= 50) {
+          statusEl.textContent = 'Moderate Dependency';
+          statusEl.style.background = 'rgba(255, 152, 0, 0.3)';
+          subtitleEl.textContent = 'Room for improvement in direct booking acquisition';
+        } else if (dependencyScore >= 30) {
+          statusEl.textContent = 'Balanced Mix';
+          statusEl.style.background = 'rgba(76, 175, 80, 0.3)';
+          subtitleEl.textContent = 'Good balance, but continue building direct channels';
+        } else {
+          statusEl.textContent = 'Low Dependency';
+          statusEl.style.background = 'rgba(76, 175, 80, 0.5)';
+          subtitleEl.textContent = 'Excellent! Strong direct booking performance';
+        }
+
+        // Update UI - Channel Mix Bar
+        const mixBar = document.getElementById('channelMixBar');
+        mixBar.innerHTML = '';
+
+        if (otaPercent > 0) {
+          mixBar.innerHTML += `<div class="segment segment-ota" style="width: ${otaPercent}%">${otaPercent}%</div>`;
+        }
+        if (directPercent > 0) {
+          mixBar.innerHTML += `<div class="segment segment-direct" style="width: ${directPercent}%">${directPercent}%</div>`;
+        }
+        if (walkinPercent > 0) {
+          mixBar.innerHTML += `<div class="segment segment-walkin" style="width: ${walkinPercent}%">${walkinPercent}%</div>`;
+        }
+        if (corporatePercent > 0) {
+          mixBar.innerHTML += `<div class="segment segment-corporate" style="width: ${corporatePercent}%">${corporatePercent}%</div>`;
+        }
+
+        // Update UI - Room Nights
+        document.getElementById('totalRoomNights').textContent = totalRoomNights.toLocaleString('en-IN');
+        document.getElementById('otaRoomNights').textContent = otaRoomNights.toLocaleString('en-IN') + ` (${otaPercent}%)`;
+        document.getElementById('directRoomNights').textContent = directRoomNights.toLocaleString('en-IN') + ` (${directPercent}%)`;
+        document.getElementById('walkinRoomNights').textContent = walkinRoomNights.toLocaleString('en-IN') + ` (${walkinPercent}%)`;
+        document.getElementById('corporateRoomNights').textContent = corporateRoomNights.toLocaleString('en-IN') + ` (${corporatePercent}%)`;
+
+        // Update UI - Revenue
+        document.getElementById('grossRevenue').textContent = formatCurrency(grossRevenue);
+        document.getElementById('totalCommission').textContent = formatCurrency(totalCommissionAmount);
+        document.getElementById('otaCommissionAmount').textContent = formatCurrency(otaCommissionAmount);
+        document.getElementById('corporateCommissionAmount').textContent = formatCurrency(corporateCommissionAmount);
+        document.getElementById('netRevenue').textContent = formatCurrency(netRevenue);
+        document.getElementById('commissionPercent').textContent = commissionPercent + '%';
+        document.getElementById('retainedPercent').textContent = retainedPercent + '%';
+        document.getElementById('annualLeakage').textContent = formatCurrency(annualLeakage);
+
+        // Update UI - Savings
+        document.getElementById('potentialSavings').textContent = formatCurrency(annualSavings);
+        document.getElementById('shiftedNights').textContent = shiftedNights + ' nights/month';
+        document.getElementById('savedPerNight').textContent = formatCurrency(savedPerNight);
+        document.getElementById('monthlySavings').textContent = formatCurrency(monthlySavings);
+        document.getElementById('newDependency').textContent = newOtaDependency + '%';
+
+        // Generate recommendations
+        generateRecommendations(dependencyScore, directPercent, walkinPercent, corporatePercent, annualLeakage);
+
+        // Show results
+        resultsContainer.classList.add('show');
+        resultsContainer.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      function generateRecommendations(otaPercent, directPercent, walkinPercent, corporatePercent, annualLeakage) {
+        const container = document.getElementById('recommendations');
+        let html = '<h3>💡 Recommendations</h3>';
+
+        if (otaPercent >= 70) {
+          html += `
+            <div class="recommendation-item">
+              <span class="icon">🚨</span>
+              <div class="text">
+                <strong>Critical: Reduce OTA dependency immediately.</strong>
+                You're losing ${formatCurrency(annualLeakage)} annually to commissions. Invest in a direct booking engine and website.
+              </div>
+            </div>
+          `;
+        }
+
+        if (directPercent < 20) {
+          html += `
+            <div class="recommendation-item">
+              <span class="icon">🌐</span>
+              <div class="text">
+                <strong>Build your direct booking channel.</strong>
+                Consider a booking engine, Google Hotel Ads, and meta-search presence to capture guests directly.
+              </div>
+            </div>
+          `;
+        }
+
+        if (otaPercent >= 50) {
+          html += `
+            <div class="recommendation-item">
+              <span class="icon">📧</span>
+              <div class="text">
+                <strong>Capture guest data from OTA bookings.</strong>
+                Build an email list and offer returning guests incentives to book direct next time.
+              </div>
+            </div>
+          `;
+        }
+
+        if (corporatePercent < 15) {
+          html += `
+            <div class="recommendation-item">
+              <span class="icon">🏢</span>
+              <div class="text">
+                <strong>Develop corporate/B2B relationships.</strong>
+                Corporate bookings often have lower commissions (10-15%) and more predictable demand.
+              </div>
+            </div>
+          `;
+        }
+
+        if (walkinPercent > 0) {
+          html += `
+            <div class="recommendation-item">
+              <span class="icon">🚶</span>
+              <div class="text">
+                <strong>Convert walk-ins to future direct bookings.</strong>
+                Collect contact info and offer loyalty benefits for direct reservations.
+              </div>
+            </div>
+          `;
+        }
+
+        html += `
+          <div class="recommendation-item">
+            <span class="icon">📊</span>
+            <div class="text">
+              <strong>Track channel performance monthly.</strong>
+              Use this calculator regularly to monitor your channel mix and measure improvement.
+            </div>
+          </div>
+        `;
+
+        container.innerHTML = html;
+      }
+
+      function formatCurrency(amount) {
+        return '₹' + amount.toLocaleString('en-IN', {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0
+        });
+      }
+    });
+  </script>
+</body>
+</html>
