@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hotel Playbook - Revenue Management Tools & Guides for Indian Hotels</title>
-  <meta name="description" content="Free hotel revenue management tools, OTA commission calculators, demand calendars, and guides for Indian hotel owners. Maximize your hotel's profitability.">
-  <meta name="keywords" content="hotel revenue management, OTA commission calculator, hotel demand calendar, hotel pricing tools, Indian hotels">
+  <title>Hotel Playbook - Free Revenue Tools & Guides for Indian Hotels</title>
+  <meta name="description" content="Free hotel revenue management tools, OTA commission calculators, and guides. Built by a hospitality veteran with 8+ years helping 1000+ Indian hotels grow.">
+  <meta name="keywords" content="hotel revenue management, OTA commission calculator, hotel demand calendar, hotel pricing tools, Indian hotels, direct bookings">
   <link rel="canonical" href="https://hotelplaybook.in/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Hotel Playbook - Revenue Tools for Indian Hotels">
-  <meta property="og:description" content="Free hotel revenue management tools and guides. Calculate OTA commissions, plan seasonal pricing, optimize your hotel revenue.">
+  <meta property="og:title" content="Hotel Playbook - Free Revenue Tools for Indian Hotels">
+  <meta property="og:description" content="Free hotel revenue management tools and guides. Built by a hospitality veteran with 8+ years helping 1000+ Indian hotels grow.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://hotelplaybook.in/">
 
@@ -82,7 +85,8 @@
       transition: color 0.2s;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .nav-links a.active {
       color: var(--secondary);
     }
 
@@ -90,24 +94,59 @@
     .hero {
       background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       color: white;
-      padding: 4rem 2rem;
+      padding: 4rem 2rem 5rem;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
 
     .hero-container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
     }
 
     .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      font-size: 2.75rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      opacity: 0.95;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
     }
 
     .hero p {
-      font-size: 1.2rem;
-      opacity: 0.9;
+      font-size: 1.1rem;
+      opacity: 0.85;
       margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero-cta {
@@ -147,6 +186,145 @@
       background: rgba(255,255,255,0.25);
     }
 
+    /* Story Section */
+    .story-section {
+      background: white;
+      padding: 4rem 2rem;
+    }
+
+    .story-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .story-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .story-header h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .story-header p {
+      color: #666;
+      font-size: 1.1rem;
+    }
+
+    .story-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .story-text h3 {
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .story-text p {
+      color: #555;
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+    }
+
+    .story-text .highlight {
+      background: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: var(--primary);
+    }
+
+    .story-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .story-stat {
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .story-stat .number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .story-stat .label {
+      color: #666;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Mission Section */
+    .mission-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .mission-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .mission-section h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .mission-section p {
+      font-size: 1.15rem;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .mission-pillars {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .pillar {
+      background: rgba(255,255,255,0.1);
+      padding: 1.5rem;
+      border-radius: 12px;
+      flex: 1;
+      min-width: 200px;
+      max-width: 250px;
+    }
+
+    .pillar .icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .pillar h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pillar p {
+      font-size: 0.9rem;
+      opacity: 0.85;
+      margin-bottom: 0;
+    }
+
     /* Main Content */
     .container {
       max-width: 1200px;
@@ -174,7 +352,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
 
     .tool-card {
@@ -220,11 +398,33 @@
       font-weight: 500;
     }
 
+    .view-all-link {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    .view-all-link a {
+      color: var(--secondary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .view-all-link a:hover {
+      text-decoration: underline;
+    }
+
     /* Guides Section */
+    .guides-section {
+      background: #f8f9fa;
+      padding: 3rem 2rem;
+    }
+
     .guides-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .guide-card {
@@ -233,6 +433,12 @@
       padding: 1.5rem;
       box-shadow: 0 4px 6px rgba(0,0,0,0.07);
       border-left: 4px solid var(--accent);
+      transition: all 0.2s;
+    }
+
+    .guide-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
     }
 
     .guide-card h3 {
@@ -257,45 +463,82 @@
       text-decoration: underline;
     }
 
-    /* Stats Section */
-    .stats-section {
-      background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+    /* Impact Stats */
+    .impact-section {
+      background: white;
       padding: 3rem 2rem;
-      margin: 3rem 0;
     }
 
-    .stats-grid {
+    .impact-grid {
       max-width: 1000px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
       text-align: center;
     }
 
-    .stat-item h3 {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 0.25rem;
+    .impact-item {
+      padding: 1rem;
     }
 
-    .stat-item p {
+    .impact-item .number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--secondary);
+      line-height: 1;
+    }
+
+    .impact-item .label {
       color: #666;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--accent-light);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      color: var(--primary);
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .cta-section p {
+      color: #555;
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
     }
 
     /* Footer */
     .footer {
       background: var(--primary);
       color: white;
-      padding: 3rem 2rem;
+      padding: 3rem 2rem 2rem;
     }
 
     .footer-container {
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .footer-about h4 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+
+    .footer-about p {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.95rem;
+      line-height: 1.7;
     }
 
     .footer h4 {
@@ -314,6 +557,7 @@
     .footer a {
       color: rgba(255,255,255,0.8);
       text-decoration: none;
+      transition: color 0.2s;
     }
 
     .footer a:hover {
@@ -340,8 +584,38 @@
         font-size: 1.75rem;
       }
 
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+
       .hero p {
         font-size: 1rem;
+      }
+
+      .story-content {
+        grid-template-columns: 1fr;
+      }
+
+      .story-stats {
+        order: -1;
+      }
+
+      .mission-pillars {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .pillar {
+        max-width: 100%;
+      }
+
+      .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
       }
 
       .section-title h2 {
@@ -356,9 +630,8 @@
     <div class="nav-container">
       <a href="/" class="nav-logo">Hotel<span>Playbook</span></a>
       <ul class="nav-links">
-        <li><a href="/">Home</a></li>
+        <li><a href="/" class="active">Home</a></li>
         <li><a href="/guides/">Guides</a></li>
-        <li><a href="/calendar.html">Calendar</a></li>
         <li><a href="/tools/">Tools</a></li>
         <li><a href="/about/">About</a></li>
       </ul>
@@ -368,11 +641,80 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-container">
-      <h1>Revenue Management Tools for Indian Hotels</h1>
-      <p>Free calculators, demand calendars, and guides to help you maximize your hotel's profitability. Built specifically for Indian hoteliers.</p>
+      <div class="hero-badge">Built by a hospitality veteran for Indian hoteliers</div>
+      <h1>Helping Hotels Grow, One Booking at a Time</h1>
+      <p class="hero-subtitle">Free tools and guides to increase direct bookings, optimize OTAs, and boost revenue.</p>
+      <p>After 8+ years helping 1,000+ Indian hotels maximize their potential, we're sharing everything we've learned - completely free.</p>
       <div class="hero-cta">
-        <a href="/tools/" class="btn btn-primary">Explore Tools</a>
+        <a href="/tools/" class="btn btn-primary">Explore Free Tools</a>
         <a href="/guides/" class="btn btn-secondary">Read Guides</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section class="story-section">
+    <div class="story-container">
+      <div class="story-header">
+        <h2>Why We Built This</h2>
+        <p>A decade of lessons, now available to every hotelier</p>
+      </div>
+
+      <div class="story-content">
+        <div class="story-text">
+          <h3>From Hotel Rooms to Your Screen</h3>
+          <p>For over 8 years, we've walked the floors of hotels across India - from budget properties in tier-3 cities to luxury resorts in tourist hotspots. We've seen the struggles firsthand.</p>
+          <p>OTA commissions eating into profits. Guests who should be booking direct going to aggregators. Owners confused by PMS features they're paying for but never using.</p>
+          <div class="highlight">
+            "Every hotel owner deserves access to the same strategies that big chains use. That's why we made Hotel Playbook - to level the playing field."
+          </div>
+          <p>We've helped 1,000+ hotels increase their direct bookings, optimize their OTA presence, and actually understand the software they're using. Now, we're putting that knowledge online for everyone.</p>
+        </div>
+
+        <div class="story-stats">
+          <div class="story-stat">
+            <div class="number">8+</div>
+            <div class="label">Years in Hospitality</div>
+          </div>
+          <div class="story-stat">
+            <div class="number">1,000+</div>
+            <div class="label">Hotels Consulted</div>
+          </div>
+          <div class="story-stat">
+            <div class="number">20+</div>
+            <div class="label">States Covered</div>
+          </div>
+          <div class="story-stat">
+            <div class="number">100%</div>
+            <div class="label">Free Forever</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="mission-section">
+    <div class="mission-container">
+      <h2>Our Mission: Empower Every Indian Hotelier</h2>
+      <p>We believe knowledge shouldn't be locked behind expensive consultants or complicated software. Every hotel owner - whether you run 10 rooms or 100 - deserves the tools to succeed.</p>
+
+      <div class="mission-pillars">
+        <div class="pillar">
+          <div class="icon">📈</div>
+          <h3>Increase Direct Bookings</h3>
+          <p>Reduce OTA dependency and keep more of what you earn</p>
+        </div>
+        <div class="pillar">
+          <div class="icon">🎯</div>
+          <h3>Optimize OTA Performance</h3>
+          <p>Master the platforms you're already paying commissions to</p>
+        </div>
+        <div class="pillar">
+          <div class="icon">💡</div>
+          <h3>Educate on Software</h3>
+          <p>Actually use the tech you're investing in</p>
+        </div>
       </div>
     </div>
   </section>
@@ -388,117 +730,125 @@
       <a href="/tools/commission-calculator.html" class="tool-card">
         <div class="tool-icon">💰</div>
         <h3>OTA Commission Calculator</h3>
-        <p>Calculate your exact payout from OTA bookings. See commission, GST, TDS, and TCS breakup for any room rate.</p>
-        <span class="tool-tag">Free Tool</span>
+        <p>Calculate your exact payout from OTA bookings. See commission, GST, TDS, and TCS breakup.</p>
+        <span class="tool-tag">Most Popular</span>
+      </a>
+
+      <a href="/tools/discount-calculator.html" class="tool-card">
+        <div class="tool-icon">🏷️</div>
+        <h3>Discount Settlement Calculator</h3>
+        <p>See the real impact of hotel-funded discounts on your final settlement amount.</p>
+        <span class="tool-tag">New</span>
+      </a>
+
+      <a href="/tools/ota-dependency-calculator.html" class="tool-card">
+        <div class="tool-icon">📈</div>
+        <h3>OTA Dependency Calculator</h3>
+        <p>Analyze your channel mix and discover how much revenue you're losing to commissions.</p>
+        <span class="tool-tag">New</span>
       </a>
 
       <a href="/tools/revenue-setup.html" class="tool-card">
         <div class="tool-icon">📊</div>
         <h3>Revenue Setup Wizard</h3>
-        <p>Configure your room types, pricing strategy, and demand patterns. Get personalized revenue recommendations.</p>
-        <span class="tool-tag">Free Tool</span>
-      </a>
-
-      <a href="/calendar.html" class="tool-card">
-        <div class="tool-icon">📅</div>
-        <h3>Demand Calendar 2026</h3>
-        <p>Plan your pricing around long weekends, festivals, and wedding seasons. India-specific demand patterns.</p>
+        <p>Configure room types, pricing strategy, and get personalized revenue recommendations.</p>
         <span class="tool-tag">Free Tool</span>
       </a>
     </div>
-  </section>
 
-  <!-- Stats Section -->
-  <section class="stats-section">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <h3>11+</h3>
-        <p>Long Weekends in 2026</p>
-      </div>
-      <div class="stat-item">
-        <h3>85+</h3>
-        <p>Wedding Muhurat Days</p>
-      </div>
-      <div class="stat-item">
-        <h3>20+</h3>
-        <p>States Covered</p>
-      </div>
-      <div class="stat-item">
-        <h3>100%</h3>
-        <p>Free to Use</p>
-      </div>
+    <div class="view-all-link">
+      <a href="/tools/">View All Tools →</a>
     </div>
   </section>
 
   <!-- Guides Section -->
-  <section class="container">
-    <div class="section-title">
-      <h2>Hotel Guides & Resources</h2>
-      <p>Expert insights for Indian hotel revenue management</p>
+  <section class="guides-section">
+    <div class="section-title" style="max-width: 1200px; margin: 0 auto 2rem;">
+      <h2>Learn & Grow</h2>
+      <p>Practical guides written by hoteliers, for hoteliers</p>
     </div>
 
     <div class="guides-grid">
       <div class="guide-card">
+        <h3>Revenue Guides</h3>
+        <p>Master RevPAR, ADR, occupancy metrics, rate plans (EP, CP, MAP, AP), and pricing strategies that work.</p>
+        <a href="/guides/">Browse Revenue Guides →</a>
+      </div>
+
+      <div class="guide-card">
         <h3>OTA Guides</h3>
-        <p>Commission structures, listing optimization, and best practices for Booking.com, MakeMyTrip, Agoda, and more.</p>
-        <a href="/guides/ota/">Browse OTA Guides →</a>
+        <p>Commission structures, listing optimization, and strategies for MakeMyTrip, Booking.com, Goibibo & more.</p>
+        <a href="/guides/">Browse OTA Guides →</a>
       </div>
 
       <div class="guide-card">
-        <h3>Hotel Software</h3>
-        <p>Reviews and comparisons of PMS, RMS, Channel Managers, and other hotel technology solutions.</p>
-        <a href="/guides/software/">Browse Software Guides →</a>
+        <h3>Software Guides</h3>
+        <p>PMS, Channel Managers, and hotel technology explained in plain language. Know what you're paying for.</p>
+        <a href="/guides/">Browse Software Guides →</a>
       </div>
+    </div>
+  </section>
 
-      <div class="guide-card">
-        <h3>Revenue Strategy</h3>
-        <p>Dynamic pricing, occupancy-based rates, seasonal strategies, and revenue optimization techniques.</p>
-        <a href="/guides/revenue/">Browse Revenue Guides →</a>
+  <!-- Impact Stats -->
+  <section class="impact-section">
+    <div class="section-title">
+      <h2>Growing Together</h2>
+      <p>Our impact across the Indian hospitality industry</p>
+    </div>
+
+    <div class="impact-grid">
+      <div class="impact-item">
+        <div class="number">19+</div>
+        <div class="label">In-Depth Guides</div>
+      </div>
+      <div class="impact-item">
+        <div class="number">5</div>
+        <div class="label">Free Tools</div>
+      </div>
+      <div class="impact-item">
+        <div class="number">1,000+</div>
+        <div class="label">Hotels Helped</div>
+      </div>
+      <div class="impact-item">
+        <div class="number">20+</div>
+        <div class="label">States Reached</div>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="container" style="text-align: center; padding-bottom: 4rem;">
-    <h2 style="color: var(--primary); margin-bottom: 1rem;">Ready to Optimize Your Revenue?</h2>
-    <p style="color: #666; margin-bottom: 2rem;">Start with our free OTA Commission Calculator to see how much you're actually earning from each booking.</p>
-    <a href="/tools/commission-calculator.html" class="btn btn-primary" style="background: var(--secondary); color: white;">Calculate Your OTA Earnings →</a>
+  <section class="cta-section">
+    <h2>Ready to Take Control of Your Revenue?</h2>
+    <p>Start with our OTA Commission Calculator - see exactly how much you're earning from each booking.</p>
+    <a href="/tools/commission-calculator.html" class="btn btn-primary" style="background: var(--secondary); color: white;">Calculate Your Earnings →</a>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
-      <div>
+      <div class="footer-about">
         <h4>Hotel Playbook</h4>
-        <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Free revenue management tools and guides for Indian hotel owners and operators.</p>
+        <p>Built from 8+ years of real-world experience helping Indian hotels grow. Our mission is simple: give every hotelier - big or small - the knowledge and tools to maximize their revenue. No expensive consultants, no complicated jargon. Just practical help that works.</p>
       </div>
       <div>
-        <h4>Tools</h4>
+        <h4>Quick Links</h4>
         <ul>
-          <li><a href="/tools/commission-calculator.html">OTA Commission Calculator</a></li>
-          <li><a href="/tools/revenue-setup.html">Revenue Setup Wizard</a></li>
-          <li><a href="/calendar.html">Demand Calendar 2026</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Guides</h4>
-        <ul>
-          <li><a href="/guides/ota/">OTA Guides</a></li>
-          <li><a href="/guides/software/">Software Reviews</a></li>
-          <li><a href="/guides/revenue/">Revenue Strategy</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <ul>
+          <li><a href="/tools/">Free Tools</a></li>
+          <li><a href="/guides/">Guides</a></li>
           <li><a href="/about/">About Us</a></li>
-          <li><a href="/about/contact.html">Contact</a></li>
-          <li><a href="/about/privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Popular Tools</h4>
+        <ul>
+          <li><a href="/tools/commission-calculator.html">Commission Calculator</a></li>
+          <li><a href="/tools/discount-calculator.html">Discount Calculator</a></li>
+          <li><a href="/tools/ota-dependency-calculator.html">OTA Dependency</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Hotel Playbook. Made for Indian Hoteliers.</p>
+      <p>&copy; 2026 Hotel Playbook. Made with ❤️ for Indian Hoteliers.</p>
     </div>
   </footer>
 </body>
