@@ -553,6 +553,65 @@
       font-size: 0.8rem;
     }
 
+    /* FAQ Section */
+    .faq-section {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+    }
+
+    .faq-section h3 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #eee;
+      padding: 1rem 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: var(--secondary);
+      transition: transform 0.2s;
+    }
+
+    .faq-item.open .faq-question::after {
+      content: '−';
+    }
+
+    .faq-answer {
+      display: none;
+      padding-top: 0.75rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
     /* Responsive */
     @media (max-width: 600px) {
       .comparison-grid {
@@ -845,6 +904,53 @@
         </div>
       </div>
 
+      <!-- FAQ Section -->
+      <div class="faq-section">
+        <h3>Frequently Asked Questions</h3>
+
+        <div class="faq-item">
+          <div class="faq-question">What is a hotel-funded discount?</div>
+          <div class="faq-answer">
+            A hotel-funded discount is when you (the hotel) bear the cost of the discount offered to guests. For example, if your BAR is ₹5,000 and you offer a 20% hotel-funded discount, the guest pays ₹4,000. The OTA commission is calculated on ₹4,000, but your revenue also drops to ₹4,000 minus commission. This is different from OTA-funded promotions where the OTA bears part of the discount cost.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">How does discount affect my actual settlement amount?</div>
+          <div class="faq-answer">
+            Discounts impact your settlement in two ways: First, your base revenue is reduced by the discount percentage. Second, even though commission is calculated on the lower amount, you're still paying commission on a smaller pie. For example, ₹5,000 at 20% discount with 15% commission = ₹4,000 × 85% = ₹3,400 settlement. Without discount: ₹5,000 × 85% = ₹4,250. So you lose ₹850 per booking, not just ₹1,000.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">When should I offer discounts on OTAs?</div>
+          <div class="faq-answer">
+            Offer discounts strategically: (1) During low-demand periods when you need to fill rooms, (2) For last-minute inventory that would otherwise go unsold, (3) To compete during rate parity violations in your compset, (4) For advance purchase promotions to secure future occupancy. Avoid deep discounts during high-demand periods—you're just giving away margin when guests would book anyway.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">What is rate parity and how do discounts affect it?</div>
+          <div class="faq-answer">
+            Rate parity means maintaining consistent pricing across all channels. When you offer exclusive discounts on one OTA, you may violate parity agreements with others. Some OTAs have "rate match" clauses that require you to offer the same discount to them. Always read your contracts carefully and consider offering discounts uniformly or using package deals (room + breakfast) to differentiate without violating parity.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Is offering a discount better than lowering my BAR?</div>
+          <div class="faq-answer">
+            It depends on your strategy. Discounts create perceived value ("save 20%!") and can be promotional in nature—they're visible and attract deal-seekers. Lowering BAR is less visible but more straightforward. Discounts work well for short promotional periods, while BAR adjustments are better for sustained rate positioning. Remember: frequent deep discounts can train guests to always expect deals.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">How do I calculate the true cost of a discount promotion?</div>
+          <div class="faq-answer">
+            True cost = Revenue loss from discount + Opportunity cost. If you offer 25% discount: (1) Direct revenue loss = 25% of BAR, (2) Plus you're still paying commission on remaining amount, (3) Consider if these guests would have booked anyway at full price. This calculator helps you see the exact numbers, including monthly projections based on your expected bookings.
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -992,6 +1098,14 @@
           maximumFractionDigits: 2
         });
       }
+
+      // FAQ Toggle
+      document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+          const item = question.parentElement;
+          item.classList.toggle('open');
+        });
+      });
     });
   </script>
 </body>
