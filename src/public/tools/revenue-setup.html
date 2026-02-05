@@ -9,6 +9,77 @@
   <link rel="canonical" href="https://hotelplaybook.in/tools/revenue-setup.html">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is dynamic pricing in hotels?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dynamic pricing means adjusting your room rates based on demand, competition, and market factors. When demand is high, rates go up. When demand is low, rates come down. Hotels that adopt dynamic pricing typically see 15-25% higher revenue."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is RevPAR and why does it matter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RevPAR (Revenue Per Available Room) = ADR × Occupancy Rate. It's the single best metric to measure hotel revenue performance because it accounts for both your pricing AND how many rooms you're selling."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is BAR (Best Available Rate)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BAR is your standard published rate for a given room type and date—the baseline price before any discounts or promotions. All other rates are typically set relative to BAR. Your BAR should be the same across all channels (rate parity)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I set different rates for different occupancy levels?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Occupancy-based pricing is a core revenue management strategy. When occupancy is low (below 40%), offer lower rates. As occupancy increases, raise rates—guests booking when you're 80% full should pay more than those booking when you're 30% full."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should I update my room rates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Review rates daily for the next 7 days, weekly for the next 30 days, and monthly for 60-90 days out. Update when you hit occupancy triggers, competitors change rates, new events are announced, or seasons change. Most successful hotels adjust rates 3-4 times per week."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Hotel Revenue Management Setup Tool",
+    "url": "https://hotelplaybook.in/tools/revenue-setup.html",
+    "description": "Configure room types, pricing strategy, and get personalized revenue management recommendations for your hotel.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Hotel Playbook"
+    }
+  }
+  </script>
+
   <style>
     * {
       margin: 0;
@@ -1027,14 +1098,14 @@
       <div class="faq-item">
         <div class="faq-question">What is RevPAR and why does it matter?</div>
         <div class="faq-answer">
-          RevPAR (Revenue Per Available Room) = ADR × Occupancy Rate. It's the single best metric to measure hotel revenue performance because it accounts for both your pricing AND how many rooms you're selling. Two hotels can have 80% occupancy, but the one with higher ADR has better RevPAR. This tool helps you optimize RevPAR by suggesting rates for different occupancy scenarios.
+          RevPAR (Revenue Per Available Room) = ADR × Occupancy Rate. It's the single best metric to measure hotel revenue performance because it accounts for both your pricing AND how many rooms you're selling. Two hotels can have 80% occupancy, but the one with higher ADR has better RevPAR. This tool helps you optimize RevPAR by suggesting rates for different occupancy scenarios. Learn more in our <a href="/guides/revenue/revpar.html" style="color: var(--secondary);">RevPAR Guide</a>.
         </div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">What is BAR (Best Available Rate)?</div>
         <div class="faq-answer">
-          BAR is your standard published rate for a given room type and date—the baseline price before any discounts or promotions. All other rates (corporate, OTA promotions, packages) are typically set relative to BAR. This tool helps you determine optimal BAR rates based on your costs, competition, and market position. Your BAR should be the same across all channels (rate parity).
+          BAR is your standard published rate for a given room type and date—the baseline price before any discounts or promotions. All other rates (corporate, OTA promotions, packages) are typically set relative to BAR. This tool helps you determine optimal BAR rates based on your costs, competition, and market position. Your BAR should be the same across all channels (rate parity). Learn more in our <a href="/guides/revenue/bar.html" style="color: var(--secondary);">BAR Guide</a>.
         </div>
       </div>
 
