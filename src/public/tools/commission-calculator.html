@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OTA Commission Calculator - Know Your Exact Hotel Settlement | Hotel Playbook</title>
+  <title>OTA Commission Calculator - See How Much OTAs Take From You | Hotel Playbook</title>
   <meta name="description" content="Free OTA commission calculator for Indian hotels. Calculate MakeMyTrip, Booking.com, Goibibo settlements. Understand GST, TDS, TCS deductions on hotel bookings.">
   <meta name="keywords" content="OTA commission calculator, hotel OTA settlement, MakeMyTrip commission, Booking.com hotel fees, GST on hotel, TDS TCS hotel, OTA deductions India">
   <link rel="canonical" href="https://hotelplaybook.in/tools/commission-calculator.html">
@@ -93,830 +93,14 @@
       line-height: 1.6;
     }
 
-    /* 3-Color Theme: Navy (#1e3a5f), Teal (#2d8a8a), Gold (#d4a854) */
     :root {
       --primary: #1e3a5f;
       --secondary: #2d8a8a;
       --accent: #d4a854;
-      --primary-light: rgba(30, 58, 95, 0.1);
-      --secondary-light: rgba(45, 138, 138, 0.1);
-      --accent-light: rgba(212, 168, 84, 0.2);
-    }
-
-    .header {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .header h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .header p {
-      opacity: 0.9;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    /* SEO Intro Section */
-    .seo-intro {
-      background: linear-gradient(135deg, var(--accent-light) 0%, rgba(255,255,255,0.9) 100%);
-      border: 2px solid var(--accent);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-
-    .seo-question {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 0.75rem;
-    }
-
-    .seo-intro p {
-      color: #555;
-      margin-bottom: 1rem;
-    }
-
-    .seo-benefits {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .seo-benefits span {
-      background: var(--secondary);
-      color: white;
-      padding: 0.4rem 0.75rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    /* Explore More Tools */
-    .explore-tools {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-top: 2rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
-    }
-
-    .explore-tools h3 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-    }
-
-    .tools-grid-mini {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-
-    .tool-link {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 1rem;
-      background: #f8f9fa;
-      border-radius: 8px;
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.2s;
-    }
-
-    .tool-link:hover {
-      background: var(--secondary-light);
-      transform: translateX(4px);
-    }
-
-    .tool-link .icon {
-      font-size: 1.5rem;
-    }
-
-    .tool-link .text h4 {
-      color: var(--primary);
-      font-size: 0.95rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .tool-link .text p {
-      color: #666;
-      font-size: 0.8rem;
-    }
-
-    /* Section Card */
-    .section-card {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
-      margin-bottom: 1.5rem;
-    }
-
-    .section-card h2 {
-      font-size: 1.25rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 2px solid #f0f0f0;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    /* Info Box */
-    .info-box {
-      background: var(--accent-light);
-      border-left: 4px solid var(--accent);
-      border-radius: 0 8px 8px 0;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      font-size: 0.9rem;
-      color: #5a4a2a;
-    }
-
-    /* Form Elements */
-    .input-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group {
-      margin-bottom: 0;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-      color: #555;
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border: 2px solid #e1e5eb;
-      border-radius: 8px;
-      font-size: 1rem;
-      transition: border-color 0.2s;
-    }
-
-    .form-group input:focus {
-      outline: none;
-      border-color: var(--secondary);
-    }
-
-    .form-group .hint {
-      font-size: 0.8rem;
-      color: #888;
-      margin-top: 0.25rem;
-    }
-
-    /* Button */
-    .btn {
-      padding: 0.75rem 2rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(30, 58, 95, 0.4);
-    }
-
-    /* Results */
-    .results-container {
-      display: none;
-    }
-
-    .results-container.show {
-      display: block;
-    }
-
-    /* Dashboard Layout */
-    .dashboard {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
-    }
-
-    .dashboard-header {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .dash-card {
-      padding: 1.25rem;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    .dash-card.guest {
-      background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-      border: 2px solid #64b5f6;
-    }
-
-    .dash-card.ota {
-      background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
-      border: 2px solid #ffb74d;
-    }
-
-    .dash-card.hotel {
-      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-      border: 2px solid #81c784;
-    }
-
-    .dash-label {
-      font-size: 0.85rem;
-      color: #666;
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-    }
-
-    .dash-value {
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
-
-    .dash-card.guest .dash-value { color: #1565c0; }
-    .dash-card.ota .dash-value { color: #e65100; }
-    .dash-card.hotel .dash-value { color: #2e7d32; }
-
-    .dash-sub {
-      font-size: 0.75rem;
-      color: #888;
-      margin-top: 0.25rem;
-    }
-
-    .dashboard-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .dash-section {
-      background: #f8f9fa;
-      padding: 1.25rem;
-      border-radius: 10px;
-    }
-
-    .dash-section h4 {
-      color: var(--primary);
-      font-size: 0.95rem;
-      margin-bottom: 0.75rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid #e0e0e0;
-    }
-
-    .dash-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 0.4rem 0;
-      font-size: 0.9rem;
-      border-bottom: 1px dashed #e0e0e0;
-    }
-
-    .dash-row:last-child {
-      border-bottom: none;
-    }
-
-    .dash-row.total {
-      font-weight: 600;
-      padding-top: 0.6rem;
-      margin-top: 0.3rem;
-      border-top: 2px solid #ccc;
-      border-bottom: none;
-    }
-
-    .dash-row.highlight {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      color: white;
-      padding: 0.75rem;
-      border-radius: 6px;
-      margin: 0.5rem 0;
-      border: none;
-    }
-
-    .dash-row.highlight .positive {
-      color: white;
-      font-weight: 700;
-    }
-
-    .dash-divider {
-      height: 1px;
-      background: #ddd;
-      margin: 1rem 0;
-    }
-
-    .dash-row .negative {
-      color: #d32f2f;
-    }
-
-    .dash-row .positive {
-      color: #2e7d32;
-      font-weight: 600;
-    }
-
-    .dash-tools {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-      padding-top: 1rem;
-      border-top: 1px solid #eee;
-    }
-
-    .dash-tools a {
-      color: var(--secondary);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.9rem;
-    }
-
-    .dash-tools a:hover {
-      text-decoration: underline;
-    }
-
-    /* Projections Section */
-    .dash-projections {
-      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-      padding: 1.25rem;
-      border-radius: 10px;
-      margin-top: 1.5rem;
-      border: 2px solid #81c784;
-    }
-
-    .dash-projections h4 {
-      color: #2e7d32;
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
-    }
-
-    .projection-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-
-    .projection-card {
-      background: white;
-      padding: 1rem;
-      border-radius: 8px;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    .projection-card.highlight {
-      background: linear-gradient(135deg, #2e7d32 0%, #388e3c 100%);
-      color: white;
-    }
-
-    .projection-card.highlight .projection-label {
-      color: rgba(255,255,255,0.9);
-    }
-
-    .projection-card.highlight .projection-value {
-      color: white;
-    }
-
-    .projection-label {
-      font-size: 0.8rem;
-      color: #666;
-      margin-bottom: 0.25rem;
-    }
-
-    .projection-value {
-      font-size: 1.25rem;
-      font-weight: 700;
-    }
-
-    .projection-value.positive {
-      color: #2e7d32;
-    }
-
-    /* Resources Section */
-    .dash-resources {
-      background: #f8f9fa;
-      padding: 1.25rem;
-      border-radius: 10px;
-      margin-top: 1rem;
-    }
-
-    .dash-resources h4 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
-    }
-
-    .resource-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.75rem;
-    }
-
-    .resource-link {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem;
-      background: white;
-      border-radius: 6px;
-      text-decoration: none;
-      color: inherit;
-      font-size: 0.85rem;
-      transition: all 0.2s;
-      border: 1px solid #e0e0e0;
-    }
-
-    .resource-link:hover {
-      background: var(--secondary-light);
-      border-color: var(--secondary);
-      transform: translateX(4px);
-    }
-
-    .resource-link .icon {
-      font-size: 1.1rem;
-    }
-
-    .resource-link .text {
-      color: var(--primary);
-      font-weight: 500;
-    }
-
-    @media (max-width: 768px) {
-      .dashboard-header {
-        grid-template-columns: 1fr;
-      }
-      .dashboard-grid {
-        grid-template-columns: 1fr;
-      }
-      .dash-tools {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.75rem;
-      }
-      .projection-grid {
-        grid-template-columns: 1fr;
-      }
-      .resource-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .breakdown-card {
-      background: #f8f9fa;
-      padding: 1.25rem;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-    }
-
-    .breakdown-card h3 {
-      margin: 0 0 1rem 0;
-      color: var(--primary);
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .breakdown-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 0.5rem 0;
-      border-bottom: 1px dashed #e0e0e0;
-      font-size: 0.95rem;
-    }
-
-    .breakdown-row:last-child {
-      border-bottom: none;
-    }
-
-    .breakdown-row .label {
-      color: #666;
-    }
-
-    .breakdown-row .value {
-      font-weight: 600;
-    }
-
-    .highlight-box {
-      padding: 1rem;
-      border-radius: 8px;
-      margin: 0.75rem 0;
-    }
-
-    .highlight-green {
-      background: #e8f5e9;
-    }
-
-    .highlight-green .value {
-      color: #2e7d32;
-      font-size: 1.2rem;
-    }
-
-    .highlight-blue {
-      background: var(--primary-light);
-    }
-
-    .highlight-blue .value {
-      color: var(--primary);
-      font-size: 1.2rem;
-    }
-
-    .highlight-red {
-      background: #ffebee;
-    }
-
-    .highlight-red .value {
-      color: #d32f2f;
-      font-size: 1.2rem;
-    }
-
-    .result-box {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      padding: 1.25rem;
-      border-radius: 8px;
-      color: white;
-      text-align: center;
-      margin-top: 1rem;
-    }
-
-    .result-box .label {
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-
-    .result-box .value {
-      font-size: 1.75rem;
-      font-weight: 700;
-      margin-top: 0.25rem;
-    }
-
-    .result-box .sub-label {
-      font-size: 0.8rem;
-      opacity: 0.8;
-      margin-top: 0.25rem;
-    }
-
-    /* Settlement Summary */
-    .settlement-summary {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin: 1.5rem 0;
-    }
-
-    .summary-card {
-      padding: 1.25rem;
-      border-radius: 8px;
-      text-align: center;
-    }
-
-    .summary-card.guest {
-      background: #e3f2fd;
-      border: 2px solid #90caf9;
-    }
-
-    .summary-card.ota {
-      background: #fff3e0;
-      border: 2px solid #ffcc80;
-    }
-
-    .summary-card.hotel {
-      background: #e8f5e9;
-      border: 2px solid #a5d6a7;
-    }
-
-    .summary-card .title {
-      font-size: 0.85rem;
-      color: #666;
-      margin-bottom: 0.5rem;
-    }
-
-    .summary-card .amount {
-      font-size: 1.4rem;
-      font-weight: 700;
-    }
-
-    .summary-card.guest .amount {
-      color: #1565c0;
-    }
-
-    .summary-card.ota .amount {
-      color: #e65100;
-    }
-
-    .summary-card.hotel .amount {
-      color: #2e7d32;
-    }
-
-    .summary-card .note {
-      font-size: 0.75rem;
-      color: #888;
-      margin-top: 0.25rem;
-    }
-
-    /* Effective Rate */
-    .effective-rate {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      padding: 1.5rem;
-      border-radius: 10px;
-      color: white;
-      text-align: center;
-      margin: 1.5rem 0;
-    }
-
-    .effective-rate h3 {
-      margin: 0 0 0.5rem 0;
-      font-size: 1rem;
-      opacity: 0.9;
-    }
-
-    .effective-rate .big-number {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin: 0.5rem 0;
-    }
-
-    .effective-rate .subtitle {
-      font-size: 0.95rem;
-      opacity: 0.9;
-    }
-
-    /* Flow Diagram */
-    .flow-diagram {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 1rem;
-      background: #f8f9fa;
-      border-radius: 8px;
-      margin: 1rem 0;
-      flex-wrap: wrap;
-    }
-
-    .flow-step {
-      text-align: center;
-      padding: 0.75rem 1rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .flow-step .step-label {
-      font-size: 0.7rem;
-      color: #888;
-      margin-bottom: 0.25rem;
-    }
-
-    .flow-step .step-value {
-      font-weight: 600;
-      color: var(--primary);
-    }
-
-    .flow-arrow {
-      font-size: 1.5rem;
-      color: #ccc;
-    }
-
-    /* Annual Table */
-    .annual-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .annual-table tr {
-      border-bottom: 1px solid #e0e0e0;
-    }
-
-    .annual-table tr:last-child {
-      border-bottom: none;
-    }
-
-    .annual-table td {
-      padding: 0.75rem 0;
-    }
-
-    .annual-table td:first-child {
-      color: #666;
-    }
-
-    .annual-table td:last-child {
-      text-align: right;
-      font-weight: 600;
-    }
-
-    .annual-table .positive {
-      color: #2e7d32;
-    }
-
-    .annual-table .negative {
-      color: #d32f2f;
-    }
-
-    /* FAQ Section */
-    .faq-section {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-top: 2rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
-    }
-
-    .faq-section h3 {
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      font-size: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid #eee;
-      padding: 1rem 0;
-    }
-
-    .faq-item:last-child {
-      border-bottom: none;
-    }
-
-    .faq-question {
-      font-weight: 600;
-      color: var(--primary);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .faq-question::after {
-      content: '+';
-      font-size: 1.5rem;
-      color: var(--secondary);
-      transition: transform 0.2s;
-    }
-
-    .faq-item.open .faq-question::after {
-      content: '−';
-    }
-
-    .faq-answer {
-      display: none;
-      padding-top: 0.75rem;
-      color: #555;
-      line-height: 1.7;
-    }
-
-    .faq-item.open .faq-answer {
-      display: block;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .settlement-summary {
-        grid-template-columns: 1fr;
-      }
-
-      .input-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .flow-diagram {
-        flex-direction: column;
-      }
-
-      .flow-arrow {
-        transform: rotate(90deg);
-      }
+      --danger: #c62828;
+      --danger-light: #ffebee;
+      --success: #2e7d32;
+      --success-light: #e8f5e9;
     }
 
     /* Site Navigation */
@@ -963,10 +147,493 @@
       color: var(--secondary);
     }
 
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
+    .header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      opacity: 0.9;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Input Section - Compact Inline */
+    .input-section {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+      margin-bottom: 1.5rem;
+    }
+
+    .input-row {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .input-group {
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .input-group label {
+      display: block;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid #e1e5eb;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    .input-group input:focus {
+      outline: none;
+      border-color: var(--secondary);
+    }
+
+    .input-group .hint {
+      font-size: 0.75rem;
+      color: #888;
+      margin-top: 0.25rem;
+    }
+
+    .btn-calculate {
+      padding: 0.75rem 2rem;
+      background: linear-gradient(135deg, var(--danger) 0%, #b71c1c 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-calculate:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(198, 40, 40, 0.4);
+    }
+
+    /* Results Container */
+    .results-container {
+      display: none;
+    }
+
+    .results-container.show {
+      display: block;
+    }
+
+    /* Main Dashboard - Full Width Single View */
+    .dashboard {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    /* Top Section - The Big Scary Number */
+    .commission-alert {
+      background: linear-gradient(135deg, #c62828 0%, #b71c1c 100%);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .alert-label {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .alert-value {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .alert-subtitle {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .alert-percent {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-weight: 600;
+      margin-left: 0.5rem;
+    }
+
+    /* Main Content Grid */
+    .dashboard-content {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr 1fr;
+      gap: 0;
+    }
+
+    /* Left Panel - Flow Breakdown */
+    .panel-left {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-right: 1px solid #eee;
+    }
+
+    .panel-title {
+      font-size: 0.85rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .flow-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .flow-item:last-child {
+      border-bottom: none;
+    }
+
+    .flow-item .label {
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    .flow-item .value {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .flow-item .value.positive { color: var(--success); }
+    .flow-item .value.negative { color: var(--danger); }
+    .flow-item .value.neutral { color: var(--primary); }
+
+    .flow-item.highlight {
+      background: var(--success-light);
+      margin: 0.5rem -1.5rem;
+      padding: 0.75rem 1.5rem;
+      border: none;
+    }
+
+    .flow-item.highlight .label {
+      font-weight: 600;
+      color: var(--success);
+    }
+
+    /* Center Panel - Commission Loss Projections */
+    .panel-center {
+      padding: 1.5rem 2rem;
+    }
+
+    .loss-projections {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .loss-card {
+      background: var(--danger-light);
+      border: 2px solid #ef9a9a;
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .loss-card.yearly {
+      background: linear-gradient(135deg, #c62828 0%, #b71c1c 100%);
+      border-color: transparent;
+      color: white;
+    }
+
+    .loss-card .period {
+      font-size: 0.8rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .loss-card.yearly .period {
+      color: rgba(255,255,255,0.8);
+    }
+
+    .loss-card .amount {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--danger);
+    }
+
+    .loss-card.yearly .amount {
+      color: white;
+      font-size: 2rem;
+    }
+
+    .loss-card .bookings {
+      font-size: 0.75rem;
+      color: #888;
+      margin-top: 0.25rem;
+    }
+
+    .loss-card.yearly .bookings {
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* Comparison Visual */
+    .comparison-visual {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+
+    .comparison-title {
+      font-size: 0.85rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .comparison-bar {
+      display: flex;
+      height: 50px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 0.75rem;
+    }
+
+    .bar-segment {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: width 0.5s ease;
+    }
+
+    .bar-ota {
+      background: linear-gradient(135deg, #c62828 0%, #e53935 100%);
+    }
+
+    .bar-hotel {
+      background: linear-gradient(135deg, #2e7d32 0%, #43a047 100%);
+    }
+
+    .comparison-legend {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
+
+    .legend-dot.ota { background: var(--danger); }
+    .legend-dot.hotel { background: var(--success); }
+
+    /* Right Panel - Summary & Actions */
+    .panel-right {
+      background: linear-gradient(180deg, #f8f9fa 0%, #fff 100%);
+      padding: 1.5rem;
+      border-left: 1px solid #eee;
+    }
+
+    .summary-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid #e0e0e0;
+    }
+
+    .summary-card .card-label {
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 0.25rem;
+    }
+
+    .summary-card .card-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .summary-card .card-sub {
+      font-size: 0.75rem;
+      color: #888;
+    }
+
+    .summary-card.guest { border-left: 4px solid #1565c0; }
+    .summary-card.guest .card-value { color: #1565c0; }
+
+    .summary-card.hotel { border-left: 4px solid var(--success); }
+    .summary-card.hotel .card-value { color: var(--success); }
+
+    .resource-links {
+      margin-top: 1.5rem;
+    }
+
+    .resource-links h4 {
+      font-size: 0.85rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.75rem;
+    }
+
+    .resource-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 0.75rem;
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      transition: all 0.2s;
+    }
+
+    .resource-link:hover {
+      background: rgba(45, 138, 138, 0.1);
+      border-color: var(--secondary);
+      transform: translateX(4px);
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin-top: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+    }
+
+    .faq-section h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #eee;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background: #f8f9fa;
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 1.25rem;
+      color: var(--secondary);
+    }
+
+    .faq-item.open .faq-question::after {
+      content: '−';
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 1rem;
+      color: #555;
+      line-height: 1.7;
+      font-size: 0.9rem;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .dashboard-content {
+        grid-template-columns: 1fr 1fr;
       }
+      .panel-left {
+        order: 2;
+        border-right: none;
+        border-top: 1px solid #eee;
+      }
+      .panel-center {
+        order: 1;
+        grid-column: span 2;
+      }
+      .panel-right {
+        order: 3;
+        border-left: none;
+        border-top: 1px solid #eee;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .input-row { flex-direction: column; gap: 1rem; }
+      .input-group { width: 100%; }
+      .alert-value { font-size: 2.5rem; }
+      .dashboard-content { grid-template-columns: 1fr; }
+      .panel-left, .panel-right { border: none; border-top: 1px solid #eee; }
+      .loss-projections { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -986,243 +653,199 @@
 
   <div class="header">
     <h1>OTA Commission Calculator</h1>
-    <p>Know Your Settlement - Complete Breakup of OTA Payments</p>
+    <p>See exactly how much OTAs are taking from every booking</p>
   </div>
 
   <div class="container">
-    <!-- SEO Intro Section -->
-    <div class="seo-intro">
-      <div class="seo-question">Do you really know how much you earn from each OTA booking?</div>
-      <p>After commission, GST on commission, TDS, and TCS deductions, your <strong>actual settlement can be 20-30% less</strong> than the room rate. Calculate your exact earnings below.</p>
-      <div class="seo-benefits">
-        <span>GST: 5% or 18% based on rate</span>
-        <span>Commission + GST on commission</span>
-        <span>TDS 0.1% + TCS 0.5%</span>
-      </div>
-    </div>
-
-    <div class="info-box">
-      <strong>Understanding OTA Settlements:</strong> This calculator shows the complete breakup - what rate to push on OTA, what the guest pays, and how much you receive as settlement after all deductions.
-    </div>
-
     <!-- Input Section -->
-    <div class="section-card">
-      <h2>💰 Enter Booking Details</h2>
-
-      <div class="input-grid">
-        <div class="form-group">
-          <label for="baseRate">Your Base Rate (INR)</label>
+    <div class="input-section">
+      <div class="input-row">
+        <div class="input-group">
+          <label for="baseRate">Your Room Rate (INR)</label>
           <input type="number" id="baseRate" placeholder="e.g., 3000" min="1">
-          <div class="hint">Room rate you want to push on OTA (before taxes)</div>
+          <div class="hint">Rate pushed on OTA (before taxes)</div>
         </div>
-        <div class="form-group">
+        <div class="input-group">
           <label for="commission">OTA Commission %</label>
-          <input type="number" id="commission" placeholder="Default: 21" min="1" max="50">
-          <div class="hint">Leave blank for 21% (typical OTA rate)</div>
+          <input type="number" id="commission" placeholder="21" min="1" max="50" value="21">
+          <div class="hint">MakeMyTrip: 18-22%, Booking: 15-18%</div>
         </div>
-        <div class="form-group">
+        <div class="input-group">
           <label for="monthlyBookings">Monthly OTA Bookings</label>
-          <input type="number" id="monthlyBookings" placeholder="Default: 50" min="1">
-          <div class="hint">For annual calculations</div>
+          <input type="number" id="monthlyBookings" placeholder="50" min="1" value="50">
+          <div class="hint">For projection calculations</div>
         </div>
+        <button class="btn-calculate" id="calculateBtn">See Commission Loss</button>
       </div>
-
-      <button class="btn btn-primary" id="calculateBtn">Calculate Settlement Breakup</button>
     </div>
 
     <!-- Results Dashboard -->
     <div class="results-container" id="resultsContainer">
       <div class="dashboard">
-        <!-- Main Settlement Cards -->
-        <div class="dashboard-header">
-          <div class="dash-card guest">
-            <div class="dash-label">Guest Pays</div>
-            <div class="dash-value" id="sumGuestPays">-</div>
-            <div class="dash-sub">Rate + <span id="resTaxPercent">5</span>% GST</div>
-          </div>
-          <div class="dash-card ota">
-            <div class="dash-label">OTA Keeps</div>
-            <div class="dash-value" id="sumOtaKeeps">-</div>
-            <div class="dash-sub">Comm + GST on Comm</div>
-          </div>
-          <div class="dash-card hotel">
-            <div class="dash-label">You Receive</div>
-            <div class="dash-value" id="sumHotelReceives">-</div>
-            <div class="dash-sub">Your settlement</div>
+        <!-- Top Alert - The Big Number -->
+        <div class="commission-alert">
+          <div class="alert-label">You're Losing Per Booking</div>
+          <div class="alert-value" id="lossPerBooking">₹0</div>
+          <div class="alert-subtitle">
+            Effective commission rate: <span class="alert-percent" id="effectiveCommPercent">0%</span>
           </div>
         </div>
 
-        <!-- Breakdown Grid -->
-        <div class="dashboard-grid">
-          <!-- Left: Deductions Breakdown -->
-          <div class="dash-section">
-            <h4>Deductions Breakdown</h4>
-            <div class="dash-row">
-              <span>Base Rate</span>
-              <span id="resBaseRate">-</span>
+        <!-- Main Dashboard Content -->
+        <div class="dashboard-content">
+          <!-- Left Panel - Deduction Breakdown -->
+          <div class="panel-left">
+            <div class="panel-title">Deduction Breakdown</div>
+            <div class="flow-item">
+              <span class="label">Your Rate</span>
+              <span class="value neutral" id="resBaseRate">₹0</span>
             </div>
-            <div class="dash-row">
-              <span>Commission (<span id="resCommPercent">21</span>%)</span>
-              <span class="negative" id="resCommission">-</span>
+            <div class="flow-item">
+              <span class="label">Commission (<span id="resCommPercent">21</span>%)</span>
+              <span class="value negative" id="resCommission">−₹0</span>
             </div>
-            <div class="dash-row">
-              <span>GST on Commission (18%)</span>
-              <span class="negative" id="resCommGst">-</span>
+            <div class="flow-item">
+              <span class="label">GST on Commission (18%)</span>
+              <span class="value negative" id="resCommGst">−₹0</span>
             </div>
-            <div class="dash-row">
-              <span>TDS (0.1%)</span>
-              <span class="negative" id="resTds">-</span>
+            <div class="flow-item">
+              <span class="label">TDS (0.1%)</span>
+              <span class="value negative" id="resTds">−₹0</span>
             </div>
-            <div class="dash-row">
-              <span>TCS (0.5%)</span>
-              <span class="negative" id="resTcs">-</span>
+            <div class="flow-item">
+              <span class="label">TCS (0.5%)</span>
+              <span class="value negative" id="resTcs">−₹0</span>
             </div>
-            <div class="dash-row total">
-              <span>Total Deductions</span>
-              <span class="negative" id="resTotalDeductions">-</span>
+            <div class="flow-item highlight">
+              <span class="label">You Actually Get</span>
+              <span class="value positive" id="effectiveEarning">₹0</span>
             </div>
           </div>
 
-          <!-- Right: Key Metrics -->
-          <div class="dash-section">
-            <h4>Key Metrics</h4>
-            <div class="dash-row">
-              <span>Effective Commission</span>
-              <span id="impactEffectiveComm">-</span>
+          <!-- Center Panel - Loss Projections -->
+          <div class="panel-center">
+            <div class="panel-title" style="text-align: center; color: var(--danger);">
+              Commission You're Giving Away (<span id="monthlyBookingsDisplay">50</span> bookings/month)
             </div>
-            <div class="dash-row">
-              <span>You Retain</span>
-              <span class="positive" id="impactRetainPercent">-</span>
+            <div class="loss-projections">
+              <div class="loss-card">
+                <div class="period">Weekly</div>
+                <div class="amount" id="weeklyLoss">₹0</div>
+                <div class="bookings" id="weeklyBookings">~12 bookings</div>
+              </div>
+              <div class="loss-card">
+                <div class="period">Monthly</div>
+                <div class="amount" id="monthlyLoss">₹0</div>
+                <div class="bookings" id="monthlyBookingsText">50 bookings</div>
+              </div>
+              <div class="loss-card yearly">
+                <div class="period">Yearly</div>
+                <div class="amount" id="yearlyLoss">₹0</div>
+                <div class="bookings" id="yearlyBookings">600 bookings</div>
+              </div>
             </div>
-            <div class="dash-row highlight">
-              <span>Effective Earning/Room</span>
-              <span class="positive" id="effectiveRate">-</span>
-            </div>
-            <div class="dash-divider"></div>
-            <h4>Annual (<span id="annualBookingsCount">600</span> bookings)</h4>
-            <div class="dash-row">
-              <span>Guest Payments</span>
-              <span id="annualGuestPayments">-</span>
-            </div>
-            <div class="dash-row">
-              <span>Commission Lost</span>
-              <span class="negative" id="annualCommission">-</span>
-            </div>
-            <div class="dash-row total">
-              <span>Your Settlement</span>
-              <span class="positive" id="annualSettlement">-</span>
+
+            <!-- Visual Comparison -->
+            <div class="comparison-visual">
+              <div class="comparison-title">Where Each ₹100 Guest Pays Goes</div>
+              <div class="comparison-bar" id="comparisonBar">
+                <div class="bar-segment bar-ota" id="barOta" style="width: 25%;">OTA 25%</div>
+                <div class="bar-segment bar-hotel" id="barHotel" style="width: 75%;">You 75%</div>
+              </div>
+              <div class="comparison-legend">
+                <div class="legend-item">
+                  <div class="legend-dot ota"></div>
+                  <span>OTA Takes: <strong id="otaTakesPercent">25%</strong></span>
+                </div>
+                <div class="legend-item">
+                  <span>You Keep: <strong id="youKeepPercent">75%</strong></span>
+                  <div class="legend-dot hotel"></div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Projections Section -->
-        <div class="dash-projections">
-          <h4>Projected Earnings (<span id="monthlyBookingsDisplay">50</span> bookings/month)</h4>
-          <div class="projection-grid">
-            <div class="projection-card">
-              <div class="projection-label">Weekly</div>
-              <div class="projection-value positive" id="weeklyEarnings">-</div>
+          <!-- Right Panel - Summary & Links -->
+          <div class="panel-right">
+            <div class="panel-title">Booking Summary</div>
+            <div class="summary-card guest">
+              <div class="card-label">Guest Pays</div>
+              <div class="card-value" id="guestPays">₹0</div>
+              <div class="card-sub">Rate + <span id="gstPercent">5</span>% GST</div>
             </div>
-            <div class="projection-card">
-              <div class="projection-label">Monthly</div>
-              <div class="projection-value positive" id="monthlyEarnings">-</div>
+            <div class="summary-card hotel">
+              <div class="card-label">Your Settlement</div>
+              <div class="card-value" id="hotelSettlement">₹0</div>
+              <div class="card-sub">After all deductions</div>
             </div>
-            <div class="projection-card highlight">
-              <div class="projection-label">Yearly</div>
-              <div class="projection-value" id="yearlyEarnings">-</div>
+
+            <div class="resource-links">
+              <h4>Reduce Your Losses</h4>
+              <a href="/tools/ota-dependency-calculator.html" class="resource-link">
+                <span>⚖️</span> Analyze Your Channel Mix
+              </a>
+              <a href="/guides/revenue/ota.html" class="resource-link">
+                <span>📚</span> OTA Strategies Guide
+              </a>
+              <a href="/tools/discount-calculator.html" class="resource-link">
+                <span>🏷️</span> Discount Impact Calculator
+              </a>
             </div>
           </div>
-        </div>
-
-        <!-- Resources Section -->
-        <div class="dash-resources">
-          <h4>Learn More</h4>
-          <div class="resource-grid">
-            <a href="/guides/revenue/ota.html" class="resource-link">
-              <span class="icon">📚</span>
-              <span class="text">OTA Guide - Strategies & Tips</span>
-            </a>
-            <a href="/guides/revenue/adr.html" class="resource-link">
-              <span class="icon">📊</span>
-              <span class="text">ADR - Average Daily Rate</span>
-            </a>
-            <a href="/tools/ota-dependency-calculator.html" class="resource-link">
-              <span class="icon">⚖️</span>
-              <span class="text">OTA Dependency Calculator</span>
-            </a>
-            <a href="/tools/discount-calculator.html" class="resource-link">
-              <span class="icon">🏷️</span>
-              <span class="text">Discount Settlement Calculator</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Explore More Tools -->
-        <div class="dash-tools">
-          <a href="ota-dependency-calculator.html">Analyze Channel Mix →</a>
-          <a href="discount-calculator.html">Calculate Discount Impact →</a>
         </div>
       </div>
     </div>
 
-    <!-- FAQ Section (always visible) -->
+    <!-- FAQ Section -->
     <div class="faq-section">
       <h3>Frequently Asked Questions</h3>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">What is OTA commission and how does it work?</div>
+          <div class="faq-answer">
+            OTA (Online Travel Agency) commission is a percentage fee charged by platforms like MakeMyTrip, Booking.com, and Goibibo for each booking they generate. Typically ranging from 15-25%, this commission is deducted from your room rate before settlement.
+          </div>
+        </div>
 
-      <div class="faq-item">
-        <div class="faq-question">What is OTA commission and how does it work?</div>
-        <div class="faq-answer">
-          OTA (Online Travel Agency) commission is a percentage fee charged by platforms like MakeMyTrip, Booking.com, and Goibibo for each booking they generate. Typically ranging from 15-25%, this commission is deducted from your room rate before settlement. The OTA collects payment from the guest and remits the balance to you after deducting their commission, GST on commission, and applicable TDS/TCS.
+        <div class="faq-item">
+          <div class="faq-question">Why is there GST on commission (18%)?</div>
+          <div class="faq-answer">
+            OTA services are classified as intermediary services under GST law, attracting 18% GST. This GST is charged on the commission amount, not on your room rate. For example, if commission is ₹630 (21% of ₹3,000), GST on commission would be ₹113.40 (18% of ₹630).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">What is TDS and TCS on hotel bookings?</div>
+          <div class="faq-answer">
+            <strong>TDS (0.1%):</strong> Under Section 194-O, e-commerce operators must deduct TDS on gross sales.<br>
+            <strong>TCS (0.5%):</strong> Under Section 206C(1H), sellers must collect TCS. Both are adjustable against your income tax.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">When is GST 5% vs 18% on room tariff?</div>
+          <div class="faq-answer">
+            GST on hotel rooms depends on the declared tariff:<br>
+            • <strong>5% GST:</strong> Room tariff up to ₹7,500/night<br>
+            • <strong>18% GST:</strong> Room tariff above ₹7,500/night
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">How can I reduce OTA commission impact?</div>
+          <div class="faq-answer">
+            Key strategies: Build direct booking website, offer best-rate guarantee for direct bookings, collect guest emails for remarketing, train front desk to convert walk-ins, and partner with local corporates.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Is commission on base rate or total amount?</div>
+          <div class="faq-answer">
+            OTA commission is typically calculated on the <strong>base room rate (before GST)</strong>. The guest pays room rate + GST, but commission is charged only on the room rate portion.
+          </div>
         </div>
       </div>
-
-      <div class="faq-item">
-        <div class="faq-question">Why is there GST on commission (18%)?</div>
-        <div class="faq-answer">
-          OTA services are classified as intermediary services under GST law, attracting 18% GST. This GST is charged on the commission amount, not on your room rate. For example, if commission is ₹630 (21% of ₹3,000), GST on commission would be ₹113.40 (18% of ₹630). This is a legitimate business expense and can be claimed as Input Tax Credit (ITC) if you're GST registered.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">What is TDS and TCS on hotel bookings?</div>
-        <div class="faq-answer">
-          <strong>TDS (Tax Deducted at Source) at 0.1%:</strong> Under Section 194-O, e-commerce operators must deduct TDS on gross amount of sales. This is adjustable against your income tax liability.<br><br>
-          <strong>TCS (Tax Collected at Source) at 0.5%:</strong> Under Section 206C(1H), sellers receiving payments above ₹50 lakh must collect TCS. OTAs apply this from the first rupee for simplicity. This is also adjustable against your tax liability.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">When is GST 5% vs 18% on room tariff?</div>
-        <div class="faq-answer">
-          GST on hotel rooms depends on the declared tariff:<br>
-          • <strong>5% GST:</strong> Room tariff up to ₹7,500 per night (no ITC available)<br>
-          • <strong>18% GST:</strong> Room tariff above ₹7,500 per night (ITC available)<br><br>
-          This is based on the published/declared tariff, not discounted rates. Most budget and mid-scale hotels fall under 5% GST.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">How can I reduce OTA commission impact?</div>
-        <div class="faq-answer">
-          Several strategies can help:<br>
-          • <strong>Increase direct bookings:</strong> Build your own website with booking engine<br>
-          • <strong>Negotiate rates:</strong> High-volume hotels can negotiate lower commission<br>
-          • <strong>Optimize pricing:</strong> Adjust OTA rates to account for commission<br>
-          • <strong>Build loyalty:</strong> Convert OTA guests to direct bookers for repeat stays<br>
-          • Use our <a href="/tools/ota-dependency-calculator.html" style="color: var(--secondary);">OTA Dependency Calculator</a> to analyze your channel mix<br>
-          • Read our <a href="/guides/revenue/ota.html" style="color: var(--secondary);">OTA Guide</a> for more strategies
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">Is the commission calculated on base rate or total amount?</div>
-        <div class="faq-answer">
-          OTA commission is typically calculated on the <strong>base room rate (before GST)</strong>. The guest pays room rate + GST, but commission is charged only on the room rate portion. This calculator follows the standard industry practice where commission is applied to the pre-tax amount.
-        </div>
-      </div>
-
     </div>
-
   </div>
 
   <script>
@@ -1244,11 +867,11 @@
 
       function calculateOTA() {
         const baseRate = parseFloat(baseRateInput.value) || 0;
-        const commissionOverride = parseFloat(commissionInput.value);
+        const commissionRate = parseFloat(commissionInput.value) || 21;
         const monthlyBookings = parseFloat(monthlyBookingsInput.value) || 50;
 
         if (baseRate <= 0) {
-          alert('Please enter a valid base rate');
+          alert('Please enter a valid room rate');
           return;
         }
 
@@ -1258,8 +881,6 @@
         const totalGuestPays = baseRate + gstOnRoom;
 
         // Commission calculation
-        const commissionRate = (!isNaN(commissionOverride) && commissionOverride > 0)
-          ? commissionOverride : 21;
         const commission = (commissionRate / 100) * baseRate;
         const gstOnCommission = commission * 0.18;
         const totalCommission = commission + gstOnCommission;
@@ -1269,64 +890,61 @@
         const tcs = baseRate * 0.005;
         const totalTdsTcs = tds + tcs;
 
-        // Total deductions
-        const totalDeductions = totalCommission + totalTdsTcs;
+        // Total deductions (commission loss per booking)
+        const lossPerBooking = totalCommission + totalTdsTcs;
 
         // Final settlement amount hotel receives
-        const hotelSettlement = totalGuestPays - totalCommission - totalTdsTcs;
+        const hotelSettlement = totalGuestPays - lossPerBooking;
 
-        // Effective earning rate (what hotel effectively earns per room, excluding GST)
-        const effectiveEarning = baseRate - commission - gstOnCommission - totalTdsTcs;
+        // Effective earning rate
+        const effectiveEarning = baseRate - lossPerBooking;
 
         // Percentage calculations
-        const effectiveCommPercent = ((commission + gstOnCommission) / baseRate * 100).toFixed(2);
-        const totalDeductionPercent = (totalDeductions / totalGuestPays * 100).toFixed(2);
-        const retainPercent = (hotelSettlement / totalGuestPays * 100).toFixed(2);
+        const effectiveCommPercent = (lossPerBooking / baseRate * 100).toFixed(1);
+        const otaTakesPercent = (lossPerBooking / totalGuestPays * 100).toFixed(0);
+        const youKeepPercent = (100 - parseFloat(otaTakesPercent)).toFixed(0);
 
-        // Annual calculations
-        const annualBookings = monthlyBookings * 12;
-        const annualGuestPayments = totalGuestPays * annualBookings;
-        const annualCommissionPaid = totalCommission * annualBookings;
-        const annualTdsTcsPaid = totalTdsTcs * annualBookings;
-        const annualSettlement = hotelSettlement * annualBookings;
+        // Projection calculations
+        const weeklyBookings = Math.round(monthlyBookings / 4);
+        const yearlyBookings = monthlyBookings * 12;
+        const weeklyLoss = lossPerBooking * weeklyBookings;
+        const monthlyLoss = lossPerBooking * monthlyBookings;
+        const yearlyLoss = lossPerBooking * yearlyBookings;
 
-        // Update UI - Summary
-        // Update Dashboard Header
-        document.getElementById('sumGuestPays').textContent = formatCurrency(totalGuestPays);
-        document.getElementById('sumOtaKeeps').textContent = formatCurrency(totalCommission);
-        document.getElementById('sumHotelReceives').textContent = formatCurrency(hotelSettlement);
-        document.getElementById('resTaxPercent').textContent = (taxRate * 100).toFixed(0);
+        // Update UI - Big Alert
+        document.getElementById('lossPerBooking').textContent = formatCurrency(lossPerBooking);
+        document.getElementById('effectiveCommPercent').textContent = effectiveCommPercent + '%';
 
-        // Update Deductions Breakdown
+        // Update UI - Deduction Breakdown
         document.getElementById('resBaseRate').textContent = formatCurrency(baseRate);
         document.getElementById('resCommPercent').textContent = commissionRate;
-        document.getElementById('resCommission').textContent = '-' + formatCurrency(commission);
-        document.getElementById('resCommGst').textContent = '-' + formatCurrency(gstOnCommission);
-        document.getElementById('resTds').textContent = '-' + formatCurrency(tds);
-        document.getElementById('resTcs').textContent = '-' + formatCurrency(tcs);
-        document.getElementById('resTotalDeductions').textContent = '-' + formatCurrency(totalDeductions);
+        document.getElementById('resCommission').textContent = '−' + formatCurrency(commission);
+        document.getElementById('resCommGst').textContent = '−' + formatCurrency(gstOnCommission);
+        document.getElementById('resTds').textContent = '−' + formatCurrency(tds);
+        document.getElementById('resTcs').textContent = '−' + formatCurrency(tcs);
+        document.getElementById('effectiveEarning').textContent = formatCurrency(effectiveEarning);
 
-        // Update Key Metrics
-        document.getElementById('impactEffectiveComm').textContent = effectiveCommPercent + '%';
-        document.getElementById('impactRetainPercent').textContent = retainPercent + '%';
-        document.getElementById('effectiveRate').textContent = formatCurrency(effectiveEarning);
-
-        // Update Annual
-        document.getElementById('annualBookingsCount').textContent = annualBookings;
-        document.getElementById('annualGuestPayments').textContent = formatCurrency(annualGuestPayments);
-        document.getElementById('annualCommission').textContent = '-' + formatCurrency(annualCommissionPaid);
-        document.getElementById('annualSettlement').textContent = formatCurrency(annualSettlement);
-
-        // Update Projections
-        const weeklyBookings = monthlyBookings / 4;
-        const weeklyEarnings = hotelSettlement * weeklyBookings;
-        const monthlyEarningsTotal = hotelSettlement * monthlyBookings;
-        const yearlyEarnings = hotelSettlement * monthlyBookings * 12;
-
+        // Update UI - Loss Projections
         document.getElementById('monthlyBookingsDisplay').textContent = monthlyBookings;
-        document.getElementById('weeklyEarnings').textContent = formatCurrency(weeklyEarnings);
-        document.getElementById('monthlyEarnings').textContent = formatCurrency(monthlyEarningsTotal);
-        document.getElementById('yearlyEarnings').textContent = formatCurrency(yearlyEarnings);
+        document.getElementById('weeklyLoss').textContent = formatCurrency(weeklyLoss);
+        document.getElementById('weeklyBookings').textContent = '~' + weeklyBookings + ' bookings';
+        document.getElementById('monthlyLoss').textContent = formatCurrency(monthlyLoss);
+        document.getElementById('monthlyBookingsText').textContent = monthlyBookings + ' bookings';
+        document.getElementById('yearlyLoss').textContent = formatCurrency(yearlyLoss);
+        document.getElementById('yearlyBookings').textContent = yearlyBookings + ' bookings';
+
+        // Update UI - Comparison Bar
+        document.getElementById('barOta').style.width = otaTakesPercent + '%';
+        document.getElementById('barOta').textContent = 'OTA ' + otaTakesPercent + '%';
+        document.getElementById('barHotel').style.width = youKeepPercent + '%';
+        document.getElementById('barHotel').textContent = 'You ' + youKeepPercent + '%';
+        document.getElementById('otaTakesPercent').textContent = otaTakesPercent + '%';
+        document.getElementById('youKeepPercent').textContent = youKeepPercent + '%';
+
+        // Update UI - Summary Cards
+        document.getElementById('guestPays').textContent = formatCurrency(totalGuestPays);
+        document.getElementById('gstPercent').textContent = (taxRate * 100).toFixed(0);
+        document.getElementById('hotelSettlement').textContent = formatCurrency(hotelSettlement);
 
         // Show results
         resultsContainer.classList.add('show');
@@ -1335,8 +953,8 @@
 
       function formatCurrency(amount) {
         return '₹' + amount.toLocaleString('en-IN', {
-          minimumFractionDigits: 2,
-          maximumFractionDigits: 2
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0
         });
       }
 
