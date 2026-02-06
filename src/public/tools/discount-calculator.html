@@ -321,6 +321,179 @@
       display: block;
     }
 
+    /* Dashboard Layout */
+    .dashboard {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+    }
+
+    .dashboard-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .dash-card {
+      padding: 1.25rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .dash-card.without {
+      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+      border: 2px solid #81c784;
+    }
+
+    .dash-card.loss {
+      background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+      border: 2px solid #ef9a9a;
+    }
+
+    .dash-card.with {
+      background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+      border: 2px solid #ffb74d;
+    }
+
+    .dash-label {
+      font-size: 0.85rem;
+      color: #666;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .dash-value {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .dash-card.without .dash-value { color: #2e7d32; }
+    .dash-card.loss .dash-value { color: #d32f2f; }
+    .dash-card.with .dash-value { color: #e65100; }
+
+    .dash-sub {
+      font-size: 0.75rem;
+      color: #888;
+      margin-top: 0.25rem;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .dash-section {
+      background: #f8f9fa;
+      padding: 1.25rem;
+      border-radius: 10px;
+    }
+
+    .dash-section h4 {
+      color: var(--primary);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e0e0e0;
+    }
+
+    .dash-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.4rem 0;
+      font-size: 0.9rem;
+      border-bottom: 1px dashed #e0e0e0;
+    }
+
+    .dash-row:last-child {
+      border-bottom: none;
+    }
+
+    .dash-row.total {
+      font-weight: 600;
+      padding-top: 0.6rem;
+      margin-top: 0.3rem;
+      border-top: 2px solid #ccc;
+      border-bottom: none;
+    }
+
+    .dash-row.loss-row .negative {
+      color: #e65100;
+    }
+
+    .dash-row .negative {
+      color: #d32f2f;
+    }
+
+    .dash-row .positive {
+      color: #2e7d32;
+      font-weight: 600;
+    }
+
+    .dash-annual {
+      background: var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .dash-annual h4 {
+      color: var(--primary);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .annual-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.4rem 0;
+      font-size: 0.9rem;
+    }
+
+    .annual-row.total {
+      font-weight: 700;
+      font-size: 1rem;
+      padding-top: 0.5rem;
+      margin-top: 0.5rem;
+      border-top: 2px solid var(--primary);
+    }
+
+    .dash-tools {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+    }
+
+    .dash-tools a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .dash-tools a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .dashboard-header {
+        grid-template-columns: 1fr;
+      }
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+      .dash-tools {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+      }
+    }
+
     /* Comparison Cards */
     .comparison-grid {
       display: grid;
@@ -773,255 +946,161 @@
       <button class="btn btn-primary" id="calculateBtn">Calculate Discount Impact</button>
     </div>
 
-    <!-- Results Section -->
+    <!-- Results Dashboard -->
     <div class="results-container" id="resultsContainer">
-
-      <!-- Quick Comparison -->
-      <div class="section-card">
-        <h2>📊 Settlement Comparison</h2>
-
-        <div class="comparison-grid">
-          <div class="compare-card without-discount">
-            <div class="title">Without Discount</div>
-            <div class="amount" id="settlementWithout">-</div>
-            <div class="note">Your normal settlement</div>
+      <div class="dashboard">
+        <!-- Settlement Comparison Header -->
+        <div class="dashboard-header">
+          <div class="dash-card without">
+            <div class="dash-label">Without Discount</div>
+            <div class="dash-value" id="settlementWithout">-</div>
+            <div class="dash-sub">Normal settlement</div>
           </div>
-          <div class="compare-card with-discount">
-            <div class="title">With <span id="discountLabel">20%</span> Discount</div>
-            <div class="amount" id="settlementWith">-</div>
-            <div class="note">Your discounted settlement</div>
+          <div class="dash-card loss">
+            <div class="dash-label">Loss Per Booking</div>
+            <div class="dash-value" id="lossPerBooking">-</div>
+            <div class="dash-sub"><span id="effectiveDiscountPercent">-</span>% effective cost</div>
+          </div>
+          <div class="dash-card with">
+            <div class="dash-label">With <span id="discountLabel">20</span>% Discount</div>
+            <div class="dash-value" id="settlementWith">-</div>
+            <div class="dash-sub">Discounted settlement</div>
           </div>
         </div>
 
-        <!-- Impact Box -->
-        <div class="impact-box">
-          <h3>You're Losing Per Booking</h3>
-          <div class="big-number" id="lossPerBooking">-</div>
-          <div class="subtitle">Effective discount cost: <span id="effectiveDiscountPercent">-</span>% of your normal settlement</div>
-        </div>
-      </div>
-
-      <!-- Detailed Breakdown - Without Discount -->
-      <div class="section-card">
-        <h2>📝 Without Discount Breakdown</h2>
-
-        <div class="breakdown-card">
-          <h3>🏷️ Guest Payment</h3>
-          <div class="breakdown-row">
-            <span class="label">Base Rate</span>
-            <span class="value" id="noDiscBaseRate">-</span>
+        <!-- Breakdown Grid -->
+        <div class="dashboard-grid">
+          <!-- Left: Without Discount -->
+          <div class="dash-section">
+            <h4>Without Discount</h4>
+            <div class="dash-row">
+              <span>Base Rate</span>
+              <span id="noDiscBaseRate">-</span>
+            </div>
+            <div class="dash-row">
+              <span>GST (<span id="noDiscGstPercent">5</span>%)</span>
+              <span id="noDiscGst">-</span>
+            </div>
+            <div class="dash-row">
+              <span>Guest Pays</span>
+              <span id="noDiscGuestPays">-</span>
+            </div>
+            <div class="dash-row">
+              <span>Commission (<span id="noDiscCommPercent">21</span>%)</span>
+              <span class="negative" id="noDiscComm">-</span>
+            </div>
+            <div class="dash-row">
+              <span>GST on Comm + TDS/TCS</span>
+              <span class="negative" id="noDiscOther">-</span>
+            </div>
+            <div class="dash-row total">
+              <span>Your Settlement</span>
+              <span class="positive" id="noDiscSettlement">-</span>
+            </div>
           </div>
-          <div class="breakdown-row">
-            <span class="label">GST (<span id="noDiscGstPercent">5</span>%)</span>
-            <span class="value" id="noDiscGst">-</span>
-          </div>
-          <div class="highlight-box highlight-blue">
-            <div class="breakdown-row">
-              <span class="label"><strong>Guest Pays</strong></span>
-              <span class="value" id="noDiscGuestPays">-</span>
+
+          <!-- Right: With Discount -->
+          <div class="dash-section">
+            <h4>With <span id="discPercent">20</span>% Discount</h4>
+            <div class="dash-row">
+              <span>Discounted Rate</span>
+              <span id="discRate">-</span>
+            </div>
+            <div class="dash-row">
+              <span>GST (<span id="discGstPercent">5</span>%)</span>
+              <span id="discGst">-</span>
+            </div>
+            <div class="dash-row">
+              <span>Guest Pays</span>
+              <span id="discGuestPays">-</span>
+            </div>
+            <div class="dash-row">
+              <span>Commission (<span id="discCommPercent">21</span>%)</span>
+              <span class="negative" id="discComm">-</span>
+            </div>
+            <div class="dash-row">
+              <span>GST on Comm + TDS/TCS</span>
+              <span class="negative" id="discOther">-</span>
+            </div>
+            <div class="dash-row total loss-row">
+              <span>Your Settlement</span>
+              <span class="negative" id="discSettlement">-</span>
             </div>
           </div>
         </div>
 
-        <div class="breakdown-card">
-          <h3>💸 Deductions</h3>
-          <div class="breakdown-row">
-            <span class="label">Commission (<span id="noDiscCommPercent">21</span>%)</span>
-            <span class="value negative" id="noDiscComm">-</span>
+        <!-- Annual Impact -->
+        <div class="dash-annual">
+          <h4>Annual Impact (<span id="annualBookingsCount">360</span> discounted bookings)</h4>
+          <div class="annual-row">
+            <span>Without discount</span>
+            <span class="positive" id="annualWithout">-</span>
           </div>
-          <div class="breakdown-row">
-            <span class="label">GST on Commission (18%)</span>
-            <span class="value negative" id="noDiscCommGst">-</span>
+          <div class="annual-row">
+            <span>With discount</span>
+            <span id="annualWith">-</span>
           </div>
-          <div class="breakdown-row">
-            <span class="label">TDS (0.1%) + TCS (0.5%)</span>
-            <span class="value negative" id="noDiscTdsTcs">-</span>
-          </div>
-          <div class="highlight-box highlight-green">
-            <div class="breakdown-row">
-              <span class="label"><strong>Your Settlement</strong></span>
-              <span class="value" id="noDiscSettlement">-</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Detailed Breakdown - With Discount -->
-      <div class="section-card">
-        <h2>📝 With Discount Breakdown</h2>
-
-        <div class="breakdown-card">
-          <h3>🏷️ Guest Payment (After Discount)</h3>
-          <div class="breakdown-row">
-            <span class="label">Original Rate</span>
-            <span class="value" id="discOriginalRate">-</span>
-          </div>
-          <div class="breakdown-row">
-            <span class="label">Discount (<span id="discPercent">20</span>%)</span>
-            <span class="value negative" id="discAmount">-</span>
-          </div>
-          <div class="breakdown-row">
-            <span class="label">Discounted Rate</span>
-            <span class="value" id="discRate">-</span>
-          </div>
-          <div class="breakdown-row">
-            <span class="label">GST (<span id="discGstPercent">5</span>%)</span>
-            <span class="value" id="discGst">-</span>
-          </div>
-          <div class="highlight-box highlight-blue">
-            <div class="breakdown-row">
-              <span class="label"><strong>Guest Pays</strong></span>
-              <span class="value" id="discGuestPays">-</span>
-            </div>
+          <div class="annual-row total">
+            <span>Annual Loss</span>
+            <span class="negative" id="annualLoss">-</span>
           </div>
         </div>
 
-        <div class="breakdown-card">
-          <h3>💸 Deductions</h3>
-          <div class="breakdown-row">
-            <span class="label">Commission on Discounted Rate (<span id="discCommPercent">21</span>%)</span>
-            <span class="value negative" id="discComm">-</span>
-          </div>
-          <div class="breakdown-row">
-            <span class="label">GST on Commission (18%)</span>
-            <span class="value negative" id="discCommGst">-</span>
-          </div>
-          <div class="breakdown-row">
-            <span class="label">TDS (0.1%) + TCS (0.5%)</span>
-            <span class="value negative" id="discTdsTcs">-</span>
-          </div>
-          <div class="highlight-box highlight-red">
-            <div class="breakdown-row">
-              <span class="label"><strong>Your Settlement</strong></span>
-              <span class="value" id="discSettlement">-</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Key Insights -->
-      <div class="insight-card">
-        <h3>💡 Key Insights</h3>
-        <div class="insight-item">
-          <span class="label">Discount you offered to guest</span>
-          <span class="value" id="insightDiscountOffered">-</span>
-        </div>
-        <div class="insight-item">
-          <span class="label">Actual loss from your pocket</span>
-          <span class="value" id="insightActualLoss">-</span>
-        </div>
-        <div class="insight-item">
-          <span class="label">Commission saved (on lower rate)</span>
-          <span class="value" id="insightCommSaved">-</span>
-        </div>
-        <div class="insight-item">
-          <span class="label">Net impact per booking</span>
-          <span class="value" id="insightNetImpact">-</span>
-        </div>
-      </div>
-
-      <!-- Annual Impact -->
-      <div class="section-card">
-        <h2>📅 Annual Impact (<span id="annualBookingsCount">360</span> discounted bookings/year)</h2>
-
-        <table class="annual-table">
-          <tr>
-            <td>Total without discount</td>
-            <td class="positive" id="annualWithout">-</td>
-          </tr>
-          <tr>
-            <td>Total with discount</td>
-            <td id="annualWith">-</td>
-          </tr>
-          <tr>
-            <td>Annual revenue loss</td>
-            <td class="negative" id="annualLoss">-</td>
-          </tr>
-        </table>
-
-        <div class="result-box">
-          <div class="label">Annual Impact of Discount</div>
-          <div class="value" id="annualImpactValue">-</div>
-          <div class="sub-label">Lost revenue from offering <span id="annualDiscountPercent">20</span>% discount</div>
-        </div>
-      </div>
-
-      <!-- Explore More Tools -->
-      <div class="explore-tools">
-        <h3>Explore More Tools</h3>
-        <div class="tools-grid-mini">
-          <a href="commission-calculator.html" class="tool-link">
-            <span class="icon">💰</span>
-            <div class="text">
-              <h4>OTA Commission Calculator</h4>
-              <p>Full settlement breakup</p>
-            </div>
-          </a>
-          <a href="revenue-setup.html" class="tool-link">
-            <span class="icon">📊</span>
-            <div class="text">
-              <h4>Revenue Management Setup</h4>
-              <p>Set dynamic pricing</p>
-            </div>
-          </a>
-          <a href="/calendar.html" class="tool-link">
-            <span class="icon">📅</span>
-            <div class="text">
-              <h4>Demand Calendar 2026</h4>
-              <p>Plan peak pricing dates</p>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <!-- FAQ Section -->
-      <div class="faq-section">
-        <h3>Frequently Asked Questions</h3>
-
-        <div class="faq-item">
-          <div class="faq-question">What is a hotel-funded discount?</div>
-          <div class="faq-answer">
-            A hotel-funded discount is when you (the hotel) bear the cost of the discount offered to guests. For example, if your BAR is ₹5,000 and you offer a 20% hotel-funded discount, the guest pays ₹4,000. The OTA commission is calculated on ₹4,000, but your revenue also drops to ₹4,000 minus commission. This is different from OTA-funded promotions where the OTA bears part of the discount cost.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">How does discount affect my actual settlement amount?</div>
-          <div class="faq-answer">
-            Discounts impact your settlement in two ways: First, your base revenue is reduced by the discount percentage. Second, even though commission is calculated on the lower amount, you're still paying commission on a smaller pie. For example, ₹5,000 at 20% discount with 15% commission = ₹4,000 × 85% = ₹3,400 settlement. Without discount: ₹5,000 × 85% = ₹4,250. So you lose ₹850 per booking, not just ₹1,000.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">When should I offer discounts on OTAs?</div>
-          <div class="faq-answer">
-            Offer discounts strategically: (1) During low-demand periods when you need to fill rooms, (2) For last-minute inventory that would otherwise go unsold, (3) To compete during rate parity violations in your compset, (4) For advance purchase promotions to secure future occupancy. Avoid deep discounts during high-demand periods—you're just giving away margin when guests would book anyway.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">What is rate parity and how do discounts affect it?</div>
-          <div class="faq-answer">
-            Rate parity means maintaining consistent pricing across all channels. When you offer exclusive discounts on one OTA, you may violate parity agreements with others. Some OTAs have "rate match" clauses that require you to offer the same discount to them. Always read your contracts carefully and consider offering discounts uniformly or using package deals (room + breakfast) to differentiate without violating parity.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">Is offering a discount better than lowering my BAR?</div>
-          <div class="faq-answer">
-            It depends on your strategy. Discounts create perceived value ("save 20%!") and can be promotional in nature—they're visible and attract deal-seekers. Lowering BAR is less visible but more straightforward. Discounts work well for short promotional periods, while BAR adjustments are better for sustained rate positioning. Remember: frequent deep discounts can train guests to always expect deals. Learn more in our <a href="/guides/revenue/bar.html" style="color: var(--secondary);">BAR Guide</a>.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">How do I calculate the true cost of a discount promotion?</div>
-          <div class="faq-answer">
-            True cost = Revenue loss from discount + Opportunity cost. If you offer 25% discount: (1) Direct revenue loss = 25% of BAR, (2) Plus you're still paying commission on remaining amount, (3) Consider if these guests would have booked anyway at full price. This calculator helps you see the exact numbers, including monthly projections based on your expected bookings.
-          </div>
-        </div>
+        <!-- Explore More Tools -->
+      <div class="dash-tools">
+        <a href="commission-calculator.html">Calculate Full Commission →</a>
+        <a href="ota-dependency-calculator.html">Analyze Channel Mix →</a>
       </div>
 
     </div>
+
+    <!-- FAQ Section (always visible) -->
+    <div class="faq-section">
+      <h3>Frequently Asked Questions</h3>
+
+      <div class="faq-item">
+        <div class="faq-question">What is a hotel-funded discount?</div>
+        <div class="faq-answer">
+          A hotel-funded discount is when you (the hotel) bear the cost of the discount offered to guests. For example, if your BAR is ₹5,000 and you offer a 20% hotel-funded discount, the guest pays ₹4,000. The OTA commission is calculated on ₹4,000, but your revenue also drops to ₹4,000 minus commission. This is different from OTA-funded promotions where the OTA bears part of the discount cost.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How does discount affect my actual settlement amount?</div>
+        <div class="faq-answer">
+          Discounts impact your settlement in two ways: First, your base revenue is reduced by the discount percentage. Second, even though commission is calculated on the lower amount, you're still paying commission on a smaller pie. For example, ₹5,000 at 20% discount with 15% commission = ₹4,000 × 85% = ₹3,400 settlement. Without discount: ₹5,000 × 85% = ₹4,250. So you lose ₹850 per booking, not just ₹1,000.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">When should I offer discounts on OTAs?</div>
+        <div class="faq-answer">
+          Offer discounts strategically: (1) During low-demand periods when you need to fill rooms, (2) For last-minute inventory that would otherwise go unsold, (3) To compete during rate parity violations in your compset, (4) For advance purchase promotions to secure future occupancy. Avoid deep discounts during high-demand periods—you're just giving away margin when guests would book anyway.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What is rate parity and how do discounts affect it?</div>
+        <div class="faq-answer">
+          Rate parity means maintaining consistent pricing across all channels. When you offer exclusive discounts on one OTA, you may violate parity agreements with others. Some OTAs have "rate match" clauses that require you to offer the same discount to them. Always read your contracts carefully and consider offering discounts uniformly or using package deals (room + breakfast) to differentiate without violating parity.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Is offering a discount better than lowering my BAR?</div>
+        <div class="faq-answer">
+          It depends on your strategy. Discounts create perceived value ("save 20%!") and can be promotional in nature—they're visible and attract deal-seekers. Lowering BAR is less visible but more straightforward. Discounts work well for short promotional periods, while BAR adjustments are better for sustained rate positioning. Remember: frequent deep discounts can train guests to always expect deals. Learn more in our <a href="/guides/revenue/bar.html" style="color: var(--secondary);">BAR Guide</a>.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How do I calculate the true cost of a discount promotion?</div>
+        <div class="faq-answer">
+          True cost = Revenue loss from discount + Opportunity cost. If you offer 25% discount: (1) Direct revenue loss = 25% of BAR, (2) Plus you're still paying commission on remaining amount, (3) Consider if these guests would have booked anyway at full price. This calculator helps you see the exact numbers, including monthly projections based on your expected bookings.
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- Footer -->
@@ -1109,12 +1188,12 @@
         const annualWith = discSettlement * annualBookings;
         const annualLoss = lossPerBooking * annualBookings;
 
-        // ========== UPDATE UI ==========
+        // ========== UPDATE DASHBOARD ==========
 
-        // Comparison cards
+        // Header cards
         document.getElementById('settlementWithout').textContent = formatCurrency(noDiscSettlement);
         document.getElementById('settlementWith').textContent = formatCurrency(discSettlement);
-        document.getElementById('discountLabel').textContent = discountPercent + '%';
+        document.getElementById('discountLabel').textContent = discountPercent;
         document.getElementById('lossPerBooking').textContent = '−' + formatCurrency(lossPerBooking);
         document.getElementById('effectiveDiscountPercent').textContent = effectiveDiscountPercent;
 
@@ -1125,37 +1204,25 @@
         document.getElementById('noDiscGuestPays').textContent = formatCurrency(noDiscGuestPays);
         document.getElementById('noDiscCommPercent').textContent = commissionRate;
         document.getElementById('noDiscComm').textContent = '−' + formatCurrency(noDiscComm);
-        document.getElementById('noDiscCommGst').textContent = '−' + formatCurrency(noDiscCommGst);
-        document.getElementById('noDiscTdsTcs').textContent = '−' + formatCurrency(noDiscTdsTcs);
+        document.getElementById('noDiscOther').textContent = '−' + formatCurrency(noDiscCommGst + noDiscTdsTcs);
         document.getElementById('noDiscSettlement').textContent = formatCurrency(noDiscSettlement);
 
         // With discount breakdown
-        document.getElementById('discOriginalRate').textContent = formatCurrency(baseRate);
         document.getElementById('discPercent').textContent = discountPercent;
-        document.getElementById('discAmount').textContent = '−' + formatCurrency(discountAmount);
         document.getElementById('discRate').textContent = formatCurrency(discountedRate);
         document.getElementById('discGstPercent').textContent = (discGstRate * 100).toFixed(0);
         document.getElementById('discGst').textContent = formatCurrency(discGst);
         document.getElementById('discGuestPays').textContent = formatCurrency(discGuestPays);
         document.getElementById('discCommPercent').textContent = commissionRate;
         document.getElementById('discComm').textContent = '−' + formatCurrency(discComm);
-        document.getElementById('discCommGst').textContent = '−' + formatCurrency(discCommGst);
-        document.getElementById('discTdsTcs').textContent = '−' + formatCurrency(discTdsTcs);
+        document.getElementById('discOther').textContent = '−' + formatCurrency(discCommGst + discTdsTcs);
         document.getElementById('discSettlement').textContent = formatCurrency(discSettlement);
-
-        // Insights
-        document.getElementById('insightDiscountOffered').textContent = formatCurrency(discountAmount);
-        document.getElementById('insightActualLoss').textContent = formatCurrency(lossPerBooking);
-        document.getElementById('insightCommSaved').textContent = formatCurrency(commissionSaved);
-        document.getElementById('insightNetImpact').textContent = '−' + formatCurrency(lossPerBooking);
 
         // Annual
         document.getElementById('annualBookingsCount').textContent = annualBookings;
         document.getElementById('annualWithout').textContent = formatCurrency(annualWithout);
         document.getElementById('annualWith').textContent = formatCurrency(annualWith);
         document.getElementById('annualLoss').textContent = '−' + formatCurrency(annualLoss);
-        document.getElementById('annualImpactValue').textContent = '−' + formatCurrency(annualLoss);
-        document.getElementById('annualDiscountPercent').textContent = discountPercent;
 
         // Show results
         resultsContainer.classList.add('show');

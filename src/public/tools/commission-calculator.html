@@ -316,6 +316,167 @@
       display: block;
     }
 
+    /* Dashboard Layout */
+    .dashboard {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+    }
+
+    .dashboard-header {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .dash-card {
+      padding: 1.25rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .dash-card.guest {
+      background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+      border: 2px solid #64b5f6;
+    }
+
+    .dash-card.ota {
+      background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+      border: 2px solid #ffb74d;
+    }
+
+    .dash-card.hotel {
+      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+      border: 2px solid #81c784;
+    }
+
+    .dash-label {
+      font-size: 0.85rem;
+      color: #666;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .dash-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .dash-card.guest .dash-value { color: #1565c0; }
+    .dash-card.ota .dash-value { color: #e65100; }
+    .dash-card.hotel .dash-value { color: #2e7d32; }
+
+    .dash-sub {
+      font-size: 0.75rem;
+      color: #888;
+      margin-top: 0.25rem;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .dash-section {
+      background: #f8f9fa;
+      padding: 1.25rem;
+      border-radius: 10px;
+    }
+
+    .dash-section h4 {
+      color: var(--primary);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e0e0e0;
+    }
+
+    .dash-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.4rem 0;
+      font-size: 0.9rem;
+      border-bottom: 1px dashed #e0e0e0;
+    }
+
+    .dash-row:last-child {
+      border-bottom: none;
+    }
+
+    .dash-row.total {
+      font-weight: 600;
+      padding-top: 0.6rem;
+      margin-top: 0.3rem;
+      border-top: 2px solid #ccc;
+      border-bottom: none;
+    }
+
+    .dash-row.highlight {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      padding: 0.75rem;
+      border-radius: 6px;
+      margin: 0.5rem 0;
+      border: none;
+    }
+
+    .dash-row.highlight .positive {
+      color: white;
+      font-weight: 700;
+    }
+
+    .dash-divider {
+      height: 1px;
+      background: #ddd;
+      margin: 1rem 0;
+    }
+
+    .dash-row .negative {
+      color: #d32f2f;
+    }
+
+    .dash-row .positive {
+      color: #2e7d32;
+      font-weight: 600;
+    }
+
+    .dash-tools {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+    }
+
+    .dash-tools a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .dash-tools a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .dashboard-header {
+        grid-template-columns: 1fr;
+      }
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+      .dash-tools {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+      }
+    }
+
     .breakdown-card {
       background: #f8f9fa;
       padding: 1.25rem;
@@ -757,257 +918,157 @@
       <button class="btn btn-primary" id="calculateBtn">Calculate Settlement Breakup</button>
     </div>
 
-    <!-- Results Section -->
+    <!-- Results Dashboard -->
     <div class="results-container" id="resultsContainer">
-
-      <!-- Settlement Flow Summary -->
-      <div class="section-card">
-        <h2>📊 Settlement Summary</h2>
-
-        <div class="settlement-summary">
-          <div class="summary-card guest">
-            <div class="title">Guest Pays</div>
-            <div class="amount" id="sumGuestPays">-</div>
-            <div class="note">Rate + GST</div>
+      <div class="dashboard">
+        <!-- Main Settlement Cards -->
+        <div class="dashboard-header">
+          <div class="dash-card guest">
+            <div class="dash-label">Guest Pays</div>
+            <div class="dash-value" id="sumGuestPays">-</div>
+            <div class="dash-sub">Rate + <span id="resTaxPercent">5</span>% GST</div>
           </div>
-          <div class="summary-card ota">
-            <div class="title">OTA Keeps</div>
-            <div class="amount" id="sumOtaKeeps">-</div>
-            <div class="note">Commission + GST on Comm</div>
+          <div class="dash-card ota">
+            <div class="dash-label">OTA Keeps</div>
+            <div class="dash-value" id="sumOtaKeeps">-</div>
+            <div class="dash-sub">Comm + GST on Comm</div>
           </div>
-          <div class="summary-card hotel">
-            <div class="title">You Receive</div>
-            <div class="amount" id="sumHotelReceives">-</div>
-            <div class="note">Settlement amount</div>
+          <div class="dash-card hotel">
+            <div class="dash-label">You Receive</div>
+            <div class="dash-value" id="sumHotelReceives">-</div>
+            <div class="dash-sub">Your settlement</div>
           </div>
         </div>
 
-        <div class="flow-diagram">
-          <div class="flow-step">
-            <div class="step-label">Your Rate</div>
-            <div class="step-value" id="flowRate">-</div>
+        <!-- Breakdown Grid -->
+        <div class="dashboard-grid">
+          <!-- Left: Deductions Breakdown -->
+          <div class="dash-section">
+            <h4>Deductions Breakdown</h4>
+            <div class="dash-row">
+              <span>Base Rate</span>
+              <span id="resBaseRate">-</span>
+            </div>
+            <div class="dash-row">
+              <span>Commission (<span id="resCommPercent">21</span>%)</span>
+              <span class="negative" id="resCommission">-</span>
+            </div>
+            <div class="dash-row">
+              <span>GST on Commission (18%)</span>
+              <span class="negative" id="resCommGst">-</span>
+            </div>
+            <div class="dash-row">
+              <span>TDS (0.1%)</span>
+              <span class="negative" id="resTds">-</span>
+            </div>
+            <div class="dash-row">
+              <span>TCS (0.5%)</span>
+              <span class="negative" id="resTcs">-</span>
+            </div>
+            <div class="dash-row total">
+              <span>Total Deductions</span>
+              <span class="negative" id="resTotalDeductions">-</span>
+            </div>
           </div>
-          <span class="flow-arrow">→</span>
-          <div class="flow-step">
-            <div class="step-label">+GST</div>
-            <div class="step-value" id="flowGst">-</div>
-          </div>
-          <span class="flow-arrow">→</span>
-          <div class="flow-step">
-            <div class="step-label">Guest Pays</div>
-            <div class="step-value" id="flowGuestPays">-</div>
-          </div>
-          <span class="flow-arrow">→</span>
-          <div class="flow-step">
-            <div class="step-label">−Deductions</div>
-            <div class="step-value" id="flowDeductions">-</div>
-          </div>
-          <span class="flow-arrow">→</span>
-          <div class="flow-step">
-            <div class="step-label">You Get</div>
-            <div class="step-value" id="flowYouGet">-</div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Detailed Breakdown -->
-      <div class="section-card">
-        <h2>📝 Detailed Breakup</h2>
-
-        <div class="breakdown-card">
-          <h3>🏷️ What Guest Sees & Pays</h3>
-          <div class="breakdown-row">
-            <span class="label">Your Base Rate (pushed on OTA)</span>
-            <span class="value" id="resBaseRate">-</span>
-          </div>
-          <div class="breakdown-row">
-            <span class="label">GST on Room (<span id="resTaxPercent">5</span>%)</span>
-            <span class="value" id="resTax">-</span>
-          </div>
-          <div class="highlight-box highlight-blue">
-            <div class="breakdown-row">
-              <span class="label"><strong>Total Guest Pays</strong></span>
-              <span class="value" id="resGuestPays">-</span>
+          <!-- Right: Key Metrics -->
+          <div class="dash-section">
+            <h4>Key Metrics</h4>
+            <div class="dash-row">
+              <span>Effective Commission</span>
+              <span id="impactEffectiveComm">-</span>
+            </div>
+            <div class="dash-row">
+              <span>You Retain</span>
+              <span class="positive" id="impactRetainPercent">-</span>
+            </div>
+            <div class="dash-row highlight">
+              <span>Effective Earning/Room</span>
+              <span class="positive" id="effectiveRate">-</span>
+            </div>
+            <div class="dash-divider"></div>
+            <h4>Annual (<span id="annualBookingsCount">600</span> bookings)</h4>
+            <div class="dash-row">
+              <span>Guest Payments</span>
+              <span id="annualGuestPayments">-</span>
+            </div>
+            <div class="dash-row">
+              <span>Commission Lost</span>
+              <span class="negative" id="annualCommission">-</span>
+            </div>
+            <div class="dash-row total">
+              <span>Your Settlement</span>
+              <span class="positive" id="annualSettlement">-</span>
             </div>
           </div>
         </div>
 
-        <div class="breakdown-card">
-          <h3>💸 OTA Commission Deduction</h3>
-          <div class="breakdown-row">
-            <span class="label">Commission on Base Rate (<span id="resCommPercent">21</span>%)</span>
-            <span class="value" id="resCommission">-</span>
-          </div>
-          <div class="breakdown-row">
-            <span class="label">GST on Commission (18%)</span>
-            <span class="value" id="resCommGst">-</span>
-          </div>
-          <div class="highlight-box highlight-red">
-            <div class="breakdown-row">
-              <span class="label"><strong>Total Commission Deducted</strong></span>
-              <span class="value" id="resTotalComm">-</span>
-            </div>
-          </div>
+        <!-- Explore More Tools -->
+        <div class="dash-tools">
+          <a href="ota-dependency-calculator.html">Analyze Channel Mix →</a>
+          <a href="discount-calculator.html">Calculate Discount Impact →</a>
         </div>
+      </div>
+    </div>
 
-        <div class="breakdown-card">
-          <h3>📋 Other Deductions (TDS/TCS)</h3>
-          <div class="breakdown-row">
-            <span class="label">TDS (0.1% on Base Rate)</span>
-            <span class="value" id="resTds">-</span>
-          </div>
-          <div class="breakdown-row">
-            <span class="label">TCS (0.5% on Base Rate)</span>
-            <span class="value" id="resTcs">-</span>
-          </div>
-          <div class="breakdown-row">
-            <span class="label"><strong>Total TDS/TCS</strong></span>
-            <span class="value" id="resTotalTdsTcs">-</span>
-          </div>
-        </div>
+    <!-- FAQ Section (always visible) -->
+    <div class="faq-section">
+      <h3>Frequently Asked Questions</h3>
 
-        <div class="result-box">
-          <div class="label">Your OTA Settlement</div>
-          <div class="value" id="resYouReceive">-</div>
-          <div class="sub-label">Guest Payment − Commission − TDS/TCS</div>
+      <div class="faq-item">
+        <div class="faq-question">What is OTA commission and how does it work?</div>
+        <div class="faq-answer">
+          OTA (Online Travel Agency) commission is a percentage fee charged by platforms like MakeMyTrip, Booking.com, and Goibibo for each booking they generate. Typically ranging from 15-25%, this commission is deducted from your room rate before settlement. The OTA collects payment from the guest and remits the balance to you after deducting their commission, GST on commission, and applicable TDS/TCS.
         </div>
       </div>
 
-      <!-- Effective Rate -->
-      <div class="effective-rate">
-        <h3>Your Effective Earning Rate</h3>
-        <div class="big-number" id="effectiveRate">-</div>
-        <div class="subtitle">Per room night after OTA deductions (excluding GST)</div>
-      </div>
-
-      <!-- Commission Percentage -->
-      <div class="section-card">
-        <h2>📈 Commission Impact</h2>
-
-        <table class="annual-table">
-          <tr>
-            <td>Commission % on Base Rate</td>
-            <td id="impactCommPercent">-</td>
-          </tr>
-          <tr>
-            <td>Effective Commission (incl. GST on Comm)</td>
-            <td class="negative" id="impactEffectiveComm">-</td>
-          </tr>
-          <tr>
-            <td>Total Deduction % (Comm + TDS + TCS)</td>
-            <td class="negative" id="impactTotalDeduction">-</td>
-          </tr>
-          <tr>
-            <td>You Retain % of Guest Payment</td>
-            <td class="positive" id="impactRetainPercent">-</td>
-          </tr>
-        </table>
-      </div>
-
-      <!-- Annual Projections -->
-      <div class="section-card">
-        <h2>📅 Annual Projections (<span id="annualBookingsCount">600</span> bookings/year)</h2>
-
-        <table class="annual-table">
-          <tr>
-            <td>Total Guest Payments</td>
-            <td id="annualGuestPayments">-</td>
-          </tr>
-          <tr>
-            <td>Total Commission to OTA</td>
-            <td class="negative" id="annualCommission">-</td>
-          </tr>
-          <tr>
-            <td>Total TDS/TCS Deducted</td>
-            <td class="negative" id="annualTdsTcs">-</td>
-          </tr>
-          <tr>
-            <td>Your Annual Settlement</td>
-            <td class="positive" id="annualSettlement">-</td>
-          </tr>
-        </table>
-      </div>
-
-      <!-- Explore More Tools -->
-      <div class="explore-tools">
-        <h3>Explore More Tools</h3>
-        <div class="tools-grid-mini">
-          <a href="revenue-setup.html" class="tool-link">
-            <span class="icon">📊</span>
-            <div class="text">
-              <h4>Revenue Management Setup</h4>
-              <p>Set dynamic pricing for your hotel</p>
-            </div>
-          </a>
-          <a href="discount-calculator.html" class="tool-link">
-            <span class="icon">🏷️</span>
-            <div class="text">
-              <h4>Discount Calculator</h4>
-              <p>Impact of hotel-funded discounts</p>
-            </div>
-          </a>
+      <div class="faq-item">
+        <div class="faq-question">Why is there GST on commission (18%)?</div>
+        <div class="faq-answer">
+          OTA services are classified as intermediary services under GST law, attracting 18% GST. This GST is charged on the commission amount, not on your room rate. For example, if commission is ₹630 (21% of ₹3,000), GST on commission would be ₹113.40 (18% of ₹630). This is a legitimate business expense and can be claimed as Input Tax Credit (ITC) if you're GST registered.
         </div>
       </div>
 
-      <!-- FAQ Section -->
-      <div class="faq-section">
-        <h3>❓ Frequently Asked Questions</h3>
-
-        <div class="faq-item">
-          <div class="faq-question">What is OTA commission and how does it work?</div>
-          <div class="faq-answer">
-            OTA (Online Travel Agency) commission is a percentage fee charged by platforms like MakeMyTrip, Booking.com, and Goibibo for each booking they generate. Typically ranging from 15-25%, this commission is deducted from your room rate before settlement. The OTA collects payment from the guest and remits the balance to you after deducting their commission, GST on commission, and applicable TDS/TCS.
-          </div>
+      <div class="faq-item">
+        <div class="faq-question">What is TDS and TCS on hotel bookings?</div>
+        <div class="faq-answer">
+          <strong>TDS (Tax Deducted at Source) at 0.1%:</strong> Under Section 194-O, e-commerce operators must deduct TDS on gross amount of sales. This is adjustable against your income tax liability.<br><br>
+          <strong>TCS (Tax Collected at Source) at 0.5%:</strong> Under Section 206C(1H), sellers receiving payments above ₹50 lakh must collect TCS. OTAs apply this from the first rupee for simplicity. This is also adjustable against your tax liability.
         </div>
+      </div>
 
-        <div class="faq-item">
-          <div class="faq-question">Why is there GST on commission (18%)?</div>
-          <div class="faq-answer">
-            OTA services are classified as intermediary services under GST law, attracting 18% GST. This GST is charged on the commission amount, not on your room rate. For example, if commission is ₹630 (21% of ₹3,000), GST on commission would be ₹113.40 (18% of ₹630). This is a legitimate business expense and can be claimed as Input Tax Credit (ITC) if you're GST registered.
-          </div>
+      <div class="faq-item">
+        <div class="faq-question">When is GST 5% vs 18% on room tariff?</div>
+        <div class="faq-answer">
+          GST on hotel rooms depends on the declared tariff:<br>
+          • <strong>5% GST:</strong> Room tariff up to ₹7,500 per night (no ITC available)<br>
+          • <strong>18% GST:</strong> Room tariff above ₹7,500 per night (ITC available)<br><br>
+          This is based on the published/declared tariff, not discounted rates. Most budget and mid-scale hotels fall under 5% GST.
         </div>
+      </div>
 
-        <div class="faq-item">
-          <div class="faq-question">What is TDS and TCS on hotel bookings?</div>
-          <div class="faq-answer">
-            <strong>TDS (Tax Deducted at Source) at 0.1%:</strong> Under Section 194-O, e-commerce operators must deduct TDS on gross amount of sales. This is adjustable against your income tax liability.<br><br>
-            <strong>TCS (Tax Collected at Source) at 0.5%:</strong> Under Section 206C(1H), sellers receiving payments above ₹50 lakh must collect TCS. OTAs apply this from the first rupee for simplicity. This is also adjustable against your tax liability.
-          </div>
+      <div class="faq-item">
+        <div class="faq-question">How can I reduce OTA commission impact?</div>
+        <div class="faq-answer">
+          Several strategies can help:<br>
+          • <strong>Increase direct bookings:</strong> Build your own website with booking engine<br>
+          • <strong>Negotiate rates:</strong> High-volume hotels can negotiate lower commission<br>
+          • <strong>Optimize pricing:</strong> Adjust OTA rates to account for commission<br>
+          • <strong>Build loyalty:</strong> Convert OTA guests to direct bookers for repeat stays<br>
+          • Use our <a href="/tools/ota-dependency-calculator.html" style="color: var(--secondary);">OTA Dependency Calculator</a> to analyze your channel mix<br>
+          • Read our <a href="/guides/revenue/ota.html" style="color: var(--secondary);">OTA Guide</a> for more strategies
         </div>
+      </div>
 
-        <div class="faq-item">
-          <div class="faq-question">When is GST 5% vs 18% on room tariff?</div>
-          <div class="faq-answer">
-            GST on hotel rooms depends on the declared tariff:<br>
-            • <strong>5% GST:</strong> Room tariff up to ₹7,500 per night (no ITC available)<br>
-            • <strong>18% GST:</strong> Room tariff above ₹7,500 per night (ITC available)<br><br>
-            This is based on the published/declared tariff, not discounted rates. Most budget and mid-scale hotels fall under 5% GST.
-          </div>
+      <div class="faq-item">
+        <div class="faq-question">Is the commission calculated on base rate or total amount?</div>
+        <div class="faq-answer">
+          OTA commission is typically calculated on the <strong>base room rate (before GST)</strong>. The guest pays room rate + GST, but commission is charged only on the room rate portion. This calculator follows the standard industry practice where commission is applied to the pre-tax amount.
         </div>
-
-        <div class="faq-item">
-          <div class="faq-question">How can I reduce OTA commission impact?</div>
-          <div class="faq-answer">
-            Several strategies can help:<br>
-            • <strong>Increase direct bookings:</strong> Build your own website with booking engine<br>
-            • <strong>Negotiate rates:</strong> High-volume hotels can negotiate lower commission<br>
-            • <strong>Optimize pricing:</strong> Adjust OTA rates to account for commission<br>
-            • <strong>Build loyalty:</strong> Convert OTA guests to direct bookers for repeat stays<br>
-            • Use our <a href="/tools/ota-dependency-calculator.html" style="color: var(--secondary);">OTA Dependency Calculator</a> to analyze your channel mix<br>
-            • Read our <a href="/guides/revenue/ota.html" style="color: var(--secondary);">OTA Guide</a> for more strategies
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">Is the commission calculated on base rate or total amount?</div>
-          <div class="faq-answer">
-            OTA commission is typically calculated on the <strong>base room rate (before GST)</strong>. The guest pays room rate + GST, but commission is charged only on the room rate portion. This calculator follows the standard industry practice where commission is applied to the pre-tax amount.
-          </div>
-        </div>
-
       </div>
 
     </div>
+
   </div>
 
   <script>
@@ -1076,48 +1137,30 @@
         const annualSettlement = hotelSettlement * annualBookings;
 
         // Update UI - Summary
+        // Update Dashboard Header
         document.getElementById('sumGuestPays').textContent = formatCurrency(totalGuestPays);
         document.getElementById('sumOtaKeeps').textContent = formatCurrency(totalCommission);
         document.getElementById('sumHotelReceives').textContent = formatCurrency(hotelSettlement);
-
-        // Update UI - Flow
-        document.getElementById('flowRate').textContent = formatCurrency(baseRate);
-        document.getElementById('flowGst').textContent = formatCurrency(gstOnRoom);
-        document.getElementById('flowGuestPays').textContent = formatCurrency(totalGuestPays);
-        document.getElementById('flowDeductions').textContent = formatCurrency(totalDeductions);
-        document.getElementById('flowYouGet').textContent = formatCurrency(hotelSettlement);
-
-        // Update UI - Detailed Breakup
-        document.getElementById('resBaseRate').textContent = formatCurrency(baseRate);
         document.getElementById('resTaxPercent').textContent = (taxRate * 100).toFixed(0);
-        document.getElementById('resTax').textContent = formatCurrency(gstOnRoom);
-        document.getElementById('resGuestPays').textContent = formatCurrency(totalGuestPays);
 
+        // Update Deductions Breakdown
+        document.getElementById('resBaseRate').textContent = formatCurrency(baseRate);
         document.getElementById('resCommPercent').textContent = commissionRate;
-        document.getElementById('resCommission').textContent = formatCurrency(commission);
-        document.getElementById('resCommGst').textContent = formatCurrency(gstOnCommission);
-        document.getElementById('resTotalComm').textContent = formatCurrency(totalCommission);
+        document.getElementById('resCommission').textContent = '-' + formatCurrency(commission);
+        document.getElementById('resCommGst').textContent = '-' + formatCurrency(gstOnCommission);
+        document.getElementById('resTds').textContent = '-' + formatCurrency(tds);
+        document.getElementById('resTcs').textContent = '-' + formatCurrency(tcs);
+        document.getElementById('resTotalDeductions').textContent = '-' + formatCurrency(totalDeductions);
 
-        document.getElementById('resTds').textContent = formatCurrency(tds);
-        document.getElementById('resTcs').textContent = formatCurrency(tcs);
-        document.getElementById('resTotalTdsTcs').textContent = formatCurrency(totalTdsTcs);
-
-        document.getElementById('resYouReceive').textContent = formatCurrency(hotelSettlement);
-
-        // Update UI - Effective Rate
+        // Update Key Metrics
+        document.getElementById('impactEffectiveComm').textContent = effectiveCommPercent + '%';
+        document.getElementById('impactRetainPercent').textContent = retainPercent + '%';
         document.getElementById('effectiveRate').textContent = formatCurrency(effectiveEarning);
 
-        // Update UI - Commission Impact
-        document.getElementById('impactCommPercent').textContent = commissionRate + '%';
-        document.getElementById('impactEffectiveComm').textContent = effectiveCommPercent + '%';
-        document.getElementById('impactTotalDeduction').textContent = totalDeductionPercent + '%';
-        document.getElementById('impactRetainPercent').textContent = retainPercent + '%';
-
-        // Update UI - Annual
+        // Update Annual
         document.getElementById('annualBookingsCount').textContent = annualBookings;
         document.getElementById('annualGuestPayments').textContent = formatCurrency(annualGuestPayments);
-        document.getElementById('annualCommission').textContent = formatCurrency(annualCommissionPaid);
-        document.getElementById('annualTdsTcs').textContent = formatCurrency(annualTdsTcsPaid);
+        document.getElementById('annualCommission').textContent = '-' + formatCurrency(annualCommissionPaid);
         document.getElementById('annualSettlement').textContent = formatCurrency(annualSettlement);
 
         // Show results
