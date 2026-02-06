@@ -463,6 +463,112 @@
       text-decoration: underline;
     }
 
+    /* Projections Section */
+    .dash-projections {
+      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+      padding: 1.25rem;
+      border-radius: 10px;
+      margin-top: 1.5rem;
+      border: 2px solid #81c784;
+    }
+
+    .dash-projections h4 {
+      color: #2e7d32;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .projection-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .projection-card {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .projection-card.highlight {
+      background: linear-gradient(135deg, #2e7d32 0%, #388e3c 100%);
+      color: white;
+    }
+
+    .projection-card.highlight .projection-label {
+      color: rgba(255,255,255,0.9);
+    }
+
+    .projection-card.highlight .projection-value {
+      color: white;
+    }
+
+    .projection-label {
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 0.25rem;
+    }
+
+    .projection-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .projection-value.positive {
+      color: #2e7d32;
+    }
+
+    /* Resources Section */
+    .dash-resources {
+      background: #f8f9fa;
+      padding: 1.25rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+
+    .dash-resources h4 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+
+    .resource-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem;
+      background: white;
+      border-radius: 6px;
+      text-decoration: none;
+      color: inherit;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+      border: 1px solid #e0e0e0;
+    }
+
+    .resource-link:hover {
+      background: var(--secondary-light);
+      border-color: var(--secondary);
+      transform: translateX(4px);
+    }
+
+    .resource-link .icon {
+      font-size: 1.1rem;
+    }
+
+    .resource-link .text {
+      color: var(--primary);
+      font-weight: 500;
+    }
+
     @media (max-width: 768px) {
       .dashboard-header {
         grid-template-columns: 1fr;
@@ -474,6 +580,12 @@
         flex-direction: column;
         align-items: center;
         gap: 0.75rem;
+      }
+      .projection-grid {
+        grid-template-columns: 1fr;
+      }
+      .resource-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1003,6 +1115,48 @@
           </div>
         </div>
 
+        <!-- Projections Section -->
+        <div class="dash-projections">
+          <h4>Projected Earnings (<span id="monthlyBookingsDisplay">50</span> bookings/month)</h4>
+          <div class="projection-grid">
+            <div class="projection-card">
+              <div class="projection-label">Weekly</div>
+              <div class="projection-value positive" id="weeklyEarnings">-</div>
+            </div>
+            <div class="projection-card">
+              <div class="projection-label">Monthly</div>
+              <div class="projection-value positive" id="monthlyEarnings">-</div>
+            </div>
+            <div class="projection-card highlight">
+              <div class="projection-label">Yearly</div>
+              <div class="projection-value" id="yearlyEarnings">-</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resources Section -->
+        <div class="dash-resources">
+          <h4>Learn More</h4>
+          <div class="resource-grid">
+            <a href="/guides/revenue/ota.html" class="resource-link">
+              <span class="icon">📚</span>
+              <span class="text">OTA Guide - Strategies & Tips</span>
+            </a>
+            <a href="/guides/revenue/adr.html" class="resource-link">
+              <span class="icon">📊</span>
+              <span class="text">ADR - Average Daily Rate</span>
+            </a>
+            <a href="/tools/ota-dependency-calculator.html" class="resource-link">
+              <span class="icon">⚖️</span>
+              <span class="text">OTA Dependency Calculator</span>
+            </a>
+            <a href="/tools/discount-calculator.html" class="resource-link">
+              <span class="icon">🏷️</span>
+              <span class="text">Discount Settlement Calculator</span>
+            </a>
+          </div>
+        </div>
+
         <!-- Explore More Tools -->
         <div class="dash-tools">
           <a href="ota-dependency-calculator.html">Analyze Channel Mix →</a>
@@ -1162,6 +1316,17 @@
         document.getElementById('annualGuestPayments').textContent = formatCurrency(annualGuestPayments);
         document.getElementById('annualCommission').textContent = '-' + formatCurrency(annualCommissionPaid);
         document.getElementById('annualSettlement').textContent = formatCurrency(annualSettlement);
+
+        // Update Projections
+        const weeklyBookings = monthlyBookings / 4;
+        const weeklyEarnings = hotelSettlement * weeklyBookings;
+        const monthlyEarningsTotal = hotelSettlement * monthlyBookings;
+        const yearlyEarnings = hotelSettlement * monthlyBookings * 12;
+
+        document.getElementById('monthlyBookingsDisplay').textContent = monthlyBookings;
+        document.getElementById('weeklyEarnings').textContent = formatCurrency(weeklyEarnings);
+        document.getElementById('monthlyEarnings').textContent = formatCurrency(monthlyEarningsTotal);
+        document.getElementById('yearlyEarnings').textContent = formatCurrency(yearlyEarnings);
 
         // Show results
         resultsContainer.classList.add('show');

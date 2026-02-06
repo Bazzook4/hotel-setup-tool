@@ -726,6 +726,61 @@
     .faq-item.open .faq-answer {
       display: block;
     }
+
+    /* Resources Section */
+    .dash-resources {
+      background: #f8f9fa;
+      padding: 1.25rem;
+      border-radius: 10px;
+      margin-top: 1.5rem;
+    }
+
+    .dash-resources h4 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+
+    .resource-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem;
+      background: white;
+      border-radius: 6px;
+      text-decoration: none;
+      color: inherit;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+      border: 1px solid #e0e0e0;
+    }
+
+    .resource-link:hover {
+      background: var(--secondary-light);
+      border-color: var(--secondary);
+      transform: translateX(4px);
+    }
+
+    .resource-link .icon {
+      font-size: 1.1rem;
+    }
+
+    .resource-link .text {
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    @media (max-width: 600px) {
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -950,6 +1005,31 @@
           <div class="breakdown-row">
             <span class="label">New OTA dependency</span>
             <span class="value" id="newDependency">-</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Learn More Resources -->
+      <div class="section-card">
+        <h2>📚 Learn More</h2>
+        <div class="dash-resources" style="margin-top: 0; background: transparent; padding: 0;">
+          <div class="resource-grid">
+            <a href="/guides/revenue/ota.html" class="resource-link">
+              <span class="icon">🌐</span>
+              <span class="text">OTA Guide - Strategies & Best Practices</span>
+            </a>
+            <a href="/guides/revenue/adr.html" class="resource-link">
+              <span class="icon">📊</span>
+              <span class="text">ADR - Average Daily Rate Guide</span>
+            </a>
+            <a href="/guides/revenue/revpar.html" class="resource-link">
+              <span class="icon">📈</span>
+              <span class="text">RevPAR - Revenue Per Available Room</span>
+            </a>
+            <a href="/guides/revenue/occupancy.html" class="resource-link">
+              <span class="icon">🛏️</span>
+              <span class="text">Occupancy Rate Guide</span>
+            </a>
           </div>
         </div>
       </div>

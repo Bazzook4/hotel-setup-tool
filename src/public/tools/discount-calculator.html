@@ -461,23 +461,104 @@
       border-top: 2px solid var(--primary);
     }
 
-    .dash-tools {
+    .dash-projections {
+      background: linear-gradient(135deg, #ffebee 0%, #fce4ec 100%);
+      padding: 1.25rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      border: 2px solid #ef9a9a;
+    }
+
+    .dash-projections h4 {
+      color: #c62828;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .projection-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .projection-card {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .projection-card.highlight {
+      background: linear-gradient(135deg, #d32f2f 0%, #c62828 100%);
+      color: white;
+    }
+
+    .projection-card.highlight .projection-label {
+      color: rgba(255,255,255,0.9);
+    }
+
+    .projection-card.highlight .projection-value {
+      color: white;
+    }
+
+    .projection-label {
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+
+    .projection-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .projection-value.negative {
+      color: #d32f2f;
+    }
+
+    .dash-resources {
+      background: #f8f9fa;
+      padding: 1.25rem;
+      border-radius: 10px;
+    }
+
+    .dash-resources h4 {
+      color: var(--primary);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+
+    .resource-link {
       display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      padding-top: 1rem;
-      border-top: 1px solid #eee;
-    }
-
-    .dash-tools a {
-      color: var(--secondary);
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem;
+      background: white;
+      border-radius: 8px;
       text-decoration: none;
+      color: var(--primary);
+      font-size: 0.85rem;
       font-weight: 500;
-      font-size: 0.9rem;
+      transition: all 0.2s;
+      border: 1px solid #e0e0e0;
     }
 
-    .dash-tools a:hover {
-      text-decoration: underline;
+    .resource-link:hover {
+      background: var(--secondary-light);
+      border-color: var(--secondary);
+      transform: translateX(4px);
+    }
+
+    .resource-icon {
+      font-size: 1rem;
     }
 
     @media (max-width: 768px) {
@@ -487,10 +568,11 @@
       .dashboard-grid {
         grid-template-columns: 1fr;
       }
-      .dash-tools {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.75rem;
+      .projection-grid {
+        grid-template-columns: 1fr;
+      }
+      .resource-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1029,27 +1111,47 @@
           </div>
         </div>
 
-        <!-- Annual Impact -->
-        <div class="dash-annual">
-          <h4>Annual Impact (<span id="annualBookingsCount">360</span> discounted bookings)</h4>
-          <div class="annual-row">
-            <span>Without discount</span>
-            <span class="positive" id="annualWithout">-</span>
-          </div>
-          <div class="annual-row">
-            <span>With discount</span>
-            <span id="annualWith">-</span>
-          </div>
-          <div class="annual-row total">
-            <span>Annual Loss</span>
-            <span class="negative" id="annualLoss">-</span>
+        <!-- Projected Loss -->
+        <div class="dash-projections">
+          <h4>Projected Revenue Loss (<span id="monthlyBookingsDisplay">30</span> bookings/month)</h4>
+          <div class="projection-grid">
+            <div class="projection-card">
+              <div class="projection-label">Weekly</div>
+              <div class="projection-value negative" id="weeklyLoss">-</div>
+            </div>
+            <div class="projection-card">
+              <div class="projection-label">Monthly</div>
+              <div class="projection-value negative" id="monthlyLoss">-</div>
+            </div>
+            <div class="projection-card highlight">
+              <div class="projection-label">Yearly</div>
+              <div class="projection-value negative" id="yearlyLoss">-</div>
+            </div>
           </div>
         </div>
 
-        <!-- Explore More Tools -->
-      <div class="dash-tools">
-        <a href="commission-calculator.html">Calculate Full Commission →</a>
-        <a href="ota-dependency-calculator.html">Analyze Channel Mix →</a>
+        <!-- Related Resources -->
+        <div class="dash-resources">
+          <h4>Learn More</h4>
+          <div class="resource-grid">
+            <a href="/guides/revenue/bar.html" class="resource-link">
+              <span class="resource-icon">📖</span>
+              <span>BAR Pricing Guide</span>
+            </a>
+            <a href="/guides/revenue/adr.html" class="resource-link">
+              <span class="resource-icon">📊</span>
+              <span>ADR Guide</span>
+            </a>
+            <a href="/tools/commission-calculator.html" class="resource-link">
+              <span class="resource-icon">💰</span>
+              <span>Commission Calculator</span>
+            </a>
+            <a href="/tools/ota-dependency-calculator.html" class="resource-link">
+              <span class="resource-icon">📈</span>
+              <span>OTA Dependency Tool</span>
+            </a>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -1182,11 +1284,11 @@
         const commissionSaved = (noDiscComm + noDiscCommGst) - (discComm + discCommGst);
         const actualLoss = discountAmount + (discountAmount * discGstRate); // Discount + GST on discount
 
-        // Annual calculations
-        const annualBookings = monthlyBookings * 12;
-        const annualWithout = noDiscSettlement * annualBookings;
-        const annualWith = discSettlement * annualBookings;
-        const annualLoss = lossPerBooking * annualBookings;
+        // Projection calculations
+        const weeklyBookings = monthlyBookings / 4;
+        const weeklyLoss = lossPerBooking * weeklyBookings;
+        const monthlyLoss = lossPerBooking * monthlyBookings;
+        const yearlyLoss = lossPerBooking * monthlyBookings * 12;
 
         // ========== UPDATE DASHBOARD ==========
 
@@ -1218,11 +1320,11 @@
         document.getElementById('discOther').textContent = '−' + formatCurrency(discCommGst + discTdsTcs);
         document.getElementById('discSettlement').textContent = formatCurrency(discSettlement);
 
-        // Annual
-        document.getElementById('annualBookingsCount').textContent = annualBookings;
-        document.getElementById('annualWithout').textContent = formatCurrency(annualWithout);
-        document.getElementById('annualWith').textContent = formatCurrency(annualWith);
-        document.getElementById('annualLoss').textContent = '−' + formatCurrency(annualLoss);
+        // Projections
+        document.getElementById('monthlyBookingsDisplay').textContent = monthlyBookings;
+        document.getElementById('weeklyLoss').textContent = '−' + formatCurrency(weeklyLoss);
+        document.getElementById('monthlyLoss').textContent = '−' + formatCurrency(monthlyLoss);
+        document.getElementById('yearlyLoss').textContent = '−' + formatCurrency(yearlyLoss);
 
         // Show results
         resultsContainer.classList.add('show');
