@@ -53,6 +53,20 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- OTA Guides -->
+  <url>
+    <loc>https://hotelplaybook.in/guides/ota/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Software Guides -->
+  <url>
+    <loc>https://hotelplaybook.in/guides/software/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Revenue Guides -->
   <url>
     <loc>https://hotelplaybook.in/guides/revenue/hotel-rate-plans.html</loc>
