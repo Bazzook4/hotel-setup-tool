@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Departure Report: Check-out Management Guide | Hotel Playbook</title>
+  <meta name="description" content="Learn about hotel departure reports. Manage check-outs efficiently, coordinate with housekeeping, handle late check-outs, and ensure smooth guest departures.">
+  <meta name="keywords" content="hotel departure report, check-out report, hotel guest departure, departure list hotel, hotel check-out management, expected departures">
+  <link rel="canonical" href="https://hotelplaybook.in/guides/compliance/departure-report.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Hotel Departure Report: Check-out Management Guide","description":"Learn to use departure reports for smooth hotel checkout operations.","author":{"@type":"Organization","name":"Hotel Playbook"},"publisher":{"@type":"Organization","name":"Hotel Playbook","logo":{"@type":"ImageObject","url":"https://hotelplaybook.in/favicon.svg"}},"mainEntityOfPage":"https://hotelplaybook.in/guides/compliance/departure-report.html"}
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f7fa; color: #333; line-height: 1.7; }
+    :root { --primary: #1e3a5f; --secondary: #2d8a8a; --accent: #d4a854; --secondary-light: rgba(45, 138, 138, 0.1); --accent-light: rgba(212, 168, 84, 0.2); --compliance: #c62828; --compliance-light: rgba(198, 40, 40, 0.1); }
+    .nav { background: white; padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+    .nav-logo span { color: var(--secondary); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: #555; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: var(--secondary); }
+    .breadcrumb { background: white; padding: 1rem 2rem; border-bottom: 1px solid #eee; }
+    .breadcrumb-container { max-width: 900px; margin: 0 auto; font-size: 0.9rem; color: #666; }
+    .breadcrumb a { color: var(--secondary); text-decoration: none; }
+    .article-container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    .article-header { margin-bottom: 2rem; }
+    .article-header h1 { font-size: 2.25rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.3; }
+    .article-meta { display: flex; gap: 1.5rem; color: #666; font-size: 0.9rem; }
+    .article-content { background: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.07); }
+    .article-content h2 { font-size: 1.5rem; color: var(--primary); margin: 2rem 0 1rem; padding-top: 1rem; border-top: 1px solid #eee; }
+    .article-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .article-content h3 { font-size: 1.2rem; color: var(--primary); margin: 1.5rem 0 0.75rem; }
+    .article-content p { margin-bottom: 1rem; color: #444; }
+    .article-content ul, .article-content ol { margin: 1rem 0 1.5rem 1.5rem; color: #444; }
+    .article-content li { margin-bottom: 0.5rem; }
+    .quick-answer { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; }
+    .quick-answer h2 { color: white !important; border: none !important; margin: 0 0 1rem 0 !important; padding: 0 !important; font-size: 1.3rem; }
+    .quick-answer .big-text { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .quick-answer p { color: white; }
+    .highlight-box { background: var(--secondary-light); border-left: 4px solid var(--secondary); padding: 1.25rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; color: var(--primary); }
+    .highlight-box.warning { background: var(--compliance-light); border-left-color: var(--compliance); }
+    .highlight-box.tip { background: var(--accent-light); border-left-color: var(--accent); }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+    .comparison-table th, .comparison-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
+    .comparison-table th { background: var(--primary); color: white; }
+    .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+    .sample-report { background: #f8f9fa; border: 2px solid #e0e0e0; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; overflow-x: auto; }
+    .sample-report h4 { color: var(--primary); margin-bottom: 1rem; text-align: center; }
+    .sample-report table { width: 100%; font-size: 0.85rem; border-collapse: collapse; }
+    .sample-report th, .sample-report td { padding: 0.75rem; border: 1px solid #ddd; text-align: left; }
+    .sample-report th { background: var(--secondary); color: white; }
+    .sample-report .late { background: #ffebee; }
+    .sample-report .paid { background: #e8f5e9; }
+    .tag { display: inline-block; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+    .tag-paid { background: #4caf50; color: white; }
+    .tag-pending { background: #ff9800; color: white; }
+    .tag-late { background: #f44336; color: white; }
+    .checklist { background: white; border: 2px solid #e0e0e0; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+    .checklist h4 { color: var(--primary); margin-bottom: 1rem; }
+    .checklist ul { list-style: none; margin: 0; padding: 0; }
+    .checklist li { padding: 0.5rem 0; border-bottom: 1px dashed #eee; display: flex; align-items: center; gap: 0.75rem; }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before { content: "☐"; font-size: 1.2rem; color: var(--secondary); }
+    .related-section { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin-top: 2rem; }
+    .related-section h3 { color: var(--primary); margin: 0 0 1rem; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .related-links a { background: white; color: var(--secondary); padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-size: 0.9rem; border: 1px solid #ddd; }
+    .related-links a:hover { background: var(--secondary); color: white; }
+    .footer { background: var(--primary); color: white; padding: 2rem; margin-top: 3rem; text-align: center; }
+    .footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 768px) { .nav-links { display: none; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Hotel<span>Playbook</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/guides/" class="active">Guides</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; <a href="/guides/compliance/">Compliance</a> &rsaquo; Departure Report
+    </div>
+  </div>
+
+  <article class="article-container">
+    <header class="article-header">
+      <h1>Hotel Departure Report: Managing Check-outs</h1>
+      <div class="article-meta">
+        <span>By Hotel Playbook Team</span>
+        <span>5 min read</span>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="quick-answer">
+        <h2>What is a Departure Report?</h2>
+        <div class="big-text">Departure Report = List of Expected Check-outs</div>
+        <p>A daily report showing all guests expected to check out today. Includes room numbers, payment status, and checkout time. Critical for housekeeping planning and room turnover.</p>
+      </div>
+
+      <h2>Why Departure Report Matters</h2>
+
+      <ul>
+        <li><strong>Housekeeping planning:</strong> Know which rooms need cleaning today</li>
+        <li><strong>Revenue collection:</strong> Ensure all bills are settled before checkout</li>
+        <li><strong>Room availability:</strong> Prepare rooms for incoming arrivals</li>
+        <li><strong>Late checkout management:</strong> Track and charge late departures</li>
+        <li><strong>Occupancy planning:</strong> Know how many rooms will be vacant</li>
+        <li><strong>Service recovery:</strong> Last chance to impress before guest leaves</li>
+      </ul>
+
+      <h2>What's Included in Departure Report</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Field</th>
+          <th>Why It's Important</th>
+        </tr>
+        <tr>
+          <td>Guest Name</td>
+          <td>Personalized farewell, verify identity</td>
+        </tr>
+        <tr>
+          <td>Room Number</td>
+          <td>Housekeeping assignment</td>
+        </tr>
+        <tr>
+          <td>Checkout Time</td>
+          <td>Standard vs late checkout</td>
+        </tr>
+        <tr>
+          <td>Balance Due</td>
+          <td>Amount to be collected at checkout</td>
+        </tr>
+        <tr>
+          <td>Payment Method</td>
+          <td>Cash, card, city ledger, prepaid</td>
+        </tr>
+        <tr>
+          <td>Nights Stayed</td>
+          <td>Review of charges, loyalty recognition</td>
+        </tr>
+        <tr>
+          <td>Mini Bar Status</td>
+          <td>Check before guest leaves</td>
+        </tr>
+        <tr>
+          <td>Room Status</td>
+          <td>Occupied, ready for checkout, departed</td>
+        </tr>
+      </table>
+
+      <h2>Sample Departure Report</h2>
+
+      <div class="sample-report">
+        <h4>DEPARTURE REPORT - 07 Feb 2026</h4>
+        <table>
+          <tr>
+            <th>Room</th>
+            <th>Guest Name</th>
+            <th>Nights</th>
+            <th>Checkout</th>
+            <th>Balance</th>
+            <th>Payment</th>
+            <th>Status</th>
+          </tr>
+          <tr class="paid">
+            <td>101</td>
+            <td>Mr. Anil Kumar</td>
+            <td>2</td>
+            <td>11:00 AM</td>
+            <td>₹0</td>
+            <td><span class="tag tag-paid">Prepaid</span></td>
+            <td>Ready</td>
+          </tr>
+          <tr>
+            <td>205</td>
+            <td>Ms. Sunita Rao</td>
+            <td>3</td>
+            <td>11:00 AM</td>
+            <td>₹8,500</td>
+            <td><span class="tag tag-pending">Pending</span></td>
+            <td>Occupied</td>
+          </tr>
+          <tr>
+            <td>301</td>
+            <td>Dr. Ramesh Gupta</td>
+            <td>1</td>
+            <td>11:00 AM</td>
+            <td>₹3,200</td>
+            <td>City Ledger</td>
+            <td>Occupied</td>
+          </tr>
+          <tr class="late">
+            <td>405</td>
+            <td>Mr. John Peters</td>
+            <td>4</td>
+            <td>2:00 PM</td>
+            <td>₹15,600</td>
+            <td><span class="tag tag-late">Late C/O</span></td>
+            <td>Late Checkout</td>
+          </tr>
+          <tr class="paid">
+            <td>502</td>
+            <td>Mrs. Deepa Joshi</td>
+            <td>2</td>
+            <td>11:00 AM</td>
+            <td>₹0</td>
+            <td><span class="tag tag-paid">Prepaid</span></td>
+            <td>Departed 9 AM</td>
+          </tr>
+        </table>
+        <p style="margin-top: 1rem; font-size: 0.85rem; color: #666;">
+          <strong>Summary:</strong> 5 departures expected | 2 prepaid | 2 pending collection | 1 late checkout
+        </p>
+      </div>
+
+      <h2>Departure Workflow</h2>
+
+      <h3>Morning (Before 11 AM)</h3>
+      <ol>
+        <li>Print/review departure report</li>
+        <li>Identify pending payments - alert front desk</li>
+        <li>Note late checkouts - inform housekeeping</li>
+        <li>Share list with housekeeping for cleaning priority</li>
+        <li>Prepare bills for guests with balances</li>
+      </ol>
+
+      <h3>Checkout Process</h3>
+      <ol>
+        <li>Guest approaches front desk</li>
+        <li>Verify room number and name</li>
+        <li>Print final bill with all charges</li>
+        <li>Collect minibar charges (verify with HK if needed)</li>
+        <li>Process payment</li>
+        <li>Ask about stay experience</li>
+        <li>Return any deposits/safe items</li>
+        <li>Update room status to "Departed"</li>
+        <li>Thank guest and request feedback</li>
+      </ol>
+
+      <h2>Late Checkout Management</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Time</th>
+          <th>Typical Policy</th>
+          <th>Charge</th>
+        </tr>
+        <tr>
+          <td>11 AM - 1 PM</td>
+          <td>Complimentary (based on occupancy)</td>
+          <td>Free if rooms available</td>
+        </tr>
+        <tr>
+          <td>1 PM - 4 PM</td>
+          <td>Half day charge</td>
+          <td>50% of room rate</td>
+        </tr>
+        <tr>
+          <td>After 4 PM</td>
+          <td>Full day charge</td>
+          <td>100% of room rate</td>
+        </tr>
+      </table>
+
+      <div class="highlight-box">
+        <strong>Important:</strong> Late checkout impacts housekeeping and incoming arrivals. Always check arrivals list before approving late checkout. If room is needed for incoming guest, you cannot offer late checkout.
+      </div>
+
+      <h2>Checkout Checklist</h2>
+
+      <div class="checklist">
+        <h4>Before Guest Leaves</h4>
+        <ul>
+          <li>All charges posted to bill (minibar, F&B, laundry)</li>
+          <li>Room rate verified correct</li>
+          <li>GST calculated properly</li>
+          <li>Payment method confirmed</li>
+          <li>Key card collected</li>
+          <li>Safe deposit box cleared</li>
+          <li>Loyalty points awarded (if applicable)</li>
+          <li>Feedback requested</li>
+        </ul>
+      </div>
+
+      <h2>Common Checkout Issues</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Problem</th>
+          <th>Solution</th>
+        </tr>
+        <tr>
+          <td>Guest disputes charges</td>
+          <td>Show itemized bill, call department that posted charge</td>
+        </tr>
+        <tr>
+          <td>Card declined</td>
+          <td>Request alternative payment, hold luggage if needed</td>
+        </tr>
+        <tr>
+          <td>Missing from bill (late charges)</td>
+          <td>Add before checkout, explain to guest</td>
+        </tr>
+        <tr>
+          <td>Overstay without informing</td>
+          <td>Charge for extra night, explain policy</td>
+        </tr>
+        <tr>
+          <td>Lost key card</td>
+          <td>Verify identity, charge for replacement if policy</td>
+        </tr>
+        <tr>
+          <td>Room damage discovered</td>
+          <td>Document with photos, charge guest, escalate if refused</td>
+        </tr>
+      </table>
+
+      <h2>Housekeeping Coordination</h2>
+
+      <p>Departure report is critical for housekeeping:</p>
+
+      <ul>
+        <li><strong>Cleaning priority:</strong> Rooms with early arrivals get cleaned first</li>
+        <li><strong>Status updates:</strong> HK updates room status as cleaned</li>
+        <li><strong>Minibar check:</strong> Report consumption before guest leaves</li>
+        <li><strong>Lost & found:</strong> Check and secure any left items</li>
+        <li><strong>Damage report:</strong> Note any room damage immediately</li>
+      </ul>
+
+      <div class="highlight-box tip">
+        <strong>Pro Tip:</strong> Implement a "rush room" system. When arrivals need a room that's departing same day, mark it as rush so housekeeping prioritizes it. Many PMS have this feature built-in.
+      </div>
+
+      <h2>Express Checkout Options</h2>
+
+      <p>For faster checkout experience:</p>
+
+      <ul>
+        <li><strong>Pre-checkout bill:</strong> Slip under door the night before</li>
+        <li><strong>Mobile checkout:</strong> Guest checks out via app, key deactivates</li>
+        <li><strong>Folio email:</strong> Email bill, charge card on file</li>
+        <li><strong>Key drop box:</strong> Guest drops key, bill sent by email</li>
+      </ul>
+
+      <p>Express checkout works well for:</p>
+      <ul>
+        <li>Business travelers in a hurry</li>
+        <li>Early morning departures (before front desk is busy)</li>
+        <li>Prepaid bookings with no additional charges</li>
+      </ul>
+
+      <h2>After Guest Departs</h2>
+
+      <ol>
+        <li>Update room status to "Dirty" for housekeeping</li>
+        <li>Transfer to city ledger if corporate billing</li>
+        <li>Report lost & found items to guest</li>
+        <li>Update guest history for future stays</li>
+        <li>Send thank you email with feedback request</li>
+      </ol>
+
+      <div class="related-section">
+        <h3>Related Guides</h3>
+        <div class="related-links">
+          <a href="/guides/compliance/arrival-report.html">Arrival Report</a>
+          <a href="/guides/compliance/manager-report.html">Manager Report</a>
+          <a href="/guides/compliance/payment-report.html">Payment Report</a>
+          <a href="/guides/compliance/night-audit.html">Night Audit</a>
+          <a href="/guides/compliance/">All Compliance Guides</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <p>&copy; 2026 Hotel Playbook. Made for Indian Hoteliers.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+      <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a>
+    </p>
+  </footer>
+</body>
+</html>

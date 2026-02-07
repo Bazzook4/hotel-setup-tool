@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel P&L Report: Profit & Loss Statement Guide | Hotel Playbook</title>
+  <meta name="description" content="Understand hotel P&L (Profit & Loss) reports. Learn to read income statements, track revenue vs expenses, and measure your hotel's financial performance.">
+  <meta name="keywords" content="hotel P&L report, hotel profit loss statement, hotel income statement, hotel financial report, hotel revenue expenses, hotel profitability">
+  <link rel="canonical" href="https://hotelplaybook.in/guides/compliance/profit-loss-report.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Hotel P&L Report: Profit & Loss Statement Guide","description":"Learn to read and understand hotel P&L reports for better financial management.","author":{"@type":"Organization","name":"Hotel Playbook"},"publisher":{"@type":"Organization","name":"Hotel Playbook","logo":{"@type":"ImageObject","url":"https://hotelplaybook.in/favicon.svg"}},"mainEntityOfPage":"https://hotelplaybook.in/guides/compliance/profit-loss-report.html"}
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f7fa; color: #333; line-height: 1.7; }
+    :root { --primary: #1e3a5f; --secondary: #2d8a8a; --accent: #d4a854; --secondary-light: rgba(45, 138, 138, 0.1); --accent-light: rgba(212, 168, 84, 0.2); --compliance: #c62828; --compliance-light: rgba(198, 40, 40, 0.1); }
+    .nav { background: white; padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+    .nav-logo span { color: var(--secondary); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: #555; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: var(--secondary); }
+    .breadcrumb { background: white; padding: 1rem 2rem; border-bottom: 1px solid #eee; }
+    .breadcrumb-container { max-width: 900px; margin: 0 auto; font-size: 0.9rem; color: #666; }
+    .breadcrumb a { color: var(--secondary); text-decoration: none; }
+    .article-container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    .article-header { margin-bottom: 2rem; }
+    .article-header h1 { font-size: 2.25rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.3; }
+    .article-meta { display: flex; gap: 1.5rem; color: #666; font-size: 0.9rem; }
+    .article-content { background: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.07); }
+    .article-content h2 { font-size: 1.5rem; color: var(--primary); margin: 2rem 0 1rem; padding-top: 1rem; border-top: 1px solid #eee; }
+    .article-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .article-content h3 { font-size: 1.2rem; color: var(--primary); margin: 1.5rem 0 0.75rem; }
+    .article-content p { margin-bottom: 1rem; color: #444; }
+    .article-content ul, .article-content ol { margin: 1rem 0 1.5rem 1.5rem; color: #444; }
+    .article-content li { margin-bottom: 0.5rem; }
+    .quick-answer { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; }
+    .quick-answer h2 { color: white !important; border: none !important; margin: 0 0 1rem 0 !important; padding: 0 !important; font-size: 1.3rem; }
+    .quick-answer .big-text { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .quick-answer p { color: white; }
+    .highlight-box { background: var(--secondary-light); border-left: 4px solid var(--secondary); padding: 1.25rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; color: var(--primary); }
+    .highlight-box.warning { background: var(--compliance-light); border-left-color: var(--compliance); }
+    .highlight-box.tip { background: var(--accent-light); border-left-color: var(--accent); }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+    .comparison-table th, .comparison-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
+    .comparison-table th { background: var(--primary); color: white; }
+    .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+    .formula-box { background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e9 100%); border: 2px solid var(--secondary); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; text-align: center; }
+    .formula-box .formula { font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+    .formula-box .explanation { font-size: 0.95rem; color: #666; }
+    .example-box { background: #fff8e1; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border-left: 4px solid var(--accent); }
+    .example-box h4 { color: var(--primary); margin-bottom: 1rem; }
+    .example-box table { width: 100%; margin-top: 1rem; }
+    .example-box td { padding: 0.5rem 0; border-bottom: 1px dashed #ddd; }
+    .example-box td:last-child { text-align: right; font-weight: 500; }
+    .example-box .total-row { font-weight: 700; border-top: 2px solid var(--primary); border-bottom: none; }
+    .example-box .profit-row { color: #2e7d32; }
+    .example-box .loss-row { color: var(--compliance); }
+    .related-section { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin-top: 2rem; }
+    .related-section h3 { color: var(--primary); margin: 0 0 1rem; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .related-links a { background: white; color: var(--secondary); padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-size: 0.9rem; border: 1px solid #ddd; }
+    .related-links a:hover { background: var(--secondary); color: white; }
+    .footer { background: var(--primary); color: white; padding: 2rem; margin-top: 3rem; text-align: center; }
+    .footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 768px) { .nav-links { display: none; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Hotel<span>Playbook</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/guides/" class="active">Guides</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; <a href="/guides/compliance/">Compliance</a> &rsaquo; P&L Report
+    </div>
+  </div>
+
+  <article class="article-container">
+    <header class="article-header">
+      <h1>Hotel P&L Report: Understanding Profit & Loss</h1>
+      <div class="article-meta">
+        <span>By Hotel Playbook Team</span>
+        <span>7 min read</span>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="quick-answer">
+        <h2>What is a P&L Report?</h2>
+        <div class="big-text">P&L = Profit & Loss Statement</div>
+        <p>A financial report that shows your hotel's income (revenue) minus expenses over a period (monthly, quarterly, yearly). It tells you whether your hotel made a profit or loss.</p>
+      </div>
+
+      <h2>Why P&L Matters for Hotels</h2>
+
+      <p>Think of P&L as your hotel's "report card" for financial health:</p>
+
+      <ul>
+        <li><strong>Know if you're profitable:</strong> Are you actually making money?</li>
+        <li><strong>Track trends:</strong> Is profit increasing or decreasing month over month?</li>
+        <li><strong>Identify problems:</strong> Which expenses are eating into your profits?</li>
+        <li><strong>Make decisions:</strong> Can you afford to hire more staff or renovate?</li>
+        <li><strong>Get loans:</strong> Banks ask for P&L before lending</li>
+        <li><strong>Tax filing:</strong> Required for income tax returns</li>
+      </ul>
+
+      <h2>Basic P&L Structure</h2>
+
+      <div class="formula-box">
+        <div class="formula">Revenue - Expenses = Profit (or Loss)</div>
+        <div class="explanation">If revenue is higher than expenses, you have profit. If expenses exceed revenue, you have a loss.</div>
+      </div>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Section</th>
+          <th>What It Includes</th>
+        </tr>
+        <tr>
+          <td><strong>Revenue (Income)</strong></td>
+          <td>Money coming in - room sales, F&B, other services</td>
+        </tr>
+        <tr>
+          <td><strong>Cost of Sales</strong></td>
+          <td>Direct costs - F&B ingredients, amenities, OTA commissions</td>
+        </tr>
+        <tr>
+          <td><strong>Gross Profit</strong></td>
+          <td>Revenue minus Cost of Sales</td>
+        </tr>
+        <tr>
+          <td><strong>Operating Expenses</strong></td>
+          <td>Salaries, utilities, maintenance, marketing, rent</td>
+        </tr>
+        <tr>
+          <td><strong>Operating Profit (EBITDA)</strong></td>
+          <td>Gross Profit minus Operating Expenses</td>
+        </tr>
+        <tr>
+          <td><strong>Other Expenses</strong></td>
+          <td>Interest, depreciation, taxes</td>
+        </tr>
+        <tr>
+          <td><strong>Net Profit/Loss</strong></td>
+          <td>Final profit after all deductions</td>
+        </tr>
+      </table>
+
+      <h2>Hotel Revenue Categories</h2>
+
+      <p>Your P&L should break down revenue by department:</p>
+
+      <h3>1. Room Revenue (Typically 60-70% of total)</h3>
+      <ul>
+        <li>Room sales from all sources (direct, OTA, corporate)</li>
+        <li>Should show ADR and occupancy for context</li>
+      </ul>
+
+      <h3>2. Food & Beverage Revenue (20-30%)</h3>
+      <ul>
+        <li>Restaurant sales</li>
+        <li>Bar/beverage sales</li>
+        <li>Banquet/event revenue</li>
+        <li>Room service, minibar</li>
+      </ul>
+
+      <h3>3. Other Revenue (5-10%)</h3>
+      <ul>
+        <li>Spa and wellness</li>
+        <li>Laundry services</li>
+        <li>Parking fees</li>
+        <li>Business center</li>
+        <li>Telephone (if any)</li>
+      </ul>
+
+      <h2>Hotel Expense Categories</h2>
+
+      <h3>Cost of Sales (Variable Costs)</h3>
+      <ul>
+        <li><strong>F&B Cost:</strong> Food ingredients, beverages (target: 25-35% of F&B revenue)</li>
+        <li><strong>OTA Commissions:</strong> 15-25% of OTA booking value</li>
+        <li><strong>Guest Supplies:</strong> Toiletries, amenities, cleaning supplies</li>
+      </ul>
+
+      <h3>Operating Expenses (Fixed/Semi-Fixed)</h3>
+      <ul>
+        <li><strong>Payroll:</strong> Salaries, PF, ESI (typically 25-35% of revenue)</li>
+        <li><strong>Utilities:</strong> Electricity, water, gas, internet</li>
+        <li><strong>Rent/Lease:</strong> If property is rented</li>
+        <li><strong>Maintenance:</strong> Repairs, upkeep, AMC contracts</li>
+        <li><strong>Marketing:</strong> OTA promotions, advertising, website</li>
+        <li><strong>Admin:</strong> Insurance, licenses, professional fees</li>
+      </ul>
+
+      <h2>Sample Hotel P&L</h2>
+
+      <div class="example-box">
+        <h4>Monthly P&L - 20 Room Budget Hotel</h4>
+        <table>
+          <tr><td colspan="2"><strong>REVENUE</strong></td></tr>
+          <tr><td>Room Revenue</td><td>₹8,00,000</td></tr>
+          <tr><td>F&B Revenue</td><td>₹1,50,000</td></tr>
+          <tr><td>Other Revenue</td><td>₹30,000</td></tr>
+          <tr class="total-row"><td><strong>Total Revenue</strong></td><td><strong>₹9,80,000</strong></td></tr>
+
+          <tr><td colspan="2" style="padding-top: 1rem;"><strong>COST OF SALES</strong></td></tr>
+          <tr><td>F&B Cost (30%)</td><td>₹45,000</td></tr>
+          <tr><td>OTA Commissions</td><td>₹1,20,000</td></tr>
+          <tr><td>Guest Supplies</td><td>₹25,000</td></tr>
+          <tr class="total-row"><td><strong>Gross Profit</strong></td><td><strong>₹7,90,000</strong></td></tr>
+
+          <tr><td colspan="2" style="padding-top: 1rem;"><strong>OPERATING EXPENSES</strong></td></tr>
+          <tr><td>Salaries & Wages</td><td>₹2,50,000</td></tr>
+          <tr><td>Electricity</td><td>₹80,000</td></tr>
+          <tr><td>Rent</td><td>₹1,00,000</td></tr>
+          <tr><td>Maintenance</td><td>₹30,000</td></tr>
+          <tr><td>Marketing</td><td>₹20,000</td></tr>
+          <tr><td>Admin & Other</td><td>₹40,000</td></tr>
+          <tr class="total-row"><td><strong>Operating Profit</strong></td><td><strong>₹2,70,000</strong></td></tr>
+
+          <tr><td colspan="2" style="padding-top: 1rem;"><strong>OTHER EXPENSES</strong></td></tr>
+          <tr><td>Loan Interest</td><td>₹50,000</td></tr>
+          <tr><td>Depreciation</td><td>₹30,000</td></tr>
+          <tr class="total-row profit-row"><td><strong>Net Profit</strong></td><td><strong>₹1,90,000</strong></td></tr>
+        </table>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">Net Profit Margin: 19.4% (₹1,90,000 ÷ ₹9,80,000)</p>
+      </div>
+
+      <h2>Key P&L Ratios to Track</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Ratio</th>
+          <th>Formula</th>
+          <th>Healthy Range</th>
+        </tr>
+        <tr>
+          <td>Gross Profit Margin</td>
+          <td>Gross Profit ÷ Revenue × 100</td>
+          <td>70-80%</td>
+        </tr>
+        <tr>
+          <td>Operating Profit Margin</td>
+          <td>Operating Profit ÷ Revenue × 100</td>
+          <td>25-40%</td>
+        </tr>
+        <tr>
+          <td>Net Profit Margin</td>
+          <td>Net Profit ÷ Revenue × 100</td>
+          <td>15-25%</td>
+        </tr>
+        <tr>
+          <td>Payroll Ratio</td>
+          <td>Payroll ÷ Revenue × 100</td>
+          <td>25-35%</td>
+        </tr>
+        <tr>
+          <td>F&B Cost Ratio</td>
+          <td>F&B Cost ÷ F&B Revenue × 100</td>
+          <td>25-35%</td>
+        </tr>
+      </table>
+
+      <div class="highlight-box">
+        <strong>Simple Rule:</strong> If your net profit margin is below 10%, something needs attention. Either revenue is too low, or expenses are too high. Compare with previous months to identify the problem.
+      </div>
+
+      <h2>Common P&L Mistakes</h2>
+
+      <h3>1. Mixing Personal & Business Expenses</h3>
+      <p>Keep personal expenses separate. Your P&L should only show hotel business expenses.</p>
+
+      <h3>2. Not Categorizing Properly</h3>
+      <p>OTA commission should be a separate line item, not hidden in "marketing." This helps you see true acquisition costs.</p>
+
+      <h3>3. Ignoring Depreciation</h3>
+      <p>Furniture, AC, equipment lose value over time. Include depreciation to see true profit.</p>
+
+      <h3>4. Missing Revenue Streams</h3>
+      <p>Did you include parking, laundry, late checkout fees? Small amounts add up.</p>
+
+      <div class="highlight-box tip">
+        <strong>Pro Tip:</strong> Create a P&L template in Excel or use your accounting software (Tally) to generate monthly P&L. Compare month-on-month and same-month-last-year to spot trends.
+      </div>
+
+      <h2>How to Improve Your P&L</h2>
+
+      <h3>Increase Revenue</h3>
+      <ul>
+        <li>Improve occupancy through better marketing</li>
+        <li>Increase ADR during high-demand periods</li>
+        <li>Upsell F&B and other services</li>
+        <li>Drive more direct bookings (lower commission)</li>
+      </ul>
+
+      <h3>Reduce Expenses</h3>
+      <ul>
+        <li>Negotiate better rates with suppliers</li>
+        <li>Reduce energy costs (LED, solar, efficient AC)</li>
+        <li>Optimize staffing based on occupancy</li>
+        <li>Review all subscriptions and services</li>
+      </ul>
+
+      <h2>P&L Frequency</h2>
+
+      <ul>
+        <li><strong>Daily:</strong> Revenue and occupancy tracking (from PMS)</li>
+        <li><strong>Monthly:</strong> Full P&L review with management</li>
+        <li><strong>Quarterly:</strong> Detailed analysis, compare with budget</li>
+        <li><strong>Yearly:</strong> Annual P&L for tax filing and planning</li>
+      </ul>
+
+      <div class="highlight-box warning">
+        <strong>Important:</strong> Never make major business decisions without looking at your P&L. Hiring staff, renovating, expanding - all need to be backed by your financial data.
+      </div>
+
+      <div class="related-section">
+        <h3>Related Guides</h3>
+        <div class="related-links">
+          <a href="/guides/compliance/manager-report.html">Manager Report</a>
+          <a href="/guides/compliance/expenses-report.html">Expenses Report</a>
+          <a href="/guides/compliance/payment-report.html">Payment Report</a>
+          <a href="/guides/software/accounting.html">Accounting Software</a>
+          <a href="/guides/compliance/">All Compliance Guides</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <p>&copy; 2026 Hotel Playbook. Made for Indian Hoteliers.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+      <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a>
+    </p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Payment Report: Track Collections & Settlements | Hotel Playbook</title>
+  <meta name="description" content="Learn about hotel payment reports. Track cash, cards, UPI collections, OTA settlements, and city ledger payments. Ensure accurate revenue collection.">
+  <meta name="keywords" content="hotel payment report, hotel collection report, hotel cash report, OTA settlement hotel, hotel revenue collection, hotel payment tracking">
+  <link rel="canonical" href="https://hotelplaybook.in/guides/compliance/payment-report.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Hotel Payment Report: Track Collections & Settlements","description":"Learn to track and manage hotel payments effectively.","author":{"@type":"Organization","name":"Hotel Playbook"},"publisher":{"@type":"Organization","name":"Hotel Playbook","logo":{"@type":"ImageObject","url":"https://hotelplaybook.in/favicon.svg"}},"mainEntityOfPage":"https://hotelplaybook.in/guides/compliance/payment-report.html"}
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f7fa; color: #333; line-height: 1.7; }
+    :root { --primary: #1e3a5f; --secondary: #2d8a8a; --accent: #d4a854; --secondary-light: rgba(45, 138, 138, 0.1); --accent-light: rgba(212, 168, 84, 0.2); --compliance: #c62828; --compliance-light: rgba(198, 40, 40, 0.1); }
+    .nav { background: white; padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+    .nav-logo span { color: var(--secondary); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: #555; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: var(--secondary); }
+    .breadcrumb { background: white; padding: 1rem 2rem; border-bottom: 1px solid #eee; }
+    .breadcrumb-container { max-width: 900px; margin: 0 auto; font-size: 0.9rem; color: #666; }
+    .breadcrumb a { color: var(--secondary); text-decoration: none; }
+    .article-container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    .article-header { margin-bottom: 2rem; }
+    .article-header h1 { font-size: 2.25rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.3; }
+    .article-meta { display: flex; gap: 1.5rem; color: #666; font-size: 0.9rem; }
+    .article-content { background: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.07); }
+    .article-content h2 { font-size: 1.5rem; color: var(--primary); margin: 2rem 0 1rem; padding-top: 1rem; border-top: 1px solid #eee; }
+    .article-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .article-content h3 { font-size: 1.2rem; color: var(--primary); margin: 1.5rem 0 0.75rem; }
+    .article-content p { margin-bottom: 1rem; color: #444; }
+    .article-content ul, .article-content ol { margin: 1rem 0 1.5rem 1.5rem; color: #444; }
+    .article-content li { margin-bottom: 0.5rem; }
+    .quick-answer { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; }
+    .quick-answer h2 { color: white !important; border: none !important; margin: 0 0 1rem 0 !important; padding: 0 !important; font-size: 1.3rem; }
+    .quick-answer .big-text { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .quick-answer p { color: white; }
+    .highlight-box { background: var(--secondary-light); border-left: 4px solid var(--secondary); padding: 1.25rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; color: var(--primary); }
+    .highlight-box.warning { background: var(--compliance-light); border-left-color: var(--compliance); }
+    .highlight-box.tip { background: var(--accent-light); border-left-color: var(--accent); }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+    .comparison-table th, .comparison-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
+    .comparison-table th { background: var(--primary); color: white; }
+    .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+    .sample-report { background: #f8f9fa; border: 2px solid #e0e0e0; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; font-family: 'Courier New', monospace; font-size: 0.9rem; }
+    .sample-report h4 { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--primary); margin-bottom: 1rem; text-align: center; border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; }
+    .sample-report .section { margin: 1.25rem 0; }
+    .sample-report .section-title { font-weight: 700; color: var(--secondary); border-bottom: 1px dashed #ccc; padding-bottom: 0.25rem; margin-bottom: 0.5rem; }
+    .sample-report .row { display: flex; justify-content: space-between; padding: 0.3rem 0; }
+    .sample-report .total { font-weight: 700; border-top: 2px solid var(--primary); padding-top: 0.5rem; margin-top: 0.5rem; }
+    .payment-type { background: white; border: 2px solid #e0e0e0; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+    .payment-type h4 { color: var(--primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+    .payment-type h4 span { font-size: 1.5rem; }
+    .payment-type p { margin-bottom: 0.5rem; font-size: 0.95rem; }
+    .payment-type ul { margin: 0.5rem 0 0 1.25rem; font-size: 0.95rem; }
+    .related-section { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin-top: 2rem; }
+    .related-section h3 { color: var(--primary); margin: 0 0 1rem; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .related-links a { background: white; color: var(--secondary); padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-size: 0.9rem; border: 1px solid #ddd; }
+    .related-links a:hover { background: var(--secondary); color: white; }
+    .footer { background: var(--primary); color: white; padding: 2rem; margin-top: 3rem; text-align: center; }
+    .footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 768px) { .nav-links { display: none; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Hotel<span>Playbook</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/guides/" class="active">Guides</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; <a href="/guides/compliance/">Compliance</a> &rsaquo; Payment Report
+    </div>
+  </div>
+
+  <article class="article-container">
+    <header class="article-header">
+      <h1>Hotel Payment Report: Track Collections & Settlements</h1>
+      <div class="article-meta">
+        <span>By Hotel Playbook Team</span>
+        <span>6 min read</span>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="quick-answer">
+        <h2>What is a Payment Report?</h2>
+        <div class="big-text">Payment Report = Money Received Tracking</div>
+        <p>A report showing all payments collected - cash, cards, UPI, bank transfers - and how they reconcile with your revenue. Ensures every rupee earned is actually collected.</p>
+      </div>
+
+      <h2>Why Payment Reports Matter</h2>
+
+      <ul>
+        <li><strong>Revenue leakage:</strong> Catch missing payments before they become losses</li>
+        <li><strong>Cash management:</strong> Know exactly how much cash you have</li>
+        <li><strong>Reconciliation:</strong> Match payments with bookings and invoices</li>
+        <li><strong>Fraud prevention:</strong> Detect unauthorized transactions</li>
+        <li><strong>Bank reconciliation:</strong> Match deposits with bank statements</li>
+        <li><strong>Tax compliance:</strong> Accurate records for GST and income tax</li>
+      </ul>
+
+      <h2>Types of Hotel Payments</h2>
+
+      <div class="payment-type">
+        <h4><span>💵</span> Cash Payments</h4>
+        <p>Physical currency collected at front desk, restaurant, or other outlets.</p>
+        <ul>
+          <li>Must be counted and deposited daily</li>
+          <li>Highest risk of theft or mishandling</li>
+          <li>Needs proper shift handover</li>
+          <li>₹2 lakh limit per transaction (Income Tax)</li>
+        </ul>
+      </div>
+
+      <div class="payment-type">
+        <h4><span>💳</span> Card Payments (Credit/Debit)</h4>
+        <p>Payments via EDC/POS machine. Settled by bank in 1-2 working days.</p>
+        <ul>
+          <li>MDR (Merchant Discount Rate): 0.5-2% deducted</li>
+          <li>Must reconcile with bank settlements</li>
+          <li>Keep all chargeslips for disputes</li>
+          <li>Batch settlement at night audit</li>
+        </ul>
+      </div>
+
+      <div class="payment-type">
+        <h4><span>📱</span> UPI & Digital Wallets</h4>
+        <p>PhonePe, Google Pay, Paytm, etc. Instant transfer to bank account.</p>
+        <ul>
+          <li>Usually no MDR (government policy)</li>
+          <li>Instant settlement</li>
+          <li>Keep screenshot/notification as proof</li>
+          <li>Most popular with Indian guests</li>
+        </ul>
+      </div>
+
+      <div class="payment-type">
+        <h4><span>🏦</span> Bank Transfers (NEFT/RTGS)</h4>
+        <p>Direct bank transfers, usually for corporate bookings and advances.</p>
+        <ul>
+          <li>For large payments and corporate accounts</li>
+          <li>May take time to reflect</li>
+          <li>Clear reference needed for matching</li>
+        </ul>
+      </div>
+
+      <div class="payment-type">
+        <h4><span>🌐</span> OTA Settlements</h4>
+        <p>Payments from MakeMyTrip, Booking.com, Goibibo, etc.</p>
+        <ul>
+          <li>Received after commission, TDS, TCS deduction</li>
+          <li>Settlement cycle varies (weekly/fortnightly)</li>
+          <li>Must reconcile with booking-wise details</li>
+          <li>Use our <a href="/tools/commission-calculator.html" style="color: var(--secondary);">Commission Calculator</a> to verify</li>
+        </ul>
+      </div>
+
+      <div class="payment-type">
+        <h4><span>🏢</span> City Ledger (Corporate Billing)</h4>
+        <p>Bills sent to companies for payment later (credit sales).</p>
+        <ul>
+          <li>Payment after 15-30-45 days</li>
+          <li>Need to track aging of receivables</li>
+          <li>Follow up required for collection</li>
+          <li>Bad debt risk if not managed</li>
+        </ul>
+      </div>
+
+      <h2>Sample Daily Payment Report</h2>
+
+      <div class="sample-report">
+        <h4>DAILY PAYMENT REPORT - 06 Feb 2026</h4>
+
+        <div class="section">
+          <div class="section-title">FRONT DESK COLLECTIONS</div>
+          <div class="row"><span>Cash</span><span>₹28,500</span></div>
+          <div class="row"><span>Credit Card</span><span>₹45,200</span></div>
+          <div class="row"><span>Debit Card</span><span>₹12,800</span></div>
+          <div class="row"><span>UPI</span><span>₹35,600</span></div>
+          <div class="row"><span>Bank Transfer</span><span>₹15,000</span></div>
+          <div class="row total"><span>Subtotal</span><span>₹1,37,100</span></div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">F&B OUTLET COLLECTIONS</div>
+          <div class="row"><span>Cash</span><span>₹8,200</span></div>
+          <div class="row"><span>Card</span><span>₹12,400</span></div>
+          <div class="row"><span>UPI</span><span>₹6,800</span></div>
+          <div class="row"><span>Room Charge Posting</span><span>₹15,500</span></div>
+          <div class="row total"><span>Subtotal</span><span>₹42,900</span></div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">OTA SETTLEMENTS RECEIVED</div>
+          <div class="row"><span>MakeMyTrip</span><span>₹85,600</span></div>
+          <div class="row"><span>Goibibo</span><span>₹32,400</span></div>
+          <div class="row total"><span>Subtotal</span><span>₹1,18,000</span></div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">CITY LEDGER RECEIVED</div>
+          <div class="row"><span>ABC Corp (Inv #1205)</span><span>₹45,000</span></div>
+          <div class="row total"><span>Subtotal</span><span>₹45,000</span></div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">SUMMARY</div>
+          <div class="row total"><span>TOTAL COLLECTIONS</span><span>₹3,43,000</span></div>
+          <div class="row"><span>Cash to Deposit</span><span>₹36,700</span></div>
+          <div class="row"><span>Card to Settle (T+1)</span><span>₹70,400</span></div>
+        </div>
+      </div>
+
+      <h2>Payment Reconciliation Process</h2>
+
+      <h3>Daily Reconciliation (Night Audit)</h3>
+      <ol>
+        <li>Count physical cash in drawer</li>
+        <li>Match with cash transactions in PMS</li>
+        <li>Close card batch on EDC machine</li>
+        <li>Verify card amount matches PMS</li>
+        <li>Check UPI receipts against PMS entries</li>
+        <li>Investigate any discrepancies</li>
+        <li>Prepare cash deposit for bank</li>
+      </ol>
+
+      <h3>Bank Reconciliation (Weekly/Monthly)</h3>
+      <ol>
+        <li>Match bank statement with payment records</li>
+        <li>Verify card settlements received</li>
+        <li>Check OTA settlements against expected amounts</li>
+        <li>Identify any missing or wrong deposits</li>
+        <li>Follow up on outstanding city ledger</li>
+      </ol>
+
+      <div class="highlight-box">
+        <strong>Golden Rule:</strong> Every rupee shown as revenue in your PMS should eventually appear in your bank account. If revenue is ₹10 lakh and collections are ₹9 lakh, you have ₹1 lakh problem to solve.
+      </div>
+
+      <h2>Common Payment Issues</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Issue</th>
+          <th>Solution</th>
+        </tr>
+        <tr>
+          <td>Cash shortage at shift end</td>
+          <td>Recount, check for unposted transactions, review void/refunds</td>
+        </tr>
+        <tr>
+          <td>Card settlement doesn't match</td>
+          <td>Compare batch total with PMS, check for partial payments</td>
+        </tr>
+        <tr>
+          <td>OTA payment less than expected</td>
+          <td>Verify commission %, check for hotel-funded discounts, TDS/TCS</td>
+        </tr>
+        <tr>
+          <td>Corporate not paying</td>
+          <td>Follow up, send reminders, consider credit limit reduction</td>
+        </tr>
+        <tr>
+          <td>UPI payment not received</td>
+          <td>Check account, ask guest for screenshot, verify bank</td>
+        </tr>
+        <tr>
+          <td>Guest disputes charge</td>
+          <td>Keep signed registration, show itemized bill</td>
+        </tr>
+      </table>
+
+      <h2>Payment Controls</h2>
+
+      <ul>
+        <li><strong>Separate cash drawers:</strong> Each cashier has own drawer</li>
+        <li><strong>Shift handover:</strong> Count cash at every shift change</li>
+        <li><strong>Daily deposits:</strong> Deposit cash daily, don't accumulate</li>
+        <li><strong>Void approvals:</strong> Manager must approve voids/refunds</li>
+        <li><strong>Audit trail:</strong> PMS should log all transactions with user ID</li>
+        <li><strong>Segregation:</strong> Person collecting shouldn't be person reconciling</li>
+      </ul>
+
+      <div class="highlight-box tip">
+        <strong>Pro Tip:</strong> Encourage digital payments (UPI, cards). They're automatically recorded, reduce cash handling risk, and make reconciliation easier. Many guests prefer digital anyway.
+      </div>
+
+      <h2>Key Reports to Generate</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Report</th>
+          <th>Frequency</th>
+          <th>Purpose</th>
+        </tr>
+        <tr>
+          <td>Cashier Report</td>
+          <td>Every shift</td>
+          <td>Shift-wise collections by payment mode</td>
+        </tr>
+        <tr>
+          <td>Payment Summary</td>
+          <td>Daily</td>
+          <td>All collections for the day</td>
+        </tr>
+        <tr>
+          <td>Accounts Receivable Aging</td>
+          <td>Weekly</td>
+          <td>Outstanding city ledger by age</td>
+        </tr>
+        <tr>
+          <td>OTA Settlement Tracker</td>
+          <td>Weekly</td>
+          <td>Expected vs received from each OTA</td>
+        </tr>
+        <tr>
+          <td>Bank Reconciliation</td>
+          <td>Monthly</td>
+          <td>Match books with bank statement</td>
+        </tr>
+      </table>
+
+      <div class="highlight-box warning">
+        <strong>Warning:</strong> Never allow IOU or personal borrowing from cash drawer. This is how theft starts. All cash out must be documented as paid-out with approval.
+      </div>
+
+      <div class="related-section">
+        <h3>Related Guides</h3>
+        <div class="related-links">
+          <a href="/guides/compliance/profit-loss-report.html">P&L Report</a>
+          <a href="/guides/compliance/expenses-report.html">Expenses Report</a>
+          <a href="/guides/compliance/night-audit.html">Night Audit</a>
+          <a href="/guides/compliance/tds-tcs.html">TDS & TCS Guide</a>
+          <a href="/tools/commission-calculator.html">OTA Commission Calculator</a>
+          <a href="/guides/compliance/">All Compliance Guides</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <p>&copy; 2026 Hotel Playbook. Made for Indian Hoteliers.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+      <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a>
+    </p>
+  </footer>
+</body>
+</html>

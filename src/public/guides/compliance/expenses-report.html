@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Expenses Report: Track & Control Costs | Hotel Playbook</title>
+  <meta name="description" content="Learn about hotel expense reports and tracking. Understand categories of hotel expenses, control costs, and improve profitability through better expense management.">
+  <meta name="keywords" content="hotel expenses report, hotel expense tracking, hotel cost control, hotel operating expenses, hotel expense categories, hotel budget management">
+  <link rel="canonical" href="https://hotelplaybook.in/guides/compliance/expenses-report.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Hotel Expenses Report: Track & Control Costs","description":"Learn to track and control hotel expenses effectively.","author":{"@type":"Organization","name":"Hotel Playbook"},"publisher":{"@type":"Organization","name":"Hotel Playbook","logo":{"@type":"ImageObject","url":"https://hotelplaybook.in/favicon.svg"}},"mainEntityOfPage":"https://hotelplaybook.in/guides/compliance/expenses-report.html"}
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f7fa; color: #333; line-height: 1.7; }
+    :root { --primary: #1e3a5f; --secondary: #2d8a8a; --accent: #d4a854; --secondary-light: rgba(45, 138, 138, 0.1); --accent-light: rgba(212, 168, 84, 0.2); --compliance: #c62828; --compliance-light: rgba(198, 40, 40, 0.1); }
+    .nav { background: white; padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+    .nav-logo span { color: var(--secondary); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: #555; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: var(--secondary); }
+    .breadcrumb { background: white; padding: 1rem 2rem; border-bottom: 1px solid #eee; }
+    .breadcrumb-container { max-width: 900px; margin: 0 auto; font-size: 0.9rem; color: #666; }
+    .breadcrumb a { color: var(--secondary); text-decoration: none; }
+    .article-container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    .article-header { margin-bottom: 2rem; }
+    .article-header h1 { font-size: 2.25rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.3; }
+    .article-meta { display: flex; gap: 1.5rem; color: #666; font-size: 0.9rem; }
+    .article-content { background: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.07); }
+    .article-content h2 { font-size: 1.5rem; color: var(--primary); margin: 2rem 0 1rem; padding-top: 1rem; border-top: 1px solid #eee; }
+    .article-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .article-content h3 { font-size: 1.2rem; color: var(--primary); margin: 1.5rem 0 0.75rem; }
+    .article-content p { margin-bottom: 1rem; color: #444; }
+    .article-content ul, .article-content ol { margin: 1rem 0 1.5rem 1.5rem; color: #444; }
+    .article-content li { margin-bottom: 0.5rem; }
+    .quick-answer { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; }
+    .quick-answer h2 { color: white !important; border: none !important; margin: 0 0 1rem 0 !important; padding: 0 !important; font-size: 1.3rem; }
+    .quick-answer .big-text { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .quick-answer p { color: white; }
+    .highlight-box { background: var(--secondary-light); border-left: 4px solid var(--secondary); padding: 1.25rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; color: var(--primary); }
+    .highlight-box.warning { background: var(--compliance-light); border-left-color: var(--compliance); }
+    .highlight-box.tip { background: var(--accent-light); border-left-color: var(--accent); }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+    .comparison-table th, .comparison-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
+    .comparison-table th { background: var(--primary); color: white; }
+    .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+    .expense-category { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border-left: 4px solid var(--secondary); }
+    .expense-category h4 { color: var(--primary); margin-bottom: 0.75rem; display: flex; justify-content: space-between; align-items: center; }
+    .expense-category h4 span { background: var(--secondary); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: normal; }
+    .expense-category ul { margin: 0; padding-left: 1.25rem; }
+    .expense-category li { margin-bottom: 0.25rem; font-size: 0.95rem; }
+    .example-box { background: #fff8e1; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border-left: 4px solid var(--accent); }
+    .example-box h4 { color: var(--primary); margin-bottom: 1rem; }
+    .example-box table { width: 100%; margin-top: 0.5rem; }
+    .example-box td { padding: 0.4rem 0; border-bottom: 1px dashed #ddd; font-size: 0.95rem; }
+    .example-box td:last-child { text-align: right; font-weight: 500; }
+    .example-box .total-row { font-weight: 700; border-top: 2px solid var(--primary); border-bottom: none; }
+    .related-section { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin-top: 2rem; }
+    .related-section h3 { color: var(--primary); margin: 0 0 1rem; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .related-links a { background: white; color: var(--secondary); padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-size: 0.9rem; border: 1px solid #ddd; }
+    .related-links a:hover { background: var(--secondary); color: white; }
+    .footer { background: var(--primary); color: white; padding: 2rem; margin-top: 3rem; text-align: center; }
+    .footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 768px) { .nav-links { display: none; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Hotel<span>Playbook</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/guides/" class="active">Guides</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; <a href="/guides/compliance/">Compliance</a> &rsaquo; Expenses Report
+    </div>
+  </div>
+
+  <article class="article-container">
+    <header class="article-header">
+      <h1>Hotel Expenses Report: Track & Control Costs</h1>
+      <div class="article-meta">
+        <span>By Hotel Playbook Team</span>
+        <span>6 min read</span>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="quick-answer">
+        <h2>What is an Expenses Report?</h2>
+        <div class="big-text">Expenses Report = Track Where Your Money Goes</div>
+        <p>A report showing all hotel expenses organized by category. Helps you understand costs, control spending, and identify areas where you can save money.</p>
+      </div>
+
+      <h2>Why Track Expenses?</h2>
+
+      <p>Many hotel owners focus only on revenue (money coming in) and forget about expenses (money going out). But here's the truth:</p>
+
+      <div class="highlight-box">
+        <strong>Profit = Revenue - Expenses</strong><br>
+        You can increase profits two ways: earn more OR spend less. Often, controlling expenses is easier and faster than increasing revenue.
+      </div>
+
+      <ul>
+        <li><strong>Know where money goes:</strong> ₹10,000 here, ₹5,000 there - it adds up fast</li>
+        <li><strong>Find waste:</strong> Are you paying for services you don't use?</li>
+        <li><strong>Negotiate better:</strong> Know your spending to negotiate with vendors</li>
+        <li><strong>Budget planning:</strong> Plan next month/year based on actual data</li>
+        <li><strong>Tax benefits:</strong> Proper expense records = legitimate deductions</li>
+      </ul>
+
+      <h2>Categories of Hotel Expenses</h2>
+
+      <div class="expense-category">
+        <h4>Payroll & Staff <span>25-35% of revenue</span></h4>
+        <ul>
+          <li>Salaries and wages</li>
+          <li>Provident Fund (PF) contribution</li>
+          <li>ESI (Employee State Insurance)</li>
+          <li>Bonus and incentives</li>
+          <li>Staff meals</li>
+          <li>Uniforms</li>
+          <li>Training expenses</li>
+        </ul>
+      </div>
+
+      <div class="expense-category">
+        <h4>Utilities <span>8-12% of revenue</span></h4>
+        <ul>
+          <li>Electricity (biggest expense here)</li>
+          <li>Water and sewage</li>
+          <li>Gas (for kitchen, if applicable)</li>
+          <li>Internet and WiFi</li>
+          <li>Cable TV</li>
+          <li>Telephone lines</li>
+        </ul>
+      </div>
+
+      <div class="expense-category">
+        <h4>Food & Beverage Cost <span>25-35% of F&B revenue</span></h4>
+        <ul>
+          <li>Food ingredients</li>
+          <li>Beverages (soft drinks, tea, coffee)</li>
+          <li>Liquor (if bar)</li>
+          <li>Kitchen consumables</li>
+          <li>Wastage and spillage</li>
+        </ul>
+      </div>
+
+      <div class="expense-category">
+        <h4>Guest Supplies <span>3-5% of room revenue</span></h4>
+        <ul>
+          <li>Toiletries (soap, shampoo, etc.)</li>
+          <li>Bathroom supplies</li>
+          <li>Stationery (pen, notepad)</li>
+          <li>Welcome amenities</li>
+          <li>Minibar items</li>
+        </ul>
+      </div>
+
+      <div class="expense-category">
+        <h4>Housekeeping <span>4-6% of revenue</span></h4>
+        <ul>
+          <li>Cleaning supplies and chemicals</li>
+          <li>Linens (sheets, towels, pillows)</li>
+          <li>Laundry (if outsourced)</li>
+          <li>Laundry chemicals (if in-house)</li>
+          <li>Housekeeping equipment</li>
+        </ul>
+      </div>
+
+      <div class="expense-category">
+        <h4>Maintenance & Repairs <span>3-5% of revenue</span></h4>
+        <ul>
+          <li>AC maintenance and repairs</li>
+          <li>Plumbing repairs</li>
+          <li>Electrical repairs</li>
+          <li>Furniture repairs</li>
+          <li>Building maintenance</li>
+          <li>AMC contracts</li>
+        </ul>
+      </div>
+
+      <div class="expense-category">
+        <h4>Marketing & Sales <span>3-5% of revenue</span></h4>
+        <ul>
+          <li>OTA commissions (15-25% of OTA bookings)</li>
+          <li>Website hosting and maintenance</li>
+          <li>Online advertising</li>
+          <li>Printed materials</li>
+          <li>Photography</li>
+        </ul>
+      </div>
+
+      <div class="expense-category">
+        <h4>Administrative <span>5-8% of revenue</span></h4>
+        <ul>
+          <li>Software subscriptions (PMS, accounting)</li>
+          <li>Insurance</li>
+          <li>Professional fees (CA, legal)</li>
+          <li>Bank charges</li>
+          <li>Office supplies</li>
+          <li>License renewals</li>
+        </ul>
+      </div>
+
+      <div class="expense-category">
+        <h4>Fixed Costs</h4>
+        <ul>
+          <li>Rent or lease payments</li>
+          <li>Property tax</li>
+          <li>Loan EMI (principal + interest)</li>
+          <li>Depreciation</li>
+        </ul>
+      </div>
+
+      <h2>Sample Monthly Expenses Report</h2>
+
+      <div class="example-box">
+        <h4>Expenses Report - January 2026 (20 Room Hotel)</h4>
+        <table>
+          <tr><td colspan="2"><strong>PAYROLL & STAFF</strong></td></tr>
+          <tr><td>Salaries</td><td>₹2,20,000</td></tr>
+          <tr><td>PF & ESI</td><td>₹30,000</td></tr>
+          <tr><td>Staff meals</td><td>₹15,000</td></tr>
+          <tr><td><em>Subtotal</em></td><td><em>₹2,65,000</em></td></tr>
+
+          <tr><td colspan="2" style="padding-top: 1rem;"><strong>UTILITIES</strong></td></tr>
+          <tr><td>Electricity</td><td>₹75,000</td></tr>
+          <tr><td>Water</td><td>₹8,000</td></tr>
+          <tr><td>Internet & Cable</td><td>₹5,000</td></tr>
+          <tr><td><em>Subtotal</em></td><td><em>₹88,000</em></td></tr>
+
+          <tr><td colspan="2" style="padding-top: 1rem;"><strong>F&B COST</strong></td></tr>
+          <tr><td>Food purchases</td><td>₹35,000</td></tr>
+          <tr><td>Beverages</td><td>₹8,000</td></tr>
+          <tr><td><em>Subtotal</em></td><td><em>₹43,000</em></td></tr>
+
+          <tr><td colspan="2" style="padding-top: 1rem;"><strong>OPERATIONS</strong></td></tr>
+          <tr><td>Guest supplies</td><td>₹18,000</td></tr>
+          <tr><td>Housekeeping supplies</td><td>₹12,000</td></tr>
+          <tr><td>Maintenance</td><td>₹25,000</td></tr>
+          <tr><td>OTA Commissions</td><td>₹1,10,000</td></tr>
+          <tr><td><em>Subtotal</em></td><td><em>₹1,65,000</em></td></tr>
+
+          <tr><td colspan="2" style="padding-top: 1rem;"><strong>ADMIN & FIXED</strong></td></tr>
+          <tr><td>Rent</td><td>₹1,00,000</td></tr>
+          <tr><td>Software (PMS, etc.)</td><td>₹5,000</td></tr>
+          <tr><td>Insurance</td><td>₹8,000</td></tr>
+          <tr><td>Others</td><td>₹15,000</td></tr>
+          <tr><td><em>Subtotal</em></td><td><em>₹1,28,000</em></td></tr>
+
+          <tr class="total-row"><td><strong>TOTAL EXPENSES</strong></td><td><strong>₹6,89,000</strong></td></tr>
+        </table>
+      </div>
+
+      <h2>Expense Tracking Best Practices</h2>
+
+      <h3>1. Record Everything</h3>
+      <p>Every expense, no matter how small. ₹500 for taxi, ₹200 for courier - record it. Small expenses add up to big amounts.</p>
+
+      <h3>2. Categorize Properly</h3>
+      <p>Use consistent categories. Don't mix guest supplies with housekeeping supplies. Proper categorization helps analysis.</p>
+
+      <h3>3. Keep Receipts/Bills</h3>
+      <p>Physical or digital - keep all receipts. Needed for:</p>
+      <ul>
+        <li>GST Input Tax Credit</li>
+        <li>Income Tax deductions</li>
+        <li>Audit purposes</li>
+        <li>Dispute resolution with vendors</li>
+      </ul>
+
+      <h3>4. Compare Month-on-Month</h3>
+      <p>Is electricity higher this month? Why? Did you have higher occupancy or is something wrong with AC?</p>
+
+      <h3>5. Set Budgets</h3>
+      <p>Set monthly budget for each category. Track actual vs budget. Investigate variances.</p>
+
+      <div class="highlight-box tip">
+        <strong>Pro Tip:</strong> Use accounting software (Tally, Zoho Books) or even a simple Excel sheet. The key is consistency - record expenses daily, not at month end.
+      </div>
+
+      <h2>Ways to Reduce Expenses</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Category</th>
+          <th>Cost Reduction Ideas</th>
+        </tr>
+        <tr>
+          <td>Electricity</td>
+          <td>LED lights, efficient AC, solar panels, occupancy sensors</td>
+        </tr>
+        <tr>
+          <td>F&B Cost</td>
+          <td>Menu engineering, portion control, reduce wastage, local sourcing</td>
+        </tr>
+        <tr>
+          <td>OTA Commissions</td>
+          <td>Drive direct bookings, negotiate commission rates</td>
+        </tr>
+        <tr>
+          <td>Guest Supplies</td>
+          <td>Bulk purchasing, local vendors, dispensers vs individual bottles</td>
+        </tr>
+        <tr>
+          <td>Maintenance</td>
+          <td>Preventive maintenance, AMC contracts, staff training</td>
+        </tr>
+        <tr>
+          <td>Payroll</td>
+          <td>Cross-training staff, optimize scheduling based on occupancy</td>
+        </tr>
+      </table>
+
+      <div class="highlight-box warning">
+        <strong>Warning:</strong> Don't cut expenses that affect guest experience. Cheap toiletries or poor quality food will cost you more in bad reviews than you save. Cut smart, not blindly.
+      </div>
+
+      <h2>Expense Approval Process</h2>
+
+      <p>For better control, implement approval limits:</p>
+
+      <ul>
+        <li><strong>Up to ₹1,000:</strong> Department head can approve</li>
+        <li><strong>₹1,000 - ₹10,000:</strong> Manager approval needed</li>
+        <li><strong>Above ₹10,000:</strong> Owner/GM approval required</li>
+        <li><strong>Above ₹50,000:</strong> Multiple quotes required</li>
+      </ul>
+
+      <div class="related-section">
+        <h3>Related Guides</h3>
+        <div class="related-links">
+          <a href="/guides/compliance/profit-loss-report.html">P&L Report</a>
+          <a href="/guides/compliance/payment-report.html">Payment Report</a>
+          <a href="/guides/compliance/manager-report.html">Manager Report</a>
+          <a href="/guides/software/accounting.html">Accounting Software</a>
+          <a href="/guides/compliance/">All Compliance Guides</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <p>&copy; 2026 Hotel Playbook. Made for Indian Hoteliers.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+      <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a>
+    </p>
+  </footer>
+</body>
+</html>
