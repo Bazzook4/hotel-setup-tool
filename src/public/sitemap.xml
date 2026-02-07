@@ -123,38 +123,45 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Reports Guides -->
   <url>
-    <loc>https://hotelplaybook.in/guides/compliance/night-audit.html</loc>
+    <loc>https://hotelplaybook.in/guides/reports/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/reports/night-audit.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hotelplaybook.in/guides/compliance/profit-loss-report.html</loc>
+    <loc>https://hotelplaybook.in/guides/reports/profit-loss-report.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hotelplaybook.in/guides/compliance/manager-report.html</loc>
+    <loc>https://hotelplaybook.in/guides/reports/manager-report.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hotelplaybook.in/guides/compliance/arrival-report.html</loc>
+    <loc>https://hotelplaybook.in/guides/reports/arrival-report.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hotelplaybook.in/guides/compliance/departure-report.html</loc>
+    <loc>https://hotelplaybook.in/guides/reports/departure-report.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hotelplaybook.in/guides/compliance/expenses-report.html</loc>
+    <loc>https://hotelplaybook.in/guides/reports/expenses-report.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hotelplaybook.in/guides/compliance/payment-report.html</loc>
+    <loc>https://hotelplaybook.in/guides/reports/payment-report.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Reports Guide - Daily, Financial & Operations Reports | Hotel Playbook</title>
+  <meta name="description" content="Complete guides on hotel reports - P&L, Manager Report, Arrival/Departure lists, Payment tracking, and Expense management. Learn to read and use hotel reports effectively.">
+  <meta name="keywords" content="hotel reports, hotel P&L, manager report hotel, arrival report, departure report, hotel payment report, hotel expense tracking">
+  <link rel="canonical" href="https://hotelplaybook.in/guides/reports/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; background: #f5f7fa; color: #333; line-height: 1.6; }
+    :root { --primary: #1e3a5f; --secondary: #2d8a8a; --accent: #d4a854; --reports: #00796b; --reports-light: rgba(0, 121, 107, 0.1); }
+    .nav { background: white; padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+    .nav-logo span { color: var(--secondary); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: #555; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--secondary); }
+    .breadcrumb { background: white; padding: 1rem 2rem; border-bottom: 1px solid #eee; }
+    .breadcrumb-container { max-width: 1200px; margin: 0 auto; font-size: 0.9rem; color: #666; }
+    .breadcrumb a { color: var(--secondary); text-decoration: none; }
+    .hero { background: linear-gradient(135deg, #00796b 0%, #26a69a 100%); color: white; padding: 3rem 2rem; text-align: center; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+    .intro-section { background: white; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.07); }
+    .intro-section h2 { color: var(--primary); margin-bottom: 1rem; }
+    .intro-section p { color: #555; margin-bottom: 1rem; }
+    .report-types { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+    .report-type { background: var(--reports-light); padding: 1rem; border-radius: 8px; text-align: center; }
+    .report-type .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .report-type h4 { color: var(--primary); font-size: 0.95rem; margin-bottom: 0.25rem; }
+    .report-type p { color: #666; font-size: 0.8rem; margin: 0; }
+    .section-title { margin-bottom: 1.5rem; }
+    .section-title h2 { font-size: 1.5rem; color: var(--primary); margin-bottom: 0.5rem; }
+    .section-title p { color: #666; }
+    .guides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+    .guide-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.07); transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; color: inherit; display: block; }
+    .guide-card:hover { transform: translateY(-4px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+    .guide-card h3 { color: var(--primary); font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .guide-card p { color: #666; font-size: 0.9rem; margin-bottom: 1rem; }
+    .guide-tag { background: var(--reports-light); color: var(--reports); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+    .tip-box { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); border-radius: 12px; padding: 2rem; color: white; margin: 2rem 0; }
+    .tip-box h3 { margin-bottom: 1rem; }
+    .tip-box ul { margin-left: 1.25rem; }
+    .tip-box li { margin-bottom: 0.5rem; opacity: 0.9; }
+    .tools-cta { background: var(--reports-light); border-radius: 12px; padding: 2rem; text-align: center; margin-top: 2rem; }
+    .tools-cta h3 { color: var(--primary); margin-bottom: 0.5rem; }
+    .tools-cta p { color: #666; margin-bottom: 1rem; }
+    .tools-cta a { display: inline-block; background: var(--reports); color: white; padding: 0.75rem 2rem; border-radius: 8px; font-weight: 600; text-decoration: none; margin: 0.25rem; }
+    .tools-cta a:hover { opacity: 0.9; }
+    .footer { background: var(--primary); color: white; padding: 2rem; margin-top: 3rem; }
+    .footer-container { max-width: 1200px; margin: 0 auto; text-align: center; }
+    .footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 1.75rem; } .guides-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Hotel<span>Playbook</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/guides/" class="active">Guides</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; Reports
+    </div>
+  </div>
+
+  <section class="hero">
+    <h1>Hotel Reports Guide</h1>
+    <p>Learn to read, understand, and use hotel reports for better decision making. From daily operations to financial tracking.</p>
+  </section>
+
+  <div class="container">
+    <!-- Intro Section -->
+    <div class="intro-section">
+      <h2>Why Reports Matter</h2>
+      <p>Reports are the eyes and ears of hotel management. Without proper reports, you're running your hotel blind - making decisions based on gut feeling instead of data.</p>
+      <p>Whether you're a small guesthouse owner or managing a large hotel, understanding these reports will help you:</p>
+      <ul style="margin: 1rem 0 0 1.5rem; color: #555;">
+        <li>Track daily performance and spot problems early</li>
+        <li>Make informed pricing and staffing decisions</li>
+        <li>Control costs and improve profitability</li>
+        <li>Ensure all revenue is collected</li>
+        <li>Plan operations efficiently</li>
+      </ul>
+
+      <div class="report-types">
+        <div class="report-type">
+          <div class="icon">📊</div>
+          <h4>Daily Reports</h4>
+          <p>Manager, Arrival, Departure</p>
+        </div>
+        <div class="report-type">
+          <div class="icon">💰</div>
+          <h4>Financial Reports</h4>
+          <p>P&L, Expenses, Payments</p>
+        </div>
+        <div class="report-type">
+          <div class="icon">🌙</div>
+          <h4>Night Audit</h4>
+          <p>End-of-day reconciliation</p>
+        </div>
+        <div class="report-type">
+          <div class="icon">📈</div>
+          <h4>Performance</h4>
+          <p>Occupancy, ADR, RevPAR</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Daily Operations Reports -->
+    <div class="section-title">
+      <h2>Daily Operations Reports</h2>
+      <p>Reports you need to review every day for smooth operations</p>
+    </div>
+    <div class="guides-grid">
+      <a href="/guides/reports/manager-report.html" class="guide-card">
+        <h3>Manager Report (Flash Report)</h3>
+        <p>Daily snapshot of hotel performance - occupancy, ADR, RevPAR, arrivals, and departures. The report every GM reviews first thing in the morning.</p>
+        <span class="guide-tag">Daily</span>
+      </a>
+      <a href="/guides/reports/arrival-report.html" class="guide-card">
+        <h3>Arrival Report</h3>
+        <p>List of expected check-ins for the day. Plan room assignments, prepare for VIPs, and coordinate with housekeeping.</p>
+        <span class="guide-tag">Daily</span>
+      </a>
+      <a href="/guides/reports/departure-report.html" class="guide-card">
+        <h3>Departure Report</h3>
+        <p>Expected check-outs for the day. Manage room turnover, collect payments, and coordinate housekeeping priorities.</p>
+        <span class="guide-tag">Daily</span>
+      </a>
+      <a href="/guides/reports/night-audit.html" class="guide-card">
+        <h3>Night Audit Process</h3>
+        <p>End-of-day closing procedures. Post room charges, reconcile accounts, and generate daily reports for management.</p>
+        <span class="guide-tag">Daily</span>
+      </a>
+    </div>
+
+    <!-- Financial Reports -->
+    <div class="section-title">
+      <h2>Financial Reports</h2>
+      <p>Track money coming in, going out, and what's left</p>
+    </div>
+    <div class="guides-grid">
+      <a href="/guides/reports/profit-loss-report.html" class="guide-card">
+        <h3>P&L Report (Profit & Loss)</h3>
+        <p>Your hotel's financial report card. Understand revenue vs expenses, track profitability, and identify areas for improvement.</p>
+        <span class="guide-tag">Finance</span>
+      </a>
+      <a href="/guides/reports/expenses-report.html" class="guide-card">
+        <h3>Expenses Report</h3>
+        <p>Track where your money goes. Categorize costs, set budgets, and find opportunities to reduce expenses without affecting service.</p>
+        <span class="guide-tag">Finance</span>
+      </a>
+      <a href="/guides/reports/payment-report.html" class="guide-card">
+        <h3>Payment Report</h3>
+        <p>Track all collections - cash, cards, UPI, OTA settlements, and corporate payments. Ensure every rupee earned is collected.</p>
+        <span class="guide-tag">Finance</span>
+      </a>
+    </div>
+
+    <!-- Tips Section -->
+    <div class="tip-box">
+      <h3>Report Reading Tips for Beginners</h3>
+      <ul>
+        <li><strong>Start with Manager Report:</strong> Get the big picture first before diving into details</li>
+        <li><strong>Compare periods:</strong> Today vs yesterday, this month vs last month, this year vs last year</li>
+        <li><strong>Look for patterns:</strong> One bad day isn't a crisis, but a pattern needs attention</li>
+        <li><strong>Ask "why":</strong> Numbers tell you what happened, you need to find out why</li>
+        <li><strong>Take action:</strong> Reports are useless if you don't act on what they tell you</li>
+      </ul>
+    </div>
+
+    <!-- Tools CTA -->
+    <div class="tools-cta">
+      <h3>Calculate Your Hotel Metrics</h3>
+      <p>Use our free tools to calculate commissions, track OTA dependency, and more</p>
+      <a href="/tools/commission-calculator.html">OTA Commission Calculator</a>
+      <a href="/tools/ota-dependency-calculator.html">OTA Dependency Checker</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2026 Hotel Playbook. Made for Indian Hoteliers.</p>
+      <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+        <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
