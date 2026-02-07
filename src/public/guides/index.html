@@ -233,6 +233,40 @@
       text-decoration: none;
     }
 
+    /* Sticky Category Tabs */
+    .category-tabs {
+      background: white;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 57px;
+      z-index: 90;
+    }
+    .category-tabs-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      padding: 0 1rem;
+      scrollbar-width: none;
+    }
+    .category-tabs-inner::-webkit-scrollbar { display: none; }
+    .tab-link {
+      padding: 0.75rem 1.25rem;
+      text-decoration: none;
+      color: #666;
+      font-weight: 500;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+    }
+    .tab-link:hover,
+    .tab-link.active {
+      color: var(--secondary);
+      border-bottom-color: var(--secondary);
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .nav-links {
@@ -245,6 +279,11 @@
 
       .guides-grid {
         grid-template-columns: 1fr;
+      }
+
+      .tab-link {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
       }
     }
   </style>
@@ -269,11 +308,22 @@
     <p>Practical tutorials and strategies for Indian hoteliers. Master OTAs, optimize revenue, and leverage technology.</p>
   </section>
 
+  <!-- Sticky Category Tabs -->
+  <div class="category-tabs">
+    <div class="category-tabs-inner">
+      <a href="#ota" class="tab-link">&#127976; OTA</a>
+      <a href="#revenue" class="tab-link">&#128200; Revenue</a>
+      <a href="#software" class="tab-link">&#128187; Software</a>
+      <a href="#reports" class="tab-link">&#128202; Reports</a>
+      <a href="#compliance" class="tab-link">&#128203; Compliance</a>
+    </div>
+  </div>
+
   <!-- Main Content -->
   <div class="container">
 
     <!-- OTA Guides -->
-    <section class="category-section">
+    <section class="category-section" id="ota">
       <div class="category-header">
         <div class="category-icon">🏨</div>
         <div>
@@ -297,7 +347,7 @@
     </section>
 
     <!-- Revenue Guides -->
-    <section class="category-section">
+    <section class="category-section" id="revenue">
       <div class="category-header">
         <div class="category-icon">📈</div>
         <div>
@@ -440,7 +490,7 @@
     </section>
 
     <!-- Software Guides -->
-    <section class="category-section">
+    <section class="category-section" id="software">
       <div class="category-header">
         <div class="category-icon" style="background: rgba(94, 53, 177, 0.1);">💻</div>
         <div>
@@ -512,7 +562,7 @@
     </section>
 
     <!-- Reports Guides -->
-    <section class="category-section">
+    <section class="category-section" id="reports">
       <div class="category-header">
         <div class="category-icon" style="background: rgba(0, 121, 107, 0.1);">📊</div>
         <div>
@@ -584,7 +634,7 @@
     </section>
 
     <!-- Compliance Guides -->
-    <section class="category-section">
+    <section class="category-section" id="compliance">
       <div class="category-header">
         <div class="category-icon" style="background: rgba(198, 40, 40, 0.1);">📋</div>
         <div>
@@ -640,5 +690,36 @@
       </p>
     </div>
   </footer>
+
+  <script>
+    // Sticky tabs: scroll-spy + smooth scroll
+    (function() {
+      var tabLinks = document.querySelectorAll('.tab-link');
+      var sections = document.querySelectorAll('.category-section[id]');
+
+      var tabObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            tabLinks.forEach(function(l) { l.classList.remove('active'); });
+            var tab = document.querySelector('.tab-link[href="#' + entry.target.id + '"]');
+            if (tab) tab.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-120px 0px -60% 0px' });
+
+      sections.forEach(function(s) { tabObserver.observe(s); });
+
+      tabLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var target = document.querySelector(link.getAttribute('href'));
+          if (target) {
+            var offset = target.getBoundingClientRect().top + window.pageYOffset - 120;
+            window.scrollTo({ top: offset, behavior: 'smooth' });
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
