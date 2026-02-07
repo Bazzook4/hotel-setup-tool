@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TDS & TCS on OTA Payments for Hotels in India | Hotel Playbook</title>
+  <meta name="description" content="Understand TDS (0.1%) and TCS (0.5%) deductions on OTA settlements for Indian hotels. Learn who deducts what, how to claim credit, and avoid double taxation.">
+  <meta name="keywords" content="TDS hotel, TCS hotel, OTA TDS, OTA TCS, hotel tax deduction, MakeMyTrip TDS, Booking.com TCS">
+  <link rel="canonical" href="https://hotelplaybook.in/guides/compliance/tds-tcs.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"TDS & TCS on OTA Payments for Hotels","description":"Understanding TDS and TCS deductions on OTA settlements for Indian hotels.","author":{"@type":"Organization","name":"Hotel Playbook"},"publisher":{"@type":"Organization","name":"Hotel Playbook","logo":{"@type":"ImageObject","url":"https://hotelplaybook.in/favicon.svg"}},"mainEntityOfPage":"https://hotelplaybook.in/guides/compliance/tds-tcs.html"}
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f7fa; color: #333; line-height: 1.7; }
+    :root { --primary: #1e3a5f; --secondary: #2d8a8a; --accent: #d4a854; --secondary-light: rgba(45, 138, 138, 0.1); --accent-light: rgba(212, 168, 84, 0.2); --compliance: #c62828; --compliance-light: rgba(198, 40, 40, 0.1); }
+    .nav { background: white; padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+    .nav-logo span { color: var(--secondary); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: #555; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: var(--secondary); }
+    .breadcrumb { background: white; padding: 1rem 2rem; border-bottom: 1px solid #eee; }
+    .breadcrumb-container { max-width: 900px; margin: 0 auto; font-size: 0.9rem; color: #666; }
+    .breadcrumb a { color: var(--secondary); text-decoration: none; }
+    .article-container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    .article-header { margin-bottom: 2rem; }
+    .article-header h1 { font-size: 2.25rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.3; }
+    .article-meta { display: flex; gap: 1.5rem; color: #666; font-size: 0.9rem; }
+    .article-content { background: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.07); }
+    .article-content h2 { font-size: 1.5rem; color: var(--primary); margin: 2rem 0 1rem; padding-top: 1rem; border-top: 1px solid #eee; }
+    .article-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .article-content h3 { font-size: 1.2rem; color: var(--primary); margin: 1.5rem 0 0.75rem; }
+    .article-content p { margin-bottom: 1rem; color: #444; }
+    .article-content ul, .article-content ol { margin: 1rem 0 1.5rem 1.5rem; color: #444; }
+    .article-content li { margin-bottom: 0.5rem; }
+    .quick-answer { background: linear-gradient(135deg, var(--compliance) 0%, #ef5350 100%); color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; }
+    .quick-answer h2 { color: white !important; border: none !important; margin: 0 0 1rem 0 !important; padding: 0 !important; font-size: 1.3rem; }
+    .quick-answer .rate-box { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1rem; }
+    .quick-answer .rate-item { background: rgba(255,255,255,0.2); padding: 1rem 1.5rem; border-radius: 8px; }
+    .quick-answer .rate-item .label { font-size: 0.85rem; opacity: 0.9; }
+    .quick-answer .rate-item .value { font-size: 1.75rem; font-weight: 700; }
+    .highlight-box { background: var(--secondary-light); border-left: 4px solid var(--secondary); padding: 1.25rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; color: var(--primary); }
+    .highlight-box.warning { background: var(--compliance-light); border-left-color: var(--compliance); }
+    .highlight-box.warning strong { color: var(--compliance); }
+    .highlight-box.tip { background: var(--accent-light); border-left-color: var(--accent); }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+    .comparison-table th, .comparison-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
+    .comparison-table th { background: var(--primary); color: white; }
+    .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+    .calculation-box { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+    .calculation-box h4 { color: var(--primary); margin-bottom: 1rem; }
+    .calculation-box .calc-row { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px dashed #ddd; }
+    .calculation-box .calc-row:last-child { border-bottom: none; font-weight: 700; }
+    .calculation-box .calc-row.highlight { background: var(--compliance-light); margin: 0 -1rem; padding: 0.5rem 1rem; }
+    .related-section { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin-top: 2rem; }
+    .related-section h3 { color: var(--primary); margin: 0 0 1rem; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .related-links a { background: white; color: var(--secondary); padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-size: 0.9rem; border: 1px solid #ddd; }
+    .related-links a:hover { background: var(--secondary); color: white; }
+    .footer { background: var(--primary); color: white; padding: 2rem; margin-top: 3rem; text-align: center; }
+    .footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 768px) { .nav-links { display: none; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } .quick-answer .rate-box { flex-direction: column; gap: 1rem; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Hotel<span>Playbook</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/guides/" class="active">Guides</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; <a href="/guides/compliance/">Compliance</a> &rsaquo; TDS & TCS
+    </div>
+  </div>
+
+  <article class="article-container">
+    <header class="article-header">
+      <h1>TDS & TCS on OTA Payments for Hotels</h1>
+      <div class="article-meta">
+        <span>By Hotel Playbook Team</span>
+        <span>6 min read</span>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="quick-answer">
+        <h2>Current TDS & TCS Rates on OTA Payments</h2>
+        <div class="rate-box">
+          <div class="rate-item">
+            <div class="label">TDS (Section 194-O)</div>
+            <div class="value">0.1%</div>
+          </div>
+          <div class="rate-item">
+            <div class="label">TCS (Section 206C)</div>
+            <div class="value">0.5%</div>
+          </div>
+          <div class="rate-item">
+            <div class="label">Total Deduction</div>
+            <div class="value">0.6%</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>What is TDS on OTA Payments?</h2>
+
+      <p><strong>TDS (Tax Deducted at Source)</strong> under Section 194-O requires e-commerce operators (OTAs) to deduct tax when making payments to hotel sellers.</p>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Aspect</th>
+          <th>Details</th>
+        </tr>
+        <tr>
+          <td>Section</td>
+          <td>194-O of Income Tax Act</td>
+        </tr>
+        <tr>
+          <td>Rate</td>
+          <td>0.1% (1% if PAN not provided)</td>
+        </tr>
+        <tr>
+          <td>Deducted by</td>
+          <td>OTA (MakeMyTrip, Goibibo, etc.)</td>
+        </tr>
+        <tr>
+          <td>Deducted on</td>
+          <td>Gross amount of sale (before commission)</td>
+        </tr>
+        <tr>
+          <td>When</td>
+          <td>At the time of credit or payment, whichever is earlier</td>
+        </tr>
+      </table>
+
+      <h2>What is TCS on OTA Payments?</h2>
+
+      <p><strong>TCS (Tax Collected at Source)</strong> under Section 206C(1H) requires sellers receiving payments through e-commerce to have TCS collected on their behalf.</p>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Aspect</th>
+          <th>Details</th>
+        </tr>
+        <tr>
+          <td>Section</td>
+          <td>206C(1H) of Income Tax Act</td>
+        </tr>
+        <tr>
+          <td>Rate</td>
+          <td>0.5% (1% if PAN not provided)</td>
+        </tr>
+        <tr>
+          <td>Collected by</td>
+          <td>OTA on behalf of hotel</td>
+        </tr>
+        <tr>
+          <td>Collected on</td>
+          <td>Sale consideration exceeding ₹50 lakh in a year</td>
+        </tr>
+        <tr>
+          <td>Threshold</td>
+          <td>Applicable after ₹50 lakh annual sales per OTA</td>
+        </tr>
+      </table>
+
+      <div class="highlight-box warning">
+        <strong>Important:</strong> TCS applies only after your sales through a specific OTA exceed ₹50 lakh in a financial year. Below this threshold, only TDS (0.1%) applies.
+      </div>
+
+      <h2>TDS vs TCS: Key Differences</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Factor</th>
+          <th>TDS (194-O)</th>
+          <th>TCS (206C)</th>
+        </tr>
+        <tr>
+          <td>Who deducts/collects</td>
+          <td>OTA deducts from hotel</td>
+          <td>OTA collects on hotel's behalf</td>
+        </tr>
+        <tr>
+          <td>Rate</td>
+          <td>0.1%</td>
+          <td>0.5%</td>
+        </tr>
+        <tr>
+          <td>Threshold</td>
+          <td>No threshold</td>
+          <td>After ₹50 lakh/year per OTA</td>
+        </tr>
+        <tr>
+          <td>Credit available</td>
+          <td>Against income tax</td>
+          <td>Against income tax</td>
+        </tr>
+        <tr>
+          <td>Reflects in</td>
+          <td>Form 26AS</td>
+          <td>Form 26AS</td>
+        </tr>
+      </table>
+
+      <h2>Calculation Example</h2>
+
+      <p>Let's see how TDS and TCS affect your OTA settlement:</p>
+
+      <div class="calculation-box">
+        <h4>Booking Details</h4>
+        <div class="calc-row">
+          <span>Room Rate (per night)</span>
+          <span>₹5,000</span>
+        </div>
+        <div class="calc-row">
+          <span>GST on Room (12%)</span>
+          <span>₹600</span>
+        </div>
+        <div class="calc-row">
+          <span>Guest Pays (Total)</span>
+          <span>₹5,600</span>
+        </div>
+      </div>
+
+      <div class="calculation-box">
+        <h4>OTA Deductions</h4>
+        <div class="calc-row">
+          <span>Commission (20% on ₹5,000)</span>
+          <span>- ₹1,000</span>
+        </div>
+        <div class="calc-row">
+          <span>GST on Commission (18%)</span>
+          <span>- ₹180</span>
+        </div>
+        <div class="calc-row highlight">
+          <span>TDS (0.1% on ₹5,600)</span>
+          <span>- ₹5.60</span>
+        </div>
+        <div class="calc-row highlight">
+          <span>TCS (0.5% on ₹5,600)*</span>
+          <span>- ₹28</span>
+        </div>
+        <div class="calc-row">
+          <span><strong>Your Settlement</strong></span>
+          <span><strong>₹4,386.40</strong></span>
+        </div>
+      </div>
+
+      <p style="font-size: 0.85rem; color: #666;">*TCS applies only if annual sales exceed ₹50 lakh through this OTA</p>
+
+      <h2>How to Claim TDS/TCS Credit</h2>
+
+      <ol>
+        <li><strong>Check Form 26AS:</strong> Verify TDS/TCS credits appear in your Form 26AS on the Income Tax portal</li>
+        <li><strong>Match with OTA statements:</strong> Reconcile OTA payment statements with Form 26AS entries</li>
+        <li><strong>Claim in ITR:</strong> Include these credits when filing your Income Tax Return</li>
+        <li><strong>Adjust against tax liability:</strong> TDS/TCS credits reduce your final tax payable</li>
+      </ol>
+
+      <div class="highlight-box tip">
+        <strong>Pro Tip:</strong> Download monthly/quarterly TDS certificates from OTA extranets. Keep them for reconciliation and audit purposes.
+      </div>
+
+      <h2>What If PAN is Not Provided?</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Scenario</th>
+          <th>TDS Rate</th>
+          <th>TCS Rate</th>
+        </tr>
+        <tr>
+          <td>PAN provided and valid</td>
+          <td>0.1%</td>
+          <td>0.5%</td>
+        </tr>
+        <tr>
+          <td>PAN not provided</td>
+          <td>1%</td>
+          <td>1%</td>
+        </tr>
+        <tr>
+          <td>Invalid PAN</td>
+          <td>1%</td>
+          <td>1%</td>
+        </tr>
+      </table>
+
+      <div class="highlight-box warning">
+        <strong>10x Higher Deduction!</strong> Without valid PAN, you lose 1.5% extra on every booking. Always ensure your PAN is correctly registered with all OTAs.
+      </div>
+
+      <h2>OTA-wise TDS/TCS Practices</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>OTA</th>
+          <th>TDS Deduction</th>
+          <th>TCS Collection</th>
+        </tr>
+        <tr>
+          <td>MakeMyTrip/Goibibo</td>
+          <td>Yes (0.1%)</td>
+          <td>Yes (after ₹50L threshold)</td>
+        </tr>
+        <tr>
+          <td>Booking.com</td>
+          <td>Yes (0.1%)</td>
+          <td>Yes (after ₹50L threshold)</td>
+        </tr>
+        <tr>
+          <td>Agoda</td>
+          <td>Yes (0.1%)</td>
+          <td>Yes (after ₹50L threshold)</td>
+        </tr>
+        <tr>
+          <td>Expedia</td>
+          <td>Yes (0.1%)</td>
+          <td>Yes (after ₹50L threshold)</td>
+        </tr>
+        <tr>
+          <td>Yatra</td>
+          <td>Yes (0.1%)</td>
+          <td>Yes (after ₹50L threshold)</td>
+        </tr>
+      </table>
+
+      <h2>Common Issues & Solutions</h2>
+
+      <h3>1. TDS/TCS not reflecting in Form 26AS</h3>
+      <ul>
+        <li>Wait for quarterly updates (OTAs file returns quarterly)</li>
+        <li>Contact OTA partner support with booking references</li>
+        <li>Check if PAN is correctly linked</li>
+      </ul>
+
+      <h3>2. Mismatch between OTA statement and Form 26AS</h3>
+      <ul>
+        <li>Verify OTA's TAN (Tax Deduction Account Number)</li>
+        <li>Check for timing differences (accrual vs payment basis)</li>
+        <li>Raise ticket with OTA's finance team</li>
+      </ul>
+
+      <h3>3. Double deduction concerns</h3>
+      <ul>
+        <li>TDS and TCS are different provisions - both apply</li>
+        <li>Both are creditable against income tax</li>
+        <li>You're not losing money - it's advance tax payment</li>
+      </ul>
+
+      <div class="highlight-box">
+        <strong>Remember:</strong> TDS and TCS are not additional costs - they're advance tax payments that you can claim back when filing your income tax return. Think of them as forced savings towards your tax liability.
+      </div>
+
+      <div class="related-section">
+        <h3>Related Guides & Tools</h3>
+        <div class="related-links">
+          <a href="/tools/commission-calculator.html">OTA Commission Calculator</a>
+          <a href="/guides/compliance/gst-hotels.html">GST for Hotels</a>
+          <a href="/guides/compliance/grc-form-c.html">GRC & Form C</a>
+          <a href="/guides/revenue/ota.html">OTA Guide</a>
+          <a href="/guides/compliance/">All Compliance Guides</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <p>&copy; 2026 Hotel Playbook. Made for Indian Hoteliers.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+      <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a>
+    </p>
+  </footer>
+</body>
+</html>

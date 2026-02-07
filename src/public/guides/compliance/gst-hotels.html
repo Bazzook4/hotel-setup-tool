@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GST for Hotels in India: Complete Guide (5% vs 18%) | Hotel Playbook</title>
+  <meta name="description" content="Complete guide to GST for hotels in India. Understand 5% vs 18% tax slabs, input tax credit rules, invoicing requirements, and common compliance mistakes.">
+  <meta name="keywords" content="hotel GST India, GST on hotel rooms, 5% GST hotel, 18% GST hotel, hotel tax India, GST invoice hotel">
+  <link rel="canonical" href="https://hotelplaybook.in/guides/compliance/gst-hotels.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"GST for Hotels in India: Complete Guide","description":"Understand GST tax slabs, input tax credit, and invoicing requirements for Indian hotels.","author":{"@type":"Organization","name":"Hotel Playbook"},"publisher":{"@type":"Organization","name":"Hotel Playbook","logo":{"@type":"ImageObject","url":"https://hotelplaybook.in/favicon.svg"}},"mainEntityOfPage":"https://hotelplaybook.in/guides/compliance/gst-hotels.html"}
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f7fa; color: #333; line-height: 1.7; }
+    :root { --primary: #1e3a5f; --secondary: #2d8a8a; --accent: #d4a854; --secondary-light: rgba(45, 138, 138, 0.1); --accent-light: rgba(212, 168, 84, 0.2); --compliance: #c62828; --compliance-light: rgba(198, 40, 40, 0.1); }
+    .nav { background: white; padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+    .nav-logo span { color: var(--secondary); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: #555; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: var(--secondary); }
+    .breadcrumb { background: white; padding: 1rem 2rem; border-bottom: 1px solid #eee; }
+    .breadcrumb-container { max-width: 900px; margin: 0 auto; font-size: 0.9rem; color: #666; }
+    .breadcrumb a { color: var(--secondary); text-decoration: none; }
+    .article-container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    .article-header { margin-bottom: 2rem; }
+    .article-header h1 { font-size: 2.25rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.3; }
+    .article-meta { display: flex; gap: 1.5rem; color: #666; font-size: 0.9rem; }
+    .article-content { background: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.07); }
+    .article-content h2 { font-size: 1.5rem; color: var(--primary); margin: 2rem 0 1rem; padding-top: 1rem; border-top: 1px solid #eee; }
+    .article-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .article-content h3 { font-size: 1.2rem; color: var(--primary); margin: 1.5rem 0 0.75rem; }
+    .article-content p { margin-bottom: 1rem; color: #444; }
+    .article-content ul, .article-content ol { margin: 1rem 0 1.5rem 1.5rem; color: #444; }
+    .article-content li { margin-bottom: 0.5rem; }
+    .quick-answer { background: linear-gradient(135deg, var(--compliance) 0%, #ef5350 100%); color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; }
+    .quick-answer h2 { color: white !important; border: none !important; margin: 0 0 1rem 0 !important; padding: 0 !important; font-size: 1.3rem; }
+    .quick-answer .big-text { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .quick-answer p { color: white; margin-bottom: 0.5rem; }
+    .highlight-box { background: var(--secondary-light); border-left: 4px solid var(--secondary); padding: 1.25rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; color: var(--primary); }
+    .highlight-box.warning { background: var(--compliance-light); border-left-color: var(--compliance); }
+    .highlight-box.warning strong { color: var(--compliance); }
+    .highlight-box.tip { background: var(--accent-light); border-left-color: var(--accent); }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+    .comparison-table th, .comparison-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
+    .comparison-table th { background: var(--primary); color: white; }
+    .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+    .gst-slab { display: inline-block; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 700; font-size: 1.25rem; margin: 0.5rem 0; }
+    .gst-5 { background: #e8f5e9; color: #2e7d32; }
+    .gst-18 { background: #ffebee; color: #c62828; }
+    .related-section { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin-top: 2rem; }
+    .related-section h3 { color: var(--primary); margin: 0 0 1rem; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .related-links a { background: white; color: var(--secondary); padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-size: 0.9rem; border: 1px solid #ddd; }
+    .related-links a:hover { background: var(--secondary); color: white; }
+    .footer { background: var(--primary); color: white; padding: 2rem; margin-top: 3rem; text-align: center; }
+    .footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 768px) { .nav-links { display: none; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Hotel<span>Playbook</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/guides/" class="active">Guides</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; <a href="/guides/compliance/">Compliance</a> &rsaquo; GST for Hotels
+    </div>
+  </div>
+
+  <article class="article-container">
+    <header class="article-header">
+      <h1>GST for Hotels in India: Complete Guide</h1>
+      <div class="article-meta">
+        <span>By Hotel Playbook Team</span>
+        <span>8 min read</span>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="quick-answer">
+        <h2>GST Rates for Hotels (2024)</h2>
+        <p><span class="gst-slab gst-5">5% GST</span> Room tariff up to ₹7,500 per night</p>
+        <p><span class="gst-slab gst-18">18% GST</span> Room tariff above ₹7,500 per night</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Note: GST is charged on the declared tariff (rack rate), not the discounted selling price in most cases.</p>
+      </div>
+
+      <h2>GST Slabs for Hotel Accommodation</h2>
+
+      <p>The GST rate on hotel rooms depends on the room tariff. Here's the current structure:</p>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Room Tariff (Per Night)</th>
+          <th>GST Rate</th>
+          <th>ITC Available</th>
+        </tr>
+        <tr>
+          <td>Up to ₹1,000</td>
+          <td>Exempt (0%)</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>₹1,001 to ₹7,500</td>
+          <td>12%</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Above ₹7,500</td>
+          <td>18%</td>
+          <td>Yes</td>
+        </tr>
+      </table>
+
+      <div class="highlight-box warning">
+        <strong>Important Update (July 2022):</strong> The 12% slab was introduced replacing the earlier 0% and 12% slabs. Rooms up to ₹1,000 are now taxable at 12% if the hotel is registered under GST.
+      </div>
+
+      <h2>Declared Tariff vs Actual Selling Price</h2>
+
+      <p>This is where many hotels get confused. GST is generally charged based on:</p>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Scenario</th>
+          <th>GST Based On</th>
+        </tr>
+        <tr>
+          <td>Direct booking at rack rate</td>
+          <td>Actual amount charged</td>
+        </tr>
+        <tr>
+          <td>Discounted direct booking</td>
+          <td>Actual discounted amount</td>
+        </tr>
+        <tr>
+          <td>OTA booking (guest pays OTA)</td>
+          <td>Amount shown to guest on OTA</td>
+        </tr>
+        <tr>
+          <td>Corporate contracted rate</td>
+          <td>Contracted rate amount</td>
+        </tr>
+      </table>
+
+      <div class="highlight-box tip">
+        <strong>Practical Tip:</strong> If your rack rate is ₹8,000 but you sell at ₹6,000 discount, you charge 12% GST (not 18%) because the transaction value is ₹6,000.
+      </div>
+
+      <h2>GST on Food & Beverages</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Service</th>
+          <th>GST Rate</th>
+        </tr>
+        <tr>
+          <td>Restaurant in hotel (room tariff ≤ ₹7,500)</td>
+          <td>5% (without ITC)</td>
+        </tr>
+        <tr>
+          <td>Restaurant in hotel (room tariff > ₹7,500)</td>
+          <td>18% (with ITC) or 5% (without ITC)</td>
+        </tr>
+        <tr>
+          <td>Room service / In-room dining</td>
+          <td>Same as restaurant rate</td>
+        </tr>
+        <tr>
+          <td>Outdoor catering</td>
+          <td>18% (with ITC)</td>
+        </tr>
+        <tr>
+          <td>Banquet / Conference meals</td>
+          <td>18% (with ITC)</td>
+        </tr>
+      </table>
+
+      <h2>Input Tax Credit (ITC) Rules</h2>
+
+      <p>Hotels can claim ITC on GST paid for business expenses. Here's what's eligible:</p>
+
+      <h3>ITC Eligible</h3>
+      <ul>
+        <li>Furniture, fixtures, equipment purchases</li>
+        <li>Linens, amenities, toiletries</li>
+        <li>Software and technology services</li>
+        <li>Professional services (legal, accounting)</li>
+        <li>Marketing and advertising expenses</li>
+        <li>Maintenance and repairs</li>
+        <li>Food ingredients (if charging 18% on F&B)</li>
+      </ul>
+
+      <h3>ITC Not Eligible</h3>
+      <ul>
+        <li>Food and beverages for staff consumption</li>
+        <li>Personal use items</li>
+        <li>Goods/services for exempt supplies</li>
+        <li>Motor vehicles (except for specific uses)</li>
+      </ul>
+
+      <div class="highlight-box">
+        <strong>ITC Tip:</strong> If you opt for 5% GST on restaurant services, you CANNOT claim ITC on food ingredients. Many hotels prefer 18% + ITC when their input costs are high.
+      </div>
+
+      <h2>GST Invoice Requirements</h2>
+
+      <p>Every GST invoice from your hotel must include:</p>
+
+      <ol>
+        <li><strong>Hotel details:</strong> Name, address, GSTIN</li>
+        <li><strong>Invoice number:</strong> Unique, sequential</li>
+        <li><strong>Invoice date:</strong> Date of supply</li>
+        <li><strong>Guest details:</strong> Name, address, GSTIN (if B2B)</li>
+        <li><strong>HSN/SAC codes:</strong>
+          <ul>
+            <li>Accommodation: 9963</li>
+            <li>Restaurant: 9963</li>
+          </ul>
+        </li>
+        <li><strong>Taxable value:</strong> Amount before GST</li>
+        <li><strong>GST breakup:</strong> CGST + SGST (intra-state) or IGST (inter-state)</li>
+        <li><strong>Total amount:</strong> Including GST</li>
+        <li><strong>Place of supply:</strong> State where hotel is located</li>
+      </ol>
+
+      <h2>Place of Supply Rules</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Service</th>
+          <th>Place of Supply</th>
+          <th>Tax Type</th>
+        </tr>
+        <tr>
+          <td>Accommodation</td>
+          <td>Location of hotel</td>
+          <td>CGST + SGST</td>
+        </tr>
+        <tr>
+          <td>Restaurant services</td>
+          <td>Location of hotel</td>
+          <td>CGST + SGST</td>
+        </tr>
+        <tr>
+          <td>Banquet for local company</td>
+          <td>Location of hotel</td>
+          <td>CGST + SGST</td>
+        </tr>
+        <tr>
+          <td>Services to foreign tourist</td>
+          <td>Location of hotel</td>
+          <td>CGST + SGST</td>
+        </tr>
+      </table>
+
+      <div class="highlight-box">
+        <strong>Note:</strong> Hotel services are always taxed where the hotel is located, regardless of where the guest is from. So it's always CGST + SGST, never IGST for accommodation.
+      </div>
+
+      <h2>GST Filing Requirements</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Return</th>
+          <th>Frequency</th>
+          <th>Due Date</th>
+        </tr>
+        <tr>
+          <td>GSTR-1 (Outward supplies)</td>
+          <td>Monthly</td>
+          <td>11th of next month</td>
+        </tr>
+        <tr>
+          <td>GSTR-3B (Summary return)</td>
+          <td>Monthly</td>
+          <td>20th of next month</td>
+        </tr>
+        <tr>
+          <td>GSTR-9 (Annual return)</td>
+          <td>Yearly</td>
+          <td>31st December</td>
+        </tr>
+      </table>
+
+      <h2>Common GST Mistakes by Hotels</h2>
+
+      <ol>
+        <li><strong>Wrong slab application:</strong> Using 18% when 12% applies based on actual selling price</li>
+        <li><strong>Missing ITC claims:</strong> Not claiming eligible input credits</li>
+        <li><strong>Incorrect place of supply:</strong> Charging IGST instead of CGST+SGST</li>
+        <li><strong>Late filing:</strong> Missing return deadlines leading to penalties</li>
+        <li><strong>No HSN/SAC codes:</strong> Forgetting to mention service codes on invoices</li>
+        <li><strong>B2B invoice errors:</strong> Not capturing corporate guest GSTIN</li>
+      </ol>
+
+      <div class="highlight-box warning">
+        <strong>Penalty Alert:</strong> Late filing of GSTR-3B attracts ₹50/day (₹20/day for nil returns) plus 18% interest on tax due.
+      </div>
+
+      <h2>GST on OTA Commissions</h2>
+
+      <p>When OTAs charge commission, they charge 18% GST on that commission. As a hotel, you can claim ITC on this GST if you're registered.</p>
+
+      <p><strong>Example:</strong></p>
+      <ul>
+        <li>Room booking value: ₹5,000</li>
+        <li>OTA commission (20%): ₹1,000</li>
+        <li>GST on commission (18%): ₹180</li>
+        <li>Total OTA deduction: ₹1,180</li>
+        <li>You can claim ₹180 as ITC</li>
+      </ul>
+
+      <div class="related-section">
+        <h3>Related Guides & Tools</h3>
+        <div class="related-links">
+          <a href="/tools/commission-calculator.html">OTA Commission Calculator</a>
+          <a href="/guides/compliance/tds-tcs.html">TDS & TCS Guide</a>
+          <a href="/guides/compliance/grc-form-c.html">GRC & Form C</a>
+          <a href="/guides/compliance/night-audit.html">Night Audit</a>
+          <a href="/guides/compliance/">All Compliance Guides</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <p>&copy; 2026 Hotel Playbook. Made for Indian Hoteliers.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+      <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a>
+    </p>
+  </footer>
+</body>
+</html>

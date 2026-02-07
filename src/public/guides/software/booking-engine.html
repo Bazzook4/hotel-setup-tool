@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Engine for Hotels: Get More Direct Bookings | Hotel Playbook</title>
+  <meta name="description" content="What is a hotel booking engine? Learn how to accept direct bookings on your website, reduce OTA commissions, and increase hotel profits.">
+  <meta name="keywords" content="hotel booking engine, direct booking hotel, website booking system, IBE hotel, internet booking engine, direct reservations">
+  <link rel="canonical" href="https://hotelplaybook.in/guides/software/booking-engine.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Booking Engine for Hotels: Get More Direct Bookings","description":"Learn how to accept direct bookings and reduce OTA commissions.","author":{"@type":"Organization","name":"Hotel Playbook"},"publisher":{"@type":"Organization","name":"Hotel Playbook","logo":{"@type":"ImageObject","url":"https://hotelplaybook.in/favicon.svg"}},"mainEntityOfPage":"https://hotelplaybook.in/guides/software/booking-engine.html"}
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f7fa; color: #333; line-height: 1.7; }
+    :root { --primary: #1e3a5f; --secondary: #2d8a8a; --accent: #d4a854; --secondary-light: rgba(45, 138, 138, 0.1); --accent-light: rgba(212, 168, 84, 0.2); --software: #5e35b1; --software-light: rgba(94, 53, 177, 0.1); }
+    .nav { background: white; padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+    .nav-logo span { color: var(--secondary); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: #555; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: var(--secondary); }
+    .breadcrumb { background: white; padding: 1rem 2rem; border-bottom: 1px solid #eee; }
+    .breadcrumb-container { max-width: 900px; margin: 0 auto; font-size: 0.9rem; color: #666; }
+    .breadcrumb a { color: var(--secondary); text-decoration: none; }
+    .article-container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    .article-header { margin-bottom: 2rem; }
+    .article-header h1 { font-size: 2.25rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.3; }
+    .article-meta { display: flex; gap: 1.5rem; color: #666; font-size: 0.9rem; }
+    .article-content { background: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.07); }
+    .article-content h2 { font-size: 1.5rem; color: var(--primary); margin: 2rem 0 1rem; padding-top: 1rem; border-top: 1px solid #eee; }
+    .article-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .article-content p { margin-bottom: 1rem; color: #444; }
+    .article-content ul, .article-content ol { margin: 1rem 0 1.5rem 1.5rem; color: #444; }
+    .article-content li { margin-bottom: 0.5rem; }
+    .quick-answer { background: linear-gradient(135deg, var(--software) 0%, #7e57c2 100%); color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; }
+    .quick-answer h2 { color: white !important; border: none !important; margin: 0 0 1rem 0 !important; padding: 0 !important; font-size: 1.3rem; }
+    .quick-answer .big-text { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .quick-answer p { color: white; }
+    .highlight-box { background: var(--secondary-light); border-left: 4px solid var(--secondary); padding: 1.25rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; color: var(--primary); }
+    .highlight-box.tip { background: var(--accent-light); border-left-color: var(--accent); }
+    .highlight-box.success { background: #e8f5e9; border-left-color: #2e7d32; }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+    .comparison-table th, .comparison-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
+    .comparison-table th { background: var(--primary); color: white; }
+    .related-section { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin-top: 2rem; }
+    .related-section h3 { color: var(--primary); margin: 0 0 1rem; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .related-links a { background: white; color: var(--secondary); padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-size: 0.9rem; border: 1px solid #ddd; }
+    .related-links a:hover { background: var(--secondary); color: white; }
+    .footer { background: var(--primary); color: white; padding: 2rem; margin-top: 3rem; text-align: center; }
+    .footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 768px) { .nav-links { display: none; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Hotel<span>Playbook</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/guides/" class="active">Guides</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; <a href="/guides/software/">Software Guides</a> &rsaquo; Booking Engine
+    </div>
+  </div>
+
+  <article class="article-container">
+    <header class="article-header">
+      <h1>Booking Engine: Get More Direct Bookings</h1>
+      <div class="article-meta">
+        <span>By Hotel Playbook Team</span>
+        <span>6 min read</span>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="quick-answer">
+        <h2>What is a Booking Engine?</h2>
+        <div class="big-text">Your Hotel's Own Online Booking System</div>
+        <p>A booking engine (IBE - Internet Booking Engine) lets guests book rooms directly on your website. Zero commission, full guest data, complete control.</p>
+      </div>
+
+      <h2>Why You Need a Booking Engine</h2>
+
+      <div class="highlight-box success">
+        <strong>The Math:</strong> 100 room nights/month at ₹3,000 ADR via OTA (20% commission) = ₹60,000 lost to OTAs. Same bookings direct = ₹60,000 saved (minus ~3% payment gateway).
+      </div>
+
+      <table class="comparison-table">
+        <tr>
+          <th>OTA Booking</th>
+          <th>Direct Booking</th>
+        </tr>
+        <tr>
+          <td>15-25% commission</td>
+          <td>~3% payment gateway only</td>
+        </tr>
+        <tr>
+          <td>Limited guest data</td>
+          <td>Full contact info, preferences</td>
+        </tr>
+        <tr>
+          <td>OTA owns the relationship</td>
+          <td>You own the guest relationship</td>
+        </tr>
+        <tr>
+          <td>Rate parity constraints</td>
+          <td>Offer exclusive direct rates</td>
+        </tr>
+        <tr>
+          <td>Delayed payments</td>
+          <td>Instant payment to your account</td>
+        </tr>
+      </table>
+
+      <h2>How Booking Engine Works</h2>
+
+      <ol>
+        <li><strong>Guest visits your website</strong></li>
+        <li><strong>Enters dates and guests:</strong> Search widget on your site</li>
+        <li><strong>Sees room options:</strong> Available rooms with rates and photos</li>
+        <li><strong>Selects room and extras:</strong> Add-ons like breakfast, airport transfer</li>
+        <li><strong>Enters details:</strong> Guest information form</li>
+        <li><strong>Pays securely:</strong> Credit card, UPI, net banking</li>
+        <li><strong>Gets confirmation:</strong> Instant booking confirmation email</li>
+        <li><strong>You get the booking:</strong> Directly in your PMS</li>
+      </ol>
+
+      <h2>Key Features to Look For</h2>
+
+      <ul>
+        <li><strong>Mobile responsive:</strong> 60%+ bookings happen on mobile</li>
+        <li><strong>Multiple payment options:</strong> Cards, UPI, net banking, wallets</li>
+        <li><strong>PMS integration:</strong> Bookings flow directly to your system</li>
+        <li><strong>Multi-language:</strong> English, Hindi, regional languages</li>
+        <li><strong>Promo codes:</strong> Create discount codes for marketing</li>
+        <li><strong>Add-ons/Packages:</strong> Upsell breakfast, spa, transfers</li>
+        <li><strong>Rate comparison widget:</strong> Show your price vs OTAs</li>
+        <li><strong>Google Hotel Ads:</strong> Connect to meta-search</li>
+      </ul>
+
+      <h2>Popular Booking Engines in India</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Booking Engine</th>
+          <th>Best For</th>
+          <th>Starting Price</th>
+        </tr>
+        <tr>
+          <td>eZee Reservation</td>
+          <td>eZee PMS users</td>
+          <td>₹8,000/year</td>
+        </tr>
+        <tr>
+          <td>Djubo</td>
+          <td>Independent hotels</td>
+          <td>₹6,000/year</td>
+        </tr>
+        <tr>
+          <td>AxisRooms</td>
+          <td>CM + BE combo</td>
+          <td>₹10,000/year</td>
+        </tr>
+        <tr>
+          <td>SiteMinder</td>
+          <td>Premium features</td>
+          <td>₹15,000/year</td>
+        </tr>
+        <tr>
+          <td>Simplotel</td>
+          <td>Website + BE package</td>
+          <td>Custom pricing</td>
+        </tr>
+      </table>
+
+      <h2>Driving Traffic to Your Booking Engine</h2>
+
+      <p>Having a booking engine isn't enough. You need to drive traffic to it:</p>
+
+      <ul>
+        <li><strong>Google Hotel Ads:</strong> Show rates on Google search results</li>
+        <li><strong>Social media:</strong> "Book Direct" links on Instagram, Facebook</li>
+        <li><strong>Email marketing:</strong> Past guests, inquiries</li>
+        <li><strong>Best rate guarantee:</strong> Promise lowest rate on your site</li>
+        <li><strong>Exclusive perks:</strong> Free breakfast, late checkout for direct bookers</li>
+        <li><strong>Retargeting ads:</strong> Target website visitors who didn't book</li>
+        <li><strong>WhatsApp:</strong> Share booking link with inquiries</li>
+      </ul>
+
+      <div class="highlight-box tip">
+        <strong>Pro Tip:</strong> Add a "Book Direct & Save" banner on your OTA listings directing guests to your website. Many OTAs allow this in listing descriptions.
+      </div>
+
+      <h2>Booking Engine vs OTA</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Factor</th>
+          <th>Booking Engine</th>
+          <th>OTA</th>
+        </tr>
+        <tr>
+          <td>Commission</td>
+          <td>0% (+ payment gateway ~3%)</td>
+          <td>15-25%</td>
+        </tr>
+        <tr>
+          <td>Guest data</td>
+          <td>Full access</td>
+          <td>Limited</td>
+        </tr>
+        <tr>
+          <td>Traffic source</td>
+          <td>You generate it</td>
+          <td>OTA provides it</td>
+        </tr>
+        <tr>
+          <td>Setup effort</td>
+          <td>Requires marketing</td>
+          <td>List and wait</td>
+        </tr>
+        <tr>
+          <td>Control</td>
+          <td>Complete</td>
+          <td>OTA's rules</td>
+        </tr>
+      </table>
+
+      <h2>Ideal Direct Booking Mix</h2>
+
+      <div class="highlight-box">
+        <strong>Target:</strong> Aim for 30-40% direct bookings. Use OTAs for visibility and new guest acquisition, convert repeat guests to direct bookers.
+      </div>
+
+      <h2>Setting Up Your Booking Engine</h2>
+
+      <ol>
+        <li><strong>Choose provider:</strong> Based on PMS compatibility and budget</li>
+        <li><strong>Setup payment gateway:</strong> Razorpay, CCAvenue, PayU</li>
+        <li><strong>Add room types:</strong> Photos, descriptions, amenities</li>
+        <li><strong>Set rates:</strong> Base rates, seasonal rates, packages</li>
+        <li><strong>Configure policies:</strong> Cancellation, deposit requirements</li>
+        <li><strong>Embed on website:</strong> Widget or full page integration</li>
+        <li><strong>Test thoroughly:</strong> Make test bookings on all devices</li>
+        <li><strong>Launch & promote:</strong> Drive traffic to your direct booking page</li>
+      </ol>
+
+      <div class="related-section">
+        <h3>Related Guides & Tools</h3>
+        <div class="related-links">
+          <a href="/guides/software/channel-manager.html">Channel Manager</a>
+          <a href="/guides/software/pms.html">PMS Guide</a>
+          <a href="/guides/revenue/ota.html">OTA Guide</a>
+          <a href="/tools/commission-calculator.html">Commission Calculator</a>
+          <a href="/tools/ota-dependency-calculator.html">OTA Dependency Calculator</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <p>&copy; 2026 Hotel Playbook. Made for Indian Hoteliers.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+      <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a>
+    </p>
+  </footer>
+</body>
+</html>

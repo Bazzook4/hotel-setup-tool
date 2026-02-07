@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Inventory & Stores Management Software | Hotel Playbook</title>
+  <meta name="description" content="Learn about hotel inventory management software. Track supplies, F&B ingredients, housekeeping materials, and manage purchase orders efficiently.">
+  <meta name="keywords" content="hotel inventory management, stores management hotel, hotel supplies tracking, f&b inventory, hotel stock control, purchase order hotel">
+  <link rel="canonical" href="https://hotelplaybook.in/guides/software/inventory.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f7fa; color: #333; line-height: 1.7; }
+    :root { --primary: #1e3a5f; --secondary: #2d8a8a; --accent: #d4a854; --secondary-light: rgba(45, 138, 138, 0.1); --accent-light: rgba(212, 168, 84, 0.2); --software: #5e35b1; --software-light: rgba(94, 53, 177, 0.1); }
+    .nav { background: white; padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+    .nav-logo span { color: var(--secondary); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: #555; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: var(--secondary); }
+    .breadcrumb { background: white; padding: 1rem 2rem; border-bottom: 1px solid #eee; }
+    .breadcrumb-container { max-width: 900px; margin: 0 auto; font-size: 0.9rem; color: #666; }
+    .breadcrumb a { color: var(--secondary); text-decoration: none; }
+    .article-container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    .article-header { margin-bottom: 2rem; }
+    .article-header h1 { font-size: 2.25rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.3; }
+    .article-meta { display: flex; gap: 1.5rem; color: #666; font-size: 0.9rem; }
+    .article-content { background: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.07); }
+    .article-content h2 { font-size: 1.5rem; color: var(--primary); margin: 2rem 0 1rem; padding-top: 1rem; border-top: 1px solid #eee; }
+    .article-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .article-content p { margin-bottom: 1rem; color: #444; }
+    .article-content ul, .article-content ol { margin: 1rem 0 1.5rem 1.5rem; color: #444; }
+    .article-content li { margin-bottom: 0.5rem; }
+    .quick-answer { background: linear-gradient(135deg, var(--software) 0%, #7e57c2 100%); color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; }
+    .quick-answer h2 { color: white !important; border: none !important; margin: 0 0 1rem 0 !important; padding: 0 !important; font-size: 1.3rem; }
+    .quick-answer .big-text { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .quick-answer p { color: white; }
+    .highlight-box { background: var(--secondary-light); border-left: 4px solid var(--secondary); padding: 1.25rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; color: var(--primary); }
+    .highlight-box.tip { background: var(--accent-light); border-left-color: var(--accent); }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+    .comparison-table th, .comparison-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
+    .comparison-table th { background: var(--primary); color: white; }
+    .related-section { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin-top: 2rem; }
+    .related-section h3 { color: var(--primary); margin: 0 0 1rem; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .related-links a { background: white; color: var(--secondary); padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-size: 0.9rem; border: 1px solid #ddd; }
+    .related-links a:hover { background: var(--secondary); color: white; }
+    .footer { background: var(--primary); color: white; padding: 2rem; margin-top: 3rem; text-align: center; }
+    .footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 768px) { .nav-links { display: none; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Hotel<span>Playbook</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/guides/" class="active">Guides</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; <a href="/guides/software/">Software Guides</a> &rsaquo; Inventory Management
+    </div>
+  </div>
+
+  <article class="article-container">
+    <header class="article-header">
+      <h1>Hotel Inventory & Stores Management</h1>
+      <div class="article-meta">
+        <span>By Hotel Playbook Team</span>
+        <span>5 min read</span>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="quick-answer">
+        <h2>What is Inventory Management?</h2>
+        <div class="big-text">Track Everything Your Hotel Consumes</div>
+        <p>Software to manage hotel supplies - F&B ingredients, housekeeping materials, guest amenities, maintenance items. Control costs, prevent theft, automate reordering.</p>
+      </div>
+
+      <h2>What Does Inventory Software Do?</h2>
+
+      <ul>
+        <li><strong>Stock tracking:</strong> Real-time inventory levels across stores</li>
+        <li><strong>Purchase orders:</strong> Create and track POs to vendors</li>
+        <li><strong>Goods receipt:</strong> Record incoming stock with GRN</li>
+        <li><strong>Issue to departments:</strong> Track consumption by department</li>
+        <li><strong>Recipe costing:</strong> Calculate food cost per dish</li>
+        <li><strong>Reorder alerts:</strong> Automatic low-stock notifications</li>
+        <li><strong>Vendor management:</strong> Track vendor prices, performance</li>
+        <li><strong>Wastage tracking:</strong> Record and analyze wastage</li>
+      </ul>
+
+      <h2>Types of Hotel Inventory</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Category</th>
+          <th>Items</th>
+          <th>Managed By</th>
+        </tr>
+        <tr>
+          <td>F&B Raw Materials</td>
+          <td>Vegetables, meat, dairy, dry goods</td>
+          <td>Kitchen/F&B stores</td>
+        </tr>
+        <tr>
+          <td>Beverages</td>
+          <td>Liquor, beer, wine, soft drinks</td>
+          <td>Bar stores</td>
+        </tr>
+        <tr>
+          <td>Housekeeping</td>
+          <td>Cleaning supplies, linens, amenities</td>
+          <td>HK stores</td>
+        </tr>
+        <tr>
+          <td>Guest Supplies</td>
+          <td>Toiletries, stationery, minibar items</td>
+          <td>Central stores</td>
+        </tr>
+        <tr>
+          <td>Maintenance</td>
+          <td>Spare parts, tools, consumables</td>
+          <td>Engineering stores</td>
+        </tr>
+        <tr>
+          <td>General</td>
+          <td>Office supplies, printing, packaging</td>
+          <td>General stores</td>
+        </tr>
+      </table>
+
+      <h2>Why You Need Inventory Management</h2>
+
+      <div class="highlight-box">
+        <strong>Without proper tracking:</strong> 5-10% of F&B cost can be lost to pilferage, wastage, and poor ordering. For a hotel spending ₹10 lakh/month on F&B = ₹50,000-1,00,000 potential savings.
+      </div>
+
+      <ul>
+        <li><strong>Cost control:</strong> Know exactly what you're spending</li>
+        <li><strong>Prevent theft:</strong> Accountability for every item</li>
+        <li><strong>Reduce wastage:</strong> Track expiry, FIFO compliance</li>
+        <li><strong>Better purchasing:</strong> Buy right quantities at right time</li>
+        <li><strong>Recipe consistency:</strong> Standard portions, consistent quality</li>
+        <li><strong>Vendor negotiations:</strong> Data for price comparisons</li>
+      </ul>
+
+      <h2>Key Features to Look For</h2>
+
+      <ol>
+        <li><strong>POS integration:</strong> Auto-deduct ingredients when dish sold</li>
+        <li><strong>Recipe management:</strong> Define recipes with ingredient quantities</li>
+        <li><strong>Multiple stores:</strong> Manage different store locations</li>
+        <li><strong>Barcode scanning:</strong> Quick stock entry and counting</li>
+        <li><strong>GST handling:</strong> Track input GST on purchases</li>
+        <li><strong>Approval workflows:</strong> PO approvals, issue requests</li>
+        <li><strong>Physical count:</strong> Stock taking and variance analysis</li>
+        <li><strong>Reports:</strong> Consumption, cost, variance reports</li>
+      </ol>
+
+      <h2>Inventory Control Best Practices</h2>
+
+      <ul>
+        <li><strong>FIFO:</strong> First In, First Out - use older stock first</li>
+        <li><strong>Par levels:</strong> Set minimum and maximum stock levels</li>
+        <li><strong>Daily issues:</strong> Issue stock daily based on requirements</li>
+        <li><strong>Weekly counts:</strong> Physical count of high-value items</li>
+        <li><strong>Monthly reconciliation:</strong> Full inventory count monthly</li>
+        <li><strong>Variance analysis:</strong> Investigate discrepancies immediately</li>
+        <li><strong>Spot checks:</strong> Random audits to ensure compliance</li>
+      </ul>
+
+      <h2>Popular Solutions in India</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Software</th>
+          <th>Best For</th>
+          <th>Integration</th>
+        </tr>
+        <tr>
+          <td>eZee Optimus</td>
+          <td>eZee ecosystem hotels</td>
+          <td>eZee PMS, POS</td>
+        </tr>
+        <tr>
+          <td>IDS Materials</td>
+          <td>Large hotels</td>
+          <td>IDS Next suite</td>
+        </tr>
+        <tr>
+          <td>FusionResto</td>
+          <td>F&B focused</td>
+          <td>Multiple POS</td>
+        </tr>
+        <tr>
+          <td>Tally + customization</td>
+          <td>Basic tracking</td>
+          <td>Manual/Excel</td>
+        </tr>
+      </table>
+
+      <div class="highlight-box tip">
+        <strong>Start Simple:</strong> If a full system is beyond budget, start with Excel-based tracking for high-value items (liquor, meat, dairy). Discipline in tracking matters more than software sophistication.
+      </div>
+
+      <div class="related-section">
+        <h3>Related Guides</h3>
+        <div class="related-links">
+          <a href="/guides/software/pos.html">POS System</a>
+          <a href="/guides/software/accounting.html">Accounting Software</a>
+          <a href="/guides/software/pms.html">PMS Guide</a>
+          <a href="/guides/software/">All Software Guides</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <p>&copy; 2026 Hotel Playbook. Made for Indian Hoteliers.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+      <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a>
+    </p>
+  </footer>
+</body>
+</html>

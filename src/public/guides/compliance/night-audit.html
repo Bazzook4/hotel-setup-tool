@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Night Audit in Hotels: Complete Process Guide | Hotel Playbook</title>
+  <meta name="description" content="Complete guide to hotel night audit process. Learn end-of-day reconciliation, posting room charges, balancing accounts, and generating daily reports.">
+  <meta name="keywords" content="night audit hotel, hotel night audit process, end of day hotel, hotel daily closing, night audit checklist, hotel reconciliation">
+  <link rel="canonical" href="https://hotelplaybook.in/guides/compliance/night-audit.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Night Audit in Hotels: Complete Process Guide","description":"Learn the complete hotel night audit process including reconciliation, posting, and reporting.","author":{"@type":"Organization","name":"Hotel Playbook"},"publisher":{"@type":"Organization","name":"Hotel Playbook","logo":{"@type":"ImageObject","url":"https://hotelplaybook.in/favicon.svg"}},"mainEntityOfPage":"https://hotelplaybook.in/guides/compliance/night-audit.html"}
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f7fa; color: #333; line-height: 1.7; }
+    :root { --primary: #1e3a5f; --secondary: #2d8a8a; --accent: #d4a854; --secondary-light: rgba(45, 138, 138, 0.1); --accent-light: rgba(212, 168, 84, 0.2); --compliance: #c62828; --compliance-light: rgba(198, 40, 40, 0.1); }
+    .nav { background: white; padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+    .nav-logo span { color: var(--secondary); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: #555; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: var(--secondary); }
+    .breadcrumb { background: white; padding: 1rem 2rem; border-bottom: 1px solid #eee; }
+    .breadcrumb-container { max-width: 900px; margin: 0 auto; font-size: 0.9rem; color: #666; }
+    .breadcrumb a { color: var(--secondary); text-decoration: none; }
+    .article-container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    .article-header { margin-bottom: 2rem; }
+    .article-header h1 { font-size: 2.25rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.3; }
+    .article-meta { display: flex; gap: 1.5rem; color: #666; font-size: 0.9rem; }
+    .article-content { background: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.07); }
+    .article-content h2 { font-size: 1.5rem; color: var(--primary); margin: 2rem 0 1rem; padding-top: 1rem; border-top: 1px solid #eee; }
+    .article-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .article-content h3 { font-size: 1.2rem; color: var(--primary); margin: 1.5rem 0 0.75rem; }
+    .article-content p { margin-bottom: 1rem; color: #444; }
+    .article-content ul, .article-content ol { margin: 1rem 0 1.5rem 1.5rem; color: #444; }
+    .article-content li { margin-bottom: 0.5rem; }
+    .quick-answer { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; }
+    .quick-answer h2 { color: white !important; border: none !important; margin: 0 0 1rem 0 !important; padding: 0 !important; font-size: 1.3rem; }
+    .quick-answer .big-text { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .quick-answer p { color: white; }
+    .highlight-box { background: var(--secondary-light); border-left: 4px solid var(--secondary); padding: 1.25rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; color: var(--primary); }
+    .highlight-box.warning { background: var(--compliance-light); border-left-color: var(--compliance); }
+    .highlight-box.warning strong { color: var(--compliance); }
+    .highlight-box.tip { background: var(--accent-light); border-left-color: var(--accent); }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+    .comparison-table th, .comparison-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
+    .comparison-table th { background: var(--primary); color: white; }
+    .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+    .step-box { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border-left: 4px solid var(--secondary); }
+    .step-box h4 { color: var(--primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+    .step-box h4 .step-num { background: var(--secondary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; }
+    .checklist { background: white; border: 2px solid #e0e0e0; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+    .checklist h4 { color: var(--primary); margin-bottom: 1rem; }
+    .checklist ul { list-style: none; margin: 0; padding: 0; }
+    .checklist li { padding: 0.5rem 0; border-bottom: 1px dashed #eee; display: flex; align-items: center; gap: 0.75rem; }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before { content: "☐"; font-size: 1.2rem; color: var(--secondary); }
+    .related-section { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin-top: 2rem; }
+    .related-section h3 { color: var(--primary); margin: 0 0 1rem; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .related-links a { background: white; color: var(--secondary); padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-size: 0.9rem; border: 1px solid #ddd; }
+    .related-links a:hover { background: var(--secondary); color: white; }
+    .footer { background: var(--primary); color: white; padding: 2rem; margin-top: 3rem; text-align: center; }
+    .footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 768px) { .nav-links { display: none; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Hotel<span>Playbook</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/guides/" class="active">Guides</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; <a href="/guides/compliance/">Compliance</a> &rsaquo; Night Audit
+    </div>
+  </div>
+
+  <article class="article-container">
+    <header class="article-header">
+      <h1>Night Audit in Hotels: Complete Process Guide</h1>
+      <div class="article-meta">
+        <span>By Hotel Playbook Team</span>
+        <span>8 min read</span>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="quick-answer">
+        <h2>What is Night Audit?</h2>
+        <div class="big-text">Night Audit = End-of-Day Closing Process</div>
+        <p>The process of closing the hotel's business day, posting room charges, reconciling accounts, and generating daily reports. Typically done between 11 PM and 6 AM.</p>
+      </div>
+
+      <h2>Why Night Audit is Critical</h2>
+
+      <ul>
+        <li><strong>Financial accuracy:</strong> Ensures all charges are posted correctly</li>
+        <li><strong>Revenue tracking:</strong> Captures daily revenue for reporting</li>
+        <li><strong>Account reconciliation:</strong> Balances all guest accounts</li>
+        <li><strong>Operational handover:</strong> Prepares reports for morning management</li>
+        <li><strong>Error detection:</strong> Identifies discrepancies before they compound</li>
+        <li><strong>Compliance:</strong> Creates audit trail for tax and regulatory purposes</li>
+      </ul>
+
+      <h2>Night Audit Process - Step by Step</h2>
+
+      <div class="step-box">
+        <h4><span class="step-num">1</span> Complete All Pending Transactions</h4>
+        <ul>
+          <li>Post any late check-ins</li>
+          <li>Process pending check-outs</li>
+          <li>Post all restaurant/bar charges</li>
+          <li>Post minibar, laundry, telephone charges</li>
+          <li>Apply any adjustments or corrections</li>
+        </ul>
+      </div>
+
+      <div class="step-box">
+        <h4><span class="step-num">2</span> Verify Room Status</h4>
+        <ul>
+          <li>Match PMS room status with housekeeping report</li>
+          <li>Identify any discrepancies (skipper, sleeper)</li>
+          <li>Confirm occupied, vacant, OOO (Out of Order) rooms</li>
+          <li>Update any incorrect statuses</li>
+        </ul>
+      </div>
+
+      <div class="step-box">
+        <h4><span class="step-num">3</span> Post Room & Tax Charges</h4>
+        <ul>
+          <li>Run automatic room charge posting in PMS</li>
+          <li>Verify room rates are correct for each reservation</li>
+          <li>Ensure GST is calculated correctly (12% or 18%)</li>
+          <li>Check package inclusions are applied</li>
+        </ul>
+      </div>
+
+      <div class="step-box">
+        <h4><span class="step-num">4</span> Reconcile Cash & Cards</h4>
+        <ul>
+          <li>Count cash drawer and match with system</li>
+          <li>Reconcile credit card settlements with PMS</li>
+          <li>Verify UPI/digital payments</li>
+          <li>Account for paid-outs and advances</li>
+        </ul>
+      </div>
+
+      <div class="step-box">
+        <h4><span class="step-num">5</span> Balance Guest Ledger</h4>
+        <ul>
+          <li>Review high balance accounts</li>
+          <li>Check for credit limit violations</li>
+          <li>Verify city ledger transfers</li>
+          <li>Ensure all accounts balance to zero or expected amounts</li>
+        </ul>
+      </div>
+
+      <div class="step-box">
+        <h4><span class="step-num">6</span> Run Night Audit in PMS</h4>
+        <ul>
+          <li>Execute the night audit/day close function</li>
+          <li>System rolls date forward</li>
+          <li>Generates daily reports automatically</li>
+          <li>Archives the day's transactions</li>
+        </ul>
+      </div>
+
+      <div class="step-box">
+        <h4><span class="step-num">7</span> Generate & Review Reports</h4>
+        <ul>
+          <li>Daily revenue report</li>
+          <li>Occupancy report</li>
+          <li>Arrivals/Departures for next day</li>
+          <li>High balance report</li>
+          <li>Manager's flash report</li>
+        </ul>
+      </div>
+
+      <h2>Key Reports Generated</h2>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Report</th>
+          <th>Purpose</th>
+          <th>Who Uses It</th>
+        </tr>
+        <tr>
+          <td>Daily Revenue Report</td>
+          <td>Shows total revenue by department</td>
+          <td>GM, Revenue Manager</td>
+        </tr>
+        <tr>
+          <td>Occupancy Report</td>
+          <td>Rooms sold, occupancy %, ADR, RevPAR</td>
+          <td>Revenue Manager, Sales</td>
+        </tr>
+        <tr>
+          <td>Trial Balance</td>
+          <td>Accounts receivable status</td>
+          <td>Accounts, Finance</td>
+        </tr>
+        <tr>
+          <td>Arrival List</td>
+          <td>Expected check-ins for next day</td>
+          <td>Front Office, Housekeeping</td>
+        </tr>
+        <tr>
+          <td>Departure List</td>
+          <td>Expected check-outs for next day</td>
+          <td>Front Office, Accounts</td>
+        </tr>
+        <tr>
+          <td>No-Show Report</td>
+          <td>Reservations that didn't arrive</td>
+          <td>Reservations, Revenue</td>
+        </tr>
+        <tr>
+          <td>Cashier Report</td>
+          <td>Cash/card breakdown by shift</td>
+          <td>Accounts, Night Auditor</td>
+        </tr>
+        <tr>
+          <td>Guest Ledger</td>
+          <td>All in-house guest balances</td>
+          <td>Front Office, Accounts</td>
+        </tr>
+      </table>
+
+      <h2>Common Night Audit Issues</h2>
+
+      <h3>1. Room Rate Discrepancies</h3>
+      <p><strong>Problem:</strong> Room rate doesn't match what was quoted/booked</p>
+      <p><strong>Solution:</strong> Always verify rate before posting. Check reservation source and rate code.</p>
+
+      <h3>2. Missing Charges</h3>
+      <p><strong>Problem:</strong> F&B or other charges not posted to room</p>
+      <p><strong>Solution:</strong> Coordinate with outlets before night audit. Use interface for POS integration.</p>
+
+      <h3>3. Cash Shortage</h3>
+      <p><strong>Problem:</strong> Physical cash doesn't match system</p>
+      <p><strong>Solution:</strong> Recount, check for unposted transactions, review paid-outs. Document variance.</p>
+
+      <h3>4. High Balance Accounts</h3>
+      <p><strong>Problem:</strong> Guest balance exceeds credit limit</p>
+      <p><strong>Solution:</strong> Request interim payment or verify valid credit card authorization.</p>
+
+      <div class="highlight-box warning">
+        <strong>Critical Rule:</strong> Never force close a night audit with unresolved discrepancies. Document issues and escalate to management - don't sweep problems under the rug.
+      </div>
+
+      <h2>Night Audit Checklist</h2>
+
+      <div class="checklist">
+        <h4>Pre-Audit Tasks</h4>
+        <ul>
+          <li>All outlets closed and charges posted</li>
+          <li>All check-ins completed</li>
+          <li>Late check-outs processed</li>
+          <li>Room status matches housekeeping</li>
+          <li>All reservations confirmed for today are accounted for</li>
+        </ul>
+      </div>
+
+      <div class="checklist">
+        <h4>During Audit</h4>
+        <ul>
+          <li>Room and tax posted correctly</li>
+          <li>Cash drawer balanced</li>
+          <li>Credit card batch closed</li>
+          <li>Guest ledger balanced</li>
+          <li>City ledger entries verified</li>
+          <li>No-shows processed and charged</li>
+        </ul>
+      </div>
+
+      <div class="checklist">
+        <h4>Post-Audit Tasks</h4>
+        <ul>
+          <li>All reports generated and printed/saved</li>
+          <li>Reports distributed to relevant departments</li>
+          <li>Any issues documented in log book</li>
+          <li>Backup taken (if manual system)</li>
+          <li>Handover notes prepared for morning shift</li>
+        </ul>
+      </div>
+
+      <h2>Night Audit in Modern PMS</h2>
+
+      <p>Most cloud-based PMS systems have simplified night audit:</p>
+
+      <table class="comparison-table">
+        <tr>
+          <th>Traditional Night Audit</th>
+          <th>Modern Cloud PMS</th>
+        </tr>
+        <tr>
+          <td>Manual room charge posting</td>
+          <td>Automatic posting at set time</td>
+        </tr>
+        <tr>
+          <td>Print multiple reports</td>
+          <td>Digital reports, auto-emailed</td>
+        </tr>
+        <tr>
+          <td>System unavailable during audit</td>
+          <td>Can run in background</td>
+        </tr>
+        <tr>
+          <td>Takes 1-2 hours</td>
+          <td>Takes 15-30 minutes</td>
+        </tr>
+        <tr>
+          <td>Must be done at specific time</td>
+          <td>Flexible timing window</td>
+        </tr>
+      </table>
+
+      <div class="highlight-box tip">
+        <strong>PMS Tip:</strong> Configure your PMS to auto-email key reports (occupancy, revenue, arrivals) to management at 7 AM. They'll have the data ready when they start their day.
+      </div>
+
+      <h2>Night Auditor Responsibilities</h2>
+
+      <ul>
+        <li>Complete all night audit procedures</li>
+        <li>Handle late night check-ins and check-outs</li>
+        <li>Respond to guest requests and emergencies</li>
+        <li>Security rounds and safety checks</li>
+        <li>Prepare for morning shift handover</li>
+        <li>Monitor property during quiet hours</li>
+        <li>Document any incidents in log book</li>
+      </ul>
+
+      <div class="related-section">
+        <h3>Related Guides</h3>
+        <div class="related-links">
+          <a href="/guides/software/pms.html">PMS Guide</a>
+          <a href="/guides/revenue/revpar.html">RevPAR Guide</a>
+          <a href="/guides/revenue/occupancy.html">Occupancy Guide</a>
+          <a href="/guides/compliance/gst-hotels.html">GST for Hotels</a>
+          <a href="/guides/compliance/">All Compliance Guides</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <p>&copy; 2026 Hotel Playbook. Made for Indian Hoteliers.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+      <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a>
+    </p>
+  </footer>
+</body>
+</html>
