@@ -32,7 +32,13 @@ const GUIDE_CATEGORIES = [
     label: 'OTA',
     icon: '\uD83C\uDFE8',
     basePath: '/guides/ota/',
-    guides: []
+    guides: [
+      { slug: 'ota.html', title: 'OTA - Online Travel Agency' },
+      { slug: 'gds.html', title: 'GDS - Global Distribution System' },
+      { slug: 'hotels-boutique.html', title: 'Best OTAs for Hotels & Boutique' },
+      { slug: 'leisure-resorts.html', title: 'Best OTAs for Resorts & Leisure' },
+      { slug: 'vacation-homestays.html', title: 'Best OTAs for Rentals & Homestays' },
+    ]
   },
   {
     id: 'software',
@@ -198,6 +204,32 @@ const RELATED_CONTENT = {
   '/guides/reports/payment-report.html': [
     { href: '/guides/compliance/tds-tcs.html', title: 'TDS & TCS', category: 'Compliance', desc: 'OTA payment deductions' },
     { href: '/guides/software/accounting.html', title: 'Accounting Software', category: 'Software', desc: 'Payment reconciliation' },
+  ],
+  // OTA
+  '/guides/ota/ota.html': [
+    { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Sync rates across all OTAs' },
+    { href: '/guides/compliance/tds-tcs.html', title: 'TDS & TCS', category: 'Compliance', desc: 'Tax deductions on OTA payments' },
+    { href: '/guides/revenue/revpar.html', title: 'RevPAR', category: 'Revenue', desc: 'Measure revenue performance' },
+  ],
+  '/guides/ota/gds.html': [
+    { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'GDS connectivity through CM' },
+    { href: '/guides/ota/ota.html', title: 'OTA Explained', category: 'OTA', desc: 'OTA vs GDS comparison' },
+    { href: '/guides/revenue/bar.html', title: 'BAR Pricing', category: 'Revenue', desc: 'Set competitive GDS rates' },
+  ],
+  '/guides/ota/hotels-boutique.html': [
+    { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Manage all OTAs from one place' },
+    { href: '/guides/software/booking-engine.html', title: 'Booking Engine', category: 'Software', desc: 'Reduce OTA dependency' },
+    { href: '/guides/revenue/hotel-rate-plans.html', title: 'Rate Plans', category: 'Revenue', desc: 'Set up EP, CP, MAP plans' },
+  ],
+  '/guides/ota/leisure-resorts.html': [
+    { href: '/guides/revenue/mlos.html', title: 'MLOS', category: 'Revenue', desc: 'Minimum stay for peak seasons' },
+    { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Sync seasonal pricing' },
+    { href: '/guides/revenue/bar.html', title: 'BAR Pricing', category: 'Revenue', desc: 'Dynamic pricing for resorts' },
+  ],
+  '/guides/ota/vacation-homestays.html': [
+    { href: '/guides/compliance/gst-hotels.html', title: 'GST for Hotels', category: 'Compliance', desc: 'GST rules for homestays' },
+    { href: '/guides/compliance/grc-form-c.html', title: 'GRC & Form C', category: 'Compliance', desc: 'Guest registration requirements' },
+    { href: '/guides/ota/ota.html', title: 'OTA Explained', category: 'OTA', desc: 'How OTAs work' },
   ],
   // Compliance
   '/guides/compliance/gst-hotels.html': [

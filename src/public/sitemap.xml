@@ -85,8 +85,38 @@
   <!-- OTA Guides -->
   <url>
     <loc>https://hotelplaybook.in/guides/ota/</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/ota/ota.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/ota/gds.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/ota/hotels-boutique.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/ota/leisure-resorts.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/ota/vacation-homestays.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
