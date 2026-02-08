@@ -3,38 +3,65 @@
   <!-- Homepage -->
   <url>
     <loc>https://hotelplaybook.in/</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- Root-level Pages -->
+  <url>
+    <loc>https://hotelplaybook.in/commission.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/setup.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/results.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- Tools Section -->
   <url>
     <loc>https://hotelplaybook.in/tools/</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://hotelplaybook.in/tools/commission-calculator.html</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hotelplaybook.in/tools/discount-calculator.html</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hotelplaybook.in/tools/ota-dependency-calculator.html</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hotelplaybook.in/tools/revenue-setup.html</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hotelplaybook.in/tools/revenue-results.html</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -42,6 +69,7 @@
   <!-- Calendar -->
   <url>
     <loc>https://hotelplaybook.in/calendar.html</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -49,6 +77,7 @@
   <!-- Guides Section -->
   <url>
     <loc>https://hotelplaybook.in/guides/</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -56,48 +85,199 @@
   <!-- OTA Guides -->
   <url>
     <loc>https://hotelplaybook.in/guides/ota/</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Revenue Guides -->
+  <url>
+    <loc>https://hotelplaybook.in/guides/revenue/</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/revenue/hotel-rate-plans.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/revenue/ep-plan-hotel.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/revenue/cp-plan-hotel.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/revenue/map-plan-hotel.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/revenue/ap-plan-hotel.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/revenue/revpar.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/revenue/adr.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/revenue/occupancy.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/revenue/room-night.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/revenue/mtd-ytd.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/revenue/bar.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/revenue/mlos.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/revenue/lead-time.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/revenue/no-show.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- Software Guides -->
   <url>
     <loc>https://hotelplaybook.in/guides/software/</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hotelplaybook.in/guides/software/pms.html</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hotelplaybook.in/guides/software/channel-manager.html</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hotelplaybook.in/guides/software/booking-engine.html</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hotelplaybook.in/guides/software/rms.html</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hotelplaybook.in/guides/software/pos.html</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hotelplaybook.in/guides/software/inventory.html</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hotelplaybook.in/guides/software/accounting.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Reports Guides -->
+  <url>
+    <loc>https://hotelplaybook.in/guides/reports/</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/reports/manager-report.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/reports/night-audit.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/reports/arrival-report.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/reports/departure-report.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/reports/profit-loss-report.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/reports/expenses-report.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hotelplaybook.in/guides/reports/payment-report.html</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -105,149 +285,33 @@
   <!-- Compliance Guides -->
   <url>
     <loc>https://hotelplaybook.in/guides/compliance/</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hotelplaybook.in/guides/compliance/grc-form-c.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://hotelplaybook.in/guides/compliance/gst-hotels.html</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hotelplaybook.in/guides/compliance/tds-tcs.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Reports Guides -->
-  <url>
-    <loc>https://hotelplaybook.in/guides/reports/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hotelplaybook.in/guides/reports/night-audit.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://hotelplaybook.in/guides/reports/profit-loss-report.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://hotelplaybook.in/guides/reports/manager-report.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://hotelplaybook.in/guides/reports/arrival-report.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://hotelplaybook.in/guides/reports/departure-report.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://hotelplaybook.in/guides/reports/expenses-report.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://hotelplaybook.in/guides/reports/payment-report.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Revenue Guides -->
-  <url>
-    <loc>https://hotelplaybook.in/guides/revenue/hotel-rate-plans.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://hotelplaybook.in/guides/revenue/ep-plan-hotel.html</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hotelplaybook.in/guides/revenue/cp-plan-hotel.html</loc>
+    <loc>https://hotelplaybook.in/guides/compliance/grc-form-c.html</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hotelplaybook.in/guides/revenue/map-plan-hotel.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hotelplaybook.in/guides/revenue/ap-plan-hotel.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Revenue Guides - Metrics & Terms -->
-  <url>
-    <loc>https://hotelplaybook.in/guides/revenue/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://hotelplaybook.in/guides/revenue/revpar.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hotelplaybook.in/guides/revenue/adr.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hotelplaybook.in/guides/revenue/occupancy.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hotelplaybook.in/guides/revenue/room-night.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://hotelplaybook.in/guides/revenue/mtd-ytd.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://hotelplaybook.in/guides/revenue/bar.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hotelplaybook.in/guides/revenue/mlos.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://hotelplaybook.in/guides/revenue/lead-time.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://hotelplaybook.in/guides/revenue/no-show.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 
   <!-- About Section -->
   <url>
     <loc>https://hotelplaybook.in/about/</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
