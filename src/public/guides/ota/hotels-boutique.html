@@ -52,9 +52,15 @@
     .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
     .comparison-table th, .comparison-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
     .comparison-table th { background: var(--primary); color: white; }
+    .ota-picks { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; margin: 1.5rem 0 2rem; }
+    .ota-pick-card { background: white; border: 2px solid #e8ecf1; border-radius: 10px; padding: 1.25rem 1rem; text-align: center; transition: border-color 0.2s, box-shadow 0.2s; }
+    .ota-pick-card:hover { border-color: var(--secondary); box-shadow: 0 4px 12px rgba(45,138,138,0.15); }
+    .ota-pick-rank { display: inline-block; background: var(--primary); color: white; width: 28px; height: 28px; line-height: 28px; border-radius: 50%; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .ota-pick-name { font-weight: 700; color: var(--primary); font-size: 1rem; margin-bottom: 0.25rem; }
+    .ota-pick-note { font-size: 0.8rem; color: #666; }
     .footer { background: var(--primary); color: white; padding: 2rem; margin-top: 3rem; text-align: center; }
     .footer a { color: var(--accent); text-decoration: none; }
-    @media (max-width: 768px) { .nav-links { display: none; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } }
+    @media (max-width: 768px) { .nav-links { display: none; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } .ota-picks { grid-template-columns: repeat(2, 1fr); } }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Article","headline":"Best OTAs for Hotels & Boutique Hotels in India","description":"Top 5 OTA recommendations for standard and boutique hotels in the Indian market.","author":{"@type":"Organization","name":"Hotel Playbook"}}
@@ -96,10 +102,34 @@
         </header>
 
         <div class="article-content">
-          <div class="quick-answer">
-            <h2>Top 5 OTAs for Hotels &amp; Boutique Hotels</h2>
-            <div class="big-text">1. MakeMyTrip &bull; 2. Booking.com &bull; 3. Agoda &bull; 4. Cleartrip &bull; 5. International Pick</div>
-            <p>Standard hotels and boutique properties should focus on these platforms for maximum visibility in the Indian market. Your 5th OTA depends on the international traveler profile your location attracts.</p>
+          <h2>Our Top 5 OTA Picks</h2>
+          <p>These are the platforms we recommend for standard and boutique hotels in India. Your 5th OTA depends on the international traveler profile your location attracts.</p>
+          <div class="ota-picks">
+            <div class="ota-pick-card">
+              <div class="ota-pick-rank">1</div>
+              <div class="ota-pick-name">MakeMyTrip / Goibibo</div>
+              <div class="ota-pick-note">Domestic leader</div>
+            </div>
+            <div class="ota-pick-card">
+              <div class="ota-pick-rank">2</div>
+              <div class="ota-pick-name">Booking.com</div>
+              <div class="ota-pick-note">International guests</div>
+            </div>
+            <div class="ota-pick-card">
+              <div class="ota-pick-rank">3</div>
+              <div class="ota-pick-name">Agoda</div>
+              <div class="ota-pick-note">Asia-Pacific travelers</div>
+            </div>
+            <div class="ota-pick-card">
+              <div class="ota-pick-rank">4</div>
+              <div class="ota-pick-name">Cleartrip</div>
+              <div class="ota-pick-note">Growing domestic</div>
+            </div>
+            <div class="ota-pick-card">
+              <div class="ota-pick-rank">5</div>
+              <div class="ota-pick-name">International Pick</div>
+              <div class="ota-pick-note">Expedia / Ctrip / Traveloka</div>
+            </div>
           </div>
 
           <h2>Who This Guide is For</h2>

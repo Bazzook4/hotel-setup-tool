@@ -38,6 +38,7 @@ const GUIDE_CATEGORIES = [
       { slug: 'hotels-boutique.html', title: 'Best OTAs for Hotels & Boutique' },
       { slug: 'leisure-resorts.html', title: 'Best OTAs for Resorts & Leisure' },
       { slug: 'vacation-homestays.html', title: 'Best OTAs for Rentals & Homestays' },
+      { slug: 'booking-com.html', title: 'Booking.com Guide for Hotels' },
     ]
   },
   {
@@ -230,6 +231,11 @@ const RELATED_CONTENT = {
     { href: '/guides/compliance/gst-hotels.html', title: 'GST for Hotels', category: 'Compliance', desc: 'GST rules for homestays' },
     { href: '/guides/compliance/grc-form-c.html', title: 'GRC & Form C', category: 'Compliance', desc: 'Guest registration requirements' },
     { href: '/guides/ota/ota.html', title: 'OTA Explained', category: 'OTA', desc: 'How OTAs work' },
+  ],
+  '/guides/ota/booking-com.html': [
+    { href: '/guides/revenue/no-show.html', title: 'No-Show & Cancellation', category: 'Revenue', desc: 'Understanding no-show policies' },
+    { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Sync availability with Booking.com' },
+    { href: '/guides/compliance/tds-tcs.html', title: 'TDS & TCS', category: 'Compliance', desc: 'Tax on Booking.com invoices' },
   ],
   // Compliance
   '/guides/compliance/gst-hotels.html': [
