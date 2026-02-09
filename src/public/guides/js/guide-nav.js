@@ -47,13 +47,13 @@ const GUIDE_CATEGORIES = [
     icon: '\uD83D\uDCBB',
     basePath: '/guides/software/',
     guides: [
-      { slug: 'pms.html', title: 'PMS - Property Management System' },
+      { slug: 'what-is-pms-hotel.html', title: 'What is PMS?' },
       { slug: 'channel-manager.html', title: 'Channel Manager' },
       { slug: 'booking-engine.html', title: 'Booking Engine' },
-      { slug: 'rms.html', title: 'RMS - Revenue Management System' },
-      { slug: 'pos.html', title: 'POS - Point of Sale' },
-      { slug: 'inventory.html', title: 'Inventory Management' },
-      { slug: 'accounting.html', title: 'Accounting Software' },
+      { slug: 'what-is-rms-hotel.html', title: 'What is RMS?' },
+      { slug: 'what-is-pos-hotel.html', title: 'What is POS?' },
+      { slug: 'hotel-inventory-management.html', title: 'Inventory Management' },
+      { slug: 'hotel-accounting-software.html', title: 'Accounting Software' },
     ]
   },
   {
@@ -93,29 +93,29 @@ const RELATED_CONTENT = {
     { href: '/guides/compliance/gst-hotels.html', title: 'GST for Hotels', category: 'Compliance', desc: 'Tax implications of rate plans' },
   ],
   '/guides/revenue/ep-plan-hotel.html': [
-    { href: '/guides/software/pms.html', title: 'PMS', category: 'Software', desc: 'Manage rate plans in your PMS' },
+    { href: '/guides/software/what-is-pms-hotel.html', title: 'PMS', category: 'Software', desc: 'Manage rate plans in your PMS' },
     { href: '/guides/reports/manager-report.html', title: 'Manager Report', category: 'Reports', desc: 'Track rate plan performance' },
   ],
   '/guides/revenue/cp-plan-hotel.html': [
-    { href: '/guides/software/pos.html', title: 'POS System', category: 'Software', desc: 'Manage breakfast billing' },
+    { href: '/guides/software/what-is-pos-hotel.html', title: 'POS System', category: 'Software', desc: 'Manage breakfast billing' },
     { href: '/guides/reports/expenses-report.html', title: 'Expenses Report', category: 'Reports', desc: 'Track F&B costs' },
   ],
   '/guides/revenue/map-plan-hotel.html': [
-    { href: '/guides/software/pos.html', title: 'POS System', category: 'Software', desc: 'F&B billing for meal plans' },
-    { href: '/guides/software/inventory.html', title: 'Inventory Management', category: 'Software', desc: 'Track F&B ingredients' },
+    { href: '/guides/software/what-is-pos-hotel.html', title: 'POS System', category: 'Software', desc: 'F&B billing for meal plans' },
+    { href: '/guides/software/hotel-inventory-management.html', title: 'Inventory Management', category: 'Software', desc: 'Track F&B ingredients' },
   ],
   '/guides/revenue/ap-plan-hotel.html': [
-    { href: '/guides/software/pos.html', title: 'POS System', category: 'Software', desc: 'All-inclusive meal tracking' },
+    { href: '/guides/software/what-is-pos-hotel.html', title: 'POS System', category: 'Software', desc: 'All-inclusive meal tracking' },
     { href: '/guides/reports/profit-loss-report.html', title: 'P&L Report', category: 'Reports', desc: 'Profitability of AP plans' },
   ],
   '/guides/revenue/revpar.html': [
     { href: '/guides/reports/manager-report.html', title: 'Manager Report', category: 'Reports', desc: 'Daily RevPAR tracking' },
-    { href: '/guides/software/rms.html', title: 'Revenue Management System', category: 'Software', desc: 'Automate pricing decisions' },
+    { href: '/guides/software/what-is-rms-hotel.html', title: 'Revenue Management System', category: 'Software', desc: 'Automate pricing decisions' },
     { href: '/guides/reports/profit-loss-report.html', title: 'P&L Report', category: 'Reports', desc: 'Revenue to profit analysis' },
   ],
   '/guides/revenue/adr.html': [
     { href: '/guides/reports/manager-report.html', title: 'Manager Report', category: 'Reports', desc: 'Daily ADR tracking' },
-    { href: '/guides/software/rms.html', title: 'Revenue Management System', category: 'Software', desc: 'Dynamic pricing' },
+    { href: '/guides/software/what-is-rms-hotel.html', title: 'Revenue Management System', category: 'Software', desc: 'Dynamic pricing' },
   ],
   '/guides/revenue/occupancy.html': [
     { href: '/guides/reports/manager-report.html', title: 'Manager Report', category: 'Reports', desc: 'Daily occupancy tracking' },
@@ -123,22 +123,22 @@ const RELATED_CONTENT = {
   ],
   '/guides/revenue/room-night.html': [
     { href: '/guides/reports/night-audit.html', title: 'Night Audit', category: 'Reports', desc: 'Room night reconciliation' },
-    { href: '/guides/software/pms.html', title: 'PMS', category: 'Software', desc: 'Room night tracking' },
+    { href: '/guides/software/what-is-pms-hotel.html', title: 'PMS', category: 'Software', desc: 'Room night tracking' },
   ],
   '/guides/revenue/mtd-ytd.html': [
     { href: '/guides/reports/manager-report.html', title: 'Manager Report', category: 'Reports', desc: 'MTD metrics in daily reports' },
     { href: '/guides/reports/profit-loss-report.html', title: 'P&L Report', category: 'Reports', desc: 'Monthly and yearly financials' },
   ],
   '/guides/revenue/bar.html': [
-    { href: '/guides/software/rms.html', title: 'Revenue Management System', category: 'Software', desc: 'Dynamic BAR pricing' },
+    { href: '/guides/software/what-is-rms-hotel.html', title: 'Revenue Management System', category: 'Software', desc: 'Dynamic BAR pricing' },
     { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Push BAR to all channels' },
   ],
   '/guides/revenue/mlos.html': [
-    { href: '/guides/software/rms.html', title: 'Revenue Management System', category: 'Software', desc: 'Automate MLOS restrictions' },
+    { href: '/guides/software/what-is-rms-hotel.html', title: 'Revenue Management System', category: 'Software', desc: 'Automate MLOS restrictions' },
     { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Sync restrictions to OTAs' },
   ],
   '/guides/revenue/lead-time.html': [
-    { href: '/guides/software/rms.html', title: 'Revenue Management System', category: 'Software', desc: 'Lead time pricing rules' },
+    { href: '/guides/software/what-is-rms-hotel.html', title: 'Revenue Management System', category: 'Software', desc: 'Lead time pricing rules' },
     { href: '/guides/reports/arrival-report.html', title: 'Arrival Report', category: 'Reports', desc: 'Track booking patterns' },
   ],
   '/guides/revenue/no-show.html': [
@@ -146,7 +146,7 @@ const RELATED_CONTENT = {
     { href: '/guides/compliance/grc-form-c.html', title: 'GRC & Form C', category: 'Compliance', desc: 'Guest registration for arrivals' },
   ],
   // Software
-  '/guides/software/pms.html': [
+  '/guides/software/what-is-pms-hotel.html': [
     { href: '/guides/reports/night-audit.html', title: 'Night Audit', category: 'Reports', desc: 'PMS night audit process' },
     { href: '/guides/compliance/gst-hotels.html', title: 'GST for Hotels', category: 'Compliance', desc: 'GST invoicing from PMS' },
     { href: '/guides/revenue/revpar.html', title: 'RevPAR', category: 'Revenue', desc: 'Track in your PMS' },
@@ -159,20 +159,20 @@ const RELATED_CONTENT = {
     { href: '/guides/revenue/hotel-rate-plans.html', title: 'Rate Plans', category: 'Revenue', desc: 'Display plans on your site' },
     { href: '/guides/compliance/gst-hotels.html', title: 'GST for Hotels', category: 'Compliance', desc: 'Direct booking tax rules' },
   ],
-  '/guides/software/rms.html': [
+  '/guides/software/what-is-rms-hotel.html': [
     { href: '/guides/revenue/revpar.html', title: 'RevPAR', category: 'Revenue', desc: 'Key metric for RMS' },
     { href: '/guides/revenue/bar.html', title: 'BAR Pricing', category: 'Revenue', desc: 'Base rate for dynamic pricing' },
     { href: '/guides/reports/manager-report.html', title: 'Manager Report', category: 'Reports', desc: 'RMS performance tracking' },
   ],
-  '/guides/software/pos.html': [
+  '/guides/software/what-is-pos-hotel.html': [
     { href: '/guides/reports/expenses-report.html', title: 'Expenses Report', category: 'Reports', desc: 'F&B cost tracking' },
     { href: '/guides/compliance/gst-hotels.html', title: 'GST for Hotels', category: 'Compliance', desc: 'F&B GST billing' },
   ],
-  '/guides/software/inventory.html': [
+  '/guides/software/hotel-inventory-management.html': [
     { href: '/guides/reports/expenses-report.html', title: 'Expenses Report', category: 'Reports', desc: 'Material cost tracking' },
     { href: '/guides/reports/profit-loss-report.html', title: 'P&L Report', category: 'Reports', desc: 'Cost impact on profitability' },
   ],
-  '/guides/software/accounting.html': [
+  '/guides/software/hotel-accounting-software.html': [
     { href: '/guides/compliance/gst-hotels.html', title: 'GST for Hotels', category: 'Compliance', desc: 'GST-compliant invoicing' },
     { href: '/guides/compliance/tds-tcs.html', title: 'TDS & TCS', category: 'Compliance', desc: 'Tax deduction accounting' },
     { href: '/guides/reports/profit-loss-report.html', title: 'P&L Report', category: 'Reports', desc: 'Financial reporting' },
@@ -180,31 +180,31 @@ const RELATED_CONTENT = {
   // Reports
   '/guides/reports/manager-report.html': [
     { href: '/guides/revenue/revpar.html', title: 'RevPAR', category: 'Revenue', desc: 'Key metric in daily report' },
-    { href: '/guides/software/pms.html', title: 'PMS', category: 'Software', desc: 'Generate reports from PMS' },
+    { href: '/guides/software/what-is-pms-hotel.html', title: 'PMS', category: 'Software', desc: 'Generate reports from PMS' },
   ],
   '/guides/reports/night-audit.html': [
-    { href: '/guides/software/pms.html', title: 'PMS', category: 'Software', desc: 'Night audit in PMS' },
+    { href: '/guides/software/what-is-pms-hotel.html', title: 'PMS', category: 'Software', desc: 'Night audit in PMS' },
     { href: '/guides/compliance/gst-hotels.html', title: 'GST for Hotels', category: 'Compliance', desc: 'Tax reconciliation' },
   ],
   '/guides/reports/arrival-report.html': [
     { href: '/guides/compliance/grc-form-c.html', title: 'GRC & Form C', category: 'Compliance', desc: 'Registration for arrivals' },
-    { href: '/guides/software/pms.html', title: 'PMS', category: 'Software', desc: 'Generate arrival lists' },
+    { href: '/guides/software/what-is-pms-hotel.html', title: 'PMS', category: 'Software', desc: 'Generate arrival lists' },
   ],
   '/guides/reports/departure-report.html': [
     { href: '/guides/reports/payment-report.html', title: 'Payment Report', category: 'Reports', desc: 'Collect pending payments' },
-    { href: '/guides/software/pms.html', title: 'PMS', category: 'Software', desc: 'Checkout process' },
+    { href: '/guides/software/what-is-pms-hotel.html', title: 'PMS', category: 'Software', desc: 'Checkout process' },
   ],
   '/guides/reports/profit-loss-report.html': [
-    { href: '/guides/software/accounting.html', title: 'Accounting Software', category: 'Software', desc: 'Generate P&L statements' },
+    { href: '/guides/software/hotel-accounting-software.html', title: 'Accounting Software', category: 'Software', desc: 'Generate P&L statements' },
     { href: '/guides/revenue/revpar.html', title: 'RevPAR', category: 'Revenue', desc: 'Revenue performance' },
   ],
   '/guides/reports/expenses-report.html': [
-    { href: '/guides/software/inventory.html', title: 'Inventory Management', category: 'Software', desc: 'Track material costs' },
-    { href: '/guides/software/accounting.html', title: 'Accounting Software', category: 'Software', desc: 'Expense categorization' },
+    { href: '/guides/software/hotel-inventory-management.html', title: 'Inventory Management', category: 'Software', desc: 'Track material costs' },
+    { href: '/guides/software/hotel-accounting-software.html', title: 'Accounting Software', category: 'Software', desc: 'Expense categorization' },
   ],
   '/guides/reports/payment-report.html': [
     { href: '/guides/compliance/tds-tcs.html', title: 'TDS & TCS', category: 'Compliance', desc: 'OTA payment deductions' },
-    { href: '/guides/software/accounting.html', title: 'Accounting Software', category: 'Software', desc: 'Payment reconciliation' },
+    { href: '/guides/software/hotel-accounting-software.html', title: 'Accounting Software', category: 'Software', desc: 'Payment reconciliation' },
   ],
   // OTA
   '/guides/ota/what-is-ota.html': [
@@ -239,16 +239,16 @@ const RELATED_CONTENT = {
   ],
   // Compliance
   '/guides/compliance/gst-hotels.html': [
-    { href: '/guides/software/accounting.html', title: 'Accounting Software', category: 'Software', desc: 'GST-compliant invoicing' },
+    { href: '/guides/software/hotel-accounting-software.html', title: 'Accounting Software', category: 'Software', desc: 'GST-compliant invoicing' },
     { href: '/guides/reports/profit-loss-report.html', title: 'P&L Report', category: 'Reports', desc: 'Tax impact on profits' },
   ],
   '/guides/compliance/tds-tcs.html': [
     { href: '/guides/reports/payment-report.html', title: 'Payment Report', category: 'Reports', desc: 'Track TDS/TCS deductions' },
-    { href: '/guides/software/accounting.html', title: 'Accounting Software', category: 'Software', desc: 'TDS/TCS accounting' },
+    { href: '/guides/software/hotel-accounting-software.html', title: 'Accounting Software', category: 'Software', desc: 'TDS/TCS accounting' },
   ],
   '/guides/compliance/grc-form-c.html': [
     { href: '/guides/reports/arrival-report.html', title: 'Arrival Report', category: 'Reports', desc: 'Plan guest registration' },
-    { href: '/guides/software/pms.html', title: 'PMS', category: 'Software', desc: 'Guest profile management' },
+    { href: '/guides/software/what-is-pms-hotel.html', title: 'PMS', category: 'Software', desc: 'Guest profile management' },
   ],
 };
 
