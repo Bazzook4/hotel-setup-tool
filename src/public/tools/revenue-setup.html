@@ -16,7 +16,6 @@
   <meta name="keywords" content="hotel revenue management, dynamic pricing tool, hotel pricing calculator, RevPAR optimization, occupancy based pricing, hotel rate strategy India">
   <link rel="canonical" href="https://hotelplaybook.in/tools/revenue-setup.html">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -104,9 +103,9 @@
 
     /* 3-Color Theme: Navy (#1e3a5f), Teal (#2d8a8a), Gold (#d4a854) */
     :root {
-      --primary: #1e3a5f;    /* Navy - headers, primary buttons */
-      --secondary: #2d8a8a;  /* Teal - accents, hover states */
-      --accent: #d4a854;     /* Gold - highlights, active states */
+      --primary: #1e3a5f;
+      --secondary: #2d8a8a;
+      --accent: #d4a854;
       --primary-light: rgba(30, 58, 95, 0.1);
       --secondary-light: rgba(45, 138, 138, 0.1);
       --accent-light: rgba(212, 168, 84, 0.2);
@@ -129,72 +128,9 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1140px;
       margin: 0 auto;
-      padding: 2rem;
-    }
-
-
-    /* Progress Steps */
-    .progress-bar {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 2rem;
-      position: relative;
-    }
-
-    .progress-bar::before {
-      content: '';
-      position: absolute;
-      top: 20px;
-      left: 50px;
-      right: 50px;
-      height: 3px;
-      background: #e1e5eb;
-      z-index: 0;
-    }
-
-    .progress-step {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-      flex: 1;
-    }
-
-    .step-number {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: #e1e5eb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      color: #666;
-      margin-bottom: 0.5rem;
-    }
-
-    .progress-step.active .step-number {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      color: white;
-    }
-
-    .progress-step.completed .step-number {
-      background: var(--secondary);
-      color: white;
-    }
-
-    .step-title {
-      font-size: 0.85rem;
-      color: #666;
-      text-align: center;
-    }
-
-    .progress-step.active .step-title {
-      color: var(--primary);
-      font-weight: 600;
+      padding: 2rem 1.5rem;
     }
 
     /* Section Card */
@@ -204,10 +140,6 @@
       padding: 2rem;
       box-shadow: 0 4px 6px rgba(0,0,0,0.07);
       margin-bottom: 1.5rem;
-    }
-
-    .section-card.hidden {
-      display: none;
     }
 
     .section-header {
@@ -325,94 +257,6 @@
       font-weight: 500;
     }
 
-    /* Lead Time Grid */
-    .lead-time-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-
-    @media (max-width: 768px) {
-      .lead-time-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-
-    .lead-time-item {
-      text-align: center;
-      background: #f8f9fa;
-      padding: 1rem 0.5rem;
-      border-radius: 8px;
-      border: 2px solid transparent;
-      transition: all 0.2s;
-    }
-
-    .lead-time-item:hover {
-      border-color: var(--secondary);
-    }
-
-    .lead-time-item label {
-      display: block;
-      font-size: 0.85rem;
-      color: #555;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-
-    .lead-time-item input {
-      width: 100%;
-      padding: 0.5rem;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      text-align: center;
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    .lead-time-item .unit {
-      font-size: 0.75rem;
-      color: #888;
-      margin-top: 0.25rem;
-    }
-
-    /* Hour Grid */
-    .hour-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-
-    @media (max-width: 768px) {
-      .hour-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .hour-item {
-      text-align: center;
-      background: #f8f9fa;
-      padding: 0.75rem 0.5rem;
-      border-radius: 6px;
-    }
-
-    .hour-item label {
-      display: block;
-      font-size: 0.75rem;
-      color: #666;
-      margin-bottom: 0.25rem;
-    }
-
-    .hour-item input {
-      width: 100%;
-      padding: 0.4rem;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
     /* Hotel Type Grid */
     .hotel-type-grid {
       display: grid;
@@ -456,10 +300,124 @@
       margin: 0;
     }
 
-    /* Chart Container */
-    .chart-container {
-      height: 150px;
-      margin: 1rem 0;
+    .hotel-type-card .details {
+      font-size: 0.75rem;
+      color: #888;
+      margin-top: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .hotel-type-card .examples {
+      font-size: 0.7rem;
+      color: #999;
+      font-style: italic;
+      margin-top: 0.25rem;
+    }
+
+    /* Pattern Cards */
+    .pattern-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .pattern-card {
+      border: 2px solid #e1e5eb;
+      border-radius: 10px;
+      padding: 1.25rem 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: white;
+      position: relative;
+    }
+
+    .pattern-card:hover {
+      border-color: var(--secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(45, 138, 138, 0.2);
+    }
+
+    .pattern-card.selected {
+      border-color: var(--accent);
+      background: var(--accent-light);
+      box-shadow: 0 4px 12px rgba(212, 168, 84, 0.3);
+    }
+
+    .pattern-card .pattern-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pattern-card h3 {
+      font-size: 0.95rem;
+      color: #333;
+      margin-bottom: 0.25rem;
+    }
+
+    .pattern-card .pattern-desc {
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+
+    .pattern-card .pattern-best-for {
+      font-size: 0.75rem;
+      color: #888;
+      font-style: italic;
+    }
+
+    /* Mini bar chart inside pattern cards */
+    .mini-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 36px;
+      margin: 0.5rem 0;
+    }
+
+    .mini-bars .bar {
+      flex: 1;
+      background: var(--primary);
+      border-radius: 2px 2px 0 0;
+      opacity: 0.6;
+      min-height: 2px;
+    }
+
+    .pattern-card.selected .mini-bars .bar {
+      background: var(--primary);
+      opacity: 0.8;
+    }
+
+    .mini-bars-labels {
+      display: flex;
+      gap: 3px;
+      font-size: 0.55rem;
+      color: #aaa;
+    }
+
+    .mini-bars-labels span {
+      flex: 1;
+      text-align: center;
+    }
+
+    /* Recommended badge */
+    .recommended-badge {
+      display: none;
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      background: var(--secondary);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    .pattern-card.recommended .recommended-badge {
+      display: block;
     }
 
     /* Buttons */
@@ -483,16 +441,6 @@
       box-shadow: 0 4px 12px rgba(30, 58, 95, 0.4);
     }
 
-    .btn-secondary {
-      background: #f8f9fa;
-      color: #333;
-      border: 2px solid #e1e5eb;
-    }
-
-    .btn-secondary:hover {
-      background: #e1e5eb;
-    }
-
     .btn-success {
       background: var(--secondary);
       color: white;
@@ -509,16 +457,24 @@
       font-size: 0.9rem;
     }
 
-    .button-row {
-      display: flex;
-      gap: 1rem;
-      justify-content: space-between;
-      margin-top: 2rem;
+    .btn-generate {
+      display: block;
+      width: 100%;
+      padding: 1.1rem 2rem;
+      font-size: 1.15rem;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 0.5rem;
     }
 
-    .button-row-right {
-      display: flex;
-      gap: 1rem;
+    .btn-generate:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(30, 58, 95, 0.4);
     }
 
     /* Subsection */
@@ -531,10 +487,16 @@
     .subsection h3 {
       font-size: 1rem;
       color: #555;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
+    }
+
+    .subsection > p {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
     }
 
     /* Tip Box */
@@ -548,7 +510,7 @@
       color: var(--primary);
     }
 
-    /* Why Box - explains purpose */
+    /* Why Box */
     .why-box {
       background: var(--accent-light);
       border-left: 4px solid var(--accent);
@@ -561,58 +523,6 @@
 
     .why-box strong {
       color: var(--primary);
-    }
-
-    /* Location Inputs */
-    .location-inputs {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .location-inputs select {
-      min-width: 200px;
-      flex: 1;
-    }
-
-    /* Summary Badge */
-    .summary-badge {
-      display: inline-block;
-      background: #e3f2fd;
-      color: #1565c0;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-    }
-
-    .lead-total {
-      text-align: center;
-      margin-top: 0.75rem;
-      font-size: 0.9rem;
-    }
-
-    .lead-total.valid {
-      color: var(--secondary);
-    }
-
-    .lead-total.invalid {
-      color: #dc3545;
-    }
-
-    /* Property type details */
-    .hotel-type-card .details {
-      font-size: 0.75rem;
-      color: #888;
-      margin-top: 0.5rem;
-      line-height: 1.4;
-    }
-
-    .hotel-type-card .examples {
-      font-size: 0.7rem;
-      color: #999;
-      font-style: italic;
-      margin-top: 0.25rem;
     }
 
     /* SEO Intro Section */
@@ -754,6 +664,15 @@
       .nav-links {
         display: none;
       }
+      .pattern-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .pattern-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* FAQ Section */
@@ -810,6 +729,34 @@
     .faq-item.open .faq-answer {
       display: block;
     }
+
+    /* Step number labels */
+    .step-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-right: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    /* Location Inputs */
+    .location-inputs {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .location-inputs select {
+      min-width: 200px;
+      flex: 1;
+    }
   </style>
 </head>
 <body>
@@ -843,26 +790,10 @@
       </div>
     </div>
 
-    <!-- Progress Bar -->
-    <div class="progress-bar">
-      <div class="progress-step active" id="prog1">
-        <div class="step-number">1</div>
-        <div class="step-title">Room Types</div>
-      </div>
-      <div class="progress-step" id="prog2">
-        <div class="step-number">2</div>
-        <div class="step-title">Property & Demand</div>
-      </div>
-      <div class="progress-step" id="prog3">
-        <div class="step-number">3</div>
-        <div class="step-title">Time Factors</div>
-      </div>
-    </div>
-
-    <!-- Section 1: Room Types (Primary - gives us inventory & base rate) -->
+    <!-- Section 1: Room Types -->
     <div class="section-card" id="section1">
       <div class="section-header">
-        <span class="section-icon">🏠</span>
+        <span class="step-label">1</span>
         <div>
           <h2>Room Types & Inventory</h2>
           <p>Add your room types - this determines your total inventory and base pricing</p>
@@ -872,7 +803,7 @@
       <div class="why-box">
         <strong>Why we need this:</strong> Your room types and pricing form the foundation of revenue management.
         The system uses your base rate to calculate occupancy-based pricing slabs, and inventory size determines
-        how aggressive your pricing can be. Larger inventory allows more gradual price increases.
+        how aggressive your pricing can be.
       </div>
 
       <div class="tip-box">
@@ -899,19 +830,14 @@
         <input type="number" id="maxRateInput" placeholder="e.g., 5000" min="1" style="max-width: 200px;">
         <div class="hint">The highest price you want to charge at peak occupancy</div>
       </div>
-
-      <div class="button-row">
-        <div></div>
-        <button class="btn btn-primary" onclick="nextSection(2)">Next: Property & Demand</button>
-      </div>
     </div>
 
     <!-- Section 2: Property & Demand Factors -->
-    <div class="section-card hidden" id="section2">
+    <div class="section-card" id="section2">
       <div class="section-header">
-        <span class="section-icon">📍</span>
+        <span class="step-label">2</span>
         <div>
-          <h2>Property & Demand Configuration</h2>
+          <h2>Property & Location</h2>
           <p>Set your location and property type for customized demand patterns</p>
         </div>
       </div>
@@ -919,7 +845,7 @@
       <div class="why-box">
         <strong>Why we need this:</strong> Your location and property type determine seasonal demand patterns,
         peak periods, and pricing strategies. A beach resort in Goa has very different demand patterns than
-        a business hotel in Mumbai. This helps us recommend the right pricing approach for your property.
+        a business hotel in Mumbai.
       </div>
 
       <div class="form-row">
@@ -946,130 +872,47 @@
           <!-- Dynamic cards will be inserted here -->
         </div>
       </div>
-
-      <div class="button-row">
-        <button class="btn btn-secondary" onclick="prevSection(1)">Back</button>
-        <button class="btn btn-primary" onclick="nextSection(3)">Next: Time Factors</button>
-      </div>
     </div>
 
-    <!-- Section 3: Time Based Factors -->
-    <div class="section-card hidden" id="section3">
+    <!-- Section 3: Booking Patterns (Pattern Cards) -->
+    <div class="section-card" id="section3">
       <div class="section-header">
-        <span class="section-icon">⏰</span>
+        <span class="step-label">3</span>
         <div>
-          <h2>Time Based Factors</h2>
-          <p>Configure booking patterns for time-sensitive pricing</p>
+          <h2>Booking Patterns</h2>
+          <p>Select the patterns that best match how guests book at your property</p>
         </div>
       </div>
 
       <div class="why-box">
         <strong>Why we need this:</strong> Understanding when your bookings come helps optimize pricing.
         If most bookings are same-day, you can price higher for last-minute availability. If guests book
-        weeks ahead, early-bird discounts might work better. This data drives your lead-time pricing strategy.
+        weeks ahead, early-bird discounts might work better.
       </div>
 
+      <!-- Lead Time Patterns -->
       <div class="subsection" style="margin-top: 0; padding-top: 0; border-top: none;">
-        <h3>Lead Time Distribution (Next 7 Days)</h3>
-        <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">What percentage of your bookings come at each lead time? (e.g., Day 1 = booking made today for today's stay)</p>
-
-        <div class="lead-time-grid">
-          <div class="lead-time-item">
-            <label>Day 1</label>
-            <input type="number" id="lead0" value="37" min="0" max="100">
-            <div class="unit">% (same day)</div>
-          </div>
-          <div class="lead-time-item">
-            <label>Day 2</label>
-            <input type="number" id="lead1" value="11" min="0" max="100">
-            <div class="unit">% (1 day ahead)</div>
-          </div>
-          <div class="lead-time-item">
-            <label>Day 3</label>
-            <input type="number" id="lead2" value="6" min="0" max="100">
-            <div class="unit">% (2 days ahead)</div>
-          </div>
-          <div class="lead-time-item">
-            <label>Day 4</label>
-            <input type="number" id="lead3" value="3" min="0" max="100">
-            <div class="unit">% (3 days ahead)</div>
-          </div>
-          <div class="lead-time-item">
-            <label>Day 5</label>
-            <input type="number" id="lead4" value="5" min="0" max="100">
-            <div class="unit">% (4 days ahead)</div>
-          </div>
-          <div class="lead-time-item">
-            <label>Day 6</label>
-            <input type="number" id="lead5" value="4" min="0" max="100">
-            <div class="unit">% (5 days ahead)</div>
-          </div>
-          <div class="lead-time-item">
-            <label>Day 7</label>
-            <input type="number" id="lead6" value="4" min="0" max="100">
-            <div class="unit">% (6 days ahead)</div>
-          </div>
-        </div>
-        <p id="leadTimeTotal" class="lead-total valid">Total: 70% (remaining 30% is 7+ days advance bookings)</p>
-
-        <div class="chart-container">
-          <canvas id="leadTimeChart"></canvas>
+        <h3>📅 How far in advance do guests book?</h3>
+        <p>Pick the pattern that best describes your booking window. Not sure? We'll recommend one based on your property type.</p>
+        <div class="pattern-grid" id="leadTimePatternGrid">
+          <!-- Dynamic cards inserted by JS -->
         </div>
       </div>
 
+      <!-- Same-Day Booking Patterns -->
       <div class="subsection">
-        <h3>Same-Day Booking Pattern (2-Hour Slots)</h3>
-        <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">For same-day bookings, what % come at each time window?</p>
-
-        <div class="hour-grid">
-          <div class="hour-item">
-            <label>6-8 AM</label>
-            <input type="number" id="hour6" value="2" min="0" max="100">
-          </div>
-          <div class="hour-item">
-            <label>8-10 AM</label>
-            <input type="number" id="hour8" value="8" min="0" max="100">
-          </div>
-          <div class="hour-item">
-            <label>10-12 PM</label>
-            <input type="number" id="hour10" value="15" min="0" max="100">
-          </div>
-          <div class="hour-item">
-            <label>12-2 PM</label>
-            <input type="number" id="hour12" value="12" min="0" max="100">
-          </div>
-          <div class="hour-item">
-            <label>2-4 PM</label>
-            <input type="number" id="hour14" value="18" min="0" max="100">
-          </div>
-          <div class="hour-item">
-            <label>4-6 PM</label>
-            <input type="number" id="hour16" value="20" min="0" max="100">
-          </div>
-          <div class="hour-item">
-            <label>6-8 PM</label>
-            <input type="number" id="hour18" value="15" min="0" max="100">
-          </div>
-          <div class="hour-item">
-            <label>8-10 PM</label>
-            <input type="number" id="hour20" value="7" min="0" max="100">
-          </div>
-          <div class="hour-item">
-            <label>10-12 AM</label>
-            <input type="number" id="hour22" value="3" min="0" max="100">
-          </div>
+        <h3>🕐 When do same-day bookings come in?</h3>
+        <p>For guests who book and check in on the same day — when does that typically happen?</p>
+        <div class="pattern-grid" id="sameDayPatternGrid">
+          <!-- Dynamic cards inserted by JS -->
         </div>
-
-        <div class="chart-container">
-          <canvas id="hourChart"></canvas>
-        </div>
-      </div>
-
-      <div class="button-row">
-        <button class="btn btn-secondary" onclick="prevSection(2)">Back</button>
-        <button class="btn btn-primary" onclick="generateAndGoToResults()">Generate Results</button>
       </div>
     </div>
+
+    <!-- Generate Button -->
+    <button class="btn-generate" onclick="generateAndGoToResults()">
+      Generate My Revenue Playbook →
+    </button>
 
     <!-- Explore More Tools -->
     <div class="explore-tools">
@@ -1144,14 +987,13 @@
     // =============================================
     // STATE & DATA
     // =============================================
-    let currentSection = 1;
     let roomTypes = [];
-    let leadTimeChart, hourChart;
-    const totalSections = 3;
+    let selectedHotelType = null;
+    let selectedLeadTimePattern = null;
+    let selectedSameDayPattern = null;
 
     // All 28 States and 8 Union Territories of India
     const statesAndCities = {
-      // States (28)
       'Andhra Pradesh': ['Visakhapatnam', 'Vijayawada', 'Tirupati', 'Guntur', 'Nellore', 'Kurnool', 'Rajahmundry', 'Kakinada', 'Anantapur', 'Kadapa'],
       'Arunachal Pradesh': ['Itanagar', 'Tawang', 'Ziro', 'Pasighat', 'Bomdila', 'Along', 'Tezu', 'Naharlagun'],
       'Assam': ['Guwahati', 'Kaziranga', 'Tezpur', 'Jorhat', 'Silchar', 'Dibrugarh', 'Majuli', 'Manas', 'Sivasagar'],
@@ -1180,7 +1022,6 @@
       'Uttar Pradesh': ['Lucknow', 'Agra', 'Varanasi', 'Mathura', 'Vrindavan', 'Allahabad', 'Ayodhya', 'Chitrakoot', 'Vindhyachal', 'Sarnath', 'Fatehpur Sikri', 'Noida', 'Ghaziabad', 'Kanpur', 'Meerut', 'Jhansi'],
       'Uttarakhand': ['Dehradun', 'Mussoorie', 'Nainital', 'Rishikesh', 'Haridwar', 'Jim Corbett', 'Kedarnath', 'Badrinath', 'Gangotri', 'Yamunotri', 'Auli', 'Chopta', 'Ranikhet', 'Almora', 'Mukteshwar', 'Binsar'],
       'West Bengal': ['Kolkata', 'Darjeeling', 'Siliguri', 'Digha', 'Sundarbans', 'Shantiniketan', 'Murshidabad', 'Kalimpong', 'Dooars', 'Mandarmani'],
-      // Union Territories (8)
       'Andaman & Nicobar Islands': ['Port Blair', 'Havelock Island', 'Neil Island', 'Ross Island', 'Baratang', 'Diglipur', 'Cellular Jail'],
       'Chandigarh': ['Chandigarh', 'Rock Garden', 'Sukhna Lake'],
       'Dadra and Nagar Haveli and Daman and Diu': ['Daman', 'Diu', 'Silvassa'],
@@ -1191,83 +1032,115 @@
       'Puducherry': ['Pondicherry', 'Auroville', 'Karaikal', 'Mahe', 'Yanam']
     };
 
-    // Hotel Types with detailed descriptions
+    // Hotel Types
     const hotelTypes = [
+      { id: 'business', icon: '🏢', name: 'Business Hotel', description: 'Corporate travelers, MICE events', details: 'High weekday demand, corporate rates. Peak: Mon-Thu. Low: weekends.', examples: 'Marriott, Hyatt, ITC, Taj Business hotels', pattern: 'metro_business' },
+      { id: 'leisure', icon: '🏖️', name: 'Leisure Resort', description: 'Families, couples, weekend getaways', details: 'High weekend demand. Seasonal peaks during holidays & school vacations.', examples: 'Club Mahindra, Sterling, weekend resorts', pattern: 'leisure' },
+      { id: 'hillstation', icon: '⛰️', name: 'Hill Station', description: 'Mountain & hill retreats', details: 'Peak: Apr-Jun (summer), Oct (post-monsoon). Low: monsoon months.', examples: 'Shimla, Manali, Ooty, Mussoorie properties', pattern: 'hill_station' },
+      { id: 'beach', icon: '🏝️', name: 'Beach Resort', description: 'Coastal & beachside properties', details: 'Peak: Oct-Feb (winter). Low: monsoon (Jun-Sep). International tourists.', examples: 'Goa resorts, Kerala backwaters, Andaman', pattern: 'beach' },
+      { id: 'pilgrimage', icon: '🕉️', name: 'Pilgrimage', description: 'Religious & spiritual destinations', details: 'Demand spikes during festivals & auspicious dates. Year-round steady flow.', examples: 'Varanasi, Tirupati, Shirdi, Haridwar hotels', pattern: 'pilgrimage' },
+      { id: 'wildlife', icon: '🐅', name: 'Wildlife Lodge', description: 'Safari & national park stays', details: 'Seasonal: Oct-Jun only. Closed during monsoon. Premium pricing.', examples: 'Jim Corbett, Ranthambore, Bandhavgarh lodges', pattern: 'wildlife' },
+      { id: 'heritage', icon: '🏛️', name: 'Heritage/Boutique', description: 'Palaces, havelis, unique stays', details: 'Premium segment, experience-focused. High wedding season demand.', examples: 'Rajasthan palaces, Neemrana, boutique properties', pattern: 'heritage' },
+      { id: 'budget', icon: '💰', name: 'Budget/Economy', description: 'Value-conscious travelers', details: 'Price-sensitive guests. High volume, lower ADR. OTA dependent.', examples: 'OYO, FabHotels, Treebo, budget chains', pattern: 'budget' }
+    ];
+
+    // Lead Time Pattern Definitions
+    const leadTimePatterns = [
       {
-        id: 'business',
-        icon: '🏢',
-        name: 'Business Hotel',
-        description: 'Corporate travelers, MICE events',
-        details: 'High weekday demand, corporate rates. Peak: Mon-Thu. Low: weekends.',
-        examples: 'Marriott, Hyatt, ITC, Taj Business hotels',
-        pattern: 'metro_business'
+        id: 'walk_in_heavy',
+        icon: '🚗',
+        name: 'Mostly Walk-in / Same-Day',
+        desc: '55% of bookings are same-day or walk-in. Very few advance reservations.',
+        bestFor: 'Highway motels, budget hotels, transit stops',
+        suitableFor: ['budget'],
+        leadTime: { lead0: 55, lead1: 15, lead2: 8, lead3: 5, lead4: 4, lead5: 3, lead6: 3 },
+        bars: [55, 15, 8, 5, 4, 3, 3]
       },
       {
-        id: 'leisure',
-        icon: '🏖️',
-        name: 'Leisure Resort',
-        description: 'Families, couples, weekend getaways',
-        details: 'High weekend demand. Seasonal peaks during holidays & school vacations.',
-        examples: 'Club Mahindra, Sterling, weekend resorts',
-        pattern: 'leisure'
+        id: 'same_day_moderate',
+        icon: '📱',
+        name: 'High Same-Day + Some Advance',
+        desc: '37% same-day bookings. Good mix of OTA and direct. Most book within 3 days.',
+        bestFor: 'City business hotels, urban properties',
+        suitableFor: ['business'],
+        leadTime: { lead0: 37, lead1: 11, lead2: 6, lead3: 3, lead4: 5, lead5: 4, lead6: 4 },
+        bars: [37, 11, 6, 3, 5, 4, 4]
       },
       {
-        id: 'hillstation',
-        icon: '⛰️',
-        name: 'Hill Station',
-        description: 'Mountain & hill retreats',
-        details: 'Peak: Apr-Jun (summer), Oct (post-monsoon). Low: monsoon months.',
-        examples: 'Shimla, Manali, Ooty, Mussoorie properties',
-        pattern: 'hill_station'
+        id: 'balanced_mix',
+        icon: '⚖️',
+        name: 'Balanced Walk-in + Advance',
+        desc: '20% same-day. Healthy spread across the week with advance bookings.',
+        bestFor: 'Leisure resorts, hill stations, weekend getaways',
+        suitableFor: ['leisure', 'hillstation', 'pilgrimage'],
+        leadTime: { lead0: 20, lead1: 12, lead2: 10, lead3: 10, lead4: 10, lead5: 8, lead6: 8 },
+        bars: [20, 12, 10, 10, 10, 8, 8]
       },
       {
-        id: 'beach',
-        icon: '🏝️',
-        name: 'Beach Resort',
-        description: 'Coastal & beachside properties',
-        details: 'Peak: Oct-Feb (winter). Low: monsoon (Jun-Sep). International tourists.',
-        examples: 'Goa resorts, Kerala backwaters, Andaman',
-        pattern: 'beach'
+        id: 'advance_heavy',
+        icon: '📅',
+        name: 'Mostly Advance (3-7+ days)',
+        desc: '10% same-day. Most guests plan ahead. Strong OTA presence.',
+        bestFor: 'Wildlife lodges, heritage hotels, beach resorts',
+        suitableFor: ['wildlife', 'heritage', 'beach'],
+        leadTime: { lead0: 10, lead1: 7, lead2: 8, lead3: 10, lead4: 12, lead5: 13, lead6: 15 },
+        bars: [10, 7, 8, 10, 12, 13, 15]
       },
       {
-        id: 'pilgrimage',
-        icon: '🕉️',
-        name: 'Pilgrimage',
-        description: 'Religious & spiritual destinations',
-        details: 'Demand spikes during festivals & auspicious dates. Year-round steady flow.',
-        examples: 'Varanasi, Tirupati, Shirdi, Haridwar hotels',
-        pattern: 'pilgrimage'
-      },
-      {
-        id: 'wildlife',
-        icon: '🐅',
-        name: 'Wildlife Lodge',
-        description: 'Safari & national park stays',
-        details: 'Seasonal: Oct-Jun only. Closed during monsoon. Premium pricing.',
-        examples: 'Jim Corbett, Ranthambore, Bandhavgarh lodges',
-        pattern: 'wildlife'
-      },
-      {
-        id: 'heritage',
-        icon: '🏛️',
-        name: 'Heritage/Boutique',
-        description: 'Palaces, havelis, unique stays',
-        details: 'Premium segment, experience-focused. High wedding season demand.',
-        examples: 'Rajasthan palaces, Neemrana, boutique properties',
-        pattern: 'heritage'
-      },
-      {
-        id: 'budget',
-        icon: '💰',
-        name: 'Budget/Economy',
-        description: 'Value-conscious travelers',
-        details: 'Price-sensitive guests. High volume, lower ADR. OTA dependent.',
-        examples: 'OYO, FabHotels, Treebo, budget chains',
-        pattern: 'budget'
+        id: 'planned_travel',
+        icon: '✈️',
+        name: 'Pre-Planned (7+ days ahead)',
+        desc: '5% same-day. Guests book weeks/months in advance.',
+        bestFor: 'Destination weddings, remote locations, international tourists',
+        suitableFor: [],
+        leadTime: { lead0: 5, lead1: 4, lead2: 5, lead3: 6, lead4: 8, lead5: 10, lead6: 12 },
+        bars: [5, 4, 5, 6, 8, 10, 12]
       }
     ];
 
-    let selectedHotelType = null;
+    // Same-Day Booking Pattern Definitions
+    const sameDayPatterns = [
+      {
+        id: 'evening_heavy',
+        icon: '🌆',
+        name: 'Evening Rush (Walk-in)',
+        desc: 'Most same-day guests arrive after 4 PM. Late check-in common.',
+        bestFor: 'Highway hotels, transit stops, walk-in heavy',
+        suitableFor: ['budget'],
+        hourly: { hour6: 2, hour8: 4, hour10: 6, hour12: 8, hour14: 12, hour16: 22, hour18: 25, hour20: 15, hour22: 6 },
+        bars: [2, 4, 6, 8, 12, 22, 25, 15, 6]
+      },
+      {
+        id: 'afternoon_peak',
+        icon: '☀️',
+        name: 'Afternoon Peak (OTA-driven)',
+        desc: 'Bookings peak between 2-6 PM. Typical OTA booking pattern.',
+        bestFor: 'Most hotels — city, leisure, resorts',
+        suitableFor: ['business', 'leisure', 'hillstation', 'beach', 'pilgrimage'],
+        hourly: { hour6: 2, hour8: 8, hour10: 15, hour12: 12, hour14: 18, hour16: 20, hour18: 15, hour20: 7, hour22: 3 },
+        bars: [2, 8, 15, 12, 18, 20, 15, 7, 3]
+      },
+      {
+        id: 'morning_check',
+        icon: '🌅',
+        name: 'Morning Decision Makers',
+        desc: 'Business guests book by morning. Most bookings before noon.',
+        bestFor: 'Business hotels, planned travel',
+        suitableFor: ['heritage', 'wildlife'],
+        hourly: { hour6: 8, hour8: 18, hour10: 22, hour12: 18, hour14: 14, hour16: 10, hour18: 6, hour20: 3, hour22: 1 },
+        bars: [8, 18, 22, 18, 14, 10, 6, 3, 1]
+      },
+      {
+        id: 'spread_even',
+        icon: '📊',
+        name: 'Evenly Spread',
+        desc: 'No clear peak — bookings come in throughout the day.',
+        bestFor: 'Pilgrimage, year-round destinations',
+        suitableFor: [],
+        hourly: { hour6: 6, hour8: 10, hour10: 12, hour12: 13, hour14: 14, hour16: 14, hour18: 13, hour20: 11, hour22: 7 },
+        bars: [6, 10, 12, 13, 14, 14, 13, 11, 7]
+      }
+    ];
 
     // =============================================
     // INITIALIZATION
@@ -1282,7 +1155,7 @@
         stateSelect.appendChild(option);
       });
 
-      // Load hotel types with detailed descriptions
+      // Load hotel types
       const hotelTypeGrid = document.getElementById('hotelTypeGrid');
       hotelTypes.forEach(type => {
         const card = document.createElement('div');
@@ -1298,20 +1171,9 @@
         hotelTypeGrid.appendChild(card);
       });
 
-      // Initialize charts
-      initCharts();
-
-      // Add event listeners for lead time inputs
-      document.querySelectorAll('.lead-time-item input').forEach(input => {
-        input.addEventListener('input', () => {
-          updateLeadTimeTotal();
-          updateCharts();
-        });
-      });
-
-      document.querySelectorAll('.hour-item input').forEach(input => {
-        input.addEventListener('input', updateCharts);
-      });
+      // Render pattern cards
+      renderLeadTimePatterns();
+      renderSameDayPatterns();
 
       // Load saved data if exists
       loadSavedData();
@@ -1321,48 +1183,108 @@
     });
 
     // =============================================
-    // NAVIGATION
+    // PATTERN CARD RENDERING
     // =============================================
-    function nextSection(num) {
-      // Validation for section 1 (Room Types)
-      if (currentSection === 1 && roomTypes.length === 0) {
-        alert('Please add at least one room type before proceeding.');
-        return;
-      }
-      saveCurrentData();
-      goToSection(num);
+    function renderLeadTimePatterns() {
+      const grid = document.getElementById('leadTimePatternGrid');
+      const labels = ['D1','D2','D3','D4','D5','D6','D7'];
+      leadTimePatterns.forEach(pattern => {
+        const maxBar = Math.max(...pattern.bars);
+        const card = document.createElement('div');
+        card.className = 'pattern-card';
+        card.dataset.patternId = pattern.id;
+        card.innerHTML = `
+          <div class="recommended-badge">Recommended</div>
+          <div class="pattern-icon">${pattern.icon}</div>
+          <h3>${pattern.name}</h3>
+          <div class="pattern-desc">${pattern.desc}</div>
+          <div class="mini-bars">
+            ${pattern.bars.map(v => `<div class="bar" style="height:${Math.max((v/maxBar)*100, 5)}%"></div>`).join('')}
+          </div>
+          <div class="mini-bars-labels">
+            ${labels.map(l => `<span>${l}</span>`).join('')}
+          </div>
+          <div class="pattern-best-for">Best for: ${pattern.bestFor}</div>
+        `;
+        card.onclick = () => selectLeadTimePattern(pattern.id);
+        grid.appendChild(card);
+      });
     }
 
-    function prevSection(num) {
-      saveCurrentData();
-      goToSection(num);
+    function renderSameDayPatterns() {
+      const grid = document.getElementById('sameDayPatternGrid');
+      const labels = ['6a','8a','10a','12p','2p','4p','6p','8p','10p'];
+      sameDayPatterns.forEach(pattern => {
+        const maxBar = Math.max(...pattern.bars);
+        const card = document.createElement('div');
+        card.className = 'pattern-card';
+        card.dataset.patternId = pattern.id;
+        card.innerHTML = `
+          <div class="recommended-badge">Recommended</div>
+          <div class="pattern-icon">${pattern.icon}</div>
+          <h3>${pattern.name}</h3>
+          <div class="pattern-desc">${pattern.desc}</div>
+          <div class="mini-bars">
+            ${pattern.bars.map(v => `<div class="bar" style="height:${Math.max((v/maxBar)*100, 5)}%"></div>`).join('')}
+          </div>
+          <div class="mini-bars-labels">
+            ${labels.map(l => `<span>${l}</span>`).join('')}
+          </div>
+          <div class="pattern-best-for">Best for: ${pattern.bestFor}</div>
+        `;
+        card.onclick = () => selectSameDayPattern(pattern.id);
+        grid.appendChild(card);
+      });
     }
 
-    function goToSection(num) {
-      // Hide current section
-      document.getElementById(`section${currentSection}`).classList.add('hidden');
-      // Show new section
-      document.getElementById(`section${num}`).classList.remove('hidden');
+    // =============================================
+    // SELECTIONS
+    // =============================================
+    function selectHotelType(typeId) {
+      selectedHotelType = typeId;
+      document.querySelectorAll('.hotel-type-card').forEach(card => card.classList.remove('selected'));
+      document.querySelector(`[data-type="${typeId}"]`).classList.add('selected');
+      // Update pattern recommendations
+      updatePatternRecommendations();
+    }
 
-      // Update progress bar
-      for (let i = 1; i <= totalSections; i++) {
-        const prog = document.getElementById(`prog${i}`);
-        if (prog) {
-          prog.classList.remove('active', 'completed');
-          if (i < num) {
-            prog.classList.add('completed');
-          } else if (i === num) {
-            prog.classList.add('active');
-          }
+    function selectLeadTimePattern(patternId) {
+      selectedLeadTimePattern = patternId;
+      document.querySelectorAll('#leadTimePatternGrid .pattern-card').forEach(c => c.classList.remove('selected'));
+      document.querySelector(`#leadTimePatternGrid [data-pattern-id="${patternId}"]`).classList.add('selected');
+    }
+
+    function selectSameDayPattern(patternId) {
+      selectedSameDayPattern = patternId;
+      document.querySelectorAll('#sameDayPatternGrid .pattern-card').forEach(c => c.classList.remove('selected'));
+      document.querySelector(`#sameDayPatternGrid [data-pattern-id="${patternId}"]`).classList.add('selected');
+    }
+
+    function updatePatternRecommendations() {
+      // Clear all recommendations
+      document.querySelectorAll('.pattern-card').forEach(c => c.classList.remove('recommended'));
+
+      if (!selectedHotelType) return;
+
+      // Mark recommended lead time patterns
+      leadTimePatterns.forEach(p => {
+        if (p.suitableFor.includes(selectedHotelType)) {
+          const card = document.querySelector(`#leadTimePatternGrid [data-pattern-id="${p.id}"]`);
+          if (card) card.classList.add('recommended');
         }
-      }
+      });
 
-      currentSection = num;
-      window.scrollTo(0, 0);
+      // Mark recommended same-day patterns
+      sameDayPatterns.forEach(p => {
+        if (p.suitableFor.includes(selectedHotelType)) {
+          const card = document.querySelector(`#sameDayPatternGrid [data-pattern-id="${p.id}"]`);
+          if (card) card.classList.add('recommended');
+        }
+      });
     }
 
     // =============================================
-    // SECTION 1: Location & Hotel Type
+    // LOCATION
     // =============================================
     function updateCities() {
       const state = document.getElementById('stateSelect').value;
@@ -1381,14 +1303,8 @@
       }
     }
 
-    function selectHotelType(typeId) {
-      selectedHotelType = typeId;
-      document.querySelectorAll('.hotel-type-card').forEach(card => card.classList.remove('selected'));
-      document.querySelector(`[data-type="${typeId}"]`).classList.add('selected');
-    }
-
     // =============================================
-    // SECTION 3: Room Types
+    // ROOM TYPES
     // =============================================
     function addRoomType() {
       const name = document.getElementById('newRoomName').value.trim();
@@ -1403,7 +1319,6 @@
       roomTypes.push({ name, count, basePrice: price });
       renderRoomTypes();
 
-      // Clear inputs
       document.getElementById('newRoomName').value = '';
       document.getElementById('newRoomCount').value = '';
       document.getElementById('newRoomPrice').value = '';
@@ -1434,15 +1349,12 @@
         </div>
       `).join('');
 
-      // Calculate totals
       const total = roomTypes.reduce((sum, rt) => sum + rt.count, 0);
       const prices = roomTypes.map(rt => rt.basePrice);
       const baseRate = Math.min(...prices);
-      const maxRate = Math.max(...prices);
 
       document.getElementById('totalRooms').textContent = total;
       document.getElementById('baseRateDisplay').textContent = baseRate.toLocaleString('en-IN');
-      document.getElementById('maxRateDisplay').textContent = maxRate.toLocaleString('en-IN');
       totalDisplay.style.display = 'block';
     }
 
@@ -1456,143 +1368,37 @@
     }
 
     // =============================================
-    // SECTION 4: Time Factors
-    // =============================================
-    function initCharts() {
-      const leadCtx = document.getElementById('leadTimeChart').getContext('2d');
-      leadTimeChart = new Chart(leadCtx, {
-        type: 'bar',
-        data: {
-          labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
-          datasets: [{
-            label: '% of Bookings',
-            data: [37, 11, 6, 3, 5, 4, 4],
-            backgroundColor: 'rgba(30, 58, 95, 0.7)',
-            borderColor: 'rgba(30, 58, 95, 1)',
-            borderWidth: 1
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: { legend: { display: false } },
-          scales: { y: { beginAtZero: true, max: 50 } }
-        }
-      });
-
-      const hourCtx = document.getElementById('hourChart').getContext('2d');
-      hourChart = new Chart(hourCtx, {
-        type: 'line',
-        data: {
-          labels: ['6-8', '8-10', '10-12', '12-2', '2-4', '4-6', '6-8', '8-10', '10-12'],
-          datasets: [{
-            label: '% of Same-Day',
-            data: [2, 8, 15, 12, 18, 20, 15, 7, 3],
-            borderColor: 'rgba(45, 138, 138, 1)',
-            backgroundColor: 'rgba(45, 138, 138, 0.1)',
-            fill: true,
-            tension: 0.4
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: { legend: { display: false } },
-          scales: { y: { beginAtZero: true, max: 30 } }
-        }
-      });
-    }
-
-    function updateLeadTimeTotal() {
-      const total = parseInt(document.getElementById('lead0').value || 0) +
-                    parseInt(document.getElementById('lead1').value || 0) +
-                    parseInt(document.getElementById('lead2').value || 0) +
-                    parseInt(document.getElementById('lead3').value || 0) +
-                    parseInt(document.getElementById('lead4').value || 0) +
-                    parseInt(document.getElementById('lead5').value || 0) +
-                    parseInt(document.getElementById('lead6').value || 0);
-
-      const remaining = 100 - total;
-      const totalEl = document.getElementById('leadTimeTotal');
-      totalEl.textContent = `Total: ${total}% (remaining ${remaining}% is 7+ days advance)`;
-      totalEl.className = 'lead-total ' + (total <= 100 ? 'valid' : 'invalid');
-    }
-
-    function updateCharts() {
-      if (leadTimeChart) {
-        leadTimeChart.data.datasets[0].data = [
-          parseInt(document.getElementById('lead0').value) || 0,
-          parseInt(document.getElementById('lead1').value) || 0,
-          parseInt(document.getElementById('lead2').value) || 0,
-          parseInt(document.getElementById('lead3').value) || 0,
-          parseInt(document.getElementById('lead4').value) || 0,
-          parseInt(document.getElementById('lead5').value) || 0,
-          parseInt(document.getElementById('lead6').value) || 0
-        ];
-        leadTimeChart.update();
-      }
-
-      if (hourChart) {
-        hourChart.data.datasets[0].data = [
-          parseInt(document.getElementById('hour6').value) || 0,
-          parseInt(document.getElementById('hour8').value) || 0,
-          parseInt(document.getElementById('hour10').value) || 0,
-          parseInt(document.getElementById('hour12').value) || 0,
-          parseInt(document.getElementById('hour14').value) || 0,
-          parseInt(document.getElementById('hour16').value) || 0,
-          parseInt(document.getElementById('hour18').value) || 0,
-          parseInt(document.getElementById('hour20').value) || 0,
-          parseInt(document.getElementById('hour22').value) || 0
-        ];
-        hourChart.update();
-      }
-    }
-
-    // =============================================
-    // DATA PERSISTENCE
+    // DATA PERSISTENCE (backward compatible)
     // =============================================
     function saveCurrentData() {
-      // Calculate derived values from room types
       const totalInventory = roomTypes.reduce((sum, rt) => sum + rt.count, 0);
       const prices = roomTypes.length > 0 ? roomTypes.map(rt => rt.basePrice) : [0];
       const baseRate = Math.min(...prices);
       const maxRateInput = parseInt(document.getElementById('maxRateInput').value) || 0;
-      // Use user-specified max rate, or default to 1.5x base rate
       const maxRate = maxRateInput > baseRate ? maxRateInput : Math.round(baseRate * 1.5);
 
+      // Get lead time data from selected pattern
+      const ltPattern = leadTimePatterns.find(p => p.id === selectedLeadTimePattern);
+      const leadTime = ltPattern ? ltPattern.leadTime : { lead0: 37, lead1: 11, lead2: 6, lead3: 3, lead4: 5, lead5: 4, lead6: 4 };
+
+      // Get hourly data from selected pattern
+      const sdPattern = sameDayPatterns.find(p => p.id === selectedSameDayPattern);
+      const hourly = sdPattern ? sdPattern.hourly : { hour6: 2, hour8: 8, hour10: 15, hour12: 12, hour14: 18, hour16: 20, hour18: 15, hour20: 7, hour22: 3 };
+
       const data = {
-        // Section 1: Room Types (primary data source)
         roomTypes: roomTypes,
-        // Derived from room types
         inventory: totalInventory,
         baseRate: baseRate,
         maxRate: maxRate,
         maxRateInput: maxRateInput,
-        // Section 2: Property & Demand
         state: document.getElementById('stateSelect').value,
         city: document.getElementById('citySelect').value,
         hotelType: selectedHotelType,
-        // Section 3: Time Factors
-        leadTime: {
-          lead0: document.getElementById('lead0').value,
-          lead1: document.getElementById('lead1').value,
-          lead2: document.getElementById('lead2').value,
-          lead3: document.getElementById('lead3').value,
-          lead4: document.getElementById('lead4').value,
-          lead5: document.getElementById('lead5').value,
-          lead6: document.getElementById('lead6').value
-        },
-        hourly: {
-          hour6: document.getElementById('hour6').value,
-          hour8: document.getElementById('hour8').value,
-          hour10: document.getElementById('hour10').value,
-          hour12: document.getElementById('hour12').value,
-          hour14: document.getElementById('hour14').value,
-          hour16: document.getElementById('hour16').value,
-          hour18: document.getElementById('hour18').value,
-          hour20: document.getElementById('hour20').value,
-          hour22: document.getElementById('hour22').value
-        }
+        leadTime: leadTime,
+        hourly: hourly,
+        // New fields for pattern IDs
+        leadTimePatternId: selectedLeadTimePattern,
+        sameDayPatternId: selectedSameDayPattern
       };
       localStorage.setItem('rmsSetupData', JSON.stringify(data));
     }
@@ -1604,7 +1410,7 @@
       try {
         const data = JSON.parse(saved);
 
-        // Section 1: Room Types
+        // Room Types
         if (data.roomTypes) {
           roomTypes = data.roomTypes;
         }
@@ -1612,7 +1418,7 @@
           document.getElementById('maxRateInput').value = data.maxRateInput;
         }
 
-        // Section 2: Property & Demand
+        // Location
         if (data.state) {
           document.getElementById('stateSelect').value = data.state;
           updateCities();
@@ -1624,23 +1430,13 @@
           selectHotelType(data.hotelType);
         }
 
-        // Section 3: Time Factors
-        if (data.leadTime) {
-          Object.keys(data.leadTime).forEach(key => {
-            const el = document.getElementById(key);
-            if (el) el.value = data.leadTime[key];
-          });
+        // Patterns (new format)
+        if (data.leadTimePatternId) {
+          selectLeadTimePattern(data.leadTimePatternId);
         }
-        if (data.hourly) {
-          Object.keys(data.hourly).forEach(key => {
-            const el = document.getElementById(key);
-            if (el) el.value = data.hourly[key];
-          });
+        if (data.sameDayPatternId) {
+          selectSameDayPattern(data.sameDayPatternId);
         }
-
-        // Update UI
-        updateLeadTimeTotal();
-        setTimeout(updateCharts, 100);
       } catch (e) {
         console.error('Error loading saved data', e);
       }
@@ -1650,16 +1446,31 @@
     // GENERATE & GO TO RESULTS
     // =============================================
     function generateAndGoToResults() {
-      saveCurrentData();
-
-      // Basic validation - room types are required
       if (roomTypes.length === 0) {
         alert('Please add at least one room type before generating results.');
-        goToSection(1);
+        document.getElementById('section1').scrollIntoView({ behavior: 'smooth' });
         return;
       }
 
-      // Navigate to results page
+      if (!selectedHotelType) {
+        alert('Please select your property type.');
+        document.getElementById('section2').scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+
+      if (!selectedLeadTimePattern) {
+        alert('Please select a booking lead time pattern.');
+        document.getElementById('section3').scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+
+      if (!selectedSameDayPattern) {
+        alert('Please select a same-day booking pattern.');
+        document.getElementById('section3').scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+
+      saveCurrentData();
       window.location.href = 'revenue-results.html';
     }
 
