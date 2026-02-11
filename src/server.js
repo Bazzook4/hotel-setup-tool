@@ -10,6 +10,25 @@ const PORT = 3000;
 
 // Middleware
 app.use(express.json());
+
+// 301 Redirects: old tool URLs → new SEO-friendly URLs
+const redirects = {
+  '/tools/commission-calculator.html': '/tools/ota-commission-calculator/',
+  '/tools/discount-calculator.html': '/tools/hotel-discount-calculator/',
+  '/tools/ota-dependency-calculator.html': '/tools/ota-dependency-calculator/',
+  '/tools/revenue-setup.html': '/tools/revenue-management-tool/',
+  '/tools/revenue-results.html': '/tools/revenue-management-results/',
+  '/calendar.html': '/tools/demand-calendar/',
+  '/commission.html': '/tools/ota-commission-calculator/',
+  '/setup.html': '/tools/revenue-management-tool/',
+  '/results.html': '/tools/revenue-management-results/',
+};
+app.use((req, res, next) => {
+  const target = redirects[req.path];
+  if (target) return res.redirect(301, target);
+  next();
+});
+
 app.use(express.static(join(__dirname, 'public')));
 
 // API: Calculate Occupancy Pricing Slabs
