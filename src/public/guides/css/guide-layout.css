@@ -114,7 +114,7 @@
 .sidebar-guide-list li a.active {
   color: var(--secondary, #89826E);
   border-left-color: var(--secondary, #89826E);
-  background: rgba(45, 138, 138, 0.08);
+  background: rgba(137, 130, 110, 0.08);
   font-weight: 500;
 }
 
