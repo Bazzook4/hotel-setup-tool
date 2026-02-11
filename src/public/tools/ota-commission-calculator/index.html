@@ -619,29 +619,31 @@
 
     /* FAQ Section */
     .faq-section {
-      background: white;
+      background: var(--danger-light);
       border-radius: 12px;
       padding: 1.5rem 2rem;
       margin-top: 2rem;
       box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+      border: 1px solid rgba(198, 40, 40, 0.15);
     }
 
     .faq-section h3 {
-      color: var(--primary);
+      color: var(--danger);
       margin-bottom: 1rem;
       font-size: 1.25rem;
     }
 
     .faq-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
     }
 
     .faq-item {
-      border: 1px solid #eee;
+      border: 1px solid rgba(198, 40, 40, 0.2);
       border-radius: 8px;
       overflow: hidden;
+      background: white;
     }
 
     .faq-question {
@@ -651,14 +653,26 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem;
-      background: #f8f9fa;
+      padding: 1rem 1.25rem;
+      background: rgba(198, 40, 40, 0.04);
+      transition: background 0.2s;
+    }
+
+    .faq-question:hover {
+      background: rgba(198, 40, 40, 0.08);
     }
 
     .faq-question::after {
       content: '+';
       font-size: 1.25rem;
-      color: var(--secondary);
+      font-weight: 700;
+      color: var(--danger);
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+
+    .faq-item.open .faq-question {
+      background: rgba(198, 40, 40, 0.08);
     }
 
     .faq-item.open .faq-question::after {
@@ -667,10 +681,11 @@
 
     .faq-answer {
       display: none;
-      padding: 1rem;
+      padding: 1rem 1.25rem;
       color: #555;
       line-height: 1.7;
       font-size: 0.9rem;
+      border-top: 1px solid rgba(198, 40, 40, 0.1);
     }
 
     .faq-item.open .faq-answer {
@@ -718,7 +733,6 @@
       .dashboard-content { grid-template-columns: 1fr; }
       .panel-left, .panel-right { border: none; border-top: 1px solid #eee; }
       .loss-projections { grid-template-columns: 1fr; }
-      .faq-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
