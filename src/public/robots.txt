@@ -3,8 +3,5 @@
 User-agent: *
 Allow: /
 
-# Disallow legacy pages
-Disallow: /_legacy/
-
 # Sitemap location
 Sitemap: https://insights.onlinehotelier.com/sitemap.xml
