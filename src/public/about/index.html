@@ -11,21 +11,23 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Hotel Playbook - Free Hotel Tools for Indian Hoteliers</title>
-  <meta name="description" content="Hotel Playbook provides free revenue management tools and educational guides for Indian hotel owners. Learn about our mission to help hotels maximize profitability.">
-  <link rel="canonical" href="https://hotelplaybook.in/about/">
+  <title>About OnlineHotelier Insights - Free Hotel Tools for Indian Hoteliers</title>
+  <meta name="description" content="OnlineHotelier Insights provides free revenue management tools and educational guides for Indian hotel owners. Learn about our mission to help hotels maximize profitability.">
+  <link rel="canonical" href="https://insights.onlinehotelier.com/about/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="About Hotel Playbook">
+  <meta property="og:title" content="About OnlineHotelier Insights">
   <meta property="og:description" content="Free hotel revenue management tools and guides for Indian hoteliers.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://hotelplaybook.in/about/">
+  <meta property="og:url" content="https://insights.onlinehotelier.com/about/">
 
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
     * {
       margin: 0;
       padding: 0;
@@ -33,26 +35,25 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-      background: #f5f7fa;
-      color: #333;
+      font-family: 'Avenir', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #F8F8F4;
+      color: #3E3D35;
       line-height: 1.6;
     }
 
     :root {
-      --primary: #1e3a5f;
-      --secondary: #2d8a8a;
-      --accent: #d4a854;
-      --primary-light: rgba(30, 58, 95, 0.1);
-      --secondary-light: rgba(45, 138, 138, 0.1);
-      --accent-light: rgba(212, 168, 84, 0.2);
+      --primary: #3E3D35;
+      --secondary: #89826E;
+      --accent: #89826E;
+      --primary-light: rgba(62, 61, 53, 0.1);
+      --secondary-light: rgba(137, 130, 110, 0.1);
+      --accent-light: rgba(137, 130, 110, 0.2);
     }
 
     /* Navigation */
     .nav {
-      background: white;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      background: #3E3D35;
+      padding: 0 2rem;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -64,40 +65,63 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      height: 64px;
     }
 
     .nav-logo {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: 700;
-      color: var(--primary);
+      color: #fff;
       text-decoration: none;
+      letter-spacing: -0.02em;
     }
 
     .nav-logo span {
-      color: var(--secondary);
+      color: #89826E;
+      font-weight: 400;
     }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 0.25rem;
       list-style: none;
+      align-items: center;
     }
 
     .nav-links a {
       text-decoration: none;
-      color: #555;
+      color: rgba(255,255,255,0.65);
       font-weight: 500;
-      transition: color 0.2s;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.2s;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      color: var(--secondary);
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .nav-cta {
+      background: rgba(137, 130, 110, 0.25) !important;
+      color: #fff !important;
+      border: 1px solid rgba(137, 130, 110, 0.4);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
     }
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      background: #3E3D35;
       color: white;
       padding: 3rem 2rem;
       text-align: center;
@@ -208,7 +232,7 @@
 
     /* Footer */
     .footer {
-      background: var(--primary);
+      background: #3E3D35;
       color: white;
       padding: 2rem;
       margin-top: 3rem;
@@ -221,7 +245,7 @@
     }
 
     .footer a {
-      color: var(--accent);
+      color: #89826E;
       text-decoration: none;
     }
 
@@ -229,7 +253,17 @@
     @media (max-width: 768px) {
       .nav-links {
         display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #3E3D35;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.25rem;
       }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
 
       .hero h1 {
         font-size: 1.75rem;
@@ -241,19 +275,21 @@
   <!-- Navigation -->
   <nav class="nav">
     <div class="nav-container">
-      <a href="/" class="nav-logo">Hotel<span>Playbook</span></a>
+      <a href="/" class="nav-logo">OnlineHotelier <span>Insights</span></a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/guides/">Guides</a></li>
         <li><a href="/tools/">Tools</a></li>
         <li><a href="/about/" class="active">About</a></li>
+        <li><a href="https://www.onlinehotelier.com/contact" class="nav-cta" target="_blank">Contact Us</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <section class="hero">
-    <h1>About Hotel Playbook</h1>
+    <h1>About OnlineHotelier Insights</h1>
     <p>Free tools and knowledge for Indian hotel owners</p>
   </section>
 
@@ -263,7 +299,7 @@
     <!-- Mission Section -->
     <section class="content-section">
       <h2>Our Mission</h2>
-      <p>Hotel Playbook was created to help Indian hotel owners navigate the complexities of modern hospitality. From understanding OTA commission structures to implementing effective revenue management strategies, we provide the tools and knowledge you need to succeed.</p>
+      <p>OnlineHotelier Insights was created to help Indian hotel owners navigate the complexities of modern hospitality. From understanding OTA commission structures to implementing effective revenue management strategies, we provide the tools and knowledge you need to succeed.</p>
       <p>We believe that every hotel owner, regardless of property size or budget, should have access to professional-grade revenue management tools and insights.</p>
     </section>
 
@@ -305,7 +341,7 @@
     <!-- Disclaimer -->
     <section class="content-section">
       <h2>Disclaimer</h2>
-      <p>The tools and information provided on Hotel Playbook are for educational and informational purposes only. While we strive to keep our information accurate and up-to-date, we make no guarantees about the completeness, reliability, or accuracy of this information.</p>
+      <p>The tools and information provided on OnlineHotelier Insights are for educational and informational purposes only. While we strive to keep our information accurate and up-to-date, we make no guarantees about the completeness, reliability, or accuracy of this information.</p>
       <p>Tax rates and regulations (GST, TDS, TCS) may change. Always consult with a qualified accountant or tax professional for financial decisions. OTA commission structures and policies may vary and are subject to change by the respective platforms.</p>
     </section>
 
@@ -316,7 +352,7 @@
       <div class="contact-box">
         <h3>Get in Touch</h3>
         <p>For inquiries, feedback, or partnership opportunities:</p>
-        <p>Email: <a href="mailto:hello@hotelplaybook.in">hello@hotelplaybook.in</a></p>
+        <p><a href="https://www.onlinehotelier.com/contact" target="_blank">Contact Us</a> or reach out on <a href="https://api.whatsapp.com/send?phone=918591756934&text=Hi%2C%20I%20am%20interested%20in" target="_blank">WhatsApp</a></p>
       </div>
     </section>
 
@@ -325,9 +361,9 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
-      <p>&copy; 2025 Hotel Playbook. Made for Indian Hoteliers.</p>
+      <p>&copy; 2026 OnlineHotelier. All rights reserved.</p>
       <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
-        <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a>
+        <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a> &bull; <a href="https://www.onlinehotelier.com/contact" target="_blank">Contact Us</a>
       </p>
     </div>
   </footer>
