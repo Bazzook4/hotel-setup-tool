@@ -619,31 +619,26 @@
 
     /* FAQ Section */
     .faq-section {
-      background: var(--danger-light);
+      background: white;
       border-radius: 12px;
-      padding: 1.5rem 2rem;
+      padding: 1.5rem;
       margin-top: 2rem;
       box-shadow: 0 4px 6px rgba(0,0,0,0.07);
-      border: 1px solid rgba(198, 40, 40, 0.15);
     }
 
     .faq-section h3 {
-      color: var(--danger);
+      color: var(--primary);
       margin-bottom: 1rem;
       font-size: 1.25rem;
     }
 
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
+    .faq-item {
+      border-bottom: 1px solid #eee;
+      padding: 1rem 0;
     }
 
-    .faq-item {
-      border: 1px solid rgba(198, 40, 40, 0.2);
-      border-radius: 8px;
-      overflow: hidden;
-      background: white;
+    .faq-item:last-child {
+      border-bottom: none;
     }
 
     .faq-question {
@@ -653,26 +648,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 1.25rem;
-      background: rgba(198, 40, 40, 0.04);
-      transition: background 0.2s;
-    }
-
-    .faq-question:hover {
-      background: rgba(198, 40, 40, 0.08);
+      gap: 1rem;
     }
 
     .faq-question::after {
       content: '+';
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--danger);
-      flex-shrink: 0;
-      margin-left: 1rem;
-    }
-
-    .faq-item.open .faq-question {
-      background: rgba(198, 40, 40, 0.08);
+      font-size: 1.5rem;
+      color: var(--secondary);
+      font-weight: 400;
     }
 
     .faq-item.open .faq-question::after {
@@ -681,11 +664,9 @@
 
     .faq-answer {
       display: none;
-      padding: 1rem 1.25rem;
+      padding-top: 0.75rem;
       color: #555;
       line-height: 1.7;
-      font-size: 0.9rem;
-      border-top: 1px solid rgba(198, 40, 40, 0.1);
     }
 
     .faq-item.open .faq-answer {
@@ -911,7 +892,7 @@
     <!-- FAQ Section -->
     <div class="faq-section">
       <h3>Frequently Asked Questions</h3>
-      <div class="faq-grid">
+
         <div class="faq-item">
           <div class="faq-question">What is OTA commission and how does it work?</div>
           <div class="faq-answer">
@@ -956,7 +937,6 @@
             OTA commission is typically calculated on the <strong>base room rate (before GST)</strong>. The guest pays room rate + GST, but commission is charged only on the room rate portion.
           </div>
         </div>
-      </div>
     </div>
   </div>
 
