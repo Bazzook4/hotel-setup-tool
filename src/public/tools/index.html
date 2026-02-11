@@ -11,22 +11,24 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Hotel Tools - Revenue Calculator, OTA Commission Calculator | Hotel Playbook</title>
+  <title>Free Hotel Tools - Revenue Calculator, OTA Commission Calculator | OnlineHotelier Insights</title>
   <meta name="description" content="Free hotel revenue management tools for Indian hoteliers. Calculate OTA commissions, set dynamic pricing, and plan seasonal rates. No signup required.">
   <meta name="keywords" content="hotel revenue calculator, OTA commission calculator, dynamic pricing tool, hotel tools India, free hotel software">
-  <link rel="canonical" href="https://hotelplaybook.in/tools/">
+  <link rel="canonical" href="https://insights.onlinehotelier.com/tools/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Free Hotel Revenue Management Tools">
   <meta property="og:description" content="Free tools to calculate OTA commissions, set dynamic pricing, and optimize hotel revenue. Made for Indian hoteliers.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://hotelplaybook.in/tools/">
+  <meta property="og:url" content="https://insights.onlinehotelier.com/tools/">
 
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
     * {
       margin: 0;
       padding: 0;
@@ -34,26 +36,26 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-      background: #f5f7fa;
-      color: #333;
+      font-family: 'Avenir', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--light);
+      color: var(--dark);
       line-height: 1.6;
     }
 
     :root {
-      --primary: #1e3a5f;
-      --secondary: #2d8a8a;
-      --accent: #d4a854;
-      --primary-light: rgba(30, 58, 95, 0.1);
-      --secondary-light: rgba(45, 138, 138, 0.1);
-      --accent-light: rgba(212, 168, 84, 0.2);
+      --dark: #3E3D35;
+      --light: #F8F8F4;
+      --mid: #89826E;
+      --dark-08: rgba(62, 61, 53, 0.08);
+      --dark-04: rgba(62, 61, 53, 0.04);
+      --mid-20: rgba(137, 130, 110, 0.2);
+      --mid-10: rgba(137, 130, 110, 0.1);
     }
 
     /* Navigation */
     .nav {
-      background: white;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      background: var(--dark);
+      padding: 0 2rem;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -65,40 +67,67 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      height: 64px;
     }
 
     .nav-logo {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: 700;
-      color: var(--primary);
+      color: #fff;
       text-decoration: none;
+      letter-spacing: -0.02em;
     }
 
     .nav-logo span {
-      color: var(--secondary);
+      color: var(--mid);
+      font-weight: 400;
     }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 0.25rem;
       list-style: none;
+      align-items: center;
     }
 
     .nav-links a {
       text-decoration: none;
-      color: #555;
+      color: rgba(255,255,255,0.65);
       font-weight: 500;
-      transition: color 0.2s;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.2s;
     }
 
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--secondary);
+    .nav-links a:hover, .nav-links a.active {
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .nav-cta {
+      background: rgba(137, 130, 110, 0.25) !important;
+      color: #fff !important;
+      border: 1px solid rgba(137, 130, 110, 0.4);
+    }
+
+    .nav-cta:hover {
+      background: rgba(137, 130, 110, 0.4) !important;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.25rem;
     }
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      background: var(--dark);
       color: white;
       padding: 3rem 2rem;
       text-align: center;
@@ -148,7 +177,7 @@
     .tool-icon {
       width: 60px;
       height: 60px;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      background: var(--dark);
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -158,7 +187,7 @@
     }
 
     .tool-card h2 {
-      color: var(--primary);
+      color: var(--dark);
       font-size: 1.35rem;
       margin-bottom: 0.75rem;
     }
@@ -185,15 +214,15 @@
     }
 
     .tool-features li::before {
-      content: "✓";
-      color: var(--secondary);
+      content: "\2713";
+      color: var(--mid);
       font-weight: bold;
     }
 
     .tool-btn {
       display: inline-block;
-      background: var(--accent);
-      color: var(--primary);
+      background: var(--dark);
+      color: #fff;
       padding: 0.875rem 1.5rem;
       border-radius: 8px;
       font-weight: 600;
@@ -204,13 +233,13 @@
 
     .tool-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(212, 168, 84, 0.4);
+      box-shadow: 0 4px 12px rgba(62, 61, 53, 0.4);
     }
 
     .tool-tag {
       display: inline-block;
-      background: var(--secondary-light);
-      color: var(--secondary);
+      background: var(--mid-10);
+      color: var(--mid);
       padding: 0.25rem 0.75rem;
       border-radius: 20px;
       font-size: 0.75rem;
@@ -228,7 +257,7 @@
     }
 
     .info-section h2 {
-      color: var(--primary);
+      color: var(--dark);
       margin-bottom: 1rem;
     }
 
@@ -239,7 +268,7 @@
 
     /* Footer */
     .footer {
-      background: var(--primary);
+      background: var(--dark);
       color: white;
       padding: 2rem;
       margin-top: 3rem;
@@ -252,7 +281,7 @@
     }
 
     .footer a {
-      color: var(--accent);
+      color: var(--mid);
       text-decoration: none;
     }
 
@@ -260,7 +289,19 @@
     @media (max-width: 768px) {
       .nav-links {
         display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: var(--dark);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.25rem;
+        border-top: 1px solid rgba(255,255,255,0.06);
       }
+
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
 
       .hero h1 {
         font-size: 1.75rem;
@@ -276,12 +317,14 @@
   <!-- Navigation -->
   <nav class="nav">
     <div class="nav-container">
-      <a href="/" class="nav-logo">Hotel<span>Playbook</span></a>
+      <a href="/" class="nav-logo">OnlineHotelier <span>Insights</span></a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/guides/">Guides</a></li>
         <li><a href="/tools/" class="active">Tools</a></li>
         <li><a href="/about/">About</a></li>
+        <li><a href="https://www.onlinehotelier.com/contact" class="nav-cta" target="_blank">Contact Us</a></li>
       </ul>
     </div>
   </nav>
@@ -365,7 +408,7 @@
       <p>Many hotel owners in India struggle with understanding OTA settlements and setting up proper revenue management strategies. Our tools are designed to demystify these complex calculations and help you make data-driven decisions.</p>
       <p>All tools are <strong>100% free</strong>, work entirely in your browser, and <strong>require no signup</strong>. Your data stays on your device.</p>
       <p style="margin-top: 1.5rem;">
-        <a href="/guides/" style="color: var(--secondary); font-weight: 500;">Learn more in our Guides →</a>
+        <a href="/guides/" style="color: var(--mid); font-weight: 500;">Learn more in our Guides →</a>
       </p>
     </section>
 
@@ -374,9 +417,9 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
-      <p>&copy; 2026 Hotel Playbook. Made for Indian Hoteliers.</p>
+      <p>&copy; 2026 OnlineHotelier. All rights reserved.</p>
       <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
-        <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a>
+        <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a> &bull; <a href="https://www.onlinehotelier.com/contact" target="_blank">Contact Us</a>
       </p>
     </div>
   </footer>
