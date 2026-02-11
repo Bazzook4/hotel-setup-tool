@@ -11,10 +11,10 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OTA Guides - Master Online Travel Agencies | Hotel Playbook</title>
+  <title>OTA Guides - Master Online Travel Agencies | OnlineHotelier Insights</title>
   <meta name="description" content="Complete guides on OTAs and distribution channels for Indian hotels. Learn about MakeMyTrip, Booking.com, Goibibo, GDS, and how to optimize your online distribution.">
   <meta name="keywords" content="OTA guides, online travel agency, MakeMyTrip hotel, Booking.com tips, Goibibo hotel, GDS hotel, hotel distribution">
-  <link rel="canonical" href="https://hotelplaybook.in/guides/ota/">
+  <link rel="canonical" href="https://insights.onlinehotelier.com/guides/ota/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/guides/css/guide-layout.css">
 
@@ -22,16 +22,17 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; background: #f5f7fa; color: #333; line-height: 1.6; }
-    :root { --primary: #1e3a5f; --secondary: #2d8a8a; --accent: #d4a854; --primary-light: rgba(30, 58, 95, 0.1); --secondary-light: rgba(45, 138, 138, 0.1); }
-    .nav { background: white; padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
-    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-    .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
-    .nav-logo span { color: var(--secondary); }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { text-decoration: none; color: #555; font-weight: 500; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--secondary); }
+    body { font-family: 'Avenir', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #F8F8F4; color: #3E3D35; line-height: 1.6; }
+    :root { --primary: #3E3D35; --secondary: #89826E; --accent: #89826E; --primary-light: rgba(62, 61, 53, 0.1); --secondary-light: rgba(137, 130, 110, 0.1); }
+    .nav { background: #3E3D35; padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .nav-logo { font-size: 1.3rem; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: -0.02em; }
+    .nav-logo span { color: #89826E; font-weight: 400; }
+    .nav-links { display: flex; gap: 0.25rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: rgba(255,255,255,0.65); font-weight: 500; font-size: 0.9rem; padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,0.08); }
     .breadcrumb { background: white; padding: 1rem 2rem; border-bottom: 1px solid #eee; }
     .breadcrumb-container { max-width: 1200px; margin: 0 auto; font-size: 0.9rem; color: #666; }
     .breadcrumb a { color: var(--secondary); text-decoration: none; }
@@ -53,25 +54,27 @@
     .guide-card h3 { color: var(--primary); font-size: 1.1rem; margin-bottom: 0.5rem; }
     .guide-card p { color: #666; font-size: 0.9rem; margin-bottom: 1rem; }
     .guide-tag { background: #fff3e0; color: #e65100; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
-    .tools-cta { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); border-radius: 12px; padding: 2rem; text-align: center; color: white; margin-top: 2rem; }
+    .tools-cta { background: #3E3D35; border-radius: 12px; padding: 2rem; text-align: center; color: white; margin-top: 2rem; }
     .tools-cta h3 { margin-bottom: 1rem; }
-    .tools-cta a { display: inline-block; background: var(--accent); color: var(--primary); padding: 0.75rem 2rem; border-radius: 8px; font-weight: 600; text-decoration: none; margin: 0.5rem; }
+    .tools-cta a { display: inline-block; background: #89826E; color: #fff; padding: 0.75rem 2rem; border-radius: 8px; font-weight: 600; text-decoration: none; margin: 0.5rem; }
     .tools-cta a:hover { transform: translateY(-2px); }
-    .footer { background: var(--primary); color: white; padding: 2rem; margin-top: 3rem; }
+    .footer { background: #3E3D35; color: white; padding: 2rem; margin-top: 3rem; }
     .footer-container { max-width: 1200px; margin: 0 auto; text-align: center; }
-    .footer a { color: var(--accent); text-decoration: none; }
-    @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 1.75rem; } .guides-grid { grid-template-columns: 1fr; } }
+    .footer a { color: #89826E; text-decoration: none; }
+    .nav-cta { background: rgba(137, 130, 110, 0.25) !important; color: #fff !important; border: 1px solid rgba(137, 130, 110, 0.4); } .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; } @media (max-width: 768px) { .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #3E3D35; flex-direction: column; padding: 1rem; gap: 0.25rem; } .nav-links.open { display: flex; } .nav-toggle { display: block; } .hero h1 { font-size: 1.75rem; } .guides-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
   <nav class="nav">
     <div class="nav-container">
-      <a href="/" class="nav-logo">Hotel<span>Playbook</span></a>
+      <a href="/" class="nav-logo">OnlineHotelier <span>Insights</span></a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/guides/" class="active">Guides</a></li>
         <li><a href="/tools/">Tools</a></li>
         <li><a href="/about/">About</a></li>
+        <li><a href="https://www.onlinehotelier.com/contact" class="nav-cta" target="_blank">Contact Us</a></li>
       </ul>
     </div>
   </nav>
@@ -168,7 +171,7 @@
 
   <footer class="footer">
     <div class="footer-container">
-      <p>&copy; 2026 Hotel Playbook. Made for Indian Hoteliers.</p>
+      <p>&copy; 2026 OnlineHotelier. All rights reserved.</p>
       <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
         <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a>
       </p>

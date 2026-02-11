@@ -11,24 +11,25 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lead Time & Booking Window in Hotels Explained | Hotel Playbook</title>
+  <title>Lead Time & Booking Window in Hotels Explained | OnlineHotelier Insights</title>
   <meta name="description" content="Learn what lead time and booking window mean in hotels. Understand how booking patterns affect your pricing strategy. Simple guide with examples.">
   <meta name="keywords" content="lead time hotel, booking window, advance booking, hotel booking patterns, booking lead time">
-  <link rel="canonical" href="https://hotelplaybook.in/guides/revenue/lead-time.html">
+  <link rel="canonical" href="https://insights.onlinehotelier.com/guides/revenue/lead-time.html">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/guides/css/guide-layout.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f7fa; color: #333; line-height: 1.7; }
-    :root { --primary: #1e3a5f; --secondary: #2d8a8a; --accent: #d4a854; --secondary-light: rgba(45, 138, 138, 0.1); --accent-light: rgba(212, 168, 84, 0.2); }
-    .nav { background: white; padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
-    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-    .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
-    .nav-logo span { color: var(--secondary); }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { text-decoration: none; color: #555; font-weight: 500; }
-    .nav-links a:hover, .nav-links a.active { color: var(--secondary); }
+    body { font-family: 'Avenir', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #F8F8F4; color: #3E3D35; line-height: 1.7; }
+    :root { --primary: #3E3D35; --secondary: #89826E; --accent: #89826E; --secondary-light: rgba(137, 130, 110, 0.1); --accent-light: rgba(137, 130, 110, 0.2); }
+    .nav { background: #3E3D35; padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .nav-logo { font-size: 1.3rem; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: -0.02em; }
+    .nav-logo span { color: #89826E; font-weight: 400; }
+    .nav-links { display: flex; gap: 0.25rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: rgba(255,255,255,0.65); font-weight: 500; font-size: 0.9rem; padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,0.08); }
     .breadcrumb { background: white; padding: 1rem 2rem; border-bottom: 1px solid #eee; }
     .breadcrumb-container { max-width: 900px; margin: 0 auto; font-size: 0.9rem; color: #666; }
     .breadcrumb a { color: var(--secondary); text-decoration: none; }
@@ -42,7 +43,7 @@
     .article-content p { margin-bottom: 1rem; color: #444; }
     .article-content ul, .article-content ol { margin: 1rem 0 1.5rem 1.5rem; color: #444; }
     .article-content li { margin-bottom: 0.5rem; }
-    .quick-answer { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; }
+    .quick-answer { background: #3E3D35; color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; }
     .quick-answer h2 { color: white !important; border: none !important; margin: 0 0 1rem 0 !important; padding: 0 !important; font-size: 1.3rem; }
     .quick-answer .big-text { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
     .quick-answer p { color: white; }
@@ -58,20 +59,22 @@
     .related-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
     .related-links a { background: white; color: var(--secondary); padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-size: 0.9rem; border: 1px solid #ddd; }
     .related-links a:hover { background: var(--secondary); color: white; }
-    .footer { background: var(--primary); color: white; padding: 2rem; margin-top: 3rem; text-align: center; }
-    .footer a { color: var(--accent); text-decoration: none; }
-    @media (max-width: 768px) { .nav-links { display: none; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } }
+    .footer { background: #3E3D35; color: white; padding: 2rem; margin-top: 3rem; text-align: center; }
+    .footer a { color: #89826E; text-decoration: none; }
+    .nav-cta { background: rgba(137, 130, 110, 0.25) !important; color: #fff !important; border: 1px solid rgba(137, 130, 110, 0.4); } .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; } @media (max-width: 768px) { .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #3E3D35; flex-direction: column; padding: 1rem; gap: 0.25rem; } .nav-links.open { display: flex; } .nav-toggle { display: block; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } }
   </style>
 </head>
 <body>
   <nav class="nav">
     <div class="nav-container">
-      <a href="/" class="nav-logo">Hotel<span>Playbook</span></a>
+      <a href="/" class="nav-logo">OnlineHotelier <span>Insights</span></a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/guides/" class="active">Guides</a></li>
         <li><a href="/tools/">Tools</a></li>
         <li><a href="/about/">About</a></li>
+        <li><a href="https://www.onlinehotelier.com/contact" class="nav-cta" target="_blank">Contact Us</a></li>
       </ul>
     </div>
   </nav>
@@ -95,7 +98,7 @@
     <header class="article-header">
       <h1>Lead Time & Booking Window Explained</h1>
       <div class="article-meta">
-        <span>By Hotel Playbook Team</span>
+        <span>By OnlineHotelier Insights Team</span>
         <span>5 min read</span>
       </div>
     </header>
@@ -276,7 +279,7 @@
 
 
   <footer class="footer">
-    <p>&copy; 2026 Hotel Playbook. Made for Indian Hoteliers.</p>
+    <p>&copy; 2026 OnlineHotelier. All rights reserved.</p>
     <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
       <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a>
     </p>

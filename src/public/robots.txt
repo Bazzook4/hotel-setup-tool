@@ -1,4 +1,4 @@
-# robots.txt for hotelplaybook.in
+# robots.txt for insights.onlinehotelier.com
 
 User-agent: *
 Allow: /
@@ -7,4 +7,4 @@ Allow: /
 Disallow: /_legacy/
 
 # Sitemap location
-Sitemap: https://hotelplaybook.in/sitemap.xml
+Sitemap: https://insights.onlinehotelier.com/sitemap.xml

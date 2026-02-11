@@ -10,7 +10,7 @@
   bottom: 1.5rem;
   left: 1.5rem;
   z-index: 200;
-  background: var(--primary, #1e3a5f);
+  background: var(--primary, #3E3D35);
   color: white;
   border: none;
   border-radius: 50%;
@@ -43,8 +43,8 @@
 /* ----- Left Sidebar ----- */
 .guide-sidebar {
   position: sticky;
-  top: 57px;
-  height: calc(100vh - 57px);
+  top: 64px;
+  height: calc(100vh - 64px);
   overflow-y: auto;
   background: white;
   border-right: 1px solid #eee;
@@ -74,7 +74,7 @@
   user-select: none;
   transition: color 0.2s;
 }
-.sidebar-category-header:hover { color: var(--primary, #1e3a5f); }
+.sidebar-category-header:hover { color: var(--primary, #3E3D35); }
 .sidebar-category-header .chevron {
   transition: transform 0.2s;
   font-size: 0.7rem;
@@ -83,7 +83,7 @@
   transform: rotate(90deg);
 }
 .sidebar-category.expanded .sidebar-category-header {
-  color: var(--primary, #1e3a5f);
+  color: var(--primary, #3E3D35);
 }
 
 /* Sidebar Guide Links */
@@ -109,11 +109,11 @@
 }
 .sidebar-guide-list li a:hover {
   background: #f5f7fa;
-  color: var(--primary, #1e3a5f);
+  color: var(--primary, #3E3D35);
 }
 .sidebar-guide-list li a.active {
-  color: var(--secondary, #2d8a8a);
-  border-left-color: var(--secondary, #2d8a8a);
+  color: var(--secondary, #89826E);
+  border-left-color: var(--secondary, #89826E);
   background: rgba(45, 138, 138, 0.08);
   font-weight: 500;
 }
@@ -176,11 +176,11 @@
   line-height: 1.4;
 }
 .guide-toc ul li a:hover {
-  color: var(--primary, #1e3a5f);
+  color: var(--primary, #3E3D35);
 }
 .guide-toc ul li a.active {
-  color: var(--secondary, #2d8a8a);
-  border-left-color: var(--secondary, #2d8a8a);
+  color: var(--secondary, #89826E);
+  border-left-color: var(--secondary, #89826E);
 }
 
 /* ----- Prev/Next Navigation ----- */
@@ -223,7 +223,7 @@
 .prev-next-link .pn-title {
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--primary, #1e3a5f);
+  color: var(--primary, #3E3D35);
 }
 
 .prev-next-link.next {
@@ -246,7 +246,7 @@
 }
 
 .related-cards-section h3 {
-  color: var(--primary, #1e3a5f);
+  color: var(--primary, #3E3D35);
   font-size: 1.1rem;
   margin-bottom: 1rem;
 }
@@ -274,13 +274,13 @@
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--secondary, #2d8a8a);
+  color: var(--secondary, #89826E);
   margin-bottom: 0.25rem;
 }
 .related-card .rc-title {
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--primary, #1e3a5f);
+  color: var(--primary, #3E3D35);
   margin-bottom: 0.25rem;
 }
 .related-card .rc-desc {
