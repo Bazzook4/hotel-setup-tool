@@ -16,6 +16,7 @@
   <meta name="keywords" content="hotel revenue calculator, OTA commission calculator, dynamic pricing tool, hotel tools India, free hotel software">
   <link rel="canonical" href="https://insights.onlinehotelier.com/tools/">
   <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/tools/css/tool-layout.css">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Free Hotel Revenue Management Tools">
@@ -46,6 +47,8 @@
       --dark: #3E3D35;
       --light: #F8F8F4;
       --mid: #89826E;
+      --primary: #3E3D35;
+      --secondary: #89826E;
       --dark-08: rgba(62, 61, 53, 0.08);
       --dark-04: rgba(62, 61, 53, 0.04);
       --mid-20: rgba(137, 130, 110, 0.2);
@@ -155,7 +158,7 @@
     /* Tools Grid */
     .tools-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 2rem;
     }
 
@@ -329,6 +332,14 @@
     </div>
   </nav>
 
+  <div class="sidebar-overlay"></div>
+  <button class="sidebar-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+  <div class="tool-page-layout">
+    <aside class="tool-sidebar"></aside>
+
+    <div class="tool-main-content">
+
   <!-- Hero Section -->
   <section class="hero">
     <h1>Free Hotel Tools</h1>
@@ -400,6 +411,21 @@
         <a href="ota-dependency-calculator/" class="tool-btn">Analyze Now</a>
       </div>
 
+      <!-- Demand Calendar -->
+      <div class="tool-card">
+        <div class="tool-icon">📅</div>
+        <span class="tool-tag">Planning</span>
+        <h2>Demand Calendar 2026</h2>
+        <p>Plan peak pricing around long weekends, wedding muhurats, and festivals. State-specific demand insights.</p>
+        <ul class="tool-features">
+          <li>14+ long weekends mapped</li>
+          <li>Wedding muhurat dates</li>
+          <li>Festival & event calendar</li>
+          <li>State-wise demand patterns</li>
+        </ul>
+        <a href="demand-calendar/" class="tool-btn">View Calendar</a>
+      </div>
+
     </div>
 
     <!-- Info Section -->
@@ -423,5 +449,10 @@
       </p>
     </div>
   </footer>
+
+    </div>
+  </div>
+
+  <script src="/tools/js/tool-nav.js"></script>
 </body>
 </html>

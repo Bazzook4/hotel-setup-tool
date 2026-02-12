@@ -1,0 +1,205 @@
+/* ==========================================
+   TOOL LAYOUT SYSTEM
+   Loaded by all tool pages
+   ========================================== */
+
+/* ----- Sidebar Toggle Button (mobile) ----- */
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 200;
+  background: var(--primary, #3E3D35);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar-toggle:hover { transform: scale(1.05); }
+
+/* ----- Page Layout Grid ----- */
+.tool-page-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 0;
+  min-height: calc(100vh - 120px);
+}
+
+/* ----- Left Sidebar ----- */
+.tool-sidebar {
+  position: sticky;
+  top: 64px;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  background: white;
+  border-right: 1px solid #eee;
+  padding: 1.5rem 0;
+  z-index: 50;
+  scrollbar-width: thin;
+}
+.tool-sidebar::-webkit-scrollbar { width: 4px; }
+.tool-sidebar::-webkit-scrollbar-thumb { background: #ddd; border-radius: 4px; }
+
+/* Sidebar Section Header */
+.sidebar-section-header {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary, #3E3D35);
+}
+
+/* Sidebar Tool Links */
+.sidebar-tool-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-tool-list li a {
+  display: block;
+  padding: 0.5rem 1.25rem 0.5rem 1.5rem;
+  font-size: 0.85rem;
+  color: #555;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: all 0.15s;
+  line-height: 1.4;
+}
+.sidebar-tool-list li a:hover {
+  background: #f5f7fa;
+  color: var(--primary, #3E3D35);
+}
+.sidebar-tool-list li a.active {
+  color: var(--secondary, #89826E);
+  border-left-color: var(--secondary, #89826E);
+  background: rgba(137, 130, 110, 0.08);
+  font-weight: 500;
+}
+
+.sidebar-tool-list li.tool-overview a {
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.tool-nav-icon {
+  font-size: 0.9rem;
+  margin-right: 0.15rem;
+}
+
+/* ----- Main Content Area ----- */
+.tool-main-content {
+  min-width: 0;
+}
+
+/* ----- Prev/Next Navigation ----- */
+.prev-next-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.prev-next-link {
+  display: block;
+  padding: 1rem 1.25rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  border: 1px solid #eee;
+}
+.prev-next-link:hover {
+  background: #eef1f5;
+  transform: translateY(-2px);
+}
+
+.prev-next-link .pn-direction {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #888;
+  margin-bottom: 0.25rem;
+}
+
+.prev-next-link .pn-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--primary, #3E3D35);
+}
+
+.prev-next-link.next {
+  text-align: right;
+}
+.prev-next-link.prev .pn-direction::before { content: "\2190 "; }
+.prev-next-link.next .pn-direction::after { content: " \2192"; }
+
+.prev-next-placeholder {
+  /* empty spacer */
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tool-page-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    z-index: 300;
+    transition: left 0.3s ease;
+    box-shadow: none;
+    border-right: none;
+    padding-top: 1rem;
+  }
+  .tool-sidebar.open {
+    left: 0;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+  }
+
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 250;
+  }
+  .sidebar-overlay.active {
+    display: block;
+  }
+
+  .prev-next-nav {
+    grid-template-columns: 1fr;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

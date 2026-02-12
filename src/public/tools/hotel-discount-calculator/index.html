@@ -1007,6 +1007,7 @@
       text-decoration: none;
     }
   </style>
+  <link rel="stylesheet" href="/tools/css/tool-layout.css">
 </head>
 <body>
   <!-- Site Navigation -->
@@ -1023,6 +1024,13 @@
       </ul>
     </div>
   </nav>
+
+  <div class="sidebar-overlay"></div>
+  <button class="sidebar-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+  <div class="tool-page-layout">
+    <aside class="tool-sidebar"></aside>
+    <div class="tool-main-content">
 
   <div class="header">
     <h1>Discount Settlement Calculator</h1>
@@ -1394,5 +1402,11 @@
       });
     });
   </script>
+
+    <div class="prev-next-nav"></div>
+    </div>
+  </div>
+
+  <script src="/tools/js/tool-nav.js"></script>
 </body>
 </html>
