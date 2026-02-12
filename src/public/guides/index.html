@@ -16,6 +16,7 @@
   <meta name="keywords" content="hotel guides India, OTA optimization, revenue management tutorial, hotel software guide, MakeMyTrip hotel, Booking.com tips">
   <link rel="canonical" href="https://insights.onlinehotelier.com/guides/">
   <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/guides/css/guide-layout.css">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Hotel Guides - Revenue Management & OTA Tutorials">
@@ -28,309 +29,61 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Avenir', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #F8F8F4; color: #3E3D35; line-height: 1.6; }
+    :root { --primary: #3E3D35; --secondary: #89826E; --accent: #89826E; --primary-light: rgba(62, 61, 53, 0.1); --secondary-light: rgba(137, 130, 110, 0.1); --accent-light: rgba(137, 130, 110, 0.2); }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    .nav { background: #3E3D35; padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .nav-logo { font-size: 1.3rem; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: -0.02em; }
+    .nav-logo span { color: #89826E; font-weight: 400; }
+    .nav-links { display: flex; gap: 0.25rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: rgba(255,255,255,0.65); font-weight: 500; font-size: 0.9rem; padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,0.08); }
+    .nav-cta { background: rgba(137, 130, 110, 0.25) !important; color: #fff !important; border: 1px solid rgba(137, 130, 110, 0.4); }
+    .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
 
-    body {
-      font-family: 'Avenir', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #F8F8F4;
-      color: #3E3D35;
-      line-height: 1.6;
-    }
+    .hero { background: #3E3D35; color: white; padding: 3rem 2rem; text-align: center; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
 
-    :root {
-      --primary: #3E3D35;
-      --secondary: #89826E;
-      --accent: #89826E;
-      --primary-light: rgba(62, 61, 53, 0.1);
-      --secondary-light: rgba(137, 130, 110, 0.1);
-      --accent-light: rgba(137, 130, 110, 0.2);
-    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+    .category-section { margin-bottom: 3rem; }
+    .category-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .category-icon { width: 50px; height: 50px; background: var(--primary-light); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+    .category-header h2 { color: var(--primary); font-size: 1.5rem; }
+    .category-header p { color: #666; font-size: 0.95rem; }
 
-    /* Navigation */
-    .nav {
-      background: #3E3D35;
-      padding: 0 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+    .sub-heading { color: var(--primary); margin-bottom: 1rem; font-size: 1.1rem; }
+    .sub-heading-spaced { color: var(--primary); margin: 2rem 0 1rem; font-size: 1.1rem; }
 
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 64px;
-    }
+    .guides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+    .guide-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.07); transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; color: inherit; display: block; }
+    .guide-card:hover { transform: translateY(-4px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+    .guide-card h3 { color: var(--primary); font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .guide-card p { color: #666; font-size: 0.9rem; margin-bottom: 1rem; }
+    .guide-meta { display: flex; gap: 1rem; font-size: 0.8rem; color: #999; }
+    .guide-tag { background: var(--secondary-light); color: var(--secondary); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
 
-    .nav-logo {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #fff;
-      text-decoration: none;
-      letter-spacing: -0.02em;
-    }
+    .view-all { text-align: center; margin-top: 1.5rem; }
+    .view-all a { color: var(--secondary); font-weight: 500; text-decoration: none; }
+    .view-all a:hover { text-decoration: underline; }
 
-    .nav-logo span {
-      color: #89826E;
-      font-weight: 400;
-    }
+    .cta-section { text-align: center; margin-top: 2rem; padding-bottom: 1rem; }
+    .cta-section p { color: #666; margin-bottom: 1rem; }
+    .cta-btn { display: inline-block; background: #3E3D35; color: #fff; padding: 0.875rem 2rem; border-radius: 8px; font-weight: 600; text-decoration: none; }
+    .cta-btn:hover { opacity: 0.9; }
 
-    .nav-links {
-      display: flex;
-      gap: 0.25rem;
-      list-style: none;
-      align-items: center;
-    }
+    .footer { background: #3E3D35; color: white; padding: 2rem; margin-top: 3rem; }
+    .footer-container { max-width: 1200px; margin: 0 auto; text-align: center; }
+    .footer a { color: #89826E; text-decoration: none; }
 
-    .nav-links a {
-      text-decoration: none;
-      color: rgba(255,255,255,0.65);
-      font-weight: 500;
-      font-size: 0.9rem;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      transition: all 0.2s;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: #fff;
-      background: rgba(255,255,255,0.08);
-    }
-
-    .nav-cta {
-      background: rgba(137, 130, 110, 0.25) !important;
-      color: #fff !important;
-      border: 1px solid rgba(137, 130, 110, 0.4);
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    /* Hero Section */
-    .hero {
-      background: #3E3D35;
-      color: white;
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* Main Content */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 3rem 2rem;
-    }
-
-    /* Category Section */
-    .category-section {
-      margin-bottom: 3rem;
-    }
-
-    .category-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .category-icon {
-      width: 50px;
-      height: 50px;
-      background: var(--primary-light);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-    }
-
-    .category-header h2 {
-      color: var(--primary);
-      font-size: 1.5rem;
-    }
-
-    .category-header p {
-      color: #666;
-      font-size: 0.95rem;
-    }
-
-    /* Guide Cards Grid */
-    .guides-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .guide-card {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
-      transition: transform 0.2s, box-shadow 0.2s;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-
-    .guide-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    }
-
-    .guide-card h3 {
-      color: var(--primary);
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .guide-card p {
-      color: #666;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
-
-    .guide-meta {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.8rem;
-      color: #999;
-    }
-
-    .guide-tag {
-      background: var(--secondary-light);
-      color: var(--secondary);
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 500;
-    }
-
-    /* Coming Soon State */
-    .coming-soon {
-      background: #f8f9fa;
-      border: 2px dashed #ddd;
-      border-radius: 12px;
-      padding: 2rem;
-      text-align: center;
-      color: #888;
-    }
-
-    .coming-soon h3 {
-      color: #666;
-      margin-bottom: 0.5rem;
-    }
-
-    /* Footer */
-    .footer {
-      background: #3E3D35;
-      color: white;
-      padding: 2rem;
-      margin-top: 3rem;
-    }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .footer a {
-      color: #89826E;
-      text-decoration: none;
-    }
-
-    /* Sticky Category Tabs */
-    .category-tabs {
-      background: white;
-      border-bottom: 1px solid #eee;
-      position: sticky;
-      top: 64px;
-      z-index: 90;
-    }
-    .category-tabs-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      gap: 0;
-      overflow-x: auto;
-      padding: 0 1rem;
-      scrollbar-width: none;
-    }
-    .category-tabs-inner::-webkit-scrollbar { display: none; }
-    .tab-link {
-      padding: 0.75rem 1.25rem;
-      text-decoration: none;
-      color: #666;
-      font-weight: 500;
-      font-size: 0.9rem;
-      white-space: nowrap;
-      border-bottom: 3px solid transparent;
-      transition: all 0.2s;
-    }
-    .tab-link:hover,
-    .tab-link.active {
-      color: var(--secondary);
-      border-bottom-color: var(--secondary);
-    }
-
-    /* Responsive */
     @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 64px;
-        left: 0;
-        right: 0;
-        background: #3E3D35;
-        flex-direction: column;
-        padding: 1rem;
-        gap: 0.25rem;
-      }
+      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #3E3D35; flex-direction: column; padding: 1rem; gap: 0.25rem; }
       .nav-links.open { display: flex; }
       .nav-toggle { display: block; }
-
-      .hero h1 {
-        font-size: 1.75rem;
-      }
-
-      .guides-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .tab-link {
-        padding: 0.6rem 1rem;
-        font-size: 0.8rem;
-      }
-
-      .category-tabs {
-        top: 64px;
-      }
+      .hero h1 { font-size: 1.75rem; }
+      .guides-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -350,62 +103,32 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <div class="sidebar-overlay"></div>
+  <button class="sidebar-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+  <div class="guide-page-layout">
+    <aside class="guide-sidebar"></aside>
+
+    <div class="guide-main-content">
+
   <section class="hero">
     <h1>Hotel Management Guides</h1>
     <p>Practical tutorials and strategies for Indian hoteliers. Master OTAs, optimize revenue, and leverage technology.</p>
   </section>
 
-  <!-- Sticky Category Tabs -->
-  <div class="category-tabs">
-    <div class="category-tabs-inner">
-      <a href="#ota" class="tab-link">&#127976; OTA</a>
-      <a href="#revenue" class="tab-link">&#128200; Revenue</a>
-      <a href="#software" class="tab-link">&#128187; Software</a>
-      <a href="#reports" class="tab-link">&#128202; Reports</a>
-      <a href="#compliance" class="tab-link">&#128203; Compliance</a>
-    </div>
-  </div>
-
-  <!-- Main Content -->
   <div class="container">
-
-    <!-- OTA Guides -->
-    <section class="category-section" id="ota">
-      <div class="category-header">
-        <div class="category-icon">🏨</div>
-        <div>
-          <h2>OTA Guides</h2>
-          <p>Master MakeMyTrip, Booking.com, Goibibo and other OTAs</p>
-        </div>
-      </div>
-      <div class="guides-grid">
-        <a href="/guides/ota/" class="guide-card">
-          <h3>OTA - Online Travel Agency</h3>
-          <p>Understanding OTAs, commissions, and how to work with them effectively.</p>
-          <div class="guide-meta">
-            <span class="guide-tag">Distribution</span>
-            <span>6 min read</span>
-          </div>
-        </a>
-      </div>
-      <div style="text-align: center; margin-top: 1.5rem;">
-        <a href="/guides/ota/" style="color: var(--secondary); font-weight: 500; text-decoration: none;">View all OTA Guides →</a>
-      </div>
-    </section>
 
     <!-- Revenue Guides -->
     <section class="category-section" id="revenue">
       <div class="category-header">
-        <div class="category-icon">📈</div>
+        <div class="category-icon">&#128200;</div>
         <div>
           <h2>Revenue Guides</h2>
           <p>Pricing strategies and demand forecasting for hotels</p>
         </div>
       </div>
 
-      <!-- Rate Plans -->
-      <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.1rem;">Hotel Rate Plans</h3>
+      <h3 class="sub-heading">Hotel Rate Plans</h3>
       <div class="guides-grid">
         <a href="/guides/revenue/hotel-rate-plans.html" class="guide-card">
           <h3>Hotel Rate Plans: EP, CP, MAP, AP Explained</h3>
@@ -449,8 +172,7 @@
         </a>
       </div>
 
-      <!-- Metrics & KPIs -->
-      <h3 style="color: var(--primary); margin: 2rem 0 1rem; font-size: 1.1rem;">Hotel Metrics & KPIs</h3>
+      <h3 class="sub-heading-spaced">Hotel Metrics & KPIs</h3>
       <div class="guides-grid">
         <a href="/guides/revenue/revpar.html" class="guide-card">
           <h3>RevPAR - Revenue Per Available Room</h3>
@@ -494,8 +216,7 @@
         </a>
       </div>
 
-      <!-- Revenue Strategy & Terms -->
-      <h3 style="color: var(--primary); margin: 2rem 0 1rem; font-size: 1.1rem;">Revenue Strategy & Terms</h3>
+      <h3 class="sub-heading-spaced">Revenue Strategy & Terms</h3>
       <div class="guides-grid">
         <a href="/guides/revenue/bar.html" class="guide-card">
           <h3>BAR - Best Available Rate</h3>
@@ -531,16 +252,79 @@
         </a>
       </div>
 
-      <!-- View All Link -->
-      <div style="text-align: center; margin-top: 1.5rem;">
-        <a href="/guides/revenue/" style="color: var(--secondary); font-weight: 500; text-decoration: none;">View all Revenue Guides →</a>
+      <div class="view-all">
+        <a href="/guides/revenue/">View all Revenue Guides &rarr;</a>
+      </div>
+    </section>
+
+    <!-- OTA Guides -->
+    <section class="category-section" id="ota">
+      <div class="category-header">
+        <div class="category-icon">&#127976;</div>
+        <div>
+          <h2>OTA Guides</h2>
+          <p>Master MakeMyTrip, Booking.com, Goibibo and other OTAs</p>
+        </div>
+      </div>
+      <div class="guides-grid">
+        <a href="/guides/ota/what-is-ota.html" class="guide-card">
+          <h3>What is an OTA? Online Travel Agency Explained</h3>
+          <p>Understanding OTAs, commissions, and how to work with them effectively.</p>
+          <div class="guide-meta">
+            <span class="guide-tag">Distribution</span>
+            <span>6 min read</span>
+          </div>
+        </a>
+        <a href="/guides/ota/what-is-gds.html" class="guide-card">
+          <h3>What is GDS? Global Distribution System</h3>
+          <p>How GDS connects hotels to travel agents and corporate bookings worldwide.</p>
+          <div class="guide-meta">
+            <span class="guide-tag">Distribution</span>
+            <span>5 min read</span>
+          </div>
+        </a>
+        <a href="/guides/ota/best-ota-for-hotels.html" class="guide-card">
+          <h3>Best OTA for Hotels in India</h3>
+          <p>Compare MakeMyTrip, Booking.com, Goibibo, and more for your hotel.</p>
+          <div class="guide-meta">
+            <span class="guide-tag">Comparison</span>
+            <span>8 min read</span>
+          </div>
+        </a>
+        <a href="/guides/ota/best-ota-for-resorts.html" class="guide-card">
+          <h3>Best OTA for Resorts</h3>
+          <p>Top OTA platforms for resort bookings and vacation properties.</p>
+          <div class="guide-meta">
+            <span class="guide-tag">Resorts</span>
+            <span>6 min read</span>
+          </div>
+        </a>
+        <a href="/guides/ota/best-ota-for-homestays.html" class="guide-card">
+          <h3>Best OTA for Homestays</h3>
+          <p>Best platforms for listing and managing homestay properties.</p>
+          <div class="guide-meta">
+            <span class="guide-tag">Homestays</span>
+            <span>5 min read</span>
+          </div>
+        </a>
+        <a href="/guides/ota/booking-com-hotel-listing-guide.html" class="guide-card">
+          <h3>Booking.com Hotel Listing Guide</h3>
+          <p>Step-by-step guide to listing your hotel on Booking.com.</p>
+          <div class="guide-meta">
+            <span class="guide-tag">Booking.com</span>
+            <span>10 min read</span>
+          </div>
+        </a>
+      </div>
+      <div class="view-all">
+        <a href="/guides/ota/">View all OTA Guides &rarr;</a>
       </div>
     </section>
 
     <!-- Software Guides -->
     <section class="category-section" id="software">
       <div class="category-header">
-        <div class="category-icon" style="background: rgba(94, 53, 177, 0.1);">💻</div>
+        <div class="category-icon">&#128187;</div>
         <div>
           <h2>Software Guides</h2>
           <p>PMS, Channel Managers, and technology tutorials</p>
@@ -604,15 +388,15 @@
           </div>
         </a>
       </div>
-      <div style="text-align: center; margin-top: 1.5rem;">
-        <a href="/guides/software/" style="color: var(--secondary); font-weight: 500; text-decoration: none;">View all Software Guides →</a>
+      <div class="view-all">
+        <a href="/guides/software/">View all Software Guides &rarr;</a>
       </div>
     </section>
 
     <!-- Reports Guides -->
     <section class="category-section" id="reports">
       <div class="category-header">
-        <div class="category-icon" style="background: rgba(0, 121, 107, 0.1);">📊</div>
+        <div class="category-icon">&#128202;</div>
         <div>
           <h2>Reports Guides</h2>
           <p>Daily operations, financial tracking, and hotel performance reports</p>
@@ -676,15 +460,15 @@
           </div>
         </a>
       </div>
-      <div style="text-align: center; margin-top: 1.5rem;">
-        <a href="/guides/reports/" style="color: var(--secondary); font-weight: 500; text-decoration: none;">View all Reports Guides →</a>
+      <div class="view-all">
+        <a href="/guides/reports/">View all Reports Guides &rarr;</a>
       </div>
     </section>
 
     <!-- Compliance Guides -->
     <section class="category-section" id="compliance">
       <div class="category-header">
-        <div class="category-icon" style="background: rgba(198, 40, 40, 0.1);">📋</div>
+        <div class="category-icon">&#128203;</div>
         <div>
           <h2>Compliance Guides</h2>
           <p>GST, TDS/TCS, Form C, and regulatory requirements for Indian hotels</p>
@@ -716,15 +500,15 @@
           </div>
         </a>
       </div>
-      <div style="text-align: center; margin-top: 1.5rem;">
-        <a href="/guides/compliance/" style="color: var(--secondary); font-weight: 500; text-decoration: none;">View all Compliance Guides →</a>
+      <div class="view-all">
+        <a href="/guides/compliance/">View all Compliance Guides &rarr;</a>
       </div>
     </section>
 
     <!-- CTA Section -->
-    <section style="text-align: center; margin-top: 2rem;">
-      <p style="color: #666; margin-bottom: 1rem;">While we work on the guides, try our free tools:</p>
-      <a href="/tools/" style="display: inline-block; background: #3E3D35; color: #fff; padding: 0.875rem 2rem; border-radius: 8px; font-weight: 600; text-decoration: none;">Explore Tools</a>
+    <section class="cta-section">
+      <p>While we work on the guides, try our free tools:</p>
+      <a href="/tools/" class="cta-btn">Explore Tools</a>
     </section>
 
   </div>
@@ -739,35 +523,9 @@
     </div>
   </footer>
 
-  <script>
-    // Sticky tabs: scroll-spy + smooth scroll
-    (function() {
-      var tabLinks = document.querySelectorAll('.tab-link');
-      var sections = document.querySelectorAll('.category-section[id]');
+    </div>
+  </div>
 
-      var tabObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            tabLinks.forEach(function(l) { l.classList.remove('active'); });
-            var tab = document.querySelector('.tab-link[href="#' + entry.target.id + '"]');
-            if (tab) tab.classList.add('active');
-          }
-        });
-      }, { rootMargin: '-120px 0px -60% 0px' });
-
-      sections.forEach(function(s) { tabObserver.observe(s); });
-
-      tabLinks.forEach(function(link) {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          var target = document.querySelector(link.getAttribute('href'));
-          if (target) {
-            var offset = target.getBoundingClientRect().top + window.pageYOffset - 120;
-            window.scrollTo({ top: offset, behavior: 'smooth' });
-          }
-        });
-      });
-    })();
-  </script>
+  <script src="/guides/js/guide-nav.js"></script>
 </body>
 </html>

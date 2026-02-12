@@ -708,6 +708,30 @@
       .pattern-grid {
         grid-template-columns: 1fr 1fr;
       }
+      .section-card {
+        padding: 1.25rem;
+      }
+      .room-type-item {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+      }
+      .room-type-item input:first-child {
+        grid-column: 1 / -1;
+      }
+      .add-room-type {
+        flex-wrap: wrap;
+      }
+      .add-room-type input[type="text"] {
+        flex: 1 1 100%;
+      }
+      .add-room-type input[type="number"] {
+        flex: 1 1 0;
+        width: auto !important;
+        min-width: 0;
+      }
+      .add-room-type .btn {
+        flex: 0 0 auto;
+      }
     }
 
     @media (max-width: 480px) {

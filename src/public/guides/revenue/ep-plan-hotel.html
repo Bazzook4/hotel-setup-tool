@@ -37,8 +37,8 @@
 
     body {
       font-family: 'Avenir', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #f5f7fa;
-      color: #333;
+      background: #F8F8F4;
+      color: #3E3D35;
       line-height: 1.7;
     }
 
@@ -52,9 +52,8 @@
     }
 
     .nav {
-      background: white;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      background: #3E3D35;
+      padding: 0 2rem;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -66,35 +65,58 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      height: 64px;
     }
 
     .nav-logo {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: 700;
-      color: var(--primary);
+      color: #fff;
       text-decoration: none;
+      letter-spacing: -0.02em;
     }
 
     .nav-logo span {
-      color: var(--secondary);
+      color: #89826E;
+      font-weight: 400;
     }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 0.25rem;
       list-style: none;
+      align-items: center;
     }
 
     .nav-links a {
       text-decoration: none;
-      color: #555;
+      color: rgba(255,255,255,0.65);
       font-weight: 500;
-      transition: color 0.2s;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.2s;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      color: var(--secondary);
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .nav-cta {
+      background: rgba(137, 130, 110, 0.25) !important;
+      color: #fff !important;
+      border: 1px solid rgba(137, 130, 110, 0.4);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
     }
 
     .breadcrumb {
@@ -459,7 +481,17 @@
     @media (max-width: 768px) {
       .nav-links {
         display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #3E3D35;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.25rem;
       }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
 
       .article-header h1 {
         font-size: 1.75rem;
@@ -880,7 +912,7 @@
     <div class="footer-container">
       <p>&copy; 2026 OnlineHotelier. All rights reserved.</p>
       <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
-        <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a>
+        <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a> &bull; <a href="https://www.onlinehotelier.com/contact" target="_blank">Contact Us</a>
       </p>
     </div>
   </footer>
