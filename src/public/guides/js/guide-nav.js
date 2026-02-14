@@ -40,6 +40,7 @@ const GUIDE_CATEGORIES = [
       { slug: 'best-ota-for-resorts.html', title: 'Best OTA for Resorts' },
       { slug: 'best-ota-for-homestays.html', title: 'Best OTA for Homestays' },
       { slug: 'booking-com-hotel-listing-guide.html', title: 'Booking.com Listing Guide' },
+      { slug: 'booking-genius-program.html', title: 'Booking.com Genius Program' },
     ]
   },
   {
