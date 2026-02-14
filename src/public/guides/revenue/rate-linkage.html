@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2BPYRGZTM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q2BPYRGZTM');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rate Linkage Explained: Manage Multiple Rate Plans Easily | OnlineHotelier Insights</title>
+  <meta name="description" content="Learn how to use rate linkage (derived rates, child rates) to manage multiple hotel rate plans efficiently. Save time with automatic rate calculations across refundable, non-refundable, and meal plans.">
+  <meta name="keywords" content="rate linkage hotel, derived rates booking.com, child rates agoda, makemytrip rate linkage, hotel rate management, multiple rate plans, refundable non-refundable rates">
+  <link rel="canonical" href="https://insights.onlinehotelier.com/guides/revenue/rate-linkage.html">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/guides/css/guide-layout.css">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Rate Linkage: Manage Multiple Hotel Rate Plans Easily">
+  <meta property="og:description" content="Learn how to use rate linkage to save time managing refundable, non-refundable, and meal-inclusive rate plans.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://insights.onlinehotelier.com/guides/revenue/rate-linkage.html">
+
+  <!-- Google AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-6118286051054894">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Avenir', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #F8F8F4;
+      color: #3E3D35;
+      line-height: 1.7;
+    }
+
+    :root {
+      --primary: #3E3D35;
+      --secondary: #89826E;
+      --accent: #89826E;
+      --primary-light: rgba(62, 61, 53, 0.1);
+      --secondary-light: rgba(137, 130, 110, 0.1);
+      --accent-light: rgba(137, 130, 110, 0.2);
+    }
+
+    /* Navigation */
+    .nav {
+      background: #3E3D35;
+      padding: 0 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo span {
+      color: #89826E;
+      font-weight: 400;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.25rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.65);
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .nav-cta {
+      background: rgba(137, 130, 110, 0.25) !important;
+      color: #fff !important;
+      border: 1px solid rgba(137, 130, 110, 0.4);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      background: white;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .breadcrumb-container {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .breadcrumb a {
+      color: var(--secondary);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    /* Article Container */
+    .article-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .article-header {
+      margin-bottom: 2rem;
+    }
+
+    .article-header h1 {
+      font-size: 2.25rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 1.5rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* Article Content */
+    .article-content {
+      background: white;
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+    }
+
+    .article-content h2 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin: 2rem 0 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+    }
+
+    .article-content h2:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .article-content h3 {
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    .article-content p {
+      margin-bottom: 1rem;
+      color: #444;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 1rem 0 1.5rem 1.5rem;
+      color: #444;
+    }
+
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .article-content strong {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Highlight Boxes */
+    .highlight-box {
+      background: var(--secondary-light);
+      border-left: 4px solid var(--secondary);
+      padding: 1.25rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+      color: var(--primary);
+    }
+
+    .highlight-box.tip {
+      background: var(--accent-light);
+      border-left-color: var(--accent);
+    }
+
+    .highlight-box strong {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Comparison Table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    .comparison-table th {
+      background: var(--primary);
+      color: white;
+      font-weight: 600;
+    }
+
+    .comparison-table tbody tr:hover {
+      background: #f8f9fa;
+    }
+
+    /* Example Box */
+    .example-box {
+      background: #f8f9fa;
+      border: 1px solid #e8ecf1;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .example-box h4 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .example-box p {
+      margin-bottom: 0.75rem;
+      color: #444;
+    }
+
+    .example-box .result {
+      background: white;
+      padding: 1rem;
+      border-radius: 6px;
+      margin-top: 1rem;
+      border-left: 3px solid var(--secondary);
+    }
+
+    /* Footer */
+    .footer {
+      background: #3E3D35;
+      color: white;
+      padding: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .footer a {
+      color: #89826E;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #3E3D35;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.25rem;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .article-header h1 {
+        font-size: 1.75rem;
+      }
+
+      .article-content {
+        padding: 1.5rem;
+      }
+
+      .comparison-table {
+        font-size: 0.85rem;
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+        padding: 0.75rem 0.5rem;
+      }
+    }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Rate Linkage Explained: How to Manage Multiple Hotel Rate Plans Easily",
+    "description": "Learn how to use rate linkage (derived rates, child rates) to save time managing multiple rate plans across OTAs.",
+    "author": {
+      "@type": "Organization",
+      "name": "OnlineHotelier"
+    }
+  }
+  </script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">OnlineHotelier <span>Insights</span></a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/guides/" class="active">Guides</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://www.onlinehotelier.com/contact" class="nav-cta" target="_blank">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="sidebar-overlay"></div>
+  <button class="sidebar-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+  <div class="guide-page-layout has-toc">
+    <aside class="guide-sidebar"></aside>
+
+    <div class="guide-main-content">
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; <a href="/guides/revenue/">Revenue</a> &rsaquo; Rate Linkage
+    </div>
+  </div>
+
+  <article class="article-container">
+    <header class="article-header">
+      <h1>Rate Linkage Explained: How to Manage Multiple Rate Plans Easily</h1>
+      <div class="article-meta">
+        <span>By OnlineHotelier Insights Team</span>
+        <span>Updated: February 2026</span>
+        <span>8 min read</span>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <p>Many small hotels avoid offering multiple rate plans because it seems too complicated to manage. But what if you could set one base rate and have all your other rates automatically calculated? That's exactly what <strong>rate linkage</strong> does — and it's available on almost every major OTA.</p>
+
+      <div class="highlight-box">
+        <strong>Quick Summary:</strong>
+        Rate linkage (also called derived rates or child rates) lets you define one master rate plan. All your other rate plans — refundable, non-refundable, weekly packages, meal-inclusive plans — are automatically calculated based on percentage adjustments you set once. Update one rate, and all linked rates update instantly.
+      </div>
+
+      <h2>What is Rate Linkage?</h2>
+
+      <p>Rate linkage is a feature that automatically calculates rates for secondary rate plans based on a primary (master) rate plan.</p>
+
+      <p>Instead of manually entering rates for every single rate plan across every single date, you:</p>
+
+      <ol>
+        <li>Set up your <strong>base rate plan</strong> (usually your standard flexible rate)</li>
+        <li>Create <strong>linked rate plans</strong> with percentage adjustments</li>
+        <li>Update just your base rate — all other rates adjust automatically</li>
+      </ol>
+
+      <p>Different OTAs call this feature by different names, but the concept is identical:</p>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>OTA Platform</th>
+            <th>Feature Name</th>
+            <th>Where to Find It</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Booking.com</strong></td>
+            <td>Derived Rates</td>
+            <td>Extranet → Rates & Availability → Rate Plans</td>
+          </tr>
+          <tr>
+            <td><strong>Agoda</strong></td>
+            <td>Child Rates</td>
+            <td>YCS Dashboard → Rate Management</td>
+          </tr>
+          <tr>
+            <td><strong>MakeMyTrip</strong></td>
+            <td>Rate Linkage</td>
+            <td>Extranet → Rate Plans</td>
+          </tr>
+          <tr>
+            <td><strong>Goibibo</strong></td>
+            <td>Linked Rates</td>
+            <td>Hotel Dashboard → Pricing</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Why Should You Use Rate Linkage?</h2>
+
+      <p>Rate linkage solves three major problems for hotel owners:</p>
+
+      <h3>1. Saves Massive Time</h3>
+      <p>Instead of updating 5-10 different rate plans every time demand changes, you update one base rate. The rest happen automatically. A task that used to take 30 minutes now takes 3 minutes.</p>
+
+      <h3>2. Prevents Pricing Errors</h3>
+      <p>Manually managing multiple rates leads to mistakes: non-refundable rates accidentally set higher than flexible rates, breakfast-inclusive rates cheaper than room-only, inconsistent discounts across dates. Rate linkage eliminates these errors.</p>
+
+      <h3>3. Encourages Better Rate Strategy</h3>
+      <p>Many hotels only offer one rate plan because managing multiple plans feels overwhelming. With rate linkage, you can confidently offer refundable, non-refundable, advance purchase, weekly rates, and meal plans — giving guests more options without extra work.</p>
+
+      <div class="highlight-box tip">
+        <strong>Real Impact:</strong>
+        Hotels offering 3-4 rate plans typically see 8-12% higher revenue than hotels with just one rate plan. Non-refundable rates alone can capture 15-20% more revenue from price-sensitive guests booking in advance.
+      </div>
+
+      <h2>How Rate Linkage Works: A Practical Example</h2>
+
+      <div class="example-box">
+        <h4>Example: 15-Room Boutique Hotel</h4>
+
+        <p><strong>Step 1:</strong> You set your <strong>Flexible Rate</strong> (master rate) at ₹3,000 per night.</p>
+
+        <p><strong>Step 2:</strong> You create linked rate plans with these adjustments:</p>
+        <ul>
+          <li><strong>Non-Refundable Rate:</strong> -10% from master = ₹2,700</li>
+          <li><strong>Breakfast Inclusive:</strong> +15% from master = ₹3,450</li>
+          <li><strong>Weekly Stay (7+ nights):</strong> -20% from master = ₹2,400</li>
+        </ul>
+
+        <p><strong>Step 3:</strong> You raise your base rate to ₹3,500 for a festival weekend.</p>
+
+        <div class="result">
+          <strong>Automatic Result:</strong><br>
+          • Flexible Rate: ₹3,500<br>
+          • Non-Refundable: ₹3,150 (automatically adjusted)<br>
+          • Breakfast Inclusive: ₹4,025 (automatically adjusted)<br>
+          • Weekly Stay: ₹2,800 (automatically adjusted)
+        </div>
+
+        <p>You changed <strong>one number</strong>. Four rates updated correctly across all channels. Zero manual work. Zero errors.</p>
+      </div>
+
+      <h2>Common Rate Plans to Link</h2>
+
+      <p>Here are the most effective rate plans to set up using rate linkage:</p>
+
+      <h3>1. Non-Refundable Rate</h3>
+      <p><strong>Discount:</strong> -10% to -15% from base rate<br>
+      <strong>Why it works:</strong> Guests booking in advance are willing to commit in exchange for savings. You get guaranteed revenue.</p>
+
+      <h3>2. Advance Purchase Rates</h3>
+      <p><strong>Discount:</strong> -15% to -25% for bookings 15-30 days in advance<br>
+      <strong>Why it works:</strong> Encourages early bookings, helps forecast demand, locks in revenue.</p>
+
+      <h3>3. Meal-Inclusive Plans</h3>
+      <p><strong>Markup:</strong> +10% to +20% for breakfast, +30% to +50% for MAP/AP<br>
+      <strong>Why it works:</strong> Increases total revenue per booking, enhances guest convenience.</p>
+
+      <h3>4. Extended Stay Discounts</h3>
+      <p><strong>Discount:</strong> -15% to -25% for stays of 5+ or 7+ nights<br>
+      <strong>Why it works:</strong> Fills rooms during low-occupancy periods, reduces per-night operational costs.</p>
+
+      <h3>5. Last-Minute Deals</h3>
+      <p><strong>Discount:</strong> -20% to -30% for same-day or next-day bookings<br>
+      <strong>Why it works:</strong> Sells inventory that would otherwise go unsold, better than ₹0 revenue.</p>
+
+      <h2>How to Set Up Rate Linkage (Step-by-Step)</h2>
+
+      <h3>On Booking.com</h3>
+      <ol>
+        <li>Log into your <strong>Extranet</strong></li>
+        <li>Go to <strong>Rates & Availability</strong> → <strong>Rate Plans</strong></li>
+        <li>Create a new rate plan and select <strong>"Derived Rate"</strong></li>
+        <li>Choose your <strong>master rate plan</strong> (e.g., Flexible Rate)</li>
+        <li>Set the <strong>percentage adjustment</strong> (e.g., -10% for non-refundable)</li>
+        <li>Define cancellation policy and other conditions</li>
+        <li>Save — the derived rate now updates automatically</li>
+      </ol>
+
+      <h3>On Agoda</h3>
+      <ol>
+        <li>Log into <strong>YCS (Your Control Center)</strong></li>
+        <li>Navigate to <strong>Rate Management</strong></li>
+        <li>Select <strong>"Create Child Rate"</strong></li>
+        <li>Link to your <strong>parent rate plan</strong></li>
+        <li>Set percentage or fixed amount adjustment</li>
+        <li>Configure restrictions (min nights, advance booking, etc.)</li>
+        <li>Activate — child rate syncs with parent automatically</li>
+      </ol>
+
+      <h3>On MakeMyTrip</h3>
+      <ol>
+        <li>Access your hotel <strong>Extranet</strong></li>
+        <li>Go to <strong>Rate Plans</strong> section</li>
+        <li>Click <strong>"Add Linked Rate"</strong></li>
+        <li>Select the <strong>base rate plan</strong></li>
+        <li>Enter your <strong>rate linkage percentage</strong></li>
+        <li>Set booking conditions</li>
+        <li>Submit — linked rate calculates automatically</li>
+      </ol>
+
+      <div class="highlight-box tip">
+        <strong>Pro Tip:</strong>
+        If you use a Channel Manager (like eZee, RMS Cloud, SiteMinder), you can set up rate linkage once in your PMS, and it will sync to all OTAs automatically. This is the most efficient way to manage rates across 5-10 channels.
+      </div>
+
+      <h2>Best Practices for Rate Linkage</h2>
+
+      <h3>✅ Do This:</h3>
+      <ul>
+        <li><strong>Start simple:</strong> Begin with just 2-3 linked rates (flexible, non-refundable, breakfast-inclusive)</li>
+        <li><strong>Test your percentages:</strong> Run rates for 2-4 weeks, then adjust based on booking patterns</li>
+        <li><strong>Make non-refundable rates attractive:</strong> -10% to -15% discount is the sweet spot</li>
+        <li><strong>Review quarterly:</strong> Adjust your linkage percentages seasonally if needed</li>
+        <li><strong>Keep it logical:</strong> Non-refundable should always be cheaper than flexible; meal plans should always cost more than room-only</li>
+      </ul>
+
+      <h3>❌ Don't Do This:</h3>
+      <ul>
+        <li><strong>Don't over-complicate:</strong> 8-10 rate plans is overkill; 3-5 is ideal for most hotels</li>
+        <li><strong>Don't set tiny discounts:</strong> A -3% non-refundable discount won't motivate anyone; aim for -10% minimum</li>
+        <li><strong>Don't forget restrictions:</strong> Your 7-night stay rate should require a 7-night minimum booking</li>
+        <li><strong>Don't link everything:</strong> Special promotional rates should be standalone, not linked</li>
+      </ul>
+
+      <h2>When NOT to Use Rate Linkage</h2>
+
+      <p>Rate linkage is powerful, but there are scenarios where manual rates work better:</p>
+
+      <ul>
+        <li><strong>Flash sales or limited-time promotions:</strong> These require fixed rates, not percentage-based adjustments</li>
+        <li><strong>Corporate contracts:</strong> Negotiated rates are usually fixed amounts, not percentages</li>
+        <li><strong>Event-specific pricing:</strong> Wedding blocks or conference rates often need custom pricing</li>
+        <li><strong>Dynamic pricing experiments:</strong> If you're testing aggressive pricing changes on one plan only</li>
+      </ul>
+
+      <h2>The Bottom Line</h2>
+
+      <p>Rate linkage is one of the simplest ways to increase revenue without increasing workload. It lets small hotels compete with larger properties by offering the same variety of rate plans — refundable, non-refundable, advance purchase, meal-inclusive — without spending hours updating prices.</p>
+
+      <p>If you're currently managing multiple rate plans manually, or if you've avoided creating multiple rate plans because it seems too complex, rate linkage solves both problems.</p>
+
+      <div class="highlight-box">
+        <strong>Next Steps:</strong>
+        <ol style="margin: 0.5rem 0 0 1.5rem;">
+          <li>Log into your OTA extranet (Booking.com, Agoda, or MakeMyTrip)</li>
+          <li>Set up one derived/child/linked rate as a test (start with non-refundable at -10%)</li>
+          <li>Monitor bookings for 2-3 weeks</li>
+          <li>Add 1-2 more linked rates once you're comfortable</li>
+        </ol>
+      </div>
+
+      <p>Spending 30 minutes setting up rate linkage today will save you hours every week — and likely increase your revenue in the process.</p>
+
+    </div>
+  </article>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 <a href="https://www.onlinehotelier.com">OnlineHotelier</a>. All rights reserved.</p>
+  </footer>
+
+  <script src="/guides/js/guide-nav.js"></script>
+</body>
+</html>

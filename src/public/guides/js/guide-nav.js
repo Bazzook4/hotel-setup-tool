@@ -16,6 +16,7 @@ const GUIDE_CATEGORIES = [
       { slug: 'cp-plan-hotel.html', title: 'CP Plan (Continental Plan)' },
       { slug: 'map-plan-hotel.html', title: 'MAP Plan (Modified American)' },
       { slug: 'ap-plan-hotel.html', title: 'AP Plan (American Plan)' },
+      { slug: 'rate-linkage.html', title: 'Rate Linkage (Derived Rates)' },
       { slug: 'revpar.html', title: 'RevPAR' },
       { slug: 'adr.html', title: 'ADR & ARR' },
       { slug: 'occupancy.html', title: 'Occupancy Rate' },
