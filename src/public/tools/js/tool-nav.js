@@ -12,12 +12,6 @@ const TOOLS = [
     desc: 'Configure dynamic pricing for your hotel'
   },
   {
-    slug: 'revenue-management-results/',
-    title: 'Revenue Playbook',
-    icon: '\uD83D\uDCD6',
-    desc: 'Your personalized pricing action plan'
-  },
-  {
     slug: 'ota-commission-calculator/',
     title: 'OTA Commission Calculator',
     icon: '\uD83D\uDCB0',
@@ -51,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   buildToolSidebar(currentPath);
   setupToolSidebarToggle();
-  injectToolPrevNext(currentPath);
 });
 
 // ===== SIDEBAR =====
@@ -110,49 +103,4 @@ function setupToolSidebarToggle() {
   }
 }
 
-// ===== PREV/NEXT NAVIGATION =====
-function injectToolPrevNext(currentPath) {
-  var container = document.querySelector('.prev-next-nav');
-  if (!container) return;
-
-  var prevTool = null;
-  var nextTool = null;
-
-  for (var i = 0; i < TOOLS.length; i++) {
-    if (currentPath.indexOf(TOOLS[i].slug) !== -1) {
-      if (i > 0) {
-        prevTool = { title: TOOLS[i - 1].title, href: TOOLS_BASE + TOOLS[i - 1].slug };
-      }
-      if (i < TOOLS.length - 1) {
-        nextTool = { title: TOOLS[i + 1].title, href: TOOLS_BASE + TOOLS[i + 1].slug };
-      }
-      break;
-    }
-  }
-
-  if (!prevTool && !nextTool) {
-    container.style.display = 'none';
-    return;
-  }
-
-  var html = '';
-  if (prevTool) {
-    html += '<a href="' + prevTool.href + '" class="prev-next-link prev">';
-    html += '<div class="pn-direction">Previous</div>';
-    html += '<div class="pn-title">' + prevTool.title + '</div>';
-    html += '</a>';
-  } else {
-    html += '<div class="prev-next-placeholder"></div>';
-  }
-
-  if (nextTool) {
-    html += '<a href="' + nextTool.href + '" class="prev-next-link next">';
-    html += '<div class="pn-direction">Next</div>';
-    html += '<div class="pn-title">' + nextTool.title + '</div>';
-    html += '</a>';
-  } else {
-    html += '<div class="prev-next-placeholder"></div>';
-  }
-
-  container.innerHTML = html;
-}
+// Prev/Next navigation removed - not needed for standalone tools

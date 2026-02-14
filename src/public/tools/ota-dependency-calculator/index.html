@@ -124,26 +124,49 @@
       --accent-light: rgba(137, 130, 110, 0.2);
     }
 
-    .header {
-      background: #3E3D35;
-      color: white;
-      padding: 2rem;
-      text-align: center;
+    /* Breadcrumb */
+    .breadcrumb {
+      background: white;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #eee;
     }
 
-    .header h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+    .breadcrumb-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      font-size: 0.9rem;
+      color: #666;
     }
 
-    .header p {
-      opacity: 0.9;
+    .breadcrumb a {
+      color: var(--secondary);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1140px;
       margin: 0 auto;
-      padding: 2rem;
+      padding: 2rem 1.5rem;
+    }
+
+    /* Page Header */
+    .page-header {
+      margin-bottom: 2rem;
+    }
+
+    .page-header h1 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: #666;
     }
 
     /* SEO Intro Section */
@@ -851,16 +874,21 @@
   <div class="sidebar-overlay"></div>
   <button class="sidebar-toggle" aria-label="Toggle navigation">&#9776;</button>
 
-  <div class="header">
-    <h1>OTA Dependency Calculator</h1>
-    <p>Analyze Your Channel Mix & Revenue Leakage</p>
-  </div>
-
   <div class="tool-page-layout">
     <aside class="tool-sidebar"></aside>
     <div class="tool-main-content">
 
+  <div class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="/">Home</a> › <a href="/tools/">Tools</a> › OTA Dependency Calculator
+    </div>
+  </div>
+
   <div class="container">
+    <div class="page-header">
+      <h1>OTA Dependency Calculator</h1>
+      <p class="page-subtitle">Analyze Your Booking Channel Mix</p>
+    </div>
     <!-- SEO Intro Section -->
     <div class="seo-intro">
       <div class="seo-question">How dependent is your hotel on OTAs?</div>
@@ -1437,7 +1465,6 @@
     });
   </script>
 
-    <div class="prev-next-nav"></div>
     </div>
   </div>
 
