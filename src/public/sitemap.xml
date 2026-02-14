@@ -63,7 +63,7 @@
   <!-- OTA Guides -->
   <url>
     <loc>https://insights.onlinehotelier.com/guides/ota/</loc>
-    <lastmod>2026-02-08</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -103,11 +103,17 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://insights.onlinehotelier.com/guides/ota/booking-genius-program.html</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
   <!-- Revenue Guides -->
   <url>
     <loc>https://insights.onlinehotelier.com/guides/revenue/</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -194,6 +200,12 @@
     <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://insights.onlinehotelier.com/guides/revenue/rate-linkage.html</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <!-- Software Guides -->
