@@ -17,6 +17,12 @@
   <link rel="canonical" href="https://insights.onlinehotelier.com/guides/revenue/lead-time.html">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="stylesheet" href="/guides/css/guide-layout.css">
+
+  <!-- AI/LLM Crawler Meta Tags -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
   <meta name="google-adsense-account" content="ca-pub-6118286051054894">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
   <style>
@@ -64,6 +70,32 @@
     .footer a { color: #89826E; text-decoration: none; }
     .nav-cta { background: rgba(137, 130, 110, 0.25) !important; color: #fff !important; border: 1px solid rgba(137, 130, 110, 0.4); } .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; } @media (max-width: 768px) { .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #3E3D35; flex-direction: column; padding: 1rem; gap: 0.25rem; } .nav-links.open { display: flex; } .nav-toggle { display: block; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } }
   </style>
+
+  <!-- Structured Data - Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OnlineHotelier",
+    "url": "https://www.onlinehotelier.com",
+    "logo": "https://insights.onlinehotelier.com/favicon.png",
+    "sameAs": ["https://insights.onlinehotelier.com"]
+  }
+  </script>
+
+  <!-- Structured Data - Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://insights.onlinehotelier.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://insights.onlinehotelier.com/guides/"},
+      {"@type": "ListItem", "position": 3, "name": "Revenue", "item": "https://insights.onlinehotelier.com/guides/revenue/"},
+      {"@type": "ListItem", "position": 4, "name": "Lead Time", "item": "https://insights.onlinehotelier.com/guides/revenue/lead-time.html"}
+    ]
+  }
+  </script>
 </head>
 <body>
   <nav class="nav">
@@ -111,7 +143,7 @@
         <p>If a guest books on January 1st for a January 15th stay, the lead time is 14 days.</p>
       </div>
 
-      <h2>Lead Time vs Booking Window</h2>
+      <h2 id="lead-time-vs-booking-window">Lead Time vs Booking Window</h2>
 
       <table class="comparison-table">
         <tr>
@@ -136,7 +168,7 @@
         </tr>
       </table>
 
-      <h2>Why Lead Time Matters</h2>
+      <h2 id="why-lead-time-matters">Why Lead Time Matters</h2>
 
       <div class="example-box">
         <h4>Real-World Example</h4>
@@ -145,7 +177,7 @@
         <p><strong>If your average lead time is 21 days:</strong> Worry! At 5 days out, you should already be at 80%+. Consider dropping rates.</p>
       </div>
 
-      <h2>Typical Lead Times by Segment</h2>
+      <h2 id="typical-lead-times">Typical Lead Times by Segment</h2>
 
       <table class="comparison-table">
         <tr>
@@ -182,7 +214,7 @@
         </tr>
       </table>
 
-      <h2>Where Lead Time Data is Used</h2>
+      <h2 id="where-lead-time-is-used">Where Lead Time Data is Used</h2>
 
       <table class="comparison-table">
         <tr>
@@ -211,7 +243,7 @@
         </tr>
       </table>
 
-      <h2>Lead Time Pricing Strategy</h2>
+      <h2 id="pricing-strategy">Lead Time Pricing Strategy</h2>
 
       <div class="highlight-box tip">
         <strong>Best Practice:</strong> Charge more for advance bookings, less for last-minute. Why? Early bookers are committed and less price-sensitive. Last-minute bookers have fewer options.
@@ -250,7 +282,7 @@
 
       <p><em>Note: This is just one strategy. Some hotels do the opposite - charge more for last-minute during high demand!</em></p>
 
-      <h2>How to Track Lead Time</h2>
+      <h2 id="how-to-track">How to Track Lead Time</h2>
 
       <ol>
         <li><strong>PMS Reports:</strong> Most property management systems track booking date vs arrival date</li>
@@ -259,7 +291,7 @@
         <li><strong>Revenue Management Systems:</strong> Automated tracking and alerts</li>
       </ol>
 
-      <h2>Booking Window Best Practices</h2>
+      <h2 id="booking-window-best-practices">Booking Window Best Practices</h2>
 
       <ul>
         <li><strong>Open 365 days out:</strong> Standard for most hotels. Don't miss early planners.</li>

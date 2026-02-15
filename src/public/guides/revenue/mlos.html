@@ -17,6 +17,12 @@
   <link rel="canonical" href="https://insights.onlinehotelier.com/guides/revenue/mlos.html">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="stylesheet" href="/guides/css/guide-layout.css">
+
+  <!-- AI/LLM Crawler Meta Tags -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
   <meta name="google-adsense-account" content="ca-pub-6118286051054894">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
   <style>
@@ -64,6 +70,32 @@
     .footer a { color: #89826E; text-decoration: none; }
     .nav-cta { background: rgba(137, 130, 110, 0.25) !important; color: #fff !important; border: 1px solid rgba(137, 130, 110, 0.4); } .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; } @media (max-width: 768px) { .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #3E3D35; flex-direction: column; padding: 1rem; gap: 0.25rem; } .nav-links.open { display: flex; } .nav-toggle { display: block; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } }
   </style>
+
+  <!-- Structured Data - Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OnlineHotelier",
+    "url": "https://www.onlinehotelier.com",
+    "logo": "https://insights.onlinehotelier.com/favicon.png",
+    "sameAs": ["https://insights.onlinehotelier.com"]
+  }
+  </script>
+
+  <!-- Structured Data - Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://insights.onlinehotelier.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://insights.onlinehotelier.com/guides/"},
+      {"@type": "ListItem", "position": 3, "name": "Revenue", "item": "https://insights.onlinehotelier.com/guides/revenue/"},
+      {"@type": "ListItem", "position": 4, "name": "MLOS", "item": "https://insights.onlinehotelier.com/guides/revenue/mlos.html"}
+    ]
+  }
+  </script>
 </head>
 <body>
   <nav class="nav">
@@ -111,7 +143,7 @@
         <p>A restriction that requires guests to stay a minimum number of nights when booking certain dates. Example: "2-night minimum on weekends."</p>
       </div>
 
-      <h2>Why Use MLOS?</h2>
+      <h2 id="why-use-mlos">Why Use MLOS?</h2>
 
       <p>MLOS is a revenue management tool to maximize occupancy and revenue during high-demand periods.</p>
 
@@ -122,7 +154,7 @@
         <p><strong>With MLOS (2 nights):</strong> Guests must book Thu+Fri or Fri+Sat. You fill more nights!</p>
       </div>
 
-      <h2>When to Use MLOS</h2>
+      <h2 id="when-to-use">When to Use MLOS</h2>
 
       <table class="comparison-table">
         <tr>
@@ -155,7 +187,7 @@
         </tr>
       </table>
 
-      <h2>Types of Stay Restrictions</h2>
+      <h2 id="types-of-restrictions">Types of Stay Restrictions</h2>
 
       <table class="comparison-table">
         <tr>
@@ -190,7 +222,7 @@
         </tr>
       </table>
 
-      <h2>MLOS Example Scenarios</h2>
+      <h2 id="example-scenarios">MLOS Example Scenarios</h2>
 
       <div class="example-box">
         <h4>Scenario 1: Beach Resort - Goa</h4>
@@ -206,7 +238,7 @@
         <p><strong>Result:</strong> Exhibitors book multiple nights, higher total revenue</p>
       </div>
 
-      <h2>How to Set MLOS</h2>
+      <h2 id="how-to-set">How to Set MLOS</h2>
 
       <ol>
         <li><strong>In your PMS:</strong> Set MLOS for specific dates in rate/restriction settings</li>
@@ -214,7 +246,7 @@
         <li><strong>Via Channel Manager:</strong> Push MLOS to all channels from one place</li>
       </ol>
 
-      <h2>MLOS Best Practices</h2>
+      <h2 id="best-practices">MLOS Best Practices</h2>
 
       <ul>
         <li><strong>Apply early:</strong> Set MLOS weeks/months before peak dates</li>
@@ -228,7 +260,7 @@
         <strong>Pro Tip:</strong> Create a "2-night package" with slight discount instead of strict MLOS. Same effect, better guest perception!
       </div>
 
-      <h2>MLOS Risks</h2>
+      <h2 id="mlos-risks">MLOS Risks</h2>
 
       <ul>
         <li><strong>Lost bookings:</strong> Guests who can only stay 1 night will book elsewhere</li>

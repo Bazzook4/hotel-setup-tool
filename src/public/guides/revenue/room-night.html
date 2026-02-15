@@ -17,6 +17,12 @@
   <link rel="canonical" href="https://insights.onlinehotelier.com/guides/revenue/room-night.html">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="stylesheet" href="/guides/css/guide-layout.css">
+
+  <!-- AI/LLM Crawler Meta Tags -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
   <meta name="google-adsense-account" content="ca-pub-6118286051054894">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
   <style>
@@ -63,6 +69,32 @@
     .footer a { color: #89826E; text-decoration: none; }
     .nav-cta { background: rgba(137, 130, 110, 0.25) !important; color: #fff !important; border: 1px solid rgba(137, 130, 110, 0.4); } .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; } @media (max-width: 768px) { .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #3E3D35; flex-direction: column; padding: 1rem; gap: 0.25rem; } .nav-links.open { display: flex; } .nav-toggle { display: block; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } }
   </style>
+
+  <!-- Structured Data - Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OnlineHotelier",
+    "url": "https://www.onlinehotelier.com",
+    "logo": "https://insights.onlinehotelier.com/favicon.png",
+    "sameAs": ["https://insights.onlinehotelier.com"]
+  }
+  </script>
+
+  <!-- Structured Data - Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://insights.onlinehotelier.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://insights.onlinehotelier.com/guides/"},
+      {"@type": "ListItem", "position": 3, "name": "Revenue", "item": "https://insights.onlinehotelier.com/guides/revenue/"},
+      {"@type": "ListItem", "position": 4, "name": "Room Night", "item": "https://insights.onlinehotelier.com/guides/revenue/room-night.html"}
+    ]
+  }
+  </script>
 </head>
 <body>
   <nav class="nav">
@@ -110,7 +142,7 @@
         <p>The basic unit of hotel inventory. If a guest stays in one room for 3 nights, that's 3 room nights. If 10 guests stay 1 night each, that's also 10 room nights.</p>
       </div>
 
-      <h2>Room Night Examples</h2>
+      <h2 id="room-night-examples">Room Night Examples</h2>
 
       <div class="example-box">
         <h4>Example 1: Single Guest</h4>
@@ -130,7 +162,7 @@
         <p>50 rooms × 31 nights = <strong>1,550 available room nights</strong></p>
       </div>
 
-      <h2>Where Room Nights are Used</h2>
+      <h2 id="where-room-nights-are-used">Where Room Nights are Used</h2>
 
       <table class="comparison-table">
         <tr>
@@ -163,7 +195,7 @@
         </tr>
       </table>
 
-      <h2>Room Night vs Guest Night</h2>
+      <h2 id="room-night-vs-guest-night">Room Night vs Guest Night</h2>
 
       <table class="comparison-table">
         <tr>
@@ -188,7 +220,7 @@
         </tr>
       </table>
 
-      <h2>Available Room Nights Calculation</h2>
+      <h2 id="available-room-nights">Available Room Nights Calculation</h2>
 
       <div class="highlight-box">
         <strong>Formula:</strong> Total Rooms × Days in Period = Available Room Nights
@@ -225,7 +257,7 @@
         </table>
       </div>
 
-      <h2>Room Night Metrics</h2>
+      <h2 id="room-night-metrics">Room Night Metrics</h2>
 
       <ul>
         <li><strong>Available Room Nights:</strong> Total inventory you have to sell</li>
