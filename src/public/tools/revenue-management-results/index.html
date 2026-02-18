@@ -23,7 +23,7 @@
   <meta name="google-adsense-account" content="ca-pub-6118286051054894">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="/tools/js/calendar-data.js"></script>
+  <script src="/js/calendar-data.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -507,6 +507,90 @@
     .dates-column::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
     .dates-column::-webkit-scrollbar-thumb { background: var(--secondary); border-radius: 10px; }
 
+    /* Upcoming Demand Peaks Widget */
+    .peaks-widget {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+      margin-bottom: 1.5rem;
+      border-top: 4px solid var(--secondary);
+    }
+    .peaks-widget-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .peaks-widget-header h3 {
+      font-size: 1.1rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0;
+    }
+    .peaks-widget-header a {
+      font-size: 0.8rem;
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .peaks-widget-header a:hover { text-decoration: underline; }
+    .peaks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.85rem;
+    }
+    .peak-card {
+      border-radius: 9px;
+      padding: 0.9rem 1rem;
+      border-left: 4px solid;
+      position: relative;
+    }
+    .peak-card-label {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.4rem;
+    }
+    .peak-card-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.2rem;
+    }
+    .peak-card-dates {
+      font-size: 0.78rem;
+      color: #555;
+      margin-bottom: 0.4rem;
+    }
+    .peak-card-strategy {
+      font-size: 0.75rem;
+      color: #666;
+      line-height: 1.4;
+    }
+    .peak-card-pct {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+    .peaks-empty {
+      text-align: center;
+      padding: 1.5rem;
+      color: #888;
+      font-size: 0.9rem;
+    }
+
     /* Destination Insights */
     .destination-overview {
       background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
@@ -703,6 +787,17 @@
       <div class="summary-card">
         <div class="value" id="sumSameDay">-</div>
         <div class="label">Same-Day Bookings</div>
+      </div>
+    </div>
+
+    <!-- UPCOMING DEMAND PEAKS WIDGET -->
+    <div class="peaks-widget" id="peaksWidget">
+      <div class="peaks-widget-header">
+        <h3>⚡ Upcoming Demand Peaks — Next 90 Days</h3>
+        <a href="/tools/demand-calendar/">View Full Calendar →</a>
+      </div>
+      <div class="peaks-grid" id="peaksGrid">
+        <!-- Populated by JS using CalendarData.getUpcomingPeaks() -->
       </div>
     </div>
 
@@ -1138,6 +1233,7 @@
       document.getElementById('sumRoomTypes').textContent = roomTypes.length || '0';
       document.getElementById('sumSameDay').textContent = savedData.leadTime ? `${savedData.leadTime.lead0}%` : '-';
 
+      generateUpcomingPeaks();
       generateOccupancyResults();
       generateOverbookingResults();
       generateInventoryResults();
@@ -1405,6 +1501,38 @@
     // =============================================
     // 5. SPECIAL DATES & CALENDAR
     // =============================================
+    // =============================================
+    // UPCOMING DEMAND PEAKS (uses getUpcomingPeaks)
+    // =============================================
+    function generateUpcomingPeaks() {
+      const state = savedData.state || '';
+      const hotelType = savedData.hotelType || '';
+      const peaks = CalendarData.getUpcomingPeaks(state, hotelType, 90, 8);
+      const grid = document.getElementById('peaksGrid');
+      const demandConfig = CalendarData.demandConfig;
+
+      if (!peaks.length) {
+        grid.innerHTML = '<div class="peaks-empty">No major demand peaks in the next 90 days for your location. Check the <a href="/tools/demand-calendar/" style="color:var(--secondary)">full calendar</a> for upcoming events.</div>';
+        return;
+      }
+
+      grid.innerHTML = peaks.map(event => {
+        const cfg = demandConfig[event.demandLevel] || demandConfig.medium;
+        const dateStr = CalendarData.formatDateRange(event.start, event.end);
+        const pct = event.multiplier ? `+${Math.round((event.multiplier - 1) * 100)}%` : '';
+
+        return `
+          <div class="peak-card" style="background: ${cfg.bg}; border-left-color: ${cfg.color};">
+            <span class="peak-card-label" style="background: ${cfg.color}; color: white;">${cfg.label}</span>
+            ${pct ? `<span class="peak-card-pct" style="color: ${cfg.color};">${pct}</span>` : ''}
+            <div class="peak-card-name">${event.name}</div>
+            <div class="peak-card-dates">${dateStr}${event.duration > 1 ? ` · ${event.duration} days` : ''}</div>
+            ${event.strategy ? `<div class="peak-card-strategy">${event.strategy}</div>` : ''}
+          </div>
+        `;
+      }).join('');
+    }
+
     function generateSpecialDatesResults() {
       const state = savedData.state || '';
       const allDates = CalendarData.getEventsForState(state);

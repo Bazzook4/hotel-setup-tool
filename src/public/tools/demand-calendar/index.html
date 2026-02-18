@@ -430,6 +430,206 @@
       padding: 0.5rem 0;
     }
 
+    /* ==========================================
+       PERSONALISATION PANEL
+       ========================================== */
+    .personalise-panel {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+      margin-bottom: 1.5rem;
+      border-top: 4px solid var(--secondary);
+    }
+
+    .personalise-panel h2 {
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .personalise-subtitle {
+      font-size: 0.85rem;
+      color: #888;
+      margin-bottom: 1.25rem;
+    }
+
+    .personalise-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 1rem;
+      align-items: end;
+    }
+
+    @media (max-width: 640px) {
+      .personalise-form {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .form-group select {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--primary);
+      background: #f8f9fa;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--secondary);
+      background: white;
+    }
+
+    .btn-personalise {
+      padding: 0.65rem 1.5rem;
+      background: var(--secondary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-personalise:hover {
+      background: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .auto-filled-notice {
+      display: none;
+      background: #d1fae5;
+      border: 1px solid #34d399;
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      font-size: 0.8rem;
+      color: #065f46;
+      margin-top: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .auto-filled-notice.hidden { display: none; }
+
+    /* ==========================================
+       PERSONALISED RESULTS SECTION
+       ========================================== */
+    .personalised-section {
+      display: none;
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+      margin-bottom: 1.5rem;
+    }
+
+    .personalised-section.visible { display: block; }
+
+    .personalised-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #f0f0f0;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .personalised-header h2 {
+      font-size: 1.15rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hotel-context-badge {
+      font-size: 0.75rem;
+      background: var(--secondary);
+      color: white;
+      padding: 0.2rem 0.65rem;
+      border-radius: 12px;
+      font-weight: 500;
+    }
+
+    .personalised-events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .peak-event-card {
+      border-radius: 10px;
+      padding: 1rem;
+      border-left: 4px solid;
+      position: relative;
+    }
+
+    .peak-event-card .event-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .peak-event-card h4 {
+      font-size: 0.95rem;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .peak-event-card .event-dates {
+      font-size: 0.8rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .peak-event-card .event-strategy {
+      font-size: 0.78rem;
+      color: #666;
+      line-height: 1.4;
+    }
+
+    .peak-event-card .event-multiplier {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #555;
+    }
+
+    .demand-empty {
+      text-align: center;
+      padding: 2rem;
+      color: #888;
+      font-size: 0.9rem;
+    }
+
     /* Tabs for sections */
     .section-tabs {
       display: flex;
@@ -584,6 +784,97 @@
         <span>14+ Long Weekends</span>
         <span>Wedding Season Dates</span>
         <span>Regional Festivals</span>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         PERSONALISATION PANEL
+         ========================================== -->
+    <div class="personalise-panel">
+      <h2>Personalise for Your Hotel</h2>
+      <p class="personalise-subtitle">Select your state and hotel type to see demand events most relevant to you</p>
+
+      <div class="personalise-form">
+        <div class="form-group">
+          <label for="stateSelect">Your State / UT</label>
+          <select id="stateSelect">
+            <option value="">All India (National Events)</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+            <option value="Assam">Assam</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Chhattisgarh">Chhattisgarh</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Manipur">Manipur</option>
+            <option value="Meghalaya">Meghalaya</option>
+            <option value="Mizoram">Mizoram</option>
+            <option value="Nagaland">Nagaland</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Sikkim">Sikkim</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Tripura">Tripura</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="Uttarakhand">Uttarakhand</option>
+            <option value="West Bengal">West Bengal</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Jammu and Kashmir">Jammu & Kashmir</option>
+            <option value="Ladakh">Ladakh</option>
+            <option value="Puducherry">Puducherry</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="hotelTypeSelect">Hotel Type</label>
+          <select id="hotelTypeSelect">
+            <option value="">All Types</option>
+            <option value="business">Business Hotel</option>
+            <option value="leisure">Leisure / Resort</option>
+            <option value="hillstation">Hill Station</option>
+            <option value="beach">Beach / Coastal</option>
+            <option value="heritage">Heritage / Boutique</option>
+            <option value="pilgrimage">Pilgrimage / Religious</option>
+            <option value="wildlife">Wildlife / Jungle</option>
+            <option value="budget">Budget / Economy</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <button class="btn-personalise" id="btnPersonalise" onclick="applyPersonalisation()">
+            Show My Calendar
+          </button>
+        </div>
+      </div>
+
+      <div class="auto-filled-notice hidden" id="autoFilledNotice">
+        <span>✓</span>
+        <span id="autoFilledText">Auto-filled from your Revenue Management setup</span>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         PERSONALISED RESULTS
+         ========================================== -->
+    <div class="personalised-section" id="personalisedSection">
+      <div class="personalised-header">
+        <h2>
+          Your Demand Calendar
+          <span class="hotel-context-badge" id="hotelContextBadge"></span>
+        </h2>
+        <span style="font-size: 0.8rem; color: #888;" id="eventCountLabel"></span>
+      </div>
+      <div class="personalised-events-grid" id="personalisedEventsGrid">
+        <!-- Populated by JS -->
       </div>
     </div>
 
@@ -1196,7 +1487,78 @@
   </div>
 
   <script>
-    // Initialize calendar page with shared CalendarData
+    // =============================================
+    // PERSONALISATION LOGIC
+    // =============================================
+
+    const hotelTypeLabels = {
+      business: 'Business Hotel',
+      leisure: 'Leisure / Resort',
+      hillstation: 'Hill Station',
+      beach: 'Beach / Coastal',
+      heritage: 'Heritage / Boutique',
+      pilgrimage: 'Pilgrimage / Religious',
+      wildlife: 'Wildlife / Jungle',
+      budget: 'Budget / Economy'
+    };
+
+    function applyPersonalisation() {
+      const state = document.getElementById('stateSelect').value;
+      const hotelType = document.getElementById('hotelTypeSelect').value;
+
+      const events = CalendarData.getPersonalisedEvents(state, hotelType, { upcomingOnly: true });
+      renderPersonalisedEvents(events, state, hotelType);
+    }
+
+    function renderPersonalisedEvents(events, state, hotelType) {
+      const section = document.getElementById('personalisedSection');
+      const grid = document.getElementById('personalisedEventsGrid');
+      const badge = document.getElementById('hotelContextBadge');
+      const countLabel = document.getElementById('eventCountLabel');
+
+      // Build context badge label
+      const parts = [];
+      if (hotelType) parts.push(hotelTypeLabels[hotelType] || hotelType);
+      if (state) parts.push(state);
+      badge.textContent = parts.length ? parts.join(' · ') : 'All India';
+
+      countLabel.textContent = events.length
+        ? `${events.length} upcoming demand event${events.length > 1 ? 's' : ''}`
+        : '';
+
+      if (!events.length) {
+        grid.innerHTML = '<div class="demand-empty">No upcoming demand events found for your selection. Try a broader hotel type or state.</div>';
+        section.classList.add('visible');
+        return;
+      }
+
+      const demandConfig = CalendarData.demandConfig;
+
+      grid.innerHTML = events.map(event => {
+        const cfg = demandConfig[event.demandLevel] || demandConfig.medium;
+        const dateStr = CalendarData.formatDateRange(event.start, event.end);
+        const pct = event.multiplier ? `+${Math.round((event.multiplier - 1) * 100)}%` : '';
+
+        return `
+          <div class="peak-event-card" style="background: ${cfg.bg}; border-left-color: ${cfg.color};">
+            <span class="event-label" style="background: ${cfg.color}; color: white;">${cfg.label}</span>
+            ${pct ? `<span class="event-multiplier" style="color: ${cfg.color};">${pct}</span>` : ''}
+            <h4>${event.name}</h4>
+            <div class="event-dates">${dateStr}${event.duration > 1 ? ` · ${event.duration} days` : ''}</div>
+            ${event.strategy ? `<div class="event-strategy">${event.strategy}</div>` : ''}
+          </div>
+        `;
+      }).join('');
+
+      section.classList.add('visible');
+
+      // Smooth scroll to results
+      section.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // =============================================
+    // INIT
+    // =============================================
     document.addEventListener('DOMContentLoaded', () => {
       // Update stats from shared data
       const longWeekends = CalendarData.getLongWeekends();
@@ -1204,7 +1566,6 @@
       const nationalHolidays = CalendarData.nationalEvents.filter(e => e.type === 'national').length;
       const festivals = CalendarData.nationalEvents.filter(e => e.type === 'festival').length;
 
-      // Update stat cards if elements exist
       const statCards = document.querySelectorAll('.stat-card .stat-value');
       if (statCards.length >= 4) {
         statCards[0].textContent = longWeekends.length;
@@ -1213,7 +1574,7 @@
         statCards[3].textContent = totalWeddingDays + '+';
       }
 
-      // Populate regional wedding patterns from shared data
+      // Populate regional considerations from shared data
       const regionalContainer = document.getElementById('regionalConsiderations');
       if (regionalContainer && CalendarData.regionalWeddingPatterns) {
         let html = '';
@@ -1229,13 +1590,36 @@
         regionalContainer.innerHTML = html;
       }
 
-      console.log('Calendar initialized with shared CalendarData:', {
-        longWeekends: longWeekends.length,
-        nationalHolidays,
-        festivals,
-        weddingDays: totalWeddingDays,
-        year: CalendarData.year
-      });
+      // Auto-fill from RMS localStorage if available
+      try {
+        const rmsData = JSON.parse(localStorage.getItem('rmsSetupData') || 'null');
+        if (rmsData && (rmsData.state || rmsData.hotelType)) {
+          const stateSelect = document.getElementById('stateSelect');
+          const hotelTypeSelect = document.getElementById('hotelTypeSelect');
+
+          if (rmsData.state) {
+            // Match exact or partial state name
+            const opts = [...stateSelect.options];
+            const match = opts.find(o => o.value === rmsData.state);
+            if (match) stateSelect.value = rmsData.state;
+          }
+          if (rmsData.hotelType) {
+            hotelTypeSelect.value = rmsData.hotelType;
+          }
+
+          // Show auto-fill notice
+          const notice = document.getElementById('autoFilledNotice');
+          const city = rmsData.city ? ` (${rmsData.city})` : '';
+          document.getElementById('autoFilledText').textContent =
+            `Auto-filled from your Revenue Management setup: ${rmsData.state || ''}${city}`;
+          notice.classList.remove('hidden');
+
+          // Auto-apply personalisation
+          applyPersonalisation();
+        }
+      } catch (e) {
+        // localStorage not available or data is corrupted — silently ignore
+      }
     });
   </script>
 
