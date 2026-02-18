@@ -341,4 +341,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://insights.onlinehotelier.com/privacy/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
