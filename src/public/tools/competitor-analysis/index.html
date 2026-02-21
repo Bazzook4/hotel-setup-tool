@@ -520,6 +520,30 @@
     dayAfter.setDate(dayAfter.getDate() + 2);
     checkInInput.value = formatDate(tomorrow);
     checkOutInput.value = formatDate(dayAfter);
+    checkInInput.min = formatDate(tomorrow);
+
+    // Auto-adjust check-out when check-in changes
+    checkInInput.addEventListener('change', function() {
+      var checkIn = new Date(checkInInput.value);
+      var checkOut = new Date(checkOutInput.value);
+      if (isNaN(checkIn.getTime())) return;
+      var nextDay = new Date(checkIn);
+      nextDay.setDate(nextDay.getDate() + 1);
+      checkOutInput.min = formatDate(nextDay);
+      if (!checkOutInput.value || checkOut <= checkIn) {
+        checkOutInput.value = formatDate(nextDay);
+      }
+    });
+
+    checkOutInput.addEventListener('change', function() {
+      var checkIn = new Date(checkInInput.value);
+      var checkOut = new Date(checkOutInput.value);
+      if (checkOut <= checkIn) {
+        var nextDay = new Date(checkIn);
+        nextDay.setDate(nextDay.getDate() + 1);
+        checkOutInput.value = formatDate(nextDay);
+      }
+    });
 
     function formatDate(d) {
       return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
