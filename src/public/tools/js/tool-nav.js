@@ -30,6 +30,12 @@ const TOOLS = [
     desc: 'Analyze your booking channel mix'
   },
   {
+    slug: 'rate-shopper/',
+    title: 'Hotel Rate Shopper',
+    icon: '\uD83D\uDD0D',
+    desc: 'Compare Google Hotel rates'
+  },
+  {
     slug: 'demand-calendar/',
     title: 'Demand Calendar 2026',
     icon: '\uD83D\uDCC5',

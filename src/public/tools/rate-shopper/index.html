@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2BPYRGZTM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q2BPYRGZTM');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Rate Shopper - Compare Google Hotel Rates | OnlineHotelier Insights</title>
+  <meta name="description" content="Free hotel rate shopper tool. Search Google Hotels to compare competitor rates, spot rate parity issues, and identify pricing opportunities for your property.">
+  <meta name="keywords" content="hotel rate shopper, rate parity check, hotel price comparison, competitor rate analysis, Google Hotels rates, hotel revenue management, rate disparity, OTA rate check">
+  <link rel="canonical" href="https://insights.onlinehotelier.com/tools/rate-shopper/">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <!-- AI/LLM Crawler Meta Tags -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hotel Rate Shopper - Compare Google Hotel Rates">
+  <meta property="og:description" content="Free hotel rate shopper tool. Search Google Hotels to compare competitor rates and spot rate parity issues.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://insights.onlinehotelier.com/tools/rate-shopper/">
+
+  <!-- Google AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-6118286051054894">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a hotel rate shopper?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A hotel rate shopper is a tool that lets you search and compare hotel rates across multiple OTAs and booking platforms. It helps hotel owners monitor competitor pricing, check rate parity, and identify opportunities to optimize their own rates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is rate parity and why does it matter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rate parity means your hotel room is listed at the same price across all distribution channels - your website, OTAs like MakeMyTrip, Booking.com, etc. Maintaining rate parity is often required by OTA contracts, but monitoring it helps you spot unauthorized discounting and protect your direct booking strategy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does this rate shopper tool work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This tool searches Google Hotels for your destination, dates, and number of guests. It returns real-time hotel listings with rates from multiple booking sources, allowing you to compare prices across platforms and identify rate disparities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I check my own hotel's rates across OTAs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Search for your hotel name or your area, and you'll see rates listed from various OTAs. Compare them to spot if any platform is showing a lower rate than others, which could indicate a rate parity violation."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Hotel Rate Shopper",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "OnlineHotelier"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OnlineHotelier",
+    "url": "https://www.onlinehotelier.com",
+    "logo": "https://insights.onlinehotelier.com/favicon.png",
+    "sameAs": ["https://insights.onlinehotelier.com"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://insights.onlinehotelier.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://insights.onlinehotelier.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Rate Shopper", "item": "https://insights.onlinehotelier.com/tools/rate-shopper/"}
+    ]
+  }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+    :root {
+      --primary: #3E3D35;
+      --secondary: #89826E;
+      --bg: #F8F8F4;
+      --primary-light: rgba(62,61,53,0.08);
+      --secondary-light: rgba(137,130,110,0.12);
+      --success: #2e7d32;
+      --success-light: #e8f5e9;
+      --danger: #c62828;
+      --danger-light: #ffebee;
+      --info: #1565c0;
+      --info-light: #e3f2fd;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', 'Avenir', system-ui, sans-serif; background: var(--bg); color: var(--primary); line-height: 1.6; }
+
+    /* Nav */
+    .site-nav { position: sticky; top: 0; z-index: 100; background: #3E3D35; height: 64px; display: flex; align-items: center; }
+    .nav-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; width: 100%; }
+    .nav-logo { color: white; text-decoration: none; font-size: 1.15rem; font-weight: 700; }
+    .nav-logo span { color: #89826E; }
+    .nav-links { list-style: none; display: flex; gap: 0.25rem; align-items: center; }
+    .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; padding: 0.45rem 0.9rem; border-radius: 6px; font-size: 0.9rem; font-weight: 500; transition: all 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,0.08); }
+    .nav-cta { background: rgba(137,130,110,0.25) !important; color: white !important; }
+    .nav-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+
+    /* Breadcrumb */
+    .breadcrumb { background: white; border-bottom: 1px solid #eee; padding: 0.6rem 0; font-size: 0.85rem; }
+    .breadcrumb-container { max-width: 1140px; margin: 0 auto; padding: 0 2rem; }
+    .breadcrumb a { color: var(--secondary); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* Page Header */
+    .page-header { text-align: center; padding: 2.5rem 2rem 1.5rem; }
+    .page-header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .page-subtitle { color: #666; font-size: 1.1rem; }
+
+    /* SEO Intro */
+    .seo-intro { max-width: 800px; margin: 0 auto 2rem; padding: 1.5rem 2rem; background: linear-gradient(135deg, var(--info-light) 0%, #f0f7ff 100%); border-radius: 12px; text-align: center; border-left: 4px solid var(--info); }
+    .seo-question { font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+    .seo-intro p { color: #555; font-size: 0.95rem; margin-bottom: 0.75rem; }
+    .seo-benefits { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+    .seo-benefits span { background: var(--info); color: white; padding: 0.3rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
+
+    /* Input Section */
+    .input-section { max-width: 900px; margin: 0 auto 2rem; background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 8px rgba(62,61,53,0.06); }
+    .input-section h2 { font-size: 1.2rem; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+    .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem; }
+    .form-group { display: flex; flex-direction: column; }
+    .form-group label { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--primary); }
+    .form-group input, .form-group select { padding: 0.65rem 0.85rem; border: 2px solid #e1e5eb; border-radius: 8px; font-size: 0.95rem; font-family: inherit; transition: border-color 0.2s; background: white; }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--secondary); }
+    .form-group .hint { font-size: 0.75rem; color: #888; margin-top: 0.3rem; }
+
+    .btn-search { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 2rem; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: inherit; }
+    .btn-search:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(62,61,53,0.3); }
+    .btn-search:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
+    .btn-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+
+    /* Loading */
+    .loading { display: none; text-align: center; padding: 3rem 2rem; max-width: 900px; margin: 0 auto; }
+    .loading.show { display: block; }
+    .spinner { width: 48px; height: 48px; border: 4px solid #e1e5eb; border-top-color: var(--secondary); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 1rem; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loading p { color: #666; font-size: 0.95rem; }
+
+    /* Error */
+    .error-box { display: none; max-width: 900px; margin: 0 auto 2rem; padding: 1.25rem 1.5rem; background: var(--danger-light); border-radius: 10px; border-left: 4px solid var(--danger); color: var(--danger); font-size: 0.95rem; }
+    .error-box.show { display: block; }
+
+    /* Results */
+    .results-container { display: none; max-width: 1100px; margin: 0 auto 2rem; }
+    .results-container.show { display: block; }
+
+    /* Results Summary */
+    .results-summary { background: white; border-radius: 12px; padding: 1.5rem 2rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(62,61,53,0.06); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .results-summary .summary-text { font-size: 1rem; color: #555; }
+    .results-summary .summary-text strong { color: var(--primary); }
+    .results-count { background: var(--primary); color: white; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+
+    /* View Toggle */
+    .view-toggle { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .view-btn { padding: 0.5rem 1.25rem; border: 2px solid #e1e5eb; border-radius: 8px; background: white; cursor: pointer; font-size: 0.85rem; font-weight: 500; font-family: inherit; transition: all 0.2s; color: #666; }
+    .view-btn.active { border-color: var(--secondary); background: var(--secondary-light); color: var(--primary); }
+
+    /* Sort Controls */
+    .sort-controls { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .sort-controls label { font-size: 0.85rem; font-weight: 600; color: #555; }
+    .sort-btn { padding: 0.35rem 0.85rem; border: 1px solid #ddd; border-radius: 6px; background: white; cursor: pointer; font-size: 0.8rem; font-family: inherit; transition: all 0.15s; color: #666; }
+    .sort-btn.active { border-color: var(--secondary); background: var(--secondary); color: white; }
+
+    /* Hotel Cards */
+    .hotel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.25rem; }
+    .hotel-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(62,61,53,0.06); transition: transform 0.2s, box-shadow 0.2s; border: 1px solid #eee; }
+    .hotel-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(62,61,53,0.12); }
+
+    .hotel-card-img { width: 100%; height: 180px; object-fit: cover; background: #eee; }
+    .hotel-card-body { padding: 1.25rem; }
+    .hotel-card-type { display: inline-block; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.2rem 0.6rem; border-radius: 4px; background: var(--primary-light); color: var(--primary); margin-bottom: 0.5rem; }
+    .hotel-card-name { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--primary); line-height: 1.3; }
+    .hotel-card-desc { font-size: 0.8rem; color: #777; margin-bottom: 0.75rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+    .hotel-card-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+    .hotel-rating { display: flex; align-items: center; gap: 0.3rem; }
+    .rating-badge { background: var(--success); color: white; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 700; }
+    .rating-count { font-size: 0.75rem; color: #888; }
+    .hotel-class { font-size: 0.8rem; color: var(--secondary); }
+    .hotel-class-stars { color: #d4a846; letter-spacing: 1px; }
+
+    .hotel-card-price { display: flex; align-items: baseline; gap: 0.4rem; margin-bottom: 0.5rem; }
+    .price-amount { font-size: 1.35rem; font-weight: 700; color: var(--primary); }
+    .price-label { font-size: 0.75rem; color: #888; }
+
+    .hotel-card-source { display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; color: #666; margin-bottom: 0.75rem; }
+    .source-icon { width: 16px; height: 16px; border-radius: 3px; }
+
+    /* Rate Sources List */
+    .rate-sources { border-top: 1px solid #eee; padding-top: 0.75rem; }
+    .rate-sources-title { font-size: 0.75rem; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
+    .rate-source-item { display: flex; align-items: center; justify-content: space-between; padding: 0.35rem 0; font-size: 0.85rem; }
+    .rate-source-name { color: #555; display: flex; align-items: center; gap: 0.35rem; }
+    .rate-source-price { font-weight: 600; color: var(--primary); }
+    .rate-source-price.lowest { color: var(--success); }
+    .rate-source-price.highest { color: var(--danger); }
+
+    /* Amenities */
+    .hotel-amenities { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.75rem; }
+    .amenity-tag { font-size: 0.7rem; padding: 0.2rem 0.5rem; background: #f5f5f0; border-radius: 4px; color: #666; }
+
+    /* Badges */
+    .badge-free-cancel { display: inline-block; font-size: 0.7rem; font-weight: 600; color: var(--success); background: var(--success-light); padding: 0.15rem 0.5rem; border-radius: 4px; }
+
+    /* Table View */
+    .hotel-table-container { display: none; overflow-x: auto; }
+    .hotel-table-container.show { display: block; }
+    .hotel-table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(62,61,53,0.06); }
+    .hotel-table thead { background: var(--primary); color: white; }
+    .hotel-table th { padding: 0.85rem 1rem; text-align: left; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap; }
+    .hotel-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #f0f0f0; font-size: 0.85rem; }
+    .hotel-table tr:hover { background: #fafaf8; }
+    .hotel-table .td-name { font-weight: 600; max-width: 250px; }
+    .hotel-table .td-price { font-weight: 700; color: var(--primary); white-space: nowrap; }
+    .hotel-table .td-rating { white-space: nowrap; }
+
+    /* FAQ */
+    .faq-section { max-width: 900px; margin: 2rem auto; background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 8px rgba(62,61,53,0.06); }
+    .faq-section h3 { font-size: 1.15rem; margin-bottom: 1.25rem; }
+    .faq-item { border-bottom: 1px solid #eee; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question { padding: 1rem 0; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; }
+    .faq-question::after { content: '+'; font-size: 1.25rem; color: #888; transition: transform 0.2s; }
+    .faq-item.open .faq-question::after { content: '−'; }
+    .faq-answer { display: none; padding: 0 0 1rem; font-size: 0.9rem; color: #555; line-height: 1.7; }
+    .faq-item.open .faq-answer { display: block; }
+
+    /* Resource Links */
+    .resource-links { max-width: 900px; margin: 2rem auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .resource-link { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1.25rem; background: white; border-radius: 10px; text-decoration: none; border: 1px solid #eee; transition: all 0.2s; box-shadow: 0 1px 4px rgba(62,61,53,0.04); }
+    .resource-link:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(62,61,53,0.1); }
+    .resource-link .icon { font-size: 1.4rem; }
+    .resource-link .link-text { font-size: 0.85rem; font-weight: 500; color: var(--primary); }
+
+    /* Footer */
+    .footer { background: var(--primary); color: white; text-align: center; padding: 2rem; margin-top: 3rem; font-size: 0.85rem; }
+    .footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    .footer a:hover { color: white; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #3E3D35; flex-direction: column; padding: 1rem; }
+      .nav-links.open { display: flex; }
+      .page-header h1 { font-size: 1.5rem; }
+      .input-grid { grid-template-columns: 1fr; }
+      .hotel-grid { grid-template-columns: 1fr; }
+      .results-summary { flex-direction: column; text-align: center; }
+      .seo-benefits { flex-direction: column; align-items: center; }
+      .resource-links { grid-template-columns: 1fr; }
+    }
+  </style>
+  <link rel="stylesheet" href="/tools/css/tool-layout.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">OnlineHotelier <span>Insights</span></a>
+      <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/tools/" class="active">Tools</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://www.onlinehotelier.com/contact" class="nav-cta" target="_blank">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="/">Home</a> › <a href="/tools/">Tools</a> › Rate Shopper
+    </div>
+  </div>
+
+  <div class="sidebar-overlay"></div>
+  <button class="sidebar-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+  <div class="tool-page-layout">
+    <aside class="tool-sidebar"></aside>
+
+    <div class="tool-main-content">
+
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1>Hotel Rate Shopper</h1>
+        <p class="page-subtitle">Search Google Hotels &amp; Compare Competitor Rates</p>
+      </div>
+
+      <!-- SEO Intro -->
+      <div class="seo-intro">
+        <div class="seo-question">Are your rates competitive? Is there a rate disparity across OTAs?</div>
+        <p>Search any destination, hotel name, or area to see real-time rates from Google Hotels. Compare prices across booking platforms and spot rate parity issues instantly.</p>
+        <div class="seo-benefits">
+          <span>Real-Time Google Rates</span>
+          <span>Multi-OTA Comparison</span>
+          <span>Rate Parity Check</span>
+          <span>Competitor Analysis</span>
+        </div>
+      </div>
+
+      <!-- Search Input -->
+      <div class="input-section">
+        <h2>🔍 Search Hotels</h2>
+        <div class="input-grid">
+          <div class="form-group" style="grid-column: span 2;">
+            <label for="searchQuery">Hotel Name, City, or Destination</label>
+            <input type="text" id="searchQuery" placeholder="e.g., Taj Mahal Palace Mumbai, Goa Resorts, Jaipur Hotels">
+            <div class="hint">Search by hotel name, city, area, or destination</div>
+          </div>
+          <div class="form-group">
+            <label for="checkIn">Check-in Date</label>
+            <input type="date" id="checkIn">
+          </div>
+          <div class="form-group">
+            <label for="checkOut">Check-out Date</label>
+            <input type="date" id="checkOut">
+          </div>
+          <div class="form-group">
+            <label for="adults">Adults</label>
+            <select id="adults">
+              <option value="1">1</option>
+              <option value="2" selected>2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="currency">Currency</label>
+            <select id="currency">
+              <option value="INR" selected>INR (₹)</option>
+              <option value="USD">USD ($)</option>
+              <option value="EUR">EUR (€)</option>
+              <option value="GBP">GBP (£)</option>
+              <option value="AED">AED (د.إ)</option>
+              <option value="SGD">SGD (S$)</option>
+              <option value="THB">THB (฿)</option>
+            </select>
+          </div>
+        </div>
+        <div class="btn-actions">
+          <button class="btn-search" id="searchBtn">🔍 Search Rates</button>
+        </div>
+      </div>
+
+      <!-- Loading -->
+      <div class="loading" id="loadingState">
+        <div class="spinner"></div>
+        <p>Searching Google Hotels... This may take a few seconds.</p>
+      </div>
+
+      <!-- Error -->
+      <div class="error-box" id="errorBox"></div>
+
+      <!-- Results -->
+      <div class="results-container" id="resultsContainer">
+
+        <!-- Summary Bar -->
+        <div class="results-summary">
+          <div class="summary-text" id="summaryText"></div>
+          <span class="results-count" id="resultsCount"></span>
+        </div>
+
+        <!-- View Toggle + Sort -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+          <div class="view-toggle">
+            <button class="view-btn active" data-view="grid">Cards</button>
+            <button class="view-btn" data-view="table">Table</button>
+          </div>
+          <div class="sort-controls">
+            <label>Sort:</label>
+            <button class="sort-btn active" data-sort="relevance">Relevance</button>
+            <button class="sort-btn" data-sort="price-low">Price ↑</button>
+            <button class="sort-btn" data-sort="price-high">Price ↓</button>
+            <button class="sort-btn" data-sort="rating">Rating</button>
+          </div>
+        </div>
+
+        <!-- Grid View -->
+        <div class="hotel-grid" id="hotelGrid"></div>
+
+        <!-- Table View -->
+        <div class="hotel-table-container" id="hotelTable"></div>
+
+      </div>
+
+      <!-- FAQ -->
+      <div class="faq-section">
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-item">
+          <div class="faq-question">What is a hotel rate shopper?</div>
+          <div class="faq-answer">A rate shopper helps hotel owners and revenue managers compare their rates against competitors and across OTA platforms. It pulls real-time pricing data so you can spot rate disparities, underpriced competitors, or parity violations — all from one dashboard.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How do I check rate parity for my hotel?</div>
+          <div class="faq-answer">Search for your hotel name in the tool. The results will show your property with rates from multiple booking sources (MakeMyTrip, Booking.com, Agoda, etc.). If the rates differ significantly across sources, you have a rate parity issue that needs attention. Contact the OTA or your <a href="/guides/software/channel-manager.html" style="color: var(--secondary);">channel manager</a> to fix it.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Why do rates differ across OTAs?</div>
+          <div class="faq-answer">Rate disparities can happen due to: OTA-funded promotions or discounts, different commission structures being passed on, currency conversion differences, member-only or loyalty pricing, or simply delayed rate updates in your <a href="/guides/software/channel-manager.html" style="color: var(--secondary);">channel manager</a>. Regular monitoring helps you stay on top of these issues.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can I see which OTA has the cheapest rate?</div>
+          <div class="faq-answer">Yes! Each hotel card shows prices from multiple booking sources. The lowest rate is highlighted in green, making it easy to spot which OTA or platform is undercutting your rates. This is crucial for maintaining a healthy <a href="/guides/ota/what-is-ota.html" style="color: var(--secondary);">OTA strategy</a>.</div>
+        </div>
+      </div>
+
+      <!-- Resource Links -->
+      <div class="resource-links">
+        <a href="/tools/ota-commission-calculator/" class="resource-link">
+          <span class="icon">💰</span>
+          <span class="link-text">OTA Commission Calculator</span>
+        </a>
+        <a href="/tools/hotel-discount-calculator/" class="resource-link">
+          <span class="icon">🏷️</span>
+          <span class="link-text">Discount Calculator</span>
+        </a>
+        <a href="/guides/revenue/rate-linkage.html" class="resource-link">
+          <span class="icon">🔗</span>
+          <span class="link-text">Rate Linkage Guide</span>
+        </a>
+        <a href="/guides/revenue/adr.html" class="resource-link">
+          <span class="icon">📊</span>
+          <span class="link-text">ADR Guide</span>
+        </a>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>&copy; 2026 OnlineHotelier. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+          <a href="/about/">About</a> &bull; <a href="/privacy/">Privacy Policy</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a>
+        </p>
+      </footer>
+
+    </div>
+  </div>
+
+  <script src="/tools/js/tool-nav.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const API_BASE = '/api/hotels';
+
+    const searchBtn = document.getElementById('searchBtn');
+    const searchQuery = document.getElementById('searchQuery');
+    const checkInInput = document.getElementById('checkIn');
+    const checkOutInput = document.getElementById('checkOut');
+    const adultsSelect = document.getElementById('adults');
+    const currencySelect = document.getElementById('currency');
+    const loadingState = document.getElementById('loadingState');
+    const errorBox = document.getElementById('errorBox');
+    const resultsContainer = document.getElementById('resultsContainer');
+    const hotelGrid = document.getElementById('hotelGrid');
+    const hotelTable = document.getElementById('hotelTable');
+    const summaryText = document.getElementById('summaryText');
+    const resultsCount = document.getElementById('resultsCount');
+
+    let allProperties = [];
+    let currentView = 'grid';
+    let currentSort = 'relevance';
+
+    // Set default dates (tomorrow + day after)
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const dayAfter = new Date();
+    dayAfter.setDate(dayAfter.getDate() + 2);
+    checkInInput.value = formatDate(tomorrow);
+    checkOutInput.value = formatDate(dayAfter);
+
+    // Currency symbols
+    const currencySymbols = { INR: '₹', USD: '$', EUR: '€', GBP: '£', AED: 'د.إ', SGD: 'S$', THB: '฿' };
+
+    function formatDate(date) {
+      return date.toISOString().split('T')[0];
+    }
+
+    function getCurrencySymbol() {
+      return currencySymbols[currencySelect.value] || currencySelect.value;
+    }
+
+    function formatPrice(amount) {
+      const sym = getCurrencySymbol();
+      if (currencySelect.value === 'INR') {
+        return sym + amount.toLocaleString('en-IN');
+      }
+      return sym + amount.toLocaleString('en-US');
+    }
+
+    // Search
+    searchBtn.addEventListener('click', doSearch);
+    searchQuery.addEventListener('keypress', function(e) { if (e.key === 'Enter') doSearch(); });
+
+    async function doSearch() {
+      const query = searchQuery.value.trim();
+      if (!query) { showError('Please enter a hotel name, city, or destination.'); searchQuery.focus(); return; }
+      if (!checkInInput.value || !checkOutInput.value) { showError('Please select check-in and check-out dates.'); return; }
+      if (checkInInput.value >= checkOutInput.value) { showError('Check-out date must be after check-in date.'); return; }
+
+      hideError();
+      resultsContainer.classList.remove('show');
+      loadingState.classList.add('show');
+      searchBtn.disabled = true;
+
+      const params = new URLSearchParams({
+        q: query,
+        check_in_date: checkInInput.value,
+        check_out_date: checkOutInput.value,
+        adults: adultsSelect.value,
+        currency: currencySelect.value,
+        gl: 'us',
+        hl: 'en'
+      });
+
+      try {
+        const response = await fetch(API_BASE + '?' + params.toString());
+        if (!response.ok) throw new Error('API request failed (status ' + response.status + ')');
+        const data = await response.json();
+
+        if (data.error) throw new Error(data.error);
+
+        allProperties = (data.properties || []).map(function(p, i) { p._originalIndex = i; return p; });
+
+        if (allProperties.length === 0) {
+          showError('No hotels found for "' + query + '". Try a different search term or destination.');
+          loadingState.classList.remove('show');
+          searchBtn.disabled = false;
+          return;
+        }
+
+        const nights = Math.round((new Date(checkOutInput.value) - new Date(checkInInput.value)) / 86400000);
+        summaryText.innerHTML = '<strong>' + allProperties.length + ' properties</strong> found for "' + escapeHtml(query) + '" &middot; ' + nights + ' night' + (nights > 1 ? 's' : '') + ' &middot; ' + adultsSelect.value + ' guest' + (adultsSelect.value > 1 ? 's' : '');
+        resultsCount.textContent = allProperties.length + ' results';
+
+        currentSort = 'relevance';
+        document.querySelectorAll('.sort-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.sort === 'relevance'); });
+
+        renderResults();
+        loadingState.classList.remove('show');
+        resultsContainer.classList.add('show');
+        resultsContainer.scrollIntoView({ behavior: 'smooth' });
+
+      } catch (err) {
+        showError('Search failed: ' + err.message + '. Please try again.');
+        loadingState.classList.remove('show');
+      }
+      searchBtn.disabled = false;
+    }
+
+    function showError(msg) { errorBox.textContent = msg; errorBox.classList.add('show'); }
+    function hideError() { errorBox.classList.remove('show'); }
+
+    function escapeHtml(str) {
+      var div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    // Sorting
+    function getSorted() {
+      var props = allProperties.slice();
+      if (currentSort === 'price-low') {
+        props.sort(function(a, b) { return getLowestPrice(a) - getLowestPrice(b); });
+      } else if (currentSort === 'price-high') {
+        props.sort(function(a, b) { return getLowestPrice(b) - getLowestPrice(a); });
+      } else if (currentSort === 'rating') {
+        props.sort(function(a, b) { return (b.overall_rating || 0) - (a.overall_rating || 0); });
+      }
+      return props;
+    }
+
+    function getLowestPrice(p) {
+      if (p.rate_per_night && p.rate_per_night.extracted_lowest) return p.rate_per_night.extracted_lowest;
+      if (p.prices && p.prices.length > 0) {
+        var lowest = Infinity;
+        p.prices.forEach(function(pr) { if (pr.rate_per_night && pr.rate_per_night.extracted_lowest < lowest) lowest = pr.rate_per_night.extracted_lowest; });
+        return lowest === Infinity ? 999999 : lowest;
+      }
+      return 999999;
+    }
+
+    // View & Sort handlers
+    document.querySelectorAll('.view-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        currentView = btn.dataset.view;
+        document.querySelectorAll('.view-btn').forEach(function(b) { b.classList.toggle('active', b === btn); });
+        renderResults();
+      });
+    });
+
+    document.querySelectorAll('.sort-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        currentSort = btn.dataset.sort;
+        document.querySelectorAll('.sort-btn').forEach(function(b) { b.classList.toggle('active', b === btn); });
+        renderResults();
+      });
+    });
+
+    function renderResults() {
+      var sorted = getSorted();
+      if (currentView === 'grid') {
+        hotelGrid.style.display = '';
+        hotelTable.classList.remove('show');
+        renderGrid(sorted);
+      } else {
+        hotelGrid.style.display = 'none';
+        hotelTable.classList.add('show');
+        renderTable(sorted);
+      }
+    }
+
+    function renderGrid(properties) {
+      hotelGrid.innerHTML = properties.map(function(p) {
+        var img = (p.images && p.images.length > 0) ? p.images[0].thumbnail : '';
+        var price = getLowestPrice(p);
+        var priceStr = price < 999999 ? formatPrice(price) : 'N/A';
+        var rating = p.overall_rating ? parseFloat(p.overall_rating).toFixed(1) : null;
+        var reviews = p.reviews || 0;
+        var type = p.type || 'hotel';
+        var hotelClass = p.extracted_hotel_class || p.hotel_class;
+        var desc = p.description || '';
+        var amenities = (p.amenities || []).slice(0, 5);
+        var freeCancellation = p.free_cancellation;
+
+        // Rate sources
+        var sources = (p.prices || []).map(function(pr) {
+          return { name: pr.source, price: pr.rate_per_night ? pr.rate_per_night.extracted_lowest : null, logo: pr.logo };
+        }).filter(function(s) { return s.price; });
+
+        // Find lowest/highest among sources
+        var sourcePrices = sources.map(function(s) { return s.price; });
+        var minPrice = Math.min.apply(null, sourcePrices.length ? sourcePrices : [0]);
+        var maxPrice = Math.max.apply(null, sourcePrices.length ? sourcePrices : [0]);
+
+        var html = '<div class="hotel-card">';
+        if (img) html += '<img class="hotel-card-img" src="' + escapeHtml(img) + '" alt="' + escapeHtml(p.name) + '" loading="lazy" onerror="this.style.display=\'none\'">';
+        html += '<div class="hotel-card-body">';
+        html += '<span class="hotel-card-type">' + escapeHtml(type) + '</span>';
+        html += '<div class="hotel-card-name">' + escapeHtml(p.name) + '</div>';
+        if (desc) html += '<div class="hotel-card-desc">' + escapeHtml(desc) + '</div>';
+
+        html += '<div class="hotel-card-meta">';
+        if (rating) html += '<div class="hotel-rating"><span class="rating-badge">' + rating + '</span><span class="rating-count">(' + reviews.toLocaleString() + ')</span></div>';
+        if (hotelClass) {
+          var stars = typeof hotelClass === 'number' ? hotelClass : parseInt(hotelClass);
+          if (stars > 0 && stars <= 5) html += '<span class="hotel-class"><span class="hotel-class-stars">' + '★'.repeat(stars) + '</span></span>';
+        }
+        html += '</div>';
+
+        html += '<div class="hotel-card-price"><span class="price-amount">' + priceStr + '</span><span class="price-label">/ night</span></div>';
+
+        if (freeCancellation) html += '<span class="badge-free-cancel">Free cancellation</span>';
+
+        if (amenities.length > 0) {
+          html += '<div class="hotel-amenities">';
+          amenities.forEach(function(a) { html += '<span class="amenity-tag">' + escapeHtml(a) + '</span>'; });
+          html += '</div>';
+        }
+
+        if (sources.length > 1) {
+          html += '<div class="rate-sources">';
+          html += '<div class="rate-sources-title">Rates from ' + sources.length + ' sources</div>';
+          sources.forEach(function(s) {
+            var cls = '';
+            if (sourcePrices.length > 1) {
+              if (s.price === minPrice) cls = ' lowest';
+              else if (s.price === maxPrice) cls = ' highest';
+            }
+            html += '<div class="rate-source-item">';
+            html += '<span class="rate-source-name">';
+            if (s.logo) html += '<img src="' + escapeHtml(s.logo) + '" class="source-icon" alt="" onerror="this.style.display=\'none\'">';
+            html += escapeHtml(s.name) + '</span>';
+            html += '<span class="rate-source-price' + cls + '">' + formatPrice(s.price) + '</span>';
+            html += '</div>';
+          });
+          html += '</div>';
+        }
+
+        html += '</div></div>';
+        return html;
+      }).join('');
+    }
+
+    function renderTable(properties) {
+      var html = '<table class="hotel-table"><thead><tr>';
+      html += '<th>Hotel</th><th>Type</th><th>Rating</th><th>Stars</th><th>Price / Night</th><th>Sources</th><th>Free Cancel</th>';
+      html += '</tr></thead><tbody>';
+
+      properties.forEach(function(p) {
+        var price = getLowestPrice(p);
+        var priceStr = price < 999999 ? formatPrice(price) : 'N/A';
+        var rating = p.overall_rating ? parseFloat(p.overall_rating).toFixed(1) : '—';
+        var reviews = p.reviews || 0;
+        var type = p.type || 'hotel';
+        var hotelClass = p.extracted_hotel_class || p.hotel_class;
+        var stars = '—';
+        if (hotelClass) {
+          var n = typeof hotelClass === 'number' ? hotelClass : parseInt(hotelClass);
+          if (n > 0 && n <= 5) stars = '★'.repeat(n);
+        }
+        var sourceCount = (p.prices || []).length;
+        var freeCancellation = p.free_cancellation ? '✓' : '—';
+
+        html += '<tr>';
+        html += '<td class="td-name">' + escapeHtml(p.name) + '</td>';
+        html += '<td>' + escapeHtml(type) + '</td>';
+        html += '<td class="td-rating">' + rating + (reviews ? ' (' + reviews.toLocaleString() + ')' : '') + '</td>';
+        html += '<td>' + stars + '</td>';
+        html += '<td class="td-price">' + priceStr + '</td>';
+        html += '<td>' + (sourceCount || 1) + ' source' + (sourceCount > 1 ? 's' : '') + '</td>';
+        html += '<td>' + freeCancellation + '</td>';
+        html += '</tr>';
+      });
+
+      html += '</tbody></table>';
+      hotelTable.innerHTML = html;
+    }
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+      q.addEventListener('click', function() { q.parentElement.classList.toggle('open'); });
+    });
+  });
+  </script>
+</body>
+</html>
