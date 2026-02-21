@@ -273,6 +273,46 @@
     .hotel-table .td-price { font-weight: 700; color: var(--primary); white-space: nowrap; }
     .hotel-table .td-rating { white-space: nowrap; }
 
+    /* Property Detail View */
+    .property-detail { display: none; max-width: 900px; margin: 0 auto 2rem; }
+    .property-detail.show { display: block; }
+    .property-detail-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(62,61,53,0.06); border: 1px solid #eee; }
+    .property-detail-header { padding: 2rem; border-bottom: 1px solid #eee; }
+    .property-detail-header h2 { font-size: 1.5rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+    .property-detail-meta { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 0.75rem; }
+    .property-detail-desc { font-size: 0.9rem; color: #666; line-height: 1.6; }
+    .property-detail-info { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 0.75rem; font-size: 0.85rem; color: #555; }
+    .property-detail-info span { display: flex; align-items: center; gap: 0.3rem; }
+
+    .ota-rates-section { padding: 1.5rem 2rem; }
+    .ota-rates-section h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: var(--primary); }
+    .ota-rate-card { border: 1px solid #eee; border-radius: 10px; margin-bottom: 0.75rem; overflow: hidden; transition: box-shadow 0.2s; }
+    .ota-rate-card:hover { box-shadow: 0 2px 12px rgba(62,61,53,0.08); }
+    .ota-rate-header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; background: #fafaf8; cursor: pointer; }
+    .ota-rate-header:hover { background: #f5f5f0; }
+    .ota-source-info { display: flex; align-items: center; gap: 0.6rem; }
+    .ota-source-logo { width: 24px; height: 24px; border-radius: 4px; }
+    .ota-source-name { font-weight: 600; font-size: 0.95rem; color: var(--primary); }
+    .ota-official-badge { font-size: 0.65rem; font-weight: 700; padding: 0.1rem 0.4rem; border-radius: 3px; background: var(--info-light); color: var(--info); }
+    .ota-rate-price { font-size: 1.2rem; font-weight: 700; }
+    .ota-rate-price.best-price { color: var(--success); }
+    .ota-rate-price.other-price { color: var(--primary); }
+    .ota-rate-rooms { display: none; padding: 0 1.25rem 1rem; }
+    .ota-rate-card.open .ota-rate-rooms { display: block; }
+    .ota-rate-card.open .ota-rate-arrow { transform: rotate(180deg); }
+    .ota-rate-arrow { font-size: 0.7rem; color: #888; transition: transform 0.2s; margin-left: 0.75rem; }
+    .ota-room-row { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 0.75rem; border-bottom: 1px solid #f0f0f0; font-size: 0.85rem; }
+    .ota-room-row:last-child { border-bottom: none; }
+    .ota-room-name { color: #555; }
+    .ota-room-price { font-weight: 600; color: var(--primary); }
+    .ota-disparity-summary { padding: 1.25rem 2rem; background: linear-gradient(135deg, #f8f8f4 0%, #f0f0ea 100%); border-top: 1px solid #eee; }
+    .disparity-bar { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .disparity-stat { text-align: center; }
+    .disparity-stat .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.04em; color: #888; font-weight: 600; }
+    .disparity-stat .value { font-size: 1.1rem; font-weight: 700; }
+    .disparity-stat .value.low { color: var(--success); }
+    .disparity-stat .value.high { color: var(--danger); }
+
     /* FAQ */
     .faq-section { max-width: 900px; margin: 2rem auto; background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 8px rgba(62,61,53,0.06); }
     .faq-section h3 { font-size: 1.15rem; margin-bottom: 1.25rem; }
@@ -447,6 +487,9 @@
 
       </div>
 
+      <!-- Property Detail View (single hotel with all OTA rates) -->
+      <div class="property-detail" id="propertyDetail"></div>
+
       <!-- FAQ -->
       <div class="faq-section">
         <h3>Frequently Asked Questions</h3>
@@ -513,6 +556,7 @@
     const loadingState = document.getElementById('loadingState');
     const errorBox = document.getElementById('errorBox');
     const resultsContainer = document.getElementById('resultsContainer');
+    const propertyDetailEl = document.getElementById('propertyDetail');
     const hotelGrid = document.getElementById('hotelGrid');
     const hotelTable = document.getElementById('hotelTable');
     const summaryText = document.getElementById('summaryText');
@@ -602,26 +646,39 @@
           searchesLeft.style.color = data.remaining <= 1 ? 'var(--danger)' : '#888';
         }
 
-        allProperties = (data.properties || []).map(function(p, i) { p._originalIndex = i; return p; });
-
-        if (allProperties.length === 0) {
-          showError('No hotels found for "' + query + '". Try a different search term or destination.');
-          loadingState.classList.remove('show');
-          searchBtn.disabled = false;
-          return;
-        }
+        // Hide both views first
+        resultsContainer.classList.remove('show');
+        propertyDetailEl.classList.remove('show');
 
         const nights = Math.round((new Date(checkOutInput.value) - new Date(checkInInput.value)) / 86400000);
-        summaryText.innerHTML = '<strong>' + allProperties.length + ' properties</strong> found for "' + escapeHtml(query) + '" &middot; ' + nights + ' night' + (nights > 1 ? 's' : '') + ' &middot; ' + adultsSelect.value + ' guest' + (adultsSelect.value > 1 ? 's' : '');
-        resultsCount.textContent = allProperties.length + ' results';
 
-        currentSort = 'relevance';
-        document.querySelectorAll('.sort-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.sort === 'relevance'); });
+        // Check if this is a single property detail response
+        if (data.propertyDetail) {
+          renderPropertyDetail(data.propertyDetail, query, nights);
+          loadingState.classList.remove('show');
+          propertyDetailEl.classList.add('show');
+          propertyDetailEl.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          allProperties = (data.properties || []).map(function(p, i) { p._originalIndex = i; return p; });
 
-        renderResults();
-        loadingState.classList.remove('show');
-        resultsContainer.classList.add('show');
-        resultsContainer.scrollIntoView({ behavior: 'smooth' });
+          if (allProperties.length === 0) {
+            showError('No hotels found for "' + query + '". Try a different search term or destination.');
+            loadingState.classList.remove('show');
+            searchBtn.disabled = false;
+            return;
+          }
+
+          summaryText.innerHTML = '<strong>' + allProperties.length + ' properties</strong> found for "' + escapeHtml(query) + '" &middot; ' + nights + ' night' + (nights > 1 ? 's' : '') + ' &middot; ' + adultsSelect.value + ' guest' + (adultsSelect.value > 1 ? 's' : '');
+          resultsCount.textContent = allProperties.length + ' results';
+
+          currentSort = 'relevance';
+          document.querySelectorAll('.sort-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.sort === 'relevance'); });
+
+          renderResults();
+          loadingState.classList.remove('show');
+          resultsContainer.classList.add('show');
+          resultsContainer.scrollIntoView({ behavior: 'smooth' });
+        }
 
       } catch (err) {
         showError('Search failed: ' + err.message + '. Please try again.');
@@ -827,8 +884,110 @@
       hotelTable.innerHTML = html;
     }
 
+    // Render single property detail with all OTA rates
+    function renderPropertyDetail(prop, query, nights) {
+      var rating = prop.overall_rating ? parseFloat(prop.overall_rating).toFixed(1) : null;
+      var reviews = prop.reviews || 0;
+      var hotelClass = prop.extracted_hotel_class || prop.hotel_class;
+
+      // Sort prices by lowest rate
+      var sortedPrices = (prop.allPrices || []).filter(function(p) {
+        return p.rate_per_night && p.rate_per_night.extracted_lowest;
+      }).sort(function(a, b) {
+        return a.rate_per_night.extracted_lowest - b.rate_per_night.extracted_lowest;
+      });
+
+      var bestPrice = sortedPrices.length > 0 ? sortedPrices[0].rate_per_night.extracted_lowest : null;
+      var worstPrice = sortedPrices.length > 1 ? sortedPrices[sortedPrices.length - 1].rate_per_night.extracted_lowest : null;
+      var disparity = (bestPrice && worstPrice && bestPrice > 0) ? Math.round(((worstPrice - bestPrice) / bestPrice) * 100) : 0;
+
+      var html = '<div class="property-detail-card">';
+
+      // Header
+      html += '<div class="property-detail-header">';
+      html += '<h2>' + escapeHtml(prop.name) + '</h2>';
+      html += '<div class="property-detail-meta">';
+      if (rating) html += '<span class="rating-badge">' + rating + '</span><span class="rating-count">(' + reviews.toLocaleString() + ' reviews)</span>';
+      if (hotelClass) {
+        var stars = typeof hotelClass === 'number' ? hotelClass : parseInt(hotelClass);
+        if (stars > 0 && stars <= 5) html += '<span class="hotel-class-stars">' + '★'.repeat(stars) + '</span>';
+      }
+      html += '</div>';
+      if (prop.description) html += '<div class="property-detail-desc">' + escapeHtml(prop.description) + '</div>';
+      html += '<div class="property-detail-info">';
+      if (prop.address) html += '<span>📍 ' + escapeHtml(prop.address) + '</span>';
+      if (prop.check_in_time) html += '<span>🕐 Check-in: ' + escapeHtml(prop.check_in_time) + '</span>';
+      if (prop.check_out_time) html += '<span>🕐 Check-out: ' + escapeHtml(prop.check_out_time) + '</span>';
+      html += '</div>';
+      html += '</div>';
+
+      // Disparity summary
+      if (sortedPrices.length > 1) {
+        html += '<div class="ota-disparity-summary">';
+        html += '<div class="disparity-bar">';
+        html += '<div class="disparity-stat"><div class="label">Lowest Rate</div><div class="value low">' + formatPrice(bestPrice) + '</div></div>';
+        html += '<div class="disparity-stat"><div class="label">Highest Rate</div><div class="value high">' + formatPrice(worstPrice) + '</div></div>';
+        html += '<div class="disparity-stat"><div class="label">Rate Disparity</div><div class="value ' + (disparity > 10 ? 'high' : 'low') + '">' + disparity + '%</div></div>';
+        html += '<div class="disparity-stat"><div class="label">OTA Sources</div><div class="value">' + sortedPrices.length + '</div></div>';
+        html += '</div>';
+        html += '</div>';
+      }
+
+      // OTA rates list
+      html += '<div class="ota-rates-section">';
+      html += '<h3>📊 All OTA Rates (' + sortedPrices.length + ' sources)</h3>';
+
+      sortedPrices.forEach(function(pr, idx) {
+        var price = pr.rate_per_night.extracted_lowest;
+        var isBest = (price === bestPrice);
+        var hasRooms = pr.rooms && pr.rooms.length > 0;
+
+        html += '<div class="ota-rate-card' + (idx === 0 ? ' open' : '') + '">';
+        html += '<div class="ota-rate-header">';
+        html += '<div class="ota-source-info">';
+        if (pr.logo) html += '<img src="' + escapeHtml(pr.logo) + '" class="ota-source-logo" alt="" onerror="this.style.display=\'none\'">';
+        html += '<span class="ota-source-name">' + escapeHtml(pr.source) + '</span>';
+        if (pr.official) html += '<span class="ota-official-badge">Official</span>';
+        html += '</div>';
+        html += '<div style="display:flex;align-items:center;">';
+        html += '<span class="ota-rate-price ' + (isBest ? 'best-price' : 'other-price') + '">' + formatPrice(price) + '<span style="font-size:0.7rem;font-weight:400;color:#888;"> /night</span></span>';
+        if (hasRooms) html += '<span class="ota-rate-arrow">▼</span>';
+        html += '</div>';
+        html += '</div>';
+
+        if (hasRooms) {
+          html += '<div class="ota-rate-rooms">';
+          pr.rooms.forEach(function(room) {
+            var roomPrice = room.rate_per_night ? room.rate_per_night.extracted_lowest : null;
+            html += '<div class="ota-room-row">';
+            html += '<span class="ota-room-name">' + escapeHtml(room.name) + '</span>';
+            html += '<span class="ota-room-price">' + (roomPrice ? formatPrice(roomPrice) : 'N/A') + '</span>';
+            html += '</div>';
+          });
+          html += '</div>';
+        }
+
+        html += '</div>';
+      });
+
+      html += '</div>';
+      html += '</div>';
+
+      propertyDetailEl.innerHTML = html;
+    }
+
     // Rate sources dropdown toggle (event delegation)
     document.addEventListener('click', function(e) {
+      // OTA rate card expand/collapse
+      var otaHeader = e.target.closest('.ota-rate-header');
+      if (otaHeader) {
+        var card = otaHeader.parentElement;
+        if (card.querySelector('.ota-rate-rooms')) {
+          card.classList.toggle('open');
+        }
+        return;
+      }
+
       var toggle = e.target.closest('.rate-sources-toggle');
       if (toggle) {
         toggle.parentElement.classList.toggle('open');

@@ -77,7 +77,64 @@ export default async function handler(req, res) {
     const response = await fetch('https://serpapi.com/search.json?' + params.toString());
     const data = await response.json();
 
-    // Strip response to only what the UI needs
+    // Detect response type: property details vs search listing
+    const isPropertyDetails = !data.properties && (data.featured_prices || data.prices);
+
+    if (isPropertyDetails) {
+      // Single property detail response
+      const allPrices = [];
+
+      // Extract from featured_prices (OTAs with room-level data)
+      (data.featured_prices || []).forEach(fp => {
+        const entry = {
+          source: fp.source || '',
+          logo: fp.logo || '',
+          official: fp.official || false,
+          rate_per_night: fp.rate_per_night ? { extracted_lowest: fp.rate_per_night.extracted_lowest } : null,
+          rooms: (fp.rooms || []).map(r => ({
+            name: r.name || '',
+            rate_per_night: r.rate_per_night ? { extracted_lowest: r.rate_per_night.extracted_lowest } : null
+          }))
+        };
+        allPrices.push(entry);
+      });
+
+      // Extract from prices (additional OTAs, often without room breakdown)
+      (data.prices || []).forEach(pr => {
+        // Skip if already in featured_prices
+        if (allPrices.some(fp => fp.source === pr.source)) return;
+        allPrices.push({
+          source: pr.source || '',
+          logo: pr.logo || '',
+          official: pr.official || false,
+          rate_per_night: pr.rate_per_night ? { extracted_lowest: pr.rate_per_night.extracted_lowest } : null,
+          rooms: []
+        });
+      });
+
+      const property = {
+        type: data.type || 'hotel',
+        name: data.name || '',
+        description: data.description || '',
+        overall_rating: data.overall_rating || null,
+        reviews: data.reviews || 0,
+        hotel_class: data.hotel_class || null,
+        extracted_hotel_class: data.extracted_hotel_class || null,
+        address: data.address || '',
+        phone: data.phone || '',
+        check_in_time: data.check_in_time || null,
+        check_out_time: data.check_out_time || null,
+        rate_per_night: data.rate_per_night ? { extracted_lowest: data.rate_per_night.extracted_lowest } : null,
+        amenities: (data.amenities || []).slice(0, 10),
+        images: (data.images || []).slice(0, 3).map(img => ({ thumbnail: img.thumbnail || img.original_image })),
+        allPrices
+      };
+
+      res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=600');
+      return res.status(200).json({ propertyDetail: property, remaining: limit.remaining });
+    }
+
+    // Search listing response — multiple properties
     const properties = (data.properties || []).map(p => ({
       type: p.type || 'hotel',
       name: p.name || '',
