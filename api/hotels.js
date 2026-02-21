@@ -1,6 +1,6 @@
 // In-memory rate limiter (resets on cold start, ~5-15 min on Vercel)
 const rateMap = new Map();
-const RATE_LIMIT = 10;       // max searches per window
+const RATE_LIMIT = 3;        // max searches per window (250/mo free plan)
 const RATE_WINDOW = 3600000; // 1 hour in ms
 
 function getRateLimitKey(req) {

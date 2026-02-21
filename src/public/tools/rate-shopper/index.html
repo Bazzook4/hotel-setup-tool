@@ -599,7 +599,7 @@
         // Show remaining searches
         if (typeof data.remaining === 'number') {
           searchesLeft.textContent = data.remaining + ' searches remaining this hour';
-          searchesLeft.style.color = data.remaining <= 3 ? 'var(--danger)' : '#888';
+          searchesLeft.style.color = data.remaining <= 1 ? 'var(--danger)' : '#888';
         }
 
         allProperties = (data.properties || []).map(function(p, i) { p._originalIndex = i; return p; });
