@@ -401,6 +401,7 @@
         </div>
         <div class="btn-actions">
           <button class="btn-search" id="searchBtn">🔍 Search Rates</button>
+          <span id="searchesLeft" style="font-size: 0.8rem; color: #888;"></span>
         </div>
       </div>
 
@@ -517,9 +518,12 @@
     const summaryText = document.getElementById('summaryText');
     const resultsCount = document.getElementById('resultsCount');
 
+    const searchesLeft = document.getElementById('searchesLeft');
+
     let allProperties = [];
     let currentView = 'grid';
     let currentSort = 'relevance';
+    let searchCooldown = false;
 
     // Set default dates (tomorrow + day after)
     const tomorrow = new Date();
@@ -553,10 +557,15 @@
     searchQuery.addEventListener('keypress', function(e) { if (e.key === 'Enter') doSearch(); });
 
     async function doSearch() {
+      if (searchCooldown) return;
       const query = searchQuery.value.trim();
       if (!query) { showError('Please enter a hotel name, city, or destination.'); searchQuery.focus(); return; }
       if (!checkInInput.value || !checkOutInput.value) { showError('Please select check-in and check-out dates.'); return; }
       if (checkInInput.value >= checkOutInput.value) { showError('Check-out date must be after check-in date.'); return; }
+
+      // 3-second cooldown between searches
+      searchCooldown = true;
+      setTimeout(function() { searchCooldown = false; }, 3000);
 
       hideError();
       resultsContainer.classList.remove('show');
@@ -575,10 +584,23 @@
 
       try {
         const response = await fetch(API_BASE + '?' + params.toString());
-        if (!response.ok) throw new Error('API request failed (status ' + response.status + ')');
         const data = await response.json();
 
+        if (response.status === 429) {
+          showError(data.error || 'Too many searches. Please wait and try again.');
+          loadingState.classList.remove('show');
+          searchBtn.disabled = false;
+          return;
+        }
+
+        if (!response.ok) throw new Error('API request failed (status ' + response.status + ')');
         if (data.error) throw new Error(data.error);
+
+        // Show remaining searches
+        if (typeof data.remaining === 'number') {
+          searchesLeft.textContent = data.remaining + ' searches remaining this hour';
+          searchesLeft.style.color = data.remaining <= 3 ? 'var(--danger)' : '#888';
+        }
 
         allProperties = (data.properties || []).map(function(p, i) { p._originalIndex = i; return p; });
 
