@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2BPYRGZTM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q2BPYRGZTM');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Competitor Rate Analysis Tool | OnlineHotelier Insights</title>
+  <meta name="description" content="Free competitor rate intelligence tool for hotels. See how your property is priced vs nearby competitors, compare ratings, and get actionable pricing insights.">
+  <meta name="keywords" content="hotel competitor analysis, compset analysis, hotel rate positioning, competitor pricing, hotel revenue management, rate intelligence, hotel compset, pricing strategy hotels">
+  <link rel="canonical" href="https://insights.onlinehotelier.com/tools/competitor-analysis/">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <!-- AI/LLM Crawler Meta Tags -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hotel Competitor Rate Analysis Tool">
+  <meta property="og:description" content="Free competitor rate intelligence tool. See how your hotel is priced vs nearby competitors and get actionable pricing insights.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://insights.onlinehotelier.com/tools/competitor-analysis/">
+
+  <!-- Google AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-6118286051054894">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a hotel compset analysis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A compset (competitive set) analysis compares your hotel's rates, ratings, and positioning against nearby competitor properties. It helps you understand whether you're priced too high, too low, or just right relative to your market."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does this competitor analysis tool work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Enter your hotel name and travel dates. The tool fetches your property's rates from Google Hotels, then automatically searches for nearby competing hotels. It calculates distances, compares rates, and generates insights about your pricing position in the local market."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many API credits does a competitor analysis use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each competitor analysis uses 2 search credits — one to fetch your property details and one to find nearby competitors. The free plan allows 3 searches per hour."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What radius should I use for competitor analysis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For city hotels, 2-5 km captures your direct competition. For resorts or hill stations, 10-25 km may be more appropriate since travellers compare options across a wider area. Start with 5 km and adjust based on your location."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Hotel Competitor Rate Analysis",
+    "url": "https://insights.onlinehotelier.com/tools/competitor-analysis/",
+    "description": "Compare your hotel rates against nearby competitors. Get real-time pricing intelligence and actionable revenue management insights.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "publisher": { "@type": "Organization", "name": "OnlineHotelier", "url": "https://www.onlinehotelier.com" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OnlineHotelier",
+    "url": "https://www.onlinehotelier.com",
+    "logo": "https://insights.onlinehotelier.com/favicon.png",
+    "sameAs": ["https://insights.onlinehotelier.com"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://insights.onlinehotelier.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://insights.onlinehotelier.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Competitor Analysis", "item": "https://insights.onlinehotelier.com/tools/competitor-analysis/"}
+    ]
+  }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+    :root {
+      --primary: #3E3D35;
+      --secondary: #89826E;
+      --bg: #F8F8F4;
+      --primary-light: rgba(62,61,53,0.08);
+      --secondary-light: rgba(137,130,110,0.12);
+      --success: #2e7d32;
+      --success-light: #e8f5e9;
+      --danger: #c62828;
+      --danger-light: #ffebee;
+      --info: #1565c0;
+      --info-light: #e3f2fd;
+      --warning: #e65100;
+      --warning-light: #fff3e0;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', 'Avenir', system-ui, sans-serif; background: var(--bg); color: var(--primary); line-height: 1.6; }
+
+    /* Navigation */
+    .site-nav { background: #3E3D35; padding: 0.75rem 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { color: white; text-decoration: none; font-size: 1.15rem; font-weight: 700; }
+    .nav-logo span { color: #89826E; }
+    .nav-links { list-style: none; display: flex; gap: 0.25rem; align-items: center; }
+    .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; padding: 0.45rem 0.9rem; border-radius: 6px; font-size: 0.9rem; font-weight: 500; transition: all 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,0.08); }
+    .nav-cta { background: rgba(137,130,110,0.25) !important; color: white !important; }
+    .nav-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+
+    /* Breadcrumb */
+    .breadcrumb { background: white; border-bottom: 1px solid #eee; padding: 0.6rem 0; font-size: 0.85rem; }
+    .breadcrumb-container { max-width: 1140px; margin: 0 auto; padding: 0 2rem; }
+    .breadcrumb a { color: var(--secondary); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* Page Header */
+    .page-header { text-align: center; padding: 2.5rem 2rem 1.5rem; }
+    .page-header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .page-subtitle { color: #666; font-size: 1.1rem; }
+
+    /* SEO Intro */
+    .seo-intro { max-width: 800px; margin: 0 auto 2rem; padding: 1.5rem 2rem; background: linear-gradient(135deg, var(--info-light) 0%, #f0f7ff 100%); border-radius: 12px; text-align: center; border-left: 4px solid var(--info); }
+    .seo-question { font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+    .seo-intro p { color: #555; font-size: 0.95rem; margin-bottom: 0.75rem; }
+    .seo-benefits { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+    .seo-benefits span { background: var(--info); color: white; padding: 0.3rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
+
+    /* Input Section */
+    .input-section { max-width: 900px; margin: 0 auto 2rem; background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 8px rgba(62,61,53,0.06); }
+    .input-section h2 { font-size: 1.2rem; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+    .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem; }
+    .form-group { display: flex; flex-direction: column; }
+    .form-group label { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--primary); }
+    .form-group input, .form-group select { padding: 0.65rem 0.85rem; border: 2px solid #e1e5eb; border-radius: 8px; font-size: 0.95rem; font-family: inherit; transition: border-color 0.2s; background: white; }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--secondary); }
+    .form-group .hint { font-size: 0.75rem; color: #888; margin-top: 0.3rem; }
+    .btn-search { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 2rem; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: inherit; }
+    .btn-search:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(62,61,53,0.3); }
+    .btn-search:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
+    .btn-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+    .credit-note { font-size: 0.75rem; color: #888; margin-top: 0.25rem; }
+
+    /* Loading */
+    .loading { display: none; text-align: center; padding: 3rem 2rem; max-width: 900px; margin: 0 auto; }
+    .loading.show { display: block; }
+    .spinner { width: 48px; height: 48px; border: 4px solid #e1e5eb; border-top-color: var(--secondary); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 1rem; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loading p { color: #666; font-size: 0.95rem; }
+
+    /* Error */
+    .error-box { display: none; max-width: 900px; margin: 0 auto 2rem; padding: 1.25rem 1.5rem; background: var(--danger-light); border-radius: 10px; border-left: 4px solid var(--danger); color: var(--danger); font-size: 0.95rem; }
+    .error-box.show { display: block; }
+
+    /* Results Container */
+    .results-container { display: none; max-width: 1100px; margin: 0 auto 2rem; }
+    .results-container.show { display: block; }
+
+    /* My Property Card */
+    .my-property { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 8px rgba(62,61,53,0.06); border: 2px solid var(--secondary); margin-bottom: 1.5rem; position: relative; }
+    .my-property-badge { position: absolute; top: -12px; left: 20px; background: var(--secondary); color: white; padding: 0.2rem 1rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+    .my-property h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .my-property-meta { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 0.75rem; }
+    .my-property-address { font-size: 0.85rem; color: #666; margin-bottom: 0.5rem; }
+    .my-property-rate { font-size: 1.8rem; font-weight: 700; color: var(--primary); }
+    .my-property-rate span { font-size: 0.85rem; font-weight: 400; color: #888; }
+
+    /* OTA Rates Toggle */
+    .ota-toggle { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; background: #f8f8f4; border: 1px solid #eee; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 600; color: var(--secondary); margin-top: 0.75rem; transition: all 0.15s; }
+    .ota-toggle:hover { background: #f0f0ea; }
+    .ota-toggle-arrow { font-size: 0.7rem; transition: transform 0.2s; }
+    .ota-rates-list { display: none; margin-top: 0.75rem; }
+    .ota-rates-list.open { display: block; }
+    .ota-rate-row { display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 0.75rem; border-bottom: 1px solid #f0f0f0; font-size: 0.85rem; }
+    .ota-rate-row:last-child { border-bottom: none; }
+    .ota-name { display: flex; align-items: center; gap: 0.4rem; color: #555; }
+    .ota-logo { width: 18px; height: 18px; border-radius: 3px; }
+    .ota-price { font-weight: 600; }
+    .ota-price.lowest { color: var(--success); }
+    .ota-official { font-size: 0.6rem; font-weight: 700; padding: 0.1rem 0.35rem; border-radius: 3px; background: var(--info-light); color: var(--info); }
+
+    /* Position Summary */
+    .position-summary { background: white; border-radius: 12px; padding: 1.75rem 2rem; box-shadow: 0 2px 8px rgba(62,61,53,0.06); margin-bottom: 1.5rem; }
+    .position-headline { font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; text-align: center; }
+    .position-headline .above { color: var(--danger); }
+    .position-headline .below { color: var(--success); }
+    .position-headline .at { color: var(--secondary); }
+    .position-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; }
+    .position-stat { text-align: center; padding: 1rem; background: #fafaf8; border-radius: 8px; }
+    .position-stat .stat-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.04em; color: #888; font-weight: 600; margin-bottom: 0.3rem; }
+    .position-stat .stat-value { font-size: 1.3rem; font-weight: 700; }
+    .position-stat .stat-value.success { color: var(--success); }
+    .position-stat .stat-value.danger { color: var(--danger); }
+    .position-stat .stat-value.neutral { color: var(--secondary); }
+
+    /* Insights Panel */
+    .insights-panel { background: linear-gradient(135deg, #f8f8f4 0%, #f0f0ea 100%); border-radius: 12px; padding: 1.5rem 2rem; margin-bottom: 1.5rem; border-left: 4px solid var(--secondary); }
+    .insights-panel h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .insight-item { display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.4rem 0; font-size: 0.9rem; color: #555; line-height: 1.5; }
+    .insight-icon { font-size: 1rem; flex-shrink: 0; }
+
+    /* Sort Controls */
+    .sort-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem; }
+    .sort-bar h3 { font-size: 1.1rem; font-weight: 700; }
+    .sort-controls { display: flex; gap: 0.5rem; align-items: center; }
+    .sort-controls label { font-size: 0.85rem; font-weight: 600; color: #555; }
+    .sort-btn { padding: 0.35rem 0.85rem; border: 1px solid #ddd; border-radius: 6px; background: white; cursor: pointer; font-size: 0.8rem; font-family: inherit; transition: all 0.15s; color: #666; }
+    .sort-btn.active { border-color: var(--secondary); background: var(--secondary); color: white; }
+
+    /* Competitor Cards */
+    .competitor-grid { display: flex; flex-direction: column; gap: 0.75rem; }
+    .competitor-card { background: white; border-radius: 12px; padding: 1.25rem 1.5rem; box-shadow: 0 2px 8px rgba(62,61,53,0.06); border: 1px solid #eee; display: grid; grid-template-columns: auto 1fr auto; gap: 1.25rem; align-items: center; transition: transform 0.2s, box-shadow 0.2s; }
+    .competitor-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(62,61,53,0.1); }
+    .comp-img { width: 80px; height: 80px; border-radius: 8px; object-fit: cover; background: #eee; }
+    .comp-info { min-width: 0; }
+    .comp-name { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .comp-meta { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; font-size: 0.8rem; color: #666; margin-bottom: 0.35rem; }
+    .comp-distance { display: inline-flex; align-items: center; gap: 0.2rem; padding: 0.15rem 0.5rem; background: var(--info-light); color: var(--info); border-radius: 4px; font-weight: 600; font-size: 0.75rem; }
+    .comp-amenities { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+    .comp-amenity { font-size: 0.65rem; padding: 0.15rem 0.4rem; background: #f5f5f0; border-radius: 3px; color: #777; }
+    .comp-pricing { text-align: right; min-width: 120px; }
+    .comp-rate { font-size: 1.2rem; font-weight: 700; }
+    .comp-rate span { font-size: 0.7rem; font-weight: 400; color: #888; display: block; }
+    .comp-diff { font-size: 0.8rem; font-weight: 600; margin-top: 0.25rem; padding: 0.2rem 0.6rem; border-radius: 4px; display: inline-block; }
+    .comp-diff.cheaper { background: var(--success-light); color: var(--success); }
+    .comp-diff.expensive { background: var(--danger-light); color: var(--danger); }
+    .comp-diff.same { background: var(--secondary-light); color: var(--secondary); }
+
+    .rating-badge { background: var(--success); color: white; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 700; }
+    .rating-count { font-size: 0.75rem; color: #888; }
+    .hotel-class-stars { color: #d4a846; letter-spacing: 1px; font-size: 0.85rem; }
+
+    /* No Competitors */
+    .no-competitors { text-align: center; padding: 2rem; background: white; border-radius: 12px; color: #666; }
+
+    /* FAQ */
+    .faq-section { max-width: 900px; margin: 2rem auto; background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 8px rgba(62,61,53,0.06); }
+    .faq-section h3 { font-size: 1.15rem; margin-bottom: 1.25rem; }
+    .faq-item { border-bottom: 1px solid #eee; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question { padding: 1rem 0; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; }
+    .faq-question::after { content: '+'; font-size: 1.25rem; color: #888; transition: transform 0.2s; }
+    .faq-item.open .faq-question::after { content: '\2212'; }
+    .faq-answer { display: none; padding: 0 0 1rem; font-size: 0.9rem; color: #555; line-height: 1.7; }
+    .faq-item.open .faq-answer { display: block; }
+
+    /* Resource Links */
+    .resource-links { max-width: 900px; margin: 2rem auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .resource-link { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1.25rem; background: white; border-radius: 10px; text-decoration: none; border: 1px solid #eee; transition: all 0.2s; box-shadow: 0 1px 4px rgba(62,61,53,0.04); }
+    .resource-link:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(62,61,53,0.1); }
+    .resource-link .icon { font-size: 1.4rem; }
+    .resource-link .link-text { font-size: 0.85rem; font-weight: 500; color: var(--primary); }
+
+    /* Footer */
+    .footer { background: var(--primary); color: white; text-align: center; padding: 2rem; margin-top: 3rem; font-size: 0.85rem; }
+    .footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    .footer a:hover { color: white; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #3E3D35; flex-direction: column; padding: 1rem; }
+      .nav-links.open { display: flex; }
+      .page-header h1 { font-size: 1.5rem; }
+      .input-grid { grid-template-columns: 1fr; }
+      .competitor-card { grid-template-columns: 1fr; }
+      .comp-img { width: 100%; height: 150px; }
+      .comp-pricing { text-align: left; }
+      .position-stats { grid-template-columns: repeat(2, 1fr); }
+      .seo-benefits { flex-direction: column; align-items: center; }
+      .resource-links { grid-template-columns: 1fr; }
+    }
+  </style>
+  <link rel="stylesheet" href="/tools/css/tool-layout.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">OnlineHotelier <span>Insights</span></a>
+      <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/tools/" class="active">Tools</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://www.onlinehotelier.com/contact" class="nav-cta" target="_blank">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="/">Home</a> &rsaquo; <a href="/tools/">Tools</a> &rsaquo; Competitor Analysis
+    </div>
+  </div>
+
+  <div class="sidebar-overlay"></div>
+  <button class="sidebar-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+  <div class="tool-page-layout">
+    <aside class="tool-sidebar"></aside>
+
+    <div class="tool-main-content">
+
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1>Competitor Rate Intelligence</h1>
+        <p class="page-subtitle">See how your hotel is priced vs nearby competitors</p>
+      </div>
+
+      <!-- SEO Intro -->
+      <div class="seo-intro">
+        <div class="seo-question">How does your hotel compare to the competition?</div>
+        <p>Search your hotel name to instantly see your <a href="/guides/revenue/adr.html" style="color: var(--secondary);">rates</a> vs nearby properties. Get real-time competitor pricing, distance-based filtering, and actionable insights for your <a href="/guides/revenue/revpar.html" style="color: var(--secondary);">revenue strategy</a>.</p>
+        <div class="seo-benefits">
+          <span>Rate Positioning</span>
+          <span>Distance-Based Compset</span>
+          <span>OTA Rate Comparison</span>
+          <span>Actionable Insights</span>
+        </div>
+      </div>
+
+      <!-- Search Form -->
+      <div class="input-section">
+        <h2>Search Your Hotel</h2>
+        <div class="input-grid">
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label for="searchQuery">Your Hotel Name</label>
+            <input type="text" id="searchQuery" placeholder="e.g., Octave Hotel Sarjapur, Taj Bangalore, Fortune Retreat Ooty" autocomplete="off">
+            <span class="hint">Enter your exact hotel name for best results</span>
+          </div>
+          <div class="form-group">
+            <label for="checkIn">Check-in</label>
+            <input type="date" id="checkIn">
+          </div>
+          <div class="form-group">
+            <label for="checkOut">Check-out</label>
+            <input type="date" id="checkOut">
+          </div>
+          <div class="form-group">
+            <label for="adults">Adults</label>
+            <select id="adults">
+              <option value="1">1</option>
+              <option value="2" selected>2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="currency">Currency</label>
+            <select id="currency">
+              <option value="INR" selected>INR</option>
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="GBP">GBP</option>
+              <option value="AED">AED</option>
+              <option value="SGD">SGD</option>
+              <option value="THB">THB</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="radius">Radius</label>
+            <select id="radius">
+              <option value="2">2 km</option>
+              <option value="5" selected>5 km</option>
+              <option value="10">10 km</option>
+              <option value="25">25 km</option>
+            </select>
+          </div>
+        </div>
+        <div class="btn-actions">
+          <button class="btn-search" id="searchBtn">Analyze Competitors</button>
+          <span id="searchesLeft" style="font-size: 0.8rem; color: #888;"></span>
+        </div>
+        <div class="credit-note">Uses 2 search credits per analysis (your hotel + nearby search)</div>
+      </div>
+
+      <!-- Loading -->
+      <div class="loading" id="loadingState">
+        <div class="spinner"></div>
+        <p>Analyzing your hotel and searching for competitors...</p>
+        <p style="font-size: 0.8rem; color: #999; margin-top: 0.5rem;">This makes 2 API calls and may take a few seconds.</p>
+      </div>
+
+      <!-- Error -->
+      <div class="error-box" id="errorBox"></div>
+
+      <!-- Results -->
+      <div class="results-container" id="resultsContainer">
+        <!-- My Property -->
+        <div id="myPropertySection"></div>
+
+        <!-- Position Summary -->
+        <div id="positionSection"></div>
+
+        <!-- Insights -->
+        <div id="insightsSection"></div>
+
+        <!-- Competitors -->
+        <div id="competitorsSection"></div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="faq-section">
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-item">
+          <div class="faq-question">What is a hotel compset analysis?</div>
+          <div class="faq-answer">A compset (competitive set) analysis compares your hotel's rates, ratings, and positioning against nearby competitor properties. It helps you understand whether you're priced too high, too low, or just right relative to your market. This is a core practice in <a href="/guides/revenue/occupancy.html" style="color: var(--secondary);">hotel revenue management</a>.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How does this tool find my competitors?</div>
+          <div class="faq-answer">When you search your hotel name, we fetch your property details including GPS coordinates and rates from Google Hotels. We then automatically search for hotels near your location and calculate the distance to each one. You can filter by radius (2km to 25km) to focus on your relevant compset.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Why does this use 2 search credits?</div>
+          <div class="faq-answer">The tool makes two separate searches: one to get your property's detailed rates from all <a href="/guides/ota/what-is-ota.html" style="color: var(--secondary);">OTAs</a>, and a second to find nearby competing hotels with their rates. This gives you a complete picture of your competitive landscape.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What radius should I use?</div>
+          <div class="faq-answer">For city hotels, 2-5 km captures your direct competition. For resorts, hill stations, or rural properties, use 10-25 km since travellers compare options across a wider area. Start with 5 km and adjust based on results.</div>
+        </div>
+      </div>
+
+      <!-- Resource Links -->
+      <div class="resource-links">
+        <a href="/tools/rate-shopper/" class="resource-link">
+          <span class="icon">🔍</span>
+          <span class="link-text">Hotel Rate Shopper</span>
+        </a>
+        <a href="/guides/revenue/adr.html" class="resource-link">
+          <span class="icon">📊</span>
+          <span class="link-text">Understanding ADR</span>
+        </a>
+        <a href="/guides/revenue/revpar.html" class="resource-link">
+          <span class="icon">💰</span>
+          <span class="link-text">RevPAR Guide</span>
+        </a>
+        <a href="/guides/ota/what-is-ota.html" class="resource-link">
+          <span class="icon">🌐</span>
+          <span class="link-text">What is an OTA?</span>
+        </a>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>&copy; 2026 <a href="https://www.onlinehotelier.com" target="_blank">OnlineHotelier</a>. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.8;">
+          <a href="/about/">About</a> &bull; <a href="/privacy/">Privacy Policy</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a>
+        </p>
+      </footer>
+
+    </div>
+  </div>
+
+  <script src="/tools/js/tool-nav.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var API_BASE = '/api/competitors';
+
+    var searchBtn = document.getElementById('searchBtn');
+    var searchQuery = document.getElementById('searchQuery');
+    var checkInInput = document.getElementById('checkIn');
+    var checkOutInput = document.getElementById('checkOut');
+    var adultsSelect = document.getElementById('adults');
+    var currencySelect = document.getElementById('currency');
+    var radiusSelect = document.getElementById('radius');
+    var loadingState = document.getElementById('loadingState');
+    var errorBox = document.getElementById('errorBox');
+    var resultsContainer = document.getElementById('resultsContainer');
+    var myPropertySection = document.getElementById('myPropertySection');
+    var positionSection = document.getElementById('positionSection');
+    var insightsSection = document.getElementById('insightsSection');
+    var competitorsSection = document.getElementById('competitorsSection');
+    var searchesLeft = document.getElementById('searchesLeft');
+
+    var currentSort = 'distance';
+    var competitorData = [];
+    var searchCooldown = false;
+
+    // Default dates
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    var dayAfter = new Date();
+    dayAfter.setDate(dayAfter.getDate() + 2);
+    checkInInput.value = formatDate(tomorrow);
+    checkOutInput.value = formatDate(dayAfter);
+
+    function formatDate(d) {
+      return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    }
+
+    function formatPrice(amount) {
+      var currency = currencySelect.value;
+      if (currency === 'INR') return '\u20B9' + Math.round(amount).toLocaleString('en-IN');
+      return currency + ' ' + Math.round(amount).toLocaleString();
+    }
+
+    function escapeHtml(str) {
+      var div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    function showError(msg) { errorBox.textContent = msg; errorBox.classList.add('show'); }
+    function hideError() { errorBox.classList.remove('show'); }
+
+    // Search handler
+    searchBtn.addEventListener('click', doSearch);
+    searchQuery.addEventListener('keydown', function(e) { if (e.key === 'Enter') doSearch(); });
+
+    async function doSearch() {
+      if (searchCooldown) return;
+      var query = searchQuery.value.trim();
+      if (!query) { showError('Please enter your hotel name.'); searchQuery.focus(); return; }
+      if (!checkInInput.value || !checkOutInput.value) { showError('Please select check-in and check-out dates.'); return; }
+      if (checkInInput.value >= checkOutInput.value) { showError('Check-out date must be after check-in date.'); return; }
+
+      searchCooldown = true;
+      setTimeout(function() { searchCooldown = false; }, 5000);
+
+      hideError();
+      resultsContainer.classList.remove('show');
+      loadingState.classList.add('show');
+      searchBtn.disabled = true;
+
+      var params = new URLSearchParams({
+        q: query,
+        check_in_date: checkInInput.value,
+        check_out_date: checkOutInput.value,
+        adults: adultsSelect.value,
+        currency: currencySelect.value,
+        radius: radiusSelect.value,
+        gl: 'in',
+        hl: 'en'
+      });
+
+      try {
+        var response = await fetch(API_BASE + '?' + params.toString());
+        var data = await response.json();
+
+        if (response.status === 429) {
+          showError(data.error || 'Too many searches. Please wait and try again.');
+          loadingState.classList.remove('show');
+          searchBtn.disabled = false;
+          return;
+        }
+
+        if (!response.ok) {
+          showError(data.error || 'Search failed. Please try again.');
+          loadingState.classList.remove('show');
+          searchBtn.disabled = false;
+          return;
+        }
+
+        if (typeof data.remaining === 'number') {
+          searchesLeft.textContent = data.remaining + ' search credits remaining this hour';
+          searchesLeft.style.color = data.remaining <= 1 ? 'var(--danger)' : '#888';
+        }
+
+        renderMyProperty(data.myProperty);
+        renderPositionSummary(data.insights, data.myProperty);
+        renderInsights(data.insights, data.myProperty);
+
+        competitorData = data.competitors || [];
+        currentSort = 'distance';
+        renderCompetitors();
+
+        loadingState.classList.remove('show');
+        resultsContainer.classList.add('show');
+        resultsContainer.scrollIntoView({ behavior: 'smooth' });
+
+      } catch (err) {
+        showError('Analysis failed: ' + err.message);
+        loadingState.classList.remove('show');
+      }
+      searchBtn.disabled = false;
+    }
+
+    // Render My Property
+    function renderMyProperty(prop) {
+      if (!prop) { myPropertySection.innerHTML = ''; return; }
+
+      var rating = prop.overall_rating ? parseFloat(prop.overall_rating).toFixed(1) : null;
+      var reviews = prop.reviews || 0;
+      var hotelClass = prop.extracted_hotel_class || prop.hotel_class;
+      var rate = prop.lowestRate ? formatPrice(prop.lowestRate) : 'N/A';
+
+      var sortedPrices = (prop.allPrices || []).filter(function(p) {
+        return p.rate_per_night && p.rate_per_night.extracted_lowest;
+      }).sort(function(a, b) {
+        return a.rate_per_night.extracted_lowest - b.rate_per_night.extracted_lowest;
+      });
+
+      var bestPrice = sortedPrices.length > 0 ? sortedPrices[0].rate_per_night.extracted_lowest : null;
+
+      var html = '<div class="my-property">';
+      html += '<span class="my-property-badge">Your Hotel</span>';
+      html += '<h2>' + escapeHtml(prop.name) + '</h2>';
+      html += '<div class="my-property-meta">';
+      if (rating) html += '<span class="rating-badge">' + rating + '</span><span class="rating-count">(' + reviews.toLocaleString() + ' reviews)</span>';
+      if (hotelClass) {
+        var stars = typeof hotelClass === 'number' ? hotelClass : parseInt(hotelClass);
+        if (stars > 0 && stars <= 5) html += '<span class="hotel-class-stars">' + '\u2605'.repeat(stars) + '</span>';
+      }
+      html += '</div>';
+      if (prop.address) html += '<div class="my-property-address">' + escapeHtml(prop.address) + '</div>';
+      html += '<div class="my-property-rate">' + rate + ' <span>/ night (lowest across OTAs)</span></div>';
+
+      // OTA rates toggle
+      if (sortedPrices.length > 0) {
+        html += '<div class="ota-toggle" id="otaToggle">';
+        html += '<span>View ' + sortedPrices.length + ' OTA rates</span>';
+        html += '<span class="ota-toggle-arrow">\u25BC</span>';
+        html += '</div>';
+        html += '<div class="ota-rates-list" id="otaRatesList">';
+        sortedPrices.forEach(function(pr) {
+          var price = pr.rate_per_night.extracted_lowest;
+          var isBest = (price === bestPrice);
+          html += '<div class="ota-rate-row">';
+          html += '<span class="ota-name">';
+          if (pr.logo) html += '<img src="' + escapeHtml(pr.logo) + '" class="ota-logo" alt="" onerror="this.style.display=\'none\'">';
+          html += escapeHtml(pr.source);
+          if (pr.official) html += ' <span class="ota-official">Official</span>';
+          html += '</span>';
+          html += '<span class="ota-price' + (isBest ? ' lowest' : '') + '">' + formatPrice(price) + '</span>';
+          html += '</div>';
+        });
+        html += '</div>';
+      }
+
+      html += '</div>';
+      myPropertySection.innerHTML = html;
+    }
+
+    // Render Position Summary
+    function renderPositionSummary(insights, prop) {
+      if (!insights) { positionSection.innerHTML = ''; return; }
+
+      var posClass = insights.position;
+      var posText = '';
+      if (insights.position === 'above') {
+        posText = 'You\'re <span class="above">' + insights.positionPercent + '% above</span> the area average';
+      } else if (insights.position === 'below') {
+        posText = 'You\'re <span class="below">' + insights.positionPercent + '% below</span> the area average';
+      } else {
+        posText = 'You\'re <span class="at">at par</span> with the area average';
+      }
+
+      var html = '<div class="position-summary">';
+      html += '<div class="position-headline">' + posText + '</div>';
+      html += '<div class="position-stats">';
+      html += '<div class="position-stat"><div class="stat-label">Your Rate</div><div class="stat-value">' + formatPrice(insights.myRate) + '</div></div>';
+      html += '<div class="position-stat"><div class="stat-label">Area Average</div><div class="stat-value neutral">' + formatPrice(insights.avgCompetitorRate) + '</div></div>';
+      html += '<div class="position-stat"><div class="stat-label">Cheaper Than You</div><div class="stat-value' + (insights.cheaperCount > 0 ? ' danger' : ' success') + '">' + insights.cheaperCount + ' of ' + insights.competitorsWithRates + '</div></div>';
+      html += '<div class="position-stat"><div class="stat-label">Competitors Found</div><div class="stat-value">' + insights.totalCompetitors + '</div></div>';
+
+      if (insights.myRating && insights.avgCompetitorRating) {
+        var ratingDiff = (insights.myRating - insights.avgCompetitorRating).toFixed(1);
+        var ratingClass = ratingDiff >= 0 ? 'success' : 'danger';
+        html += '<div class="position-stat"><div class="stat-label">Your Rating vs Avg</div><div class="stat-value ' + ratingClass + '">' + insights.myRating.toFixed(1) + ' vs ' + insights.avgCompetitorRating.toFixed(1) + '</div></div>';
+      }
+
+      html += '</div>';
+      html += '</div>';
+      positionSection.innerHTML = html;
+    }
+
+    // Render Insights
+    function renderInsights(insights, prop) {
+      if (!insights) { insightsSection.innerHTML = ''; return; }
+
+      var items = [];
+
+      if (insights.position === 'above' && insights.positionPercent > 15) {
+        items.push({ icon: '\u26A0\uFE0F', text: 'You\'re priced ' + insights.positionPercent + '% above the area average. Consider if your amenities and rating justify the premium, or if a rate adjustment could improve occupancy.' });
+      } else if (insights.position === 'above' && insights.positionPercent <= 15) {
+        items.push({ icon: '\u2705', text: 'You\'re slightly above average (' + insights.positionPercent + '%). This is a healthy premium position if your property offers better amenities or ratings.' });
+      } else if (insights.position === 'below') {
+        items.push({ icon: '\uD83D\uDCA1', text: 'You\'re ' + insights.positionPercent + '% below the area average. There may be room to increase rates without losing competitiveness.' });
+      }
+
+      if (insights.cheaperCount === 0 && insights.competitorsWithRates > 0) {
+        items.push({ icon: '\uD83C\uDFC6', text: 'You have the lowest rate in the area! You\'re well-positioned for price-sensitive travellers.' });
+      } else if (insights.cheaperCount > insights.competitorsWithRates / 2) {
+        items.push({ icon: '\uD83D\uDCCA', text: insights.cheaperCount + ' of ' + insights.competitorsWithRates + ' competitors are priced lower than you. Monitor if this impacts your booking volume.' });
+      }
+
+      if (insights.myRating && insights.avgCompetitorRating) {
+        if (insights.myRating > insights.avgCompetitorRating) {
+          items.push({ icon: '\u2B50', text: 'Your rating (' + insights.myRating.toFixed(1) + ') is above the area average (' + insights.avgCompetitorRating.toFixed(1) + '). This supports premium pricing.' });
+        } else if (insights.myRating < insights.avgCompetitorRating) {
+          items.push({ icon: '\uD83D\uDCAC', text: 'Your rating (' + insights.myRating.toFixed(1) + ') is below the area average (' + insights.avgCompetitorRating.toFixed(1) + '). Focus on guest experience to justify your rates.' });
+        }
+      }
+
+      if (insights.searchArea) {
+        items.push({ icon: '\uD83D\uDCCD', text: 'Showing competitors near ' + insights.searchArea + '. Adjust radius to see more or fewer results.' });
+      }
+
+      if (items.length === 0) { insightsSection.innerHTML = ''; return; }
+
+      var html = '<div class="insights-panel">';
+      html += '<h3>Pricing Insights</h3>';
+      items.forEach(function(item) {
+        html += '<div class="insight-item"><span class="insight-icon">' + item.icon + '</span><span>' + item.text + '</span></div>';
+      });
+      html += '</div>';
+      insightsSection.innerHTML = html;
+    }
+
+    // Render Competitors
+    function renderCompetitors() {
+      var sorted = competitorData.slice();
+      if (currentSort === 'distance') {
+        sorted.sort(function(a, b) { return (a.distance_km || 999) - (b.distance_km || 999); });
+      } else if (currentSort === 'price-low') {
+        sorted.sort(function(a, b) { return (a.lowestRate || 999999) - (b.lowestRate || 999999); });
+      } else if (currentSort === 'rating') {
+        sorted.sort(function(a, b) { return (b.overall_rating || 0) - (a.overall_rating || 0); });
+      }
+
+      var html = '<div class="sort-bar">';
+      html += '<h3>Nearby Competitors (' + sorted.length + ')</h3>';
+      html += '<div class="sort-controls">';
+      html += '<label>Sort:</label>';
+      html += '<button class="sort-btn' + (currentSort === 'distance' ? ' active' : '') + '" data-sort="distance">Distance</button>';
+      html += '<button class="sort-btn' + (currentSort === 'price-low' ? ' active' : '') + '" data-sort="price-low">Price</button>';
+      html += '<button class="sort-btn' + (currentSort === 'rating' ? ' active' : '') + '" data-sort="rating">Rating</button>';
+      html += '</div>';
+      html += '</div>';
+
+      if (sorted.length === 0) {
+        html += '<div class="no-competitors">No competitors found within the selected radius. Try increasing the radius.</div>';
+      } else {
+        html += '<div class="competitor-grid">';
+        sorted.forEach(function(c) {
+          var rating = c.overall_rating ? parseFloat(c.overall_rating).toFixed(1) : null;
+          var reviews = c.reviews || 0;
+          var hotelClass = c.extracted_hotel_class || c.hotel_class;
+          var rate = c.lowestRate ? formatPrice(c.lowestRate) : 'N/A';
+
+          html += '<div class="competitor-card">';
+
+          // Image
+          if (c.image) {
+            html += '<img class="comp-img" src="' + escapeHtml(c.image) + '" alt="' + escapeHtml(c.name) + '" loading="lazy" onerror="this.style.display=\'none\'">';
+          } else {
+            html += '<div class="comp-img" style="display:flex;align-items:center;justify-content:center;color:#bbb;font-size:2rem;">\uD83C\uDFE8</div>';
+          }
+
+          // Info
+          html += '<div class="comp-info">';
+          html += '<div class="comp-name">' + escapeHtml(c.name) + '</div>';
+          html += '<div class="comp-meta">';
+          if (c.distance_km !== null) html += '<span class="comp-distance">\uD83D\uDCCD ' + c.distance_km + ' km</span>';
+          if (rating) html += '<span class="rating-badge">' + rating + '</span><span class="rating-count">(' + reviews.toLocaleString() + ')</span>';
+          if (hotelClass) {
+            var stars = typeof hotelClass === 'number' ? hotelClass : parseInt(hotelClass);
+            if (stars > 0 && stars <= 5) html += '<span class="hotel-class-stars">' + '\u2605'.repeat(stars) + '</span>';
+          }
+          html += '</div>';
+          if (c.amenities && c.amenities.length > 0) {
+            html += '<div class="comp-amenities">';
+            c.amenities.forEach(function(a) { html += '<span class="comp-amenity">' + escapeHtml(a) + '</span>'; });
+            html += '</div>';
+          }
+          html += '</div>';
+
+          // Pricing
+          html += '<div class="comp-pricing">';
+          html += '<div class="comp-rate">' + rate + '<span>/night</span></div>';
+          if (c.priceDiffPercent !== null) {
+            var diffClass = c.priceDiff < 0 ? 'cheaper' : c.priceDiff > 0 ? 'expensive' : 'same';
+            var diffLabel = '';
+            if (c.priceDiff < 0) diffLabel = Math.abs(c.priceDiffPercent) + '% cheaper';
+            else if (c.priceDiff > 0) diffLabel = c.priceDiffPercent + '% more';
+            else diffLabel = 'Same rate';
+            html += '<span class="comp-diff ' + diffClass + '">' + diffLabel + '</span>';
+          }
+          html += '</div>';
+
+          html += '</div>';
+        });
+        html += '</div>';
+      }
+
+      competitorsSection.innerHTML = html;
+    }
+
+    // Event delegation
+    document.addEventListener('click', function(e) {
+      // OTA toggle
+      if (e.target.closest('#otaToggle')) {
+        var list = document.getElementById('otaRatesList');
+        if (list) list.classList.toggle('open');
+        var arrow = e.target.closest('#otaToggle').querySelector('.ota-toggle-arrow');
+        if (arrow) arrow.style.transform = list && list.classList.contains('open') ? 'rotate(180deg)' : '';
+        return;
+      }
+
+      // Sort buttons
+      var sortBtn = e.target.closest('.sort-btn');
+      if (sortBtn && sortBtn.dataset.sort) {
+        currentSort = sortBtn.dataset.sort;
+        renderCompetitors();
+        return;
+      }
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+      q.addEventListener('click', function() { q.parentElement.classList.toggle('open'); });
+    });
+  });
+  </script>
+</body>
+</html>

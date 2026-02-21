@@ -36,6 +36,12 @@ const TOOLS = [
     desc: 'Compare Google Hotel rates'
   },
   {
+    slug: 'competitor-analysis/',
+    title: 'Competitor Rate Intelligence',
+    icon: '\uD83C\uDFAF',
+    desc: 'Compare your rates vs nearby competitors'
+  },
+  {
     slug: 'demand-calendar/',
     title: 'Demand Calendar 2026',
     icon: '\uD83D\uDCC5',
