@@ -42,6 +42,7 @@ const GUIDE_CATEGORIES = [
       { slug: 'booking-com-hotel-listing-guide.html', title: 'Booking.com Listing Guide' },
       { slug: 'booking-genius-program.html', title: 'Booking.com Genius Program' },
       { slug: 'google-free-booking-links.html', title: 'Google Free Booking Links' },
+      { slug: 'booking-com-visibility-booster.html', title: 'Booking.com Visibility Booster' },
     ]
   },
   {
