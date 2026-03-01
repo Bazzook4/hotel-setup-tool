@@ -114,10 +114,12 @@
       --primary: #3E3D35;
       --secondary: #89826E;
       --accent: #89826E;
-      --danger: #c62828;
-      --danger-light: #ffebee;
-      --success: #2e7d32;
-      --success-light: #e8f5e9;
+      --primary-light: rgba(62,61,53,0.08);
+      --secondary-light: rgba(137,130,110,0.12);
+      --danger: #89826E;
+      --danger-light: rgba(137,130,110,0.1);
+      --success: #3E3D35;
+      --success-light: rgba(62,61,53,0.08);
     }
 
     /* Site Navigation */
@@ -236,8 +238,8 @@
 
     /* SEO Intro Section */
     .seo-intro {
-      background: linear-gradient(135deg, rgba(198, 40, 40, 0.1) 0%, rgba(255,255,255,0.9) 100%);
-      border: 2px solid var(--danger);
+      background: var(--secondary-light);
+      border: 2px solid var(--secondary);
       border-radius: 12px;
       padding: 1.5rem;
       margin-bottom: 1.5rem;
@@ -247,7 +249,7 @@
     .seo-question {
       font-size: 1.25rem;
       font-weight: 700;
-      color: var(--danger);
+      color: var(--primary);
       margin-bottom: 0.75rem;
     }
 
@@ -264,7 +266,7 @@
     }
 
     .seo-benefits span {
-      background: var(--danger);
+      background: var(--secondary);
       color: white;
       padding: 0.4rem 0.75rem;
       border-radius: 20px;
@@ -323,7 +325,7 @@
 
     .btn-calculate {
       padding: 0.75rem 2rem;
-      background: linear-gradient(135deg, var(--danger) 0%, #b71c1c 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       color: white;
       border: none;
       border-radius: 8px;
@@ -336,7 +338,7 @@
 
     .btn-calculate:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(198, 40, 40, 0.4);
+      box-shadow: 0 4px 12px rgba(62,61,53,0.3);
     }
 
     /* Results Container */
@@ -358,7 +360,7 @@
 
     /* Top Section - The Big Scary Number */
     .commission-alert {
-      background: linear-gradient(135deg, #c62828 0%, #b71c1c 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       color: white;
       padding: 2rem;
       text-align: center;
@@ -467,15 +469,15 @@
     }
 
     .loss-card {
-      background: var(--danger-light);
-      border: 2px solid #ef9a9a;
+      background: var(--secondary-light);
+      border: 2px solid rgba(137,130,110,0.3);
       border-radius: 12px;
       padding: 1.25rem;
       text-align: center;
     }
 
     .loss-card.yearly {
-      background: linear-gradient(135deg, #c62828 0%, #b71c1c 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       border-color: transparent;
       color: white;
     }
@@ -548,11 +550,11 @@
     }
 
     .bar-ota {
-      background: linear-gradient(135deg, #c62828 0%, #e53935 100%);
+      background: var(--secondary);
     }
 
     .bar-hotel {
-      background: linear-gradient(135deg, #2e7d32 0%, #43a047 100%);
+      background: var(--primary);
     }
 
     .comparison-legend {
@@ -573,8 +575,8 @@
       border-radius: 3px;
     }
 
-    .legend-dot.ota { background: var(--danger); }
-    .legend-dot.hotel { background: var(--success); }
+    .legend-dot.ota { background: var(--secondary); }
+    .legend-dot.hotel { background: var(--primary); }
 
     /* Right Panel - Summary & Actions */
     .panel-right {
@@ -607,11 +609,11 @@
       color: #888;
     }
 
-    .summary-card.guest { border-left: 4px solid #1565c0; }
-    .summary-card.guest .card-value { color: #1565c0; }
+    .summary-card.guest { border-left: 4px solid var(--secondary); }
+    .summary-card.guest .card-value { color: var(--secondary); }
 
-    .summary-card.hotel { border-left: 4px solid var(--success); }
-    .summary-card.hotel .card-value { color: var(--success); }
+    .summary-card.hotel { border-left: 4px solid var(--primary); }
+    .summary-card.hotel .card-value { color: var(--primary); }
 
     .resource-links {
       margin-top: 1.5rem;

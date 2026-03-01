@@ -119,14 +119,14 @@
       --bg: #F8F8F4;
       --primary-light: rgba(62,61,53,0.08);
       --secondary-light: rgba(137,130,110,0.12);
-      --success: #2e7d32;
-      --success-light: #e8f5e9;
-      --danger: #c62828;
-      --danger-light: #ffebee;
-      --info: #1565c0;
-      --info-light: #e3f2fd;
-      --warning: #e65100;
-      --warning-light: #fff3e0;
+      --success: var(--primary);
+      --success-light: rgba(62,61,53,0.08);
+      --danger: var(--secondary);
+      --danger-light: rgba(137,130,110,0.1);
+      --info: var(--secondary);
+      --info-light: rgba(137,130,110,0.1);
+      --warning: var(--secondary);
+      --warning-light: rgba(137,130,110,0.08);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'DM Sans', 'Avenir', system-ui, sans-serif; background: var(--bg); color: var(--primary); line-height: 1.6; }
@@ -154,11 +154,11 @@
     .page-subtitle { color: #666; font-size: 1.1rem; }
 
     /* SEO Intro */
-    .seo-intro { max-width: 800px; margin: 0 auto 2rem; padding: 1.5rem 2rem; background: linear-gradient(135deg, var(--info-light) 0%, #f0f7ff 100%); border-radius: 12px; text-align: center; border-left: 4px solid var(--info); }
+    .seo-intro { max-width: 800px; margin: 0 auto 2rem; padding: 1.5rem 2rem; background: rgba(137,130,110,0.08); border-radius: 12px; text-align: center; border-left: 4px solid var(--secondary); }
     .seo-question { font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
     .seo-intro p { color: #555; font-size: 0.95rem; margin-bottom: 0.75rem; }
     .seo-benefits { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
-    .seo-benefits span { background: var(--info); color: white; padding: 0.3rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
+    .seo-benefits span { background: var(--secondary); color: white; padding: 0.3rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
 
     /* Input Section */
     .input-section { max-width: 900px; margin: 0 auto 2rem; background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 8px rgba(62,61,53,0.06); }
@@ -262,7 +262,7 @@
 
     .rating-badge { background: var(--success); color: white; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 700; }
     .rating-count { font-size: 0.75rem; color: #888; }
-    .hotel-class-stars { color: #d4a846; letter-spacing: 1px; font-size: 0.85rem; }
+    .hotel-class-stars { color: var(--secondary); letter-spacing: 1px; font-size: 0.85rem; }
 
     /* No Competitors */
     .no-competitors { text-align: center; padding: 2rem; background: white; border-radius: 12px; color: #666; }

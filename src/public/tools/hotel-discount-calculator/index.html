@@ -415,18 +415,18 @@
     }
 
     .dash-card.without {
-      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-      border: 2px solid #81c784;
+      background: var(--primary-light);
+      border: 2px solid rgba(62,61,53,0.2);
     }
 
     .dash-card.loss {
-      background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
-      border: 2px solid #ef9a9a;
+      background: var(--secondary-light);
+      border: 2px solid rgba(137,130,110,0.3);
     }
 
     .dash-card.with {
-      background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
-      border: 2px solid #ffb74d;
+      background: rgba(62,61,53,0.04);
+      border: 2px solid rgba(62,61,53,0.15);
     }
 
     .dash-label {
@@ -441,9 +441,9 @@
       font-weight: 700;
     }
 
-    .dash-card.without .dash-value { color: #2e7d32; }
-    .dash-card.loss .dash-value { color: #d32f2f; }
-    .dash-card.with .dash-value { color: #e65100; }
+    .dash-card.without .dash-value { color: var(--primary); }
+    .dash-card.loss .dash-value { color: var(--secondary); }
+    .dash-card.with .dash-value { color: var(--primary); }
 
     .dash-sub {
       font-size: 0.75rem;
@@ -493,15 +493,15 @@
     }
 
     .dash-row.loss-row .negative {
-      color: #e65100;
+      color: var(--secondary);
     }
 
     .dash-row .negative {
-      color: #d32f2f;
+      color: var(--secondary);
     }
 
     .dash-row .positive {
-      color: #2e7d32;
+      color: var(--primary);
       font-weight: 600;
     }
 
@@ -534,15 +534,15 @@
     }
 
     .dash-projections {
-      background: linear-gradient(135deg, #ffebee 0%, #fce4ec 100%);
+      background: var(--secondary-light);
       padding: 1.25rem;
       border-radius: 10px;
       margin-bottom: 1rem;
-      border: 2px solid #ef9a9a;
+      border: 2px solid rgba(137,130,110,0.25);
     }
 
     .dash-projections h4 {
-      color: #c62828;
+      color: var(--primary);
       font-size: 0.95rem;
       margin-bottom: 1rem;
       text-align: center;
@@ -562,7 +562,7 @@
     }
 
     .projection-card.highlight {
-      background: linear-gradient(135deg, #d32f2f 0%, #c62828 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       color: white;
     }
 
@@ -586,7 +586,7 @@
     }
 
     .projection-value.negative {
-      color: #d32f2f;
+      color: var(--secondary);
     }
 
     .dash-resources {
@@ -663,13 +663,13 @@
     }
 
     .compare-card.without-discount {
-      background: #e8f5e9;
-      border: 2px solid #a5d6a7;
+      background: var(--primary-light);
+      border: 2px solid rgba(62,61,53,0.2);
     }
 
     .compare-card.with-discount {
-      background: #fff3e0;
-      border: 2px solid #ffcc80;
+      background: var(--secondary-light);
+      border: 2px solid rgba(137,130,110,0.25);
     }
 
     .compare-card .title {
@@ -684,11 +684,11 @@
     }
 
     .compare-card.without-discount .amount {
-      color: #2e7d32;
+      color: var(--primary);
     }
 
     .compare-card.with-discount .amount {
-      color: #e65100;
+      color: var(--secondary);
     }
 
     .compare-card .note {
@@ -699,7 +699,7 @@
 
     /* Impact Box */
     .impact-box {
-      background: linear-gradient(135deg, #d32f2f 0%, #f44336 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       padding: 1.5rem;
       border-radius: 10px;
       color: white;

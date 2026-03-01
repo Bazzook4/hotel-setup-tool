@@ -448,10 +448,10 @@
       min-width: 40px;
     }
 
-    .segment-ota { background: #e65100; }
-    .segment-direct { background: #2e7d32; }
-    .segment-walkin { background: #1565c0; }
-    .segment-corporate { background: #7b1fa2; }
+    .segment-ota { background: var(--secondary); }
+    .segment-direct { background: var(--primary); }
+    .segment-walkin { background: rgba(62,61,53,0.5); }
+    .segment-corporate { background: rgba(137,130,110,0.6); }
 
     .channel-legend {
       display: flex;
@@ -518,20 +518,20 @@
     }
 
     .highlight-green {
-      background: #e8f5e9;
+      background: var(--primary-light);
     }
 
     .highlight-green .value {
-      color: #2e7d32;
+      color: var(--primary);
       font-size: 1.2rem;
     }
 
     .highlight-red {
-      background: #ffebee;
+      background: var(--secondary-light);
     }
 
     .highlight-red .value {
-      color: #d32f2f;
+      color: var(--secondary);
       font-size: 1.2rem;
     }
 
@@ -546,7 +546,7 @@
 
     /* Savings Section */
     .savings-card {
-      background: linear-gradient(135deg, #2e7d32 0%, #43a047 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       color: white;
       padding: 1.5rem;
       border-radius: 12px;
@@ -599,16 +599,16 @@
     }
 
     .comparison-table .positive {
-      color: #2e7d32;
+      color: var(--primary);
     }
 
     .comparison-table .negative {
-      color: #d32f2f;
+      color: var(--secondary);
     }
 
     /* Recommendations */
     .recommendations {
-      background: #fff8e1;
+      background: var(--secondary-light);
       border-radius: 12px;
       padding: 1.5rem;
       margin-top: 1.5rem;
@@ -624,7 +624,7 @@
 
     .recommendation-item {
       padding: 0.75rem 0;
-      border-bottom: 1px solid #ffe0b2;
+      border-bottom: 1px solid rgba(137,130,110,0.2);
       display: flex;
       gap: 0.75rem;
     }
@@ -942,13 +942,13 @@
       <div class="channel-input">
         <div class="channel-name">Direct Bookings <span>Website, phone, email</span></div>
         <input type="number" id="directPercent" placeholder="%" min="0" max="100">
-        <div style="text-align: center; color: #2e7d32; font-weight: 500;">0% comm</div>
+        <div style="text-align: center; color: var(--primary); font-weight: 500;">0% comm</div>
       </div>
 
       <div class="channel-input">
         <div class="channel-name">Walk-ins <span>Guests without reservation</span></div>
         <input type="number" id="walkinPercent" placeholder="%" min="0" max="100">
-        <div style="text-align: center; color: #1565c0; font-weight: 500;">0% comm</div>
+        <div style="text-align: center; color: var(--primary); font-weight: 500;">0% comm</div>
       </div>
 
       <div class="channel-input">
@@ -959,7 +959,7 @@
         </div>
       </div>
 
-      <div id="percentWarning" style="color: #d32f2f; font-size: 0.9rem; margin: 1rem 0; display: none;">
+      <div id="percentWarning" style="color: var(--secondary); font-size: 0.9rem; margin: 1rem 0; display: none;">
         Total must equal 100%. Currently: <span id="currentTotal">0</span>%
       </div>
 
@@ -1309,19 +1309,19 @@
 
         if (dependencyScore >= 70) {
           statusEl.textContent = 'High Dependency';
-          statusEl.style.background = 'rgba(211, 47, 47, 0.3)';
+          statusEl.style.background = 'rgba(137, 130, 110, 0.3)';
           subtitleEl.textContent = 'Critical: Most of your revenue goes to OTA commissions';
         } else if (dependencyScore >= 50) {
           statusEl.textContent = 'Moderate Dependency';
-          statusEl.style.background = 'rgba(255, 152, 0, 0.3)';
+          statusEl.style.background = 'rgba(137, 130, 110, 0.2)';
           subtitleEl.textContent = 'Room for improvement in direct booking acquisition';
         } else if (dependencyScore >= 30) {
           statusEl.textContent = 'Balanced Mix';
-          statusEl.style.background = 'rgba(76, 175, 80, 0.3)';
+          statusEl.style.background = 'rgba(62, 61, 53, 0.15)';
           subtitleEl.textContent = 'Good balance, but continue building direct channels';
         } else {
           statusEl.textContent = 'Low Dependency';
-          statusEl.style.background = 'rgba(76, 175, 80, 0.5)';
+          statusEl.style.background = 'rgba(62, 61, 53, 0.25)';
           subtitleEl.textContent = 'Excellent! Strong direct booking performance';
         }
 
