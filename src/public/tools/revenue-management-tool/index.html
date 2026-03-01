@@ -739,11 +739,19 @@
         padding: 1.25rem;
       }
       .room-type-item {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr auto auto auto;
         gap: 0.5rem;
       }
       .room-type-item input:first-child {
         grid-column: 1 / -1;
+      }
+      .room-type-item input[type="number"] {
+        width: 70px;
+        min-width: 0;
+      }
+      .room-type-item .btn {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.85rem;
       }
       .add-room-type {
         flex-wrap: wrap;
@@ -754,7 +762,7 @@
       .add-room-type input[type="number"] {
         flex: 1 1 0;
         width: auto !important;
-        min-width: 0;
+        min-width: 60px;
       }
       .add-room-type .btn {
         flex: 0 0 auto;
