@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2BPYRGZTM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q2BPYRGZTM');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Break Even Calculator — Find Your Minimum Room Rate | OnlineHotelier Insights</title>
+  <meta name="description" content="Free hotel break-even calculator for Indian hoteliers. Find the minimum occupancy and room rate needed to cover all costs. Includes fixed costs, variable costs, and OTA commission impact.">
+  <meta name="keywords" content="hotel break even calculator, hotel break even point, minimum room rate calculator, hotel fixed costs, hotel variable costs, hotel occupancy break even, hotel pricing India">
+  <link rel="canonical" href="https://insights.onlinehotelier.com/tools/break-even-calculator/">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <!-- AI/LLM Crawler Meta Tags -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hotel Break Even Calculator — Minimum Occupancy & Room Rate">
+  <meta property="og:description" content="Calculate the exact occupancy and room rate your hotel needs to cover all costs. India-specific with OTA commission impact.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://insights.onlinehotelier.com/tools/break-even-calculator/">
+
+  <!-- Google AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-6118286051054894">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Hotel Break Even Calculator",
+    "url": "https://insights.onlinehotelier.com/tools/break-even-calculator/",
+    "description": "Calculate the minimum occupancy and room rate a hotel needs to cover all fixed and variable costs.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "publisher": { "@type": "Organization", "name": "OnlineHotelier" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the hotel break-even point?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The hotel break-even point is the minimum level of occupancy and revenue at which your total income exactly equals total costs — no profit, no loss. Below this point, you're losing money. Above it, you're profitable. It accounts for both fixed costs (rent, salaries) and variable costs per room sold (housekeeping, laundry, OTA commission)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate hotel break-even occupancy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Break-even occupancy = Total Fixed Monthly Costs ÷ (ADR − Variable Cost per Room) ÷ Total Rooms × 100. For example, if fixed costs are ₹3,00,000/month, ADR is ₹3,500, variable cost per room is ₹500, and you have 20 rooms: Break-even = 3,00,000 ÷ (3500 − 500) ÷ 20 × 100 = 50% occupancy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does OTA commission affect my break-even point?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OTA commission directly increases your variable cost per room sold. If your OTA commission is 18%, for a ₹3,500 booking you pay ₹630 in commission plus 18% GST on that commission (₹113). This ₹743 extra cost raises your break-even occupancy — you need to sell more rooms just to cover the same fixed costs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical fixed costs for an Indian hotel?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Typical fixed monthly costs for Indian hotels include: Rent or EMI (₹50,000–₹5,00,000 depending on property), staff salaries (₹30,000–₹3,00,000), electricity and water (₹15,000–₹1,00,000), internet and cable (₹2,000–₹10,000), property tax (₹2,000–₹20,000 amortised monthly), and maintenance/AMC contracts (₹5,000–₹30,000). Total fixed costs for a 20-room hotel typically range from ₹1,50,000 to ₹5,00,000 per month."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is contribution margin per room?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Contribution margin per room = ADR − Variable Cost per Room. Each room sold contributes this amount toward covering your fixed costs. For example, if ADR is ₹3,500 and variable cost is ₹600 per room, each booking contributes ₹2,900 toward your fixed costs. Once total contributions equal your fixed costs, you've reached break-even."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OnlineHotelier",
+    "url": "https://www.onlinehotelier.com",
+    "logo": "https://insights.onlinehotelier.com/favicon.png",
+    "sameAs": ["https://insights.onlinehotelier.com"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://insights.onlinehotelier.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://insights.onlinehotelier.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Break Even Calculator", "item": "https://insights.onlinehotelier.com/tools/break-even-calculator/"}
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/tools/css/tool-layout.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Avenir', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #F8F8F4;
+      color: #3E3D35;
+      line-height: 1.6;
+    }
+
+    :root {
+      --primary: #3E3D35;
+      --secondary: #89826E;
+      --primary-light: rgba(62, 61, 53, 0.08);
+      --secondary-light: rgba(137, 130, 110, 0.12);
+    }
+
+    /* ---- Nav ---- */
+    .site-nav {
+      background: #3E3D35;
+      padding: 0 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-nav .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+    .nav-logo { font-size: 1.3rem; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: -0.02em; }
+    .nav-logo span { color: #89826E; font-weight: 400; }
+    .nav-links { display: flex; gap: 0.25rem; list-style: none; align-items: center; }
+    .nav-links a {
+      text-decoration: none; color: rgba(255,255,255,0.65);
+      font-weight: 500; font-size: 0.9rem;
+      padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,0.08); }
+    .nav-cta { background: rgba(137,130,110,0.25) !important; color: #fff !important; border: 1px solid rgba(137,130,110,0.4); }
+    .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+
+    /* ---- Page Header ---- */
+    .page-header {
+      padding: 2rem 2rem 1rem;
+      border-bottom: 1px solid #eee;
+      background: white;
+    }
+    .page-header h1 {
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.35rem;
+    }
+    .page-header p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    /* ---- SEO Intro Box ---- */
+    .seo-intro {
+      margin: 1.5rem 2rem;
+      background: var(--secondary-light);
+      border: 2px solid var(--secondary);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+    }
+    .seo-intro p {
+      font-size: 0.9rem;
+      color: var(--primary);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ---- Section Wrapper ---- */
+    .calc-section {
+      margin: 0 2rem;
+      background: white;
+      border-radius: 12px;
+      border: 1px solid #eee;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+    .section-title {
+      background: var(--primary);
+      color: white;
+      padding: 0.85rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* ---- Input Grid ---- */
+    .input-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      padding: 1.5rem;
+    }
+    .input-grid.three-col { grid-template-columns: 1fr 1fr 1fr; }
+    .input-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .input-group.full-width { grid-column: 1 / -1; }
+
+    label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .label-hint {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: #888;
+      display: block;
+      margin-top: 0.1rem;
+    }
+
+    input[type="number"], select {
+      width: 100%;
+      padding: 0.65rem 0.875rem;
+      border: 1.5px solid #ddd;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      color: var(--primary);
+      background: white;
+      transition: border-color 0.2s;
+      -moz-appearance: textfield;
+    }
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+    input[type="number"]:focus, select:focus {
+      outline: none;
+      border-color: var(--secondary);
+    }
+
+    .input-prefix {
+      position: relative;
+    }
+    .input-prefix span {
+      position: absolute;
+      left: 0.875rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #888;
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+    .input-prefix input { padding-left: 1.75rem; }
+
+    .input-suffix {
+      position: relative;
+    }
+    .input-suffix span {
+      position: absolute;
+      right: 0.875rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #888;
+      font-size: 0.85rem;
+      pointer-events: none;
+    }
+    .input-suffix input { padding-right: 2.5rem; }
+
+    /* ---- Preset OTA Buttons ---- */
+    .ota-presets {
+      padding: 0 1.5rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .ota-preset-label {
+      font-size: 0.8rem;
+      color: #888;
+      margin-right: 0.25rem;
+    }
+    .ota-btn {
+      padding: 0.3rem 0.75rem;
+      border: 1.5px solid var(--secondary);
+      border-radius: 20px;
+      background: white;
+      color: var(--secondary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .ota-btn:hover, .ota-btn.active {
+      background: var(--secondary);
+      color: white;
+    }
+
+    /* ---- Results Section ---- */
+    .results-section {
+      margin: 0 2rem 1.5rem;
+    }
+
+    /* Hero Result Cards */
+    .results-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .hero-card {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .hero-card .hero-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      opacity: 0.8;
+      margin-bottom: 0.5rem;
+    }
+    .hero-card .hero-value {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+    .hero-card .hero-sub {
+      font-size: 0.82rem;
+      opacity: 0.75;
+    }
+
+    /* Occupancy bar */
+    .occ-bar-wrap {
+      margin: 0.75rem 0 0.25rem;
+      background: rgba(255,255,255,0.25);
+      border-radius: 20px;
+      height: 8px;
+      overflow: hidden;
+    }
+    .occ-bar-fill {
+      height: 100%;
+      background: white;
+      border-radius: 20px;
+      transition: width 0.5s ease;
+    }
+
+    /* Metric Cards Grid */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .metric-card {
+      background: white;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 1.1rem 1.25rem;
+      border-top: 3px solid var(--secondary);
+    }
+    .metric-card .m-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #888;
+      margin-bottom: 0.4rem;
+    }
+    .metric-card .m-value {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .metric-card .m-sub {
+      font-size: 0.78rem;
+      color: #888;
+      margin-top: 0.2rem;
+    }
+
+    /* Cost Breakdown Table */
+    .breakdown-card {
+      background: white;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    .breakdown-card table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+    .breakdown-card table thead th {
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.82rem;
+    }
+    .breakdown-card table thead th:last-child { text-align: right; }
+    .breakdown-card table tbody td {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid #f0f0f0;
+      color: #444;
+    }
+    .breakdown-card table tbody td:last-child { text-align: right; font-weight: 500; }
+    .breakdown-card table tbody tr:last-child td { border-bottom: none; }
+    .breakdown-card table tfoot td {
+      padding: 0.75rem 1rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: var(--primary-light);
+      border-top: 2px solid #ddd;
+    }
+    .breakdown-card table tfoot td:last-child { text-align: right; }
+
+    /* Profitability Zone Bar */
+    .zone-card {
+      background: white;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .zone-card h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .zone-bar {
+      display: flex;
+      height: 36px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .zone-loss {
+      background: rgba(137, 130, 110, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #6b6255;
+      transition: flex 0.5s ease;
+    }
+    .zone-profit {
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      transition: flex 0.5s ease;
+    }
+    .zone-pointer {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.82rem;
+      color: #666;
+    }
+    .zone-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* OTA Impact */
+    .ota-impact-card {
+      background: var(--secondary-light);
+      border: 1px solid rgba(137,130,110,0.3);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .ota-impact-card h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .ota-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .ota-col { text-align: center; }
+    .ota-col .ota-col-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #888;
+      margin-bottom: 0.35rem;
+    }
+    .ota-col .ota-col-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .ota-col .ota-col-sub {
+      font-size: 0.78rem;
+      color: #888;
+      margin-top: 0.2rem;
+    }
+    .ota-impact-note {
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(137,130,110,0.2);
+      font-size: 0.82rem;
+      color: #666;
+    }
+
+    /* Insights */
+    .insights-card {
+      background: white;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .insights-card h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .insight-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #f5f5f5;
+      font-size: 0.875rem;
+      color: #444;
+    }
+    .insight-item:last-child { border-bottom: none; }
+    .insight-icon { font-size: 1rem; flex-shrink: 0; margin-top: 0.05rem; }
+
+    /* Related Links */
+    .resource-links {
+      margin: 0 2rem 2rem;
+      background: var(--primary-light);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+    }
+    .resource-links h3 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+    .resource-links ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .resource-links li a {
+      display: inline-block;
+      padding: 0.35rem 0.875rem;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .resource-links li a:hover {
+      background: var(--secondary);
+      color: white;
+      border-color: var(--secondary);
+    }
+
+    /* FAQ */
+    .faq-section {
+      margin: 0 2rem 2rem;
+    }
+    .faq-section h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .faq-item {
+      background: white;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+    .faq-q {
+      padding: 1rem 1.25rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--primary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .faq-q::after { content: "+"; font-size: 1.2rem; color: var(--secondary); }
+    .faq-item.open .faq-q::after { content: "−"; }
+    .faq-a {
+      display: none;
+      padding: 0 1.25rem 1rem;
+      font-size: 0.875rem;
+      color: #555;
+      line-height: 1.65;
+      border-top: 1px solid #f0f0f0;
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    /* Footer */
+    .footer {
+      background: var(--primary);
+      color: white;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .footer-container { max-width: 1200px; margin: 0 auto; text-align: center; }
+    .footer a { color: var(--secondary); text-decoration: none; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .nav-links.open {
+        display: flex;
+        position: absolute;
+        top: 64px;
+        left: 0; right: 0;
+        background: #3E3D35;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.25rem;
+        border-top: 1px solid rgba(255,255,255,0.06);
+        z-index: 99;
+      }
+
+      .page-header { padding: 1.25rem 1rem 0.75rem; }
+      .page-header h1 { font-size: 1.35rem; }
+
+      .seo-intro { margin: 1rem 1rem; }
+
+      .calc-section { margin: 0 1rem 1.25rem; }
+      .input-grid { grid-template-columns: 1fr; }
+      .input-grid.three-col { grid-template-columns: 1fr; }
+
+      .results-hero { grid-template-columns: 1fr; }
+      .results-section { margin: 0 1rem 1.25rem; }
+
+      .metrics-grid { grid-template-columns: 1fr 1fr; }
+
+      .ota-compare { grid-template-columns: 1fr; gap: 0.75rem; }
+
+      .faq-section { margin: 0 1rem 1.5rem; }
+      .resource-links { margin: 0 1rem 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .metrics-grid { grid-template-columns: 1fr; }
+      .hero-card .hero-value { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">OnlineHotelier <span>Insights</span></a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/tools/" class="active">Tools</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://www.onlinehotelier.com/contact" class="nav-cta" target="_blank">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="sidebar-overlay"></div>
+  <button class="sidebar-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+  <div class="tool-page-layout">
+    <aside class="tool-sidebar"></aside>
+
+    <div class="tool-main-content">
+
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1>Hotel Break Even Calculator</h1>
+        <p>Find the minimum occupancy and room rate your hotel needs to cover all costs — before earning a single rupee of profit.</p>
+      </div>
+
+      <!-- SEO Intro -->
+      <div class="seo-intro">
+        <p>Enter your hotel's fixed monthly costs (rent, salaries, utilities) and variable costs per room sold (housekeeping, OTA commission, breakfast). The calculator instantly tells you your <strong>break-even occupancy %</strong>, <strong>minimum room rate needed</strong>, and <strong>contribution margin per room</strong> — with real-time OTA commission impact for Indian hotels.</p>
+      </div>
+
+      <!-- Section 1: Hotel Basics -->
+      <div class="calc-section">
+        <div class="section-title">&#127970; Hotel Basics</div>
+        <div class="input-grid">
+          <div class="input-group">
+            <label for="totalRooms">Total Rooms
+              <span class="label-hint">Number of sellable rooms in your property</span>
+            </label>
+            <input type="number" id="totalRooms" value="20" min="1" max="1000">
+          </div>
+          <div class="input-group">
+            <label for="currentOcc">Current Occupancy (%)
+              <span class="label-hint">Your average occupancy this month</span>
+            </label>
+            <div class="input-suffix">
+              <input type="number" id="currentOcc" value="60" min="0" max="100">
+              <span>%</span>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="adr">Average Daily Rate (ADR)
+              <span class="label-hint">Average rate per room per night (&#8377;)</span>
+            </label>
+            <div class="input-prefix">
+              <span>&#8377;</span>
+              <input type="number" id="adr" value="3500" min="1">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="otaShare">OTA Booking Share (%)
+              <span class="label-hint">% of bookings that come through OTAs</span>
+            </label>
+            <div class="input-suffix">
+              <input type="number" id="otaShare" value="70" min="0" max="100">
+              <span>%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Fixed Monthly Costs -->
+      <div class="calc-section">
+        <div class="section-title">&#128206; Fixed Monthly Costs <span style="font-weight:400;opacity:0.75;font-size:0.82rem;margin-left:0.5rem">Stay the same regardless of occupancy</span></div>
+        <div class="input-grid">
+          <div class="input-group">
+            <label for="rentEmi">Rent / Property EMI (&#8377;/month)
+              <span class="label-hint">Monthly rent or loan EMI</span>
+            </label>
+            <div class="input-prefix">
+              <span>&#8377;</span>
+              <input type="number" id="rentEmi" value="80000" min="0">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="staffSalary">Staff Salaries (&#8377;/month)
+              <span class="label-hint">Total payroll including EPF, ESI</span>
+            </label>
+            <div class="input-prefix">
+              <span>&#8377;</span>
+              <input type="number" id="staffSalary" value="120000" min="0">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="utilities">Electricity &amp; Water (&#8377;/month)
+              <span class="label-hint">Avg monthly utilities bill</span>
+            </label>
+            <div class="input-prefix">
+              <span>&#8377;</span>
+              <input type="number" id="utilities" value="30000" min="0">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="internet">Internet, Cable &amp; Phone (&#8377;/month)
+              <span class="label-hint">Broadband, OTT, telephones</span>
+            </label>
+            <div class="input-prefix">
+              <span>&#8377;</span>
+              <input type="number" id="internet" value="5000" min="0">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="propertyTax">Property Tax &amp; Insurance (&#8377;/month)
+              <span class="label-hint">Annual amount divided by 12</span>
+            </label>
+            <div class="input-prefix">
+              <span>&#8377;</span>
+              <input type="number" id="propertyTax" value="8000" min="0">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="maintenance">Maintenance &amp; AMC (&#8377;/month)
+              <span class="label-hint">Lift, AC, CCTV service contracts</span>
+            </label>
+            <div class="input-prefix">
+              <span>&#8377;</span>
+              <input type="number" id="maintenance" value="12000" min="0">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="marketing">Marketing &amp; Software (&#8377;/month)
+              <span class="label-hint">PMS, channel manager, ads</span>
+            </label>
+            <div class="input-prefix">
+              <span>&#8377;</span>
+              <input type="number" id="marketing" value="10000" min="0">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="otherFixed">Other Fixed Costs (&#8377;/month)
+              <span class="label-hint">Accountant, legal, miscellaneous</span>
+            </label>
+            <div class="input-prefix">
+              <span>&#8377;</span>
+              <input type="number" id="otherFixed" value="5000" min="0">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Variable Costs Per Room -->
+      <div class="calc-section">
+        <div class="section-title">&#128101; Variable Costs Per Room Night <span style="font-weight:400;opacity:0.75;font-size:0.82rem;margin-left:0.5rem">Only incurred when a room is sold</span></div>
+        <div class="input-grid">
+          <div class="input-group">
+            <label for="housekeeping">Housekeeping &amp; Laundry (&#8377;/room)
+              <span class="label-hint">Linen, cleaning, toiletries</span>
+            </label>
+            <div class="input-prefix">
+              <span>&#8377;</span>
+              <input type="number" id="housekeeping" value="200" min="0">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="breakfast">Breakfast / Meal Cost (&#8377;/room)
+              <span class="label-hint">0 if EP plan (room only)</span>
+            </label>
+            <div class="input-prefix">
+              <span>&#8377;</span>
+              <input type="number" id="breakfast" value="150" min="0">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="amenities">Amenities &amp; Supplies (&#8377;/room)
+              <span class="label-hint">Soap, shampoo, mineral water</span>
+            </label>
+            <div class="input-prefix">
+              <span>&#8377;</span>
+              <input type="number" id="amenities" value="80" min="0">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="otherVar">Other Variable Costs (&#8377;/room)
+              <span class="label-hint">Concierge, extra services</span>
+            </label>
+            <div class="input-prefix">
+              <span>&#8377;</span>
+              <input type="number" id="otherVar" value="50" min="0">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: OTA Commission -->
+      <div class="calc-section">
+        <div class="section-title">&#127760; OTA Commission Settings</div>
+        <div class="input-grid">
+          <div class="input-group">
+            <label for="otaCommPct">OTA Commission Rate (%)
+              <span class="label-hint">Commission % before GST. GST 18% on commission is added automatically.</span>
+            </label>
+            <div class="input-suffix">
+              <input type="number" id="otaCommPct" value="18" min="0" max="40" step="0.5">
+              <span>%</span>
+            </div>
+          </div>
+          <div class="input-group">
+            <label>Quick Select OTA</label>
+            <div style="padding-top:0.2rem">
+              <!-- OTA preset buttons rendered below input-grid -->
+            </div>
+          </div>
+        </div>
+        <div class="ota-presets">
+          <span class="ota-preset-label">Select OTA:</span>
+          <button class="ota-btn" onclick="setOTA(18, this)">MakeMyTrip / Goibibo (18%)</button>
+          <button class="ota-btn active" onclick="setOTA(18, this)">Booking.com (18%)</button>
+          <button class="ota-btn" onclick="setOTA(15, this)">Agoda (15%)</button>
+          <button class="ota-btn" onclick="setOTA(20, this)">Expedia (20%)</button>
+          <button class="ota-btn" onclick="setOTA(12, this)">Airbnb (12%)</button>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="results-section" id="resultsSection">
+
+        <!-- Hero Cards -->
+        <div class="results-hero">
+          <div class="hero-card">
+            <div class="hero-label">Break-Even Occupancy</div>
+            <div class="hero-value" id="beOccVal">--</div>
+            <div class="occ-bar-wrap"><div class="occ-bar-fill" id="beOccBar" style="width:0%"></div></div>
+            <div class="hero-sub" id="beOccRooms">-- rooms/night needed</div>
+          </div>
+          <div class="hero-card">
+            <div class="hero-label">Break-Even Room Rate</div>
+            <div class="hero-value" id="beRateVal">--</div>
+            <div class="hero-sub" id="beRateSub">at your current occupancy</div>
+          </div>
+        </div>
+
+        <!-- Metric Cards -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="m-label">Total Fixed Costs/Month</div>
+            <div class="m-value" id="mFixedCosts">--</div>
+            <div class="m-sub">must cover every month</div>
+          </div>
+          <div class="metric-card">
+            <div class="m-label">Variable Cost/Room Night</div>
+            <div class="m-value" id="mVarCost">--</div>
+            <div class="m-sub">blended (direct + OTA mix)</div>
+          </div>
+          <div class="metric-card">
+            <div class="m-label">Contribution Margin/Room</div>
+            <div class="m-value" id="mContrib">--</div>
+            <div class="m-sub">ADR minus variable cost</div>
+          </div>
+          <div class="metric-card">
+            <div class="m-label">Current Monthly Revenue</div>
+            <div class="m-value" id="mRevenue">--</div>
+            <div class="m-sub">at current occupancy &amp; ADR</div>
+          </div>
+          <div class="metric-card">
+            <div class="m-label">Monthly Net Position</div>
+            <div class="m-value" id="mNetPos">--</div>
+            <div class="m-sub" id="mNetPosSub">before taxes</div>
+          </div>
+          <div class="metric-card">
+            <div class="m-label">Revenue to Break Even</div>
+            <div class="m-value" id="mRevNeeded">--</div>
+            <div class="m-sub">minimum monthly revenue</div>
+          </div>
+        </div>
+
+        <!-- Cost Breakdown Table -->
+        <div class="breakdown-card">
+          <table>
+            <thead>
+              <tr>
+                <th>Cost Component</th>
+                <th style="text-align:right">Monthly Amount</th>
+              </tr>
+            </thead>
+            <tbody id="breakdownBody">
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Total Monthly Costs</td>
+                <td id="breakdownTotal">--</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <!-- Profitability Zone Bar -->
+        <div class="zone-card">
+          <h3>Profitability Zone</h3>
+          <div class="zone-bar">
+            <div class="zone-loss" id="zoneLoss" style="flex:1">Loss Zone</div>
+            <div class="zone-profit" id="zoneProfit" style="flex:0">Profit Zone</div>
+          </div>
+          <div class="zone-pointer">
+            <span class="zone-dot" style="background:rgba(137,130,110,0.5)"></span>
+            <span>Loss Zone: 0% – <span id="zoneBeOcc">--</span>% occupancy</span>
+            &nbsp;&nbsp;
+            <span class="zone-dot" style="background:var(--primary)"></span>
+            <span>Profit Zone: above <span id="zoneBeOcc2">--</span>%</span>
+          </div>
+          <p style="margin-top:0.6rem;font-size:0.82rem;color:#888">Your current occupancy: <strong id="zoneCurrent">--</strong>%</p>
+        </div>
+
+        <!-- OTA Impact -->
+        <div class="ota-impact-card">
+          <h3>OTA Commission Impact</h3>
+          <div class="ota-compare">
+            <div class="ota-col">
+              <div class="ota-col-label">Break-Even (100% Direct)</div>
+              <div class="ota-col-value" id="otaDirectOcc">--</div>
+              <div class="ota-col-sub">occupancy needed</div>
+            </div>
+            <div class="ota-col">
+              <div class="ota-col-label">Break-Even (with OTA Mix)</div>
+              <div class="ota-col-value" id="otaMixOcc">--</div>
+              <div class="ota-col-sub">occupancy needed</div>
+            </div>
+          </div>
+          <div class="ota-impact-note" id="otaImpactNote"></div>
+        </div>
+
+        <!-- Insights -->
+        <div class="insights-card">
+          <h3>Actionable Insights</h3>
+          <div id="insightsList"></div>
+        </div>
+
+      </div>
+
+      <!-- FAQ -->
+      <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">What is the hotel break-even point?</div>
+          <div class="faq-a">The hotel break-even point is the minimum level of occupancy and revenue at which your total income exactly equals total costs — no profit, no loss. Below this point, you're losing money. Above it, you're profitable. It accounts for both fixed costs (rent, salaries) and variable costs per room sold (housekeeping, laundry, OTA commission).</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">How is break-even occupancy calculated?</div>
+          <div class="faq-a">Break-even occupancy = Total Fixed Monthly Costs ÷ (ADR − Variable Cost per Room) ÷ Total Rooms × 100. For example: fixed costs ₹3,00,000 ÷ (₹3,500 ADR − ₹500 variable cost) ÷ 20 rooms × 100 = 50% break-even occupancy. Each room sold above break-even contributes directly to profit.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">How does OTA commission affect break-even?</div>
+          <div class="faq-a">OTA commission increases your variable cost per room sold. If 70% of your bookings come through OTAs at 18% commission, your blended variable cost per room is higher than for direct bookings. This raises your break-even occupancy — you need to sell more rooms to cover the same fixed costs. This calculator shows you the difference between 100% direct vs your current OTA mix.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">What is contribution margin per room?</div>
+          <div class="faq-a">Contribution margin = ADR − Variable Cost per Room. This is how much each room sold contributes toward your fixed costs. Once the total of all contributions equals your fixed costs, you've broken even. Every additional room sold after that is pure profit (contribution margin = profit per room beyond break-even).</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">What is the break-even room rate?</div>
+          <div class="faq-a">The break-even room rate is the minimum ADR you must charge at your current occupancy level to cover all costs. Formula: Break-even rate = (Fixed Costs ÷ Rooms Sold per Month) + Variable Cost per Room. If you're at 60% occupancy with 20 rooms, that's 360 rooms sold/month. If fixed costs are ₹2,70,000 and variable cost is ₹480/room: Break-even rate = (2,70,000 ÷ 360) + 480 = ₹750 + ₹480 = ₹1,230/night minimum.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">What are typical hotel fixed costs in India?</div>
+          <div class="faq-a">For a 20-room property in India: Rent/EMI ₹60,000–₹2,00,000; Staff salaries ₹80,000–₹2,50,000; Electricity & water ₹20,000–₹80,000; Internet & phone ₹3,000–₹10,000; Property tax/insurance ₹3,000–₹15,000; Maintenance/AMC ₹8,000–₹25,000; Marketing/PMS ₹5,000–₹20,000. Total typically ₹1,79,000–₹6,00,000/month depending on location and property type.</div>
+        </div>
+      </div>
+
+      <!-- Resource Links -->
+      <div class="resource-links">
+        <h3>Related Tools &amp; Guides</h3>
+        <ul>
+          <li><a href="/tools/ota-commission-calculator/">OTA Commission Calculator</a></li>
+          <li><a href="/tools/ota-dependency-calculator/">OTA Dependency Calculator</a></li>
+          <li><a href="/tools/revenue-management-tool/">Revenue Management Setup</a></li>
+          <li><a href="/guides/revenue/adr.html">What is ADR?</a></li>
+          <li><a href="/guides/revenue/occupancy.html">Occupancy Rate Guide</a></li>
+          <li><a href="/guides/revenue/revpar.html">RevPAR Guide</a></li>
+          <li><a href="/guides/ota/what-is-ota.html">OTA Commission Guide</a></li>
+          <li><a href="/guides/compliance/tds-tcs.html">TDS &amp; TCS on OTA</a></li>
+        </ul>
+      </div>
+
+    </div><!-- /tool-main-content -->
+  </div><!-- /tool-page-layout -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2026 <a href="https://www.onlinehotelier.com">OnlineHotelier</a> &mdash; <a href="/">Insights</a> &mdash; <a href="/tools/">Tools</a> &mdash; <a href="/guides/">Guides</a></p>
+      <p style="margin-top:0.5rem;font-size:0.8rem;opacity:0.6">All calculations are for planning purposes. Consult a financial advisor for business decisions.</p>
+    </div>
+  </footer>
+
+  <script src="/tools/js/tool-nav.js"></script>
+  <script>
+  // ==========================================
+  //  BREAK EVEN CALCULATOR — Core Logic
+  // ==========================================
+
+  const GST_ON_COMMISSION = 0.18; // 18% GST on OTA commission
+  const TDS = 0.001; // 0.1% TDS
+  const TCS = 0.005; // 0.5% TCS
+
+  function fmt(n) {
+    if (isNaN(n) || !isFinite(n)) return '—';
+    return '₹' + Math.round(n).toLocaleString('en-IN');
+  }
+  function fmtPct(n) {
+    if (isNaN(n) || !isFinite(n)) return '—';
+    return Math.round(n * 10) / 10 + '%';
+  }
+
+  function getVal(id) {
+    return parseFloat(document.getElementById(id).value) || 0;
+  }
+
+  function setOTA(rate, btn) {
+    document.getElementById('otaCommPct').value = rate;
+    document.querySelectorAll('.ota-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    calculate();
+  }
+
+  // OTA effective cost per room (commission + GST on commission + TDS + TCS effect)
+  // Net received = ADR * (1 - comm) * (1 - TDS) * (1 - TCS) - comm * GST_RATE
+  // Effective OTA cost per room = ADR - net received
+  function otaCostPerRoom(adr, commPct) {
+    var comm = commPct / 100;
+    var commAmt = adr * comm;
+    var gstOnComm = commAmt * GST_ON_COMMISSION;
+    var tdsAmt = adr * TDS;
+    var tcsAmt = adr * TCS;
+    return commAmt + gstOnComm + tdsAmt + tcsAmt;
+  }
+
+  function calculate() {
+    var totalRooms = getVal('totalRooms');
+    var currentOcc = getVal('currentOcc') / 100;
+    var adr = getVal('adr');
+    var otaShare = getVal('otaShare') / 100;
+    var otaCommPct = getVal('otaCommPct');
+
+    // Fixed costs
+    var fixed = {
+      rent: getVal('rentEmi'),
+      salary: getVal('staffSalary'),
+      utilities: getVal('utilities'),
+      internet: getVal('internet'),
+      tax: getVal('propertyTax'),
+      maintenance: getVal('maintenance'),
+      marketing: getVal('marketing'),
+      other: getVal('otherFixed')
+    };
+    var totalFixed = Object.values(fixed).reduce((a, b) => a + b, 0);
+
+    // Variable costs per room (non-OTA portion)
+    var varBase = getVal('housekeeping') + getVal('breakfast') + getVal('amenities') + getVal('otherVar');
+
+    // OTA cost per room (for OTA bookings)
+    var otaCost = otaCostPerRoom(adr, otaCommPct);
+
+    // Blended variable cost per room (weighted by OTA share)
+    var blendedVar = varBase + (otaShare * otaCost);
+
+    // Contribution margin per room
+    var contrib = adr - blendedVar;
+
+    // Break-even: Fixed = rooms * contrib  → rooms = Fixed / contrib
+    var beRoomsPerMonth = (contrib > 0) ? totalFixed / contrib : Infinity;
+    // Days in month = 30
+    var beRoomsPerNight = beRoomsPerMonth / 30;
+    var beOcc = (beRoomsPerNight / totalRooms) * 100;
+
+    // Break-even rate at current occupancy
+    var roomsSoldPerMonth = Math.round(totalRooms * currentOcc * 30);
+    var beRate = (roomsSoldPerMonth > 0)
+      ? (totalFixed / roomsSoldPerMonth) + blendedVar
+      : Infinity;
+
+    // Current revenue & net position
+    var currentRevenue = totalRooms * currentOcc * 30 * adr;
+    var currentVarTotal = totalRooms * currentOcc * 30 * blendedVar;
+    var currentNet = currentRevenue - currentVarTotal - totalFixed;
+
+    // Revenue needed to break even
+    var revNeeded = totalFixed + (beRoomsPerMonth * blendedVar);
+
+    // --- 100% direct break-even ---
+    var varDirect = varBase; // no OTA cost
+    var contribDirect = adr - varDirect;
+    var beOccDirect = (contribDirect > 0)
+      ? (totalFixed / (contribDirect * totalRooms * 30)) * 100
+      : Infinity;
+
+    // --- Update DOM ---
+
+    // Hero cards
+    var beOccClamped = Math.min(beOcc, 200);
+    document.getElementById('beOccVal').textContent = isFinite(beOcc) ? fmtPct(beOcc) : 'N/A';
+    document.getElementById('beOccBar').style.width = Math.min(beOccClamped, 100) + '%';
+    document.getElementById('beOccRooms').textContent = isFinite(beRoomsPerNight)
+      ? Math.ceil(beRoomsPerNight) + ' rooms/night needed'
+      : 'Cannot break even at current rate';
+    document.getElementById('beRateVal').textContent = isFinite(beRate) ? fmt(beRate) : 'N/A';
+    document.getElementById('beRateSub').textContent = 'at ' + Math.round(currentOcc * 100) + '% occupancy';
+
+    // Metric cards
+    document.getElementById('mFixedCosts').textContent = fmt(totalFixed);
+    document.getElementById('mVarCost').textContent = fmt(blendedVar);
+    document.getElementById('mContrib').textContent = isFinite(contrib) ? fmt(contrib) : '—';
+    document.getElementById('mRevenue').textContent = fmt(currentRevenue);
+    var netEl = document.getElementById('mNetPos');
+    netEl.textContent = fmt(Math.abs(currentNet));
+    netEl.style.color = currentNet >= 0 ? 'var(--primary)' : 'var(--secondary)';
+    document.getElementById('mNetPosSub').textContent = currentNet >= 0
+      ? 'profit this month'
+      : 'loss this month';
+    document.getElementById('mRevNeeded').textContent = fmt(revNeeded);
+
+    // Breakdown table
+    var rows = [
+      ['Rent / EMI', fixed.rent],
+      ['Staff Salaries', fixed.salary],
+      ['Electricity & Water', fixed.utilities],
+      ['Internet, Cable & Phone', fixed.internet],
+      ['Property Tax & Insurance', fixed.tax],
+      ['Maintenance & AMC', fixed.maintenance],
+      ['Marketing & Software', fixed.marketing],
+      ['Other Fixed Costs', fixed.other],
+      ['Variable Costs (at current occ)', currentVarTotal]
+    ];
+    var tbody = document.getElementById('breakdownBody');
+    tbody.innerHTML = rows.map(r =>
+      '<tr><td>' + r[0] + '</td><td>' + fmt(r[1]) + '</td></tr>'
+    ).join('');
+    document.getElementById('breakdownTotal').textContent = fmt(totalFixed + currentVarTotal);
+
+    // Zone bar
+    var beOccSafe = isFinite(beOcc) ? Math.min(beOcc, 100) : 100;
+    var profitFlex = Math.max(0, 100 - beOccSafe);
+    var lossFlex = beOccSafe;
+    document.getElementById('zoneLoss').style.flex = lossFlex;
+    document.getElementById('zoneProfit').style.flex = profitFlex;
+    var beOccStr = isFinite(beOcc) ? fmtPct(beOcc) : 'N/A';
+    document.getElementById('zoneBeOcc').textContent = isFinite(beOcc) ? Math.round(beOcc) : 'N/A';
+    document.getElementById('zoneBeOcc2').textContent = isFinite(beOcc) ? Math.round(beOcc) : 'N/A';
+    document.getElementById('zoneCurrent').textContent = Math.round(currentOcc * 100);
+
+    // OTA Impact
+    var beOccDirectStr = isFinite(beOccDirect) ? fmtPct(beOccDirect) : 'N/A';
+    var beOccMixStr = isFinite(beOcc) ? fmtPct(beOcc) : 'N/A';
+    document.getElementById('otaDirectOcc').textContent = beOccDirectStr;
+    document.getElementById('otaMixOcc').textContent = beOccMixStr;
+
+    var otaDiff = (isFinite(beOcc) && isFinite(beOccDirect)) ? beOcc - beOccDirect : null;
+    var otaNoteEl = document.getElementById('otaImpactNote');
+    if (otaDiff !== null && otaShare > 0) {
+      var otaCostAmt = fmt(otaCost);
+      otaNoteEl.innerHTML =
+        'Your OTA mix (' + Math.round(otaShare * 100) + '% of bookings at ' + otaCommPct + '% commission + 18% GST) costs <strong>' + otaCostAmt + '</strong> per OTA room night in fees. ' +
+        'This raises your break-even occupancy by <strong>' + fmtPct(Math.abs(otaDiff)) + '</strong> compared to all-direct bookings. ' +
+        'Reducing OTA dependency by 10% can lower your break-even by ~' + fmtPct(Math.abs(otaDiff) * 0.14) + '.';
+    } else if (otaShare === 0) {
+      otaNoteEl.innerHTML = 'You have 0% OTA share — all direct bookings. No commission costs affecting break-even.';
+    } else {
+      otaNoteEl.innerHTML = 'Unable to calculate OTA impact with current inputs.';
+    }
+
+    // Insights
+    generateInsights(beOcc, currentOcc * 100, currentNet, beRate, adr, contrib, otaShare, otaCommPct, totalFixed, totalRooms, blendedVar, otaDiff);
+  }
+
+  function generateInsights(beOcc, currentOcc, currentNet, beRate, adr, contrib, otaShare, otaCommPct, totalFixed, totalRooms, blendedVar, otaDiff) {
+    var items = [];
+
+    if (!isFinite(beOcc) || !isFinite(contrib) || contrib <= 0) {
+      items.push({ icon: '⚠️', text: 'Your ADR is lower than your variable cost per room. Every room you sell increases your losses. You must raise your room rate immediately.' });
+    } else if (currentOcc > beOcc) {
+      var margin = currentOcc - beOcc;
+      items.push({ icon: '✅', text: 'You are ' + fmtPct(margin) + ' above break-even. Your hotel is profitable at current occupancy. You have a ' + fmtPct(margin) + ' cushion before you hit break-even.' });
+    } else if (currentOcc < beOcc) {
+      var gap = beOcc - currentOcc;
+      items.push({ icon: '🔴', text: 'You are ' + fmtPct(gap) + ' below break-even. You need to increase occupancy by ' + fmtPct(gap) + ' or raise your ADR to turn profitable.' });
+    } else {
+      items.push({ icon: '⚖️', text: 'You are exactly at break-even. Any additional room sold is profit. Focus on increasing occupancy or ADR.' });
+    }
+
+    // ADR vs break-even rate
+    if (isFinite(beRate) && adr < beRate) {
+      items.push({ icon: '📉', text: 'Your ADR (' + fmt(adr) + ') is below the break-even rate (' + fmt(beRate) + ') at current occupancy. Raise your ADR by ' + fmt(beRate - adr) + '/room or increase occupancy.' });
+    } else if (isFinite(beRate) && adr >= beRate) {
+      items.push({ icon: '💡', text: 'Your ADR (' + fmt(adr) + ') covers the minimum rate of ' + fmt(beRate) + ' needed at your current ' + Math.round(currentOcc) + '% occupancy.' });
+    }
+
+    // OTA insight
+    if (otaShare > 0.5 && otaDiff !== null && otaDiff > 5) {
+      items.push({ icon: '🏨', text: 'OTA bookings account for ' + Math.round(otaShare * 100) + '% of your business. This pushes your break-even up by ' + fmtPct(otaDiff) + '. Consider investing in a direct booking engine to reduce OTA dependency.' });
+    }
+
+    // Fixed cost to ADR ratio
+    var fixedPerRoomPerNight = totalFixed / (totalRooms * 30);
+    if (fixedPerRoomPerNight > adr * 0.5) {
+      items.push({ icon: '⚠️', text: 'Your fixed costs per available room (' + fmt(fixedPerRoomPerNight) + '/night) are very high relative to your ADR. Consider ways to reduce fixed overheads or increase your room rate.' });
+    }
+
+    // Positive cash position
+    if (isFinite(currentNet) && currentNet > totalFixed * 0.3) {
+      items.push({ icon: '🎯', text: 'Strong profitability! Your monthly surplus of ' + fmt(currentNet) + ' is over 30% of your fixed costs. Consider reinvesting in property upgrades to sustain your competitive advantage.' });
+    }
+
+    // Commission impact
+    if (otaCommPct > 20) {
+      items.push({ icon: '💬', text: 'You\'re paying ' + otaCommPct + '% OTA commission. Negotiate with your OTA account manager for better terms, especially if you have consistent volume and good review scores.' });
+    }
+
+    var html = items.map(i =>
+      '<div class="insight-item"><span class="insight-icon">' + i.icon + '</span><span>' + i.text + '</span></div>'
+    ).join('');
+    document.getElementById('insightsList').innerHTML = html || '<div class="insight-item"><span class="insight-icon">ℹ️</span><span>Enter your hotel details above to see personalised insights.</span></div>';
+  }
+
+  // FAQ accordion
+  function toggleFAQ(el) {
+    el.closest('.faq-item').classList.toggle('open');
+  }
+
+  // Real-time calculation on any input change
+  document.querySelectorAll('input[type="number"], select').forEach(function(el) {
+    el.addEventListener('input', calculate);
+  });
+
+  // Persist to localStorage
+  var STORE_KEY = 'bec_v1';
+  var FIELDS = ['totalRooms','currentOcc','adr','otaShare','otaCommPct','rentEmi','staffSalary','utilities','internet','propertyTax','maintenance','marketing','otherFixed','housekeeping','breakfast','amenities','otherVar'];
+
+  function saveState() {
+    var s = {};
+    FIELDS.forEach(function(f) { s[f] = document.getElementById(f).value; });
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(s)); } catch(e) {}
+  }
+
+  function loadState() {
+    try {
+      var s = JSON.parse(localStorage.getItem(STORE_KEY));
+      if (s) {
+        FIELDS.forEach(function(f) { if (s[f] !== undefined && document.getElementById(f)) document.getElementById(f).value = s[f]; });
+      }
+    } catch(e) {}
+  }
+
+  document.querySelectorAll('input[type="number"]').forEach(function(el) {
+    el.addEventListener('change', saveState);
+  });
+
+  // Init
+  loadState();
+  calculate();
+  </script>
+</body>
+</html>

@@ -46,6 +46,12 @@ const TOOLS = [
     title: 'Demand Calendar 2026',
     icon: '\uD83D\uDCC5',
     desc: 'Long weekends, weddings & festivals'
+  },
+  {
+    slug: 'break-even-calculator/',
+    title: 'Break Even Calculator',
+    icon: '\u2696\uFE0F',
+    desc: 'Find your minimum occupancy and room rate'
   }
 ];
 
