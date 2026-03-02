@@ -26,6 +26,8 @@ const GUIDE_CATEGORIES = [
       { slug: 'mlos.html', title: 'MLOS - Minimum Length of Stay' },
       { slug: 'lead-time.html', title: 'Lead Time & Booking Window' },
       { slug: 'no-show.html', title: 'No-Show & Cancellation' },
+      { slug: 'arr.html', title: 'ARR - Average Room Rate' },
+      { slug: 'overbooking.html', title: 'Overbooking Strategy' },
     ]
   },
   {
@@ -84,6 +86,16 @@ const GUIDE_CATEGORIES = [
       { slug: 'gst-hotels.html', title: 'GST for Hotels' },
       { slug: 'tds-tcs.html', title: 'TDS & TCS on OTA Payments' },
       { slug: 'grc-form-c.html', title: 'GRC & Form C' },
+    ]
+  },
+  {
+    id: 'operations',
+    label: 'Operations',
+    icon: '\uD83C\uDFE8',
+    basePath: '/guides/operations/',
+    guides: [
+      { slug: 'hotel-check-in-process.html', title: 'Hotel Check-In Process' },
+      { slug: 'foc-hotel.html', title: 'FOC (Free of Charge)' },
     ]
   }
 ];
@@ -148,6 +160,16 @@ const RELATED_CONTENT = {
   '/guides/revenue/no-show.html': [
     { href: '/guides/reports/manager-report.html', title: 'Manager Report', category: 'Reports', desc: 'Track no-show rates' },
     { href: '/guides/compliance/grc-form-c.html', title: 'GRC & Form C', category: 'Compliance', desc: 'Guest registration for arrivals' },
+  ],
+  '/guides/revenue/arr.html': [
+    { href: '/guides/revenue/revpar.html', title: 'RevPAR', category: 'Revenue', desc: 'How ARR and RevPAR work together' },
+    { href: '/guides/revenue/adr.html', title: 'ADR & ARR', category: 'Revenue', desc: 'International equivalent of ARR' },
+    { href: '/guides/software/what-is-rms-hotel.html', title: 'Revenue Management System', category: 'Software', desc: 'Automate ARR optimisation' },
+  ],
+  '/guides/revenue/overbooking.html': [
+    { href: '/guides/revenue/no-show.html', title: 'No-Show & Cancellation', category: 'Revenue', desc: 'The root cause of overbooking need' },
+    { href: '/guides/revenue/occupancy.html', title: 'Occupancy Rate', category: 'Revenue', desc: 'Maximise occupancy safely' },
+    { href: '/guides/software/what-is-rms-hotel.html', title: 'Revenue Management System', category: 'Software', desc: 'Automate overbooking decisions' },
   ],
   // Software
   '/guides/software/what-is-pms-hotel.html': [
@@ -253,6 +275,17 @@ const RELATED_CONTENT = {
   '/guides/compliance/grc-form-c.html': [
     { href: '/guides/reports/arrival-report.html', title: 'Arrival Report', category: 'Reports', desc: 'Plan guest registration' },
     { href: '/guides/software/what-is-pms-hotel.html', title: 'PMS', category: 'Software', desc: 'Guest profile management' },
+  ],
+  // Operations
+  '/guides/operations/hotel-check-in-process.html': [
+    { href: '/guides/compliance/grc-form-c.html', title: 'GRC & Form C', category: 'Compliance', desc: 'Legal registration requirements at check-in' },
+    { href: '/guides/revenue/no-show.html', title: 'No-Show & Cancellation', category: 'Revenue', desc: 'What happens when guests do not arrive' },
+    { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Verify OTA payment models before check-in' },
+  ],
+  '/guides/operations/foc-hotel.html': [
+    { href: '/guides/revenue/adr.html', title: 'ADR & ARR', category: 'Revenue', desc: 'How FOC rooms affect your average rate' },
+    { href: '/guides/revenue/occupancy.html', title: 'Occupancy Rate', category: 'Revenue', desc: 'How FOC rooms count in occupancy' },
+    { href: '/guides/reports/night-audit.html', title: 'Night Audit', category: 'Reports', desc: 'Reconciling FOC rooms in nightly reports' },
   ],
 };
 
