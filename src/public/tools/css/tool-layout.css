@@ -321,3 +321,38 @@
 .breadcrumb a:hover {
   text-decoration: underline;
 }
+
+
+/* ==========================================
+   SHARED CONTENT LAYOUT
+   ========================================== */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  color: var(--primary, #3E3D35);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1.25rem 1rem;
+  }
+  .page-header h1 {
+    font-size: 1.5rem;
+  }
+}
