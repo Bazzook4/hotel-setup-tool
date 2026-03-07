@@ -60,7 +60,10 @@ const TOOLS_BASE = '/tools/';
 // ===== INITIALIZATION =====
 document.addEventListener('DOMContentLoaded', function() {
   var currentPath = window.location.pathname;
+  var toolName = document.body.getAttribute('data-tool-name') || 'Tool';
 
+  buildToolNav();
+  buildToolBreadcrumb(toolName);
   buildToolSidebar(currentPath);
   setupToolSidebarToggle();
 });
@@ -122,3 +125,40 @@ function setupToolSidebarToggle() {
 }
 
 // Prev/Next navigation removed - not needed for standalone tools
+
+
+// ===== SITE NAV =====
+function buildToolNav() {
+  var nav = document.getElementById('site-nav');
+  if (!nav) return;
+
+  nav.className = 'site-nav';
+  nav.innerHTML =
+    '<div class="nav-container">' +
+      '<a href="/" class="nav-logo">OnlineHotelier <span>Insights</span></a>' +
+      '<button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">&#9776;</button>' +
+      '<ul class="nav-links" id="nav-links">' +
+        '<li><a href="/">Home</a></li>' +
+        '<li><a href="/guides/">Guides</a></li>' +
+        '<li><a href="/tools/" class="active">Tools</a></li>' +
+        '<li><a href="/about/">About</a></li>' +
+        '<li><a href="https://www.onlinehotelier.com/contact" class="nav-cta" target="_blank">Contact Us</a></li>' +
+      '</ul>' +
+    '</div>';
+
+  document.getElementById('nav-toggle').addEventListener('click', function() {
+    document.getElementById('nav-links').classList.toggle('open');
+  });
+}
+
+// ===== BREADCRUMB =====
+function buildToolBreadcrumb(toolName) {
+  var bc = document.getElementById('tool-breadcrumb');
+  if (!bc) return;
+
+  bc.className = 'breadcrumb';
+  bc.innerHTML =
+    '<div class="breadcrumb-container">' +
+      '<a href="/">Home</a> › <a href="/tools/">Tools</a> › ' + toolName +
+    '</div>';
+}
