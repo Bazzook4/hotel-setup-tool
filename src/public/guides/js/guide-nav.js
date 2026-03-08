@@ -320,10 +320,6 @@ function buildSidebar(currentPath) {
     html += '</div>';
     html += '<ul class="sidebar-guide-list">';
 
-    // Category overview link
-    var indexActive = (currentPath === cat.basePath || currentPath === cat.basePath + 'index.html') ? ' class="active"' : '';
-    html += '<li class="category-overview"><a href="' + cat.basePath + '"' + indexActive + '>Overview</a></li>';
-
     cat.guides.forEach(function(guide) {
       var href = cat.basePath + guide.slug;
       var isActive = (currentPath.indexOf(guide.slug) !== -1 && currentPath.indexOf(cat.basePath) === 0) ? ' class="active"' : '';
