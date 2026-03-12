@@ -92,8 +92,17 @@ function buildToolSidebar(currentPath) {
 
   html += '</ul>';
 
+  html += '</ul>';
+
+  // Services section
+  html += '<div class="sidebar-section-header" style="margin-top: 1.5rem;">Services</div>';
+  html += '<ul class="sidebar-tool-list">';
+  var gmbActive = currentPath.indexOf('/services/google-my-business') !== -1 ? ' class="active"' : '';
+  html += '<li><a href="/services/google-my-business/"' + gmbActive + '><span class="tool-nav-icon">\uD83D\uDCCD</span> Google My Business</a></li>';
+  html += '</ul>';
+
   // Related Guides link
-  html += '<div class="sidebar-section-header" style="margin-top: 1.5rem;">Related</div>';
+  html += '<div class="sidebar-section-header" style="margin-top: 1rem;">Related</div>';
   html += '<ul class="sidebar-tool-list">';
   html += '<li><a href="/guides/"><span class="tool-nav-icon">\uD83D\uDCDA</span> Browse Guides</a></li>';
   html += '</ul>';
