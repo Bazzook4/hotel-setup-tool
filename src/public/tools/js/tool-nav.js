@@ -151,6 +151,7 @@ function buildToolNav() {
         '<li><a href="/guides/">Guides</a></li>' +
         '<li><a href="/tools/" class="active">Tools</a></li>' +
         '<li><a href="/about/">About</a></li>' +
+        '<li><a href="/services/">Services</a></li>' +
         '<li><a href="https://www.onlinehotelier.com/contact" class="nav-cta" target="_blank">Contact Us</a></li>' +
       '</ul>' +
     '</div>';
