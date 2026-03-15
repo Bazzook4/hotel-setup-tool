@@ -526,24 +526,12 @@
       .wa-chat-bubble { max-width: 290px; padding: 1rem 1.25rem; }
     }
   </style>
+  <script src="/js/nav.js"></script>
 </head>
 <body>
 
   <!-- Nav -->
-  <nav class="nav">
-    <div class="nav-container">
-      <a href="/" class="nav-logo">OnlineHotelier <span>Insights</span></a>
-      <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/guides/">Guides</a></li>
-        <li><a href="/tools/">Tools</a></li>
-        <li><a href="/#about">About</a></li>
-        <li><a href="/services/" class="active">Services</a></li>
-        <li><a href="#" class="nav-cta" onclick="event.preventDefault();ohWA.open()">WhatsApp Us</a></li>
-      </ul>
-    </div>
-  </nav>
+  <nav id="site-nav"></nav>
 
   <div class="page-wrapper">
 

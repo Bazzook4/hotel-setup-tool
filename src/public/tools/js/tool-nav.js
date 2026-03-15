@@ -137,28 +137,9 @@ function setupToolSidebarToggle() {
 
 
 // ===== SITE NAV =====
+// Delegated to /js/nav.js — loaded via script tag on each tool page
 function buildToolNav() {
-  var nav = document.getElementById('site-nav');
-  if (!nav) return;
-
-  nav.className = 'site-nav';
-  nav.innerHTML =
-    '<div class="nav-container">' +
-      '<a href="/" class="nav-logo">OnlineHotelier <span>Insights</span></a>' +
-      '<button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">&#9776;</button>' +
-      '<ul class="nav-links" id="nav-links">' +
-        '<li><a href="/">Home</a></li>' +
-        '<li><a href="/guides/">Guides</a></li>' +
-        '<li><a href="/tools/" class="active">Tools</a></li>' +
-        '<li><a href="/about/">About</a></li>' +
-        '<li><a href="/services/">Services</a></li>' +
-        '<li><a href="https://www.onlinehotelier.com/contact" class="nav-cta" target="_blank">Contact Us</a></li>' +
-      '</ul>' +
-    '</div>';
-
-  document.getElementById('nav-toggle').addEventListener('click', function() {
-    document.getElementById('nav-links').classList.toggle('open');
-  });
+  // nav.js handles injection automatically on DOMContentLoaded
 }
 
 // ===== BREADCRUMB =====
