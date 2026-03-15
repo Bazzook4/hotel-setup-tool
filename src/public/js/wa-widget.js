@@ -136,8 +136,30 @@
             </select>
           </div>
           <div>
+            <div class="oh-wa-label">Number of Rooms / Units</div>
+            <select id="oh-wa-inventory">
+              <option value="">Select…</option>
+              <option value="1 room">1 room</option>
+              <option value="2–3 rooms">2–3 rooms</option>
+              <option value="4–6 rooms">4–6 rooms</option>
+              <option value="7–10 rooms">7–10 rooms</option>
+              <option value="11–20 rooms">11–20 rooms</option>
+              <option value="20+ rooms">20+ rooms</option>
+            </select>
+          </div>
+          <div>
             <div class="oh-wa-label">City / Location</div>
             <input type="text" id="oh-wa-location" placeholder="e.g. Goa, Manali, Coorg…" />
+          </div>
+          <div>
+            <div class="oh-wa-label">How soon do you need this?</div>
+            <select id="oh-wa-timeline">
+              <option value="">Select…</option>
+              <option value="ASAP — within a week">ASAP — within a week</option>
+              <option value="within 2–4 weeks">Within 2–4 weeks</option>
+              <option value="within 1–2 months">Within 1–2 months</option>
+              <option value="just exploring for now">Just exploring for now</option>
+            </select>
           </div>
           <button class="oh-wa-send" id="oh-wa-send-btn">
             ${WA_SVG}
@@ -169,14 +191,18 @@
   });
 
   document.getElementById('oh-wa-send-btn').addEventListener('click', function () {
-    var service  = document.getElementById('oh-wa-service').value;
-    var proptype = document.getElementById('oh-wa-proptype').value;
-    var location = document.getElementById('oh-wa-location').value.trim();
+    var service   = document.getElementById('oh-wa-service').value;
+    var proptype  = document.getElementById('oh-wa-proptype').value;
+    var inventory = document.getElementById('oh-wa-inventory').value;
+    var location  = document.getElementById('oh-wa-location').value.trim();
+    var timeline  = document.getElementById('oh-wa-timeline').value;
 
     var parts = ['Hi! I came across OnlineHotelier Insights and would like to enquire.'];
-    if (service)  parts.push('Service interested in: ' + service);
-    if (proptype) parts.push('Property type: ' + proptype);
-    if (location) parts.push('Location: ' + location);
+    if (service)   parts.push('Service interested in: ' + service);
+    if (proptype)  parts.push('Property type: ' + proptype);
+    if (inventory) parts.push('Inventory: ' + inventory);
+    if (location)  parts.push('Location: ' + location);
+    if (timeline)  parts.push('Timeline: ' + timeline);
     parts.push('Please get in touch. Thank you.');
 
     var url = 'https://api.whatsapp.com/send?phone=918591756934&text=' + encodeURIComponent(parts.join('\n'));
