@@ -146,11 +146,11 @@
   }
   </script>
 
-  <link rel="stylesheet" href="/tools/css/tool-layout.css">
-
   <style>
     /* ── Base ── */
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Avenir', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #F8F8F4; color: #3E3D35; line-height: 1.6; -webkit-font-smoothing: antialiased; }
     :root {
       --primary: #3E3D35;
       --secondary: #89826E;
@@ -158,12 +158,32 @@
       --secondary-light: rgba(137,130,110,0.12);
     }
 
+    /* ── Nav ── */
+    .nav { background: var(--primary); padding: 0 2rem; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .nav-logo { font-size: 1.3rem; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: -0.02em; }
+    .nav-logo span { color: var(--secondary); font-weight: 400; }
+    .nav-links { display: flex; gap: 0.25rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: rgba(255,255,255,0.65); font-weight: 500; font-size: 0.9rem; padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.2s; }
+    .nav-links a:hover { color: #fff; background: rgba(255,255,255,0.08); }
+    .nav-cta { background: rgba(137,130,110,0.25) !important; color: #fff !important; border: 1px solid rgba(137,130,110,0.4) !important; }
+    .nav-cta:hover { background: rgba(137,130,110,0.4) !important; }
+    .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; padding: 0.25rem; }
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: var(--primary); flex-direction: column; padding: 1rem 2rem 1.5rem; gap: 0.25rem; border-top: 1px solid rgba(255,255,255,0.08); }
+      .nav-links.open { display: flex; }
+    }
+
+    /* ── Page wrapper ── */
+    .page-wrapper { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 0; }
+
     /* ── Hero ── */
     .service-hero {
       background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       color: white;
       padding: 3.5rem 2rem;
-      margin: 0 2rem 2rem;
+      margin-bottom: 2rem;
       border-radius: 16px;
     }
     .hero-eyebrow {
@@ -224,7 +244,8 @@
       border-radius: 8px;
     }
     @media (max-width: 768px) {
-      .service-hero { margin: 0 1rem 1.5rem; padding: 2rem 1.25rem; }
+      .page-wrapper { padding: 1.25rem 1rem 0; }
+      .service-hero { padding: 2rem 1.25rem; }
       .service-hero h1 { font-size: 1.75rem; }
       .hero-badge { display: none; }
     }
@@ -235,7 +256,7 @@
       border: 2px solid var(--secondary);
       border-radius: 12px;
       padding: 1.5rem;
-      margin: 0 2rem 2rem;
+      margin-bottom: 2rem;
     }
     .seo-intro .seo-question {
       font-size: 1.15rem;
@@ -244,17 +265,15 @@
       margin-bottom: 0.6rem;
     }
     .seo-intro p { color: #555; margin: 0; line-height: 1.7; }
-    @media (max-width: 768px) { .seo-intro { margin: 0 1rem 1.5rem; } }
 
     /* ── Section blocks ── */
-    .section-block { margin: 0 2rem 2.5rem; }
+    .section-block { margin-bottom: 2.5rem; }
     .section-title {
       font-size: 1.5rem;
       font-weight: 700;
       color: var(--primary);
       margin-bottom: 1.25rem;
     }
-    @media (max-width: 768px) { .section-block { margin: 0 1rem 2rem; } }
 
     /* ── Platform badges ── */
     .platform-grid {
@@ -389,11 +408,10 @@
       border-left: 4px solid var(--secondary);
       border-radius: 10px;
       padding: 1.25rem 1.5rem;
-      margin: 0 2rem 2rem;
+      margin-bottom: 2rem;
     }
     .highlight-box strong { color: var(--primary); }
     .highlight-box p { color: #444; margin: 0; line-height: 1.7; }
-    @media (max-width: 768px) { .highlight-box { margin: 0 1rem 1.5rem; } }
 
     /* ── FAQ ── */
     .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
@@ -414,7 +432,7 @@
     .cta-banner {
       background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       color: white; padding: 2.5rem 2rem; border-radius: 16px;
-      text-align: center; margin: 0 2rem 3rem;
+      text-align: center; margin-bottom: 3rem;
     }
     .cta-banner h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.75rem; }
     .cta-banner p { opacity: 0.88; margin-bottom: 1.75rem; font-size: 1rem; line-height: 1.6; }
@@ -515,25 +533,24 @@
   <nav class="nav">
     <div class="nav-container">
       <a href="/" class="nav-logo">OnlineHotelier <span>Insights</span></a>
+      <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/guides/">Guides</a></li>
         <li><a href="/tools/">Tools</a></li>
         <li><a href="/#about">About</a></li>
-        <li><a href="/#contact">Contact</a></li>
+        <li><a href="#" class="nav-cta" onclick="event.preventDefault();openWAWidget()">WhatsApp Us</a></li>
       </ul>
     </div>
   </nav>
 
-  <div class="tool-page-layout">
-    <aside class="tool-sidebar"></aside>
-    <div class="tool-main-content">
+  <div class="page-wrapper">
 
       <!-- Breadcrumb -->
-      <div class="breadcrumb">
-        <div class="breadcrumb-container">
-          <a href="/">Home</a> › <a href="/services/">Services</a> › Vacation Rental OTA Listing
-        </div>
+      <div style="font-size:0.85rem; color:#888; margin-bottom:1.5rem;">
+        <a href="/" style="color:var(--secondary); text-decoration:none;">Home</a> ›
+        <a href="/services/" style="color:var(--secondary); text-decoration:none;">Services</a> ›
+        Vacation Rental OTA Listing
       </div>
 
       <!-- Hero -->
@@ -801,24 +818,23 @@
         </button>
       </div>
 
-      <!-- Footer -->
-      <footer style="background:#3E3D35; color:rgba(255,255,255,0.7); padding:2rem; margin-top:2rem;">
-        <div style="max-width:1140px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
-          <div>
-            <div style="font-size:1.1rem; font-weight:700; color:white; margin-bottom:0.3rem;">OnlineHotelier <span style="color:#89826E; font-weight:400;">Insights</span></div>
-            <div style="font-size:0.82rem;">Helping Indian hospitality businesses grow online</div>
-          </div>
-          <div style="display:flex; gap:1.5rem; flex-wrap:wrap; font-size:0.85rem;">
-            <a href="/" style="color:#89826E; text-decoration:none;">Home</a>
-            <a href="/guides/" style="color:#89826E; text-decoration:none;">Guides</a>
-            <a href="/tools/" style="color:#89826E; text-decoration:none;">Tools</a>
-            <a href="https://api.whatsapp.com/send?phone=918591756934&text=Hi%2C%20I%20am%20interested%20in%20listing%20my%20property" target="_blank" rel="noopener" style="color:#89826E; text-decoration:none;">WhatsApp</a>
-          </div>
-        </div>
-      </footer>
+  </div><!-- /page-wrapper -->
 
-    </div><!-- /tool-main-content -->
-  </div><!-- /tool-page-layout -->
+  <!-- Footer -->
+  <footer style="background:#3E3D35; color:rgba(255,255,255,0.7); padding:2rem; margin-top:2rem;">
+    <div style="max-width:960px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+      <div>
+        <div style="font-size:1.1rem; font-weight:700; color:white; margin-bottom:0.3rem;">OnlineHotelier <span style="color:#89826E; font-weight:400;">Insights</span></div>
+        <div style="font-size:0.82rem;">Helping Indian hospitality businesses grow online</div>
+      </div>
+      <div style="display:flex; gap:1.5rem; flex-wrap:wrap; font-size:0.85rem;">
+        <a href="/" style="color:#89826E; text-decoration:none;">Home</a>
+        <a href="/guides/" style="color:#89826E; text-decoration:none;">Guides</a>
+        <a href="/tools/" style="color:#89826E; text-decoration:none;">Tools</a>
+        <a href="https://api.whatsapp.com/send?phone=918591756934&text=Hi%2C%20I%20am%20interested%20in%20listing%20my%20property" target="_blank" rel="noopener" style="color:#89826E; text-decoration:none;">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
 
   <!-- WhatsApp Chat Widget -->
   <div class="wa-chat-widget" id="waChatWidget">
