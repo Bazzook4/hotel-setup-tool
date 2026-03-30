@@ -75,6 +75,7 @@ function buildToolSidebar(currentPath) {
 
   // Service pages don't show the sidebar
   if (currentPath.indexOf('/services/') !== -1) {
+    document.body.classList.add('service-page');
     sidebar.style.display = 'none';
     var toggle = document.querySelector('.sidebar-toggle');
     var overlay = document.querySelector('.sidebar-overlay');

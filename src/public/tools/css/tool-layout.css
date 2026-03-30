@@ -122,6 +122,11 @@ body {
   min-width: 0;
 }
 
+/* Service pages: no sidebar, full-width content */
+body.service-page .tool-page-layout {
+  grid-template-columns: 1fr;
+}
+
 /* ----- Prev/Next Navigation ----- */
 .prev-next-nav {
   display: grid;
