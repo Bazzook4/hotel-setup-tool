@@ -582,7 +582,7 @@
     }
   </style>
 </head>
-<body>
+<body data-tool-name="Google My Business">
 
   <!-- Site Navigation -->
   <nav id="site-nav"></nav>
@@ -603,7 +603,7 @@
           <div class="hero-eyebrow">Service · One-Time Fee</div>
           <h1>Google My Business<br>for Your Hotel</h1>
           <p>Get your hotel found on Google Maps and Google Search. We set up your listing from scratch — or fix what's already broken — so guests can find, call, and book you directly.</p>
-          <a href="https://wa.me/918591756934?text=Hi%2C%20I%27m%20interested%20in%20the%20Google%20My%20Business%20setup%20for%20my%20hotel" class="hero-cta" target="_blank" rel="noopener">
+          <a href="#" class="hero-cta" onclick="event.preventDefault(); ohWA.open();">
             WhatsApp Us to Get Started
           </a>
           <span class="hero-badge">₹5,000 · One-time</span>
@@ -733,31 +733,6 @@
           <p><strong>No hidden charges.</strong> The ₹5,000 is all-inclusive — setup, photos, verification support, and handover. No monthly fees, no retainer. You pay once and own your listing forever.</p>
         </div>
 
-        <!-- ── CONTACT FORM ── -->
-        <div class="contact-strip">
-          <h3>Get in Touch</h3>
-          <div class="contact-row">
-            <div class="contact-field">
-              <label for="cf-hotel">Hotel Name</label>
-              <input type="text" id="cf-hotel" placeholder="e.g., Hotel Sunrise Palace">
-            </div>
-            <div class="contact-field">
-              <label for="cf-city">City / Location</label>
-              <input type="text" id="cf-city" placeholder="e.g., Shimla, HP">
-            </div>
-            <div class="contact-field">
-              <label for="cf-service">I need</label>
-              <select id="cf-service">
-                <option>New GMB listing</option>
-                <option>Fix existing listing</option>
-                <option>Not sure — let's talk</option>
-              </select>
-            </div>
-            <button class="contact-submit" id="cf-submit">WhatsApp Us</button>
-          </div>
-          <p class="contact-note">We respond within a few hours on WhatsApp · +91 85917 56934</p>
-        </div>
-
         <!-- ── FAQ ── -->
         <div class="section-block">
           <h2 class="section-title" id="faq">Frequently Asked Questions</h2>
@@ -855,17 +830,6 @@
       });
     });
 
-    // ── Contact form WhatsApp redirect ──
-    document.getElementById('cf-submit').addEventListener('click', function() {
-      var hotel   = document.getElementById('cf-hotel').value.trim();
-      var city    = document.getElementById('cf-city').value.trim();
-      var service = document.getElementById('cf-service').value;
-      var msg = 'Hi, I\'m interested in the GMB service.';
-      if (hotel) msg += ' Hotel: ' + hotel + '.';
-      if (city)  msg += ' Location: ' + city + '.';
-      msg += ' Service needed: ' + service + '.';
-      window.open('https://wa.me/918591756934?text=' + encodeURIComponent(msg), '_blank');
-    });
   </script>
 
   <script src="/js/wa-widget.js"></script>

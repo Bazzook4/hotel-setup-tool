@@ -73,6 +73,16 @@ function buildToolSidebar(currentPath) {
   var sidebar = document.querySelector('.tool-sidebar');
   if (!sidebar) return;
 
+  // Service pages don't show the sidebar
+  if (currentPath.indexOf('/services/') !== -1) {
+    sidebar.style.display = 'none';
+    var toggle = document.querySelector('.sidebar-toggle');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) toggle.style.display = 'none';
+    if (overlay) overlay.style.display = 'none';
+    return;
+  }
+
   var html = '<nav aria-label="Tool navigation">';
   html += '<div class="sidebar-section-header">Tools</div>';
   html += '<ul class="sidebar-tool-list">';
@@ -147,9 +157,18 @@ function buildToolBreadcrumb(toolName) {
   var bc = document.getElementById('tool-breadcrumb');
   if (!bc) return;
 
+  var isService = window.location.pathname.indexOf('/services/') !== -1;
+
   bc.className = 'breadcrumb';
-  bc.innerHTML =
-    '<div class="breadcrumb-container">' +
-      '<a href="/">Home</a> › <a href="/tools/">Tools</a> › ' + toolName +
-    '</div>';
+  if (isService) {
+    bc.innerHTML =
+      '<div class="breadcrumb-container">' +
+        '<a href="/">Home</a> › <a href="/services/">Services</a> › ' + toolName +
+      '</div>';
+  } else {
+    bc.innerHTML =
+      '<div class="breadcrumb-container">' +
+        '<a href="/">Home</a> › <a href="/tools/">Tools</a> › ' + toolName +
+      '</div>';
+  }
 }

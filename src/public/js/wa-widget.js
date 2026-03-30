@@ -139,17 +139,20 @@
             <div class="oh-wa-label">Number of Rooms / Units</div>
             <select id="oh-wa-inventory">
               <option value="">Select…</option>
-              <option value="1 room">1 room</option>
-              <option value="2–3 rooms">2–3 rooms</option>
-              <option value="4–6 rooms">4–6 rooms</option>
-              <option value="7–10 rooms">7–10 rooms</option>
-              <option value="11–20 rooms">11–20 rooms</option>
-              <option value="20+ rooms">20+ rooms</option>
+              <option value="1 room">1 Room</option>
+              <option value="2–10 rooms">2–10 Rooms</option>
+              <option value="11–30 rooms">11–30 Rooms</option>
+              <option value="30–50 rooms">30–50 Rooms</option>
+              <option value="50+ rooms">50+ Rooms</option>
             </select>
           </div>
           <div>
             <div class="oh-wa-label">City / Location</div>
             <input type="text" id="oh-wa-location" placeholder="e.g. Goa, Manali, Coorg…" />
+          </div>
+          <div>
+            <div class="oh-wa-label">Your Website (if any)</div>
+            <input type="text" id="oh-wa-website" placeholder="e.g. https://myproperty.com" />
           </div>
           <div>
             <div class="oh-wa-label">How soon do you need this?</div>
@@ -195,6 +198,7 @@
     var proptype  = document.getElementById('oh-wa-proptype').value;
     var inventory = document.getElementById('oh-wa-inventory').value;
     var location  = document.getElementById('oh-wa-location').value.trim();
+    var website   = document.getElementById('oh-wa-website').value.trim();
     var timeline  = document.getElementById('oh-wa-timeline').value;
 
     var parts = ['Hi! I came across OnlineHotelier Insights and would like to enquire.'];
@@ -202,6 +206,7 @@
     if (proptype)  parts.push('Property type: ' + proptype);
     if (inventory) parts.push('Inventory: ' + inventory);
     if (location)  parts.push('Location: ' + location);
+    if (website)   parts.push('Website: ' + website);
     if (timeline)  parts.push('Timeline: ' + timeline);
     parts.push('Please get in touch. Thank you.');
 
