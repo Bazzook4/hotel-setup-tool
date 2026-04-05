@@ -214,20 +214,26 @@
     .section-title { font-size: 1.5rem; font-weight: 700; color: var(--primary); margin-bottom: 1.25rem; }
 
     /* ── Platform cards ── */
-    .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; }
+    .platform-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
     .platform-card {
-      background: white; border-radius: 12px; padding: 1.75rem 1.5rem;
+      background: white; border-radius: 12px; padding: 1.25rem 1rem;
       box-shadow: 0 2px 8px rgba(62,61,53,0.06); border-top: 4px solid var(--secondary); text-align: center;
     }
     .platform-card.featured { border-top-color: var(--primary); }
-    .platform-name { font-size: 1.2rem; font-weight: 700; color: var(--primary); margin-bottom: 0.4rem; }
+    .platform-name { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.35rem; }
     .platform-tag {
       display: inline-block; background: var(--secondary-light); color: var(--secondary);
-      font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 4px;
-      margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;
+      font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 4px;
+      margin-bottom: 0.65rem; text-transform: uppercase; letter-spacing: 0.04em;
     }
-    .platform-card p { font-size: 0.88rem; color: #555; line-height: 1.6; margin: 0 0 0.75rem; }
-    .platform-commission { font-size: 0.8rem; color: #888; background: #f5f5f0; border-radius: 6px; padding: 0.35rem 0.65rem; display: inline-block; }
+    .platform-card p { font-size: 0.82rem; color: #555; line-height: 1.55; margin: 0 0 0.65rem; }
+    .platform-commission { font-size: 0.78rem; color: #888; background: #f5f5f0; border-radius: 6px; padding: 0.3rem 0.6rem; display: inline-block; }
+    @media (max-width: 768px) {
+      .platform-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .platform-grid { grid-template-columns: 1fr; }
+    }
 
     /* ── Why cards ── */
     .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; }
@@ -375,19 +381,19 @@
           <div class="platform-name">Booking.com</div>
           <div class="platform-tag">Highest Global Volume</div>
           <p>World's largest accommodation platform. Essential for any hotel — international travellers, business guests and domestic tourists all book here first.</p>
-          <div class="platform-commission">Commission: 15–18%</div>
+          <div class="platform-commission">Commission: ~18%*</div>
         </div>
         <div class="platform-card featured">
           <div class="platform-name">MakeMyTrip + Goibibo</div>
           <div class="platform-tag">India's #1 OTA Group</div>
           <p>One listing reaches both MMT and Goibibo travellers — India's two biggest domestic booking platforms combined. Non-negotiable for any Indian hotel.</p>
-          <div class="platform-commission">Commission: 12–18%</div>
+          <div class="platform-commission">Commission: ~18%*</div>
         </div>
         <div class="platform-card featured">
           <div class="platform-name">Expedia Group</div>
           <div class="platform-tag">10–15 Sister Platforms</div>
           <p>One Expedia listing distributes your hotel across 10–15 sister platforms — Hotels.com, Orbitz, Travelocity, Wotif, Ebookers and more. Unmatched international reach from a single setup.</p>
-          <div class="platform-commission">Commission: 15–20%</div>
+          <div class="platform-commission">Commission: ~18%*</div>
         </div>
         <div class="platform-card">
           <div class="platform-name">Agoda</div>
@@ -399,9 +405,10 @@
           <div class="platform-name">ClearTrip</div>
           <div class="platform-tag">Growing Fast in India</div>
           <p>Backed by Flipkart, ClearTrip is gaining strong traction with budget and mid-segment Indian travellers. Good incremental reach for tier-2 and tier-3 city properties.</p>
-          <div class="platform-commission">Commission: 10–15%</div>
+          <div class="platform-commission">Commission: ~18%*</div>
         </div>
       </div>
+      <p style="font-size:0.78rem; color:#aaa; margin-top:0.85rem;">* OTA commissions are indicative and vary by property type, location and negotiated rate. Actual rates confirmed at onboarding.</p>
     </section>
 
     <!-- Pricing -->
