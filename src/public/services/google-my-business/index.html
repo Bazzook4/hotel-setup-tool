@@ -153,12 +153,22 @@
   <link rel="stylesheet" href="/tools/css/tool-layout.css">
 
   <style>
+    /* ── Page Wrapper ── */
+    .page-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 0;
+    }
+    @media (max-width: 768px) {
+      .page-wrapper { padding: 1.25rem 1rem 0; }
+    }
+
     /* ── Hero ── */
     .service-hero {
       background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       color: white;
       padding: 3.5rem 2rem;
-      margin: 0 2rem 2rem;
+      margin: 0 0 2rem;
       border-radius: 16px;
     }
     .hero-eyebrow {
@@ -222,7 +232,7 @@
       border: 2px solid var(--secondary);
       border-radius: 12px;
       padding: 1.5rem;
-      margin: 0 2rem 2rem;
+      margin: 0 0 2rem;
     }
     .seo-intro .seo-question {
       font-size: 1.2rem;
@@ -231,16 +241,13 @@
       margin-bottom: 0.6rem;
     }
     .seo-intro p { color: #555; margin: 0; line-height: 1.7; }
-    @media (max-width: 768px) {
-      .seo-intro { margin: 0 1rem 1.5rem; }
-    }
 
     /* ── Pricing card ── */
     .pricing-strip {
       display: flex;
       align-items: stretch;
       gap: 1.5rem;
-      margin: 0 2rem 2rem;
+      margin: 0 0 2rem;
       flex-wrap: wrap;
     }
     .pricing-card {
@@ -337,10 +344,7 @@
       margin-bottom: 1.25rem;
     }
     .section-block {
-      margin: 0 2rem 2.5rem;
-    }
-    @media (max-width: 768px) {
-      .section-block { margin: 0 1rem 2rem; }
+      margin: 0 0 2.5rem;
     }
 
     .why-grid {
@@ -426,13 +430,10 @@
       border-left: 4px solid var(--secondary);
       border-radius: 10px;
       padding: 1.25rem 1.5rem;
-      margin: 0 2rem 2rem;
+      margin: 0 0 2rem;
     }
     .highlight-box strong { color: var(--primary); }
     .highlight-box p { color: #444; margin: 0; line-height: 1.7; }
-    @media (max-width: 768px) {
-      .highlight-box { margin: 0 1rem 1.5rem; }
-    }
 
     /* ── FAQ ── */
     .faq-list {
@@ -490,7 +491,7 @@
       padding: 2.5rem 2rem;
       border-radius: 16px;
       text-align: center;
-      margin: 0 2rem 3rem;
+      margin: 0 0 3rem;
     }
     .cta-banner h2 {
       font-size: 1.6rem;
@@ -591,21 +592,19 @@
     }
   </style>
 </head>
-<body data-tool-name="Google My Business">
+<body>
 
   <!-- Site Navigation -->
   <nav id="site-nav"></nav>
 
-  <div class="sidebar-overlay"></div>
-  <button class="sidebar-toggle" aria-label="Toggle navigation">&#9776;</button>
+  <div class="page-wrapper">
 
-  <div class="tool-page-layout">
-    <aside class="tool-sidebar"></aside>
-
-    <div class="tool-main-content">
-      <div id="tool-breadcrumb"></div>
-
-      <div class="container">
+    <!-- Breadcrumb -->
+    <div style="font-size:0.85rem; color:#888; margin-bottom:1.5rem;">
+      <a href="/" style="color:var(--secondary); text-decoration:none;">Home</a> ›
+      <a href="/services/" style="color:var(--secondary); text-decoration:none;">Services</a> ›
+      Google My Business
+    </div>
 
         <!-- ── HERO ── -->
         <div class="service-hero">
@@ -808,9 +807,7 @@
           </a>
         </div>
 
-      </div><!-- /container -->
-    </div><!-- /tool-main-content -->
-  </div><!-- /tool-page-layout -->
+  </div><!-- /page-wrapper -->
 
   <footer style="background: #3E3D35; color: white; padding: 2rem; margin-top: 0;">
     <div style="max-width: 1140px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
@@ -826,7 +823,6 @@
   </footer>
 
   <script src="/js/nav.js"></script>
-  <script src="/tools/js/tool-nav.js"></script>
 
   <script>
     // ── FAQ accordion ──
