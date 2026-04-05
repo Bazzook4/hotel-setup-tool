@@ -126,8 +126,6 @@
       transition: transform 0.2s, box-shadow 0.2s;
       flex-shrink: 0;
       color: white;
-      font-size: 1.5rem;
-      line-height: 1;
     }
     #oh-tools-fab:hover {
       transform: scale(1.08);
@@ -168,7 +166,9 @@
           <a href="/tools/">View all tools →</a>
         </div>
       </div>
-      <button id="oh-tools-fab" aria-label="Browse free hotel tools" title="Free Hotel Tools">🧰</button>
+      <button id="oh-tools-fab" aria-label="Browse free hotel tools" title="Free Hotel Tools">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="17"/><line x1="9.5" y1="14.5" x2="14.5" y2="14.5"/></svg>
+      </button>
     </div>
   `;
 
