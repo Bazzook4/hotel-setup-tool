@@ -5,15 +5,16 @@
  */
 (function () {
 
+  var BASE = 'https://insights.onlinehotelier.com';
   var TOOLS = [
-    { icon: '📊', title: 'Revenue Management Setup',      href: '/tools/revenue-management-tool/' },
-    { icon: '💰', title: 'OTA Commission Calculator',     href: '/tools/ota-commission-calculator/' },
-    { icon: '🏷️', title: 'Discount Settlement Calculator', href: '/tools/hotel-discount-calculator/' },
-    { icon: '📈', title: 'OTA Dependency Calculator',     href: '/tools/ota-dependency-calculator/' },
-    { icon: '🔍', title: 'Hotel Rate Shopper',            href: '/tools/rate-shopper/' },
-    { icon: '🎯', title: 'Competitor Rate Intelligence',  href: '/tools/competitor-analysis/' },
-    { icon: '📅', title: 'Demand Calendar 2026',          href: '/tools/demand-calendar/' },
-    { icon: '⚖️', title: 'Break Even Calculator',         href: '/tools/break-even-calculator/' },
+    { icon: '📊', title: 'Revenue Management Setup',      href: BASE + '/tools/revenue-management-tool/' },
+    { icon: '💰', title: 'OTA Commission Calculator',     href: BASE + '/tools/ota-commission-calculator/' },
+    { icon: '🏷️', title: 'Discount Settlement Calculator', href: BASE + '/tools/hotel-discount-calculator/' },
+    { icon: '📈', title: 'OTA Dependency Calculator',     href: BASE + '/tools/ota-dependency-calculator/' },
+    { icon: '🔍', title: 'Hotel Rate Shopper',            href: BASE + '/tools/rate-shopper/' },
+    { icon: '🎯', title: 'Competitor Rate Intelligence',  href: BASE + '/tools/competitor-analysis/' },
+    { icon: '📅', title: 'Demand Calendar 2026',          href: BASE + '/tools/demand-calendar/' },
+    { icon: '⚖️', title: 'Break Even Calculator',         href: BASE + '/tools/break-even-calculator/' },
   ];
 
   // ── Styles ──────────────────────────────────────────────────────────────────
@@ -163,7 +164,7 @@
           ${listItems}
         </div>
         <div class="oh-tools-footer">
-          <a href="/tools/">View all tools →</a>
+          <a href="https://insights.onlinehotelier.com/tools/">View all tools →</a>
         </div>
       </div>
       <button id="oh-tools-fab" aria-label="Browse free hotel tools" title="Free Hotel Tools">
