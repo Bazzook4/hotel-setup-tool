@@ -20,13 +20,13 @@
   var css = `
     #oh-tools-widget {
       position: fixed;
-      bottom: 6rem;
+      bottom: 7.5rem;
       right: 2rem;
       z-index: 9998;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      gap: 0.6rem;
+      gap: 0.75rem;
       font-family: 'Avenir', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
     #oh-tools-panel {
@@ -113,27 +113,28 @@
     }
     .oh-tools-footer a:hover { text-decoration: underline; }
     #oh-tools-fab {
-      width: 48px;
-      height: 48px;
+      width: 58px;
+      height: 58px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #3E3D35, #89826E);
+      background: #3E3D35;
       border: none;
       cursor: pointer;
-      box-shadow: 0 4px 14px rgba(62,61,53,0.35);
+      box-shadow: 0 4px 16px rgba(62,61,53,0.4);
       display: flex;
       align-items: center;
       justify-content: center;
       transition: transform 0.2s, box-shadow 0.2s;
       flex-shrink: 0;
       color: white;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
+      line-height: 1;
     }
     #oh-tools-fab:hover {
       transform: scale(1.08);
-      box-shadow: 0 6px 18px rgba(62,61,53,0.45);
+      box-shadow: 0 6px 20px rgba(62,61,53,0.5);
     }
     @media (max-width: 768px) {
-      #oh-tools-widget { bottom: 5rem; right: 1rem; }
+      #oh-tools-widget { bottom: 6rem; right: 1rem; }
       #oh-tools-panel { width: 270px; }
     }
   `;
