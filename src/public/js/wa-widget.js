@@ -72,14 +72,14 @@
     .oh-wa-note { font-size: 0.75rem; color: #aaa; text-align: center; margin-top: 0.4rem; }
     #oh-wa-fab {
       width: 58px; height: 58px; border-radius: 50%;
-      background: #25D366; border: none; cursor: pointer;
-      box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+      background: #3E3D35; border: none; cursor: pointer;
+      box-shadow: 0 4px 16px rgba(62,61,53,0.4);
       display: flex; align-items: center; justify-content: center;
       transition: transform 0.2s, box-shadow 0.2s; flex-shrink: 0;
     }
     #oh-wa-fab:hover {
       transform: scale(1.08);
-      box-shadow: 0 6px 20px rgba(37,211,102,0.5);
+      box-shadow: 0 6px 20px rgba(62,61,53,0.5);
     }
     #oh-wa-fab img { width: 34px; height: 34px; }
     @media (max-width: 768px) {
