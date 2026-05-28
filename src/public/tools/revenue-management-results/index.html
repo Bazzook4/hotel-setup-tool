@@ -242,10 +242,10 @@
       font-size: 0.75rem;
       font-weight: 600;
     }
-    .badge-success { background: #d4edda; color: #155724; }
-    .badge-warning { background: #fff3cd; color: #856404; }
-    .badge-danger { background: #f8d7da; color: #721c24; }
-    .badge-info { background: #e3f2fd; color: #1565c0; }
+    .badge-success { background: var(--primary-light); color: var(--primary); }
+    .badge-warning { background: var(--secondary-light); color: var(--secondary); }
+    .badge-danger { background: var(--secondary-light); color: var(--secondary); }
+    .badge-info { background: var(--primary-light); color: var(--primary); }
 
     .slab-badge {
       display: inline-block;
@@ -254,11 +254,11 @@
       font-size: 0.8rem;
       font-weight: 600;
     }
-    .slab-1 { background: #e8f5e9; color: #2e7d32; }
-    .slab-2 { background: #e3f2fd; color: #1565c0; }
-    .slab-3 { background: #fff3e0; color: #ef6c00; }
-    .slab-4 { background: #fce4ec; color: #c2185b; }
-    .slab-5 { background: #f3e5f5; color: #7b1fa2; }
+    .slab-1 { background: var(--primary-light); color: var(--primary); }
+    .slab-2 { background: rgba(62,61,53,0.05); color: var(--primary); }
+    .slab-3 { background: var(--secondary-light); color: var(--secondary); }
+    .slab-4 { background: rgba(137,130,110,0.18); color: var(--secondary); }
+    .slab-5 { background: var(--primary-light); color: var(--primary); }
 
     /* Chart */
     .chart-container {
@@ -304,11 +304,11 @@
       font-size: 0.8rem;
       cursor: help;
     }
-    .month-item.peak { background: #ffcdd2; color: #c62828; font-weight: 600; }
-    .month-item.high { background: #fff3e0; color: #e65100; font-weight: 600; }
+    .month-item.peak { background: rgba(62,61,53,0.18); color: var(--primary); font-weight: 600; }
+    .month-item.high { background: rgba(62,61,53,0.10); color: var(--primary); font-weight: 600; }
     .month-item.normal { background: #f5f5f5; color: #666; }
-    .month-item.low { background: #e8f5e9; color: #2e7d32; }
-    .month-item.very-low { background: #e0f2f1; color: #00695c; }
+    .month-item.low { background: var(--secondary-light); color: var(--secondary); }
+    .month-item.very-low { background: rgba(137,130,110,0.06); color: var(--secondary); }
     .month-label { font-weight: 600; margin-bottom: 0.15rem; }
     .month-score { font-size: 0.65rem; opacity: 0.9; }
 
@@ -323,10 +323,10 @@
       border-bottom: 1px solid #f0f0f0;
     }
     .weekday-table th { font-weight: 600; color: #666; }
-    .demand-peak { color: #d32f2f; font-weight: 600; }
-    .demand-high { color: #e65100; font-weight: 600; }
+    .demand-peak { color: var(--primary); font-weight: 600; }
+    .demand-high { color: var(--secondary); font-weight: 600; }
     .demand-normal { color: #333; }
-    .demand-low { color: #2e7d32; font-weight: 600; }
+    .demand-low { color: var(--secondary); font-weight: 600; }
     .score-badge {
       display: inline-block;
       padding: 0.15rem 0.4rem;
@@ -336,11 +336,11 @@
       min-width: 30px;
       text-align: center;
     }
-    .score-badge.peak { background: #ffcdd2; color: #c62828; }
-    .score-badge.high { background: #fff3e0; color: #e65100; }
+    .score-badge.peak { background: rgba(62,61,53,0.18); color: var(--primary); }
+    .score-badge.high { background: rgba(62,61,53,0.10); color: var(--primary); }
     .score-badge.normal { background: #f5f5f5; color: #666; }
-    .score-badge.low { background: #e8f5e9; color: #2e7d32; }
-    .score-badge.very-low { background: #e0f2f1; color: #00695c; }
+    .score-badge.low { background: var(--secondary-light); color: var(--secondary); }
+    .score-badge.very-low { background: rgba(137,130,110,0.06); color: var(--secondary); }
 
     /* Time Suggestions */
     .suggestions-table {
@@ -375,15 +375,15 @@
       font-weight: 600;
       font-size: 0.7rem;
     }
-    .effect-badge.discount { background: #e8f5e9; color: #2e7d32; }
-    .effect-badge.premium { background: #fff3e0; color: #e65100; }
+    .effect-badge.discount { background: var(--secondary-light); color: var(--secondary); }
+    .effect-badge.premium { background: var(--primary-light); color: var(--primary); }
     .price-cell {
       font-weight: 700;
       font-family: 'Monaco', 'Consolas', monospace;
       font-size: 0.8rem;
     }
-    .price-cell.discount { color: #2e7d32; }
-    .price-cell.premium { color: #e65100; }
+    .price-cell.discount { color: var(--secondary); }
+    .price-cell.premium { color: var(--primary); }
     .reasoning-cell { font-size: 0.75rem; color: #666; font-style: italic; }
 
     /* Special Dates */
@@ -422,7 +422,7 @@
     .date-name { font-weight: 600; color: #333; margin-bottom: 0.15rem; }
     .weekend-badge {
       display: inline-block;
-      background: #ff9800;
+      background: var(--secondary);
       color: white;
       font-size: 0.6rem;
       padding: 0.1rem 0.4rem;
@@ -559,40 +559,40 @@
     .traveler-card .char-item { font-size: 0.75rem; color: #555; margin-bottom: 0.2rem; padding-left: 0.75rem; position: relative; }
     .traveler-card .char-item:before { content: "•"; position: absolute; left: 0; color: var(--secondary); font-weight: bold; }
     .peak-seasons {
-      background: #fff8e1;
+      background: var(--secondary-light);
       padding: 1rem;
       border-radius: 8px;
       margin-top: 0.75rem;
-      border-left: 4px solid #ff9800;
+      border-left: 4px solid var(--secondary);
     }
-    .peak-seasons h4 { color: #e65100; margin-bottom: 0.5rem; font-size: 0.95rem; }
+    .peak-seasons h4 { color: var(--secondary); margin-bottom: 0.5rem; font-size: 0.95rem; }
     .season-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
     .season-tag {
       background: white;
       padding: 0.35rem 0.75rem;
       border-radius: 20px;
       font-size: 0.8rem;
-      color: #e65100;
+      color: var(--secondary);
       font-weight: 600;
-      border: 1px solid #ffe082;
+      border: 1px solid rgba(137,130,110,0.3);
     }
     .famous-for {
-      background: #e8f5e9;
+      background: var(--primary-light);
       padding: 1rem;
       border-radius: 8px;
       margin-top: 0.75rem;
-      border-left: 4px solid #4caf50;
+      border-left: 4px solid var(--primary);
     }
-    .famous-for h4 { color: #2e7d32; margin-bottom: 0.5rem; font-size: 0.95rem; }
+    .famous-for h4 { color: var(--primary); margin-bottom: 0.5rem; font-size: 0.95rem; }
     .famous-items { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
     .famous-item {
       background: white;
       padding: 0.35rem 0.75rem;
       border-radius: 20px;
       font-size: 0.8rem;
-      color: #2e7d32;
+      color: var(--primary);
       font-weight: 600;
-      border: 1px solid #c8e6c9;
+      border: 1px solid rgba(62,61,53,0.15);
     }
 
     /* Overbooking section */
@@ -1374,7 +1374,7 @@
       `;
 
       if (poolTypes.length >= 2) {
-        const colors = ['#3E3D35', '#89826E', '#89826E', '#c2185b', '#4facfe'];
+        const colors = ['#3E3D35', '#89826E', 'rgba(62,61,53,0.6)', 'rgba(137,130,110,0.7)', 'rgba(62,61,53,0.35)'];
         document.getElementById('poolVisualization').innerHTML = `<div class="pool-viz">${poolTypes.map((t, i) => `<div class="pool-viz-segment" style="width:${t.poolPercent}%;background:${colors[i % colors.length]};">${t.name} (${t.poolPercent}%)</div>`).join('')}</div>`;
       }
 
