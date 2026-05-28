@@ -660,34 +660,36 @@
     }
 
     .breakdown-row .value.negative {
-      color: #d32f2f;
+      color: var(--secondary);
     }
 
     .breakdown-row .value.positive {
-      color: #2e7d32;
+      color: var(--primary);
     }
 
     .highlight-box {
       padding: 1rem;
       border-radius: 8px;
       margin: 0.75rem 0;
+      background: var(--secondary-light);
+      border-left: 4px solid var(--secondary);
     }
 
     .highlight-green {
-      background: #e8f5e9;
+      background: var(--primary-light);
     }
 
     .highlight-green .value {
-      color: #2e7d32;
+      color: var(--primary);
       font-size: 1.2rem;
     }
 
     .highlight-red {
-      background: #ffebee;
+      background: var(--secondary-light);
     }
 
     .highlight-red .value {
-      color: #d32f2f;
+      color: var(--secondary);
       font-size: 1.2rem;
     }
 
@@ -729,7 +731,7 @@
 
     /* Insight Card */
     .insight-card {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       padding: 1.5rem;
       border-radius: 10px;
       color: white;
@@ -788,11 +790,11 @@
     }
 
     .annual-table .positive {
-      color: #2e7d32;
+      color: var(--primary);
     }
 
     .annual-table .negative {
-      color: #d32f2f;
+      color: var(--secondary);
     }
 
     /* Explore More Tools */

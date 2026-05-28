@@ -20,8 +20,8 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hotel Manager Report: Daily Flash Report Guide | OnlineHotelier Insights</title>
-  <meta name="description" content="Learn about hotel manager reports and daily flash reports. Understand key metrics like occupancy, ADR, RevPAR, and how to use them for daily decision making.">
+  <title>Hotel Manager Report: How to Read Your Daily Flash | OnlineHotelier Insights</title>
+  <meta name="description" content="Your daily flash report shows last night's occupancy, ARR, and RevPAR vs last year. Learn every column, what's normal, and which numbers should trigger action.">
   <meta name="keywords" content="hotel manager report, daily flash report hotel, hotel occupancy report, hotel daily summary, GM report hotel, hotel MIS report">
   <link rel="canonical" href="https://insights.onlinehotelier.com/guides/reports/manager-report.html">
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
@@ -29,6 +29,10 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/guides/css/guide-layout.css">
+  <!-- AI/LLM Crawler Meta Tags -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="google-adsense-account" content="ca-pub-6118286051054894">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
   <script type="application/ld+json">
@@ -90,6 +94,47 @@
     .footer a { color: #89826E; text-decoration: none; }
     .nav-cta { background: rgba(137, 130, 110, 0.25) !important; color: #fff !important; border: 1px solid rgba(137, 130, 110, 0.4); } .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; } @media (max-width: 768px) { .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #3E3D35; flex-direction: column; padding: 1rem; gap: 0.25rem; } .nav-links.open { display: flex; } .nav-toggle { display: block; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } .metric-card { grid-template-columns: repeat(2, 1fr); } }
   </style>
+  <!-- Structured Data - FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a manager's report in a hotel?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A hotel manager's report (also called the daily manager's flash report) is a summary of the previous day's key performance metrics. It typically includes: rooms sold, occupancy rate, ARR/ADR, RevPAR, total revenue by department (rooms, F&B, ancillary), cancellations, no-shows, and comparison against budget and the same day last year. It is the first document a general manager reviews each morning."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What metrics are included in a hotel manager's report?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A hotel manager's daily report typically includes: (1) Rooms — occupancy %, ARR, RevPAR, rooms sold, rooms available, (2) Revenue — room revenue, F&B revenue, total revenue, (3) Bookings — arrivals, departures, in-house guests, reservations made, cancellations, no-shows, (4) Comparison — actual vs budget, actual vs same day last year (STLY). Some hotels also include TRevPAR (Total Revenue Per Available Room)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often is a manager's report generated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most hotels generate a manager's report daily — reflecting the previous day's performance. Larger hotels may also produce weekly and monthly consolidated reports. The daily flash report is generated automatically by the hotel PMS at the end of the night audit. It is distributed to the GM, department heads, and ownership by email each morning."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between a manager's report and a night audit report?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The night audit report is a detailed operational and accounting document generated at the end of each business day — it reconciles all transactions, posts room charges, and closes the financial day. The manager's report is a high-level summary derived from the night audit, designed for quick review. The night audit is for the accounts team; the manager's report is for leadership."
+        }
+      }
+    ]
+  }
+  </script>
   <script src="/js/nav.js"></script>
 </head>
 <body>
@@ -121,12 +166,12 @@
 
     <div class="article-content">
       <div class="quick-answer">
-        <h2>What is a Manager Report?</h2>
+        <h2 id="what-is-a-manager-report">What is a Manager Report?</h2>
         <div class="big-text">Manager Report = Daily Snapshot of Hotel Performance</div>
         <p>A summary report showing yesterday's key numbers - occupancy, revenue, ADR, arrivals, departures - generated after night audit. Also called "Flash Report" or "GM Report."</p>
       </div>
 
-      <h2>Why You Need a Daily Manager Report</h2>
+      <h2 id="why-you-need-a-daily-manager-report">Why You Need a Daily Manager Report</h2>
 
       <p>Imagine trying to drive a car without a dashboard - no speedometer, no fuel gauge. That's running a hotel without a daily manager report.</p>
 
@@ -138,7 +183,7 @@
         <li><strong>Team alignment:</strong> Everyone starts the day with the same information</li>
       </ul>
 
-      <h2>Key Metrics in Manager Report</h2>
+      <h2 id="key-metrics-in-manager-report">Key Metrics in Manager Report</h2>
 
       <div class="metric-card">
         <div class="metric">
@@ -202,7 +247,7 @@
         </tr>
       </table>
 
-      <h2>Sample Manager Report</h2>
+      <h2 id="sample-manager-report">Sample Manager Report</h2>
 
       <div class="sample-report">
         <h4>DAILY MANAGER REPORT - 06 Feb 2026</h4>
@@ -248,7 +293,7 @@
         </div>
       </div>
 
-      <h2>Understanding Each Section</h2>
+      <h2 id="understanding-each-section">Understanding Each Section</h2>
 
       <h3>Room Statistics</h3>
       <p>Shows how many rooms you have, how many were sold, and your occupancy percentage. "OOO" means Out of Order - rooms under maintenance that can't be sold.</p>
@@ -269,7 +314,7 @@
         <strong>Reading Tip:</strong> Compare today's numbers with: (1) Same day last week, (2) Same day last year, (3) Your budget. One bad day isn't a crisis, but a pattern is.
       </div>
 
-      <h2>Additional Information to Include</h2>
+      <h2 id="additional-information-to-include">Additional Information to Include</h2>
 
       <table class="comparison-table">
         <tr>
@@ -306,7 +351,7 @@
         </tr>
       </table>
 
-      <h2>When & How to Use Manager Report</h2>
+      <h2 id="when-how-to-use-manager-report">When & How to Use Manager Report</h2>
 
       <h3>Morning Briefing (8-9 AM)</h3>
       <ul>
@@ -334,7 +379,7 @@
         <strong>Pro Tip:</strong> Set up your PMS to email the manager report automatically at 7 AM. Key managers (GM, Revenue, Front Office, Housekeeping) should get it before they arrive.
       </div>
 
-      <h2>Common Questions</h2>
+      <h2 id="common-questions">Common Questions</h2>
 
       <h3>How is this different from Night Audit Report?</h3>
       <p>Night audit report is detailed - every transaction, every account. Manager report is a summary - just the key numbers a manager needs to see.</p>

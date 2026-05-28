@@ -334,6 +334,100 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Operations Guides -->
+  <url>
+    <loc>https://insights.onlinehotelier.com/guides/operations/hotel-check-in-process.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://insights.onlinehotelier.com/guides/operations/foc-hotel.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- OTA Guides (additional) -->
+  <url>
+    <loc>https://insights.onlinehotelier.com/guides/ota/booking-com-visibility-booster.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://insights.onlinehotelier.com/guides/ota/google-free-booking-links.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Revenue Guides (additional) -->
+  <url>
+    <loc>https://insights.onlinehotelier.com/guides/revenue/arr.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://insights.onlinehotelier.com/guides/revenue/overbooking.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Services Section -->
+  <url>
+    <loc>https://insights.onlinehotelier.com/services/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://insights.onlinehotelier.com/services/independent-hotel-ota-listing/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://insights.onlinehotelier.com/services/vacation-rental-ota-listing/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://insights.onlinehotelier.com/services/google-my-business/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://insights.onlinehotelier.com/services/direct-booking-website/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Tools (additional) -->
+  <url>
+    <loc>https://insights.onlinehotelier.com/tools/break-even-calculator/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://insights.onlinehotelier.com/tools/competitor-analysis/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://insights.onlinehotelier.com/tools/rate-shopper/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- About Section -->
   <url>
     <loc>https://insights.onlinehotelier.com/about/</loc>

@@ -20,8 +20,8 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hotel Payment Report: Track Collections & Settlements | OnlineHotelier Insights</title>
-  <meta name="description" content="Learn about hotel payment reports. Track cash, cards, UPI collections, OTA settlements, and city ledger payments. Ensure accurate revenue collection.">
+  <title>Hotel Payment Report: Cash, Cards, UPI & OTA Reconciliation | OnlineHotelier Insights</title>
+  <meta name="description" content="A payment report tracks every rupee collected — cash, card, UPI, OTA settlements. See how to reconcile daily collections and catch shortfalls before they compound.">
   <meta name="keywords" content="hotel payment report, hotel collection report, hotel cash report, OTA settlement hotel, hotel revenue collection, hotel payment tracking">
   <link rel="canonical" href="https://insights.onlinehotelier.com/guides/reports/payment-report.html">
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
@@ -29,6 +29,10 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/guides/css/guide-layout.css">
+  <!-- AI/LLM Crawler Meta Tags -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="google-adsense-account" content="ca-pub-6118286051054894">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
   <script type="application/ld+json">
@@ -91,6 +95,47 @@
     .footer a { color: #89826E; text-decoration: none; }
     .nav-cta { background: rgba(137, 130, 110, 0.25) !important; color: #fff !important; border: 1px solid rgba(137, 130, 110, 0.4); } .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; } @media (max-width: 768px) { .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #3E3D35; flex-direction: column; padding: 1rem; gap: 0.25rem; } .nav-links.open { display: flex; } .nav-toggle { display: block; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } }
   </style>
+  <!-- Structured Data - FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a hotel payment report?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A hotel payment report is a daily or periodic summary of all payments received — cash, card, UPI, bank transfer, and OTA prepayments. It shows total collections by payment mode, reconciles payments against charges billed, and highlights any discrepancies. It is used by the accounts team to close the cash register and reconcile end-of-day revenue."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do hotels reconcile OTA payments?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OTAs typically pay hotels monthly or bi-weekly via bank transfer, after deducting their commission and any TCS. To reconcile, hotels match each OTA payout against the booking reports showing which reservations were included, the gross booking value, commission deducted, TCS deducted, and net payout. Discrepancies are raised directly with the OTA's partner support team."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What payment modes should hotels accept?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Indian hotels should accept: (1) Cash — still common for walk-ins and local guests, (2) Credit/Debit cards — essential for urban and business travellers, (3) UPI (Google Pay, PhonePe, Paytm) — now the most popular digital payment method in India, (4) Bank transfer/NEFT — used by corporate clients, (5) OTA prepayment — for guests who pay the OTA at booking. Most hotel PMS systems support all these modes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a folio in hotel payments?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A hotel folio is the running bill for an individual guest's stay. It accumulates all charges — room rate, meals, room service, minibar, laundry — and records all payments made. At checkout, the folio is settled (paid in full) and a tax invoice (GST-compliant bill) is issued to the guest. PMS software manages folios automatically, posting charges throughout the stay."
+        }
+      }
+    ]
+  }
+  </script>
   <script src="/js/nav.js"></script>
 </head>
 <body>
@@ -122,12 +167,12 @@
 
     <div class="article-content">
       <div class="quick-answer">
-        <h2>What is a Payment Report?</h2>
+        <h2 id="what-is-a-payment-report">What is a Payment Report?</h2>
         <div class="big-text">Payment Report = Money Received Tracking</div>
         <p>A report showing all payments collected - cash, cards, UPI, bank transfers - and how they reconcile with your revenue. Ensures every rupee earned is actually collected.</p>
       </div>
 
-      <h2>Why Payment Reports Matter</h2>
+      <h2 id="why-payment-reports-matter">Why Payment Reports Matter</h2>
 
       <ul>
         <li><strong>Revenue leakage:</strong> Catch missing payments before they become losses</li>
@@ -138,7 +183,7 @@
         <li><strong>Tax compliance:</strong> Accurate records for GST and income tax</li>
       </ul>
 
-      <h2>Types of Hotel Payments</h2>
+      <h2 id="types-of-hotel-payments">Types of Hotel Payments</h2>
 
       <div class="payment-type">
         <h4><span>💵</span> Cash Payments</h4>
@@ -205,7 +250,7 @@
         </ul>
       </div>
 
-      <h2>Sample Daily Payment Report</h2>
+      <h2 id="sample-daily-payment-report">Sample Daily Payment Report</h2>
 
       <div class="sample-report">
         <h4>DAILY PAYMENT REPORT - 06 Feb 2026</h4>
@@ -250,7 +295,7 @@
         </div>
       </div>
 
-      <h2>Payment Reconciliation Process</h2>
+      <h2 id="payment-reconciliation-process">Payment Reconciliation Process</h2>
 
       <h3>Daily Reconciliation (Night Audit)</h3>
       <ol>
@@ -276,7 +321,7 @@
         <strong>Golden Rule:</strong> Every rupee shown as revenue in your PMS should eventually appear in your bank account. If revenue is ₹10 lakh and collections are ₹9 lakh, you have ₹1 lakh problem to solve.
       </div>
 
-      <h2>Common Payment Issues</h2>
+      <h2 id="common-payment-issues">Common Payment Issues</h2>
 
       <table class="comparison-table">
         <tr>
@@ -309,7 +354,7 @@
         </tr>
       </table>
 
-      <h2>Payment Controls</h2>
+      <h2 id="payment-controls">Payment Controls</h2>
 
       <ul>
         <li><strong>Separate cash drawers:</strong> Each cashier has own drawer</li>
@@ -324,7 +369,7 @@
         <strong>Pro Tip:</strong> Encourage digital payments (UPI, cards). They're automatically recorded, reduce cash handling risk, and make reconciliation easier. Many guests prefer digital anyway.
       </div>
 
-      <h2>Key Reports to Generate</h2>
+      <h2 id="key-reports-to-generate">Key Reports to Generate</h2>
 
       <table class="comparison-table">
         <tr>
