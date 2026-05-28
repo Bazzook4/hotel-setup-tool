@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2BPYRGZTM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q2BPYRGZTM');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRevPAR &amp; GOP PAR Explained for Hotels | OnlineHotelier Insights</title>
+  <meta name="description" content="Learn TRevPAR and GOP PAR — two advanced hotel revenue metrics. See formulas, benchmarks, and how Indian hotels use them to measure total revenue and profit.">
+  <meta name="keywords" content="TRevPAR hotel, GOP PAR hotel, total revenue per available room, hotel profitability metrics, TRevPAR vs RevPAR, hotel revenue metrics India">
+  <link rel="canonical" href="https://insights.onlinehotelier.com/guides/revenue/trevpar.html">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/guides/css/guide-layout.css">
+  <!-- AI/LLM Crawler Meta Tags -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="google-adsense-account" content="ca-pub-6118286051054894">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Avenir', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #F8F8F4; color: #3E3D35; line-height: 1.7; }
+    :root { --primary: #3E3D35; --secondary: #89826E; --accent: #89826E; --secondary-light: rgba(137,130,110,0.1); --accent-light: rgba(137,130,110,0.2); --primary-light: rgba(62,61,53,0.08); }
+    .nav { background: #3E3D35; padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .nav-logo { font-size: 1.3rem; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: -0.02em; }
+    .nav-logo span { color: #89826E; font-weight: 400; }
+    .nav-links { display: flex; gap: 0.25rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: rgba(255,255,255,0.65); font-weight: 500; font-size: 0.9rem; padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,0.08); }
+    .breadcrumb { background: white; padding: 1rem 2rem; border-bottom: 1px solid #eee; }
+    .breadcrumb-container { max-width: 900px; margin: 0 auto; font-size: 0.9rem; color: #666; }
+    .breadcrumb a { color: var(--secondary); text-decoration: none; }
+    .article-container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    .article-header { margin-bottom: 2rem; }
+    .article-header h1 { font-size: 2.25rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.3; }
+    .article-meta { display: flex; gap: 1.5rem; color: #666; font-size: 0.9rem; }
+    .article-content { background: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.07); }
+    .article-content h2 { font-size: 1.5rem; color: var(--primary); margin: 2rem 0 1rem; padding-top: 1rem; border-top: 1px solid #eee; }
+    .article-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .article-content h3 { font-size: 1.15rem; color: var(--primary); margin: 1.5rem 0 0.75rem; }
+    .article-content p { margin-bottom: 1rem; color: #444; }
+    .article-content ul, .article-content ol { margin: 1rem 0 1.5rem 1.5rem; color: #444; }
+    .article-content li { margin-bottom: 0.5rem; }
+    .quick-answer { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; }
+    .quick-answer h2 { color: white !important; border: none !important; margin: 0 0 1rem 0 !important; padding: 0 !important; font-size: 1.3rem; }
+    .quick-answer .big-text { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .quick-answer p { color: white; }
+    .formula-box { background: var(--primary-light); border: 2px solid var(--primary); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; font-family: 'Monaco', 'Consolas', monospace; font-size: 1rem; color: var(--primary); }
+    .highlight-box { background: var(--secondary-light); border-left: 4px solid var(--secondary); padding: 1.25rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; color: var(--primary); }
+    .highlight-box.tip { background: var(--accent-light); border-left-color: var(--accent); }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+    .comparison-table th, .comparison-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
+    .comparison-table th { background: var(--primary); color: white; }
+    .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+    .footer { background: #3E3D35; color: white; padding: 2rem; margin-top: 3rem; text-align: center; }
+    .footer a { color: #89826E; text-decoration: none; }
+    .nav-cta { background: rgba(137,130,110,0.25) !important; color: #fff !important; border: 1px solid rgba(137,130,110,0.4); }
+    .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+    @media (max-width: 768px) { .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #3E3D35; flex-direction: column; padding: 1rem; gap: 0.25rem; } .nav-links.open { display: flex; } .nav-toggle { display: block; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } }
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"TRevPAR & GOP PAR Explained for Hotels","description":"TRevPAR and GOP PAR formulas, benchmarks, and how Indian hotels use them to measure total revenue and profitability.","author":{"@type":"Organization","name":"OnlineHotelier"},"publisher":{"@type":"Organization","name":"OnlineHotelier","logo":{"@type":"ImageObject","url":"https://insights.onlinehotelier.com/favicon.png"}},"mainEntityOfPage":"https://insights.onlinehotelier.com/guides/revenue/trevpar.html","datePublished":"2026-05-28","dateModified":"2026-05-28"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"OnlineHotelier","url":"https://www.onlinehotelier.com","logo":"https://insights.onlinehotelier.com/favicon.png","sameAs":["https://insights.onlinehotelier.com"]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://insights.onlinehotelier.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://insights.onlinehotelier.com/guides/"},{"@type":"ListItem","position":3,"name":"Revenue","item":"https://insights.onlinehotelier.com/guides/revenue/"},{"@type":"ListItem","position":4,"name":"TRevPAR & GOP PAR","item":"https://insights.onlinehotelier.com/guides/revenue/trevpar.html"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is TRevPAR in hotels?","acceptedAnswer":{"@type":"Answer","text":"TRevPAR stands for Total Revenue Per Available Room. It measures all revenue generated per available room — not just room revenue — including F&B, spa, laundry, and other departments. Formula: TRevPAR = Total Hotel Revenue ÷ Total Available Rooms."}},{"@type":"Question","name":"What is the difference between RevPAR and TRevPAR?","acceptedAnswer":{"@type":"Answer","text":"RevPAR only counts room revenue. TRevPAR counts all hotel revenue — rooms, F&B, spa, and ancillaries. For a hotel where rooms are always full, TRevPAR reveals whether the restaurant and other services are generating additional value per available room."}},{"@type":"Question","name":"What is GOP PAR?","acceptedAnswer":{"@type":"Answer","text":"GOP PAR stands for Gross Operating Profit Per Available Room. It measures how much profit the hotel generates per available room after deducting all operating costs (salaries, utilities, supplies, OTA commissions) but before debt service and taxes. Formula: GOP PAR = Gross Operating Profit ÷ Total Available Rooms."}},{"@type":"Question","name":"What is a good TRevPAR for Indian hotels?","acceptedAnswer":{"@type":"Answer","text":"Indian hotel TRevPAR benchmarks vary widely by category. Budget city hotels: ₹1,500–₹3,000/room/night. Mid-scale: ₹3,000–₹6,000. Upscale: ₹6,000–₹12,000. Resorts with strong F&B can exceed ₹15,000+ during peak season as food and beverage revenue adds significantly to room revenue."}},{"@type":"Question","name":"Why does TRevPAR matter more than RevPAR for resorts?","acceptedAnswer":{"@type":"Answer","text":"Resorts generate 25–45% of their revenue from F&B, spa, and activities — not rooms. A resort at 100% occupancy with low F&B spend has a good RevPAR but poor TRevPAR, indicating guests are not spending on ancillaries. TRevPAR is the metric that reveals the full picture."}}]}
+  </script>
+  <script src="/js/nav.js"></script>
+</head>
+<body>
+  <nav id="site-nav"></nav>
+  <div class="sidebar-overlay"></div>
+  <button class="sidebar-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+  <div class="guide-page-layout has-toc">
+    <aside class="guide-sidebar"></aside>
+    <div class="guide-main-content">
+
+      <div class="breadcrumb">
+        <div class="breadcrumb-container">
+          <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; <a href="/guides/revenue/">Revenue</a> &rsaquo; TRevPAR &amp; GOP PAR
+        </div>
+      </div>
+
+      <article class="article-container">
+        <header class="article-header">
+          <h1>TRevPAR &amp; GOP PAR Explained for Hotel Owners</h1>
+          <div class="article-meta">
+            <span>By OnlineHotelier Insights Team</span>
+            <span>Updated May 2026</span>
+            <span>6 min read</span>
+          </div>
+        </header>
+
+        <div class="article-content">
+          <div class="quick-answer">
+            <h2 id="what-is-trevpar">What is TRevPAR?</h2>
+            <div class="big-text">Total Revenue Per Available Room</div>
+            <p>TRevPAR measures all hotel revenue — rooms, F&amp;B, spa, laundry, and every other department — per available room. Where <a href="/guides/revenue/revpar.html" style="color: rgba(255,255,255,0.8);">RevPAR</a> shows room performance, TRevPAR shows the full business picture.</p>
+          </div>
+
+          <h2 id="trevpar-formula">TRevPAR Formula and Calculation</h2>
+
+          <div class="formula-box">
+            TRevPAR = Total Hotel Revenue ÷ Total Available Rooms
+          </div>
+
+          <p><strong>Example:</strong> A 40-room hotel earns ₹8,00,000 in a month from all departments combined (rooms ₹5,50,000 + F&amp;B ₹2,00,000 + laundry ₹50,000).</p>
+          <p>Total available rooms in the month = 40 × 30 = 1,200</p>
+          <p><strong>TRevPAR = ₹8,00,000 ÷ 1,200 = ₹667 per room per night</strong></p>
+
+          <p>Compare this against your <a href="/guides/revenue/revpar.html" style="color: var(--secondary);">RevPAR</a> (room revenue only). The gap between RevPAR and TRevPAR shows how much your non-room departments contribute. A large gap is good — it means guests are spending beyond the room rate.</p>
+
+          <h2 id="what-is-gop-par">What is GOP PAR?</h2>
+
+          <div class="formula-box">
+            GOP PAR = Gross Operating Profit ÷ Total Available Rooms
+          </div>
+
+          <p>GOP PAR measures profit per available room after deducting all operating costs — salaries, OTA commissions, utilities, supplies, F&amp;B costs — but before interest, tax, depreciation, and rent.</p>
+
+          <p><strong>Example:</strong> Same 40-room hotel. Total revenue: ₹8,00,000. Operating costs: ₹5,20,000. GOP = ₹2,80,000.</p>
+          <p><strong>GOP PAR = ₹2,80,000 ÷ 1,200 = ₹233 per room per night</strong></p>
+
+          <p>This feeds directly into your <a href="/guides/reports/profit-loss-report.html" style="color: var(--secondary);">Profit &amp; Loss report</a> and tells you the true operating efficiency of your hotel.</p>
+
+          <h2 id="trevpar-vs-revpar-vs-gop-par">TRevPAR vs RevPAR vs GOP PAR: Key Differences</h2>
+
+          <table class="comparison-table">
+            <tr>
+              <th>Metric</th>
+              <th>What It Measures</th>
+              <th>Revenue Included</th>
+              <th>Best For</th>
+            </tr>
+            <tr>
+              <td><strong>ADR</strong></td>
+              <td>Average rate per sold room</td>
+              <td>Room revenue only</td>
+              <td>Pricing decisions</td>
+            </tr>
+            <tr>
+              <td><strong>RevPAR</strong></td>
+              <td>Room revenue per available room</td>
+              <td>Room revenue only</td>
+              <td>Occupancy + rate combined</td>
+            </tr>
+            <tr>
+              <td><strong>TRevPAR</strong></td>
+              <td>All revenue per available room</td>
+              <td>Rooms + F&amp;B + spa + all depts</td>
+              <td>Total hotel performance</td>
+            </tr>
+            <tr>
+              <td><strong>GOP PAR</strong></td>
+              <td>Operating profit per available room</td>
+              <td>All revenue minus all operating costs</td>
+              <td>Profitability and efficiency</td>
+            </tr>
+          </table>
+
+          <h2 id="trevpar-for-indian-hotels">How Indian Hotels Can Use These Metrics</h2>
+
+          <h3>When RevPAR Isn't Enough</h3>
+          <p>A Goa beach resort at 95% occupancy looks great on RevPAR. But if guests eat outside the property and skip the spa, TRevPAR will be low — indicating a missed revenue opportunity. TRevPAR pushes you to look at in-house spend, not just room bookings.</p>
+
+          <h3>Indian TRevPAR Benchmarks</h3>
+
+          <table class="comparison-table">
+            <tr>
+              <th>Hotel Category</th>
+              <th>TRevPAR Range (₹/room/night)</th>
+            </tr>
+            <tr>
+              <td>Budget city hotel (1–2 star)</td>
+              <td>₹800 – ₹2,000</td>
+            </tr>
+            <tr>
+              <td>Mid-scale (3 star)</td>
+              <td>₹2,000 – ₹5,000</td>
+            </tr>
+            <tr>
+              <td>Upscale (4 star)</td>
+              <td>₹5,000 – ₹10,000</td>
+            </tr>
+            <tr>
+              <td>Resort (Goa, Kerala, Rajasthan)</td>
+              <td>₹6,000 – ₹20,000+ (peak season)</td>
+            </tr>
+          </table>
+
+          <h3>GOP PAR Benchmarks</h3>
+          <p>A well-run Indian hotel should achieve a GOP margin of 30–40% of total revenue. If your GOP PAR is consistently below 25% of TRevPAR, investigate: OTA commissions too high, F&amp;B food cost out of control, or staffing ratio too heavy for your occupancy level.</p>
+
+          <div class="highlight-box tip">
+            <strong>Pro Tip:</strong> Track TRevPAR and GOP PAR monthly in your <a href="/guides/revenue/adr.html" style="color: var(--secondary);">revenue review</a> alongside ADR and RevPAR. Together, the four metrics tell you whether you are filling rooms (occupancy), pricing well (ADR), earning from all sources (TRevPAR), and actually making money (GOP PAR).
+          </div>
+
+          <h2 id="faq">Frequently Asked Questions</h2>
+
+          <h3>What is TRevPAR in hotels?</h3>
+          <p>Total Revenue Per Available Room — all hotel revenue (rooms + F&amp;B + spa + other) divided by total available rooms. Formula: Total Revenue ÷ Available Rooms.</p>
+
+          <h3>What is the difference between RevPAR and TRevPAR?</h3>
+          <p>RevPAR only counts room revenue. TRevPAR counts all revenue. The gap between them shows how much non-room departments contribute per available room.</p>
+
+          <h3>What is GOP PAR?</h3>
+          <p>Gross Operating Profit Per Available Room — operating profit after all costs (salaries, commissions, utilities) but before debt service. Formula: GOP ÷ Available Rooms.</p>
+
+          <h3>What is a good TRevPAR for Indian hotels?</h3>
+          <p>Budget: ₹800–₹2,000. Mid-scale: ₹2,000–₹5,000. Upscale: ₹5,000–₹10,000. Resorts during peak season: ₹6,000–₹20,000+.</p>
+
+          <h3>Why does TRevPAR matter more than RevPAR for resorts?</h3>
+          <p>Resorts earn 25–45% of revenue from F&amp;B, spa, and activities. A resort at full occupancy with low ancillary spend has good RevPAR but poor TRevPAR — meaning guests aren't spending on non-room services. TRevPAR reveals that gap.</p>
+        </div>
+
+        <div class="prev-next-nav"></div>
+        <div class="related-cards-section"></div>
+      </article>
+
+    </div>
+    <aside class="guide-toc"></aside>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 OnlineHotelier. All rights reserved.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+      <a href="/about/">About</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/guides/">Guides</a>
+    </p>
+  </footer>
+  <script src="/js/whatsapp-widget.js"></script>
+</body>
+</html>

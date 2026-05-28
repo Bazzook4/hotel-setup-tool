@@ -28,6 +28,7 @@ const GUIDE_CATEGORIES = [
       { slug: 'no-show.html', title: 'No-Show & Cancellation' },
       { slug: 'arr.html', title: 'ARR - Average Room Rate' },
       { slug: 'overbooking.html', title: 'Overbooking Strategy' },
+      { slug: 'trevpar.html', title: 'TRevPAR & GOP PAR' },
     ]
   },
   {
@@ -45,6 +46,8 @@ const GUIDE_CATEGORIES = [
       { slug: 'booking-genius-program.html', title: 'Booking.com Genius Program' },
       { slug: 'google-free-booking-links.html', title: 'Google Free Booking Links' },
       { slug: 'booking-com-visibility-booster.html', title: 'Booking.com Visibility Booster' },
+      { slug: 'makemytrip-hotel-listing.html', title: 'MakeMyTrip Hotel Listing Guide' },
+      { slug: 'hotel-direct-booking-strategy.html', title: 'Hotel Direct Booking Strategy' },
     ]
   },
   {
@@ -96,6 +99,9 @@ const GUIDE_CATEGORIES = [
     guides: [
       { slug: 'hotel-check-in-process.html', title: 'Hotel Check-In Process' },
       { slug: 'foc-hotel.html', title: 'FOC (Free of Charge)' },
+      { slug: 'hotel-cancellation-policy.html', title: 'Hotel Cancellation Policy' },
+      { slug: 'hotel-housekeeping-sop.html', title: 'Housekeeping SOP & Checklist' },
+      { slug: 'hotel-staff-training.html', title: 'Hotel Staff Training Guide' },
     ]
   }
 ];
