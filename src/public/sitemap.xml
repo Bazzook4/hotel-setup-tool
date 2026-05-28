@@ -155,13 +155,13 @@
   </url>
   <url>
     <loc>https://insights.onlinehotelier.com/guides/revenue/adr.html</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://insights.onlinehotelier.com/guides/revenue/occupancy.html</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -197,7 +197,7 @@
   </url>
   <url>
     <loc>https://insights.onlinehotelier.com/guides/revenue/no-show.html</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -347,6 +347,24 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://insights.onlinehotelier.com/guides/operations/hotel-cancellation-policy.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://insights.onlinehotelier.com/guides/operations/hotel-housekeeping-sop.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://insights.onlinehotelier.com/guides/operations/hotel-staff-training.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- OTA Guides (additional) -->
   <url>
@@ -357,6 +375,18 @@
   </url>
   <url>
     <loc>https://insights.onlinehotelier.com/guides/ota/google-free-booking-links.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://insights.onlinehotelier.com/guides/ota/makemytrip-hotel-listing.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://insights.onlinehotelier.com/guides/ota/hotel-direct-booking-strategy.html</loc>
     <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -374,6 +404,12 @@
     <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://insights.onlinehotelier.com/guides/revenue/trevpar.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- Services Section -->
