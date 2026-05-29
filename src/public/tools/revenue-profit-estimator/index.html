@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2BPYRGZTM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q2BPYRGZTM');
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MKV3LKQJW1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MKV3LKQJW1');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Revenue & Profit Estimator | OnlineHotelier Insights</title>
+  <meta name="description" content="Estimate your hotel's monthly revenue, OTA costs, staff expenses, and net profit. Free tool for Indian hotels — enter rooms, occupancy, ADR, and get instant P&L.">
+  <meta name="keywords" content="hotel revenue calculator, hotel profit estimator, hotel P&L calculator, hotel net profit, hotel monthly revenue India, hotel occupancy revenue, ADR profit calculator">
+  <link rel="canonical" href="https://insights.onlinehotelier.com/tools/revenue-profit-estimator/">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <!-- AI/LLM Crawler Meta Tags -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+  <!-- Google AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-6118286051054894">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Hotel Revenue & Profit Estimator",
+    "url": "https://insights.onlinehotelier.com/tools/revenue-profit-estimator/",
+    "description": "Free tool to estimate hotel monthly revenue, OTA costs, operating expenses, and net profit for Indian hotels.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "OnlineHotelier"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a good profit margin for Indian hotels?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Budget hotels typically see 15–25% net margin, mid-scale 25–35%, and upscale properties 30–45%. Margins vary significantly by city — Goa and hill stations can run higher during peak season, while metro business hotels rely on consistent occupancy year-round."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I increase hotel revenue without raising room rates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Improve occupancy via better OTA visibility and direct bookings, add ancillary revenue (F&B, laundry, airport transfers), reduce OTA dependency with your own booking engine, and upsell room categories. Even a 5% occupancy gain at the same ADR can meaningfully improve net profit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What percentage of hotel revenue goes to OTA commissions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If 60–70% of bookings come through OTAs at 15–20% commission, you lose 9–14% of total room revenue to commissions. Direct booking strategy + booking engine can cut this significantly over 12 months."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are typical hotel operating expenses in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Staff costs: 25–35% of revenue. OTA commissions: 10–15% of revenue. Utilities (electricity, water): 8–12%. Maintenance & housekeeping supplies: 5–8%. Food & beverage cost (if applicable): 30–35% of F&B revenue. GST and statutory costs: varies by tariff slab."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OnlineHotelier",
+    "url": "https://www.onlinehotelier.com",
+    "logo": "https://insights.onlinehotelier.com/favicon.png",
+    "sameAs": ["https://insights.onlinehotelier.com"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://insights.onlinehotelier.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://insights.onlinehotelier.com/tools/"},
+      {"@type": "ListItem", "position": 3, "name": "Revenue & Profit Estimator", "item": "https://insights.onlinehotelier.com/tools/revenue-profit-estimator/"}
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/tools/css/tool-layout.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Avenir', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #F8F8F4;
+      color: #3E3D35;
+      line-height: 1.6;
+    }
+
+    :root {
+      --primary: #3E3D35;
+      --secondary: #89826E;
+      --primary-light: rgba(62,61,53,0.08);
+      --secondary-light: rgba(137,130,110,0.12);
+    }
+
+    /* Nav */
+    .site-nav {
+      background: #3E3D35;
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo { color: white; font-weight: 700; font-size: 1.1rem; text-decoration: none; }
+    .nav-logo span { color: #89826E; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.9rem; }
+    .nav-links a:hover { color: white; }
+    .nav-cta { background: rgba(137,130,110,0.25) !important; color: #fff !important; border: 1px solid rgba(137,130,110,0.4); padding: 0.4rem 1rem; border-radius: 6px; }
+    .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #3E3D35; flex-direction: column; padding: 1rem; gap: 0.25rem; }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+    }
+
+    /* Breadcrumb */
+    .breadcrumb { background: white; padding: 1rem 2rem; border-bottom: 1px solid #eee; }
+    .breadcrumb-container { max-width: 1140px; margin: 0 auto; font-size: 0.9rem; color: #666; }
+    .breadcrumb a { color: var(--secondary); text-decoration: none; }
+
+    /* Page Header */
+    .page-header { padding: 2rem 2rem 1rem; }
+    .page-header h1 { font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem; }
+    .page-subtitle { font-size: 1.1rem; color: #666; }
+
+    /* SEO Intro */
+    .seo-intro {
+      background: var(--secondary-light);
+      border: 2px solid var(--secondary);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 0 2rem 2rem;
+    }
+    .seo-question { font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+    .seo-intro p { color: #555; margin-bottom: 0.75rem; }
+    .seo-benefits { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .seo-benefits span { background: var(--secondary); color: white; padding: 0.35rem 0.75rem; border-radius: 20px; font-size: 0.82rem; font-weight: 500; }
+
+    /* Input Section */
+    .input-section { background: white; border-radius: 12px; padding: 1.5rem 2rem; box-shadow: 0 2px 8px rgba(62,61,53,0.06); margin: 0 2rem 1.5rem; }
+    .section-title { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--secondary-light); }
+
+    .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem; }
+    .input-group label { display: block; font-weight: 600; color: var(--primary); margin-bottom: 0.4rem; font-size: 0.88rem; }
+    .input-group input, .input-group select {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border: 2px solid #e1e5eb;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: white;
+      color: var(--primary);
+      transition: border-color 0.2s;
+    }
+    .input-group input:focus, .input-group select:focus { outline: none; border-color: var(--secondary); }
+    .input-group .hint { font-size: 0.75rem; color: #888; margin-top: 0.25rem; }
+
+    .subsection-label { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--secondary); margin: 1.25rem 0 0.75rem; }
+
+    .btn-calculate {
+      display: block;
+      width: 100%;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.3px;
+    }
+    .btn-calculate:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(62,61,53,0.3); }
+
+    /* Results */
+    .results-container { display: none; margin: 0 2rem; }
+    .results-container.show { display: block; }
+
+    /* Hero P&L Card */
+    .pl-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.5rem;
+      text-align: center;
+    }
+    .hero-stat-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.85; margin-bottom: 0.4rem; }
+    .hero-stat-value { font-size: 2.2rem; font-weight: 800; line-height: 1; }
+    .hero-stat-sub { font-size: 0.85rem; opacity: 0.8; margin-top: 0.3rem; }
+    .hero-stat-divider { border-left: 1px solid rgba(255,255,255,0.2); }
+    @media (max-width: 768px) { .hero-stat-divider { border-left: none; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1rem; } }
+
+    /* Stat Cards Row */
+    .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+    .stat-card { background: white; border-radius: 10px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(62,61,53,0.06); border-left: 4px solid var(--secondary); }
+    .stat-card.primary-accent { border-left-color: var(--primary); }
+    .stat-card-label { font-size: 0.8rem; color: #666; margin-bottom: 0.3rem; }
+    .stat-card-value { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+    .stat-card-note { font-size: 0.75rem; color: #888; margin-top: 0.2rem; }
+
+    /* P&L Breakdown Table */
+    .breakdown-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(62,61,53,0.06); margin-bottom: 1.5rem; }
+    .breakdown-title { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 1.25rem; }
+    .pl-table { width: 100%; border-collapse: collapse; }
+    .pl-table tr { border-bottom: 1px solid #f0f0ec; }
+    .pl-table tr:last-child { border-bottom: none; }
+    .pl-table td { padding: 0.7rem 0.5rem; font-size: 0.92rem; }
+    .pl-table td:last-child { text-align: right; font-weight: 600; }
+    .pl-table .section-row td { background: var(--primary-light); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--secondary); padding: 0.5rem; }
+    .pl-table .total-row td { font-weight: 800; font-size: 1rem; border-top: 2px solid var(--primary); }
+    .pl-table .expense-row td:last-child { color: var(--secondary); }
+    .pl-table .revenue-row td:last-child { color: var(--primary); }
+    .pl-table .profit-row td { background: var(--primary-light); color: var(--primary); }
+    .pl-table .profit-row td:last-child { font-size: 1.1rem; color: var(--primary); }
+
+    /* Margin Bar */
+    .margin-section { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(62,61,53,0.06); margin-bottom: 1.5rem; }
+    .margin-label-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+    .margin-label { font-weight: 700; color: var(--primary); }
+    .margin-pct { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+    .margin-bar-track { height: 16px; background: #e8e8e4; border-radius: 8px; overflow: hidden; margin-bottom: 0.75rem; }
+    .margin-bar-fill { height: 100%; background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%); border-radius: 8px; transition: width 0.6s ease; }
+    .margin-benchmarks { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .benchmark-pill { font-size: 0.78rem; background: var(--secondary-light); color: var(--secondary); padding: 0.3rem 0.75rem; border-radius: 20px; }
+    .margin-message { font-size: 0.9rem; color: #555; margin-top: 0.75rem; padding: 0.75rem 1rem; background: var(--primary-light); border-radius: 8px; }
+
+    /* Recommendations */
+    .recommendations { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(62,61,53,0.06); margin-bottom: 1.5rem; }
+    .rec-title { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; }
+    .rec-list { list-style: none; }
+    .rec-list li { display: flex; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid #f0f0ec; font-size: 0.9rem; }
+    .rec-list li:last-child { border-bottom: none; }
+    .rec-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .rec-text strong { display: block; color: var(--primary); margin-bottom: 0.2rem; }
+    .rec-text { color: #555; }
+
+    /* Resource Links */
+    .resource-links { background: var(--secondary-light); border: 2px solid var(--secondary); border-radius: 12px; padding: 1.5rem; margin: 0 2rem 2rem; }
+    .resource-title { font-weight: 700; color: var(--primary); margin-bottom: 0.75rem; }
+    .resource-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; }
+    .resource-link { display: flex; align-items: center; gap: 0.5rem; color: var(--secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+    .resource-link:hover { text-decoration: underline; }
+
+    /* FAQ */
+    .faq-section { background: white; border-radius: 12px; padding: 1.5rem 2rem; margin: 0 2rem 2rem; box-shadow: 0 2px 8px rgba(62,61,53,0.06); }
+    .faq-title { font-size: 1.2rem; font-weight: 700; color: var(--primary); margin-bottom: 1.25rem; }
+    .faq-item { border-bottom: 1px solid #eee; padding: 1rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-weight: 600; color: var(--primary); margin-bottom: 0.4rem; }
+    .faq-a { color: #555; font-size: 0.92rem; line-height: 1.6; }
+    .faq-a a { color: var(--secondary); }
+
+    /* Footer */
+    .site-footer { background: #3E3D35; color: white; padding: 2rem; text-align: center; margin-top: 3rem; }
+    .site-footer a { color: #89826E; text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .seo-intro, .input-section, .results-container, .resource-links, .faq-section { margin: 0 1rem; margin-bottom: 1.5rem; }
+      .page-header { padding: 1.5rem 1rem 1rem; }
+      .page-header h1 { font-size: 1.6rem; }
+      .pl-hero { padding: 1.5rem; }
+      .hero-stat-value { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="site-nav">
+    <a href="/" class="nav-logo">Online<span>Hotelier</span></a>
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="/guides/">Guides</a></li>
+      <li><a href="/tools/">Tools</a></li>
+      <li><a href="/services/" class="nav-cta">Our Services</a></li>
+    </ul>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="/">Home</a> › <a href="/tools/">Tools</a> › Revenue & Profit Estimator
+    </div>
+  </div>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1>Hotel Revenue & Profit Estimator</h1>
+    <p class="page-subtitle">Enter your rooms, occupancy, and ADR — get a full monthly P&L in seconds</p>
+  </div>
+
+  <!-- SEO Intro -->
+  <div class="seo-intro">
+    <div class="seo-question">How much profit should my hotel be making?</div>
+    <p>Most Indian hotel owners know their room rates but not their actual margins. This tool calculates gross revenue, OTA commission costs, operating expenses, and net profit — so you know exactly where your money is going.</p>
+    <div class="seo-benefits">
+      <span>Full Monthly P&L</span>
+      <span>OTA Cost Breakdown</span>
+      <span>Net Margin %</span>
+      <span>Actionable Tips</span>
+    </div>
+  </div>
+
+  <!-- Input Section -->
+  <div class="input-section">
+    <div class="section-title">Your Hotel Details</div>
+
+    <div class="subsection-label">Room & Revenue</div>
+    <div class="input-grid">
+      <div class="input-group">
+        <label for="totalRooms">Total Rooms</label>
+        <input type="number" id="totalRooms" value="20" min="1" max="500">
+        <div class="hint">Number of sellable rooms</div>
+      </div>
+      <div class="input-group">
+        <label for="occupancy">Occupancy Rate (%)</label>
+        <input type="number" id="occupancy" value="65" min="1" max="100">
+        <div class="hint">Monthly average</div>
+      </div>
+      <div class="input-group">
+        <label for="adr">ADR — Average Daily Rate (₹)</label>
+        <input type="number" id="adr" value="3000" min="100">
+        <div class="hint">Per room per night</div>
+      </div>
+      <div class="input-group">
+        <label for="ancillary">Ancillary Revenue / Month (₹)</label>
+        <input type="number" id="ancillary" value="0" min="0">
+        <div class="hint">F&B, laundry, transfers, etc.</div>
+      </div>
+    </div>
+
+    <div class="subsection-label">OTA & Distribution</div>
+    <div class="input-grid">
+      <div class="input-group">
+        <label for="otaShare">OTA Booking Share (%)</label>
+        <input type="number" id="otaShare" value="65" min="0" max="100">
+        <div class="hint">% of bookings via OTAs</div>
+      </div>
+      <div class="input-group">
+        <label for="otaCommission">OTA Commission Rate (%)</label>
+        <input type="number" id="otaCommission" value="18" min="0" max="35">
+        <div class="hint">Avg. commission % across platforms</div>
+      </div>
+    </div>
+
+    <div class="subsection-label">Monthly Operating Expenses (₹)</div>
+    <div class="input-grid">
+      <div class="input-group">
+        <label for="staffCost">Staff Salaries</label>
+        <input type="number" id="staffCost" value="80000" min="0">
+        <div class="hint">All staff, including housekeeping</div>
+      </div>
+      <div class="input-group">
+        <label for="utilities">Utilities (Electricity, Water)</label>
+        <input type="number" id="utilities" value="25000" min="0">
+        <div class="hint">Monthly electricity + water bill</div>
+      </div>
+      <div class="input-group">
+        <label for="maintenance">Maintenance & Supplies</label>
+        <input type="number" id="maintenance" value="15000" min="0">
+        <div class="hint">Repairs, amenities, housekeeping supplies</div>
+      </div>
+      <div class="input-group">
+        <label for="rentFixed">Rent / Loan EMI</label>
+        <input type="number" id="rentFixed" value="50000" min="0">
+        <div class="hint">Fixed monthly rent or EMI</div>
+      </div>
+      <div class="input-group">
+        <label for="marketing">Marketing & Other</label>
+        <input type="number" id="marketing" value="10000" min="0">
+        <div class="hint">Advertising, software, misc.</div>
+      </div>
+    </div>
+
+    <button class="btn-calculate" onclick="calculate()">Calculate My Hotel's P&L →</button>
+  </div>
+
+  <!-- Results -->
+  <div class="results-container" id="results">
+
+    <!-- Hero -->
+    <div class="pl-hero" id="plHero">
+      <div>
+        <div class="hero-stat-label">Gross Revenue</div>
+        <div class="hero-stat-value" id="heroRevenue">—</div>
+        <div class="hero-stat-sub">per month</div>
+      </div>
+      <div class="hero-stat-divider">
+        <div class="hero-stat-label">Total Expenses</div>
+        <div class="hero-stat-value" id="heroExpenses">—</div>
+        <div class="hero-stat-sub">per month</div>
+      </div>
+      <div class="hero-stat-divider">
+        <div class="hero-stat-label">Net Profit</div>
+        <div class="hero-stat-value" id="heroProfit">—</div>
+        <div class="hero-stat-sub">per month</div>
+      </div>
+      <div class="hero-stat-divider">
+        <div class="hero-stat-label">Annual Projection</div>
+        <div class="hero-stat-value" id="heroAnnual">—</div>
+        <div class="hero-stat-sub">estimated</div>
+      </div>
+    </div>
+
+    <!-- KPI Cards -->
+    <div class="stat-cards">
+      <div class="stat-card primary-accent">
+        <div class="stat-card-label">RevPAR</div>
+        <div class="stat-card-value" id="revpar">—</div>
+        <div class="stat-card-note">Revenue Per Available Room</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">OTA Commission Cost</div>
+        <div class="stat-card-value" id="otaCost">—</div>
+        <div class="stat-card-note">Monthly OTA fees paid</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-label">Room Nights Sold</div>
+        <div class="stat-card-value" id="roomNights">—</div>
+        <div class="stat-card-note">Per month (30 days)</div>
+      </div>
+      <div class="stat-card primary-accent">
+        <div class="stat-card-label">GOP Margin</div>
+        <div class="stat-card-value" id="gopMargin">—</div>
+        <div class="stat-card-note">Gross Operating Profit %</div>
+      </div>
+    </div>
+
+    <!-- P&L Breakdown -->
+    <div class="breakdown-card">
+      <div class="breakdown-title">Monthly P&L Breakdown</div>
+      <table class="pl-table">
+        <tr class="section-row"><td colspan="2">Revenue</td></tr>
+        <tr class="revenue-row"><td>Room Revenue (Gross)</td><td id="plRoomRevenue">—</td></tr>
+        <tr class="revenue-row"><td>Ancillary Revenue</td><td id="plAncillary">—</td></tr>
+        <tr class="revenue-row total-row"><td>Total Revenue</td><td id="plTotalRevenue">—</td></tr>
+        <tr class="section-row"><td colspan="2">Expenses</td></tr>
+        <tr class="expense-row"><td>OTA Commissions</td><td id="plOtaComm">—</td></tr>
+        <tr class="expense-row"><td>Staff Salaries</td><td id="plStaff">—</td></tr>
+        <tr class="expense-row"><td>Utilities</td><td id="plUtilities">—</td></tr>
+        <tr class="expense-row"><td>Maintenance & Supplies</td><td id="plMaintenance">—</td></tr>
+        <tr class="expense-row"><td>Rent / Loan EMI</td><td id="plRent">—</td></tr>
+        <tr class="expense-row"><td>Marketing & Other</td><td id="plMarketing">—</td></tr>
+        <tr class="expense-row total-row"><td>Total Expenses</td><td id="plTotalExpenses">—</td></tr>
+        <tr class="profit-row"><td><strong>Net Profit</strong></td><td id="plNetProfit">—</td></tr>
+      </table>
+    </div>
+
+    <!-- Margin Bar -->
+    <div class="margin-section">
+      <div class="margin-label-row">
+        <span class="margin-label">Net Profit Margin</span>
+        <span class="margin-pct" id="marginPct">—</span>
+      </div>
+      <div class="margin-bar-track">
+        <div class="margin-bar-fill" id="marginBar" style="width: 0%"></div>
+      </div>
+      <div class="margin-benchmarks">
+        <span class="benchmark-pill">Budget Hotels: 15–25%</span>
+        <span class="benchmark-pill">Mid-scale: 25–35%</span>
+        <span class="benchmark-pill">Upscale: 30–45%</span>
+      </div>
+      <div class="margin-message" id="marginMessage"></div>
+    </div>
+
+    <!-- Recommendations -->
+    <div class="recommendations">
+      <div class="rec-title">Opportunities to Improve Profit</div>
+      <ul class="rec-list" id="recList"></ul>
+    </div>
+
+  </div>
+
+  <!-- Resource Links -->
+  <div class="resource-links">
+    <div class="resource-title">Related Guides & Tools</div>
+    <div class="resource-grid">
+      <a href="/guides/revenue/occupancy.html" class="resource-link">→ Occupancy Rate Guide</a>
+      <a href="/guides/revenue/adr.html" class="resource-link">→ ADR / ARR Explained</a>
+      <a href="/guides/revenue/revpar.html" class="resource-link">→ RevPAR Guide</a>
+      <a href="/guides/revenue/trevpar.html" class="resource-link">→ TRevPAR Guide</a>
+      <a href="/tools/ota-commission-calculator/" class="resource-link">→ OTA Commission Calculator</a>
+      <a href="/tools/ota-dependency-calculator/" class="resource-link">→ OTA Dependency Calculator</a>
+      <a href="/guides/ota/hotel-direct-booking-strategy.html" class="resource-link">→ Direct Booking Strategy</a>
+      <a href="/guides/revenue/hotel-rate-plans.html" class="resource-link">→ Hotel Rate Plans</a>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section">
+    <div class="faq-title">Frequently Asked Questions</div>
+
+    <div class="faq-item">
+      <div class="faq-q">What is a good profit margin for Indian hotels?</div>
+      <div class="faq-a">Budget hotels typically see 15–25% net margin, mid-scale 25–35%, and upscale properties 30–45%. Margins vary by city — Goa and hill stations can run higher during peak season. See our <a href="/guides/revenue/revpar.html">RevPAR guide</a> for benchmarks by category.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How do I increase hotel revenue without raising room rates?</div>
+      <div class="faq-a">Improve occupancy via better OTA visibility and <a href="/guides/ota/hotel-direct-booking-strategy.html">direct bookings</a>, add ancillary revenue (F&B, laundry, airport transfers), and reduce OTA dependency with a <a href="/guides/software/booking-engine.html">booking engine</a>. Even a 5% occupancy gain at the same ADR can meaningfully improve net profit.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What percentage of hotel revenue goes to OTA commissions?</div>
+      <div class="faq-a">If 60–70% of bookings come through OTAs at 15–20% commission, you lose 9–14% of total room revenue to commissions. Use our <a href="/tools/ota-commission-calculator/">OTA Commission Calculator</a> to see the exact rupee impact.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What are typical hotel operating expenses in India?</div>
+      <div class="faq-a">Staff costs: 25–35% of revenue. OTA commissions: 10–15% of revenue. Utilities: 8–12%. Maintenance & supplies: 5–8%. These vary significantly by property type and location.</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2026 OnlineHotelier. <a href="/guides/">Guides</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/about/">About</a></p>
+  </footer>
+
+  <script>
+    function fmt(n) {
+      if (Math.abs(n) >= 100000) return '₹' + (n / 100000).toFixed(1) + 'L';
+      if (Math.abs(n) >= 1000) return '₹' + Math.round(n).toLocaleString('en-IN');
+      return '₹' + Math.round(n);
+    }
+
+    function calculate() {
+      const rooms      = parseFloat(document.getElementById('totalRooms').value) || 0;
+      const occ        = parseFloat(document.getElementById('occupancy').value) / 100 || 0;
+      const adr        = parseFloat(document.getElementById('adr').value) || 0;
+      const ancillary  = parseFloat(document.getElementById('ancillary').value) || 0;
+      const otaShare   = parseFloat(document.getElementById('otaShare').value) / 100 || 0;
+      const otaComm    = parseFloat(document.getElementById('otaCommission').value) / 100 || 0;
+      const staff      = parseFloat(document.getElementById('staffCost').value) || 0;
+      const utilities  = parseFloat(document.getElementById('utilities').value) || 0;
+      const maintenance = parseFloat(document.getElementById('maintenance').value) || 0;
+      const rent       = parseFloat(document.getElementById('rentFixed').value) || 0;
+      const marketing  = parseFloat(document.getElementById('marketing').value) || 0;
+
+      const daysInMonth  = 30;
+      const roomNights   = Math.round(rooms * occ * daysInMonth);
+      const roomRevenue  = roomNights * adr;
+      const totalRevenue = roomRevenue + ancillary;
+
+      const otaRoomRevenue    = roomRevenue * otaShare;
+      const otaCommissionCost = otaRoomRevenue * otaComm;
+
+      const totalExpenses = otaCommissionCost + staff + utilities + maintenance + rent + marketing;
+      const netProfit     = totalRevenue - totalExpenses;
+      const netMarginPct  = totalRevenue > 0 ? (netProfit / totalRevenue) * 100 : 0;
+
+      const revpar = totalRevenue > 0 ? (roomRevenue / (rooms * daysInMonth)) : 0;
+      const gopMarginPct = totalRevenue > 0 ? ((totalRevenue - (staff + utilities + maintenance + otaCommissionCost)) / totalRevenue * 100) : 0;
+
+      // Hero
+      document.getElementById('heroRevenue').textContent   = fmt(totalRevenue);
+      document.getElementById('heroExpenses').textContent  = fmt(totalExpenses);
+      document.getElementById('heroProfit').textContent    = fmt(netProfit);
+      document.getElementById('heroAnnual').textContent    = fmt(netProfit * 12);
+
+      // KPI Cards
+      document.getElementById('revpar').textContent     = fmt(revpar) + '/night';
+      document.getElementById('otaCost').textContent    = fmt(otaCommissionCost);
+      document.getElementById('roomNights').textContent = roomNights.toLocaleString('en-IN');
+      document.getElementById('gopMargin').textContent  = gopMarginPct.toFixed(1) + '%';
+
+      // P&L Table
+      document.getElementById('plRoomRevenue').textContent  = fmt(roomRevenue);
+      document.getElementById('plAncillary').textContent    = fmt(ancillary);
+      document.getElementById('plTotalRevenue').textContent = fmt(totalRevenue);
+      document.getElementById('plOtaComm').textContent      = '− ' + fmt(otaCommissionCost);
+      document.getElementById('plStaff').textContent        = '− ' + fmt(staff);
+      document.getElementById('plUtilities').textContent    = '− ' + fmt(utilities);
+      document.getElementById('plMaintenance').textContent  = '− ' + fmt(maintenance);
+      document.getElementById('plRent').textContent         = '− ' + fmt(rent);
+      document.getElementById('plMarketing').textContent    = '− ' + fmt(marketing);
+      document.getElementById('plTotalExpenses').textContent = '− ' + fmt(totalExpenses);
+      document.getElementById('plNetProfit').textContent    = fmt(netProfit);
+
+      // Margin bar
+      const clampedPct = Math.max(0, Math.min(100, netMarginPct));
+      document.getElementById('marginPct').textContent     = netMarginPct.toFixed(1) + '%';
+      document.getElementById('marginBar').style.width     = clampedPct + '%';
+
+      let marginMsg = '';
+      if (netMarginPct < 0) {
+        marginMsg = 'Your hotel is currently running at a loss. Review fixed costs (rent/EMI) and reduce OTA dependency to improve margin.';
+      } else if (netMarginPct < 15) {
+        marginMsg = 'Margin is below typical budget hotel benchmarks (15–25%). Focus on occupancy growth and reducing OTA commission share.';
+      } else if (netMarginPct < 25) {
+        marginMsg = 'You\'re in line with budget hotel benchmarks. Push occupancy above 70% and grow direct bookings to reach mid-scale margins.';
+      } else if (netMarginPct < 35) {
+        marginMsg = 'Healthy margin in the mid-scale range. Ancillary revenue and direct booking growth can push you toward the 35%+ zone.';
+      } else {
+        marginMsg = 'Excellent margin — you\'re in the top tier for Indian hotels. Focus on protecting this as occupancy or ADR changes seasonally.';
+      }
+      document.getElementById('marginMessage').textContent = marginMsg;
+
+      // Recommendations
+      const recs = [];
+      if (otaShare > 0.6) {
+        recs.push({ icon: '📉', title: 'Reduce OTA Dependency', text: 'Over 60% OTA bookings is costing you ' + fmt(otaCommissionCost) + '/month. A booking engine + Best Rate Guarantee can shift 15–20% to direct.' });
+      }
+      if (occ < 0.60) {
+        recs.push({ icon: '📈', title: 'Improve Occupancy First', text: 'At ' + Math.round(occ * 100) + '% occupancy, filling 5 more rooms/night adds ' + fmt(5 * adr * 30) + '/month revenue with near-zero extra cost.' });
+      }
+      if (ancillary === 0) {
+        recs.push({ icon: '🍽', title: 'Add Ancillary Revenue', text: 'F&B, airport transfers, or laundry can add ₹200–₹500 per room night with minimal investment — explore what your guests ask for.' });
+      }
+      if (netMarginPct > 0 && netMarginPct < 20) {
+        recs.push({ icon: '💡', title: 'Review Fixed Costs', text: 'Rent/EMI at ' + fmt(rent) + '/month and staff at ' + fmt(staff) + '/month are your largest controllables. Benchmark against similar properties in your city.' });
+      }
+      if (otaComm > 0.18) {
+        recs.push({ icon: '🤝', title: 'Renegotiate OTA Commission', text: 'At ' + Math.round(otaComm * 100) + '% commission, you\'re paying above average. Properties with strong reviews can negotiate preferred rates with MMT and Booking.com.' });
+      }
+      if (recs.length === 0) {
+        recs.push({ icon: '✅', title: 'Strong Performance', text: 'Your P&L looks healthy. Focus on maintaining direct booking share and protecting occupancy during lean season with MLOS and strategic rate plans.' });
+      }
+
+      const recList = document.getElementById('recList');
+      recList.innerHTML = recs.map(r =>
+        `<li><div class="rec-icon">${r.icon}</div><div class="rec-text"><strong>${r.title}</strong>${r.text}</div></li>`
+      ).join('');
+
+      document.getElementById('results').classList.add('show');
+      document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  </script>
+
+  <script src="/js/tools-widget.js"></script>
+</body>
+</html>
