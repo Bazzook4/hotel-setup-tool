@@ -58,6 +58,7 @@ const GUIDE_CATEGORIES = [
     guides: [
       { slug: 'what-is-pms-hotel.html', title: 'What is PMS?' },
       { slug: 'channel-manager.html', title: 'Channel Manager' },
+      { slug: 'update-hotel-rates-all-otas.html', title: 'Update Rates on All OTAs' },
       { slug: 'booking-engine.html', title: 'Booking Engine' },
       { slug: 'what-is-rms-hotel.html', title: 'What is RMS?' },
       { slug: 'what-is-pos-hotel.html', title: 'What is POS?' },
@@ -184,8 +185,14 @@ const RELATED_CONTENT = {
     { href: '/guides/revenue/revpar.html', title: 'RevPAR', category: 'Revenue', desc: 'Track in your PMS' },
   ],
   '/guides/software/channel-manager.html': [
+    { href: '/guides/software/update-hotel-rates-all-otas.html', title: 'Update Rates on All OTAs', category: 'Software', desc: 'Bulk rate updates via channel manager' },
     { href: '/guides/revenue/bar.html', title: 'BAR Pricing', category: 'Revenue', desc: 'Push rates to channels' },
     { href: '/guides/reports/manager-report.html', title: 'Manager Report', category: 'Reports', desc: 'Channel performance data' },
+  ],
+  '/guides/software/update-hotel-rates-all-otas.html': [
+    { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Complete guide to channel managers' },
+    { href: '/guides/revenue/rate-linkage.html', title: 'Rate Linkage', category: 'Revenue', desc: 'Derived rates and parity management' },
+    { href: '/guides/ota/what-is-ota.html', title: 'What is an OTA', category: 'OTA', desc: 'How OTAs work and what they cost' },
   ],
   '/guides/software/booking-engine.html': [
     { href: '/guides/revenue/hotel-rate-plans.html', title: 'Rate Plans', category: 'Revenue', desc: 'Display plans on your site' },
