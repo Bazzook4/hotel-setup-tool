@@ -9,12 +9,21 @@
   var TOOLS = [
     { icon: '📊', title: 'Revenue Management Setup',      href: BASE + '/tools/revenue-management-tool/' },
     { icon: '💰', title: 'OTA Commission Calculator',     href: BASE + '/tools/ota-commission-calculator/' },
+    { icon: '💰', title: 'Revenue & Profit Estimator',    href: BASE + '/tools/revenue-profit-estimator/' },
     { icon: '🏷️', title: 'Discount Settlement Calculator', href: BASE + '/tools/hotel-discount-calculator/' },
     { icon: '📈', title: 'OTA Dependency Calculator',     href: BASE + '/tools/ota-dependency-calculator/' },
     { icon: '🔍', title: 'Hotel Rate Shopper',            href: BASE + '/tools/rate-shopper/' },
     { icon: '🎯', title: 'Competitor Rate Intelligence',  href: BASE + '/tools/competitor-analysis/' },
     { icon: '📅', title: 'Demand Calendar 2026',          href: BASE + '/tools/demand-calendar/' },
     { icon: '⚖️', title: 'Break Even Calculator',         href: BASE + '/tools/break-even-calculator/' },
+  ];
+
+  var SERVICES = [
+    { icon: '🏨', title: 'Hotel OTA Listing',         href: BASE + '/services/independent-hotel-ota-listing/' },
+    { icon: '🏡', title: 'Vacation Rental Listing',   href: BASE + '/services/vacation-rental-ota-listing/' },
+    { icon: '📍', title: 'Google My Business Setup',  href: BASE + '/services/google-my-business/' },
+    { icon: '🌐', title: 'Direct Booking Website',    href: BASE + '/services/direct-booking-website/' },
+    { icon: '⚙️', title: 'Channel Manager Setup',     href: BASE + '/services/' },
   ];
 
   // ── Styles ──────────────────────────────────────────────────────────────────
@@ -143,10 +152,17 @@
   document.head.appendChild(styleEl);
 
   // ── HTML ─────────────────────────────────────────────────────────────────────
-  var listItems = TOOLS.map(function(t) {
+  var toolItems = TOOLS.map(function(t) {
     return '<a class="oh-tool-item" href="' + t.href + '">' +
       '<span class="oh-tool-icon">' + t.icon + '</span>' +
       t.title +
+    '</a>';
+  }).join('');
+
+  var serviceItems = SERVICES.map(function(s) {
+    return '<a class="oh-tool-item" href="' + s.href + '">' +
+      '<span class="oh-tool-icon">' + s.icon + '</span>' +
+      s.title +
     '</a>';
   }).join('');
 
@@ -156,15 +172,17 @@
         <div class="oh-tools-header">
           <div class="oh-tools-header-text">
             <div class="oh-tools-title">Free Hotel Tools</div>
-            <div class="oh-tools-sub">8 tools · no signup needed</div>
+            <div class="oh-tools-sub">9 tools · no signup needed</div>
           </div>
           <button class="oh-tools-close" id="oh-tools-close-btn">✕</button>
         </div>
         <div class="oh-tools-list">
-          ${listItems}
+          ${toolItems}
+          <div style="padding: 0.5rem 1.25rem; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #3E3D35; border-top: 1px solid #f0efe8; margin-top: 0.25rem; padding-top: 0.75rem;">Our Services</div>
+          ${serviceItems}
         </div>
         <div class="oh-tools-footer">
-          <a href="https://insights.onlinehotelier.com/tools/">View all tools →</a>
+          <a href="https://insights.onlinehotelier.com/tools/">All tools</a> &nbsp;·&nbsp; <a href="https://insights.onlinehotelier.com/services/">All services</a>
         </div>
       </div>
       <button id="oh-tools-fab" aria-label="Browse free hotel tools" title="Free Hotel Tools">

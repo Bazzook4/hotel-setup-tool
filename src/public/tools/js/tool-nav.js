@@ -52,6 +52,12 @@ const TOOLS = [
     title: 'Break Even Calculator',
     icon: '\u2696\uFE0F',
     desc: 'Find your minimum occupancy and room rate'
+  },
+  {
+    slug: 'revenue-profit-estimator/',
+    title: 'Revenue & Profit Estimator',
+    icon: '\uD83D\uDCB0',
+    desc: 'Full monthly P&L with OTA costs and net margin'
   }
 ];
 
@@ -106,10 +112,18 @@ function buildToolSidebar(currentPath) {
   html += '</ul>';
 
   // Services section
-  html += '<div class="sidebar-section-header" style="margin-top: 1.5rem;">Services</div>';
+  html += '<div class="sidebar-section-header" style="margin-top: 1.5rem;">Our Services</div>';
   html += '<ul class="sidebar-tool-list">';
-  var gmbActive = currentPath.indexOf('/services/google-my-business') !== -1 ? ' class="active"' : '';
-  html += '<li><a href="/services/google-my-business/"' + gmbActive + '><span class="tool-nav-icon">\uD83D\uDCCD</span> Google My Business</a></li>';
+  var s1Active = currentPath.indexOf('/services/independent-hotel-ota-listing') !== -1 ? ' class="active"' : '';
+  html += '<li><a href="/services/independent-hotel-ota-listing/"' + s1Active + '><span class="tool-nav-icon">\uD83C\uDFE8</span> Hotel OTA Listing</a></li>';
+  var s2Active = currentPath.indexOf('/services/vacation-rental-ota-listing') !== -1 ? ' class="active"' : '';
+  html += '<li><a href="/services/vacation-rental-ota-listing/"' + s2Active + '><span class="tool-nav-icon">\uD83C\uDFE1</span> Vacation Rental Listing</a></li>';
+  var s3Active = currentPath.indexOf('/services/google-my-business') !== -1 ? ' class="active"' : '';
+  html += '<li><a href="/services/google-my-business/"' + s3Active + '><span class="tool-nav-icon">\uD83D\uDCCD</span> Google My Business</a></li>';
+  var s4Active = currentPath.indexOf('/services/direct-booking-website') !== -1 ? ' class="active"' : '';
+  html += '<li><a href="/services/direct-booking-website/"' + s4Active + '><span class="tool-nav-icon">\uD83C\uDF10</span> Direct Booking Website</a></li>';
+  html += '<li><a href="/services/"><span class="tool-nav-icon">\u2699\uFE0F</span> Channel Manager Setup</a></li>';
+  html += '<li><a href="/services/" style="font-size:0.8rem; color: #89826E; font-weight:600;"><span class="tool-nav-icon">\u2192</span> All Services</a></li>';
   html += '</ul>';
 
   // Related Guides link
