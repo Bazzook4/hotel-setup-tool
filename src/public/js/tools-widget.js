@@ -23,6 +23,7 @@
     { icon: '🏡', title: 'Vacation Rental Listing',   href: BASE + '/services/vacation-rental-ota-listing/' },
     { icon: '📍', title: 'Google My Business Setup',  href: BASE + '/services/google-my-business/' },
     { icon: '🌐', title: 'Direct Booking Website',    href: BASE + '/services/direct-booking-website/' },
+    { icon: '🎨', title: 'Hotel Website Design India', href: BASE + '/services/hotel-website-themes/' },
     { icon: '⚙️', title: 'Channel Manager Setup',     href: BASE + '/services/' },
   ];
 

@@ -37,6 +37,7 @@ const GUIDE_CATEGORIES = [
     icon: '\uD83C\uDFE8',
     basePath: '/guides/ota/',
     guides: [
+      { slug: 'ota-hotel-meaning.html', title: 'OTA Full Form & Meaning' },
       { slug: 'what-is-ota.html', title: 'What is OTA?' },
       { slug: 'what-is-gds.html', title: 'What is GDS?' },
       { slug: 'best-ota-for-hotels.html', title: 'Best OTA for Hotels' },
