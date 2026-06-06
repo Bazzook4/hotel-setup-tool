@@ -307,39 +307,43 @@
 
           <!-- Flow Diagram -->
           <div class="ota-flow-diagram">
-            <svg viewBox="0 0 820 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="OTA booking flow: Traveller books via OTA platform, OTA notifies hotel, OTA deducts commission and settles balance">
-              <!-- Traveller Box -->
-              <rect x="20" y="80" width="180" height="100" rx="12" fill="#3E3D35"/>
-              <text x="110" y="118" text-anchor="middle" fill="white" font-family="DM Sans, sans-serif" font-size="13" font-weight="700">Traveller</text>
-              <text x="110" y="136" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="DM Sans, sans-serif" font-size="11">Searches &amp; books</text>
-              <text x="110" y="152" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="DM Sans, sans-serif" font-size="11">on the OTA app</text>
-              <!-- Arrow 1 -->
-              <line x1="200" y1="130" x2="290" y2="130" stroke="#89826E" stroke-width="2.5" marker-end="url(#arrow)"/>
-              <!-- OTA Box -->
-              <rect x="290" y="60" width="240" height="140" rx="12" fill="#89826E"/>
-              <text x="410" y="100" text-anchor="middle" fill="white" font-family="DM Sans, sans-serif" font-size="13" font-weight="700">OTA Platform</text>
-              <text x="410" y="118" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="DM Sans, sans-serif" font-size="11">MakeMyTrip · Booking.com</text>
-              <text x="410" y="136" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="DM Sans, sans-serif" font-size="11">Goibibo · Agoda</text>
-              <text x="410" y="156" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Keeps: 15–25% commission</text>
-              <text x="410" y="173" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Sends: Balance to hotel</text>
-              <!-- Arrow 2 -->
-              <line x1="530" y1="130" x2="620" y2="130" stroke="#89826E" stroke-width="2.5" marker-end="url(#arrow)"/>
-              <!-- Hotel Box -->
-              <rect x="620" y="80" width="180" height="100" rx="12" fill="#3E3D35"/>
-              <text x="710" y="118" text-anchor="middle" fill="white" font-family="DM Sans, sans-serif" font-size="13" font-weight="700">Your Hotel</text>
-              <text x="710" y="136" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="DM Sans, sans-serif" font-size="11">Receives booking</text>
-              <text x="710" y="152" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="DM Sans, sans-serif" font-size="11">Hosts the guest</text>
-              <!-- Labels above arrows -->
-              <text x="245" y="118" text-anchor="middle" fill="#3E3D35" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Pays full</text>
-              <text x="245" y="130" text-anchor="middle" fill="#3E3D35" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">room price</text>
-              <text x="575" y="118" text-anchor="middle" fill="#3E3D35" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Settles net</text>
-              <text x="575" y="130" text-anchor="middle" fill="#3E3D35" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">amount</text>
-              <!-- Arrowhead marker -->
+            <svg viewBox="0 0 820 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="OTA booking flow: Traveller books via OTA platform, OTA notifies hotel, OTA deducts commission and settles balance">
               <defs>
-                <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                  <path d="M0,0 L0,6 L8,3 z" fill="#89826E"/>
+                <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+                  <path d="M0,0 L0,6 L9,3 z" fill="#89826E"/>
                 </marker>
               </defs>
+
+              <!-- All boxes share centre y=110, height=120 → top y=50 -->
+
+              <!-- Traveller Box -->
+              <rect x="20" y="50" width="190" height="120" rx="12" fill="#3E3D35"/>
+              <text x="115" y="95" text-anchor="middle" fill="white" font-family="DM Sans, sans-serif" font-size="13" font-weight="700">Traveller</text>
+              <text x="115" y="114" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="DM Sans, sans-serif" font-size="11">Searches &amp; books</text>
+              <text x="115" y="130" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="DM Sans, sans-serif" font-size="11">on the OTA app</text>
+
+              <!-- Arrow label 1 — above arrow -->
+              <text x="250" y="96" text-anchor="middle" fill="#666" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Pays full room price</text>
+              <!-- Arrow 1 -->
+              <line x1="210" y1="110" x2="296" y2="110" stroke="#89826E" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+              <!-- OTA Box — same height 120 -->
+              <rect x="300" y="50" width="220" height="120" rx="12" fill="#89826E"/>
+              <text x="410" y="87" text-anchor="middle" fill="white" font-family="DM Sans, sans-serif" font-size="13" font-weight="700">OTA Platform</text>
+              <text x="410" y="105" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="DM Sans, sans-serif" font-size="11">MakeMyTrip · Booking.com</text>
+              <text x="410" y="121" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="DM Sans, sans-serif" font-size="11">Goibibo · Agoda</text>
+              <text x="410" y="140" text-anchor="middle" fill="rgba(255,255,255,0.95)" font-family="DM Sans, sans-serif" font-size="10" font-weight="700">Keeps 15–25% · Sends balance</text>
+
+              <!-- Arrow label 2 — above arrow -->
+              <text x="570" y="96" text-anchor="middle" fill="#666" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Settles net amount</text>
+              <!-- Arrow 2 -->
+              <line x1="520" y1="110" x2="606" y2="110" stroke="#89826E" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+              <!-- Hotel Box — same height 120 -->
+              <rect x="610" y="50" width="190" height="120" rx="12" fill="#3E3D35"/>
+              <text x="705" y="95" text-anchor="middle" fill="white" font-family="DM Sans, sans-serif" font-size="13" font-weight="700">Your Hotel</text>
+              <text x="705" y="114" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="DM Sans, sans-serif" font-size="11">Receives booking</text>
+              <text x="705" y="130" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="DM Sans, sans-serif" font-size="11">Hosts the guest</text>
             </svg>
           </div>
 
