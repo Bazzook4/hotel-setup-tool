@@ -12,6 +12,7 @@ const GUIDE_CATEGORIES = [
     basePath: '/guides/revenue/',
     guides: [
       { slug: 'hotel-rate-plans.html', title: 'Hotel Rate Plans: EP, CP, MAP, AP' },
+      { slug: 'ro-bb-hb-fb-hotel-meaning.html', title: 'RO, BB, HB, FB Meaning' },
       { slug: 'ep-plan-hotel.html', title: 'EP Plan (European Plan)' },
       { slug: 'cp-plan-hotel.html', title: 'CP Plan (Continental Plan)' },
       { slug: 'map-plan-hotel.html', title: 'MAP Plan (Modified American)' },
