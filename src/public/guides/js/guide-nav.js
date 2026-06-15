@@ -30,6 +30,7 @@ const GUIDE_CATEGORIES = [
       { slug: 'arr.html', title: 'ARR - Average Room Rate' },
       { slug: 'overbooking.html', title: 'Overbooking Strategy' },
       { slug: 'trevpar.html', title: 'TRevPAR & GOP PAR' },
+      { slug: 'increase-hotel-revenue.html', title: 'How to Increase Revenue' },
     ]
   },
   {
@@ -92,6 +93,7 @@ const GUIDE_CATEGORIES = [
       { slug: 'gst-hotels.html', title: 'GST for Hotels' },
       { slug: 'tds-tcs.html', title: 'TDS & TCS on OTA Payments' },
       { slug: 'grc-form-c.html', title: 'GRC & Form C' },
+      { slug: 'form-c-hotel.html', title: 'Form C for Hotels' },
     ]
   },
   {
