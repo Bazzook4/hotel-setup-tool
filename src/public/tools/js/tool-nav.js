@@ -12,6 +12,12 @@ const TOOLS = [
     desc: 'Configure dynamic pricing for your hotel'
   },
   {
+    slug: 'guest-acquisition-cost/',
+    title: 'Guest Acquisition Cost',
+    icon: '\uD83C\uDFAF',
+    desc: 'OTA vs direct \u2014 true cost per booking'
+  },
+  {
     slug: 'ota-commission-calculator/',
     title: 'OTA Commission Calculator',
     icon: '\uD83D\uDCB0',
