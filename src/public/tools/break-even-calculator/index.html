@@ -20,9 +20,9 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hotel Break Even Calculator — Find Your Minimum Room Rate | OnlineHotelier Insights</title>
-  <meta name="description" content="Free hotel break-even calculator for Indian hoteliers. Find the minimum occupancy and room rate needed to cover all costs. Includes fixed costs, variable costs, and OTA commission impact.">
-  <meta name="keywords" content="hotel break even calculator, hotel break even point, minimum room rate calculator, hotel fixed costs, hotel variable costs, hotel occupancy break even, hotel pricing India">
+  <title>Hotel Break Even Calculator: Room Rate & Profit | OnlineHotelier Insights</title>
+  <meta name="description" content="Free hotel profit calculator for Indian hotels. Find your break-even occupancy, minimum room rate, and monthly profit — with live OTA commission impact. No sign-up needed.">
+  <meta name="keywords" content="hotel break even calculator, hotel profit calculator, room rate calculator india, hotel room pricing tool, break even occupancy formula, hotel cost calculator india, minimum room rate calculator, hotel fixed costs india, hotel variable costs, hotel occupancy break even, hotel pricing india, hotel revenue calculator">
   <link rel="canonical" href="https://insights.onlinehotelier.com/tools/break-even-calculator/">
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -35,8 +35,8 @@
   <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Hotel Break Even Calculator — Minimum Occupancy & Room Rate">
-  <meta property="og:description" content="Calculate the exact occupancy and room rate your hotel needs to cover all costs. India-specific with OTA commission impact.">
+  <meta property="og:title" content="Hotel Break Even Calculator: Room Rate &amp; Profit | OnlineHotelier">
+  <meta property="og:description" content="Find your hotel's break-even occupancy, minimum room rate, and monthly profit in 2 minutes. Free tool for Indian independent hotels.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://insights.onlinehotelier.com/tools/break-even-calculator/">
 
@@ -690,13 +690,13 @@
 
       <!-- Page Header -->
       <div class="page-header">
-        <h1>Hotel Break Even Calculator</h1>
-        <p>Find the minimum occupancy and room rate your hotel needs to cover all costs — before earning a single rupee of profit.</p>
+        <h1>Hotel Break Even Calculator: Room Rate, Profit &amp; Occupancy</h1>
+        <p>For Indian independent hotels. Find exactly how many rooms you need to sell, at what rate, to stop losing money — and start making it.</p>
       </div>
 
       <!-- SEO Intro -->
       <div class="seo-intro">
-        <p>Enter your hotel's fixed monthly costs (rent, salaries, utilities) and variable costs per room sold (housekeeping, OTA commission, breakfast). The calculator instantly tells you your <strong>break-even occupancy %</strong>, <strong>minimum room rate needed</strong>, and <strong>contribution margin per room</strong> — with real-time OTA commission impact for Indian hotels.</p>
+        <p>Most Indian hotel owners set their room rate by copying competitors or guessing. This free hotel profit calculator shows you the exact number: your <strong>break-even occupancy</strong>, the <strong>minimum room rate</strong> you must charge at your current fill rate, and your <strong>monthly profit or loss</strong> — including the real cost of OTA commissions on your bottom line. Takes 2 minutes. No sign-up.</p>
       </div>
 
       <!-- Section 1: Hotel Basics -->
@@ -885,9 +885,9 @@
           <span class="ota-preset-label">Select OTA:</span>
           <button class="ota-btn" onclick="setOTA(18, this)">MakeMyTrip / Goibibo (18%)</button>
           <button class="ota-btn active" onclick="setOTA(18, this)">Booking.com (18%)</button>
-          <button class="ota-btn" onclick="setOTA(15, this)">Agoda (15%)</button>
+          <button class="ota-btn" onclick="setOTA(18, this)">Agoda (18%)</button>
           <button class="ota-btn" onclick="setOTA(20, this)">Expedia (20%)</button>
-          <button class="ota-btn" onclick="setOTA(12, this)">Airbnb (12%)</button>
+          <button class="ota-btn" onclick="setOTA(3, this)">Airbnb (3%)</button>
         </div>
       </div>
 
@@ -1004,6 +1004,63 @@
           <div id="insightsList"></div>
         </div>
 
+      </div>
+
+      <!-- How It Works -->
+      <div class="faq-section" style="margin-bottom: 1.5rem;">
+        <h2>How the Break Even Occupancy Formula Works</h2>
+        <div class="faq-item open">
+          <div class="faq-q" onclick="toggleFAQ(this)">Break-Even Occupancy Formula</div>
+          <div class="faq-a" style="display:block;">
+            <p style="margin-bottom:0.75rem;">The break-even occupancy formula tells you the minimum percentage of rooms you must sell each night to cover all your costs.</p>
+            <div style="background: var(--primary); color: white; border-radius: 8px; padding: 1rem 1.25rem; font-family: monospace; font-size: 0.9rem; margin: 0.75rem 0; line-height: 2;">
+              Break-Even Occupancy (%) =<br>
+              &nbsp;&nbsp;Total Fixed Monthly Costs<br>
+              &nbsp;&nbsp;&divide; Contribution Margin per Room<br>
+              &nbsp;&nbsp;&divide; Total Rooms<br>
+              &nbsp;&nbsp;&divide; 30 days &times; 100
+            </div>
+            <p style="margin-bottom:0.5rem;"><strong>Example:</strong> Your hotel has 20 rooms. Fixed costs are ₹3,00,000/month. ADR is ₹3,500. Variable cost per room is ₹500.</p>
+            <ul style="margin: 0.5rem 0 0.75rem 1.25rem; color: #444; font-size: 0.875rem;">
+              <li>Contribution margin = ₹3,500 &minus; ₹500 = <strong>₹3,000 per room</strong></li>
+              <li>Rooms needed per month = ₹3,00,000 &divide; ₹3,000 = <strong>100 rooms</strong></li>
+              <li>Rooms per night = 100 &divide; 30 = <strong>3.3 rooms/night</strong></li>
+              <li>Break-even occupancy = 3.3 &divide; 20 rooms &times; 100 = <strong>16.7%</strong></li>
+            </ul>
+            <p style="font-size:0.875rem;color:#666;">Every room you sell above break-even contributes ₹3,000 directly to your profit. The higher your contribution margin (ADR minus variable costs), the fewer rooms you need to sell to break even.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">Minimum Room Rate Formula</div>
+          <div class="faq-a">
+            <p style="margin-bottom:0.75rem;">The break-even room rate tells you the lowest ADR you can charge at your current occupancy without losing money.</p>
+            <div style="background: var(--primary); color: white; border-radius: 8px; padding: 1rem 1.25rem; font-family: monospace; font-size: 0.9rem; margin: 0.75rem 0; line-height: 2;">
+              Minimum Room Rate =<br>
+              &nbsp;&nbsp;(Total Fixed Costs &divide; Rooms Sold per Month)<br>
+              &nbsp;&nbsp;+ Variable Cost per Room
+            </div>
+            <p style="margin-bottom:0.5rem;"><strong>Example:</strong> 20 rooms at 60% occupancy = 360 rooms sold per month. Fixed costs ₹2,70,000. Variable cost ₹480/room.</p>
+            <ul style="margin: 0.5rem 0 0.75rem 1.25rem; color: #444; font-size: 0.875rem;">
+              <li>Fixed cost per room sold = ₹2,70,000 &divide; 360 = <strong>₹750</strong></li>
+              <li>Minimum room rate = ₹750 + ₹480 = <strong>₹1,230/night</strong></li>
+            </ul>
+            <p style="font-size:0.875rem;color:#666;">If your ADR is below this number at your current occupancy, you are losing money on every booking. Raise occupancy, raise ADR, or cut variable costs.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFAQ(this)">How OTA Commission Is Added to the Calculation</div>
+          <div class="faq-a">
+            <p style="margin-bottom:0.75rem;">OTA commission is a variable cost. It only applies to bookings that come through an OTA. The calculator blends your direct and OTA bookings based on the OTA share % you enter.</p>
+            <div style="background: var(--primary); color: white; border-radius: 8px; padding: 1rem 1.25rem; font-family: monospace; font-size: 0.9rem; margin: 0.75rem 0; line-height: 2;">
+              OTA Cost per Room =<br>
+              &nbsp;&nbsp;ADR &times; Commission %<br>
+              &nbsp;&nbsp;+ (ADR &times; Commission % &times; 18% GST)<br>
+              &nbsp;&nbsp;+ TDS (0.1%) + TCS (0.5%)
+            </div>
+            <p style="font-size:0.875rem;color:#555;">On a ₹3,500 room at 18% commission: ₹630 commission + ₹113 GST on commission + ₹3.5 TDS + ₹17.5 TCS = <strong>₹764 total OTA deduction</strong>. You receive ₹2,736 net.</p>
+            <p style="margin-top:0.5rem;font-size:0.875rem;color:#666;">The <strong>blended variable cost</strong> used in the break-even formula = base variable cost + (OTA share % &times; OTA cost per room). This gives an accurate picture across your full booking mix.</p>
+          </div>
+        </div>
       </div>
 
       <!-- FAQ -->
