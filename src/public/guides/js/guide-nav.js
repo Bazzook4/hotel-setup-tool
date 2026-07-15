@@ -51,6 +51,7 @@ const GUIDE_CATEGORIES = [
       { slug: 'booking-com-visibility-booster.html', title: 'Booking.com Visibility Booster' },
       { slug: 'makemytrip-hotel-listing.html', title: 'MakeMyTrip Hotel Listing Guide' },
       { slug: 'hotel-direct-booking-strategy.html', title: 'Hotel Direct Booking Strategy' },
+      { slug: 'attract-international-guests-india.html', title: 'Attract International Guests' },
     ]
   },
   {
@@ -274,6 +275,11 @@ const RELATED_CONTENT = {
     { href: '/guides/compliance/gst-hotels.html', title: 'GST for Hotels', category: 'Compliance', desc: 'GST rules for homestays' },
     { href: '/guides/compliance/grc-form-c.html', title: 'GRC & Form C', category: 'Compliance', desc: 'Guest registration requirements' },
     { href: '/guides/ota/what-is-ota.html', title: 'What is OTA?', category: 'OTA', desc: 'How OTAs work' },
+  ],
+  '/guides/ota/attract-international-guests-india.html': [
+    { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Sync inventory across Booking.com, Expedia, and Agoda' },
+    { href: '/guides/ota/booking-com-visibility-booster.html', title: 'Booking.com Visibility Booster', category: 'OTA', desc: 'Step-by-step guide to geo-targeting international travellers' },
+    { href: '/guides/compliance/grc-form-c.html', title: 'GRC and Form C', category: 'Compliance', desc: 'Legal requirements for foreign guests' },
   ],
   '/guides/ota/booking-com-hotel-listing-guide.html': [
     { href: '/guides/revenue/no-show.html', title: 'No-Show & Cancellation', category: 'Revenue', desc: 'Understanding no-show policies' },
