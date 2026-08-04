@@ -124,11 +124,11 @@
       return '<li><a href="' + link.href + '"' + active + '>' + link.label + '</a></li>';
     }).join('');
 
-    linksHtml += '<li><a href="https://www.onlinehotelier.com/contact" class="nav-cta" target="_blank" rel="noopener">Contact Us</a></li>';
+    linksHtml += '<li><a href="/contact/" class="nav-cta">Contact Us</a></li>';
 
     nav.innerHTML =
       '<div class="nav-container">' +
-        '<a href="/" class="nav-logo">OnlineHotelier <span>Insights</span></a>' +
+        '<a href="/" class="nav-logo">OnlineHotelier</a>' +
         '<button class="nav-toggle" id="oh-nav-toggle" aria-label="Toggle menu">&#9776;</button>' +
         '<ul class="nav-links" id="oh-nav-links">' + linksHtml + '</ul>' +
       '</div>';

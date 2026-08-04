@@ -1,7 +1,20 @@
-# robots.txt for insights.onlinehotelier.com
+# robots.txt for www.onlinehotelier.com
 
 User-agent: *
 Allow: /
 
+# AI crawlers — explicitly allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 # Sitemap location
-Sitemap: https://insights.onlinehotelier.com/sitemap.xml
+Sitemap: https://www.onlinehotelier.com/sitemap.xml

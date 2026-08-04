@@ -5,7 +5,7 @@
  */
 (function () {
 
-  var BASE = 'https://insights.onlinehotelier.com';
+  var BASE = 'https://www.onlinehotelier.com';
   var TOOLS = [
     { icon: '📊', title: 'Revenue Management Setup',      href: BASE + '/tools/revenue-management-tool/' },
     { icon: '💰', title: 'OTA Commission Calculator',     href: BASE + '/tools/ota-commission-calculator/' },
@@ -183,7 +183,7 @@
           ${serviceItems}
         </div>
         <div class="oh-tools-footer">
-          <a href="https://insights.onlinehotelier.com/tools/">All tools</a> &nbsp;·&nbsp; <a href="https://insights.onlinehotelier.com/services/">All services</a>
+          <a href="https://www.onlinehotelier.com/tools/">All tools</a> &nbsp;·&nbsp; <a href="https://www.onlinehotelier.com/services/">All services</a>
         </div>
       </div>
       <button id="oh-tools-fab" aria-label="Browse free hotel tools" title="Free Hotel Tools">
