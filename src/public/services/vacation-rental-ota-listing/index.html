@@ -834,79 +834,6 @@
     </div>
   </footer>
 
-  <!-- WhatsApp Chat Widget -->
-  <div class="wa-chat-widget" id="waChatWidget">
-    <div class="wa-chat-bubble" id="waChatBubble">
-      <div class="wa-bubble-header">
-        <div class="wa-avatar">OH</div>
-        <div>
-          <div class="wa-agent-name">OnlineHotelier Team</div>
-          <div class="wa-agent-status">Online now</div>
-        </div>
-        <button class="wa-close" onclick="closeWAWidget()" aria-label="Close">✕</button>
-      </div>
-      <div class="wa-steps">
-        <p style="font-size:0.88rem; color:#555; margin:0 0 1rem; line-height:1.6;">Hi! Tell us a little about your property and we'll get back to you right away.</p>
-
-        <div class="wa-step">
-          <div class="wa-step-label">Property Type</div>
-          <select id="waPropertyType">
-            <option value="">Select property type…</option>
-            <option value="Homestay">Homestay</option>
-            <option value="Villa">Independent Villa</option>
-            <option value="Apartment">Holiday Apartment</option>
-            <option value="Farm Stay">Farm Stay</option>
-            <option value="Eco Stay">Eco Stay</option>
-            <option value="Beach House">Beach House</option>
-            <option value="Mountain Cottage">Mountain Cottage</option>
-            <option value="Heritage Property">Heritage Property</option>
-            <option value="Service Apartment">Service Apartment</option>
-            <option value="Guest House">Guest House</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-
-        <div class="wa-step">
-          <div class="wa-step-label">Number of Rooms / Units</div>
-          <select id="waRooms">
-            <option value="">Select…</option>
-            <option value="1 room">1 room / unit</option>
-            <option value="2–3 rooms">2–3 rooms</option>
-            <option value="4–6 rooms">4–6 rooms</option>
-            <option value="7–10 rooms">7–10 rooms</option>
-            <option value="10+ rooms">10+ rooms</option>
-          </select>
-        </div>
-
-        <div class="wa-step">
-          <div class="wa-step-label">City / Location</div>
-          <input type="text" id="waLocation" placeholder="e.g. Goa, Manali, Coorg…" />
-        </div>
-
-        <div class="wa-step">
-          <div class="wa-step-label">When do you want to go live?</div>
-          <select id="waTimeline">
-            <option value="">Select…</option>
-            <option value="ASAP">As soon as possible</option>
-            <option value="within 2 weeks">Within 2 weeks</option>
-            <option value="within a month">Within a month</option>
-            <option value="just exploring">Just exploring for now</option>
-          </select>
-        </div>
-
-        <button class="wa-send-btn" onclick="sendToWhatsApp()">
-          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Send on WhatsApp
-        </button>
-        <div class="wa-disclaimer">Opens WhatsApp with your details pre-filled</div>
-      </div>
-    </div>
-
-    <button class="wa-fab" onclick="toggleWAWidget()" aria-label="Chat on WhatsApp">
-      <img src="https://static.wixstatic.com/media/fcb6f6_c584b0ee4aae4379ae4555ba7a5d4f61~mv2.png/v1/fill/w_118,h_118,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/4017334_circle_logo_media_network_social_icon.png" alt="WhatsApp" />
-    </button>
-  </div>
-
   <script>
     // ── FAQ accordion ──
     document.querySelectorAll('.faq-question').forEach(function(btn) {
@@ -918,34 +845,6 @@
       });
     });
 
-    // ── WhatsApp Widget ──
-    function ohWA.open() {
-      document.getElementById('waChatBubble').classList.add('open');
-    }
-    function closeWAWidget() {
-      document.getElementById('waChatBubble').classList.remove('open');
-    }
-    function toggleWAWidget() {
-      document.getElementById('waChatBubble').classList.toggle('open');
-    }
-
-    function sendToWhatsApp() {
-      var type = document.getElementById('waPropertyType').value;
-      var rooms = document.getElementById('waRooms').value;
-      var location = document.getElementById('waLocation').value.trim();
-      var timeline = document.getElementById('waTimeline').value;
-
-      var parts = ['Hi! I am interested in listing my property on OTAs.'];
-      if (type) parts.push('Property type: ' + type);
-      if (rooms) parts.push('Rooms/units: ' + rooms);
-      if (location) parts.push('Location: ' + location);
-      if (timeline) parts.push('Timeline: ' + timeline);
-      parts.push('Please help me get started.');
-
-      var message = parts.join('\n');
-      var url = 'https://api.whatsapp.com/send?phone=918591756934&text=' + encodeURIComponent(message);
-      window.open(url, '_blank', 'noopener');
-    }
   </script>
 
   <script src="/js/wa-widget.js"></script>
