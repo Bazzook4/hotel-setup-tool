@@ -3,6 +3,13 @@
   "outputDirectory": "src/public",
   "framework": null,
   "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "insights.onlinehotelier.com" }],
+      "destination": "https://www.onlinehotelier.com/:path*",
+      "statusCode": 301
+    },
+
     { "source": "/hotel-ota-listing", "destination": "/services/independent-hotel-ota-listing/", "statusCode": 301 },
     { "source": "/blogs", "destination": "/guides/", "statusCode": 301 },
     { "source": "/blog", "destination": "/guides/", "statusCode": 301 },
