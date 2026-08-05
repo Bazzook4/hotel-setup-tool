@@ -143,22 +143,36 @@
 
     /* Hero Section */
     .hero {
-      background: #89826E;
+      background: var(--primary);
       color: white;
-      padding: 3rem 2rem;
+      padding: 4rem 2rem;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 0%, rgba(137,130,110,0.15) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 100%, rgba(137,130,110,0.1) 0%, transparent 50%);
     }
 
     .hero h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
     }
 
     .hero p {
       font-size: 1.2rem;
-      opacity: 0.9;
+      opacity: 0.75;
       max-width: 600px;
       margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
 
     /* Main Content */

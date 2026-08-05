@@ -71,11 +71,21 @@
 
     /* ── Page hero ── */
     .page-hero {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      background: var(--primary);
       color: white;
       padding: 4rem 2rem;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 0%, rgba(137,130,110,0.15) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 100%, rgba(137,130,110,0.1) 0%, transparent 50%);
+    }
+    .page-hero > * { position: relative; z-index: 1; }
     .page-hero .eyebrow {
       font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em;
       text-transform: uppercase; opacity: 0.7; margin-bottom: 1rem;
