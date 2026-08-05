@@ -117,26 +117,26 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --dark: #3E3D35;
-      --light: #F8F8F4;
-      --mid: #89826E;
-      --dark-08: rgba(62, 61, 53, 0.08);
-      --dark-04: rgba(62, 61, 53, 0.04);
-      --mid-20: rgba(137, 130, 110, 0.2);
-      --mid-10: rgba(137, 130, 110, 0.1);
+      --primary: #3E3D35;
+      --bg: #F8F8F4;
+      --secondary: #89826E;
+      --primary-light: rgba(62, 61, 53, 0.08);
+      --primary-lighter: rgba(62, 61, 53, 0.04);
+      --secondary-20: rgba(137, 130, 110, 0.2);
+      --secondary-light: rgba(137, 130, 110, 0.1);
     }
 
     body {
       font-family: 'Avenir', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--light);
-      color: var(--dark);
+      background: var(--bg);
+      color: var(--primary);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
     /* ===== HERO ===== */
     .hero {
-      background: var(--dark);
+      background: var(--primary);
       color: #fff;
       padding: 5rem 2rem 5.5rem;
       text-align: center;
@@ -173,7 +173,7 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--mid);
+      background: var(--secondary);
     }
 
     .hero h1 {
@@ -184,7 +184,7 @@
       letter-spacing: -0.03em;
     }
 
-    .hero h1 em { font-style: normal; color: var(--mid); }
+    .hero h1 em { font-style: normal; color: var(--secondary); }
 
     .hero-subtitle {
       font-size: 1.2rem;
@@ -211,7 +211,7 @@
       border: none;
     }
 
-    .btn-primary { background: var(--light); color: var(--dark); }
+    .btn-primary { background: var(--bg); color: var(--primary); }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
 
     .btn-outline {
@@ -225,7 +225,7 @@
     .btn-whatsapp:hover { background: #20bd5a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3); }
 
     /* ===== WHERE ARE YOU (self-select router) ===== */
-    .router { padding: 4rem 2rem; background: #fff; border-bottom: 1px solid var(--dark-08); }
+    .router { padding: 4rem 2rem; background: #fff; border-bottom: 1px solid var(--primary-light); }
 
     .router-inner { max-width: 1100px; margin: 0 auto; }
 
@@ -238,7 +238,7 @@
       margin-bottom: 0.5rem;
     }
 
-    .router-intro p { color: var(--mid); font-size: 1rem; }
+    .router-intro p { color: var(--secondary); font-size: 1rem; }
 
     .router-grid {
       display: grid;
@@ -247,8 +247,8 @@
     }
 
     .router-card {
-      background: var(--light);
-      border: 1px solid var(--dark-08);
+      background: var(--bg);
+      border: 1px solid var(--primary-light);
       border-radius: 12px;
       padding: 1.75rem;
       text-decoration: none;
@@ -259,7 +259,7 @@
     }
 
     .router-card:hover {
-      border-color: var(--mid);
+      border-color: var(--secondary);
       transform: translateY(-3px);
       box-shadow: 0 12px 32px rgba(62, 61, 53, 0.08);
     }
@@ -268,14 +268,14 @@
       font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: var(--mid);
+      color: var(--secondary);
       font-weight: 700;
       margin-bottom: 0.6rem;
     }
 
     .router-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
-    .router-card p { color: var(--mid); font-size: 0.9rem; line-height: 1.65; margin-bottom: 1rem; flex-grow: 1; }
-    .router-card .go { font-weight: 600; font-size: 0.88rem; color: var(--dark); }
+    .router-card p { color: var(--secondary); font-size: 0.9rem; line-height: 1.65; margin-bottom: 1rem; flex-grow: 1; }
+    .router-card .go { font-weight: 600; font-size: 0.88rem; color: var(--primary); }
 
     /* ===== SECTIONS ===== */
     .section { padding: 5rem 2rem; }
@@ -288,27 +288,27 @@
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: var(--mid);
+      color: var(--secondary);
       font-weight: 600;
       margin-bottom: 0.75rem;
     }
 
     .section-header h2 {
       font-size: 2.25rem;
-      color: var(--dark);
+      color: var(--primary);
       letter-spacing: -0.02em;
       font-weight: 700;
       margin-bottom: 0.75rem;
     }
 
-    .section-header p { color: var(--mid); font-size: 1.1rem; max-width: 620px; margin: 0 auto; }
+    .section-header p { color: var(--secondary); font-size: 1.1rem; max-width: 620px; margin: 0 auto; }
 
     /* ===== THE FIVE AREAS ===== */
     .areas { display: grid; gap: 1.25rem; }
 
     .area {
       background: #fff;
-      border: 1px solid var(--dark-08);
+      border: 1px solid var(--primary-light);
       border-radius: 12px;
       padding: 2rem;
       display: grid;
@@ -318,13 +318,13 @@
       transition: all 0.2s;
     }
 
-    .area:hover { border-color: var(--mid); box-shadow: 0 12px 32px rgba(62, 61, 53, 0.06); }
+    .area:hover { border-color: var(--secondary); box-shadow: 0 12px 32px rgba(62, 61, 53, 0.06); }
 
     .area-icon {
       width: 56px;
       height: 56px;
       border-radius: 12px;
-      background: var(--dark-04);
+      background: var(--primary-lighter);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -332,40 +332,40 @@
     }
 
     .area-body h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; }
-    .area-body > p { color: var(--mid); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; }
+    .area-body > p { color: var(--secondary); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; }
 
     .area-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 
     .area-links a {
       font-size: 0.82rem;
       text-decoration: none;
-      color: var(--dark);
-      background: var(--light);
-      border: 1px solid var(--dark-08);
+      color: var(--primary);
+      background: var(--bg);
+      border: 1px solid var(--primary-light);
       padding: 0.35rem 0.85rem;
       border-radius: 100px;
       transition: all 0.2s;
       font-weight: 500;
     }
 
-    .area-links a:hover { border-color: var(--mid); background: var(--mid-10); }
+    .area-links a:hover { border-color: var(--secondary); background: var(--secondary-light); }
 
     .area-links a.is-service {
-      background: var(--dark);
+      background: var(--primary);
       color: #fff;
-      border-color: var(--dark);
+      border-color: var(--primary);
       font-weight: 600;
     }
 
-    .area-links a.is-service:hover { background: var(--mid); border-color: var(--mid); }
+    .area-links a.is-service:hover { background: var(--secondary); border-color: var(--secondary); }
 
     .area-aside { text-align: right; min-width: 90px; }
-    .area-count { font-size: 1.5rem; font-weight: 700; color: var(--dark); line-height: 1; }
+    .area-count { font-size: 1.5rem; font-weight: 700; color: var(--primary); line-height: 1; }
     .area-count-label {
       font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: var(--mid);
+      color: var(--secondary);
       font-weight: 600;
       margin-top: 0.25rem;
     }
@@ -378,10 +378,10 @@
     }
 
     .tool-card {
-      background: var(--light);
+      background: var(--bg);
       border-radius: 12px;
       padding: 2rem;
-      border: 1px solid var(--dark-08);
+      border: 1px solid var(--primary-light);
       transition: all 0.2s;
       text-decoration: none;
       color: inherit;
@@ -389,7 +389,7 @@
     }
 
     .tool-card:hover {
-      border-color: var(--mid);
+      border-color: var(--secondary);
       transform: translateY(-3px);
       box-shadow: 0 12px 32px rgba(62, 61, 53, 0.08);
     }
@@ -398,7 +398,7 @@
       width: 48px;
       height: 48px;
       border-radius: 10px;
-      background: var(--dark-04);
+      background: var(--primary-lighter);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -406,13 +406,13 @@
       margin-bottom: 1.25rem;
     }
 
-    .tool-card h3 { font-size: 1.1rem; color: var(--dark); margin-bottom: 0.5rem; font-weight: 600; }
-    .tool-card p { color: var(--mid); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+    .tool-card h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 0.5rem; font-weight: 600; }
+    .tool-card p { color: var(--secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
 
     .tool-tag {
       display: inline-block;
-      background: var(--mid-10);
-      color: var(--mid);
+      background: var(--secondary-light);
+      color: var(--secondary);
       padding: 0.2rem 0.65rem;
       border-radius: 100px;
       font-size: 0.75rem;
@@ -423,18 +423,18 @@
     .view-all-link { text-align: center; margin-top: 2.5rem; }
 
     .view-all-link a {
-      color: var(--dark);
+      color: var(--primary);
       font-weight: 600;
       text-decoration: none;
       font-size: 0.95rem;
       padding: 0.625rem 1.5rem;
-      border: 1.5px solid var(--dark-08);
+      border: 1.5px solid var(--primary-light);
       border-radius: 8px;
       transition: all 0.2s;
       display: inline-block;
     }
 
-    .view-all-link a:hover { border-color: var(--dark); background: var(--dark); color: #fff; }
+    .view-all-link a:hover { border-color: var(--primary); background: var(--primary); color: #fff; }
 
     /* ===== DONE FOR YOU ===== */
     .dfy-inner { max-width: 1000px; margin: 0 auto; }
@@ -442,8 +442,8 @@
     .dfy-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
 
     .dfy-item {
-      background: var(--light);
-      border: 1px solid var(--dark-08);
+      background: var(--bg);
+      border: 1px solid var(--primary-light);
       border-radius: 10px;
       padding: 1.5rem;
       text-decoration: none;
@@ -454,22 +454,22 @@
       align-items: flex-start;
     }
 
-    .dfy-item:hover { border-color: var(--mid); transform: translateY(-2px); }
+    .dfy-item:hover { border-color: var(--secondary); transform: translateY(-2px); }
 
     .dfy-icon { font-size: 1.4rem; line-height: 1.3; }
     .dfy-item h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem; }
-    .dfy-item p { color: var(--mid); font-size: 0.86rem; line-height: 1.6; }
+    .dfy-item p { color: var(--secondary); font-size: 0.86rem; line-height: 1.6; }
 
     .dfy-note {
       text-align: center;
-      color: var(--mid);
+      color: var(--secondary);
       font-size: 0.95rem;
       margin-top: 2rem;
       line-height: 1.7;
     }
 
     /* ===== ABOUT / WHY ===== */
-    .about-strip { padding: 5rem 2rem; background: var(--light); }
+    .about-strip { padding: 5rem 2rem; background: var(--bg); }
 
     .about-inner {
       max-width: 900px;
@@ -482,22 +482,22 @@
 
     .about-text h2 {
       font-size: 2rem;
-      color: var(--dark);
+      color: var(--primary);
       margin-bottom: 1.25rem;
       letter-spacing: -0.02em;
       font-weight: 700;
     }
 
-    .about-text p { color: var(--mid); font-size: 1rem; line-height: 1.8; margin-bottom: 1rem; }
+    .about-text p { color: var(--secondary); font-size: 1rem; line-height: 1.8; margin-bottom: 1rem; }
 
     .about-quote {
       background: #fff;
-      border-left: 3px solid var(--mid);
+      border-left: 3px solid var(--secondary);
       padding: 1.25rem 1.5rem;
       margin: 1.5rem 0;
       border-radius: 0 8px 8px 0;
       font-style: italic;
-      color: var(--dark);
+      color: var(--primary);
       font-size: 0.95rem;
       line-height: 1.7;
     }
@@ -509,12 +509,12 @@
       padding: 1.5rem;
       border-radius: 12px;
       text-align: center;
-      border: 1px solid var(--dark-08);
+      border: 1px solid var(--primary-light);
     }
 
-    .about-stat .number { font-size: 2.25rem; font-weight: 700; color: var(--dark); line-height: 1; }
+    .about-stat .number { font-size: 2.25rem; font-weight: 700; color: var(--primary); line-height: 1; }
     .about-stat .label {
-      color: var(--mid);
+      color: var(--secondary);
       font-size: 0.8rem;
       margin-top: 0.4rem;
       text-transform: uppercase;
@@ -527,19 +527,19 @@
 
     .faq-item {
       background: #fff;
-      border: 1px solid var(--dark-08);
+      border: 1px solid var(--primary-light);
       border-radius: 10px;
       padding: 1.5rem 1.75rem;
       margin-bottom: 0.85rem;
     }
 
     .faq-item h3 { font-size: 1.02rem; font-weight: 600; margin-bottom: 0.6rem; }
-    .faq-item p { color: var(--mid); font-size: 0.93rem; line-height: 1.75; }
-    .faq-item a { color: var(--dark); font-weight: 600; }
+    .faq-item p { color: var(--secondary); font-size: 0.93rem; line-height: 1.75; }
+    .faq-item a { color: var(--primary); font-weight: 600; }
 
     /* ===== CTA ===== */
     .cta-banner {
-      background: var(--dark);
+      background: var(--primary);
       color: #fff;
       padding: 4rem 2rem;
       text-align: center;
@@ -560,7 +560,7 @@
     .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
     /* ===== FOOTER ===== */
-    .footer { background: var(--dark); color: #fff; padding: 4rem 2rem 2rem; }
+    .footer { background: var(--primary); color: #fff; padding: 4rem 2rem 2rem; }
 
     .footer-container {
       max-width: 1200px;
