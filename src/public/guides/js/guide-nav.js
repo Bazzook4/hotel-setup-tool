@@ -310,6 +310,84 @@ const RELATED_CONTENT = {
     { href: '/guides/revenue/occupancy.html', title: 'Occupancy Rate', category: 'Revenue', desc: 'How FOC rooms count in occupancy' },
     { href: '/guides/reports/night-audit.html', title: 'Night Audit', category: 'Reports', desc: 'Reconciling FOC rooms in nightly reports' },
   ],
+
+  // OTA
+  '/guides/ota/makemytrip-hotel-listing.html': [
+    { href: '/guides/ota/best-ota-for-hotels.html', title: 'Best OTAs for Hotels', category: 'OTA', desc: 'Compare MMT, Goibibo, Booking.com and Agoda' },
+    { href: '/guides/ota/booking-com-hotel-listing-guide.html', title: 'Booking.com Listing Guide', category: 'OTA', desc: 'List on the other channel that matters' },
+    { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Stop updating rates in every extranet' },
+  ],
+  '/guides/ota/ota-hotel-meaning.html': [
+    { href: '/guides/ota/what-is-ota.html', title: 'What Is an OTA?', category: 'OTA', desc: 'How online travel agents actually work' },
+    { href: '/guides/ota/best-ota-for-hotels.html', title: 'Best OTAs for Hotels', category: 'OTA', desc: 'Which channels suit your property' },
+    { href: '/guides/ota/hotel-direct-booking-strategy.html', title: 'Direct Booking Strategy', category: 'OTA', desc: 'Keep more of every booking' },
+  ],
+  '/guides/ota/hotel-direct-booking-strategy.html': [
+    { href: '/guides/software/booking-engine.html', title: 'Booking Engine', category: 'Software', desc: 'Take reservations on your own site' },
+    { href: '/guides/ota/google-free-booking-links.html', title: 'Google Free Booking Links', category: 'OTA', desc: 'Free direct bookings from Google' },
+    { href: '/guides/ota/what-is-ota.html', title: 'What Is an OTA?', category: 'OTA', desc: 'Understand what you are balancing against' },
+  ],
+  '/guides/ota/booking-genius-program.html': [
+    { href: '/guides/ota/booking-com-hotel-listing-guide.html', title: 'Booking.com Listing Guide', category: 'OTA', desc: 'Set the listing up properly first' },
+    { href: '/guides/ota/booking-com-visibility-booster.html', title: 'Visibility Booster', category: 'OTA', desc: 'The other Booking.com ranking lever' },
+    { href: '/guides/ota/best-ota-for-hotels.html', title: 'Best OTAs for Hotels', category: 'OTA', desc: 'Where Booking.com fits for Indian hotels' },
+  ],
+  '/guides/ota/booking-com-visibility-booster.html': [
+    { href: '/guides/ota/booking-com-hotel-listing-guide.html', title: 'Booking.com Listing Guide', category: 'OTA', desc: 'Get the fundamentals right first' },
+    { href: '/guides/ota/booking-genius-program.html', title: 'Genius Programme', category: 'OTA', desc: 'The discount side of Booking.com visibility' },
+    { href: '/guides/revenue/bar.html', title: 'BAR Pricing', category: 'Revenue', desc: 'What you are discounting from' },
+  ],
+  '/guides/ota/google-free-booking-links.html': [
+    { href: '/guides/ota/hotel-direct-booking-strategy.html', title: 'Direct Booking Strategy', category: 'OTA', desc: 'Where Google fits in your direct plan' },
+    { href: '/guides/software/booking-engine.html', title: 'Booking Engine', category: 'Software', desc: 'Where those free clicks need to land' },
+    { href: '/guides/ota/what-is-ota.html', title: 'What Is an OTA?', category: 'OTA', desc: 'How Google differs from an OTA' },
+  ],
+
+  // Revenue
+  '/guides/revenue/increase-hotel-revenue.html': [
+    { href: '/guides/revenue/revpar.html', title: 'RevPAR', category: 'Revenue', desc: 'The metric that tells you if it worked' },
+    { href: '/guides/revenue/adr.html', title: 'ADR', category: 'Revenue', desc: 'Raise rate without losing occupancy' },
+    { href: '/guides/revenue/occupancy.html', title: 'Occupancy', category: 'Revenue', desc: 'The other half of the equation' },
+  ],
+  '/guides/revenue/rate-linkage.html': [
+    { href: '/guides/revenue/hotel-rate-plans.html', title: 'Hotel Rate Plans', category: 'Revenue', desc: 'The plans you are linking together' },
+    { href: '/guides/revenue/bar.html', title: 'BAR Pricing', category: 'Revenue', desc: 'The rate everything else derives from' },
+    { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Where linked rates are actually managed' },
+  ],
+  '/guides/revenue/ro-bb-hb-fb-hotel-meaning.html': [
+    { href: '/guides/revenue/hotel-rate-plans.html', title: 'Hotel Rate Plans', category: 'Revenue', desc: 'How meal plans fit your rate structure' },
+    { href: '/guides/revenue/cp-plan-hotel.html', title: 'CP Plan', category: 'Revenue', desc: 'The Indian equivalent of BB' },
+    { href: '/guides/revenue/map-plan-hotel.html', title: 'MAP Plan', category: 'Revenue', desc: 'The Indian equivalent of HB' },
+  ],
+  '/guides/revenue/trevpar.html': [
+    { href: '/guides/revenue/revpar.html', title: 'RevPAR', category: 'Revenue', desc: 'The room-only version of this metric' },
+    { href: '/guides/revenue/adr.html', title: 'ADR', category: 'Revenue', desc: 'Average rate per occupied room' },
+    { href: '/guides/reports/profit-loss-report.html', title: 'P&L Report', category: 'Reports', desc: 'Where total revenue actually lands' },
+  ],
+
+  // Operations
+  '/guides/operations/hotel-cancellation-policy.html': [
+    { href: '/guides/revenue/no-show.html', title: 'No-Shows', category: 'Revenue', desc: 'What happens when they simply do not arrive' },
+    { href: '/guides/revenue/overbooking.html', title: 'Overbooking', category: 'Revenue', desc: 'Selling against expected cancellations' },
+    { href: '/guides/operations/hotel-check-in-process.html', title: 'Check-In Process', category: 'Operations', desc: 'Where the policy gets enforced' },
+  ],
+  '/guides/operations/hotel-housekeeping-sop.html': [
+    { href: '/guides/operations/hotel-staff-training.html', title: 'Staff Training', category: 'Operations', desc: 'Getting the team to follow the SOP' },
+    { href: '/guides/operations/hotel-check-in-process.html', title: 'Check-In Process', category: 'Operations', desc: 'The other guest-facing SOP' },
+    { href: '/guides/reports/manager-report.html', title: 'Manager Report', category: 'Reports', desc: 'Tracking whether standards hold' },
+  ],
+  '/guides/operations/hotel-staff-training.html': [
+    { href: '/guides/operations/hotel-housekeeping-sop.html', title: 'Housekeeping SOP', category: 'Operations', desc: 'The standard you are training against' },
+    { href: '/guides/operations/hotel-check-in-process.html', title: 'Check-In Process', category: 'Operations', desc: 'Front office training essentials' },
+    { href: '/guides/compliance/grc-form-c.html', title: 'GRC and Form C', category: 'Compliance', desc: 'What reception must get right by law' },
+  ],
+
+  // Compliance
+  '/guides/compliance/form-c-hotel.html': [
+    { href: '/guides/compliance/grc-form-c.html', title: 'GRC and Form C', category: 'Compliance', desc: 'How the guest registration card ties in' },
+    { href: '/guides/operations/hotel-check-in-process.html', title: 'Check-In Process', category: 'Operations', desc: 'Collecting the details at the desk' },
+    { href: '/guides/ota/attract-international-guests-india.html', title: 'International Guests', category: 'OTA', desc: 'Why Form C matters for foreign bookings' },
+  ],
 };
 
 // ===== INITIALIZATION =====
@@ -490,11 +568,41 @@ function injectPrevNext(currentPath) {
 }
 
 // ===== RELATED CONTENT CARDS =====
+// Picks up to 3 other guides from the same category as currentPath.
+// Used when RELATED_CONTENT has no hand-picked entry for a guide.
+function relatedFromSameCategory(currentPath) {
+  for (var c = 0; c < GUIDE_CATEGORIES.length; c++) {
+    var cat = GUIDE_CATEGORIES[c];
+    if (currentPath.indexOf(cat.basePath) !== 0) continue;
+
+    var picks = [];
+    for (var i = 0; i < cat.guides.length && picks.length < 3; i++) {
+      var g = cat.guides[i];
+      if (currentPath.indexOf(g.slug) !== -1) continue; // skip the current page
+      picks.push({
+        href: cat.basePath + g.slug,
+        title: g.title,
+        category: cat.label,
+        desc: 'More in ' + cat.label,
+      });
+    }
+    return picks;
+  }
+  return [];
+}
+
 function injectRelatedCards(currentPath) {
   var container = document.querySelector('.related-cards-section');
   if (!container) return;
 
   var items = RELATED_CONTENT[currentPath];
+
+  // No hand-picked entry for this guide: fall back to others in the same
+  // category so a page can never dead-end. Hand-picked entries always win.
+  if (!items || items.length === 0) {
+    items = relatedFromSameCategory(currentPath);
+  }
+
   if (!items || items.length === 0) {
     container.style.display = 'none';
     return;
