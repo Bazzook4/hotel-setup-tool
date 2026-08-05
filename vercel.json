@@ -4,6 +4,18 @@
   "framework": null,
   "redirects": [
     {
+      "source": "/",
+      "has": [{ "type": "host", "value": "insights.onlinehotelier.com" }],
+      "destination": "https://www.onlinehotelier.com/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*/",
+      "has": [{ "type": "host", "value": "insights.onlinehotelier.com" }],
+      "destination": "https://www.onlinehotelier.com/:path*/",
+      "statusCode": 301
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "insights.onlinehotelier.com" }],
       "destination": "https://www.onlinehotelier.com/:path*",
