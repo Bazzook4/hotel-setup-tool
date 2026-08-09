@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2BPYRGZTM"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2N1S6S9F"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-Q2BPYRGZTM');
+    gtag('config', 'G-9L2N1S6S9F');
   </script>
 
   <meta charset="UTF-8">
@@ -593,9 +593,31 @@
         parts.push('');
         parts.push('Please get in touch. Thank you.');
 
+        if (typeof gtag === 'function') {
+          gtag('event', 'whatsapp_click', {
+            wa_action: 'contact_form',
+            wa_service: service || 'not_specified',
+            page_path: window.location.pathname,
+          });
+        }
+
         var url = 'https://wa.me/' + WA_PHONE + '?text=' + encodeURIComponent(parts.join('\n'));
         window.open(url, '_blank', 'noopener');
       });
+
+      // Direct "Open WhatsApp" link in the sidebar
+      var direct = document.querySelector('.wa-direct-btn');
+      if (direct) {
+        direct.addEventListener('click', function () {
+          if (typeof gtag === 'function') {
+            gtag('event', 'whatsapp_click', {
+              wa_action: 'contact_direct',
+              wa_service: 'not_specified',
+              page_path: window.location.pathname,
+            });
+          }
+        });
+      }
     })();
   </script>
   <script src="/js/wa-widget.js"></script>

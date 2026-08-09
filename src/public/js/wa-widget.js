@@ -193,6 +193,16 @@
     bubble.classList.remove('oh-open');
   });
 
+  // Sends a GA4 event for WhatsApp interactions. Silent if gtag is absent.
+  function trackWA(action, service) {
+    if (typeof gtag !== 'function') return;
+    gtag('event', 'whatsapp_click', {
+      wa_action: action,                       // widget_open | widget_form
+      wa_service: service || 'not_specified',  // which service they picked
+      page_path: window.location.pathname,     // which page drove the enquiry
+    });
+  }
+
   document.getElementById('oh-wa-send-btn').addEventListener('click', function () {
     var service   = document.getElementById('oh-wa-service').value;
     var proptype  = document.getElementById('oh-wa-proptype').value;
@@ -201,7 +211,7 @@
     var website   = document.getElementById('oh-wa-website').value.trim();
     var timeline  = document.getElementById('oh-wa-timeline').value;
 
-    var parts = ['Hi! I came across OnlineHotelier Insights and would like to enquire.'];
+    var parts = ['Hi! I came across OnlineHotelier and would like to enquire.'];
     if (service)   parts.push('Service interested in: ' + service);
     if (proptype)  parts.push('Property type: ' + proptype);
     if (inventory) parts.push('Inventory: ' + inventory);
@@ -210,14 +220,16 @@
     if (timeline)  parts.push('Timeline: ' + timeline);
     parts.push('Please get in touch. Thank you.');
 
+    trackWA('widget_form', service);
+
     var url = 'https://api.whatsapp.com/send?phone=918591756934&text=' + encodeURIComponent(parts.join('\n'));
     window.open(url, '_blank', 'noopener');
   });
 
   // Public API — pages can call ohWA.open() from their own CTAs
   window.ohWA = {
-    open:   function () { bubble.classList.add('oh-open'); },
+    open:   function () { trackWA('widget_open'); bubble.classList.add('oh-open'); },
     close:  function () { bubble.classList.remove('oh-open'); },
-    toggle: function () { bubble.classList.toggle('oh-open'); }
+    toggle: function () { trackWA('widget_open'); bubble.classList.toggle('oh-open'); }
   };
 })();
