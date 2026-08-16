@@ -23,6 +23,8 @@
     },
 
     { "source": "/hotel-ota-listing", "destination": "/services/independent-hotel-ota-listing/", "statusCode": 301 },
+    { "source": "/services/direct-booking-website", "destination": "/services/hotel-website-themes/", "statusCode": 301 },
+    { "source": "/services/direct-booking-website/:path*", "destination": "/services/hotel-website-themes/", "statusCode": 301 },
     { "source": "/blogs", "destination": "/guides/", "statusCode": 301 },
     { "source": "/blog", "destination": "/guides/", "statusCode": 301 },
 
@@ -42,7 +44,7 @@
     { "source": "/post/what-is-hotel-revenue-management-a-beginner-s-guide-for-small-mid-scale-indian-hotels", "destination": "/guides/revenue/increase-hotel-revenue.html", "statusCode": 301 },
     { "source": "/post/best-digital-marketing-strategy-for-hotels-in-2025", "destination": "/guides/ota/hotel-direct-booking-strategy.html", "statusCode": 301 },
     { "source": "/post/the-ultimate-2023-guide-to-hotel-digital-marketing-strategies", "destination": "/guides/ota/hotel-direct-booking-strategy.html", "statusCode": 301 },
-    { "source": "/post/building-trust-with-online-visitors-how-your-hotel-website-can-boost-bookings", "destination": "/services/direct-booking-website/", "statusCode": 301 },
+    { "source": "/post/building-trust-with-online-visitors-how-your-hotel-website-can-boost-bookings", "destination": "/services/hotel-website-themes/", "statusCode": 301 },
 
     { "source": "/tools/commission-calculator.html", "destination": "/tools/ota-commission-calculator/", "statusCode": 301 },
     { "source": "/tools/discount-calculator.html", "destination": "/tools/hotel-discount-calculator/", "statusCode": 301 },
