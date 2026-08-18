@@ -12,11 +12,6 @@ const GUIDE_CATEGORIES = [
     basePath: '/guides/revenue/',
     guides: [
       { slug: 'hotel-rate-plans.html', title: 'Hotel Rate Plans: EP, CP, MAP, AP' },
-      { slug: 'ro-bb-hb-fb-hotel-meaning.html', title: 'RO, BB, HB, FB Meaning' },
-      { slug: 'ep-plan-hotel.html', title: 'EP Plan (European Plan)' },
-      { slug: 'cp-plan-hotel.html', title: 'CP Plan (Continental Plan)' },
-      { slug: 'map-plan-hotel.html', title: 'MAP Plan (Modified American)' },
-      { slug: 'ap-plan-hotel.html', title: 'AP Plan (American Plan)' },
       { slug: 'rate-linkage.html', title: 'Rate Linkage (Derived Rates)' },
       { slug: 'revpar.html', title: 'RevPAR' },
       { slug: 'adr.html', title: 'ADR & ARR' },
@@ -119,22 +114,6 @@ const RELATED_CONTENT = {
     { href: '/guides/software/booking-engine.html', title: 'Booking Engine', category: 'Software', desc: 'Display rate plans on your website' },
     { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Sync rates across OTAs' },
     { href: '/guides/compliance/gst-hotels.html', title: 'GST for Hotels', category: 'Compliance', desc: 'Tax implications of rate plans' },
-  ],
-  '/guides/revenue/ep-plan-hotel.html': [
-    { href: '/guides/software/what-is-pms-hotel.html', title: 'PMS', category: 'Software', desc: 'Manage rate plans in your PMS' },
-    { href: '/guides/reports/manager-report.html', title: 'Manager Report', category: 'Reports', desc: 'Track rate plan performance' },
-  ],
-  '/guides/revenue/cp-plan-hotel.html': [
-    { href: '/guides/software/what-is-pos-hotel.html', title: 'POS System', category: 'Software', desc: 'Manage breakfast billing' },
-    { href: '/guides/reports/expenses-report.html', title: 'Expenses Report', category: 'Reports', desc: 'Track F&B costs' },
-  ],
-  '/guides/revenue/map-plan-hotel.html': [
-    { href: '/guides/software/what-is-pos-hotel.html', title: 'POS System', category: 'Software', desc: 'F&B billing for meal plans' },
-    { href: '/guides/software/hotel-inventory-management.html', title: 'Inventory Management', category: 'Software', desc: 'Track F&B ingredients' },
-  ],
-  '/guides/revenue/ap-plan-hotel.html': [
-    { href: '/guides/software/what-is-pos-hotel.html', title: 'POS System', category: 'Software', desc: 'All-inclusive meal tracking' },
-    { href: '/guides/reports/profit-loss-report.html', title: 'P&L Report', category: 'Reports', desc: 'Profitability of AP plans' },
   ],
   '/guides/revenue/revpar.html': [
     { href: '/guides/reports/manager-report.html', title: 'Manager Report', category: 'Reports', desc: 'Daily RevPAR tracking' },
@@ -353,11 +332,6 @@ const RELATED_CONTENT = {
     { href: '/guides/revenue/hotel-rate-plans.html', title: 'Hotel Rate Plans', category: 'Revenue', desc: 'The plans you are linking together' },
     { href: '/guides/revenue/bar.html', title: 'BAR Pricing', category: 'Revenue', desc: 'The rate everything else derives from' },
     { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Where linked rates are actually managed' },
-  ],
-  '/guides/revenue/ro-bb-hb-fb-hotel-meaning.html': [
-    { href: '/guides/revenue/hotel-rate-plans.html', title: 'Hotel Rate Plans', category: 'Revenue', desc: 'How meal plans fit your rate structure' },
-    { href: '/guides/revenue/cp-plan-hotel.html', title: 'CP Plan', category: 'Revenue', desc: 'The Indian equivalent of BB' },
-    { href: '/guides/revenue/map-plan-hotel.html', title: 'MAP Plan', category: 'Revenue', desc: 'The Indian equivalent of HB' },
   ],
   '/guides/revenue/trevpar.html': [
     { href: '/guides/revenue/revpar.html', title: 'RevPAR', category: 'Revenue', desc: 'The room-only version of this metric' },

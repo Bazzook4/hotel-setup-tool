@@ -23,6 +23,11 @@
     },
 
     { "source": "/hotel-ota-listing", "destination": "/services/independent-hotel-ota-listing/", "statusCode": 301 },
+    { "source": "/guides/revenue/ep-plan-hotel.html", "destination": "/guides/revenue/hotel-rate-plans.html", "statusCode": 301 },
+    { "source": "/guides/revenue/cp-plan-hotel.html", "destination": "/guides/revenue/hotel-rate-plans.html", "statusCode": 301 },
+    { "source": "/guides/revenue/map-plan-hotel.html", "destination": "/guides/revenue/hotel-rate-plans.html", "statusCode": 301 },
+    { "source": "/guides/revenue/ap-plan-hotel.html", "destination": "/guides/revenue/hotel-rate-plans.html", "statusCode": 301 },
+    { "source": "/guides/revenue/ro-bb-hb-fb-hotel-meaning.html", "destination": "/guides/revenue/hotel-rate-plans.html", "statusCode": 301 },
     { "source": "/services/direct-booking-website", "destination": "/services/hotel-website-themes/", "statusCode": 301 },
     { "source": "/services/direct-booking-website/", "destination": "/services/hotel-website-themes/", "statusCode": 301 },
     { "source": "/services/direct-booking-website/:path*", "destination": "/services/hotel-website-themes/", "statusCode": 301 },
