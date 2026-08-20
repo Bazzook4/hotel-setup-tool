@@ -247,6 +247,61 @@ h3{font-family:var(--serif);font-weight:400;font-size:1.5rem;line-height:1.25;ma
 .gal .tall{grid-row:span 2}
 .gal .wide{grid-column:span 2}
 
+/* ---------- REELS ---------- */
+.reels{background:var(--bg)}
+.reel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:start}
+.reel{
+  background:var(--white);border:1px solid var(--line);border-radius:4px;overflow:hidden;
+  transition:transform .5s cubic-bezier(.2,.7,.3,1),box-shadow .5s ease;
+}
+.reel:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(62,61,53,.12)}
+.reel.feature{grid-column:span 1}
+.reel-media{
+  position:relative;aspect-ratio:9/16;background:var(--primary);
+  overflow:hidden;cursor:pointer;display:block;width:100%;border:0;padding:0;
+}
+.reel-media img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.3,1)}
+.reel:hover .reel-media img{transform:scale(1.05)}
+.reel-media::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(26,25,21,.34) 0%,rgba(26,25,21,.05) 42%,rgba(26,25,21,.62) 100%);
+  pointer-events:none;transition:opacity .4s ease;
+}
+.reel-media iframe{width:100%;height:100%;border:0;display:block}
+.play{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:72px;height:72px;border-radius:50%;
+  background:rgba(255,255,255,.93);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .35s cubic-bezier(.2,.7,.3,1),background .3s ease;
+  z-index:2;box-shadow:0 8px 28px rgba(26,25,21,.34);
+}
+.reel-media:hover .play{transform:translate(-50%,-50%) scale(1.09);background:#fff}
+.play::before{
+  content:"";display:block;
+  border-left:19px solid var(--primary);
+  border-top:12px solid transparent;border-bottom:12px solid transparent;
+  margin-left:5px;
+}
+.reel-tag{
+  position:absolute;top:16px;left:16px;z-index:2;
+  background:rgba(255,255,255,.94);color:var(--primary);
+  padding:6px 14px;border-radius:100px;
+  font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+}
+.reel-cap{padding:20px 22px 24px}
+.reel-cap h3{font-size:1.22rem;margin-bottom:6px}
+.reel-cap p{font-size:.88rem;color:var(--muted)}
+.reels-foot{text-align:center;margin-top:44px}
+.ig-link{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:12px;letter-spacing:.17em;text-transform:uppercase;
+  color:var(--primary);text-decoration:none;
+  border-bottom:1px solid var(--line);padding-bottom:7px;transition:border-color .3s ease,opacity .3s ease;
+}
+.ig-link:hover{border-color:var(--secondary);opacity:.72}
+.ig-link svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6}
+
 /* ---------- AMENITIES ---------- */
 .amen{background:var(--white)}
 .amen-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px 30px}
@@ -432,6 +487,7 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:1024px){
   .space-grid{grid-template-columns:repeat(2,1fr)}
+  .reel-grid{grid-template-columns:repeat(2,1fr)}
   .amen-grid{grid-template-columns:repeat(2,1fr);gap:22px 30px}
   .rev-grid{grid-template-columns:1fr}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
@@ -462,6 +518,7 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
 }
 @media(max-width:560px){
   .space-grid{grid-template-columns:1fr}
+  .reel-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}
   .amen-grid{grid-template-columns:1fr}
   .enq-row{grid-template-columns:1fr;gap:0}
   .enq-card{padding:28px 22px}
@@ -487,6 +544,7 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
       <li><a href="#story">The Home</a></li>
       <li><a href="#spaces">Spaces</a></li>
       <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reels">Video</a></li>
       <li><a href="#reviews">Reviews</a></li>
       <li><a href="#location">Location</a></li>
       <li><a class="nav-cta" href="#enquire">Enquire</a></li>
@@ -632,6 +690,58 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
       <figure><img loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/1ae5a93e-ffac-4aa9-852c-1d82d5285e31.jpeg" alt="Corridor"></figure>
       <figure><img loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/eeddbe8e-0786-4805-b01b-eebb87fbb7be.jpeg" alt="Terrace planters at night"></figure>
       <figure><img loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/f9ba0373-7f5a-422d-bc98-688b414cf111.jpeg" alt="Second living area"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REELS ============ -->
+<section id="reels" class="reels">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="kicker">Video</div>
+      <h2>See it in <em>motion</em></h2>
+      <p>Straight from the Casa Idana Instagram. Tap any one to play it here.</p>
+    </div>
+    <div class="reel-grid">
+      <article class="reel reveal">
+        <button class="reel-media" type="button" data-reel="DQvw_7tEooQ" aria-label="Play reel: Take the full tour">
+          <span class="reel-tag">Quick Tour</span>
+          <img loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/733181fe-c41b-42f5-846d-1326d639489d.jpeg" alt="Entrance and interiors of Casa Idana">
+          <span class="play" aria-hidden="true"></span>
+        </button>
+        <div class="reel-cap">
+          <h3>Take the full tour</h3>
+          <p>A walk through the whole villa, room by room, in under a minute.</p>
+        </div>
+      </article>
+      <article class="reel reveal">
+        <button class="reel-media" type="button" data-reel="DVVl1G5kjrd" aria-label="Play reel: The villa by night">
+          <span class="reel-tag">After Dark</span>
+          <img loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/a511ecd6-6fa1-4a01-a2d1-de87dd1c6791.jpeg" alt="Casa Idana lit up at night">
+          <span class="play" aria-hidden="true"></span>
+        </button>
+        <div class="reel-cap">
+          <h3>The villa by night</h3>
+          <p>How the facade looks once the lights come on after sunset.</p>
+        </div>
+      </article>
+      <article class="reel reveal">
+        <button class="reel-media" type="button" data-reel="DXB8drMiViQ" aria-label="Play reel: Evenings on the terrace">
+          <span class="reel-tag">Rooftop</span>
+          <img loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/983f185f-14ff-425b-934a-938cbc7b1196.jpeg" alt="Rooftop terrace lounge at night">
+          <span class="play" aria-hidden="true"></span>
+        </button>
+        <div class="reel-cap">
+          <h3>Evenings on the terrace</h3>
+          <p>The checkerboard rooftop lounge, set up for a night in.</p>
+        </div>
+      </article>
+    </div>
+    <div class="reels-foot reveal">
+      <a class="ig-link" href="https://www.instagram.com/casa_idana/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+        More on Instagram
+      </a>
     </div>
   </div>
 </section>
@@ -865,6 +975,7 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
           <li><a href="#story">The Home</a></li>
           <li><a href="#spaces">Spaces</a></li>
           <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reels">Video</a></li>
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#enquire">Enquire</a></li>
         </ul>
@@ -1068,6 +1179,24 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
       window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
     });
   }
+
+  /* --- reels: click a poster to load the Instagram embed --- */
+  document.querySelectorAll('.reel-media[data-reel]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var code = btn.dataset.reel;
+      var f = document.createElement('iframe');
+      f.src = 'https://www.instagram.com/reel/' + code + '/embed/';
+      f.title = btn.getAttribute('aria-label') || 'Instagram reel';
+      f.setAttribute('frameborder','0');
+      f.setAttribute('scrolling','no');
+      f.setAttribute('allow','autoplay; encrypted-media; picture-in-picture');
+      f.setAttribute('allowfullscreen','');
+      var holder = document.createElement('div');
+      holder.className = 'reel-media';
+      holder.appendChild(f);
+      btn.parentNode.replaceChild(holder, btn);
+    });
+  });
 })();
 </script>
 </body>
