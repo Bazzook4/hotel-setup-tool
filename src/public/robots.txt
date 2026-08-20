@@ -3,6 +3,9 @@
 User-agent: *
 Allow: /
 
+# Client sample sites — not for indexing
+Disallow: /samples/
+
 # AI crawlers — explicitly allowed
 User-agent: GPTBot
 Allow: /
