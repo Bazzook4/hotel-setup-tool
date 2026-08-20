@@ -103,6 +103,61 @@
       "statusCode": 301
     },
     {
+      "source": "/hotel-website-development",
+      "destination": "/services/hotel-website/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hotel-website-development/",
+      "destination": "/services/hotel-website/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/hotel-website-themes/heritage",
+      "destination": "/services/hotel-website/heritage/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/hotel-website-themes/heritage/",
+      "destination": "/services/hotel-website/heritage/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/hotel-website-themes/coastal",
+      "destination": "/services/hotel-website/coastal/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/hotel-website-themes/coastal/",
+      "destination": "/services/hotel-website/coastal/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/hotel-website-themes/business",
+      "destination": "/services/hotel-website/business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/hotel-website-themes/business/",
+      "destination": "/services/hotel-website/business/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/hotel-website-themes",
+      "destination": "/services/hotel-website/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/hotel-website-themes/",
+      "destination": "/services/hotel-website/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/hotel-website-themes/:path*",
+      "destination": "/services/hotel-website/",
+      "statusCode": 301
+    },
+    {
       "source": "/hotel-ota-listing",
       "destination": "/services/independent-hotel-ota-listing/",
       "statusCode": 301
@@ -134,17 +189,17 @@
     },
     {
       "source": "/services/direct-booking-website",
-      "destination": "/services/hotel-website-themes/",
+      "destination": "/services/hotel-website/",
       "statusCode": 301
     },
     {
       "source": "/services/direct-booking-website/",
-      "destination": "/services/hotel-website-themes/",
+      "destination": "/services/hotel-website/",
       "statusCode": 301
     },
     {
       "source": "/services/direct-booking-website/:path*",
-      "destination": "/services/hotel-website-themes/",
+      "destination": "/services/hotel-website/",
       "statusCode": 301
     },
     {
@@ -239,7 +294,7 @@
     },
     {
       "source": "/post/building-trust-with-online-visitors-how-your-hotel-website-can-boost-bookings",
-      "destination": "/services/hotel-website-themes/",
+      "destination": "/services/hotel-website/",
       "statusCode": 301
     },
     {

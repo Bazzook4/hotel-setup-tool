@@ -126,8 +126,8 @@ function buildToolSidebar(currentPath) {
   html += '<li><a href="/services/vacation-rental-ota-listing/"' + s2Active + '><span class="tool-nav-icon">\uD83C\uDFE1</span> Vacation Rental Listing</a></li>';
   var s3Active = currentPath.indexOf('/services/google-my-business') !== -1 ? ' class="active"' : '';
   html += '<li><a href="/services/google-my-business/"' + s3Active + '><span class="tool-nav-icon">\uD83D\uDCCD</span> Google My Business</a></li>';
-  var s4Active = currentPath.indexOf('/services/hotel-website-themes') !== -1 ? ' class="active"' : '';
-  html += '<li><a href="/services/hotel-website-themes/"' + s4Active + '><span class="tool-nav-icon">\uD83C\uDF10</span> Direct Booking Website</a></li>';
+  var s4Active = currentPath.indexOf('/services/hotel-website') !== -1 ? ' class="active"' : '';
+  html += '<li><a href="/services/hotel-website/"' + s4Active + '><span class="tool-nav-icon">\uD83C\uDF10</span> Hotel Website</a></li>';
   html += '<li><a href="/services/"><span class="tool-nav-icon">\u2699\uFE0F</span> Channel Manager Setup</a></li>';
   html += '<li><a href="/services/" style="font-size:0.8rem; color: #89826E; font-weight:600;"><span class="tool-nav-icon">\u2192</span> All Services</a></li>';
   html += '</ul>';
