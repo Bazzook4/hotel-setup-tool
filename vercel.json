@@ -5,64 +5,293 @@
   "redirects": [
     {
       "source": "/",
-      "has": [{ "type": "host", "value": "insights.onlinehotelier.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "insights.onlinehotelier.com"
+        }
+      ],
       "destination": "https://www.onlinehotelier.com/",
       "statusCode": 301
     },
     {
+      "source": "/guides/revenue/ep-plan-hotel.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "insights.onlinehotelier.com"
+        }
+      ],
+      "destination": "https://www.onlinehotelier.com/guides/revenue/hotel-rate-plans.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides/revenue/cp-plan-hotel.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "insights.onlinehotelier.com"
+        }
+      ],
+      "destination": "https://www.onlinehotelier.com/guides/revenue/hotel-rate-plans.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides/revenue/map-plan-hotel.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "insights.onlinehotelier.com"
+        }
+      ],
+      "destination": "https://www.onlinehotelier.com/guides/revenue/hotel-rate-plans.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides/revenue/ap-plan-hotel.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "insights.onlinehotelier.com"
+        }
+      ],
+      "destination": "https://www.onlinehotelier.com/guides/revenue/hotel-rate-plans.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides/revenue/ro-bb-hb-fb-hotel-meaning.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "insights.onlinehotelier.com"
+        }
+      ],
+      "destination": "https://www.onlinehotelier.com/guides/revenue/hotel-rate-plans.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides/revenue/hotel-rate-plans.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "insights.onlinehotelier.com"
+        }
+      ],
+      "destination": "https://www.onlinehotelier.com/guides/revenue/hotel-rate-plans.html",
+      "statusCode": 301
+    },
+    {
       "source": "/:path*/",
-      "has": [{ "type": "host", "value": "insights.onlinehotelier.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "insights.onlinehotelier.com"
+        }
+      ],
       "destination": "https://www.onlinehotelier.com/:path*/",
       "statusCode": 301
     },
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "insights.onlinehotelier.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "insights.onlinehotelier.com"
+        }
+      ],
       "destination": "https://www.onlinehotelier.com/:path*",
       "statusCode": 301
     },
-
-    { "source": "/hotel-ota-listing", "destination": "/services/independent-hotel-ota-listing/", "statusCode": 301 },
-    { "source": "/guides/revenue/ep-plan-hotel.html", "destination": "/guides/revenue/hotel-rate-plans.html", "statusCode": 301 },
-    { "source": "/guides/revenue/cp-plan-hotel.html", "destination": "/guides/revenue/hotel-rate-plans.html", "statusCode": 301 },
-    { "source": "/guides/revenue/map-plan-hotel.html", "destination": "/guides/revenue/hotel-rate-plans.html", "statusCode": 301 },
-    { "source": "/guides/revenue/ap-plan-hotel.html", "destination": "/guides/revenue/hotel-rate-plans.html", "statusCode": 301 },
-    { "source": "/guides/revenue/ro-bb-hb-fb-hotel-meaning.html", "destination": "/guides/revenue/hotel-rate-plans.html", "statusCode": 301 },
-    { "source": "/services/direct-booking-website", "destination": "/services/hotel-website-themes/", "statusCode": 301 },
-    { "source": "/services/direct-booking-website/", "destination": "/services/hotel-website-themes/", "statusCode": 301 },
-    { "source": "/services/direct-booking-website/:path*", "destination": "/services/hotel-website-themes/", "statusCode": 301 },
-    { "source": "/blogs", "destination": "/guides/", "statusCode": 301 },
-    { "source": "/blog", "destination": "/guides/", "statusCode": 301 },
-
-    { "source": "/post/ota-hotel-meaning-definition-india", "destination": "/guides/ota/ota-hotel-meaning.html", "statusCode": 301 },
-    { "source": "/post/flexible-ota-bb-ro-meaning-explained", "destination": "/guides/revenue/ro-bb-hb-fb-hotel-meaning.html", "statusCode": 301 },
-    { "source": "/post/hotel-meal-plans-explained-ep-cp-map-ap-hb-fb-ai-meaning", "destination": "/guides/revenue/hotel-rate-plans.html", "statusCode": 301 },
-    { "source": "/post/hotel-ota-commission-in-india", "destination": "/tools/ota-commission-calculator/", "statusCode": 301 },
-    { "source": "/post/11-most-popular-ota-in-india-2024", "destination": "/guides/ota/best-ota-for-hotels.html", "statusCode": 301 },
-    { "source": "/post/top-hotel-otas-in-india", "destination": "/guides/ota/best-ota-for-hotels.html", "statusCode": 301 },
-    { "source": "/post/step-by-step-guide-how-to-list-your-hotel-on-booking-com", "destination": "/guides/ota/booking-com-hotel-listing-guide.html", "statusCode": 301 },
-    { "source": "/post/step-by-step-guide-how-to-list-your-hotel-on-makemytrip-and-goibibo", "destination": "/guides/ota/makemytrip-hotel-listing.html", "statusCode": 301 },
-    { "source": "/post/increase-hotel-bookings-on-makemytrip-goibibo-gommt", "destination": "/guides/ota/makemytrip-hotel-listing.html", "statusCode": 301 },
-    { "source": "/post/hotel-channel-manager-why-you-need-them-and-how-they-benefit-you", "destination": "/guides/software/channel-manager.html", "statusCode": 301 },
-    { "source": "/post/ota-vs-direct-booking-hotel", "destination": "/guides/ota/hotel-direct-booking-strategy.html", "statusCode": 301 },
-    { "source": "/post/benefits-of-otas-for-hotels", "destination": "/guides/ota/what-is-ota.html", "statusCode": 301 },
-    { "source": "/post/common-bookingcom-mistakes-new-hotels-india", "destination": "/guides/ota/booking-com-hotel-listing-guide.html", "statusCode": 301 },
-    { "source": "/post/what-is-hotel-revenue-management-a-beginner-s-guide-for-small-mid-scale-indian-hotels", "destination": "/guides/revenue/increase-hotel-revenue.html", "statusCode": 301 },
-    { "source": "/post/best-digital-marketing-strategy-for-hotels-in-2025", "destination": "/guides/ota/hotel-direct-booking-strategy.html", "statusCode": 301 },
-    { "source": "/post/the-ultimate-2023-guide-to-hotel-digital-marketing-strategies", "destination": "/guides/ota/hotel-direct-booking-strategy.html", "statusCode": 301 },
-    { "source": "/post/building-trust-with-online-visitors-how-your-hotel-website-can-boost-bookings", "destination": "/services/hotel-website-themes/", "statusCode": 301 },
-
-    { "source": "/tools/commission-calculator.html", "destination": "/tools/ota-commission-calculator/", "statusCode": 301 },
-    { "source": "/tools/discount-calculator.html", "destination": "/tools/hotel-discount-calculator/", "statusCode": 301 },
-    { "source": "/tools/ota-dependency-calculator.html", "destination": "/tools/ota-dependency-calculator/", "statusCode": 301 },
-    { "source": "/tools/revenue-setup.html", "destination": "/tools/revenue-management-tool/", "statusCode": 301 },
-    { "source": "/tools/revenue-results.html", "destination": "/tools/revenue-management-results/", "statusCode": 301 },
-    { "source": "/calendar.html", "destination": "/tools/demand-calendar/", "statusCode": 301 },
-    { "source": "/commission.html", "destination": "/tools/ota-commission-calculator/", "statusCode": 301 },
-    { "source": "/setup.html", "destination": "/tools/revenue-management-tool/", "statusCode": 301 },
-    { "source": "/results.html", "destination": "/tools/revenue-management-results/", "statusCode": 301 }
+    {
+      "source": "/hotel-ota-listing",
+      "destination": "/services/independent-hotel-ota-listing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides/revenue/ep-plan-hotel.html",
+      "destination": "/guides/revenue/hotel-rate-plans.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides/revenue/cp-plan-hotel.html",
+      "destination": "/guides/revenue/hotel-rate-plans.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides/revenue/map-plan-hotel.html",
+      "destination": "/guides/revenue/hotel-rate-plans.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides/revenue/ap-plan-hotel.html",
+      "destination": "/guides/revenue/hotel-rate-plans.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides/revenue/ro-bb-hb-fb-hotel-meaning.html",
+      "destination": "/guides/revenue/hotel-rate-plans.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/direct-booking-website",
+      "destination": "/services/hotel-website-themes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/direct-booking-website/",
+      "destination": "/services/hotel-website-themes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/direct-booking-website/:path*",
+      "destination": "/services/hotel-website-themes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs",
+      "destination": "/guides/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog",
+      "destination": "/guides/",
+      "statusCode": 301
+    },
+    {
+      "source": "/post/ota-hotel-meaning-definition-india",
+      "destination": "/guides/ota/ota-hotel-meaning.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/post/flexible-ota-bb-ro-meaning-explained",
+      "destination": "/guides/revenue/hotel-rate-plans.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/post/hotel-meal-plans-explained-ep-cp-map-ap-hb-fb-ai-meaning",
+      "destination": "/guides/revenue/hotel-rate-plans.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/post/hotel-ota-commission-in-india",
+      "destination": "/tools/ota-commission-calculator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/post/11-most-popular-ota-in-india-2024",
+      "destination": "/guides/ota/best-ota-for-hotels.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/post/top-hotel-otas-in-india",
+      "destination": "/guides/ota/best-ota-for-hotels.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/post/step-by-step-guide-how-to-list-your-hotel-on-booking-com",
+      "destination": "/guides/ota/booking-com-hotel-listing-guide.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/post/step-by-step-guide-how-to-list-your-hotel-on-makemytrip-and-goibibo",
+      "destination": "/guides/ota/makemytrip-hotel-listing.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/post/increase-hotel-bookings-on-makemytrip-goibibo-gommt",
+      "destination": "/guides/ota/makemytrip-hotel-listing.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/post/hotel-channel-manager-why-you-need-them-and-how-they-benefit-you",
+      "destination": "/guides/software/channel-manager.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/post/ota-vs-direct-booking-hotel",
+      "destination": "/guides/ota/hotel-direct-booking-strategy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/post/benefits-of-otas-for-hotels",
+      "destination": "/guides/ota/what-is-ota.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/post/common-bookingcom-mistakes-new-hotels-india",
+      "destination": "/guides/ota/booking-com-hotel-listing-guide.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/post/what-is-hotel-revenue-management-a-beginner-s-guide-for-small-mid-scale-indian-hotels",
+      "destination": "/guides/revenue/increase-hotel-revenue.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/post/best-digital-marketing-strategy-for-hotels-in-2025",
+      "destination": "/guides/ota/hotel-direct-booking-strategy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/post/the-ultimate-2023-guide-to-hotel-digital-marketing-strategies",
+      "destination": "/guides/ota/hotel-direct-booking-strategy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/post/building-trust-with-online-visitors-how-your-hotel-website-can-boost-bookings",
+      "destination": "/services/hotel-website-themes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tools/commission-calculator.html",
+      "destination": "/tools/ota-commission-calculator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tools/discount-calculator.html",
+      "destination": "/tools/hotel-discount-calculator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tools/ota-dependency-calculator.html",
+      "destination": "/tools/ota-dependency-calculator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tools/revenue-setup.html",
+      "destination": "/tools/revenue-management-tool/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tools/revenue-results.html",
+      "destination": "/tools/revenue-management-results/",
+      "statusCode": 301
+    },
+    {
+      "source": "/calendar.html",
+      "destination": "/tools/demand-calendar/",
+      "statusCode": 301
+    },
+    {
+      "source": "/commission.html",
+      "destination": "/tools/ota-commission-calculator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/setup.html",
+      "destination": "/tools/revenue-management-tool/",
+      "statusCode": 301
+    },
+    {
+      "source": "/results.html",
+      "destination": "/tools/revenue-management-results/",
+      "statusCode": 301
+    }
   ],
   "rewrites": [
-    { "source": "/api/:path*", "destination": "/api/:path*" }
+    {
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
+    }
   ]
 }
