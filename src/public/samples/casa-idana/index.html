@@ -64,7 +64,7 @@
   --sans:'DM Sans','Avenir',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden;overflow-anchor:none}
 body{
   background:var(--bg);
   color:var(--primary);
@@ -75,7 +75,7 @@ body{
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 .wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 28px}
 
@@ -123,7 +123,7 @@ a{color:inherit}
   color:var(--white);overflow:hidden;
 }
 .hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 68%;animation:slowzoom 22s ease-out forwards}
+.hero-bg img{width:100%;height:100%!important;object-fit:cover;object-position:center 68%;animation:slowzoom 22s ease-out forwards}
 @keyframes slowzoom{from{transform:scale(1.09)}to{transform:scale(1)}}
 .hero-bg::after{
   content:"";position:absolute;inset:0;
@@ -213,7 +213,7 @@ h3{font-family:var(--serif);font-weight:400;font-size:1.5rem;line-height:1.25;ma
 .split{display:grid;grid-template-columns:1fr 1fr;gap:76px;align-items:center}
 .story-imgs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .story-imgs figure{overflow:hidden;border-radius:3px}
-.story-imgs img{aspect-ratio:3/4;object-fit:cover;width:100%;transition:transform 1.1s cubic-bezier(.2,.7,.3,1)}
+.story-imgs img{aspect-ratio:3/4;object-fit:cover;width:100%;height:auto!important;transition:transform 1.1s cubic-bezier(.2,.7,.3,1)}
 .story-imgs figure:hover img{transform:scale(1.06)}
 .story-imgs figure:first-child{margin-top:44px}
 .story p{color:var(--muted);margin-bottom:20px}
@@ -233,7 +233,7 @@ h3{font-family:var(--serif);font-weight:400;font-size:1.5rem;line-height:1.25;ma
 }
 .card:hover{transform:translateY(-7px);box-shadow:0 22px 50px rgba(62,61,53,.11)}
 .card-img{overflow:hidden;aspect-ratio:4/3}
-.card-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.3,1)}
+.card-img img{width:100%;height:100%!important;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.3,1)}
 .card:hover .card-img img{transform:scale(1.07)}
 .card-body{padding:26px 26px 30px}
 .card-body .tag{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--secondary);margin-bottom:12px}
@@ -242,7 +242,7 @@ h3{font-family:var(--serif);font-weight:400;font-size:1.5rem;line-height:1.25;ma
 /* ---------- GALLERY ---------- */
 .gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:14px}
 .gal figure{overflow:hidden;border-radius:3px;cursor:zoom-in;position:relative;background:var(--primary-light)}
-.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.3,1)}
+.gal img{width:100%;height:100%!important;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.3,1)}
 .gal figure:hover img{transform:scale(1.07)}
 .gal .tall{grid-row:span 2}
 .gal .wide{grid-column:span 2}
@@ -260,7 +260,7 @@ h3{font-family:var(--serif);font-weight:400;font-size:1.5rem;line-height:1.25;ma
   position:relative;aspect-ratio:9/16;background:var(--primary);
   overflow:hidden;cursor:pointer;display:block;width:100%;border:0;padding:0;
 }
-.reel-media img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.3,1)}
+.reel-media img{width:100%;height:100%!important;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.3,1)}
 .reel:hover .reel-media img{transform:scale(1.05)}
 .reel-media::after{
   content:"";position:absolute;inset:0;
@@ -360,7 +360,7 @@ h3{font-family:var(--serif);font-weight:400;font-size:1.5rem;line-height:1.25;ma
   border:1px solid var(--line);aspect-ratio:4/3;background:var(--primary-light);
   text-decoration:none;
 }
-.map-frame img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.3,1)}
+.map-frame img{width:100%;height:100%!important;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.3,1)}
 .map-frame:hover img{transform:scale(1.04)}
 .map-pill{
   position:absolute;left:18px;bottom:18px;
@@ -500,9 +500,11 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
   .nav-links{
     position:fixed;inset:0;background:var(--bg);
     flex-direction:column;justify-content:center;gap:30px;
-    transform:translateX(100%);transition:transform .45s cubic-bezier(.2,.7,.3,1);
+    transform:translateX(100%);
+    transition:transform .45s cubic-bezier(.2,.7,.3,1),visibility .45s;
+    visibility:hidden;
   }
-  .nav-links.open{transform:none}
+  .nav-links.open{transform:none;visibility:visible}
   .nav-links a{color:var(--primary)!important;font-size:15px}
   .burger{display:block;position:relative;z-index:70}
   .burger.x span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
@@ -556,7 +558,7 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
 <!-- ============ HERO ============ -->
 <header class="hero">
   <div class="hero-bg">
-    <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/a511ecd6-6fa1-4a01-a2d1-de87dd1c6791.jpeg" alt="Casa Idana villa lit up at night, Udaipur">
+    <img width="1200" height="800" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/a511ecd6-6fa1-4a01-a2d1-de87dd1c6791.jpeg" alt="Casa Idana villa lit up at night, Udaipur">
   </div>
   <div class="wrap hero-in">
     <div class="eyebrow">Hiran Magri &nbsp;·&nbsp; Udaipur, Rajasthan</div>
@@ -600,8 +602,8 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
       </div>
     </div>
     <div class="story-imgs reveal">
-      <figure><img loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/902885aa-1066-48ca-83b8-5b942d81a20e.jpeg" alt="Bedroom at Casa Idana"></figure>
-      <figure><img loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/983f185f-14ff-425b-934a-938cbc7b1196.jpeg" alt="Rooftop terrace at Casa Idana"></figure>
+      <figure><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/902885aa-1066-48ca-83b8-5b942d81a20e.jpeg" alt="Bedroom at Casa Idana"></figure>
+      <figure><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/983f185f-14ff-425b-934a-938cbc7b1196.jpeg" alt="Rooftop terrace at Casa Idana"></figure>
     </div>
   </div>
 </section>
@@ -616,7 +618,7 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
     </div>
     <div class="space-grid">
       <article class="card reveal">
-        <div class="card-img"><img loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/983f185f-14ff-425b-934a-938cbc7b1196.jpeg" alt="Rooftop terrace with checkerboard floor"></div>
+        <div class="card-img"><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/983f185f-14ff-425b-934a-938cbc7b1196.jpeg" alt="Rooftop terrace with checkerboard floor"></div>
         <div class="card-body">
           <div class="tag">Rooftop</div>
           <h3>The Terrace Lounge</h3>
@@ -624,7 +626,7 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
         </div>
       </article>
       <article class="card reveal">
-        <div class="card-img"><img loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/b818a4ed-6103-4a90-8fa2-3ececb5135fb.jpeg" alt="Private bar counter"></div>
+        <div class="card-img"><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/b818a4ed-6103-4a90-8fa2-3ececb5135fb.jpeg" alt="Private bar counter"></div>
         <div class="card-body">
           <div class="tag">Evenings</div>
           <h3>The Private Bar</h3>
@@ -632,7 +634,7 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
         </div>
       </article>
       <article class="card reveal">
-        <div class="card-img"><img loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/bc9332e1-fb5a-402c-a374-e81f8d4ed566.jpeg" alt="Formal dining room"></div>
+        <div class="card-img"><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/bc9332e1-fb5a-402c-a374-e81f8d4ed566.jpeg" alt="Formal dining room"></div>
         <div class="card-body">
           <div class="tag">Gather</div>
           <h3>Dining Hall</h3>
@@ -640,7 +642,7 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
         </div>
       </article>
       <article class="card reveal">
-        <div class="card-img"><img loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/80316f60-2f71-4640-ac47-4822e2a65f2e.jpeg" alt="Bedroom with garden view"></div>
+        <div class="card-img"><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/80316f60-2f71-4640-ac47-4822e2a65f2e.jpeg" alt="Bedroom with garden view"></div>
         <div class="card-body">
           <div class="tag">Sleep</div>
           <h3>Three Bedrooms</h3>
@@ -648,7 +650,7 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
         </div>
       </article>
       <article class="card reveal">
-        <div class="card-img"><img loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/2c856b53-b5bf-4bd8-88ce-c2a73032a30b.jpeg" alt="Living room seating"></div>
+        <div class="card-img"><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/2c856b53-b5bf-4bd8-88ce-c2a73032a30b.jpeg" alt="Living room seating"></div>
         <div class="card-body">
           <div class="tag">Unwind</div>
           <h3>Private Living Room</h3>
@@ -656,7 +658,7 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
         </div>
       </article>
       <article class="card reveal">
-        <div class="card-img"><img loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/b7ce0b32-5c41-443e-bc7a-a7a4fb0e7570.jpeg" alt="Modern bathroom"></div>
+        <div class="card-img"><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/b7ce0b32-5c41-443e-bc7a-a7a4fb0e7570.jpeg" alt="Modern bathroom"></div>
         <div class="card-body">
           <div class="tag">Refresh</div>
           <h3>Three Bathrooms</h3>
@@ -675,21 +677,21 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
       <h2>Look around</h2>
     </div>
     <div class="gal reveal" id="gal">
-      <figure class="wide tall"><img loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/983f185f-14ff-425b-934a-938cbc7b1196.jpeg" alt="Rooftop terrace"></figure>
-      <figure><img loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/b818a4ed-6103-4a90-8fa2-3ececb5135fb.jpeg" alt="Private bar"></figure>
-      <figure><img loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/bc9332e1-fb5a-402c-a374-e81f8d4ed566.jpeg" alt="Dining hall"></figure>
-      <figure><img loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/902885aa-1066-48ca-83b8-5b942d81a20e.jpeg" alt="Open kitchen and living area"></figure>
-      <figure><img loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/2c856b53-b5bf-4bd8-88ce-c2a73032a30b.jpeg" alt="Living room"></figure>
-      <figure class="tall"><img loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/80316f60-2f71-4640-ac47-4822e2a65f2e.jpeg" alt="Bedroom with garden view"></figure>
-      <figure><img loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/028fe1e4-1ae5-40a7-b648-3a713c801766.jpeg" alt="Bedroom with red headboard"></figure>
-      <figure><img loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/bf0be3fb-c97e-42b8-8047-699094d7f3ce.jpeg" alt="Bedroom with green headboard"></figure>
-      <figure><img loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/b7ce0b32-5c41-443e-bc7a-a7a4fb0e7570.jpeg" alt="Bathroom"></figure>
-      <figure class="wide"><img loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/53915a3a-2928-4365-80ac-6de606082952.jpeg" alt="Casa Idana at dusk"></figure>
-      <figure><img loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/17cfbafc-518e-4116-a546-f4213c65554c.jpeg" alt="Bedroom with wardrobe"></figure>
-      <figure><img loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/733181fe-c41b-42f5-846d-1326d639489d.jpeg" alt="Entrance foyer"></figure>
-      <figure><img loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/1ae5a93e-ffac-4aa9-852c-1d82d5285e31.jpeg" alt="Corridor"></figure>
-      <figure><img loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/eeddbe8e-0786-4805-b01b-eebb87fbb7be.jpeg" alt="Terrace planters at night"></figure>
-      <figure><img loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/f9ba0373-7f5a-422d-bc98-688b414cf111.jpeg" alt="Second living area"></figure>
+      <figure class="wide tall"><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/983f185f-14ff-425b-934a-938cbc7b1196.jpeg" alt="Rooftop terrace"></figure>
+      <figure><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/b818a4ed-6103-4a90-8fa2-3ececb5135fb.jpeg" alt="Private bar"></figure>
+      <figure><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/bc9332e1-fb5a-402c-a374-e81f8d4ed566.jpeg" alt="Dining hall"></figure>
+      <figure><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/902885aa-1066-48ca-83b8-5b942d81a20e.jpeg" alt="Open kitchen and living area"></figure>
+      <figure><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/2c856b53-b5bf-4bd8-88ce-c2a73032a30b.jpeg" alt="Living room"></figure>
+      <figure class="tall"><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/80316f60-2f71-4640-ac47-4822e2a65f2e.jpeg" alt="Bedroom with garden view"></figure>
+      <figure><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/028fe1e4-1ae5-40a7-b648-3a713c801766.jpeg" alt="Bedroom with red headboard"></figure>
+      <figure><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/bf0be3fb-c97e-42b8-8047-699094d7f3ce.jpeg" alt="Bedroom with green headboard"></figure>
+      <figure><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/b7ce0b32-5c41-443e-bc7a-a7a4fb0e7570.jpeg" alt="Bathroom"></figure>
+      <figure class="wide"><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/53915a3a-2928-4365-80ac-6de606082952.jpeg" alt="Casa Idana at dusk"></figure>
+      <figure><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/17cfbafc-518e-4116-a546-f4213c65554c.jpeg" alt="Bedroom with wardrobe"></figure>
+      <figure><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/733181fe-c41b-42f5-846d-1326d639489d.jpeg" alt="Entrance foyer"></figure>
+      <figure><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/1ae5a93e-ffac-4aa9-852c-1d82d5285e31.jpeg" alt="Corridor"></figure>
+      <figure><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/eeddbe8e-0786-4805-b01b-eebb87fbb7be.jpeg" alt="Terrace planters at night"></figure>
+      <figure><img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/f9ba0373-7f5a-422d-bc98-688b414cf111.jpeg" alt="Second living area"></figure>
     </div>
   </div>
 </section>
@@ -706,7 +708,7 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
       <article class="reel reveal">
         <button class="reel-media" type="button" data-reel="DQvw_7tEooQ" aria-label="Play reel: Take the full tour">
           <span class="reel-tag">Quick Tour</span>
-          <img loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/733181fe-c41b-42f5-846d-1326d639489d.jpeg" alt="Entrance and interiors of Casa Idana">
+          <img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/733181fe-c41b-42f5-846d-1326d639489d.jpeg" alt="Entrance and interiors of Casa Idana">
           <span class="play" aria-hidden="true"></span>
         </button>
         <div class="reel-cap">
@@ -717,7 +719,7 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
       <article class="reel reveal">
         <button class="reel-media" type="button" data-reel="DVVl1G5kjrd" aria-label="Play reel: The villa by night">
           <span class="reel-tag">After Dark</span>
-          <img loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/a511ecd6-6fa1-4a01-a2d1-de87dd1c6791.jpeg" alt="Casa Idana lit up at night">
+          <img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1335439865089499906/original/a511ecd6-6fa1-4a01-a2d1-de87dd1c6791.jpeg" alt="Casa Idana lit up at night">
           <span class="play" aria-hidden="true"></span>
         </button>
         <div class="reel-cap">
@@ -728,7 +730,7 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
       <article class="reel reveal">
         <button class="reel-media" type="button" data-reel="DXB8drMiViQ" aria-label="Play reel: Evenings on the terrace">
           <span class="reel-tag">Rooftop</span>
-          <img loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/983f185f-14ff-425b-934a-938cbc7b1196.jpeg" alt="Rooftop terrace lounge at night">
+          <img width="1200" height="800" loading="lazy" src="https://a0.muscache.com/im/pictures/miso/Hosting-1335439865089499906/original/983f185f-14ff-425b-934a-938cbc7b1196.jpeg" alt="Rooftop terrace lounge at night">
           <span class="play" aria-hidden="true"></span>
         </button>
         <div class="reel-cap">
@@ -1008,7 +1010,7 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
 <div class="lb" id="lb" role="dialog" aria-label="Photo viewer">
   <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
   <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">&lsaquo;</button>
-  <img id="lbImg" src="" alt="">
+  <img width="1200" height="800" id="lbImg" src="" alt="">
   <button class="lb-nav lb-next" id="lbNext" aria-label="Next">&rsaquo;</button>
 </div>
 
