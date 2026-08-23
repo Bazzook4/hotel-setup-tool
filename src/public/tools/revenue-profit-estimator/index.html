@@ -134,38 +134,8 @@
       --secondary-light: rgba(137,130,110,0.12);
     }
 
-    /* Nav */
-    .site-nav {
-      background: #3E3D35;
-      padding: 0 2rem;
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .nav-logo { color: white; font-weight: 700; font-size: 1.1rem; text-decoration: none; }
-    .nav-logo span { color: #89826E; }
-    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-    .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.9rem; }
-    .nav-links a:hover { color: white; }
-    .nav-cta { background: rgba(137,130,110,0.25) !important; color: #fff !important; border: 1px solid rgba(137,130,110,0.4); padding: 0.4rem 1rem; border-radius: 6px; }
-    .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
-    @media (max-width: 768px) {
-      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #3E3D35; flex-direction: column; padding: 1rem; gap: 0.25rem; }
-      .nav-links.open { display: flex; }
-      .nav-toggle { display: block; }
-    }
-
-    /* Breadcrumb */
-    .breadcrumb { background: white; padding: 1rem 2rem; border-bottom: 1px solid #eee; }
-    .breadcrumb-container { max-width: 1140px; margin: 0 auto; font-size: 0.9rem; color: #666; }
-    .breadcrumb a { color: var(--secondary); text-decoration: none; }
-
     /* Page Header */
-    .page-header { padding: 2rem 2rem 1rem; }
+    .page-header { margin-bottom: 2rem; }
     .page-header h1 { font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem; }
     .page-subtitle { font-size: 1.1rem; color: #666; }
 
@@ -315,25 +285,20 @@
     }
   </style>
 </head>
-<body>
+<body data-tool-name="Revenue &amp; Profit Estimator">
+  <!-- Site Navigation -->
+  <nav id="site-nav"></nav>
 
-  <!-- Nav -->
-  <nav class="site-nav">
-    <a href="/" class="nav-logo">Online<span>Hotelier</span></a>
-    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')">&#9776;</button>
-    <ul class="nav-links">
-      <li><a href="/guides/">Guides</a></li>
-      <li><a href="/tools/">Tools</a></li>
-      <li><a href="/services/" class="nav-cta">Our Services</a></li>
-    </ul>
-  </nav>
+  <div class="sidebar-overlay"></div>
+  <button class="sidebar-toggle" aria-label="Toggle navigation">&#9776;</button>
 
-  <!-- Breadcrumb -->
-  <div class="breadcrumb">
-    <div class="breadcrumb-container">
-      <a href="/">Home</a> › <a href="/tools/">Tools</a> › Revenue & Profit Estimator
-    </div>
-  </div>
+  <div class="tool-page-layout">
+    <aside class="tool-sidebar"></aside>
+    <div class="tool-main-content">
+
+  <div id="tool-breadcrumb"></div>
+
+  <div class="container">
 
   <!-- Page Header -->
   <div class="page-header">
@@ -563,6 +528,11 @@
     </div>
   </div>
 
+  </div><!-- /container -->
+
+    </div><!-- /tool-main-content -->
+  </div><!-- /tool-page-layout -->
+
   <!-- Footer -->
   <footer class="site-footer">
     <p>&copy; 2026 OnlineHotelier. <a href="/guides/">Guides</a> &bull; <a href="/tools/">Tools</a> &bull; <a href="/about/">About</a></p>
@@ -679,6 +649,8 @@
   </script>
 
   <script src="/js/tools-widget.js"></script>
-<script src="/tools/js/audit-cta.js"></script>
+<script src="/js/nav.js"></script>
+  <script src="/tools/js/tool-nav.js"></script>
+  <script src="/tools/js/audit-cta.js"></script>
 </body>
 </html>
