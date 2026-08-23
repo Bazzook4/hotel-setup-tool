@@ -53,43 +53,43 @@
   </script>
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is a good profit margin for Indian hotels?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Budget hotels typically see 15–25% net margin, mid-scale 25–35%, and upscale properties 30–45%. Margins vary significantly by city — Goa and hill stations can run higher during peak season, while metro business hotels rely on consistent occupancy year-round."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I increase hotel revenue without raising room rates?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Improve occupancy via better OTA visibility and direct bookings, add ancillary revenue (F&B, laundry, airport transfers), reduce OTA dependency with your own booking engine, and upsell room categories. Even a 5% occupancy gain at the same ADR can meaningfully improve net profit."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What percentage of hotel revenue goes to OTA commissions?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "If 60–70% of bookings come through OTAs at 15–20% commission, you lose 9–14% of total room revenue to commissions. Direct booking strategy + booking engine can cut this significantly over 12 months."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What are typical hotel operating expenses in India?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Staff costs: 25–35% of revenue. OTA commissions: 10–15% of revenue. Utilities (electricity, water): 8–12%. Maintenance & housekeeping supplies: 5–8%. Food & beverage cost (if applicable): 30–35% of F&B revenue. GST and statutory costs: varies by tariff slab."
-        }
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a good profit margin for Indian hotels?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Budget hotels typically see 15–25% net margin, mid-scale 25–35%, and upscale properties 30–45%. Margins vary by city — Goa and hill stations can run higher during peak season. See our RevPAR guide for benchmarks by category."
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I increase hotel revenue without raising room rates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Improve occupancy via better OTA visibility and direct bookings, add ancillary revenue (F&B, laundry, airport transfers), and reduce OTA dependency with a booking engine. Even a 5% occupancy gain at the same ADR can meaningfully improve net profit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What percentage of hotel revenue goes to OTA commissions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If 60–70% of bookings come through OTAs at 15–20% commission, you lose 9–14% of total room revenue to commissions. Use our OTA Commission Calculator to see the exact rupee impact."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are typical hotel operating expenses in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Staff costs: 25–35% of revenue. OTA commissions: 10–15% of revenue. Utilities: 8–12%. Maintenance & supplies: 5–8%. These vary significantly by property type and location."
+      }
+    }
+  ]
+}
   </script>
   <script type="application/ld+json">
   {
@@ -268,9 +268,9 @@
     .faq-title { font-size: 1.2rem; font-weight: 700; color: var(--primary); margin-bottom: 1.25rem; }
     .faq-item { border-bottom: 1px solid #eee; padding: 1rem 0; }
     .faq-item:last-child { border-bottom: none; }
-    .faq-q { font-weight: 600; color: var(--primary); margin-bottom: 0.4rem; }
-    .faq-a { color: #555; font-size: 0.92rem; line-height: 1.6; }
-    .faq-a a { color: var(--secondary); }
+    .faq-question { font-weight: 600; color: var(--primary); margin-bottom: 0.4rem; }
+    .faq-answer { color: #555; font-size: 0.92rem; line-height: 1.6; }
+    .faq-answer a { color: var(--secondary); }
 
     /* Footer */
     .site-footer { background: #3E3D35; color: white; padding: 2rem; text-align: center; margin-top: 3rem; }
@@ -490,6 +490,7 @@
 
   <!-- Resource Links -->
   <div class="resource-links">
+    <h3>Related Tools &amp; Guides</h3>
     <div class="resource-title">Related Guides & Tools</div>
     <div class="resource-grid">
       <a href="/guides/revenue/occupancy.html" class="resource-link">→ Occupancy Rate Guide</a>
@@ -508,23 +509,23 @@
     <div class="faq-title">Frequently Asked Questions</div>
 
     <div class="faq-item">
-      <div class="faq-q">What is a good profit margin for Indian hotels?</div>
-      <div class="faq-a">Budget hotels typically see 15–25% net margin, mid-scale 25–35%, and upscale properties 30–45%. Margins vary by city — Goa and hill stations can run higher during peak season. See our <a href="/guides/revenue/revpar.html">RevPAR guide</a> for benchmarks by category.</div>
+      <div class="faq-question">What is a good profit margin for Indian hotels?</div>
+      <div class="faq-answer">Budget hotels typically see 15–25% net margin, mid-scale 25–35%, and upscale properties 30–45%. Margins vary by city — Goa and hill stations can run higher during peak season. See our <a href="/guides/revenue/revpar.html">RevPAR guide</a> for benchmarks by category.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">How do I increase hotel revenue without raising room rates?</div>
-      <div class="faq-a">Improve occupancy via better OTA visibility and <a href="/guides/ota/hotel-direct-booking-strategy.html">direct bookings</a>, add ancillary revenue (F&B, laundry, airport transfers), and reduce OTA dependency with a <a href="/guides/software/booking-engine.html">booking engine</a>. Even a 5% occupancy gain at the same ADR can meaningfully improve net profit.</div>
+      <div class="faq-question">How do I increase hotel revenue without raising room rates?</div>
+      <div class="faq-answer">Improve occupancy via better OTA visibility and <a href="/guides/ota/hotel-direct-booking-strategy.html">direct bookings</a>, add ancillary revenue (F&B, laundry, airport transfers), and reduce OTA dependency with a <a href="/guides/software/booking-engine.html">booking engine</a>. Even a 5% occupancy gain at the same ADR can meaningfully improve net profit.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">What percentage of hotel revenue goes to OTA commissions?</div>
-      <div class="faq-a">If 60–70% of bookings come through OTAs at 15–20% commission, you lose 9–14% of total room revenue to commissions. Use our <a href="/tools/ota-commission-calculator/">OTA Commission Calculator</a> to see the exact rupee impact.</div>
+      <div class="faq-question">What percentage of hotel revenue goes to OTA commissions?</div>
+      <div class="faq-answer">If 60–70% of bookings come through OTAs at 15–20% commission, you lose 9–14% of total room revenue to commissions. Use our <a href="/tools/ota-commission-calculator/">OTA Commission Calculator</a> to see the exact rupee impact.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">What are typical hotel operating expenses in India?</div>
-      <div class="faq-a">Staff costs: 25–35% of revenue. OTA commissions: 10–15% of revenue. Utilities: 8–12%. Maintenance & supplies: 5–8%. These vary significantly by property type and location.</div>
+      <div class="faq-question">What are typical hotel operating expenses in India?</div>
+      <div class="faq-answer">Staff costs: 25–35% of revenue. OTA commissions: 10–15% of revenue. Utilities: 8–12%. Maintenance & supplies: 5–8%. These vary significantly by property type and location.</div>
     </div>
   </div>
 

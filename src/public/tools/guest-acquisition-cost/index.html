@@ -33,43 +33,51 @@
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is the average OTA commission for hotels in India?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Standard OTA commission in India ranges from 15% to 20%. MakeMyTrip and Goibibo typically charge 15-18%, Booking.com charges 15-20%. Adding a Visibility Booster or Preferred Partner programme adds another 5% or more on top of the base commission."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is direct booking always cheaper than OTA for hotels?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Not always. Direct bookings avoid OTA commission (15-20%) but may include payment gateway charges (2-3%), Google Ads spend, and any discount offered to the guest. The net saving on direct bookings typically ranges from 8% to 15% per booking compared to OTA, depending on direct acquisition spend."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is an OTA Visibility Booster and how much does it cost?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A Visibility Booster increases your listing rank on OTAs like Booking.com and MakeMyTrip in exchange for an additional commission, typically 5% above your base rate. It is charged only on bookings generated during the booster period."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What does guest acquisition cost mean for a hotel?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Guest acquisition cost (GAC) is the total amount a hotel spends to secure one confirmed booking. For an OTA booking this includes commission and any promotional discounts. For a direct booking it includes payment gateway fees, advertising spend, and any direct discount offered. Knowing your GAC per channel helps compare the true profitability of each booking source."
-        }
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the average OTA commission for hotels in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard commission ranges from 15% to 20% depending on the platform. MakeMyTrip and Goibibo typically charge 15–18%, Booking.com charges 15–20%. This is before any boosters or promotions, which add further cost on top."
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a Visibility Booster and is it worth it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Visibility Booster (offered by Booking.com, MakeMyTrip and others) increases your listing rank in exchange for an additional commission — typically 5% above your base rate. It only pays off if the incremental bookings it generates exceed the extra cost. Use this calculator to see the net revenue impact before activating one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is direct booking always more profitable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually yes, but not always. If you are spending heavily on Google Ads and offering a large direct discount, your effective cost can approach OTA levels. The goal is to keep direct acquisition cost below 8–10% of room rate, which is still well below a typical OTA commission."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What payment gateway charges should I expect in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Razorpay, PayU and CCAvenue typically charge 2–3% per transaction for credit/debit card payments. UPI transactions are generally 0–1%. Use 2% as a safe planning average for credit card bookings on your website."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate cost per direct booking from Google Ads?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Divide your total monthly Google Ads spend by the number of direct bookings it generated that month. For example, if you spend ₹8,000/month and get 40 direct bookings, your cost per booking is ₹200. Track this in Google Ads or your booking engine's source attribution report."
+      }
+    }
+  ]
+}
   </script>
   <script type="application/ld+json">
   {
@@ -785,7 +793,7 @@
                 </div>
 
                 <div class="resource-links">
-                  <h4>Related Tools</h4>
+                  <h4>Related Tools &amp; Guides</h4>
                   <a href="/tools/ota-commission-calculator/" class="resource-link">
                     <span>💰</span> OTA Commission Calculator
                   </a>

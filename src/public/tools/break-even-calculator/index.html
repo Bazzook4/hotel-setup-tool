@@ -51,51 +51,83 @@
   </script>
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is the hotel break-even point?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The hotel break-even point is the minimum level of occupancy and revenue at which your total income exactly equals total costs — no profit, no loss. Below this point, you're losing money. Above it, you're profitable. It accounts for both fixed costs (rent, salaries) and variable costs per room sold (housekeeping, laundry, OTA commission)."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I calculate hotel break-even occupancy?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Break-even occupancy = Total Fixed Monthly Costs ÷ (ADR − Variable Cost per Room) ÷ Total Rooms × 100. For example, if fixed costs are ₹3,00,000/month, ADR is ₹3,500, variable cost per room is ₹500, and you have 20 rooms: Break-even = 3,00,000 ÷ (3500 − 500) ÷ 20 × 100 = 50% occupancy."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does OTA commission affect my break-even point?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "OTA commission directly increases your variable cost per room sold. If your OTA commission is 18%, for a ₹3,500 booking you pay ₹630 in commission plus 18% GST on that commission (₹113). This ₹743 extra cost raises your break-even occupancy — you need to sell more rooms just to cover the same fixed costs."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What are typical fixed costs for an Indian hotel?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Typical fixed monthly costs for Indian hotels include: Rent or EMI (₹50,000–₹5,00,000 depending on property), staff salaries (₹30,000–₹3,00,000), electricity and water (₹15,000–₹1,00,000), internet and cable (₹2,000–₹10,000), property tax (₹2,000–₹20,000 amortised monthly), and maintenance/AMC contracts (₹5,000–₹30,000). Total fixed costs for a 20-room hotel typically range from ₹1,50,000 to ₹5,00,000 per month."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is contribution margin per room?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Contribution margin per room = ADR − Variable Cost per Room. Each room sold contributes this amount toward covering your fixed costs. For example, if ADR is ₹3,500 and variable cost is ₹600 per room, each booking contributes ₹2,900 toward your fixed costs. Once total contributions equal your fixed costs, you've reached break-even."
-        }
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Break-Even Occupancy Formula",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The break-even occupancy formula tells you the minimum percentage of rooms you must sell each night to cover all your costs. Break-Even Occupancy (%) = Total Fixed Monthly Costs ÷ Contribution Margin per Room ÷ Total Rooms ÷ 30 days × 100"
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "Minimum Room Rate Formula",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The break-even room rate tells you the lowest ADR you can charge at your current occupancy without losing money. Minimum Room Rate = (Total Fixed Costs ÷ Rooms Sold per Month) + Variable Cost per Room"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How OTA Commission Is Added to the Calculation",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OTA commission is a variable cost. It only applies to bookings that come through an OTA. The calculator blends your direct and OTA bookings based on the OTA share % you enter. OTA Cost per Room = ADR × Commission % + (ADR × Commission % × 18% GST) + TDS (0.1%) + TCS (0.5%)"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the hotel break-even point?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The hotel break-even point is the minimum level of occupancy and revenue at which your total income exactly equals total costs — no profit, no loss. Below this point, you're losing money. Above it, you're profitable. It accounts for both fixed costs (rent, salaries) and variable costs per room sold (housekeeping, laundry, OTA commission)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is break-even occupancy calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Break-even occupancy = Total Fixed Monthly Costs ÷ (ADR − Variable Cost per Room) ÷ Total Rooms × 100. For example: fixed costs ₹3,00,000 ÷ (₹3,500 ADR − ₹500 variable cost) ÷ 20 rooms × 100 = 50% break-even occupancy. Each room sold above break-even contributes directly to profit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does OTA commission affect break-even?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OTA commission increases your variable cost per room sold. If 70% of your bookings come through OTAs at 18% commission, your blended variable cost per room is higher than for direct bookings. This raises your break-even occupancy — you need to sell more rooms to cover the same fixed costs. This calculator shows you the difference between 100% direct vs your current OTA mix."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is contribution margin per room?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Contribution margin = ADR − Variable Cost per Room. This is how much each room sold contributes toward your fixed costs. Once the total of all contributions equals your fixed costs, you've broken even. Every additional room sold after that is pure profit (contribution margin = profit per room beyond break-even)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the break-even room rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The break-even room rate is the minimum ADR you must charge at your current occupancy level to cover all costs. Formula: Break-even rate = (Fixed Costs ÷ Rooms Sold per Month) + Variable Cost per Room. If you're at 60% occupancy with 20 rooms, that's 360 rooms sold/month. If fixed costs are ₹2,70,000 and variable cost is ₹480/room: Break-even rate = (2,70,000 ÷ 360) + 480 = ₹750 + ₹480 = ₹1,230/night minimum."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are typical hotel fixed costs in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a 20-room property in India: Rent/EMI ₹60,000–₹2,00,000; Staff salaries ₹80,000–₹2,50,000; Electricity & water ₹20,000–₹80,000; Internet & phone ₹3,000–₹10,000; Property tax/insurance ₹3,000–₹15,000; Maintenance/AMC ₹8,000–₹25,000; Marketing/PMS ₹5,000–₹20,000. Total typically ₹1,79,000–₹6,00,000/month depending on location and property type."
+      }
+    }
+  ]
+}
   </script>
   <script type="application/ld+json">
   {
@@ -609,7 +641,7 @@
       margin-bottom: 0.75rem;
       overflow: hidden;
     }
-    .faq-q {
+    .faq-question {
       padding: 1rem 1.25rem;
       font-weight: 600;
       font-size: 0.9rem;
@@ -620,9 +652,9 @@
       align-items: center;
       user-select: none;
     }
-    .faq-q::after { content: "+"; font-size: 1.2rem; color: var(--secondary); }
-    .faq-item.open .faq-q::after { content: "−"; }
-    .faq-a {
+    .faq-question::after { content: "+"; font-size: 1.2rem; color: var(--secondary); }
+    .faq-item.open .faq-question::after { content: "−"; }
+    .faq-answer {
       display: none;
       padding: 0 1.25rem 1rem;
       font-size: 0.875rem;
@@ -630,7 +662,7 @@
       line-height: 1.65;
       border-top: 1px solid #f0f0f0;
     }
-    .faq-item.open .faq-a { display: block; }
+    .faq-item.open .faq-answer { display: block; }
 
 
     /* Responsive */
@@ -1001,8 +1033,8 @@
       <div class="faq-section" style="margin-bottom: 1.5rem;">
         <h2>How the Break Even Occupancy Formula Works</h2>
         <div class="faq-item open">
-          <div class="faq-q" onclick="toggleFAQ(this)">Break-Even Occupancy Formula</div>
-          <div class="faq-a" style="display:block;">
+          <div class="faq-question" onclick="toggleFAQ(this)">Break-Even Occupancy Formula</div>
+          <div class="faq-answer" style="display:block;">
             <p style="margin-bottom:0.75rem;">The break-even occupancy formula tells you the minimum percentage of rooms you must sell each night to cover all your costs.</p>
             <div style="background: var(--primary); color: white; border-radius: 8px; padding: 1rem 1.25rem; font-family: monospace; font-size: 0.9rem; margin: 0.75rem 0; line-height: 2;">
               Break-Even Occupancy (%) =<br>
@@ -1022,8 +1054,8 @@
           </div>
         </div>
         <div class="faq-item">
-          <div class="faq-q" onclick="toggleFAQ(this)">Minimum Room Rate Formula</div>
-          <div class="faq-a">
+          <div class="faq-question" onclick="toggleFAQ(this)">Minimum Room Rate Formula</div>
+          <div class="faq-answer">
             <p style="margin-bottom:0.75rem;">The break-even room rate tells you the lowest ADR you can charge at your current occupancy without losing money.</p>
             <div style="background: var(--primary); color: white; border-radius: 8px; padding: 1rem 1.25rem; font-family: monospace; font-size: 0.9rem; margin: 0.75rem 0; line-height: 2;">
               Minimum Room Rate =<br>
@@ -1039,8 +1071,8 @@
           </div>
         </div>
         <div class="faq-item">
-          <div class="faq-q" onclick="toggleFAQ(this)">How OTA Commission Is Added to the Calculation</div>
-          <div class="faq-a">
+          <div class="faq-question" onclick="toggleFAQ(this)">How OTA Commission Is Added to the Calculation</div>
+          <div class="faq-answer">
             <p style="margin-bottom:0.75rem;">OTA commission is a variable cost. It only applies to bookings that come through an OTA. The calculator blends your direct and OTA bookings based on the OTA share % you enter.</p>
             <div style="background: var(--primary); color: white; border-radius: 8px; padding: 1rem 1.25rem; font-family: monospace; font-size: 0.9rem; margin: 0.75rem 0; line-height: 2;">
               OTA Cost per Room =<br>
@@ -1059,28 +1091,28 @@
         <h2>Frequently Asked Questions</h2>
 
         <div class="faq-item">
-          <div class="faq-q" onclick="toggleFAQ(this)">What is the hotel break-even point?</div>
-          <div class="faq-a">The hotel break-even point is the minimum level of occupancy and revenue at which your total income exactly equals total costs — no profit, no loss. Below this point, you're losing money. Above it, you're profitable. It accounts for both fixed costs (rent, salaries) and variable costs per room sold (housekeeping, laundry, OTA commission).</div>
+          <div class="faq-question" onclick="toggleFAQ(this)">What is the hotel break-even point?</div>
+          <div class="faq-answer">The hotel break-even point is the minimum level of occupancy and revenue at which your total income exactly equals total costs — no profit, no loss. Below this point, you're losing money. Above it, you're profitable. It accounts for both fixed costs (rent, salaries) and variable costs per room sold (housekeeping, laundry, OTA commission).</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q" onclick="toggleFAQ(this)">How is break-even occupancy calculated?</div>
-          <div class="faq-a">Break-even occupancy = Total Fixed Monthly Costs ÷ (ADR − Variable Cost per Room) ÷ Total Rooms × 100. For example: fixed costs ₹3,00,000 ÷ (₹3,500 ADR − ₹500 variable cost) ÷ 20 rooms × 100 = 50% break-even occupancy. Each room sold above break-even contributes directly to profit.</div>
+          <div class="faq-question" onclick="toggleFAQ(this)">How is break-even occupancy calculated?</div>
+          <div class="faq-answer">Break-even occupancy = Total Fixed Monthly Costs ÷ (ADR − Variable Cost per Room) ÷ Total Rooms × 100. For example: fixed costs ₹3,00,000 ÷ (₹3,500 ADR − ₹500 variable cost) ÷ 20 rooms × 100 = 50% break-even occupancy. Each room sold above break-even contributes directly to profit.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q" onclick="toggleFAQ(this)">How does OTA commission affect break-even?</div>
-          <div class="faq-a">OTA commission increases your variable cost per room sold. If 70% of your bookings come through OTAs at 18% commission, your blended variable cost per room is higher than for direct bookings. This raises your break-even occupancy — you need to sell more rooms to cover the same fixed costs. This calculator shows you the difference between 100% direct vs your current OTA mix.</div>
+          <div class="faq-question" onclick="toggleFAQ(this)">How does OTA commission affect break-even?</div>
+          <div class="faq-answer">OTA commission increases your variable cost per room sold. If 70% of your bookings come through OTAs at 18% commission, your blended variable cost per room is higher than for direct bookings. This raises your break-even occupancy — you need to sell more rooms to cover the same fixed costs. This calculator shows you the difference between 100% direct vs your current OTA mix.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q" onclick="toggleFAQ(this)">What is contribution margin per room?</div>
-          <div class="faq-a">Contribution margin = ADR − Variable Cost per Room. This is how much each room sold contributes toward your fixed costs. Once the total of all contributions equals your fixed costs, you've broken even. Every additional room sold after that is pure profit (contribution margin = profit per room beyond break-even).</div>
+          <div class="faq-question" onclick="toggleFAQ(this)">What is contribution margin per room?</div>
+          <div class="faq-answer">Contribution margin = ADR − Variable Cost per Room. This is how much each room sold contributes toward your fixed costs. Once the total of all contributions equals your fixed costs, you've broken even. Every additional room sold after that is pure profit (contribution margin = profit per room beyond break-even).</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q" onclick="toggleFAQ(this)">What is the break-even room rate?</div>
-          <div class="faq-a">The break-even room rate is the minimum ADR you must charge at your current occupancy level to cover all costs. Formula: Break-even rate = (Fixed Costs ÷ Rooms Sold per Month) + Variable Cost per Room. If you're at 60% occupancy with 20 rooms, that's 360 rooms sold/month. If fixed costs are ₹2,70,000 and variable cost is ₹480/room: Break-even rate = (2,70,000 ÷ 360) + 480 = ₹750 + ₹480 = ₹1,230/night minimum.</div>
+          <div class="faq-question" onclick="toggleFAQ(this)">What is the break-even room rate?</div>
+          <div class="faq-answer">The break-even room rate is the minimum ADR you must charge at your current occupancy level to cover all costs. Formula: Break-even rate = (Fixed Costs ÷ Rooms Sold per Month) + Variable Cost per Room. If you're at 60% occupancy with 20 rooms, that's 360 rooms sold/month. If fixed costs are ₹2,70,000 and variable cost is ₹480/room: Break-even rate = (2,70,000 ÷ 360) + 480 = ₹750 + ₹480 = ₹1,230/night minimum.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q" onclick="toggleFAQ(this)">What are typical hotel fixed costs in India?</div>
-          <div class="faq-a">For a 20-room property in India: Rent/EMI ₹60,000–₹2,00,000; Staff salaries ₹80,000–₹2,50,000; Electricity & water ₹20,000–₹80,000; Internet & phone ₹3,000–₹10,000; Property tax/insurance ₹3,000–₹15,000; Maintenance/AMC ₹8,000–₹25,000; Marketing/PMS ₹5,000–₹20,000. Total typically ₹1,79,000–₹6,00,000/month depending on location and property type.</div>
+          <div class="faq-question" onclick="toggleFAQ(this)">What are typical hotel fixed costs in India?</div>
+          <div class="faq-answer">For a 20-room property in India: Rent/EMI ₹60,000–₹2,00,000; Staff salaries ₹80,000–₹2,50,000; Electricity & water ₹20,000–₹80,000; Internet & phone ₹3,000–₹10,000; Property tax/insurance ₹3,000–₹15,000; Maintenance/AMC ₹8,000–₹25,000; Marketing/PMS ₹5,000–₹20,000. Total typically ₹1,79,000–₹6,00,000/month depending on location and property type.</div>
         </div>
       </div>
 

@@ -38,75 +38,75 @@
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is a hotel compset analysis?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A compset (competitive set) analysis compares your hotel's rates, ratings, and positioning against nearby competitor properties. It helps you understand whether you're priced too high, too low, or just right relative to your market."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does the tool decide which hotels are my real competitors?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Every hotel near you gets a match score out of 100. Star class counts for 35 points, guest rating for 25, shared amenities for 25, and distance for 15. A hotel that scores 80 or above goes into your Primary compset. One scoring 70 to 79 goes into Extended. Anything below that is excluded. This stops a budget lodge or a luxury resort from distorting your rate benchmark just because they are physically close to you."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "A hotel I know is my competitor shows as Excluded. Why?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "There are three common reasons. First, star class mismatch. If the hotel is rated two or more stars apart from your property, it is not a like-for-like competitor. Second, the price guard. If a hotel's rate is less than half or more than double your rate, including it would skew your benchmark. Third, distance, meaning it falls outside the radius for your location type. You can click the Re-include button on any excluded hotel to add it back if you disagree, and your numbers update straight away."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why doesn't the tool match competitors by price?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Using price as a matching criterion would be circular. If the tool only selected hotels priced close to yours, the benchmark would always show you near the median no matter how well or badly positioned you actually are. Instead, price is used only as a sanity guard. Hotels priced below half your rate or above double your rate are filtered out because they serve a different guest. Your real match is based on star class, guest rating, and amenities, which are the things a guest weighs when comparing two hotels side by side on MakeMyTrip or Booking.com."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What happens if fewer than 6 primary competitors are found?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The tool tries to build a Primary compset of at least 6 properties. If it cannot find 6 at an 80 percent match, it relaxes the threshold in steps, first to 75 percent and then to 70 percent, and tells you it has done so. If the set is still smaller than 6, the insights panel switches to a limited sample state and stops giving pricing advice, because a handful of hotels cannot support a reliable read. You always see the threshold and radius that were used so you can judge the result yourself."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why does the tool show median and typical range instead of an average rate?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A simple average is pulled up or down by outliers. If one luxury property in your compset charges three times the others, the average shoots up and makes you look underpriced when you are not. The median is the middle value of your matched compset, so half the competitors charge more and half charge less. The typical range shows the band between the 25th and 75th percentile, which is where most of your real competition sits. Your percentile rank tells you exactly where your rate falls. Together these give a far more honest picture than an average."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How many API credits does a competitor analysis use?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Each analysis uses 2 search credits, one to fetch your property details and one to find nearby competitors. The free plan allows 3 searches per hour. Moving the match threshold slider or re-including an excluded hotel costs nothing, because those work on data already fetched."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What radius should I use for competitor analysis?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You do not need to choose. The tool reads how densely hotels are clustered around your property and sets the radius for you, roughly 4 km in a dense city area and up to 25 km for a hill station or remote resort where guests compare options across a wider area. You can still pick a radius manually if you want to override it."
-        }
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a hotel compset analysis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A compset (competitive set) analysis compares your hotel's rates, ratings, and positioning against nearby competitor properties. It helps you understand whether you're priced too high, too low, or just right relative to your market. This is a core practice in hotel revenue management."
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the tool decide which hotels are my real competitors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every hotel near you gets a match score out of 100. Star class counts for 35 points, guest rating for 25, shared amenities for 25, and distance for 15. A hotel that scores 80 or above goes into your Primary compset. One scoring 70 to 79 goes into Extended. Anything below that is excluded. This stops a budget lodge or a luxury resort from distorting your rate benchmark just because they are physically close to you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A hotel I know is my competitor shows as Excluded. Why?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There are three common reasons. First, star class mismatch. If the hotel is rated two or more stars apart from your property, it is not a like-for-like competitor. Second, the price guard. If a hotel's rate is less than half or more than double your rate, including it would skew your benchmark. Third, distance, meaning it falls outside the radius for your location type. You can click the Re-include button on any excluded hotel to add it back if you disagree, and your numbers update straight away."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why doesn't the tool match competitors by price?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Using price as a matching criterion would be circular. If the tool only selected hotels priced close to yours, the benchmark would always show you near the median no matter how well or badly positioned you actually are. Instead, price is used only as a sanity guard. Hotels priced below half your rate or above double your rate are filtered out because they serve a different guest. Your real match is based on star class, guest rating, and amenities, which are the things a guest weighs when comparing two hotels side by side on OTAs like MakeMyTrip or Booking.com."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if fewer than 6 primary competitors are found?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The tool tries to build a Primary compset of at least 6 properties. If it cannot find 6 at an 80 percent match, it relaxes the threshold in steps, first to 75 percent and then to 70 percent, and tells you it has done so. If the set is still smaller than 6, the insights panel switches to a limited sample state and stops giving pricing advice, because a handful of hotels cannot support a reliable read. You always see the threshold and radius that were used so you can judge the result yourself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the tool show median and typical range instead of an average rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A simple average is pulled up or down by outliers. If one luxury property in your compset charges three times the others, the average shoots up and makes you look underpriced when you are not. The median is the middle value of your matched compset, so half the competitors charge more and half charge less. The typical range shows the band between the 25th and 75th percentile, which is where most of your real competition sits. Your percentile rank tells you exactly where your rate falls. Together these give a far more honest picture than an average, which matters when you are setting ADR."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many API credits does a competitor analysis use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The tool makes two separate searches: one to get your property's detailed rates from all OTAs, and a second to find nearby competing hotels with their rates. Moving the match threshold slider or re-including an excluded hotel costs nothing, because those work on data already fetched."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What radius should I use for competitor analysis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You do not need to choose. The tool reads how densely hotels are clustered around your property and sets the radius for you, roughly 4 km in a dense city area and up to 25 km for a hill station or remote resort where guests compare options across a wider area. You can still pick a radius manually if you want to override it."
+      }
+    }
+  ]
+}
   </script>
   <script type="application/ld+json">
   {
@@ -606,6 +606,7 @@
 
       <!-- Resource Links -->
       <div class="resource-links">
+        <h3>Related Tools &amp; Guides</h3>
         <a href="/tools/rate-shopper/" class="resource-link">
           <span class="icon">🔍</span>
           <span class="link-text">Hotel Rate Shopper</span>
