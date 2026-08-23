@@ -112,7 +112,8 @@
             <div class="oh-wa-label">I'm interested in</div>
             <select id="oh-wa-service">
               <option value="">Select a service…</option>
-              <option value="OTA Listing + Google Business Profile">OTA Listing + Google Business Profile</option>
+              <option value="Free OTA Listing Audit">Free OTA Listing Audit</option>
+          <option value="OTA Listing + Google Business Profile">OTA Listing + Google Business Profile</option>
               <option value="Hotel Website">Hotel Website</option>
               <option value="OTA Management (ongoing)">OTA Management (ongoing)</option>
               <option value="multiple services — please advise">Not sure — need advice</option>

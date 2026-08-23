@@ -432,6 +432,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.onlinehotelier.com/services/ota-audit/</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.onlinehotelier.com/services/independent-hotel-ota-listing/</loc>
     <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>

@@ -120,6 +120,8 @@ function buildToolSidebar(currentPath) {
   // Services section
   html += '<div class="sidebar-section-header" style="margin-top: 1.5rem;">Our Services</div>';
   html += '<ul class="sidebar-tool-list">';
+  var sAudit = currentPath.indexOf('/services/ota-audit') !== -1 ? ' class="active"' : '';
+  html += '<li><a href="/services/ota-audit/"' + sAudit + '><span class="tool-nav-icon">\uD83D\uDD0E</span> Free OTA Audit</a></li>';
   var s1Active = currentPath.indexOf('/services/independent-hotel-ota-listing') !== -1 ? ' class="active"' : '';
   html += '<li><a href="/services/independent-hotel-ota-listing/"' + s1Active + '><span class="tool-nav-icon">\uD83C\uDFE8</span> Hotel OTA Listing</a></li>';
   var s2Active = currentPath.indexOf('/services/vacation-rental-ota-listing') !== -1 ? ' class="active"' : '';

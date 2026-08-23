@@ -19,6 +19,7 @@
   ];
 
   var SERVICES = [
+    { icon: '🔎', title: 'Free OTA Audit',            href: BASE + '/services/ota-audit/' },
     { icon: '🏨', title: 'Hotel OTA Listing',         href: BASE + '/services/independent-hotel-ota-listing/' },
     { icon: '🏡', title: 'Vacation Rental Listing',   href: BASE + '/services/vacation-rental-ota-listing/' },
     { icon: '🌐', title: 'Hotel Website',            href: BASE + '/services/hotel-website/' },
