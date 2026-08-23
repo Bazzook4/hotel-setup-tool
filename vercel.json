@@ -103,6 +103,21 @@
       "statusCode": 301
     },
     {
+      "source": "/services/google-my-business",
+      "destination": "/services/independent-hotel-ota-listing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/google-my-business/",
+      "destination": "/services/independent-hotel-ota-listing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/google-my-business/:path*",
+      "destination": "/services/independent-hotel-ota-listing/",
+      "statusCode": 301
+    },
+    {
       "source": "/hotel-website-development",
       "destination": "/services/hotel-website/",
       "statusCode": 301

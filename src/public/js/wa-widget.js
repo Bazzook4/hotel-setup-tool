@@ -112,10 +112,8 @@
             <div class="oh-wa-label">I'm interested in</div>
             <select id="oh-wa-service">
               <option value="">Select a service…</option>
-              <option value="OTA Listing (Airbnb, Booking.com, MakeMyTrip)">OTA Listing — Airbnb / Booking.com / MMT</option>
-              <option value="Direct Booking Website">Direct Booking Website</option>
-              <option value="Google My Business Setup">Google My Business Setup</option>
-              <option value="Channel Manager Setup">Channel Manager Setup</option>
+              <option value="OTA Listing + Google Business Profile">OTA Listing + Google Business Profile</option>
+              <option value="Hotel Website">Hotel Website</option>
               <option value="OTA Management (ongoing)">OTA Management (ongoing)</option>
               <option value="multiple services — please advise">Not sure — need advice</option>
             </select>
