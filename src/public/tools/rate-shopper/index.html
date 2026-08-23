@@ -298,15 +298,6 @@
     .disparity-stat .value.high { color: var(--danger); }
 
     /* FAQ */
-    .faq-section { margin: 2rem 0; background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 8px rgba(62,61,53,0.06); }
-    .faq-section h3 { font-size: 1.15rem; margin-bottom: 1.25rem; }
-    .faq-item { border-bottom: 1px solid #eee; }
-    .faq-item:last-child { border-bottom: none; }
-    .faq-question { padding: 1rem 0; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; }
-    .faq-question::after { content: '+'; font-size: 1.25rem; color: #888; transition: transform 0.2s; }
-    .faq-item.open .faq-question::after { content: '−'; }
-    .faq-answer { display: none; padding: 0 0 1rem; font-size: 0.9rem; color: #555; line-height: 1.7; }
-    .faq-item.open .faq-answer { display: block; }
 
     /* Resource Links */
     .resource-links { margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
@@ -330,7 +321,6 @@
       .property-detail { margin: 0 0 1.5rem; }
       .hotel-grid { grid-template-columns: 1fr; }
       .results-summary { flex-direction: column; }
-      .faq-section { margin: 1.5rem 0; }
       .resource-links { margin: 1.5rem 0; grid-template-columns: 1fr; }
     }
   </style>
@@ -462,6 +452,46 @@
       <div class="property-detail" id="propertyDetail"></div>
 
       <!-- FAQ -->
+          <div class="explore-tools">
+      <h3>Related Tools &amp; Guides</h3>
+      <div class="tools-grid-mini">
+        <a href="/tools/competitor-analysis/" class="tool-link">
+          <span class="icon">🎯</span>
+          <div class="text">
+            <h4>Competitor Rate Tool</h4>
+            <p>See where your rate sits</p>
+          </div>
+        </a>
+        <a href="/tools/ota-commission-calculator/" class="tool-link">
+          <span class="icon">💰</span>
+          <div class="text">
+            <h4>OTA Commission Calculator</h4>
+            <p>What you actually settle per booking</p>
+          </div>
+        </a>
+        <a href="/tools/hotel-discount-calculator/" class="tool-link">
+          <span class="icon">🏷️</span>
+          <div class="text">
+            <h4>Discount Calculator</h4>
+            <p>What a discount really costs</p>
+          </div>
+        </a>
+        <a href="/guides/revenue/rate-linkage.html" class="tool-link">
+          <span class="icon">📖</span>
+          <div class="text">
+            <h4>Rate Linkage Guide</h4>
+            <p>Deriving rates from a base</p>
+          </div>
+        </a>
+        <a href="/guides/revenue/adr.html" class="tool-link">
+          <span class="icon">📊</span>
+          <div class="text">
+            <h4>ADR Guide</h4>
+            <p>What average daily rate means</p>
+          </div>
+        </a>
+      </div>
+    </div>
       <div class="faq-section">
         <h3>Frequently Asked Questions</h3>
         <div class="faq-item">
@@ -483,41 +513,6 @@
       </div>
 
       <!-- Resource Links -->
-          <div class="explore-tools">
-      <h3>Related Tools &amp; Guides</h3>
-      <div class="tools-grid-mini">
-        <a href="/tools/competitor-analysis/" class="tool-link">
-          <span class="icon">🎯</span>
-          <div class="text">
-            <h4>Competitor Rate Tool</h4>
-          </div>
-        </a>
-        <a href="/tools/ota-commission-calculator/" class="tool-link">
-          <span class="icon">💰</span>
-          <div class="text">
-            <h4>OTA Commission Calculator</h4>
-          </div>
-        </a>
-        <a href="/tools/hotel-discount-calculator/" class="tool-link">
-          <span class="icon">🏷️</span>
-          <div class="text">
-            <h4>Discount Calculator</h4>
-          </div>
-        </a>
-        <a href="/guides/revenue/rate-linkage.html" class="tool-link">
-          <span class="icon">🔗</span>
-          <div class="text">
-            <h4>Rate Linkage Guide</h4>
-          </div>
-        </a>
-        <a href="/guides/revenue/adr.html" class="tool-link">
-          <span class="icon">📊</span>
-          <div class="text">
-            <h4>ADR Guide</h4>
-          </div>
-        </a>
-      </div>
-    </div>
 
       </div><!-- /container -->
 

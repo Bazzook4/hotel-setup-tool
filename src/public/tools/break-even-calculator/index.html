@@ -626,44 +626,12 @@
     }
 
     /* FAQ */
-    .faq-section {
-      margin: 0 0 2rem;
-    }
     .faq-section h2 {
       font-size: 1.2rem;
       font-weight: 700;
       color: var(--primary);
       margin-bottom: 1rem;
     }
-    .faq-item {
-      background: white;
-      border: 1px solid #eee;
-      border-radius: 10px;
-      margin-bottom: 0.75rem;
-      overflow: hidden;
-    }
-    .faq-question {
-      padding: 1rem 1.25rem;
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--primary);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      user-select: none;
-    }
-    .faq-question::after { content: "+"; font-size: 1.2rem; color: var(--secondary); }
-    .faq-item.open .faq-question::after { content: "−"; }
-    .faq-answer {
-      display: none;
-      padding: 0 1.25rem 1rem;
-      font-size: 0.875rem;
-      color: #555;
-      line-height: 1.65;
-      border-top: 1px solid #f0f0f0;
-    }
-    .faq-item.open .faq-answer { display: block; }
 
 
     /* Responsive */
@@ -685,7 +653,6 @@
 
       .ota-compare { grid-template-columns: 1fr; gap: 0.75rem; }
 
-      .faq-section { margin: 0 0 1.5rem; }
       .resource-links { margin: 0 0 1.5rem; }
     }
 
@@ -693,6 +660,9 @@
       .metrics-grid { grid-template-columns: 1fr; }
       .hero-card .hero-value { font-size: 1.75rem; }
     }
+    .explainer-section { background: white; border-radius: 12px; padding: 1.5rem; margin-top: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.07); }
+    .explainer-section h3 { color: var(--primary); margin-bottom: 1rem; font-size: 1.25rem; }
+
   </style>
 </head>
 <body data-tool-name="Break Even Calculator">
@@ -1031,11 +1001,11 @@
       </div>
 
       <!-- How It Works -->
-      <div class="faq-section" style="margin-bottom: 1.5rem;">
-        <h2>How the Break Even Occupancy Formula Works</h2>
+      <div class="explainer-section">
+        <h3>How the Break Even Occupancy Formula Works</h3>
         <div class="faq-item open">
-          <div class="faq-question" onclick="toggleFAQ(this)">Break-Even Occupancy Formula</div>
-          <div class="faq-answer" style="display:block;">
+          <div class="faq-question" onclick="toggleFAQ(this)" role="button" tabindex="0">Break-Even Occupancy Formula</div>
+          <div class="faq-answer">
             <p style="margin-bottom:0.75rem;">The break-even occupancy formula tells you the minimum percentage of rooms you must sell each night to cover all your costs.</p>
             <div style="background: var(--primary); color: white; border-radius: 8px; padding: 1rem 1.25rem; font-family: monospace; font-size: 0.9rem; margin: 0.75rem 0; line-height: 2;">
               Break-Even Occupancy (%) =<br>
@@ -1055,7 +1025,7 @@
           </div>
         </div>
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFAQ(this)">Minimum Room Rate Formula</div>
+          <div class="faq-question" onclick="toggleFAQ(this)" role="button" tabindex="0">Minimum Room Rate Formula</div>
           <div class="faq-answer">
             <p style="margin-bottom:0.75rem;">The break-even room rate tells you the lowest ADR you can charge at your current occupancy without losing money.</p>
             <div style="background: var(--primary); color: white; border-radius: 8px; padding: 1rem 1.25rem; font-family: monospace; font-size: 0.9rem; margin: 0.75rem 0; line-height: 2;">
@@ -1072,7 +1042,7 @@
           </div>
         </div>
         <div class="faq-item">
-          <div class="faq-question" onclick="toggleFAQ(this)">How OTA Commission Is Added to the Calculation</div>
+          <div class="faq-question" onclick="toggleFAQ(this)" role="button" tabindex="0">How OTA Commission Is Added to the Calculation</div>
           <div class="faq-answer">
             <p style="margin-bottom:0.75rem;">OTA commission is a variable cost. It only applies to bookings that come through an OTA. The calculator blends your direct and OTA bookings based on the OTA share % you enter.</p>
             <div style="background: var(--primary); color: white; border-radius: 8px; padding: 1rem 1.25rem; font-family: monospace; font-size: 0.9rem; margin: 0.75rem 0; line-height: 2;">
@@ -1088,36 +1058,6 @@
       </div>
 
       <!-- FAQ -->
-      <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFAQ(this)">What is the hotel break-even point?</div>
-          <div class="faq-answer">The hotel break-even point is the minimum level of occupancy and revenue at which your total income exactly equals total costs — no profit, no loss. Below this point, you're losing money. Above it, you're profitable. It accounts for both fixed costs (rent, salaries) and variable costs per room sold (housekeeping, laundry, OTA commission).</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFAQ(this)">How is break-even occupancy calculated?</div>
-          <div class="faq-answer">Break-even occupancy = Total Fixed Monthly Costs ÷ (ADR − Variable Cost per Room) ÷ Total Rooms × 100. For example: fixed costs ₹3,00,000 ÷ (₹3,500 ADR − ₹500 variable cost) ÷ 20 rooms × 100 = 50% break-even occupancy. Each room sold above break-even contributes directly to profit.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFAQ(this)">How does OTA commission affect break-even?</div>
-          <div class="faq-answer">OTA commission increases your variable cost per room sold. If 70% of your bookings come through OTAs at 18% commission, your blended variable cost per room is higher than for direct bookings. This raises your break-even occupancy — you need to sell more rooms to cover the same fixed costs. This calculator shows you the difference between 100% direct vs your current OTA mix.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFAQ(this)">What is contribution margin per room?</div>
-          <div class="faq-answer">Contribution margin = ADR − Variable Cost per Room. This is how much each room sold contributes toward your fixed costs. Once the total of all contributions equals your fixed costs, you've broken even. Every additional room sold after that is pure profit (contribution margin = profit per room beyond break-even).</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFAQ(this)">What is the break-even room rate?</div>
-          <div class="faq-answer">The break-even room rate is the minimum ADR you must charge at your current occupancy level to cover all costs. Formula: Break-even rate = (Fixed Costs ÷ Rooms Sold per Month) + Variable Cost per Room. If you're at 60% occupancy with 20 rooms, that's 360 rooms sold/month. If fixed costs are ₹2,70,000 and variable cost is ₹480/room: Break-even rate = (2,70,000 ÷ 360) + 480 = ₹750 + ₹480 = ₹1,230/night minimum.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFAQ(this)">What are typical hotel fixed costs in India?</div>
-          <div class="faq-answer">For a 20-room property in India: Rent/EMI ₹60,000–₹2,00,000; Staff salaries ₹80,000–₹2,50,000; Electricity & water ₹20,000–₹80,000; Internet & phone ₹3,000–₹10,000; Property tax/insurance ₹3,000–₹15,000; Maintenance/AMC ₹8,000–₹25,000; Marketing/PMS ₹5,000–₹20,000. Total typically ₹1,79,000–₹6,00,000/month depending on location and property type.</div>
-        </div>
-      </div>
-
-      <!-- Resource Links -->
           <div class="explore-tools">
       <h3>Related Tools &amp; Guides</h3>
       <div class="tools-grid-mini">
@@ -1125,52 +1065,90 @@
           <span class="icon">💰</span>
           <div class="text">
             <h4>OTA Commission Calculator</h4>
+            <p>What you actually settle per booking</p>
           </div>
         </a>
         <a href="/tools/ota-dependency-calculator/" class="tool-link">
           <span class="icon">📈</span>
           <div class="text">
             <h4>OTA Dependency Calculator</h4>
+            <p>Check your channel mix</p>
           </div>
         </a>
         <a href="/tools/revenue-management-tool/" class="tool-link">
           <span class="icon">📊</span>
           <div class="text">
             <h4>Revenue Management Setup</h4>
+            <p>Build your pricing playbook</p>
           </div>
         </a>
         <a href="/guides/revenue/adr.html" class="tool-link">
           <span class="icon">📖</span>
           <div class="text">
             <h4>What is ADR?</h4>
+            <p>What average daily rate means</p>
           </div>
         </a>
         <a href="/guides/revenue/occupancy.html" class="tool-link">
           <span class="icon">📖</span>
           <div class="text">
             <h4>Occupancy Rate Guide</h4>
+            <p>How occupancy is calculated</p>
           </div>
         </a>
         <a href="/guides/revenue/revpar.html" class="tool-link">
           <span class="icon">📖</span>
           <div class="text">
             <h4>RevPAR Guide</h4>
+            <p>Revenue per available room</p>
           </div>
         </a>
         <a href="/guides/ota/what-is-ota.html" class="tool-link">
           <span class="icon">📖</span>
           <div class="text">
             <h4>OTA Commission Guide</h4>
+            <p>How OTAs work for hotels</p>
           </div>
         </a>
         <a href="/guides/compliance/tds-tcs.html" class="tool-link">
           <span class="icon">📖</span>
           <div class="text">
             <h4>TDS &amp; TCS on OTA</h4>
+            <p>Tax deducted on OTA payouts</p>
           </div>
         </a>
       </div>
     </div>
+      <div class="faq-section">
+        <h3>Frequently Asked Questions</h3>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)" role="button" tabindex="0">What is the hotel break-even point?</div>
+          <div class="faq-answer">The hotel break-even point is the minimum level of occupancy and revenue at which your total income exactly equals total costs — no profit, no loss. Below this point, you're losing money. Above it, you're profitable. It accounts for both fixed costs (rent, salaries) and variable costs per room sold (housekeeping, laundry, OTA commission).</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)" role="button" tabindex="0">How is break-even occupancy calculated?</div>
+          <div class="faq-answer">Break-even occupancy = Total Fixed Monthly Costs ÷ (ADR − Variable Cost per Room) ÷ Total Rooms × 100. For example: fixed costs ₹3,00,000 ÷ (₹3,500 ADR − ₹500 variable cost) ÷ 20 rooms × 100 = 50% break-even occupancy. Each room sold above break-even contributes directly to profit.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)" role="button" tabindex="0">How does OTA commission affect break-even?</div>
+          <div class="faq-answer">OTA commission increases your variable cost per room sold. If 70% of your bookings come through OTAs at 18% commission, your blended variable cost per room is higher than for direct bookings. This raises your break-even occupancy — you need to sell more rooms to cover the same fixed costs. This calculator shows you the difference between 100% direct vs your current OTA mix.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)" role="button" tabindex="0">What is contribution margin per room?</div>
+          <div class="faq-answer">Contribution margin = ADR − Variable Cost per Room. This is how much each room sold contributes toward your fixed costs. Once the total of all contributions equals your fixed costs, you've broken even. Every additional room sold after that is pure profit (contribution margin = profit per room beyond break-even).</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)" role="button" tabindex="0">What is the break-even room rate?</div>
+          <div class="faq-answer">The break-even room rate is the minimum ADR you must charge at your current occupancy level to cover all costs. Formula: Break-even rate = (Fixed Costs ÷ Rooms Sold per Month) + Variable Cost per Room. If you're at 60% occupancy with 20 rooms, that's 360 rooms sold/month. If fixed costs are ₹2,70,000 and variable cost is ₹480/room: Break-even rate = (2,70,000 ÷ 360) + 480 = ₹750 + ₹480 = ₹1,230/night minimum.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)" role="button" tabindex="0">What are typical hotel fixed costs in India?</div>
+          <div class="faq-answer">For a 20-room property in India: Rent/EMI ₹60,000–₹2,00,000; Staff salaries ₹80,000–₹2,50,000; Electricity & water ₹20,000–₹80,000; Internet & phone ₹3,000–₹10,000; Property tax/insurance ₹3,000–₹15,000; Maintenance/AMC ₹8,000–₹25,000; Marketing/PMS ₹5,000–₹20,000. Total typically ₹1,79,000–₹6,00,000/month depending on location and property type.</div>
+        </div>
+      </div>
+
+      <!-- Resource Links -->
 
       </div><!-- /container -->
 

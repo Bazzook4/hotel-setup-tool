@@ -403,15 +403,6 @@
     .override-notice { background: var(--secondary-light); border-left: 3px solid var(--secondary); border-radius: 4px; padding: 0.5rem 0.75rem; font-size: 0.78rem; color: #666; margin-bottom: 1rem; line-height: 1.5; }
 
     /* FAQ */
-    .faq-section { margin: 2rem 0; background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 8px rgba(62,61,53,0.06); }
-    .faq-section h3 { font-size: 1.15rem; margin-bottom: 1.25rem; }
-    .faq-item { border-bottom: 1px solid #eee; }
-    .faq-item:last-child { border-bottom: none; }
-    .faq-question { padding: 1rem 0; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; }
-    .faq-question::after { content: '+'; font-size: 1.25rem; color: #888; transition: transform 0.2s; }
-    .faq-item.open .faq-question::after { content: '\2212'; }
-    .faq-answer { display: none; padding: 0 0 1rem; font-size: 0.9rem; color: #555; line-height: 1.7; }
-    .faq-item.open .faq-answer { display: block; }
 
     /* Resource Links */
     .resource-links { margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
@@ -436,7 +427,6 @@
       .comp-img { width: 100%; height: 150px; }
       .comp-pricing { text-align: left; }
       .position-stats { grid-template-columns: repeat(2, 1fr); }
-      .faq-section { margin: 1.5rem 0; }
       .resource-links { margin: 1.5rem 0; grid-template-columns: 1fr; }
       .match-score-badge { width: 100%; justify-content: space-between; }
       .match-breakdown { min-width: 0; width: 100%; }
@@ -569,6 +559,46 @@
       </div>
 
       <!-- FAQ -->
+          <div class="explore-tools">
+      <h3>Related Tools &amp; Guides</h3>
+      <div class="tools-grid-mini">
+        <a href="/tools/rate-shopper/" class="tool-link">
+          <span class="icon">🔍</span>
+          <div class="text">
+            <h4>Hotel Rate Shopper</h4>
+            <p>Compare live rates on Google</p>
+          </div>
+        </a>
+        <a href="/guides/revenue/adr.html" class="tool-link">
+          <span class="icon">📊</span>
+          <div class="text">
+            <h4>Understanding ADR</h4>
+            <p>What average daily rate means</p>
+          </div>
+        </a>
+        <a href="/guides/revenue/revpar.html" class="tool-link">
+          <span class="icon">💰</span>
+          <div class="text">
+            <h4>RevPAR Guide</h4>
+            <p>Revenue per available room</p>
+          </div>
+        </a>
+        <a href="/guides/ota/what-is-ota.html" class="tool-link">
+          <span class="icon">🌐</span>
+          <div class="text">
+            <h4>What is an OTA?</h4>
+            <p>How OTAs work for hotels</p>
+          </div>
+        </a>
+        <a href="/guides/software/what-is-rms-hotel.html" class="tool-link">
+          <span class="icon">⚙️</span>
+          <div class="text">
+            <h4>What is a Revenue Management System?</h4>
+            <p>When automation is worth it</p>
+          </div>
+        </a>
+      </div>
+    </div>
       <div class="faq-section">
         <h3>Frequently Asked Questions</h3>
         <div class="faq-item">
@@ -606,41 +636,6 @@
       </div>
 
       <!-- Resource Links -->
-          <div class="explore-tools">
-      <h3>Related Tools &amp; Guides</h3>
-      <div class="tools-grid-mini">
-        <a href="/tools/rate-shopper/" class="tool-link">
-          <span class="icon">🔍</span>
-          <div class="text">
-            <h4>Hotel Rate Shopper</h4>
-          </div>
-        </a>
-        <a href="/guides/revenue/adr.html" class="tool-link">
-          <span class="icon">📊</span>
-          <div class="text">
-            <h4>Understanding ADR</h4>
-          </div>
-        </a>
-        <a href="/guides/revenue/revpar.html" class="tool-link">
-          <span class="icon">💰</span>
-          <div class="text">
-            <h4>RevPAR Guide</h4>
-          </div>
-        </a>
-        <a href="/guides/ota/what-is-ota.html" class="tool-link">
-          <span class="icon">🌐</span>
-          <div class="text">
-            <h4>What is an OTA?</h4>
-          </div>
-        </a>
-        <a href="/guides/software/what-is-rms-hotel.html" class="tool-link">
-          <span class="icon">⚙️</span>
-          <div class="text">
-            <h4>What is a Revenue Management System?</h4>
-          </div>
-        </a>
-      </div>
-    </div>
 
       </div><!-- /container -->
 

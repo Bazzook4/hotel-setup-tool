@@ -182,57 +182,13 @@
     }
 
     /* Explore More Tools */
-    .explore-tools {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-top: 2rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
-    }
 
-    .explore-tools h3 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-    }
 
-    .tools-grid-mini {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
 
-    .tool-link {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 1rem;
-      background: #f8f9fa;
-      border-radius: 8px;
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.2s;
-    }
 
-    .tool-link:hover {
-      background: var(--secondary-light);
-      transform: translateX(4px);
-    }
 
-    .tool-link .icon {
-      font-size: 1.5rem;
-    }
 
-    .tool-link .text h4 {
-      color: var(--primary);
-      font-size: 0.95rem;
-      margin-bottom: 0.25rem;
-    }
 
-    .tool-link .text p {
-      color: #666;
-      font-size: 0.8rem;
-    }
 
     /* Section Card */
     .section-card {
@@ -636,59 +592,14 @@
     }
 
     /* FAQ Section */
-    .faq-section {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-top: 2rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
-    }
 
-    .faq-section h3 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-      font-size: 1.25rem;
-    }
 
-    .faq-item {
-      border-bottom: 1px solid #eee;
-      padding: 1rem 0;
-    }
 
-    .faq-item:last-child {
-      border-bottom: none;
-    }
 
-    .faq-question {
-      font-weight: 600;
-      color: var(--primary);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
 
-    .faq-question::after {
-      content: '+';
-      font-size: 1.5rem;
-      color: var(--secondary);
-      font-weight: 400;
-    }
 
-    .faq-item.open .faq-question::after {
-      content: '−';
-    }
 
-    .faq-answer {
-      display: none;
-      padding-top: 0.75rem;
-      color: #555;
-      line-height: 1.7;
-    }
 
-    .faq-item.open .faq-answer {
-      display: block;
-    }
 
     /* Resources Section */
     .dash-resources {
@@ -1004,27 +915,28 @@
       </div>
 
       <!-- Explore More Tools -->
+
+    </div>
+
       <div class="explore-tools">
         <h3>Related Tools &amp; Guides</h3>
         <div class="tools-grid-mini">
           <a href="/tools/ota-commission-calculator/" class="tool-link">
-            <span class="icon">💰</span>
-            <div class="text">
-              <h4>OTA Commission Calculator</h4>
-              <p>Calculate exact OTA settlement</p>
-            </div>
-          </a>
+          <span class="icon">💰</span>
+          <div class="text">
+            <h4>OTA Commission Calculator</h4>
+            <p>Calculate exact OTA settlement</p>
+          </div>
+        </a>
           <a href="/tools/hotel-discount-calculator/" class="tool-link">
-            <span class="icon">🏷️</span>
-            <div class="text">
-              <h4>Discount Calculator</h4>
-              <p>Impact of hotel-funded discounts</p>
-            </div>
-          </a>
+          <span class="icon">🏷️</span>
+          <div class="text">
+            <h4>Discount Calculator</h4>
+            <p>Impact of hotel-funded discounts</p>
+          </div>
+        </a>
         </div>
       </div>
-
-    </div>
 
     <!-- FAQ Section (always visible) -->
     <div class="faq-section">
