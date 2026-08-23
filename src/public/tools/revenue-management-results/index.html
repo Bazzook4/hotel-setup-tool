@@ -652,6 +652,47 @@
 
   </style>
   <link rel="stylesheet" href="/tools/css/tool-layout.css">
+  <link rel="stylesheet" href="/tools/css/tool-blocks.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What do I do with this playbook?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Treat it as your starting position for the next quarter, not a fixed rule. Set your base rate from it, apply the seasonal adjustments on your calendar, and review it once you have a month of actual pickup data to compare against."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My numbers changed. Do I redo the whole thing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Go back to the Revenue Management Setup tool and change only the inputs that moved, usually occupancy or ADR. The playbook regenerates in seconds and you can compare it against the version you are running now."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I apply these rates on every OTA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, keep them consistent. Different rates on different platforms is a rate parity problem and most OTA contracts prohibit it. Where you can differ is on your own website, where a small direct discount is usually allowed and costs you no commission."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should I revisit this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Monthly for a property with steady demand, and before each season for a resort or hill station. Anything more frequent tends to be reacting to noise rather than a real shift in demand."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body data-tool-name="Revenue Management Setup">
   <nav id="site-nav"></nav>
@@ -998,6 +1039,31 @@
     </div>
 
   </div>
+    <div class="faq-section">
+      <h3>Frequently Asked Questions</h3>
+
+      <div class="faq-item">
+        <div class="faq-question">What do I do with this playbook?</div>
+        <div class="faq-answer">Treat it as your starting position for the next quarter, not a fixed rule. Set your base rate from it, apply the seasonal adjustments on your calendar, and review it once you have a month of actual pickup data to compare against.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">My numbers changed. Do I redo the whole thing?</div>
+        <div class="faq-answer">No. Go back to the Revenue Management Setup tool and change only the inputs that moved, usually occupancy or ADR. The playbook regenerates in seconds and you can compare it against the version you are running now.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Should I apply these rates on every OTA?</div>
+        <div class="faq-answer">Yes, keep them consistent. Different rates on different platforms is a rate parity problem and most OTA contracts prohibit it. Where you can differ is on your own website, where a small direct discount is usually allowed and costs you no commission.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How often should I revisit this?</div>
+        <div class="faq-answer">Monthly for a property with steady demand, and before each season for a resort or hill station. Anything more frequent tends to be reacting to noise rather than a real shift in demand.</div>
+      </div>
+
+    </div>
+
   <div data-audit-cta-here></div>
 
   <footer style="background: #3E3D35; color: white; padding: 2rem; margin-top: 3rem;">
@@ -1577,6 +1643,7 @@
   <script src="/tools/js/tool-nav.js"></script>
   <script src="/js/wa-widget.js"></script>
   <script src="/js/tools-widget.js"></script>
+  <script src="/tools/js/tool-blocks.js"></script>
 <script src="/tools/js/audit-cta.js"></script>
 </body>
 </html>
