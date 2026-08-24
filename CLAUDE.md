@@ -26,10 +26,18 @@ Run these agents in order. Do not skip steps.
 ## Project Details
 
 - **Domain**: www.onlinehotelier.com (migrated from insights.onlinehotelier.com; that subdomain now 301-redirects here)
-- **Analytics**: G-Q2BPYRGZTM
+- **Analytics**: GA4 `G-9L2N1S6S9F` is the only property. See `memory/analytics-setup.md` before touching tracking; two older properties were retired on 9 Aug 2026.
 - **AdSense**: ca-pub-6118286051054894
 - **Branch**: main
 - **Stack**: Static HTML/CSS/JS, no build step
+
+> **Values drift, rules do not.** Anything here that is a *value* (an ID, a
+> domain, a tax rate) can go stale between sessions. Two false "critical"
+> audit findings have already come from trusting a stale value in this file.
+> Before reporting a mismatch as a defect, check the repo and `memory/` first:
+> `memory/analytics-setup.md` for tracking, `memory/migration-plan.md` for the
+> domain, and the guide body copy for GST rates. The repo is the source of
+> truth; this file is a summary of it.
 
 ## Brand Design System
 
@@ -68,6 +76,6 @@ Font:          'Avenir', 'DM Sans', system fonts
 - Audience: Indian hotel owners and managers
 - Currency: ₹ (INR) — never $ or USD
 - Indian OTAs: MakeMyTrip (MMT), Goibibo, Booking.com, Agoda, Airbnb, Yatra, OYO
-- SEO title: 60–70 chars, ends with "| OnlineHotelier Insights"
+- SEO title: 60–70 chars, ends with "| OnlineHotelier" (the longer "| OnlineHotelier Insights" suffix was retired: at 26 chars it pushed most titles past 70 and rarely survived mobile SERP truncation)
 - Meta description: 150–160 chars, actionable, includes primary keyword
 - Length: 1200–2000 words per guide

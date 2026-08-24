@@ -449,3 +449,14 @@
 .faq-list p {
   margin-bottom: 1rem;
 }
+
+/* ----- Table overflow -----
+   Wide comparison tables would otherwise push the whole page sideways on a
+   phone. Letting the table scroll inside its own box keeps the body fixed.
+   `display: block` is what makes overflow apply to a table element. */
+.article-content table {
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
