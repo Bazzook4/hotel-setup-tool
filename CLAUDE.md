@@ -25,7 +25,7 @@ Run these agents in order. Do not skip steps.
 
 ## Project Details
 
-- **Domain**: insights.onlinehotelier.com
+- **Domain**: www.onlinehotelier.com (migrated from insights.onlinehotelier.com; that subdomain now 301-redirects here)
 - **Analytics**: G-Q2BPYRGZTM
 - **AdSense**: ca-pub-6118286051054894
 - **Branch**: main

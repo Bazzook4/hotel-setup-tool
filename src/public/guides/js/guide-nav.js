@@ -121,10 +121,12 @@ const RELATED_CONTENT = {
     { href: '/guides/reports/profit-loss-report.html', title: 'P&L Report', category: 'Reports', desc: 'Revenue to profit analysis' },
   ],
   '/guides/revenue/adr.html': [
+    { href: '/guides/revenue/increase-hotel-revenue.html', title: 'Increase Hotel Revenue', category: 'Revenue', desc: 'Turn ADR gains into more revenue' },
     { href: '/guides/reports/manager-report.html', title: 'Manager Report', category: 'Reports', desc: 'Daily ADR tracking' },
     { href: '/guides/software/what-is-rms-hotel.html', title: 'Revenue Management System', category: 'Software', desc: 'Dynamic pricing' },
   ],
   '/guides/revenue/occupancy.html': [
+    { href: '/guides/revenue/increase-hotel-revenue.html', title: 'Increase Hotel Revenue', category: 'Revenue', desc: 'Fill rooms and lift total revenue' },
     { href: '/guides/reports/manager-report.html', title: 'Manager Report', category: 'Reports', desc: 'Daily occupancy tracking' },
     { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Manage availability across OTAs' },
   ],
@@ -231,6 +233,7 @@ const RELATED_CONTENT = {
   ],
   // OTA
   '/guides/ota/what-is-ota.html': [
+    { href: '/guides/ota/ota-hotel-meaning.html', title: 'OTA Meaning in Hotels', category: 'OTA', desc: 'The short definition, in plain terms' },
     { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Sync rates across all OTAs' },
     { href: '/guides/compliance/tds-tcs.html', title: 'TDS & TCS', category: 'Compliance', desc: 'Tax deductions on OTA payments' },
     { href: '/guides/revenue/revpar.html', title: 'RevPAR', category: 'Revenue', desc: 'Measure revenue performance' },
@@ -275,11 +278,13 @@ const RELATED_CONTENT = {
     { href: '/guides/software/hotel-accounting-software.html', title: 'Accounting Software', category: 'Software', desc: 'TDS/TCS accounting' },
   ],
   '/guides/compliance/grc-form-c.html': [
+    { href: '/guides/compliance/form-c-hotel.html', title: 'Form C for Hotels', category: 'Compliance', desc: 'Filing, deadlines and penalties' },
     { href: '/guides/reports/arrival-report.html', title: 'Arrival Report', category: 'Reports', desc: 'Plan guest registration' },
     { href: '/guides/software/what-is-pms-hotel.html', title: 'PMS', category: 'Software', desc: 'Guest profile management' },
   ],
   // Operations
   '/guides/operations/hotel-check-in-process.html': [
+    { href: '/guides/operations/hotel-staff-training.html', title: 'Hotel Staff Training', category: 'Operations', desc: 'Train the team running check-in' },
     { href: '/guides/compliance/grc-form-c.html', title: 'GRC & Form C', category: 'Compliance', desc: 'Legal registration requirements at check-in' },
     { href: '/guides/revenue/no-show.html', title: 'No-Show & Cancellation', category: 'Revenue', desc: 'What happens when guests do not arrive' },
     { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Verify OTA payment models before check-in' },
@@ -494,6 +499,9 @@ function injectPrevNext(currentPath) {
   var container = document.querySelector('.prev-next-nav');
   if (!container) return;
 
+  // Pre-rendered as static HTML for crawlers; skip if already populated.
+  if (container.querySelector('.prev-next-link, .prev-next-placeholder')) return;
+
   var prevGuide = null;
   var nextGuide = null;
 
@@ -568,6 +576,10 @@ function relatedFromSameCategory(currentPath) {
 function injectRelatedCards(currentPath) {
   var container = document.querySelector('.related-cards-section');
   if (!container) return;
+
+  // Related cards are pre-rendered as static HTML so crawlers can see them.
+  // If they are already present, leave them alone.
+  if (container.querySelector('.related-card')) return;
 
   var items = RELATED_CONTENT[currentPath];
 
