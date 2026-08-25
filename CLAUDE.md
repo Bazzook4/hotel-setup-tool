@@ -2,7 +2,7 @@
 
 ## Team Structure
 
-Every task goes through a four-person agent team. Do not skip any agent.
+Delivery work goes through the CEO and the four specialists. Do not skip any agent.
 
 | Agent | Role | Goal |
 |-------|------|------|
@@ -10,6 +10,14 @@ Every task goes through a four-person agent team. Do not skip any agent.
 | **SEO Expert** | Keywords, titles, schema, internal links | Maximum search impressions |
 | **Designer** | Layout, brand, formatting, UX | Maximum clicks from impressions |
 | **Content Head** | Writing, Indian hospitality expertise | Accurate, practical, India-specific content |
+| **Content Strategist** | Keyword gaps, content calendar, briefs | Deciding what to build next |
+
+Two roles sit **outside** the delivery chain and report to the owner. Neither approves work.
+
+| Agent | Role | Goal |
+|-------|------|------|
+| **Consultant** | Independent audit, verifies other agents, external research | An honest outside read, with corrective actions |
+| **Coordinator** | Detects drift across CLAUDE.md, memory and agent definitions | Keeps every agent's knowledge current. Drafts edits, owner approves |
 
 ## Workflow for Every New Guide or Page
 
