@@ -26,9 +26,12 @@ Run these agents in order. Do not skip steps.
 ```
 1. CEO        — Receives task, briefs the team, defines scope
 2. SEO Expert — Keyword brief: primary KW, title, meta, H2 outline, schema types, internal links
-3. Content Head — Writes content following SEO brief exactly
-4. Designer   — Reviews HTML/CSS structure, enforces brand design system
-5. CEO        — Final review and approval before committing
+3. Content Strategist — Validates the keyword opportunity before anything is written:
+                 real search demand, no cannibalisation of an existing guide, where it
+                 sits in the calendar. New topics only; skip for edits to a live page.
+4. Content Head — Writes content following SEO brief exactly
+5. Designer   — Reviews HTML/CSS structure, enforces brand design system
+6. CEO        — Final review and approval before committing
 ```
 
 ## Project Details

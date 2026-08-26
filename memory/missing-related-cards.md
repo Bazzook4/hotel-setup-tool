@@ -1,16 +1,25 @@
-# Guides Missing Related Cards
+# Guides Missing Related Cards — RESOLVED 2026-08-25
 
-**Status:** 14 of 57 guides have no `RELATED_CONTENT` entry in `src/public/guides/js/guide-nav.js`.
+**Status: CLOSED. Nothing to action here.** All **52 of 52** guides now have a
+`RELATED_CONTENT` entry in `src/public/guides/js/guide-nav.js` (verified 2026-08-25:
+52 keys, 52 guides, 0 missing). Related cards are also now **pre-rendered as static
+HTML** rather than JS-injected, so crawlers see them — see [[crawlable-static-links]].
 
-**Effect:** `injectRelatedCards()` hides the whole "You Might Also Like" section when a path is absent from the lookup table (see `guide-nav.js` around the `container.style.display = 'none'` line). The reader reaches the end of the article with no suggested next read. These pages are dead ends.
+The 14 gaps below were closed on branch `guide-cta-faq-internal-links` (commit `15c9beb`).
+The original list is kept only as a record of what was fixed.
 
-**Action before go-live:** add an entry for each path below to `RELATED_CONTENT`, and add the category fallback so this cannot recur.
+**Note:** the "57 guides" figure below is historical. The library is **52** guides;
+the EP/CP/AP/MAP rate-plan pages were consolidated into `hotel-rate-plans.html`.
+
+**Still worth doing (the permanent fix, not yet done):** the category fallback in
+`injectRelatedCards()` described at the bottom of this file. Until that lands, a new
+guide added without a hand-written entry can still become a dead end.
 
 ---
 
-## The 14 URLs
+## The 14 URLs (all fixed — historical record)
 
-Paths are current (`insights.onlinehotelier.com`). After migration the same paths sit on `www.onlinehotelier.com` — the keys in `RELATED_CONTENT` are path-only, so they do **not** need changing at cutover.
+Paths were written pre-migration (`insights.onlinehotelier.com`); the site now serves from `www.onlinehotelier.com`. After migration the same paths sit on `www.onlinehotelier.com` — the keys in `RELATED_CONTENT` are path-only, so they do **not** need changing at cutover.
 
 ### OTA (6) — highest priority, strongest search entry points
 

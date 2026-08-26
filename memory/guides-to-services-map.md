@@ -1,6 +1,20 @@
 # Guides → Services Linking Map
 
-**Problem:** Only 2 of 57 guides link to any service page (`ota/what-is-ota.html`, `ota/hotel-direct-booking-strategy.html`). Guides attract search traffic but offer no route to the commercial offer. This is the missing last link in the chain: land → read → trust → hire.
+> **Status 2026-08-25 — the linking pass is DONE; the service gap is NOT.**
+> All **52 of 52** guides now carry a service link: an audit CTA panel pointing to
+> `/services/ota-audit/` (commit `15c9beb`, verified 52/52). The "only 2 guides link
+> out" problem below is **solved** and is kept as background.
+>
+> **What is still open and still matters: `/services/channel-manager-setup/` does not
+> exist.** Section 6 below is the live finding — the guide cluster with the most search
+> traffic behind it (~16,258 impressions) has no page to point at. The generic OTA-audit
+> CTA is a stopgap, not the right destination for those 8 guides.
+>
+> Counts below say "57 guides"; the library is **52** (EP/CP/AP/MAP were consolidated
+> into `hotel-rate-plans.html`). Impressions are still the 2026-07-28 Search Console pull
+> and have not been refreshed.
+
+**Original problem (solved):** Only 2 of 57 guides linked to any service page (`ota/what-is-ota.html`, `ota/hotel-direct-booking-strategy.html`). Guides attract search traffic but offered no route to the commercial offer. This is the missing last link in the chain: land → read → trust → hire.
 
 **Principle (from [[brand-positioning]]):** the service link is the "or let us do it for you" option, never a hard sell. It belongs *after* the guide has actually taught something, framed as a choice the reader can decline.
 
@@ -60,7 +74,7 @@ Impressions are from Search Console, last 16 months, pulled 2026-07-28.
 
 ## 5. Hotel Website Design — 0 guides
 
-`/services/hotel-website-themes/`
+`/services/hotel-website/` (the old `hotel-website-themes` URL 301s here)
 
 **Gap:** no guide feeds this service at all. Nothing in the guide library is about hotel websites, design, or conversion. The 3 surviving Wix posts (2 digital marketing + building-trust-with-online-visitors) are the natural seed for `/guides/marketing/`, which would feed both this and Direct Booking Website.
 
@@ -83,7 +97,11 @@ Impressions are from Search Console, last 16 months, pulled 2026-07-28.
 
 `no-show` alone (14,194 impr, position 6.6) is a natural channel-manager conversion path: overbookings and no-shows are exactly what a channel manager prevents.
 
-**Action: build `/services/channel-manager-setup/` before doing the linking pass.** Otherwise the highest-value cluster has nowhere to point.
+**Action: build `/services/channel-manager-setup/`.** Still not built as of 2026-08-25
+(`src/public/services/` holds only `hotel-website`, `independent-hotel-ota-listing`,
+`ota-audit`, `vacation-rental-ota-listing`). The linking pass went ahead without it, so
+these 8 guides currently point at the generic OTA audit instead. Re-point them once the
+page exists. **This is the highest-value open item in this file.**
 
 ---
 
