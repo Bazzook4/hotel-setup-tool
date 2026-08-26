@@ -61,7 +61,7 @@
       "name": "What is a good profit margin for Indian hotels?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Budget hotels typically see 15–25% net margin, mid-scale 25–35%, and upscale properties 30–45%. Margins vary by city — Goa and hill stations can run higher during peak season. See our RevPAR guide for benchmarks by category."
+        "text": "Budget hotels typically see 15–25% net margin, mid-scale 25–35%, and upscale properties 30–45%. Margins vary by city, Goa and hill stations can run higher during peak season. See our RevPAR guide for benchmarks by category."
       }
     },
     {
@@ -313,13 +313,13 @@
   <!-- Page Header -->
   <div class="page-header">
     <h1>Hotel Revenue & Profit Estimator</h1>
-    <p class="page-subtitle">Enter your rooms, occupancy, and ADR — get a full monthly P&L in seconds</p>
+    <p class="page-subtitle">Enter your rooms, occupancy, and ADR, get a full monthly P&L in seconds</p>
   </div>
 
   <!-- SEO Intro -->
   <div class="seo-intro">
     <div class="seo-question">How much profit should my hotel be making?</div>
-    <p>Most Indian hotel owners know their room rates but not their actual margins. This tool calculates gross revenue, OTA commission costs, operating expenses, and net profit — so you know exactly where your money is going.</p>
+    <p>Most Indian hotel owners know their room rates but not their actual margins. This tool calculates gross revenue, OTA commission costs, operating expenses, and net profit, so you know exactly where your money is going.</p>
     <div class="seo-benefits">
       <span>Full Monthly P&L</span>
       <span>OTA Cost Breakdown</span>
@@ -345,7 +345,7 @@
         <div class="hint">Monthly average</div>
       </div>
       <div class="input-group">
-        <label for="adr">ADR — Average Daily Rate (₹)</label>
+        <label for="adr">ADR, Average Daily Rate (₹)</label>
         <input type="number" id="adr" value="3000" min="100">
         <div class="hint">Per room per night</div>
       </div>
@@ -409,22 +409,22 @@
     <div class="pl-hero" id="plHero">
       <div>
         <div class="hero-stat-label">Gross Revenue</div>
-        <div class="hero-stat-value" id="heroRevenue">—</div>
+        <div class="hero-stat-value" id="heroRevenue">, </div>
         <div class="hero-stat-sub">per month</div>
       </div>
       <div class="hero-stat-divider">
         <div class="hero-stat-label">Total Expenses</div>
-        <div class="hero-stat-value" id="heroExpenses">—</div>
+        <div class="hero-stat-value" id="heroExpenses">, </div>
         <div class="hero-stat-sub">per month</div>
       </div>
       <div class="hero-stat-divider">
         <div class="hero-stat-label">Net Profit</div>
-        <div class="hero-stat-value" id="heroProfit">—</div>
+        <div class="hero-stat-value" id="heroProfit">, </div>
         <div class="hero-stat-sub">per month</div>
       </div>
       <div class="hero-stat-divider">
         <div class="hero-stat-label">Annual Projection</div>
-        <div class="hero-stat-value" id="heroAnnual">—</div>
+        <div class="hero-stat-value" id="heroAnnual">, </div>
         <div class="hero-stat-sub">estimated</div>
       </div>
     </div>
@@ -433,22 +433,22 @@
     <div class="stat-cards">
       <div class="stat-card primary-accent">
         <div class="stat-card-label">RevPAR</div>
-        <div class="stat-card-value" id="revpar">—</div>
+        <div class="stat-card-value" id="revpar">, </div>
         <div class="stat-card-note">Revenue Per Available Room</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">OTA Commission Cost</div>
-        <div class="stat-card-value" id="otaCost">—</div>
+        <div class="stat-card-value" id="otaCost">, </div>
         <div class="stat-card-note">Monthly OTA fees paid</div>
       </div>
       <div class="stat-card">
         <div class="stat-card-label">Room Nights Sold</div>
-        <div class="stat-card-value" id="roomNights">—</div>
+        <div class="stat-card-value" id="roomNights">, </div>
         <div class="stat-card-note">Per month (30 days)</div>
       </div>
       <div class="stat-card primary-accent">
         <div class="stat-card-label">GOP Margin</div>
-        <div class="stat-card-value" id="gopMargin">—</div>
+        <div class="stat-card-value" id="gopMargin">, </div>
         <div class="stat-card-note">Gross Operating Profit %</div>
       </div>
     </div>
@@ -458,18 +458,18 @@
       <div class="breakdown-title">Monthly P&L Breakdown</div>
       <table class="pl-table">
         <tr class="section-row"><td colspan="2">Revenue</td></tr>
-        <tr class="revenue-row"><td>Room Revenue (Gross)</td><td id="plRoomRevenue">—</td></tr>
-        <tr class="revenue-row"><td>Ancillary Revenue</td><td id="plAncillary">—</td></tr>
-        <tr class="revenue-row total-row"><td>Total Revenue</td><td id="plTotalRevenue">—</td></tr>
+        <tr class="revenue-row"><td>Room Revenue (Gross)</td><td id="plRoomRevenue">, </td></tr>
+        <tr class="revenue-row"><td>Ancillary Revenue</td><td id="plAncillary">, </td></tr>
+        <tr class="revenue-row total-row"><td>Total Revenue</td><td id="plTotalRevenue">, </td></tr>
         <tr class="section-row"><td colspan="2">Expenses</td></tr>
-        <tr class="expense-row"><td>OTA Commissions</td><td id="plOtaComm">—</td></tr>
-        <tr class="expense-row"><td>Staff Salaries</td><td id="plStaff">—</td></tr>
-        <tr class="expense-row"><td>Utilities</td><td id="plUtilities">—</td></tr>
-        <tr class="expense-row"><td>Maintenance & Supplies</td><td id="plMaintenance">—</td></tr>
-        <tr class="expense-row"><td>Rent / Loan EMI</td><td id="plRent">—</td></tr>
-        <tr class="expense-row"><td>Marketing & Other</td><td id="plMarketing">—</td></tr>
-        <tr class="expense-row total-row"><td>Total Expenses</td><td id="plTotalExpenses">—</td></tr>
-        <tr class="profit-row"><td><strong>Net Profit</strong></td><td id="plNetProfit">—</td></tr>
+        <tr class="expense-row"><td>OTA Commissions</td><td id="plOtaComm">, </td></tr>
+        <tr class="expense-row"><td>Staff Salaries</td><td id="plStaff">, </td></tr>
+        <tr class="expense-row"><td>Utilities</td><td id="plUtilities">, </td></tr>
+        <tr class="expense-row"><td>Maintenance & Supplies</td><td id="plMaintenance">, </td></tr>
+        <tr class="expense-row"><td>Rent / Loan EMI</td><td id="plRent">, </td></tr>
+        <tr class="expense-row"><td>Marketing & Other</td><td id="plMarketing">, </td></tr>
+        <tr class="expense-row total-row"><td>Total Expenses</td><td id="plTotalExpenses">, </td></tr>
+        <tr class="profit-row"><td><strong>Net Profit</strong></td><td id="plNetProfit">, </td></tr>
       </table>
     </div>
 
@@ -477,7 +477,7 @@
     <div class="margin-section">
       <div class="margin-label-row">
         <span class="margin-label">Net Profit Margin</span>
-        <span class="margin-pct" id="marginPct">—</span>
+        <span class="margin-pct" id="marginPct">, </span>
       </div>
       <div class="margin-bar-track">
         <div class="margin-bar-fill" id="marginBar" style="width: 0%"></div>
@@ -539,7 +539,7 @@
 
     <div class="faq-item">
       <div class="faq-question">What is a good profit margin for Indian hotels?</div>
-      <div class="faq-answer">Budget hotels typically see 15–25% net margin, mid-scale 25–35%, and upscale properties 30–45%. Margins vary by city — Goa and hill stations can run higher during peak season. See our <a href="/guides/revenue/revpar.html">RevPAR guide</a> for benchmarks by category.</div>
+      <div class="faq-answer">Budget hotels typically see 15–25% net margin, mid-scale 25–35%, and upscale properties 30–45%. Margins vary by city, Goa and hill stations can run higher during peak season. See our <a href="/guides/revenue/revpar.html">RevPAR guide</a> for benchmarks by category.</div>
     </div>
 
     <div class="faq-item">
