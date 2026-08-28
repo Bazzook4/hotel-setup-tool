@@ -1,23 +1,86 @@
 # robots.txt for www.onlinehotelier.com
 
 User-agent: *
+# Client sample sites — not for indexing.
+# Disallow must precede the blanket Allow: some parsers apply the first
+# matching rule in order rather than Google's longest-match precedence,
+# and with Allow: / first they read /samples/ as crawlable.
+Disallow: /samples/
 Allow: /
 
-# Client sample sites — not for indexing
-Disallow: /samples/
+# ---------------------------------------------------------------------------
+# AI and answer-engine crawlers — explicitly allowed.
+# A named group REPLACES the wildcard group for that agent rather than adding
+# to it, so each group below must repeat the /samples/ Disallow. Naming these
+# agents is an explicit intent signal and keeps the allow-list auditable.
+# Verified against vendor docs on 28 Aug 2026. Re-check before assuming
+# current: these tokens change more often than most SEO facts.
+# ---------------------------------------------------------------------------
 
-# AI crawlers — explicitly allowed
+# OpenAI — developers.openai.com/api/docs/bots
+# OAI-SearchBot surfaces pages in ChatGPT search; GPTBot is training only.
+User-agent: OAI-SearchBot
+Disallow: /samples/
+Allow: /
+
 User-agent: GPTBot
+Disallow: /samples/
+Allow: /
+
+User-agent: ChatGPT-User
+Disallow: /samples/
+Allow: /
+
+# Anthropic — support.claude.com (article 8896518)
+# ClaudeBot is training; Claude-SearchBot and Claude-User serve live answers.
+User-agent: Claude-SearchBot
+Disallow: /samples/
 Allow: /
 
 User-agent: ClaudeBot
+Disallow: /samples/
 Allow: /
 
+User-agent: Claude-User
+Disallow: /samples/
+Allow: /
+
+# Perplexity — docs.perplexity.ai/guides/bots
 User-agent: PerplexityBot
+Disallow: /samples/
 Allow: /
 
+User-agent: Perplexity-User
+Disallow: /samples/
+Allow: /
+
+# Google — Google-Extended governs Gemini and AI Overviews training use
 User-agent: Google-Extended
+Disallow: /samples/
+Allow: /
+
+# Common Crawl — open dataset that seeds many open-source LLMs.
+# No citation benefit, but wide long-term reach.
+User-agent: CCBot
+Disallow: /samples/
+Allow: /
+
+# Other answer engines
+User-agent: Applebot-Extended
+Disallow: /samples/
+Allow: /
+
+User-agent: meta-externalagent
+Disallow: /samples/
+Allow: /
+
+User-agent: cohere-ai
+Disallow: /samples/
 Allow: /
 
 # Sitemap location
 Sitemap: https://www.onlinehotelier.com/sitemap.xml
+
+# Curated page map for LLMs (llmstxt.org community proposal).
+# Not read by any major AI vendor as of Aug 2026; kept in sync with sitemap.xml.
+# LLM-Content: https://www.onlinehotelier.com/llms.txt
