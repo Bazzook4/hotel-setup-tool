@@ -1297,7 +1297,7 @@
         'This raises your break-even occupancy by <strong>' + fmtPct(Math.abs(otaDiff)) + '</strong> compared to all-direct bookings. ' +
         'Reducing OTA dependency by 10% can lower your break-even by ~' + fmtPct(Math.abs(otaDiff) * 0.14) + '.';
     } else if (otaShare === 0) {
-      otaNoteEl.innerHTML = 'You have 0% OTA share — all direct bookings. No commission costs affecting break-even.';
+      otaNoteEl.innerHTML = 'You have 0% OTA share, so every booking is direct. No commission costs affecting break-even.';
     } else {
       otaNoteEl.innerHTML = 'Unable to calculate OTA impact with current inputs.';
     }

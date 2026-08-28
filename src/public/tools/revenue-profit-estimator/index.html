@@ -643,7 +643,7 @@
       } else if (netMarginPct < 35) {
         marginMsg = 'Healthy margin in the mid-scale range. Ancillary revenue and direct booking growth can push you toward the 35%+ zone.';
       } else {
-        marginMsg = 'Excellent margin — you\'re in the top tier for Indian hotels. Focus on protecting this as occupancy or ADR changes seasonally.';
+        marginMsg = 'Excellent margin. You\'re in the top tier for Indian hotels. Focus on protecting this as occupancy or ADR changes seasonally.';
       }
       document.getElementById('marginMessage').textContent = marginMsg;
 
@@ -656,7 +656,7 @@
         recs.push({ icon: '📈', title: 'Improve Occupancy First', text: 'At ' + Math.round(occ * 100) + '% occupancy, filling 5 more rooms/night adds ' + fmt(5 * adr * 30) + '/month revenue with near-zero extra cost.' });
       }
       if (ancillary === 0) {
-        recs.push({ icon: '🍽', title: 'Add Ancillary Revenue', text: 'F&B, airport transfers, or laundry can add ₹200–₹500 per room night with minimal investment — explore what your guests ask for.' });
+        recs.push({ icon: '🍽', title: 'Add Ancillary Revenue', text: 'F&B, airport transfers, or laundry can add ₹200–₹500 per room night with minimal investment. Explore what your guests ask for.' });
       }
       if (netMarginPct > 0 && netMarginPct < 20) {
         recs.push({ icon: '💡', title: 'Review Fixed Costs', text: 'Rent/EMI at ' + fmt(rent) + '/month and staff at ' + fmt(staff) + '/month are your largest controllables. Benchmark against similar properties in your city.' });
