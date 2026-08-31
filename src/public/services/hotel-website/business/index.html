@@ -453,12 +453,6 @@
 
     /* ── Footer ── */
     footer { background: #3E3D35; color: rgba(255,255,255,0.65); padding: 2rem; margin-top: 2rem; }
-    .footer-container { max-width: 1140px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.85rem; }
-    .footer-logo { color: white; font-weight: 700; font-size: 1rem; }
-    .footer-logo span { color: #89826E; }
-    .footer-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
-    .footer-links a { color: #89826E; text-decoration: none; font-size: 0.85rem; }
-    .footer-links a:hover { color: white; }
 
     /* ── Mobile ── */
     @media (max-width: 768px) {
@@ -480,6 +474,7 @@
   <meta name="twitter:title" content="Business Hotel Website Design India: City &amp; Corporate Hotels | OnlineHotelier">
   <meta name="twitter:description" content="Professional website design for city and business hotels in India. Clean corporate layout, meeting rooms section, WhatsApp enquiry form. Live in 7 days from ₹15,000.">
   <meta name="twitter:image" content="https://www.onlinehotelier.com/og-image.png">
+  <link rel="stylesheet" href="/css/footer.css">
 </head>
 <body>
 
@@ -920,16 +915,43 @@
   </div><!-- /tool-page-layout -->
 
   <!-- Footer -->
-  <footer>
+  <footer class="footer">
     <div class="footer-container">
-      <div class="footer-logo">Online<span>Hotelier</span></div>
-      <div class="footer-links">
-        <a href="/guides/">Guides</a>
-        <a href="/tools/">Tools</a>
-        <a href="/services/">Services</a>
-        <a href="https://www.onlinehotelier.com" target="_blank" rel="noopener">OnlineHotelier.com</a>
+      <div class="footer-brand">
+        <h4>OnlineHotelier</h4>
+        <p>We help Indian hoteliers find their way through the digital side of the business. Free guides, free tools, and hands-on help when you want it. Built from 8+ years of real-world hospitality experience.</p>
       </div>
-      <div style="font-size:0.82rem;">© 2026 OnlineHotelier. All rights reserved.</div>
+      <div>
+        <h5>Learn</h5>
+        <ul>
+          <li><a href="/guides/ota/">OTA Guides</a></li>
+          <li><a href="/guides/revenue/">Revenue Guides</a></li>
+          <li><a href="/guides/software/">Software Guides</a></li>
+          <li><a href="/guides/">All Guides</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Free Tools</h5>
+        <ul>
+          <li><a href="/tools/ota-commission-calculator/">Commission Calculator</a></li>
+          <li><a href="/tools/ota-dependency-calculator/">OTA Dependency</a></li>
+          <li><a href="/tools/break-even-calculator/">Break-Even Calculator</a></li>
+          <li><a href="/tools/">All Tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Work With Us</h5>
+        <ul>
+          <li><a href="/services/">All Services</a></li>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 OnlineHotelier. All rights reserved.</p>
+      <a href="/">www.onlinehotelier.com</a>
     </div>
   </footer>
 

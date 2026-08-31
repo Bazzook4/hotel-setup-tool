@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Site footer — shared by every page.
+   Extracted from the home page footer, which is the reference design.
+   Edit here only; no page should carry its own footer styles.
+   ========================================================================== */
+
+.footer {
+  background: #3E3D35;
+  color: #fff;
+  padding: 4rem 2rem 2rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+}
+
+.footer-brand h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.footer-brand p {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.footer h5 {
+  color: rgba(255,255,255,0.4);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.footer ul { list-style: none; padding: 0; margin: 0; }
+.footer ul li { margin-bottom: 0.6rem; }
+.footer a {
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  transition: color 0.2s;
+  font-size: 0.9rem;
+}
+.footer a:hover { color: #fff; }
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(255,255,255,0.35);
+  font-size: 0.85rem;
+}
+.footer-bottom p { margin: 0; }
+.footer-bottom a { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
+.footer-bottom a:hover { color: #fff; }
+
+@media (max-width: 768px) {
+  .footer { padding: 3rem 1.5rem 2rem; }
+  .footer-container { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+  .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+}

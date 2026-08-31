@@ -559,49 +559,6 @@
     .cta-banner p { color: rgba(255,255,255,0.65); margin-bottom: 2rem; font-size: 1.05rem; line-height: 1.7; }
     .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-    /* ===== FOOTER ===== */
-    .footer { background: var(--primary); color: #fff; padding: 4rem 2rem 2rem; }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 3rem;
-    }
-
-    .footer-brand h4 { font-size: 1.2rem; margin-bottom: 1rem; font-weight: 700; letter-spacing: -0.02em; }
-    .footer-brand p { color: rgba(255,255,255,0.5); font-size: 0.9rem; line-height: 1.7; }
-
-    .footer h5 {
-      color: rgba(255,255,255,0.4);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    .footer ul { list-style: none; }
-    .footer ul li { margin-bottom: 0.6rem; }
-    .footer a { color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.2s; font-size: 0.9rem; }
-    .footer a:hover { color: #fff; }
-
-    .footer-bottom {
-      max-width: 1200px;
-      margin: 3rem auto 0;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: rgba(255,255,255,0.35);
-      font-size: 0.85rem;
-    }
-
-    .footer-bottom a { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
-    .footer-bottom a:hover { color: #fff; }
-
     /* ===== MOBILE ===== */
     @media (max-width: 768px) {
       .hero { padding: 3rem 1.5rem 4rem; }
@@ -622,9 +579,6 @@
       .about-inner { grid-template-columns: 1fr; gap: 2rem; }
       .about-stats { order: -1; }
 
-      .footer-container { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
-      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
-
       .cta-buttons { flex-direction: column; align-items: center; }
     }
   </style>
@@ -632,6 +586,7 @@
 
   <!-- Open Graph / Twitter -->
   <meta name="twitter:image" content="https://www.onlinehotelier.com/og-image.png">
+  <link rel="stylesheet" href="/css/footer.css">
 </head>
 <body>
   <!-- Navigation (shared component) -->
@@ -984,7 +939,7 @@
           <li><a href="/guides/ota/">OTA Guides</a></li>
           <li><a href="/guides/revenue/">Revenue Guides</a></li>
           <li><a href="/guides/software/">Software Guides</a></li>
-          <li><a href="/guides/">All 57 Guides</a></li>
+          <li><a href="/guides/">All Guides</a></li>
         </ul>
       </div>
       <div>
@@ -993,7 +948,7 @@
           <li><a href="/tools/ota-commission-calculator/">Commission Calculator</a></li>
           <li><a href="/tools/ota-dependency-calculator/">OTA Dependency</a></li>
           <li><a href="/tools/break-even-calculator/">Break-Even Calculator</a></li>
-          <li><a href="/tools/">All 11 Tools</a></li>
+          <li><a href="/tools/">All Tools</a></li>
         </ul>
       </div>
       <div>

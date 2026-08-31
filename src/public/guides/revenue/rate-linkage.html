@@ -307,24 +307,6 @@
       border-left: 3px solid var(--secondary);
     }
 
-    /* Footer */
-    .footer {
-      background: #3E3D35;
-      color: white;
-      padding: 2rem;
-      margin-top: 3rem;
-      text-align: center;
-    }
-
-    .footer a {
-      color: #89826E;
-      text-decoration: none;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
-    }
-
     /* Mobile */
     @media (max-width: 768px) {
       .nav-links {
@@ -536,6 +518,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="OnlineHotelier: practical guides for Indian hoteliers">
   <meta name="twitter:image" content="https://www.onlinehotelier.com/og-image.png">
+  <link rel="stylesheet" href="/css/footer.css">
 </head>
 <body>
   <nav id="site-nav"></nav>
@@ -858,7 +841,43 @@
   </div>
 
   <footer class="footer">
-    <p>&copy; 2026 <a href="https://www.onlinehotelier.com">OnlineHotelier</a>. All rights reserved.</p>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4>OnlineHotelier</h4>
+        <p>We help Indian hoteliers find their way through the digital side of the business. Free guides, free tools, and hands-on help when you want it. Built from 8+ years of real-world hospitality experience.</p>
+      </div>
+      <div>
+        <h5>Learn</h5>
+        <ul>
+          <li><a href="/guides/ota/">OTA Guides</a></li>
+          <li><a href="/guides/revenue/">Revenue Guides</a></li>
+          <li><a href="/guides/software/">Software Guides</a></li>
+          <li><a href="/guides/">All Guides</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Free Tools</h5>
+        <ul>
+          <li><a href="/tools/ota-commission-calculator/">Commission Calculator</a></li>
+          <li><a href="/tools/ota-dependency-calculator/">OTA Dependency</a></li>
+          <li><a href="/tools/break-even-calculator/">Break-Even Calculator</a></li>
+          <li><a href="/tools/">All Tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Work With Us</h5>
+        <ul>
+          <li><a href="/services/">All Services</a></li>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 OnlineHotelier. All rights reserved.</p>
+      <a href="/">www.onlinehotelier.com</a>
+    </div>
   </footer>
 
   <script src="/guides/js/guide-nav.js"></script>

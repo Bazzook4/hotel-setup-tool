@@ -359,43 +359,6 @@
 
     .side-links a:hover { color: var(--secondary); }
 
-    /* ===== FOOTER ===== */
-    .footer { background: var(--primary); color: #fff; padding: 3rem 2rem 2rem; }
-
-    .footer-container {
-      max-width: 1080px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-
-    .footer-brand h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.35rem; }
-    .footer-brand p { color: rgba(255,255,255,0.5); font-size: 0.88rem; }
-
-    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-
-    .footer-links a {
-      color: rgba(255,255,255,0.65);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: #fff; }
-
-    .footer-bottom {
-      max-width: 1080px;
-      margin: 2rem auto 0;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      color: rgba(255,255,255,0.35);
-      font-size: 0.85rem;
-      text-align: center;
-    }
-
     /* ===== MOBILE ===== */
     @media (max-width: 860px) {
       .main { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.5rem 3.5rem; }
@@ -404,7 +367,6 @@
       .hero p { font-size: 1rem; }
       .form-card { padding: 1.5rem; }
       .field-row { grid-template-columns: 1fr; gap: 0; }
-      .footer-container { flex-direction: column; text-align: center; }
     }
   </style>
   <script src="/js/nav.js"></script>
@@ -414,6 +376,7 @@
   <meta name="twitter:title" content="Contact OnlineHotelier - Talk to Us on WhatsApp">
   <meta name="twitter:description" content="Tell us about your property and we will tell you honestly what is worth doing. Message us on WhatsApp for OTA listing, channel manager, and direct booking help.">
   <meta name="twitter:image" content="https://www.onlinehotelier.com/og-image.png">
+  <link rel="stylesheet" href="/css/footer.css">
 </head>
 <body>
   <!-- Navigation (shared component) -->
@@ -551,19 +514,39 @@
     <div class="footer-container">
       <div class="footer-brand">
         <h4>OnlineHotelier</h4>
-        <p>Helping Indian hoteliers find their way online.</p>
+        <p>We help Indian hoteliers find their way through the digital side of the business. Free guides, free tools, and hands-on help when you want it. Built from 8+ years of real-world hospitality experience.</p>
       </div>
-      <div class="footer-links">
-        <a href="/">Home</a>
-        <a href="/services/">Services</a>
-        <a href="/guides/">Guides</a>
-        <a href="/tools/">Tools</a>
-        <a href="/about/">About</a>
-        <a href="/privacy/">Privacy</a>
+      <div>
+        <h5>Learn</h5>
+        <ul>
+          <li><a href="/guides/ota/">OTA Guides</a></li>
+          <li><a href="/guides/revenue/">Revenue Guides</a></li>
+          <li><a href="/guides/software/">Software Guides</a></li>
+          <li><a href="/guides/">All Guides</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Free Tools</h5>
+        <ul>
+          <li><a href="/tools/ota-commission-calculator/">Commission Calculator</a></li>
+          <li><a href="/tools/ota-dependency-calculator/">OTA Dependency</a></li>
+          <li><a href="/tools/break-even-calculator/">Break-Even Calculator</a></li>
+          <li><a href="/tools/">All Tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Work With Us</h5>
+        <ul>
+          <li><a href="/services/">All Services</a></li>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 OnlineHotelier. All rights reserved.</p>
+      <a href="/">www.onlinehotelier.com</a>
     </div>
   </footer>
 
