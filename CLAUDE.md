@@ -19,6 +19,12 @@ Two roles sit **outside** the delivery chain and report to the owner. Neither ap
 | **Consultant** | Independent audit, verifies other agents, external research | An honest outside read, with corrective actions |
 | **Coordinator** | Detects drift across CLAUDE.md, memory and agent definitions | Keeps every agent's knowledge current. Drafts edits, owner approves |
 
+Every definition lives in `.claude/agents/` in this repo, one file per agent.
+Edit them there, never in `~/.claude/agents/` — a project-level agent overrides
+a user-level one of the same name, so a stray copy outside the repo would
+shadow the reviewed version. Definitions load at session start: after editing
+one, start a new session before testing it.
+
 ## Workflow for Every New Guide or Page
 
 Run these agents in order. Do not skip steps.
