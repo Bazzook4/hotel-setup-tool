@@ -63,6 +63,17 @@ Font:          'Avenir', 'DM Sans', system fonts
 
 **NEVER use** Material Design colors on any page (no red #c62828, green #2e7d32, blue #1565c0, orange #e65100, purple #7b1fa2).
 
+## Page Templates
+
+**Before building or editing any page, read the template for it.** Both live in
+the repo and describe what the pages actually do:
+
+- `memory/guide-template.md` — the single template for every `/guides/` page
+- `memory/tool-page-standard.md` — the single template for every `/tools/` page
+
+`memory/README.md` indexes the rest. The list below is a summary of the guide
+template, not a substitute for it.
+
 ## Mandatory Page Elements (Every Guide)
 
 1. Quick Answer Box at top of content

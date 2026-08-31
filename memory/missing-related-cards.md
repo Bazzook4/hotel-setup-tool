@@ -63,4 +63,4 @@ The lookup table is manual. Every new guide needs a hand-written entry, and that
 
 **Fix:** in `injectRelatedCards()`, replace the hide-on-missing branch with a fallback that picks up to 3 other guides from the same category (via `GUIDE_CATEGORIES`, excluding the current page). Hand-written entries still take precedence; the fallback only fills gaps. After this, no guide can ever be a dead end.
 
-Related: guide-creation-checklist (add "add RELATED_CONTENT entry" as a mandatory post-creation step)
+Related: guide-template (the single /guides/ template; add "add RELATED_CONTENT entry" as a mandatory post-creation step)
