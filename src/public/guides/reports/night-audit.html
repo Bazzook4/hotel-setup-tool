@@ -162,6 +162,14 @@
           "@type": "Answer",
           "text": "If the night audit is skipped, the hotel's system date does not advance, meaning all transactions on the new day are posted against the wrong date. This causes billing errors, inaccurate revenue reports, and incorrect GST calculations. Night audit must be run every day without exception. Most PMS systems have safeguards to alert staff if audit is overdue."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "How does night audit affect GST calculations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Night audit posts the room charge and GST to each guest folio. Under the September 2025 GST Council revision, hotels charge 5% GST on tariffs below ₹7,500 per night and 18% on ₹7,500 and above. Your PMS should be configured with the correct rate codes, if the night audit is posting wrong GST rates, check your rate plan setup first, not the audit itself. For full GST rules, see our guide on GST for Hotels."
+        }
       }
     ]
   }
