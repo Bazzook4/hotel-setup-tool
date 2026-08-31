@@ -69,7 +69,10 @@ Font:          'Avenir', 'DM Sans', system fonts
 2. `has-toc` class on `guide-page-layout` div
 3. H2 headings with ID attributes (`<h2 id="section-slug">`)
 4. Right sidebar: `<aside class="guide-toc"></aside>`
-5. Bottom nav: `<div class="prev-next-nav"></div>` + `<div class="related-cards-section"></div>`
+5. "Related Tools & Guides" block before the FAQ: `.explore-tools` with exactly
+   four `.tool-link` cards (two tools, two guides). Revenue guides dropped the
+   older `prev-next-nav` and `related-cards-section` blocks in favour of this
+   one; the other categories still carry them until they get the same pass.
 6. Article schema + BreadcrumbList + Organization schemas
 7. FAQPage schema if page has FAQs
 8. AdSense meta tag + script

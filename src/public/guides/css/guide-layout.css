@@ -486,17 +486,27 @@
   font-size: 1.1rem;
 }
 
+/* Tool pages give this grid ~1044px and fit four 200px cards in a row. Guides
+   cap the article at 900px for readability, leaving ~756px, so auto-fit at
+   minmax(200px,1fr) drops the fourth card onto its own row. Ask for four equal
+   columns outright and shrink the minimum instead: four cards stay inline in
+   the narrower column. */
 .tools-grid-mini {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
 }
 
+/* At four across inside the 900px article the card is ~180px wide, too narrow
+   to put the icon beside the text without the title wrapping every word. Stack
+   the icon above the copy so the full width goes to the words. Tool pages keep
+   the side-by-side layout via their own sheet. */
 .tool-link {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  padding: 0.9rem;
   background: #f8f9fa;
   border-radius: 8px;
   text-decoration: none;
@@ -506,20 +516,22 @@
 
 .tool-link:hover {
   background: var(--secondary-light, rgba(137, 130, 110, 0.12));
-  transform: translateX(4px);
+  transform: translateY(-2px);
 }
 
 .tool-link .icon { font-size: 1.5rem; }
 
 .tool-link .text h4 {
   color: var(--primary, #3E3D35);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  line-height: 1.3;
   margin-bottom: 0.25rem;
 }
 
 .tool-link .text p {
   color: #666;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
   margin: 0;
 }
 
@@ -590,6 +602,10 @@
   padding: 2rem 0 0;
   margin-top: 2rem;
   border-top: 1px solid #eee;
+}
+
+@media (max-width: 1024px) {
+  .tools-grid-mini { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 768px) {
