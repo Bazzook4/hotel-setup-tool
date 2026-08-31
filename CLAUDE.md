@@ -95,12 +95,21 @@ template, not a substitute for it.
 8. AdSense meta tag + script
 9. AI crawler meta tags (robots, googlebot, bingbot)
 10. Internal links to 2–3 related guides
+11. `<link rel="stylesheet" href="/css/footer.css">` in the head, and the
+    standard `<footer class="footer">` **outside** `guide-page-layout` as a
+    direct child of `<body>`. See `memory/footer-standard.md`.
 
 ## After Creating Any New Guide
 
-1. Add entry to `src/public/guides/js/guide-nav.js` (GUIDES array, correct category)
-2. Update `memory/published-guides.md`
-3. Add internal links from 2–3 existing related guides to the new guide
+1. Add entry to `src/public/guides/js/guide-nav.js` (`GUIDE_CATEGORIES`, correct category)
+2. **Add a card to `src/public/guides/index.html`** in that category's
+   `.guides-grid`. This is separate hand-maintained HTML, not generated from
+   `guide-nav.js`. Skipping it leaves the guide unreachable from `/guides/`,
+   which is how 19 guides went unlisted until 1 Sept 2026.
+3. Update `memory/published-guides.md`
+4. Add internal links from 2–3 existing related guides to the new guide
+5. Confirm it is live after deploying — a clean push is not a deploy. See
+   `memory/deploy-pipeline.md`.
 
 ## Content Standards
 

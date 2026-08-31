@@ -63,10 +63,11 @@ colours, contrast) and [[ai-llm-optimization]] (crawler meta, schema bodies).
         …                                       <!-- see section 3 -->
       </div>
     </article>
-    <footer class="footer">…</footer>
   </div>
   <aside class="guide-toc"></aside>            <!-- MANDATORY, right TOC -->
 </div>
+
+<footer class="footer">…</footer>              <!-- OUTSIDE the layout div -->
 
 <script src="/guides/js/guide-nav.js"></script>
 <script src="/guides/js/guide-blocks.js"></script>
@@ -77,6 +78,13 @@ colours, contrast) and [[ai-llm-optimization]] (crawler meta, schema bodies).
 All three columns are required. `has-toc` plus **4 or more H2s** is what makes
 the right TOC appear. A missing sidebar is almost always a wrong script tag:
 it must be `guide-nav.js`, never `whatsapp-widget.js`.
+
+**The footer sits outside `.guide-page-layout`, as a direct child of `<body>`.**
+`.guide-page-layout` is a `max-width: 1400px` grid; a footer inside
+`.guide-main-content` renders at ~1140px with pale gutters either side instead
+of spanning the page. That was the state of 55 guide and tool pages until
+2026-09-01. It is invisible in the markup and obvious on screen, so check the
+ancestor chain rather than grepping for the tag. See [[footer-standard]].
 
 `guide-nav.js` builds the left nav, the TOC, and prev/next + related cards where
 those divs exist. `guide-blocks.js` wires the FAQ accordion, loaded after it.

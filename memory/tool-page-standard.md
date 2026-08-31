@@ -41,9 +41,17 @@ section 1; the differences for tools are noted here.
 
     </div><!-- /tool-main-content -->
   </div><!-- /tool-page-layout -->
+
+  <footer class="footer">…</footer>   <!-- OUTSIDE the layout div, body-level -->
 ```
 
+The footer must close out of `.tool-page-layout` first. Inside
+`.tool-main-content` it renders at ~1140px with gutters rather than spanning the
+page — the state three tool pages were in until 2026-09-01. See
+[[footer-standard]].
+
 Plus, in `<head>`: `<link rel="stylesheet" href="/tools/css/tool-layout.css">`
+and `<link rel="stylesheet" href="/css/footer.css">`
 And before `</body>`, in this order:
 
 ```html

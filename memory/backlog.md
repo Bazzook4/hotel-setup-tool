@@ -41,6 +41,16 @@ which had gone stale (it still said the work was unmerged and unpushed).
 
 8. **Resubmit `sitemap.xml`** in Search Console once the meta work lands.
 
+9. **`/guides/index.html` cards are hand-maintained and will drift again.**
+   `guide-nav.js` is the registry every guide page's sidebar reads, and it is
+   accurate; the landing page is separate static HTML, which is how 19 guides
+   ended up unlisted until 2026-09-01. The page already loads `guide-nav.js`, so
+   it *could* render its cards from it — but the cards would then be
+   JS-injected, which [[crawlable-static-links]] forbids for internal links.
+   Either keep it static and add "update the index" to the new-guide checklist,
+   or build the cards at commit time from `guide-nav.js`. Needs a decision, not
+   a quick fix.
+
 ## Unresolved content questions
 
 Flagged by the Content Head during the Aug 2026 audit and deliberately not
@@ -64,6 +74,13 @@ acted on, because the same agent was wrong about GST in the same review.
   category fallback in `injectRelatedCards()` has landed, so a new guide can no
   longer dead-end.
 - **AI crawler meta trio**: on every indexable page. 0 missing.
+- **Footer standardisation** (2026-09-01): a dozen footer variants replaced by
+  one, on all 83 non-sample pages, styled from `/css/footer.css`. Also moved the
+  footer out of the capped-width layout column on 55 guide and tool pages, where
+  it had been rendering at ~1140px. **Live.** See [[footer-standard]].
+- **Guides index completeness** (2026-09-01): the index linked 33 of 52 guides
+  and had no Operations section at all. All 52 now listed. The six category
+  indexes were checked at the same time and were already complete. **Live.**
 - **Domain migration**: complete, www is the single live domain. See
   [[migration-plan]].
 
