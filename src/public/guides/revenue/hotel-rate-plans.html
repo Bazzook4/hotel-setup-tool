@@ -516,30 +516,8 @@
       color: var(--primary);
     }
 
-    /* FAQ Section */
-    .faq-section {
-      margin-top: 2rem;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid #eee;
-      padding: 1.25rem 0;
-    }
-
-    .faq-item:last-child {
-      border-bottom: none;
-    }
-
-    .faq-question {
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-      font-size: 1.05rem;
-    }
-
-    .faq-answer {
-      color: #555;
-    }
+    /* FAQ styling lives in guides/css/guide-layout.css so the accordion
+       matches every other guide and tool page. Do not re-declare it here. */
 
     /* Related Links */
     .related-section {
@@ -1122,50 +1100,83 @@
         </div>
       </div>
 
+      <div class="explore-tools">
+        <h3>Related Tools &amp; Guides</h3>
+        <div class="tools-grid-mini">
+          <a href="/tools/ota-commission-calculator/" class="tool-link">
+            <span class="icon">💰</span>
+            <div class="text">
+              <h4>OTA Commission Calculator</h4>
+              <p>What you actually keep after MMT, Goibibo and Booking.com fees</p>
+            </div>
+          </a>
+          <a href="/tools/competitor-analysis/" class="tool-link">
+            <span class="icon">🔍</span>
+            <div class="text">
+              <h4>Competitor Rate Analysis</h4>
+              <p>See where your rate sits against matched hotels by star class</p>
+            </div>
+          </a>
+          <a href="/guides/revenue/rate-linkage.html" class="tool-link">
+            <span class="icon">🔗</span>
+            <div class="text">
+              <h4>Rate Linkage Guide</h4>
+              <p>Change one rate and update every OTA automatically</p>
+            </div>
+          </a>
+          <a href="/guides/revenue/bar.html" class="tool-link">
+            <span class="icon">📋</span>
+            <div class="text">
+              <h4>BAR Rate Guide</h4>
+              <p>Set a best available rate that works across all channels</p>
+            </div>
+          </a>
+        </div>
+      </div>
       <h2 id="faq">Frequently Asked Questions</h2>
 
           <div class="faq-section">
-            <div class="faq-item">
+            <div class="faq-item" id="faq-how-do-i-add-a-cp-or">
               <div class="faq-question">How do I add a CP or MAP rate plan on MakeMyTrip?</div>
               <div class="faq-answer">Log into MMT Partner Central, go to Rate Plans, click Add New Plan, select the meal type (CP/MAP/AP), set the price differential above your base EP rate, and save. The plan will appear as a separate row on your MMT listing within a few hours.</div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" id="faq-should-i-list-ep-or-cp-as">
               <div class="faq-question">Should I list EP or CP as my base rate on Booking.com?</div>
               <div class="faq-answer">List EP as your base rate on Booking.com. It gives you the lowest displayed price, which improves your position in price-filtered searches. Then add CP and MAP as separate rate plans so guests can choose. Booking.com shows all your plans as separate rows on your property page.</div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" id="faq-how-much-extra-should-i-charge-for">
               <div class="faq-question">How much extra should I charge for CP vs EP?</div>
               <div class="faq-answer">Price your CP plan at 60 to 80 percent of your walk-in breakfast price. If your breakfast buffet is ₹400 per person, add ₹250 to ₹320 on top of EP for a CP booking. This makes the bundled breakfast feel like good value versus ordering at the restaurant.</div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" id="faq-does-ota-commission-apply-on-the-meal">
               <div class="faq-question">Does OTA commission apply on the meal component of CP and MAP plans?</div>
               <div class="faq-answer">Yes. OTAs charge their commission percentage on the full booking amount, including the meal component. If your OTA commission is 18 percent and you sell a MAP plan at ₹3,500 (room ₹2,800 plus meals ₹700), you pay commission on the full ₹3,500, not just the room portion.</div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" id="faq-what-gst-rate-applies-when-i-sell">
               <div class="faq-question">What GST rate applies when I sell a MAP rate plan?</div>
               <div class="faq-answer">When meals are bundled into the room rate as a composite supply, GST is applied on the total declared tariff. If your MAP rate falls above ₹7,500 per night, the full amount attracts 18 percent GST. It is advisable to show the composite rate clearly on invoices rather than splitting room and meal separately.</div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" id="faq-what-is-the-difference-between-ep-cp">
               <div class="faq-question">What is the difference between EP, CP, MAP and AP?</div>
               <div class="faq-answer">They differ only by how many meals are included. EP is room only with no meals. CP adds breakfast. MAP adds breakfast and one more meal, usually dinner. AP includes breakfast, lunch and dinner. The room itself is the same in all four, so the price gap between them should reflect what the meals actually cost you to serve, not a round number.</div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" id="faq-what-do-ro-bb-hb-and-fb">
               <div class="faq-question">What do RO, BB, HB and FB mean?</div>
               <div class="faq-answer">They are the international names for the same four plans. RO is Room Only and matches EP. BB is Bed and Breakfast and matches CP. HB is Half Board and matches MAP. FB is Full Board and matches AP. You will see the Indian codes on MakeMyTrip and Goibibo, and the international codes on Booking.com, Agoda and Expedia.</div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" id="faq-what-do-cpai-mapai-and-apai-mean">
               <div class="faq-question">What do CPAI, MAPAI and APAI mean?</div>
               <div class="faq-answer">The AI suffix stands for "All Indian" and means the meals included are Indian cuisine rather than a continental or multi-cuisine spread. CPAI is breakfast with Indian dishes, MAPAI is breakfast and dinner in Indian cuisine, and APAI covers all three meals. These labels are common at hill station and pilgrimage properties where guests expect Indian food by default.</div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" id="faq-which-rate-plan-should-i-make-my">
               <div class="faq-question">Which rate plan should I make my base rate?</div>
               <div class="faq-answer">EP in almost every case. OTAs rank and compare listings on the base rate, so an EP base makes your property look correctly priced in filtered searches. If you set CP or MAP as the base, your listing shows a higher starting number and loses visibility against neighbours who led with room only. Sell the meal plans as upsells above that base.</div>
             </div>
@@ -1210,6 +1221,8 @@
   </div>
 
   <script src="/guides/js/guide-nav.js"></script>
+
+  <script src="/guides/js/guide-blocks.js"></script>
   <script src="/js/wa-widget.js"></script>
   <script src="/js/tools-widget.js"></script>
 </body>

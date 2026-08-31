@@ -120,52 +120,60 @@
 
   <!-- Structured Data - FAQPage -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is ARR full form in hotel?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "ARR stands for Average Room Rate. It is the average revenue earned per occupied room per night and is calculated as: ARR = Total Room Revenue ÷ Number of Rooms Sold. ARR is the Indian equivalent of ADR (Average Daily Rate) and is widely used in Indian hotel PMS software and reports."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the difference between ARR and ADR in hotels?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "ARR (Average Room Rate) and ADR (Average Daily Rate) measure the same thing. The average rate charged per occupied room per night. ARR is the term commonly used in India and South Asia, while ADR is the globally recognised term used by international hotel chains and OTAs like Booking.com and Expedia."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do you calculate ARR in a hotel?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "ARR is calculated by dividing total room revenue by the number of rooms sold in a given period. Formula: ARR = Total Room Revenue ÷ Rooms Sold. For example, if a hotel earns ₹2,00,000 from 50 room nights, the ARR is ₹4,000. Only rooms that were actually occupied are counted, vacant rooms are excluded."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is a good ARR for an Indian hotel?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A good ARR depends on your hotel segment and location. Budget hotels in Tier-2 cities typically target ₹1,500–₹2,500 ARR, while mid-scale hotels in metro cities aim for ₹4,000–₹7,000. Luxury hotels in premium locations can achieve ₹10,000–₹25,000+ ARR. Always compare your ARR against your local competitive set (compset) rather than national benchmarks."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does ARR include taxes and meal charges?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "ARR typically refers to room revenue only, excluding GST/taxes and any food and beverage charges. However, some hotels include breakfast or meal-plan charges in the room rate, which can inflate ARR figures. When comparing ARR across hotels, it's important to clarify whether the figure is room-only or inclusive of meals."
-        }
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between ARR and ADR in hotels?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ARR (Average Room Rate) and ADR (Average Daily Rate) measure the same thing: the average rate charged per occupied room per night. ARR is the term commonly used in India and South Asia, while ADR is the globally recognised term used by international hotel chains and OTAs like Booking.com and Expedia."
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you calculate ARR in a hotel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ARR is calculated by dividing total room revenue by the number of rooms sold in a given period. Formula: ARR = Total Room Revenue ÷ Rooms Sold. For example, if a hotel earns ₹2,00,000 from 50 room nights, the ARR is ₹4,000. Only rooms that were actually occupied are counted: vacant rooms are excluded."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does ARR include taxes and meal charges?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ARR typically refers to room revenue only, excluding GST/taxes and any food and beverage charges. However, some hotels include breakfast or meal-plan charges in the room rate, which can inflate ARR figures. When comparing ARR across hotels, it's important to clarify whether the figure is room-only or inclusive of meals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my ARR lower than my rack rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because ARR is an average. It includes discounted bookings, Best Available Rate (BAR) bookings, OTA rates, corporate rates, and promotional rates. All of which are typically below rack rate. The wider the gap, the more you are discounting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is ARR full form in hotel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ARR stands for Average Room Rate. It is the average revenue earned per occupied room per night and is calculated as: ARR = Total Room Revenue ÷ Number of Rooms Sold. ARR is the Indian equivalent of ADR (Average Daily Rate) and is widely used in Indian hotel PMS software and reports."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good ARR for an Indian hotel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A good ARR depends on your hotel segment and location. Budget hotels in Tier-2 cities typically target ₹1,500: ₹2,500 ARR, while mid-scale hotels in metro cities aim for ₹4,000: ₹7,000. Luxury hotels in premium locations can achieve ₹10,000: ₹25,000+ ARR. Always compare your ARR against your local competitive set (compset) rather than national benchmarks."
+      }
+    }
+  ]
+}
   </script>
   <script src="/js/nav.js"></script>
 
@@ -341,6 +349,8 @@
             <li><strong>Audit your corporate rates annually</strong>. Many hotels set corporate rates and forget to revise them. A rate set in 2022 at &#8377;2,500 is now suppressing ARR if your BAR is &#8377;4,000.</li>
           </ol>
 
+          <p>Improving channel mix assumes you have a mix to work with. Hotels selling through one or two platforms have no room to shift volume; a wider <a href="/services/independent-hotel-ota-listing/" style="color: var(--secondary);">OTA listing</a> gives you the channel-level data this analysis needs, and a free <a href="/services/ota-audit/" style="color: var(--secondary);">OTA listing audit</a> shows which of your existing channels is pulling ARR down.</p>
+
           <div class="highlight-box tip">
             <strong>Pro Tip:</strong> Track ARR by booking channel (OTA, direct, corporate, walk-in). Often one channel pulls the overall ARR down significantly. Identify that channel and address it, either by renegotiating rates or shifting focus to higher-value channels. Use our <a href="/tools/break-even-calculator/" style="color: var(--secondary);">break even calculator</a> to understand the rate floor you need.
           </div>
@@ -398,36 +408,67 @@
         </div>
       </div>
 
-      <h2 id="faq">Frequently Asked Questions</h2>
+      <div class="explore-tools">
+        <h3>Related Tools &amp; Guides</h3>
+        <div class="tools-grid-mini">
+          <a href="/tools/revenue-profit-estimator/" class="tool-link">
+            <span class="icon">📈</span>
+            <div class="text">
+              <h4>Revenue &amp; Profit Estimator</h4>
+              <p>Calculate your net revenue and profit margin per room night</p>
+            </div>
+          </a>
+          <a href="/tools/break-even-calculator/" class="tool-link">
+            <span class="icon">⚖️</span>
+            <div class="text">
+              <h4>Break-Even Calculator</h4>
+              <p>The minimum rate that covers your cost before you take a booking</p>
+            </div>
+          </a>
+          <a href="/guides/revenue/adr.html" class="tool-link">
+            <span class="icon">💵</span>
+            <div class="text">
+              <h4>ADR &amp; ARR Guide</h4>
+              <p>The formula every Indian hotel owner needs to know</p>
+            </div>
+          </a>
+          <a href="/guides/revenue/revpar.html" class="tool-link">
+            <span class="icon">📐</span>
+            <div class="text">
+              <h4>RevPAR Guide</h4>
+              <p>The metric that combines occupancy and rate into one number</p>
+            </div>
+          </a>
+        </div>
+      </div>
+            <h2 id="faq">Frequently Asked Questions</h2>
 
-          <h3>Is ARR and ADR the same thing?</h3>
-          <p>Yes. ARR (Average Room Rate) and ADR (Average Daily Rate) are identical metrics. ARR is used in India; ADR is used internationally. Same formula, same result.</p>
-
-          <h3>What is the ARR formula in hotel?</h3>
-          <p>ARR = Total Room Revenue &divide; Total Rooms Sold in the period. For example: &#8377;3,00,000 revenue from 100 rooms sold = &#8377;3,000 ARR.</p>
-
-          <h3>Should I include GST in ARR?</h3>
-          <p>No. ARR is always calculated on net room revenue before GST. Including tax in ARR would inflate the metric and make comparisons with other hotels or industry benchmarks misleading.</p>
-
-          <h3>Why is my ARR lower than my rack rate?</h3>
-          <p>Because ARR is an average. It includes discounted bookings, <a href="/guides/revenue/bar.html" style="color: var(--secondary);">Best Available Rate (BAR)</a> bookings, OTA rates, corporate rates, and promotional rates. All of which are typically below rack rate. The wider the gap, the more you are discounting.</p>
-        
-    
-          <h3>What is ARR full form in hotel?</h3>
-          <p>ARR stands for Average Room Rate. It is the average revenue earned per occupied room per night and is calculated as: ARR = Total Room Revenue ÷ Number of Rooms Sold. ARR is the Indian equivalent of ADR (Average Daily Rate) and is widely used in Indian hotel PMS software and reports.</p>
-
-          <h3>What is the difference between ARR and ADR in hotels?</h3>
-          <p>ARR (Average Room Rate) and ADR (Average Daily Rate) measure the same thing: the average rate charged per occupied room per night. ARR is the term commonly used in India and South Asia, while ADR is the globally recognised term used by international hotel chains and OTAs like Booking.com and Expedia.</p>
-
-          <h3>How do you calculate ARR in a hotel?</h3>
-          <p>ARR is calculated by dividing total room revenue by the number of rooms sold in a given period. Formula: ARR = Total Room Revenue ÷ Rooms Sold. For example, if a hotel earns ₹2,00,000 from 50 room nights, the ARR is ₹4,000. Only rooms that were actually occupied are counted: vacant rooms are excluded.</p>
-
-          <h3>What is a good ARR for an Indian hotel?</h3>
-          <p>A good ARR depends on your hotel segment and location. Budget hotels in Tier-2 cities typically target ₹1,500: ₹2,500 ARR, while mid-scale hotels in metro cities aim for ₹4,000: ₹7,000. Luxury hotels in premium locations can achieve ₹10,000: ₹25,000+ ARR. Always compare your ARR against your local competitive set (compset) rather than national benchmarks.</p>
-
-          <h3>Does ARR include taxes and meal charges?</h3>
-          <p>ARR typically refers to room revenue only, excluding GST/taxes and any food and beverage charges. However, some hotels include breakfast or meal-plan charges in the room rate, which can inflate ARR figures. When comparing ARR across hotels, it's important to clarify whether the figure is room-only or inclusive of meals.</p>
-
+      <div class="faq-section">
+        <div class="faq-item" id="faq-what-is-the-difference-between-arr-and">
+          <div class="faq-question">What is the difference between ARR and ADR in hotels?</div>
+          <div class="faq-answer">ARR (Average Room Rate) and ADR (Average Daily Rate) measure the same thing: the average rate charged per occupied room per night. ARR is the term commonly used in India and South Asia, while ADR is the globally recognised term used by international hotel chains and OTAs like Booking.com and Expedia.</div>
+        </div>
+        <div class="faq-item" id="faq-how-do-you-calculate-arr-in-a">
+          <div class="faq-question">How do you calculate ARR in a hotel?</div>
+          <div class="faq-answer">ARR is calculated by dividing total room revenue by the number of rooms sold in a given period. Formula: ARR = Total Room Revenue ÷ Rooms Sold. For example, if a hotel earns ₹2,00,000 from 50 room nights, the ARR is ₹4,000. Only rooms that were actually occupied are counted: vacant rooms are excluded.</div>
+        </div>
+        <div class="faq-item" id="faq-does-arr-include-taxes-and-meal-charges">
+          <div class="faq-question">Does ARR include taxes and meal charges?</div>
+          <div class="faq-answer">ARR typically refers to room revenue only, excluding GST/taxes and any food and beverage charges. However, some hotels include breakfast or meal-plan charges in the room rate, which can inflate ARR figures. When comparing ARR across hotels, it's important to clarify whether the figure is room-only or inclusive of meals.</div>
+        </div>
+        <div class="faq-item" id="faq-why-is-my-arr-lower-than-my">
+          <div class="faq-question">Why is my ARR lower than my rack rate?</div>
+          <div class="faq-answer">Because ARR is an average. It includes discounted bookings, <a href="/guides/revenue/bar.html" style="color: var(--secondary);">Best Available Rate (BAR)</a> bookings, OTA rates, corporate rates, and promotional rates. All of which are typically below rack rate. The wider the gap, the more you are discounting.</div>
+        </div>
+        <div class="faq-item" id="faq-what-is-arr-full-form-in-hotel">
+          <div class="faq-question">What is ARR full form in hotel?</div>
+          <div class="faq-answer">ARR stands for Average Room Rate. It is the average revenue earned per occupied room per night and is calculated as: ARR = Total Room Revenue ÷ Number of Rooms Sold. ARR is the Indian equivalent of ADR (Average Daily Rate) and is widely used in Indian hotel PMS software and reports.</div>
+        </div>
+        <div class="faq-item" id="faq-what-is-a-good-arr-for-an">
+          <div class="faq-question">What is a good ARR for an Indian hotel?</div>
+          <div class="faq-answer">A good ARR depends on your hotel segment and location. Budget hotels in Tier-2 cities typically target ₹1,500: ₹2,500 ARR, while mid-scale hotels in metro cities aim for ₹4,000: ₹7,000. Luxury hotels in premium locations can achieve ₹10,000: ₹25,000+ ARR. Always compare your ARR against your local competitive set (compset) rather than national benchmarks.</div>
+        </div>
+      </div>
     </div>
 
         <div class="prev-next-nav"><a href="/guides/revenue/no-show.html" class="prev-next-link prev"><div class="pn-direction">Previous</div><div class="pn-title">No-Show &amp; Cancellation</div></a><a href="/guides/revenue/overbooking.html" class="prev-next-link next"><div class="pn-direction">Next</div><div class="pn-title">Overbooking Strategy</div></a></div>
@@ -446,6 +487,8 @@
   </div>
 
   <script src="/guides/js/guide-nav.js"></script>
+
+  <script src="/guides/js/guide-blocks.js"></script>
   <script src="/js/wa-widget.js"></script>
   <script src="/js/tools-widget.js"></script>
 </body>

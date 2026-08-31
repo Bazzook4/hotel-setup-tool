@@ -125,44 +125,68 @@
 
   <!-- Structured Data - FAQPage -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is overbooking in hotels?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Hotel overbooking is when a hotel accepts more reservations than it has available rooms, anticipating that some guests will cancel or be a no-show. It is a deliberate revenue management strategy, not an error, used to maximise occupancy. If all guests arrive and the hotel is full, it must 'walk' the excess guests to another property."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why do hotels overbook intentionally?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Hotels overbook because cancellations and no-shows are predictable. If a hotel historically sees 10% of bookings cancel or no-show, accepting 110 bookings for 100 rooms ensures near-full occupancy. An unsold room on a given night is revenue lost forever. It cannot be recovered. Overbooking protects against that loss, but must be managed carefully to avoid walking guests."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What happens when a hotel walks a guest?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "When a hotel is overbooked and has no room for an arriving guest, it 'walks' them to a comparable or better nearby hotel. The original hotel typically pays for the guest's first night at the alternative property, arranges transportation, and may offer compensation like a free night voucher. In India, there is no legal obligation to walk guests, but it is standard industry practice."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do hotels manage overbooking risk?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Hotels manage overbooking by tracking historical cancellation and no-show rates by day of week and season. A Revenue Management System (RMS) or experienced revenue manager calculates a safe overbooking buffer. Hotels also reduce overbooking risk by enforcing stricter cancellation policies, requiring credit card guarantees, and using non-refundable rates that reduce last-minute cancellations."
-        }
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does overbooking mean in a hotel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Overbooking means a hotel has accepted more reservations than it has rooms available. It is a deliberate revenue management strategy to maximise occupancy rate by anticipating that some guests will cancel or not show up."
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "Is hotel overbooking legal in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, overbooking itself is not illegal. However, if a hotel fails to accommodate a guest with a confirmed reservation without arranging suitable alternative accommodation, the guest can file a complaint under the Consumer Protection Act 2019. Hotels must have a walk procedure in place and must offer comparable alternative accommodation at their own cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who should be walked first when overbooking occurs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hotels typically walk in this order: last-arrival bookings first, lowest-rate bookings, non-loyalty members, pay-at-hotel OTA bookings. VIPs, corporate account guests, loyal repeat guests, and families with children should always be accommodated first, walking them carries the highest reputational risk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much should a hotel overbook?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with your own historical no-show rate plus your same-day cancellation rate from your PMS. Most properties can safely overbook 3–6%. Never exceed 10% without solid data and a tested, documented walk procedure. Review your ARR/ADR targets alongside your overbooking level. The two must work together to produce a net positive revenue outcome."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do hotels overbook intentionally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hotels overbook because cancellations and no-shows are predictable. If a hotel historically sees 10% of bookings cancel or no-show, accepting 110 bookings for 100 rooms ensures near-full occupancy. An unsold room on a given night is revenue lost forever: it cannot be recovered. Overbooking protects against that loss, but must be managed carefully to avoid walking guests."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens when a hotel walks a guest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When a hotel is overbooked and has no room for an arriving guest, it 'walks' them to a comparable or better nearby hotel. The original hotel typically pays for the guest's first night at the alternative property, arranges transportation, and may offer compensation like a free night voucher. In India, there is no legal obligation to walk guests, but it is standard industry practice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do hotels manage overbooking risk?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hotels manage overbooking by tracking historical cancellation and no-show rates by day of week and season. A Revenue Management System (RMS) or experienced revenue manager calculates a safe overbooking buffer. Hotels also reduce overbooking risk by enforcing stricter cancellation policies, requiring credit card guarantees, and using non-refundable rates that reduce last-minute cancellations."
+      }
+    }
+  ]
+}
   </script>
   <script src="/js/nav.js"></script>
 
@@ -311,6 +335,8 @@
             <strong>Channel Strategy:</strong> If you are on Booking.com's pay-at-hotel model, your no-show exposure is the highest of any channel. See our guide on <a href="/guides/revenue/no-show.html" style="color: var(--secondary);">no-show policy</a> for credit card guarantee options and how to reduce exposure through your cancellation policy settings.
           </div>
 
+          <p>Your overbooking buffer is only as good as the channel mix behind it. Prepaid and guaranteed inventory is what makes the risk predictable, and that is configured per platform in each extranet. A <a href="/services/independent-hotel-ota-listing/" style="color: var(--secondary);">hotel OTA listing</a> set up with prepaid rates and card guarantees enabled gives you a mix you can actually forecast against, instead of one dominated by pay-at-hotel bookings you cannot hold anyone to.</p>
+
           <h2 id="how-to-handle-walked-guest">How to Handle a Walked Guest</h2>
 
           <p>When overbooking results in more arrivals than rooms, a situation called a "walk". You must relocate the affected guest to another property at your expense. The way this is handled determines whether you lose that guest permanently or retain goodwill.</p>
@@ -343,6 +369,8 @@
             <li><strong>Staff authority</strong>, clearly define who can approve a walk and who handles the guest conversation; never leave a junior receptionist to manage this alone</li>
             <li><strong>OTA notification procedure</strong>, when a guest is walked, update the reservation status on the OTA extranet correctly to avoid penalties</li>
           </ul>
+
+          <p>Check that the cancellation and no-show wording in each OTA extranet matches the policy you just wrote. A mismatch between what the guest agreed to on MakeMyTrip and what your front desk enforces is exactly what turns a walk into a dispute. A free <a href="/services/ota-audit/" style="color: var(--secondary);">OTA listing audit</a> surfaces those mismatches across every channel you sell on.</p>
 
           <div class="highlight-box tip">
             <strong>Pro Tip:</strong> Review your overbooking policy every quarter. Seasonality affects no-show rates significantly, Diwali weekend bookings in metro cities rarely no-show; monsoon weekday bookings at leisure properties frequently do. A single annual policy number is not granular enough for good revenue management.
@@ -408,30 +436,71 @@
         </div>
       </div>
 
-      <h2 id="faq">Frequently Asked Questions</h2>
+      <div class="explore-tools">
+        <h3>Related Tools &amp; Guides</h3>
+        <div class="tools-grid-mini">
+          <a href="/tools/break-even-calculator/" class="tool-link">
+            <span class="icon">⚖️</span>
+            <div class="text">
+              <h4>Break-Even Calculator</h4>
+              <p>The minimum rate that covers your cost before you take a booking</p>
+            </div>
+          </a>
+          <a href="/tools/revenue-management-tool/" class="tool-link">
+            <span class="icon">🏨</span>
+            <div class="text">
+              <h4>Revenue Management Tool</h4>
+              <p>Track occupancy, ADR and RevPAR in one place</p>
+            </div>
+          </a>
+          <a href="/guides/revenue/no-show.html" class="tool-link">
+            <span class="icon">🚫</span>
+            <div class="text">
+              <h4>No-Show Guide</h4>
+              <p>Reduce the revenue lost to empty rooms on confirmed bookings</p>
+            </div>
+          </a>
+          <a href="/guides/revenue/occupancy.html" class="tool-link">
+            <span class="icon">🛏️</span>
+            <div class="text">
+              <h4>Occupancy Rate Guide</h4>
+              <p>What good occupancy looks like and how to improve it</p>
+            </div>
+          </a>
+        </div>
+      </div>
+            <h2 id="faq">Frequently Asked Questions</h2>
 
-          <h3>What does overbooking mean in a hotel?</h3>
-          <p>Overbooking means a hotel has accepted more reservations than it has rooms available. It is a deliberate revenue management strategy to maximise <a href="/guides/revenue/occupancy.html" style="color: var(--secondary);">occupancy rate</a> by anticipating that some guests will cancel or not show up.</p>
-
-          <h3>Is hotel overbooking legal in India?</h3>
-          <p>Yes, overbooking itself is not illegal. However, if a hotel fails to accommodate a guest with a confirmed reservation without arranging suitable alternative accommodation, the guest can file a complaint under the Consumer Protection Act 2019. Hotels must have a walk procedure in place and must offer comparable alternative accommodation at their own cost.</p>
-
-          <h3>Who should be walked first when overbooking occurs?</h3>
-          <p>Hotels typically walk in this order: last-arrival bookings first, lowest-rate bookings, non-loyalty members, pay-at-hotel OTA bookings. VIPs, corporate account guests, loyal repeat guests, and families with children should always be accommodated first, walking them carries the highest reputational risk.</p>
-
-          <h3>How much should a hotel overbook?</h3>
-          <p>Start with your own historical no-show rate plus your same-day cancellation rate from your PMS. Most properties can safely overbook 3–6%. Never exceed 10% without solid data and a tested, documented walk procedure. Review your <a href="/guides/revenue/adr.html" style="color: var(--secondary);">ARR/ADR</a> targets alongside your overbooking level. The two must work together to produce a net positive revenue outcome.</p>
-        
-    
-          <h3>Why do hotels overbook intentionally?</h3>
-          <p>Hotels overbook because cancellations and no-shows are predictable. If a hotel historically sees 10% of bookings cancel or no-show, accepting 110 bookings for 100 rooms ensures near-full occupancy. An unsold room on a given night is revenue lost forever: it cannot be recovered. Overbooking protects against that loss, but must be managed carefully to avoid walking guests.</p>
-
-          <h3>What happens when a hotel walks a guest?</h3>
-          <p>When a hotel is overbooked and has no room for an arriving guest, it 'walks' them to a comparable or better nearby hotel. The original hotel typically pays for the guest's first night at the alternative property, arranges transportation, and may offer compensation like a free night voucher. In India, there is no legal obligation to walk guests, but it is standard industry practice.</p>
-
-          <h3>How do hotels manage overbooking risk?</h3>
-          <p>Hotels manage overbooking by tracking historical cancellation and no-show rates by day of week and season. A Revenue Management System (RMS) or experienced revenue manager calculates a safe overbooking buffer. Hotels also reduce overbooking risk by enforcing stricter cancellation policies, requiring credit card guarantees, and using non-refundable rates that reduce last-minute cancellations.</p>
-
+      <div class="faq-section">
+        <div class="faq-item" id="faq-what-does-overbooking-mean-in-a-hotel">
+          <div class="faq-question">What does overbooking mean in a hotel?</div>
+          <div class="faq-answer">Overbooking means a hotel has accepted more reservations than it has rooms available. It is a deliberate revenue management strategy to maximise <a href="/guides/revenue/occupancy.html" style="color: var(--secondary);">occupancy rate</a> by anticipating that some guests will cancel or not show up.</div>
+        </div>
+        <div class="faq-item" id="faq-is-hotel-overbooking-legal-in-india">
+          <div class="faq-question">Is hotel overbooking legal in India?</div>
+          <div class="faq-answer">Yes, overbooking itself is not illegal. However, if a hotel fails to accommodate a guest with a confirmed reservation without arranging suitable alternative accommodation, the guest can file a complaint under the Consumer Protection Act 2019. Hotels must have a walk procedure in place and must offer comparable alternative accommodation at their own cost.</div>
+        </div>
+        <div class="faq-item" id="faq-who-should-be-walked-first-when-overbooking">
+          <div class="faq-question">Who should be walked first when overbooking occurs?</div>
+          <div class="faq-answer">Hotels typically walk in this order: last-arrival bookings first, lowest-rate bookings, non-loyalty members, pay-at-hotel OTA bookings. VIPs, corporate account guests, loyal repeat guests, and families with children should always be accommodated first, walking them carries the highest reputational risk.</div>
+        </div>
+        <div class="faq-item" id="faq-how-much-should-a-hotel-overbook">
+          <div class="faq-question">How much should a hotel overbook?</div>
+          <div class="faq-answer">Start with your own historical no-show rate plus your same-day cancellation rate from your PMS. Most properties can safely overbook 3–6%. Never exceed 10% without solid data and a tested, documented walk procedure. Review your <a href="/guides/revenue/adr.html" style="color: var(--secondary);">ARR/ADR</a> targets alongside your overbooking level. The two must work together to produce a net positive revenue outcome.</div>
+        </div>
+        <div class="faq-item" id="faq-why-do-hotels-overbook-intentionally">
+          <div class="faq-question">Why do hotels overbook intentionally?</div>
+          <div class="faq-answer">Hotels overbook because cancellations and no-shows are predictable. If a hotel historically sees 10% of bookings cancel or no-show, accepting 110 bookings for 100 rooms ensures near-full occupancy. An unsold room on a given night is revenue lost forever: it cannot be recovered. Overbooking protects against that loss, but must be managed carefully to avoid walking guests.</div>
+        </div>
+        <div class="faq-item" id="faq-what-happens-when-a-hotel-walks-a">
+          <div class="faq-question">What happens when a hotel walks a guest?</div>
+          <div class="faq-answer">When a hotel is overbooked and has no room for an arriving guest, it 'walks' them to a comparable or better nearby hotel. The original hotel typically pays for the guest's first night at the alternative property, arranges transportation, and may offer compensation like a free night voucher. In India, there is no legal obligation to walk guests, but it is standard industry practice.</div>
+        </div>
+        <div class="faq-item" id="faq-how-do-hotels-manage-overbooking-risk">
+          <div class="faq-question">How do hotels manage overbooking risk?</div>
+          <div class="faq-answer">Hotels manage overbooking by tracking historical cancellation and no-show rates by day of week and season. A Revenue Management System (RMS) or experienced revenue manager calculates a safe overbooking buffer. Hotels also reduce overbooking risk by enforcing stricter cancellation policies, requiring credit card guarantees, and using non-refundable rates that reduce last-minute cancellations.</div>
+        </div>
+      </div>
     </div>
 
         <div class="prev-next-nav"><a href="/guides/revenue/arr.html" class="prev-next-link prev"><div class="pn-direction">Previous</div><div class="pn-title">ARR - Average Room Rate</div></a><a href="/guides/revenue/trevpar.html" class="prev-next-link next"><div class="pn-direction">Next</div><div class="pn-title">TRevPAR &amp; GOP PAR</div></a></div>
@@ -450,6 +519,8 @@
   </div>
 
   <script src="/guides/js/guide-nav.js"></script>
+
+  <script src="/guides/js/guide-blocks.js"></script>
   <script src="/js/wa-widget.js"></script>
   <script src="/js/tools-widget.js"></script>
 </body>

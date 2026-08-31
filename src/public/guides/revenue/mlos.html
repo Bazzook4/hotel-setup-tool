@@ -102,44 +102,44 @@
 
   <!-- Structured Data - FAQPage -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is MLOS in hotel revenue management?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "MLOS stands for Minimum Length of Stay. It is a restriction that requires guests to book for a minimum number of nights to get a particular rate. For example, setting MLOS of 2 means guests must book at least 2 nights. Hotels use MLOS to protect high-demand nights (like weekends or festivals) from single-night bookings that displace multi-night stays."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "When should a hotel use MLOS?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Hotels should apply MLOS around high-demand periods: long weekends, local festivals, weddings, or major events nearby. For example, if Diwali falls on a Thursday, setting MLOS of 3 nights prevents guests from booking just the peak Thursday night, forcing them to also take Wednesday and Friday, maximising total revenue across the period."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the difference between MLOS and CTA?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "MLOS (Minimum Length of Stay) requires guests to stay a minimum number of nights. CTA (Closed to Arrival) blocks any new bookings from checking in on a specific date entirely. Both are revenue management restrictions, but CTA is more aggressive. It prevents any arrival on that date, while MLOS allows arrivals as long as they stay long enough."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do OTAs support MLOS restrictions?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, major OTAs like Booking.com, Expedia, and MakeMyTrip support MLOS restrictions. You can set MLOS directly in the OTA extranet or through your Channel Manager, which syncs the restriction across all platforms simultaneously. Without a Channel Manager, you would need to manually update each OTA, which is time-consuming and error-prone."
-        }
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is MLOS in hotel revenue management?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MLOS stands for Minimum Length of Stay. It is a restriction that requires guests to book for a minimum number of nights to get a particular rate. For example, setting MLOS of 2 means guests must book at least 2 nights. Hotels use MLOS to protect high-demand nights (like weekends or festivals) from single-night bookings that displace multi-night stays."
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "When should a hotel use MLOS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hotels should apply MLOS around high-demand periods: long weekends, local festivals, weddings, or major events nearby. For example, if Diwali falls on a Thursday, setting MLOS of 3 nights prevents guests from booking just the peak Thursday night, forcing them to also take Wednesday and Friday, maximising total revenue across the period."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between MLOS and CTA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MLOS (Minimum Length of Stay) requires guests to stay a minimum number of nights. CTA (Closed to Arrival) blocks any new bookings from checking in on a specific date entirely. Both are revenue management restrictions, but CTA is more aggressive. It prevents any arrival on that date, while MLOS allows arrivals as long as they stay long enough."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do OTAs support MLOS restrictions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, major OTAs like Booking.com, Expedia, and MakeMyTrip support MLOS restrictions. You can set MLOS directly in the OTA extranet or through your Channel Manager, which syncs the restriction across all platforms simultaneously. Without a Channel Manager, you would need to manually update each OTA, which is time-consuming and error-prone."
+      }
+    }
+  ]
+}
   </script>
   <script src="/js/nav.js"></script>
 
@@ -319,6 +319,8 @@
         <li><strong>Via Channel Manager:</strong> Push MLOS to all channels from one place</li>
       </ol>
 
+      <p>Step two is where most properties lose the plot. Every OTA keeps its own restriction settings, so a two-night minimum has to be set separately in each extranet you sell through. If your rooms are not yet live across the major platforms, a <a href="/services/independent-hotel-ota-listing/" style="color: var(--secondary);">hotel OTA listing</a> gets each channel set up correctly from the start, restrictions included, rather than leaving you to retrofit them later.</p>
+
       <h2 id="best-practices">MLOS Best Practices</h2>
 
       <ul>
@@ -328,6 +330,8 @@
         <li><strong>Be consistent:</strong> Apply same MLOS across all channels (rate parity)</li>
         <li><strong>Communicate clearly:</strong> Guests should see "2-night minimum" when searching</li>
       </ul>
+
+      <p>MLOS only works if the restriction actually reaches every channel. A restriction set in your PMS but missing from one OTA extranet keeps selling single nights on that channel and quietly undoes the whole strategy. A free <a href="/services/ota-audit/" style="color: var(--secondary);">OTA listing audit</a> checks that your restrictions and rates are applying consistently everywhere you sell.</p>
 
       <div class="highlight-box tip">
         <strong>Pro Tip:</strong> Create a "2-night package" with slight discount instead of strict MLOS. Same effect, better guest perception!
@@ -355,22 +359,61 @@
         </div>
       </div>
     
-      <h2 id="faq">Frequently Asked Questions</h2>
-      <div class="faq-list">
-          <h3>What is MLOS in hotel revenue management?</h3>
-          <p>MLOS stands for Minimum Length of Stay. It is a restriction that requires guests to book for a minimum number of nights to get a particular rate. For example, setting MLOS of 2 means guests must book at least 2 nights. Hotels use MLOS to protect high-demand nights (like weekends or festivals) from single-night bookings that displace multi-night stays.</p>
+      <div class="explore-tools">
+        <h3>Related Tools &amp; Guides</h3>
+        <div class="tools-grid-mini">
+          <a href="/tools/demand-calendar/" class="tool-link">
+            <span class="icon">📅</span>
+            <div class="text">
+              <h4>Demand Calendar</h4>
+              <p>Spot high and low demand dates so you price ahead of the market</p>
+            </div>
+          </a>
+          <a href="/tools/revenue-management-tool/" class="tool-link">
+            <span class="icon">🏨</span>
+            <div class="text">
+              <h4>Revenue Management Tool</h4>
+              <p>Track occupancy, ADR and RevPAR in one place</p>
+            </div>
+          </a>
+          <a href="/guides/revenue/lead-time.html" class="tool-link">
+            <span class="icon">🕐</span>
+            <div class="text">
+              <h4>Lead Time Guide</h4>
+              <p>Use booking window data to price ahead of demand</p>
+            </div>
+          </a>
+          <a href="/guides/revenue/overbooking.html" class="tool-link">
+            <span class="icon">🔄</span>
+            <div class="text">
+              <h4>Overbooking Guide</h4>
+              <p>How to overbook safely without walking guests</p>
+            </div>
+          </a>
+        </div>
+      </div>
+            <h2 id="faq">Frequently Asked Questions</h2>
 
-          <h3>When should a hotel use MLOS?</h3>
-          <p>Hotels should apply MLOS around high-demand periods: long weekends, local festivals, weddings, or major events nearby. For example, if Diwali falls on a Thursday, setting MLOS of 3 nights prevents guests from booking just the peak Thursday night, forcing them to also take Wednesday and Friday, maximising total revenue across the period.</p>
-
-          <h3>What is the difference between MLOS and CTA?</h3>
-          <p>MLOS (Minimum Length of Stay) requires guests to stay a minimum number of nights. CTA (Closed to Arrival) blocks any new bookings from checking in on a specific date entirely. Both are revenue management restrictions, but CTA is more aggressive. It prevents any arrival on that date, while MLOS allows arrivals as long as they stay long enough.</p>
-
-          <h3>Do OTAs support MLOS restrictions?</h3>
-          <p>Yes, major OTAs like Booking.com, Expedia, and MakeMyTrip support MLOS restrictions. You can set MLOS directly in the OTA extranet or through your <strong>Channel Manager</strong>, which syncs the restriction across all platforms simultaneously. Without a <strong>Channel Manager</strong>, you would need to manually update each OTA, which is time-consuming and error-prone.</p>
+      <div class="faq-section">
+        <div class="faq-item" id="faq-what-is-mlos-in-hotel-revenue-management">
+          <div class="faq-question">What is MLOS in hotel revenue management?</div>
+          <div class="faq-answer">MLOS stands for Minimum Length of Stay. It is a restriction that requires guests to book for a minimum number of nights to get a particular rate. For example, setting MLOS of 2 means guests must book at least 2 nights. Hotels use MLOS to protect high-demand nights (like weekends or festivals) from single-night bookings that displace multi-night stays.</div>
+        </div>
+        <div class="faq-item" id="faq-when-should-a-hotel-use-mlos">
+          <div class="faq-question">When should a hotel use MLOS?</div>
+          <div class="faq-answer">Hotels should apply MLOS around high-demand periods: long weekends, local festivals, weddings, or major events nearby. For example, if Diwali falls on a Thursday, setting MLOS of 3 nights prevents guests from booking just the peak Thursday night, forcing them to also take Wednesday and Friday, maximising total revenue across the period.</div>
+        </div>
+        <div class="faq-item" id="faq-what-is-the-difference-between-mlos-and">
+          <div class="faq-question">What is the difference between MLOS and CTA?</div>
+          <div class="faq-answer">MLOS (Minimum Length of Stay) requires guests to stay a minimum number of nights. CTA (Closed to Arrival) blocks any new bookings from checking in on a specific date entirely. Both are revenue management restrictions, but CTA is more aggressive. It prevents any arrival on that date, while MLOS allows arrivals as long as they stay long enough.</div>
+        </div>
+        <div class="faq-item" id="faq-do-otas-support-mlos-restrictions">
+          <div class="faq-question">Do OTAs support MLOS restrictions?</div>
+          <div class="faq-answer">Yes, major OTAs like Booking.com, Expedia, and MakeMyTrip support MLOS restrictions. You can set MLOS directly in the OTA extranet or through your <strong>Channel Manager</strong>, which syncs the restriction across all platforms simultaneously. Without a <strong>Channel Manager</strong>, you would need to manually update each OTA, which is time-consuming and error-prone.</div>
+        </div>
       </div>
     </div>
-  
+
         <div class="prev-next-nav"><a href="/guides/revenue/bar.html" class="prev-next-link prev"><div class="pn-direction">Previous</div><div class="pn-title">BAR - Best Available Rate</div></a><a href="/guides/revenue/lead-time.html" class="prev-next-link next"><div class="pn-direction">Next</div><div class="pn-title">Lead Time &amp; Booking Window</div></a></div>
         <div class="related-cards-section"><h3>You Might Also Like</h3><div class="related-cards-grid"><a href="/guides/software/what-is-rms-hotel.html" class="related-card"><div class="rc-category">Software</div><div class="rc-title">Revenue Management System</div><div class="rc-desc">Automate MLOS restrictions</div></a><a href="/guides/software/channel-manager.html" class="related-card"><div class="rc-category">Software</div><div class="rc-title">Channel Manager</div><div class="rc-desc">Sync restrictions to OTAs</div></a></div></div>
       </article>
@@ -389,6 +432,8 @@
   </div>
 
   <script src="/guides/js/guide-nav.js"></script>
+
+  <script src="/guides/js/guide-blocks.js"></script>
   <script src="/js/wa-widget.js"></script>
   <script src="/js/tools-widget.js"></script>
 </body>

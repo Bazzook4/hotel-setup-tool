@@ -168,44 +168,44 @@
 
   <!-- Structured Data - FAQPage -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How do I make sure my hotel website is always cheaper than OTAs?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Do a manual rate check on MMT, Goibibo and Booking.com every week for your key dates. If any OTA is showing a lower rate than your direct booking website, update your website rate to undercut it. The goal is to always be ₹50–₹200 cheaper on your own site. Also add perks like free cancellation or a welcome drink that OTAs cannot match. This makes the direct booking clearly the better choice even at the same price."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Which OTA dashboards show how my hotel compares to the local market?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "MakeMyTrip, Booking.com and Expedia all provide market-level benchmarking in their hotel partner dashboards. These tools show aggregate occupancy, ADR and RevPAR for a defined set of comparable properties in your area. Use these benchmarks to understand whether a slow period is a market-wide issue or specific to your property."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I find out which countries are booking hotels in my area but not my property?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "OTA partner dashboards, particularly Booking.com and MakeMyTrip, provide source market data showing the nationality breakdown of guests booking hotels in your area. Compare this with your own booking nationality data. Any nationality that appears frequently in the market data but not in your own bookings is a gap. Consider listing on OTAs popular in those countries: Trip.com for China and Southeast Asia, Traveloka for Indonesia, or create geo-targeted rate plans."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What daily numbers should a hotel owner check every morning?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Focus on four numbers: Total Revenue for the previous day, ADR (Average Daily Rate), Occupancy percentage, and ALOS (Average Length of Stay). These four metrics together tell you whether you are filling rooms, at what price, and for how long. Compare each number to the same day last year to immediately understand if you are ahead or behind. No need to read through full reports."
-        }
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I make sure my hotel website is always cheaper than OTAs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Do a manual rate check on MMT, Goibibo and Booking.com every week for your key upcoming dates. If any OTA is showing a lower rate than your direct booking website, update your website rate to undercut it, even ₹50 to ₹100 lower is enough to tip the decision. Also add perks like free cancellation or a welcome drink that OTAs cannot match. A guest with two browser tabs open will choose your direct site when the price is lower and the perks are visible."
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "Which OTA dashboards show how my hotel compares to the local market?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MakeMyTrip, Booking.com and Expedia all provide market-level benchmarking inside their hotel partner portals. These tools show aggregate occupancy, ADR and RevPAR for comparable properties in your area. Booking.com calls this the Market Dashboard; MakeMyTrip provides similar data under Market Insights in the hotel partner login. Log in regularly and compare your metrics to the market averages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find out which countries are booking hotels in my area but not my property?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OTA partner dashboards, particularly Booking.com, provide source market data showing the nationality breakdown of guests booking hotels in your area. Compare this with your own booking nationality data from your PMS. Any nationality that appears frequently in the market data but rarely in your own bookings is a gap worth addressing. List on OTAs that serve those markets: Trip.com for China and Southeast Asia, Traveloka for Indonesia, and relevant European OTAs if you see Western European demand in the market data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What daily numbers should a hotel owner check every morning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Focus on four: Total Revenue, ADR, Occupancy, and ALOS (Average Length of Stay). These four metrics together tell you whether you are filling rooms, at what price, and for how long. Compare each number to the same day last year. That comparison immediately tells you whether you are ahead or behind, and gives you a specific number to work with rather than a vague sense that things are good or slow."
+      }
+    }
+  ]
+}
   </script>
   <script src="/js/nav.js"></script>
 
@@ -272,6 +272,8 @@
       <div class="highlight-box">
         <strong>Target gap:</strong> Your direct rate should be ₹50 to ₹200 lower than the cheapest OTA rate for the same room and dates. This gives a guest a clear financial reason to book direct.
       </div>
+
+      <p>All of this assumes you have somewhere to send that cheaper rate. If you do not run a booking engine yet, a <a href="/services/hotel-website/" style="color: var(--secondary);">direct booking website</a> is the one piece of infrastructure that makes rate parity possible at all. And if you are not live on every major platform, a <a href="/services/independent-hotel-ota-listing/" style="color: var(--secondary);">hotel OTA listing</a> on MakeMyTrip and Booking.com covers the two channels that carry most Indian online hotel demand.</p>
 
       <p>Beyond price, offer perks that OTAs structurally cannot match:</p>
       <ul>
@@ -470,24 +472,62 @@
         </div>
       </div>
 
-      <h2 id="faq">Frequently Asked Questions</h2>
+      <div class="explore-tools">
+        <h3>Related Tools &amp; Guides</h3>
+        <div class="tools-grid-mini">
+          <a href="/tools/revenue-profit-estimator/" class="tool-link">
+            <span class="icon">📈</span>
+            <div class="text">
+              <h4>Revenue &amp; Profit Estimator</h4>
+              <p>Calculate your net revenue and profit margin per room night</p>
+            </div>
+          </a>
+          <a href="/tools/ota-dependency-calculator/" class="tool-link">
+            <span class="icon">📊</span>
+            <div class="text">
+              <h4>OTA Dependency Calculator</h4>
+              <p>Measure how reliant your hotel is on OTAs versus direct bookings</p>
+            </div>
+          </a>
+          <a href="/guides/revenue/revpar.html" class="tool-link">
+            <span class="icon">📐</span>
+            <div class="text">
+              <h4>RevPAR Guide</h4>
+              <p>The metric that combines occupancy and rate into one number</p>
+            </div>
+          </a>
+          <a href="/guides/revenue/hotel-rate-plans.html" class="tool-link">
+            <span class="icon">📑</span>
+            <div class="text">
+              <h4>Rate Plans Guide</h4>
+              <p>EP, CP, MAP and AP, and how to price each plan correctly</p>
+            </div>
+          </a>
+        </div>
+      </div>
+            <h2 id="faq">Frequently Asked Questions</h2>
 
-      <h3>How do I make sure my hotel website is always cheaper than OTAs?</h3>
-      <p>Do a manual rate check on MMT, Goibibo and Booking.com every week for your key upcoming dates. If any OTA is showing a lower rate than your direct booking website, update your website rate to undercut it, even ₹50 to ₹100 lower is enough to tip the decision. Also add perks like free cancellation or a welcome drink that OTAs cannot match. A guest with two browser tabs open will choose your direct site when the price is lower and the perks are visible.</p>
-
-      <h3>Which OTA dashboards show how my hotel compares to the local market?</h3>
-      <p>MakeMyTrip, Booking.com and Expedia all provide market-level benchmarking inside their hotel partner portals. These tools show aggregate occupancy, ADR and RevPAR for comparable properties in your area. Booking.com calls this the Market Dashboard; MakeMyTrip provides similar data under Market Insights in the hotel partner login. Log in regularly and compare your metrics to the market averages.</p>
-
-      <h3>How do I find out which countries are booking hotels in my area but not my property?</h3>
-      <p>OTA partner dashboards, particularly Booking.com, provide source market data showing the nationality breakdown of guests booking hotels in your area. Compare this with your own booking nationality data from your PMS. Any nationality that appears frequently in the market data but rarely in your own bookings is a gap worth addressing. List on OTAs that serve those markets: Trip.com for China and Southeast Asia, Traveloka for Indonesia, and relevant European OTAs if you see Western European demand in the market data.</p>
-
-      <h3>What daily numbers should a hotel owner check every morning?</h3>
-      <p>Focus on four: Total Revenue, ADR, Occupancy, and ALOS (Average Length of Stay). These four metrics together tell you whether you are filling rooms, at what price, and for how long. Compare each number to the same day last year. That comparison immediately tells you whether you are ahead or behind, and gives you a specific number to work with rather than a vague sense that things are good or slow.</p>
-
-    
+      <div class="faq-section">
+        <div class="faq-item" id="faq-how-do-i-make-sure-my-hotel">
+          <div class="faq-question">How do I make sure my hotel website is always cheaper than OTAs?</div>
+          <div class="faq-answer">Do a manual rate check on MMT, Goibibo and Booking.com every week for your key upcoming dates. If any OTA is showing a lower rate than your direct booking website, update your website rate to undercut it, even ₹50 to ₹100 lower is enough to tip the decision. Also add perks like free cancellation or a welcome drink that OTAs cannot match. A guest with two browser tabs open will choose your direct site when the price is lower and the perks are visible.</div>
+        </div>
+        <div class="faq-item" id="faq-which-ota-dashboards-show-how-my-hotel">
+          <div class="faq-question">Which OTA dashboards show how my hotel compares to the local market?</div>
+          <div class="faq-answer">MakeMyTrip, Booking.com and Expedia all provide market-level benchmarking inside their hotel partner portals. These tools show aggregate occupancy, ADR and RevPAR for comparable properties in your area. Booking.com calls this the Market Dashboard; MakeMyTrip provides similar data under Market Insights in the hotel partner login. Log in regularly and compare your metrics to the market averages.</div>
+        </div>
+        <div class="faq-item" id="faq-how-do-i-find-out-which-countries">
+          <div class="faq-question">How do I find out which countries are booking hotels in my area but not my property?</div>
+          <div class="faq-answer">OTA partner dashboards, particularly Booking.com, provide source market data showing the nationality breakdown of guests booking hotels in your area. Compare this with your own booking nationality data from your PMS. Any nationality that appears frequently in the market data but rarely in your own bookings is a gap worth addressing. List on OTAs that serve those markets: Trip.com for China and Southeast Asia, Traveloka for Indonesia, and relevant European OTAs if you see Western European demand in the market data.</div>
+        </div>
+        <div class="faq-item" id="faq-what-daily-numbers-should-a-hotel-owner">
+          <div class="faq-question">What daily numbers should a hotel owner check every morning?</div>
+          <div class="faq-answer">Focus on four: Total Revenue, ADR, Occupancy, and ALOS (Average Length of Stay). These four metrics together tell you whether you are filling rooms, at what price, and for how long. Compare each number to the same day last year. That comparison immediately tells you whether you are ahead or behind, and gives you a specific number to work with rather than a vague sense that things are good or slow.</div>
+        </div>
+      </div>
     </div>
 
-    <div class="prev-next-nav"><a href="/guides/revenue/trevpar.html" class="prev-next-link prev"><div class="pn-direction">Previous</div><div class="pn-title">TRevPAR &amp; GOP PAR</div></a><div class="prev-next-placeholder"></div></div>
+        <div class="prev-next-nav"><a href="/guides/revenue/trevpar.html" class="prev-next-link prev"><div class="pn-direction">Previous</div><div class="pn-title">TRevPAR &amp; GOP PAR</div></a><div class="prev-next-placeholder"></div></div>
     <div class="related-cards-section"><h3>You Might Also Like</h3><div class="related-cards-grid"><a href="/guides/revenue/revpar.html" class="related-card"><div class="rc-category">Revenue</div><div class="rc-title">RevPAR</div><div class="rc-desc">The metric that tells you if it worked</div></a><a href="/guides/revenue/adr.html" class="related-card"><div class="rc-category">Revenue</div><div class="rc-title">ADR</div><div class="rc-desc">Raise rate without losing occupancy</div></a><a href="/guides/revenue/occupancy.html" class="related-card"><div class="rc-category">Revenue</div><div class="rc-title">Occupancy</div><div class="rc-desc">The other half of the equation</div></a></div></div>
   </article>
 
@@ -503,6 +543,8 @@
   </div>
 
   <script src="/guides/js/guide-nav.js"></script>
+
+  <script src="/guides/js/guide-blocks.js"></script>
   <script src="/js/wa-widget.js"></script>
   <script src="/js/tools-widget.js"></script>
 </body>

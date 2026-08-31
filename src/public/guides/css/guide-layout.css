@@ -460,3 +460,137 @@
   max-width: 100%;
   -webkit-overflow-scrolling: touch;
 }
+
+/* ----- Related Tools & Guides -----
+   The same block the /tools/ pages use, so a reader moving between a guide and
+   a tool sees one component, not two. Mirrors /tools/css/tool-blocks.css. Four
+   links per block: two columns on desktop, stacked on mobile. */
+.explore-tools {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+.explore-tools h3 {
+  color: var(--primary, #3E3D35);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.tools-grid-mini {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.tool-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s;
+}
+
+.tool-link:hover {
+  background: var(--secondary-light, rgba(137, 130, 110, 0.12));
+  transform: translateX(4px);
+}
+
+.tool-link .icon { font-size: 1.5rem; }
+
+.tool-link .text h4 {
+  color: var(--primary, #3E3D35);
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.tool-link .text p {
+  color: #666;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/* ----- FAQ accordion -----
+   Collapsible, matching the tool pages. Answers stay in the DOM so crawlers
+   and the FAQPage schema still see them; only the display is toggled. */
+.faq-section {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+.faq-section h3 {
+  color: var(--primary, #3E3D35);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.faq-item {
+  border-bottom: 1px solid #eee;
+  padding: 1rem 0;
+}
+
+.faq-item:last-child { border-bottom: none; }
+
+.faq-question {
+  font-weight: 600;
+  color: var(--primary, #3E3D35);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.faq-question::after {
+  content: '+';
+  font-size: 1.5rem;
+  color: var(--secondary, #89826E);
+  font-weight: 400;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.faq-item.open .faq-question::after { content: '\2212'; }
+
+.faq-answer {
+  display: none;
+  padding-top: 0.75rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+.faq-item.open .faq-answer { display: block; }
+
+/* Inside the article card these two blocks would be a white card drawn on a
+   white card: the shadow is invisible and the radius reads as a stray rounded
+   rect. Guides nest them inside .article-content, tool pages do not, so scope
+   the card treatment off when there is already a card around them and separate
+   the blocks with a rule instead. */
+.article-content .explore-tools,
+.article-content .faq-section {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 2rem 0 0;
+  margin-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+@media (max-width: 768px) {
+  .explore-tools,
+  .faq-section { padding: 1.25rem; }
+
+  .article-content .explore-tools,
+  .article-content .faq-section { padding: 1.5rem 0 0; }
+
+  .tools-grid-mini { grid-template-columns: 1fr; }
+}

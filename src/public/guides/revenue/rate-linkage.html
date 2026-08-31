@@ -189,6 +189,11 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.07);
     }
 
+    .quick-answer { background: #3E3D35; color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; }
+    .quick-answer h2 { color: white !important; border: none !important; margin: 0 0 1rem 0 !important; padding: 0 !important; font-size: 1.3rem; }
+    .quick-answer .big-text { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .quick-answer p { color: white; }
+
     .article-content h2 {
       font-size: 1.5rem;
       color: var(--primary);
@@ -378,60 +383,60 @@
 
   <!-- Structured Data - FAQPage -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is rate linkage in hotels?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Rate linkage is a feature that automatically calculates rates for secondary rate plans based on a primary (master) rate plan. Instead of manually entering rates for every rate plan, you set up a base rate plan and create linked rate plans with percentage adjustments. When you update your base rate, all linked rates adjust automatically."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What are derived rates on Booking.com?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Derived rates on Booking.com are secondary rate plans that automatically calculate based on a master rate plan. For example, if your flexible rate is ₹3,000 and you set a non-refundable derived rate at -10%, it will automatically be ₹2,700. When you change your master rate, all derived rates update automatically."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What are child rates on Agoda?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Child rates on Agoda are rate plans linked to a parent rate plan. They work the same as derived rates on Booking.com. You define a percentage or fixed amount adjustment, and the child rate automatically calculates based on the parent rate. This saves time managing multiple rate plans."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I set up rate linkage on MakeMyTrip?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "To set up rate linkage on MakeMyTrip: 1) Log into your hotel Extranet, 2) Go to Rate Plans section, 3) Click 'Add Linked Rate', 4) Select your base rate plan, 5) Enter your rate linkage percentage (e.g., -10% for non-refundable), 6) Set booking conditions, 7) Submit. The linked rate will now calculate automatically."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What percentage discount should I offer on non-refundable rates?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The ideal discount for non-refundable rates is 10-15% off your flexible rate. This is enough to motivate guests to commit to a non-refundable booking, while still maintaining healthy margins. Discounts below 5% are too small to be attractive, while discounts above 20% may unnecessarily reduce revenue."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I use rate linkage with a channel manager?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, if you use a channel manager (like eZee, RMS Cloud, or SiteMinder), you can set up rate linkage once in your PMS, and it will sync to all OTAs automatically. This is the most efficient way to manage linked rates across 5-10 channels simultaneously."
-        }
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is rate linkage in hotels?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rate linkage is a feature that automatically calculates rates for secondary rate plans based on a primary (master) rate plan. Instead of manually entering rates for every rate plan, you set up a base rate plan and create linked rate plans with percentage adjustments. When you update your base rate, all linked rates adjust automatically."
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "What are derived rates on Booking.com?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Derived rates on Booking.com are secondary rate plans that automatically calculate based on a master rate plan. For example, if your flexible rate is ₹3,000 and you set a non-refundable derived rate at -10%, it will automatically be ₹2,700. When you change your master rate, all derived rates update automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are child rates on Agoda?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Child rates on Agoda are rate plans linked to a parent rate plan. They work the same as derived rates on Booking.com. You define a percentage or fixed amount adjustment, and the child rate automatically calculates based on the parent rate. This saves time managing multiple rate plans."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I set up rate linkage on MakeMyTrip?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To set up rate linkage on MakeMyTrip: 1) Log into your hotel Extranet, 2) Go to Rate Plans section, 3) Click \"Add Linked Rate\", 4) Select your base rate plan, 5) Enter your rate linkage percentage (e.g., -10% for non-refundable), 6) Set booking conditions, 7) Submit. The linked rate will now calculate automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What percentage discount should I offer on non-refundable rates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The ideal discount for non-refundable rates is 10-15% off your flexible rate. This is enough to motivate guests to commit to a non-refundable booking, while still maintaining healthy margins. Discounts below 5% are too small to be attractive, while discounts above 20% may unnecessarily reduce revenue."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use rate linkage with a channel manager?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if you use a channel manager (like eZee, RMS Cloud, or SiteMinder), you can set up rate linkage once in your PMS, and it will sync to all OTAs automatically. This is the most efficient way to manage linked rates across 5-10 channels simultaneously."
+      }
+    }
+  ]
+}
   </script>
 
   <!-- Structured Data - HowTo -->
@@ -514,6 +519,16 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OnlineHotelier",
+    "url": "https://www.onlinehotelier.com",
+    "logo": "https://www.onlinehotelier.com/favicon.png",
+    "sameAs": ["https://www.onlinehotelier.com"]
+  }
+  </script>
 
   <!-- Open Graph / Twitter -->
   <meta property="og:image" content="https://www.onlinehotelier.com/og-image.png">
@@ -552,9 +567,10 @@
     <div class="article-content">
       <p>Many small hotels avoid offering multiple rate plans because it seems too complicated to manage. But what if you could set one base rate and have all your other rates automatically calculated? That's exactly what <strong>rate linkage</strong> does, and it's available on almost every major OTA.</p>
 
-      <div class="highlight-box">
-        <strong>Quick Summary:</strong>
-        Rate linkage (also called derived rates or child rates) lets you define one master rate plan. All your other rate plans, refundable, non-refundable, weekly packages, meal-inclusive plans, are automatically calculated based on percentage adjustments you set once. Update one rate, and all linked rates update instantly.
+      <div class="quick-answer">
+        <h2 id="quick-answer">What is Rate Linkage?</h2>
+        <div class="big-text">Set one rate. Every other rate follows.</div>
+        <p>Rate linkage, also called derived rates or child rates, lets you define one master rate plan. Your other plans, refundable, non-refundable, weekly packages and meal-inclusive, are calculated automatically from percentage adjustments you set once. Update the master rate and every linked rate updates instantly.</p>
       </div>
 
       <h2 id="what-is-rate-linkage">What is Rate Linkage?</h2>
@@ -731,6 +747,8 @@
         <li><strong>Don't link everything:</strong> Special promotional rates should be standalone, not linked</li>
       </ul>
 
+      <p>Rate linkage is configured inside each OTA extranet, so you need to be live on the platform first. If your property is not yet on MakeMyTrip or Booking.com, a <a href="/services/independent-hotel-ota-listing/" style="color: var(--secondary);">hotel OTA listing</a> gets you into the extranet where these derived rates are set up. Once linked rates are running, a free <a href="/services/ota-audit/" style="color: var(--secondary);">OTA listing audit</a> confirms they are publishing correctly, because a misconfigured child rate quietly undercuts your BAR without showing up in your own extranet view.</p>
+
       <h2 id="when-not-to-use-rate-linkage">When NOT to Use Rate Linkage</h2>
 
       <p>Rate linkage is powerful, but there are scenarios where manual rates work better:</p>
@@ -769,30 +787,70 @@
         </div>
       </div>
 
-      <h2 id="faq">Frequently Asked Questions</h2>
+      <div class="explore-tools">
+        <h3>Related Tools &amp; Guides</h3>
+        <div class="tools-grid-mini">
+          <a href="/tools/ota-commission-calculator/" class="tool-link">
+            <span class="icon">💰</span>
+            <div class="text">
+              <h4>OTA Commission Calculator</h4>
+              <p>What you actually keep after MMT, Goibibo and Booking.com fees</p>
+            </div>
+          </a>
+          <a href="/tools/competitor-analysis/" class="tool-link">
+            <span class="icon">🔍</span>
+            <div class="text">
+              <h4>Competitor Rate Analysis</h4>
+              <p>See where your rate sits against matched hotels by star class</p>
+            </div>
+          </a>
+          <a href="/guides/revenue/bar.html" class="tool-link">
+            <span class="icon">📋</span>
+            <div class="text">
+              <h4>BAR Rate Guide</h4>
+              <p>Set a best available rate that works across all channels</p>
+            </div>
+          </a>
+          <a href="/guides/revenue/hotel-rate-plans.html" class="tool-link">
+            <span class="icon">📑</span>
+            <div class="text">
+              <h4>Rate Plans Guide</h4>
+              <p>EP, CP, MAP and AP, and how to price each plan correctly</p>
+            </div>
+          </a>
+        </div>
+      </div>
+            <h2 id="faq">Frequently Asked Questions</h2>
 
-      <h3>What is rate linkage in hotels?</h3>
-      <p>Rate linkage is a feature that automatically calculates rates for secondary rate plans based on a primary (master) rate plan. Instead of manually entering rates for every rate plan, you set up a base rate plan and create linked rate plans with percentage adjustments. When you update your base rate, all linked rates adjust automatically.</p>
-
-      <h3>What are derived rates on Booking.com?</h3>
-      <p>Derived rates on Booking.com are secondary rate plans that automatically calculate based on a master rate plan. For example, if your flexible rate is ₹3,000 and you set a non-refundable derived rate at -10%, it will automatically be ₹2,700. When you change your master rate, all derived rates update automatically.</p>
-
-      <h3>What are child rates on Agoda?</h3>
-      <p>Child rates on Agoda are rate plans linked to a parent rate plan. They work the same as derived rates on Booking.com. You define a percentage or fixed amount adjustment, and the child rate automatically calculates based on the parent rate. This saves time managing multiple rate plans.</p>
-
-      <h3>How do I set up rate linkage on MakeMyTrip?</h3>
-      <p>To set up rate linkage on MakeMyTrip: 1) Log into your hotel Extranet, 2) Go to Rate Plans section, 3) Click "Add Linked Rate", 4) Select your base rate plan, 5) Enter your rate linkage percentage (e.g., -10% for non-refundable), 6) Set booking conditions, 7) Submit. The linked rate will now calculate automatically.</p>
-
-      <h3>What percentage discount should I offer on non-refundable rates?</h3>
-      <p>The ideal discount for non-refundable rates is 10-15% off your flexible rate. This is enough to motivate guests to commit to a non-refundable booking, while still maintaining healthy margins. Discounts below 5% are too small to be attractive, while discounts above 20% may unnecessarily reduce revenue.</p>
-
-      <h3>Can I use rate linkage with a channel manager?</h3>
-      <p>Yes, if you use a channel manager (like eZee, RMS Cloud, or SiteMinder), you can set up rate linkage once in your PMS, and it will sync to all OTAs automatically. This is the most efficient way to manage linked rates across 5-10 channels simultaneously.</p>
-
-    
+      <div class="faq-section">
+        <div class="faq-item" id="faq-what-is-rate-linkage-in-hotels">
+          <div class="faq-question">What is rate linkage in hotels?</div>
+          <div class="faq-answer">Rate linkage is a feature that automatically calculates rates for secondary rate plans based on a primary (master) rate plan. Instead of manually entering rates for every rate plan, you set up a base rate plan and create linked rate plans with percentage adjustments. When you update your base rate, all linked rates adjust automatically.</div>
+        </div>
+        <div class="faq-item" id="faq-what-are-derived-rates-on-booking-com">
+          <div class="faq-question">What are derived rates on Booking.com?</div>
+          <div class="faq-answer">Derived rates on Booking.com are secondary rate plans that automatically calculate based on a master rate plan. For example, if your flexible rate is ₹3,000 and you set a non-refundable derived rate at -10%, it will automatically be ₹2,700. When you change your master rate, all derived rates update automatically.</div>
+        </div>
+        <div class="faq-item" id="faq-what-are-child-rates-on-agoda">
+          <div class="faq-question">What are child rates on Agoda?</div>
+          <div class="faq-answer">Child rates on Agoda are rate plans linked to a parent rate plan. They work the same as derived rates on Booking.com. You define a percentage or fixed amount adjustment, and the child rate automatically calculates based on the parent rate. This saves time managing multiple rate plans.</div>
+        </div>
+        <div class="faq-item" id="faq-how-do-i-set-up-rate-linkage">
+          <div class="faq-question">How do I set up rate linkage on MakeMyTrip?</div>
+          <div class="faq-answer">To set up rate linkage on MakeMyTrip: 1) Log into your hotel Extranet, 2) Go to Rate Plans section, 3) Click "Add Linked Rate", 4) Select your base rate plan, 5) Enter your rate linkage percentage (e.g., -10% for non-refundable), 6) Set booking conditions, 7) Submit. The linked rate will now calculate automatically.</div>
+        </div>
+        <div class="faq-item" id="faq-what-percentage-discount-should-i-offer-on">
+          <div class="faq-question">What percentage discount should I offer on non-refundable rates?</div>
+          <div class="faq-answer">The ideal discount for non-refundable rates is 10-15% off your flexible rate. This is enough to motivate guests to commit to a non-refundable booking, while still maintaining healthy margins. Discounts below 5% are too small to be attractive, while discounts above 20% may unnecessarily reduce revenue.</div>
+        </div>
+        <div class="faq-item" id="faq-can-i-use-rate-linkage-with-a">
+          <div class="faq-question">Can I use rate linkage with a channel manager?</div>
+          <div class="faq-answer">Yes, if you use a channel manager (like eZee, RMS Cloud, or SiteMinder), you can set up rate linkage once in your PMS, and it will sync to all OTAs automatically. This is the most efficient way to manage linked rates across 5-10 channels simultaneously.</div>
+        </div>
+      </div>
     </div>
 
-    <div class="prev-next-nav"><a href="/guides/revenue/hotel-rate-plans.html" class="prev-next-link prev"><div class="pn-direction">Previous</div><div class="pn-title">Hotel Rate Plans: EP, CP, MAP, AP</div></a><a href="/guides/revenue/revpar.html" class="prev-next-link next"><div class="pn-direction">Next</div><div class="pn-title">RevPAR</div></a></div>
+        <div class="prev-next-nav"><a href="/guides/revenue/hotel-rate-plans.html" class="prev-next-link prev"><div class="pn-direction">Previous</div><div class="pn-title">Hotel Rate Plans: EP, CP, MAP, AP</div></a><a href="/guides/revenue/revpar.html" class="prev-next-link next"><div class="pn-direction">Next</div><div class="pn-title">RevPAR</div></a></div>
     <div class="related-cards-section"><h3>You Might Also Like</h3><div class="related-cards-grid"><a href="/guides/revenue/hotel-rate-plans.html" class="related-card"><div class="rc-category">Revenue</div><div class="rc-title">Hotel Rate Plans</div><div class="rc-desc">The plans you are linking together</div></a><a href="/guides/revenue/bar.html" class="related-card"><div class="rc-category">Revenue</div><div class="rc-title">BAR Pricing</div><div class="rc-desc">The rate everything else derives from</div></a><a href="/guides/software/channel-manager.html" class="related-card"><div class="rc-category">Software</div><div class="rc-title">Channel Manager</div><div class="rc-desc">Where linked rates are actually managed</div></a></div></div>
   </article>
 
@@ -806,6 +864,8 @@
   </footer>
 
   <script src="/guides/js/guide-nav.js"></script>
+
+  <script src="/guides/js/guide-blocks.js"></script>
   <script src="/js/wa-widget.js"></script>
   <script src="/js/tools-widget.js"></script>
 </body>
