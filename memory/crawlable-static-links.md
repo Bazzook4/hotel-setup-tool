@@ -24,4 +24,4 @@ To regenerate after editing `RELATED_CONTENT`: reset the affected page's `<div c
 - Check the **inbound** distribution, not just outbound. After this fix: 2 pages at 1 inbound, most at 2-9, `what-is-ota.html` at 20 and `channel-manager.html` at 21. Cap a single destination around 10 before adding more; push new links toward under-linked commercial pages.
 - When an FAQ answer covers another guide's primary keyword, keep the answer short and link out to that guide. That converts cannibalisation into an internal link.
 
-Related: [[guide-audit-2026-08]], [[published-guides]]
+Related: [[backlog]], [[published-guides]]

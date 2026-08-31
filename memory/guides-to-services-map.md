@@ -115,4 +115,4 @@ page exists. **This is the highest-value open item in this file.**
 
 **Do not link:** compliance guides (gst-hotels, tds-tcs, form-c-hotel, grc-form-c) and reports guides have no matching service. Forcing a link there would read as a non-sequitur. Leave them; they build authority and feed internal links to other guides.
 
-Related: [[brand-positioning]], [[missing-related-cards]], [[migration-plan]]
+Related: [[brand-positioning]], [[backlog]], [[migration-plan]]

@@ -18,7 +18,7 @@ colours, contrast) and [[ai-llm-optimization]] (crawler meta, schema bodies).
 
 1. **Google Analytics** — `gtag.js?id=G-9L2N1S6S9F` at the very top.
    `G-Q2BPYRGZTM` was retired 9 Aug 2026. Values go stale: see
-   [[stale-doc-false-alarms]] before reporting a mismatch as a defect.
+   [[working-practice]] before reporting a mismatch as a defect.
 2. **Basic meta** — charset UTF-8; viewport; **title** 60-70 chars ending
    `| OnlineHotelier`; **description** 150-160 chars with the primary keyword;
    **keywords** 8-12 terms; **canonical** full `https://www.onlinehotelier.com`
@@ -260,7 +260,7 @@ Structural greps pass on pages that render wrong. All of these shipped live:
 - **No em dashes, no `$`.** Currency is ₹.
 - **Look at the rendered page.** Three separate visual defects in the Aug 2026
   revenue pass were caught only by a screenshot: unreadable CTA text, a
-  duplicated tools block, and a grid wrapping 3+1. See [[agent-verification-discipline]].
+  duplicated tools block, and a grid wrapping 3+1. See [[working-practice]].
 
 ## 7. The inline-style cascade trap
 
@@ -307,4 +307,4 @@ background, shadow and radius and uses a rule separator instead. Tool pages keep
 the card.
 
 Related: [[tool-page-standard]], [[design-system]], [[ai-llm-optimization]],
-[[crawlable-static-links]], [[published-guides]], [[agent-verification-discipline]]
+[[crawlable-static-links]], [[published-guides]], [[working-practice]]

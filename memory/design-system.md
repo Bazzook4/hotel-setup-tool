@@ -26,7 +26,7 @@ Working panel markup:
 </div>
 ```
 
-**Check contrast before shipping any white-on-brand combination.** `#89826E` is a mid-tone and fails AA with white in most uses. Related: [[feedback_readability_standard]].
+**Check contrast before shipping any white-on-brand combination.** `#89826E` is a mid-tone and fails AA with white in most uses. Related: [[writing-standard]].
 
 ## Guide Page Components
 

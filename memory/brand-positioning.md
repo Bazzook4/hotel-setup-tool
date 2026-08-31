@@ -12,4 +12,4 @@ OnlineHotelier exists to be **the person a hotelier can ask**. It helps Indian h
 
 Reference implementation: `src/public/home-main.html` (hero → self-select router → five areas → tools → done-for-you → why we exist → FAQ → CTA).
 
-Related: [[migration-plan]], [[feedback_writing_style]], [[feedback_readability_standard]]
+Related: [[migration-plan]], [[writing-standard]]

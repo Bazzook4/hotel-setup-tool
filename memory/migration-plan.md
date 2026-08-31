@@ -19,7 +19,16 @@
 - 13 of 17 Wix posts 301'd into existing guides rather than rebuilt, avoiding keyword cannibalisation.
 
 **Still open (carried forward, not migration blockers):**
-- The 4 unique Wix posts (2 digital marketing, `building-trust-with-online-visitors`, `common-bookingcom-mistakes`) were to become a `/guides/marketing/` category. **That category does not exist yet.**
-- Guide → service wiring remains weak: only 4 of 52 guides link to any `/services/` page, and 0 of 52 carry an audit CTA. This is the highest-return open work on the site. See the 2026-08-24 guide audit.
+- The 4 unique Wix posts (2 digital marketing, `building-trust-with-online-visitors`,
+  `common-bookingcom-mistakes`) were to become a `/guides/marketing/` category.
+  **That category still does not exist.**
+- Everything else that was listed here has shipped: all 52 guides now carry an
+  audit CTA and link to a service. Current open work is in [[backlog]].
 
-Related: [[brand-positioning]], [[published-guides]], [[guide-template]]
+**DNS, historical.** The Wix → Namecheap → Vercel cutover ran 2026-08-04 off a
+zone captured from Wix (nameservers were `ns12`/`ns13.wixdns.net`, so the whole
+zone had to be rebuilt at Namecheap first; disconnecting the domain inside Wix
+would have wiped it, email included). It is done and there is nothing to action.
+The full record is in git history if a rollback question ever comes up.
+
+Related: [[brand-positioning]], [[published-guides]], [[guide-template]], [[backlog]]

@@ -12,4 +12,4 @@ Verified 2026-08-24 against [ClearTax](https://cleartax.in/s/impact-of-gst-hospi
 
 **How to apply:** GST rates change by Council meeting, so never answer from training data or an agent's recall. Search current sources before writing or correcting any GST figure. When a rate changes, grep the whole repo (`12%`, `1,000`, `7,500`) rather than fixing one page: it appears in body copy, meta descriptions, FAQPage schema, comparison tables and worked examples. Worked examples cascade, so recompute the whole calculation rather than relabelling the rate.
 
-Related: [[guide-audit-2026-08]], [[agent-verification-discipline]]
+Related: [[backlog]], [[working-practice]]
