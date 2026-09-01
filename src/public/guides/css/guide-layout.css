@@ -60,6 +60,26 @@
   margin-bottom: 0.25rem;
 }
 
+/* Icon system - line icons. The base size must be declared here because
+   the sidebar is built by guide-nav.js and is not covered by the per-page
+   inline rules. Without it the SVG renders at its intrinsic size. */
+.oh-icon {
+  width: 1.1em;
+  height: 1.1em;
+  min-width: 1.1em;
+  min-height: 1.1em;
+  flex: 0 0 auto;
+  vertical-align: -0.2em;
+  color: currentColor;
+}
+
+.sidebar-category-header > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
 .sidebar-category-header {
   display: flex;
   align-items: center;

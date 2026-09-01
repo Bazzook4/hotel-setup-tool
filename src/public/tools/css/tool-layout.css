@@ -112,6 +112,17 @@ body {
   color: #888;
 }
 
+/* Icon system - base size. Declared here because the tool sidebar is built
+   by tool-nav.js and is not covered by the per-page inline rules. */
+.oh-icon {
+  width: 1.1em;
+  height: 1.1em;
+  min-width: 1.1em;
+  min-height: 1.1em;
+  flex: 0 0 auto;
+  vertical-align: -0.2em;
+}
+
 .tool-nav-icon {
   margin-right: 0.15rem;
   display: inline-flex;
