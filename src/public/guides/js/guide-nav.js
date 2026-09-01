@@ -8,7 +8,7 @@ const GUIDE_CATEGORIES = [
   {
     id: 'revenue',
     label: 'Revenue',
-    icon: '\uD83D\uDCC8',
+    icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>',
     basePath: '/guides/revenue/',
     guides: [
       { slug: 'hotel-rate-plans.html', title: 'Hotel Rate Plans: EP, CP, MAP, AP' },
@@ -31,7 +31,7 @@ const GUIDE_CATEGORIES = [
   {
     id: 'ota',
     label: 'OTA',
-    icon: '\uD83C\uDFE8',
+    icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M5 21V6l7-3 7 3v15"/><path d="M9 21v-5h6v5"/><path d="M9 9h.01M15 9h.01M9 12h.01M15 12h.01"/></svg>',
     basePath: '/guides/ota/',
     guides: [
       { slug: 'ota-hotel-meaning.html', title: 'OTA Full Form & Meaning' },
@@ -52,7 +52,7 @@ const GUIDE_CATEGORIES = [
   {
     id: 'software',
     label: 'Software',
-    icon: '\uD83D\uDCBB',
+    icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>',
     basePath: '/guides/software/',
     guides: [
       { slug: 'what-is-pms-hotel.html', title: 'What is PMS?' },
@@ -68,7 +68,7 @@ const GUIDE_CATEGORIES = [
   {
     id: 'reports',
     label: 'Reports',
-    icon: '\uD83D\uDCCA',
+    icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><rect x="5" y="11" width="4" height="7"/><rect x="12" y="6" width="4" height="12"/><rect x="19" y="14" width="2" height="4"/></svg>',
     basePath: '/guides/reports/',
     guides: [
       { slug: 'manager-report.html', title: 'Manager Report (Flash Report)' },
@@ -83,7 +83,7 @@ const GUIDE_CATEGORIES = [
   {
     id: 'compliance',
     label: 'Compliance',
-    icon: '\uD83D\uDCCB',
+    icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="4" width="12" height="17" rx="1"/><path d="M9 4V3h6v1"/><path d="M9 10h6M9 14h4"/></svg>',
     basePath: '/guides/compliance/',
     guides: [
       { slug: 'gst-hotels.html', title: 'GST for Hotels' },
@@ -95,7 +95,7 @@ const GUIDE_CATEGORIES = [
   {
     id: 'operations',
     label: 'Operations',
-    icon: '\uD83C\uDFE8',
+    icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M5 21V6l7-3 7 3v15"/><path d="M9 21v-5h6v5"/><path d="M9 9h.01M15 9h.01M9 12h.01M15 12h.01"/></svg>',
     basePath: '/guides/operations/',
     guides: [
       { slug: 'hotel-check-in-process.html', title: 'Hotel Check-In Process' },

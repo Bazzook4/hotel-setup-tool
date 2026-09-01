@@ -137,6 +137,24 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+    /* Icon system - line icons, inherit colour from parent.
+       Sizes are fixed because icon containers are often flex boxes sized for
+       an emoji glyph; without this an SVG child stretches to fill them. */
+    .oh-icon { width: 1.5rem; height: 1.5rem; min-width: 1.5rem; min-height: 1.5rem;
+      flex: 0 0 auto; align-self: center; color: var(--secondary, #89826E);
+      display: inline-block; vertical-align: middle; }
+    /* Inside a decorated tile, the icon sits at a larger fixed size. */
+    .tool-icon > .oh-icon, .area-icon > .oh-icon, .dfy-icon > .oh-icon,
+    .service-icon > .oh-icon, .category-icon > .oh-icon, .card-icon > .oh-icon,
+    .feature-icon > .oh-icon, .value-icon > .oh-icon, .why-icon > .oh-icon,
+    .insight-icon > .oh-icon, .resource-icon > .oh-icon, .pattern-icon > .oh-icon {
+      width: 1.75rem; height: 1.75rem; min-width: 1.75rem; min-height: 1.75rem; }
+    /* Tiles with a dark fill need a light stroke. */
+    .tool-icon > .oh-icon { color: var(--bg, #F8F8F4); }
+    h2 .oh-icon, h3 .oh-icon { width: 1.15em; height: 1.15em;
+      min-width: 1.15em; min-height: 1.15em; margin-right: 0.5rem;
+      position: relative; top: -0.05em; }
+
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -596,42 +614,42 @@
         <p class="section-sub">Every element in this theme is chosen to amplify the atmosphere of an older property. Nothing generic, nothing corporate.</p>
         <div class="feature-grid">
           <div class="feature-card">
-            <span class="feature-icon">🏰</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 10h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg></span>
             <h4>Full-Bleed Hero</h4>
             <p>Your best photograph fills the entire viewport. A warm gradient overlay and serif title create immediate atmosphere above the fold.</p>
           </div>
           <div class="feature-card">
-            <span class="feature-icon">🔤</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span>
             <h4>Serif Typography</h4>
             <p>Georgia-based serif font stack for headings. Warmer and more prestigious than the sans-serif fonts that most modern sites use.</p>
           </div>
           <div class="feature-card">
-            <span class="feature-icon">🪟</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></svg></span>
             <h4>Arch &amp; Ornament Motifs</h4>
             <p>CSS-drawn arched window dividers and medallion ornaments between sections. No raster images, loads fast and scales cleanly.</p>
           </div>
           <div class="feature-card">
-            <span class="feature-icon">🖼️</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 16l-5-5-6 6"/></svg></span>
             <h4>Story Gallery</h4>
             <p>Gallery layout with caption overlays that tell the property's history. Guests read while they browse photographs.</p>
           </div>
           <div class="feature-card">
-            <span class="feature-icon">🛏️</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 18V7"/><path d="M3 12h18v6"/><path d="M21 18v-4a2 2 0 0 0-2-2"/><circle cx="8" cy="9" r="2"/></svg></span>
             <h4>Rooms &amp; Suites Section</h4>
             <p>Each room type gets its own card with photos, description, occupancy, rate and direct booking or WhatsApp inquiry button.</p>
           </div>
           <div class="feature-card">
-            <span class="feature-icon">🍽️</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3v8a3 3 0 0 0 6 0V3"/><path d="M8 11v10"/><path d="M17 3c-1.5 2-2 4-2 6s1 3 2 3 2-1 2-3-.5-4-2-6z"/><path d="M17 12v9"/></svg></span>
             <h4>Dining &amp; Experiences</h4>
             <p>Dedicated sections for rooftop dining, activities, cultural programmes and seasonal specials. The extras that justify your premium rate.</p>
           </div>
           <div class="feature-card">
-            <span class="feature-icon">⭐</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.7 5.8 6.3.8-4.6 4.4 1.2 6.3L12 17.3 6.4 20.3l1.2-6.3L3 9.6l6.3-.8z"/></svg></span>
             <h4>Guest Testimonials</h4>
             <p>Styled review showcase with guest names and travel context. Prominent placement builds trust before the guest reaches the booking step.</p>
           </div>
           <div class="feature-card">
-            <span class="feature-icon">📱</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
             <h4>Mobile-First Layout</h4>
             <p>Over 70% of Indian hotel searches happen on mobile. The Heritage theme looks and performs perfectly on Android and iPhone.</p>
           </div>

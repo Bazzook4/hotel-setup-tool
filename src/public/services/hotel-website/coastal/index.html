@@ -137,6 +137,24 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+    /* Icon system - line icons, inherit colour from parent.
+       Sizes are fixed because icon containers are often flex boxes sized for
+       an emoji glyph; without this an SVG child stretches to fill them. */
+    .oh-icon { width: 1.5rem; height: 1.5rem; min-width: 1.5rem; min-height: 1.5rem;
+      flex: 0 0 auto; align-self: center; color: var(--secondary, #89826E);
+      display: inline-block; vertical-align: middle; }
+    /* Inside a decorated tile, the icon sits at a larger fixed size. */
+    .tool-icon > .oh-icon, .area-icon > .oh-icon, .dfy-icon > .oh-icon,
+    .service-icon > .oh-icon, .category-icon > .oh-icon, .card-icon > .oh-icon,
+    .feature-icon > .oh-icon, .value-icon > .oh-icon, .why-icon > .oh-icon,
+    .insight-icon > .oh-icon, .resource-icon > .oh-icon, .pattern-icon > .oh-icon {
+      width: 1.75rem; height: 1.75rem; min-width: 1.75rem; min-height: 1.75rem; }
+    /* Tiles with a dark fill need a light stroke. */
+    .tool-icon > .oh-icon { color: var(--bg, #F8F8F4); }
+    h2 .oh-icon, h3 .oh-icon { width: 1.15em; height: 1.15em;
+      min-width: 1.15em; min-height: 1.15em; margin-right: 0.5rem;
+      position: relative; top: -0.05em; }
+
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -622,42 +640,42 @@
         <p class="section-sub">Every element is designed to move a browsing guest to a booking decision as fast as possible.</p>
         <div class="feature-grid">
           <div class="feature-card">
-            <span class="feature-icon">📅</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/></svg></span>
             <h4>Booking Widget Above the Fold</h4>
             <p>The availability checker appears in the first viewport. Guests set their dates without scrolling. This is the highest-converting placement for leisure properties.</p>
           </div>
           <div class="feature-card">
-            <span class="feature-icon">📸</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 8h3l2-3h8l2 3h3v12H3z"/><circle cx="12" cy="13" r="4"/></svg></span>
             <h4>Lifestyle Photography Layout</h4>
             <p>Full-width image sections with minimal text overlay. The photography does the selling. Caption text is secondary, atmosphere is primary.</p>
           </div>
           <div class="feature-card">
-            <span class="feature-icon">🌊</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 8c3-2 5 2 8 0s5-2 8 0 4 0 4 0"/><path d="M2 14c3-2 5 2 8 0s5-2 8 0 4 0 4 0"/><path d="M2 20c3-2 5 2 8 0s5-2 8 0 4 0 4 0"/></svg></span>
             <h4>Wave &amp; Horizon Motifs</h4>
             <p>CSS-drawn wave separators between sections and a sun-horizon element in the hero. No raster images, loads fast on Indian mobile networks.</p>
           </div>
           <div class="feature-card">
-            <span class="feature-icon">🤿</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 8c3-2 5 2 8 0s5-2 8 0 4 0 4 0"/><path d="M2 14c3-2 5 2 8 0s5-2 8 0 4 0 4 0"/><path d="M2 20c3-2 5 2 8 0s5-2 8 0 4 0 4 0"/></svg></span>
             <h4>Activities Section</h4>
             <p>Tile layout for water sports, snorkelling, sunset cruises, kayaking, yoga and guided treks. Activities drive room nights, this section earns its place.</p>
           </div>
           <div class="feature-card">
-            <span class="feature-icon">🏖️</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M22 12h-3M5 12H2M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M18.4 18.4l-2.1-2.1M7.7 7.7L5.6 5.6"/></svg></span>
             <h4>Package &amp; Offer Tiles</h4>
             <p>Seasonal packages with room-night pricing, inclusions, and direct inquiry CTA. Monsoon specials, honeymoon packages and festival offers all display cleanly.</p>
           </div>
           <div class="feature-card">
-            <span class="feature-icon">🛏️</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 18V7"/><path d="M3 12h18v6"/><path d="M21 18v-4a2 2 0 0 0-2-2"/><circle cx="8" cy="9" r="2"/></svg></span>
             <h4>Villas &amp; Rooms Section</h4>
             <p>Room types displayed with large photos, key features, occupancy, rate and a check-availability button. Supports beach huts, garden villas and sea-view suites side by side.</p>
           </div>
           <div class="feature-card">
-            <span class="feature-icon">📱</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
             <h4>Mobile-First Design</h4>
             <p>Every layout adapts to Android and iPhone. The booking widget is the first element on mobile, no scrolling required to start a reservation.</p>
           </div>
           <div class="feature-card">
-            <span class="feature-icon">📷</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 8h3l2-3h8l2 3h3v12H3z"/><circle cx="12" cy="13" r="4"/></svg></span>
             <h4>Instagram Feed Integration</h4>
             <p>Optional integration of your Instagram grid into the footer area. Guest-generated content from your property is the most trusted social proof for leisure bookings.</p>
           </div>

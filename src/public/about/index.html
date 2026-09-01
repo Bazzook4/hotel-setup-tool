@@ -34,6 +34,24 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+    /* Icon system - line icons, inherit colour from parent.
+       Sizes are fixed because icon containers are often flex boxes sized for
+       an emoji glyph; without this an SVG child stretches to fill them. */
+    .oh-icon { width: 1.5rem; height: 1.5rem; min-width: 1.5rem; min-height: 1.5rem;
+      flex: 0 0 auto; align-self: center; color: var(--secondary, #89826E);
+      display: inline-block; vertical-align: middle; }
+    /* Inside a decorated tile, the icon sits at a larger fixed size. */
+    .tool-icon > .oh-icon, .area-icon > .oh-icon, .dfy-icon > .oh-icon,
+    .service-icon > .oh-icon, .category-icon > .oh-icon, .card-icon > .oh-icon,
+    .feature-icon > .oh-icon, .value-icon > .oh-icon, .why-icon > .oh-icon,
+    .insight-icon > .oh-icon, .resource-icon > .oh-icon, .pattern-icon > .oh-icon {
+      width: 1.75rem; height: 1.75rem; min-width: 1.75rem; min-height: 1.75rem; }
+    /* Tiles with a dark fill need a light stroke. */
+    .tool-icon > .oh-icon { color: var(--bg, #F8F8F4); }
+    h2 .oh-icon, h3 .oh-icon { width: 1.15em; height: 1.15em;
+      min-width: 1.15em; min-height: 1.15em; margin-right: 0.5rem;
+      position: relative; top: -0.05em; }
+
 
     * {
       margin: 0;
@@ -305,7 +323,7 @@
       <h2>Our Values</h2>
       <div class="values-grid">
         <div class="value-item">
-          <div class="value-icon">🎯</div>
+          <div class="value-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
           <h3>Practical First</h3>
           <p>Tools and guides that work in real-world scenarios</p>
         </div>
@@ -315,12 +333,12 @@
           <p>Built specifically for Indian hotels and OTAs</p>
         </div>
         <div class="value-item">
-          <div class="value-icon">🔓</div>
+          <div class="value-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
           <h3>Always Free</h3>
           <p>Core tools remain free forever</p>
         </div>
         <div class="value-item">
-          <div class="value-icon">🔒</div>
+          <div class="value-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
           <h3>Privacy First</h3>
           <p>Your data never leaves your browser</p>
         </div>

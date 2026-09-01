@@ -51,6 +51,24 @@
 </script>
 
 <style>
+    /* Icon system - line icons, inherit colour from parent.
+       Sizes are fixed because icon containers are often flex boxes sized for
+       an emoji glyph; without this an SVG child stretches to fill them. */
+    .oh-icon { width: 1.5rem; height: 1.5rem; min-width: 1.5rem; min-height: 1.5rem;
+      flex: 0 0 auto; align-self: center; color: var(--secondary, #89826E);
+      display: inline-block; vertical-align: middle; }
+    /* Inside a decorated tile, the icon sits at a larger fixed size. */
+    .tool-icon > .oh-icon, .area-icon > .oh-icon, .dfy-icon > .oh-icon,
+    .service-icon > .oh-icon, .category-icon > .oh-icon, .card-icon > .oh-icon,
+    .feature-icon > .oh-icon, .value-icon > .oh-icon, .why-icon > .oh-icon,
+    .insight-icon > .oh-icon, .resource-icon > .oh-icon, .pattern-icon > .oh-icon {
+      width: 1.75rem; height: 1.75rem; min-width: 1.75rem; min-height: 1.75rem; }
+    /* Tiles with a dark fill need a light stroke. */
+    .tool-icon > .oh-icon { color: var(--bg, #F8F8F4); }
+    h2 .oh-icon, h3 .oh-icon { width: 1.15em; height: 1.15em;
+      min-width: 1.15em; min-height: 1.15em; margin-right: 0.5rem;
+      position: relative; top: -0.05em; }
+
 :root{
   --primary:#3E3D35;
   --secondary:#89826E;
@@ -605,7 +623,7 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
     <h1>Your private<em>paradise in Udaipur</em></h1>
     <p class="lede">An entire three-bedroom home with a terrace made for long evenings. Designed for comfort, privacy and stays you will talk about long after.</p>
     <div class="hero-badges">
-      <span class="badge">★ 4.96 · 27 Reviews</span>
+      <span class="badge"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.7 5.8 6.3.8-4.6 4.4 1.2 6.3L12 17.3 6.4 20.3l1.2-6.3L3 9.6l6.3-.8z"/></svg> 4.96 · 27 Reviews</span>
       <span class="badge">Guest Favourite</span>
       <span class="badge">Superhost</span>
     </div>
@@ -844,7 +862,7 @@ footer{background:var(--primary);color:rgba(255,255,255,.72);padding:70px 0 30px
     <div class="rev-top reveal">
       <div class="score">
         <div class="big">4.96</div>
-        <div class="stars">★★★★★</div>
+        <div class="stars"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.7 5.8 6.3.8-4.6 4.4 1.2 6.3L12 17.3 6.4 20.3l1.2-6.3L3 9.6l6.3-.8z"/></svg><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.7 5.8 6.3.8-4.6 4.4 1.2 6.3L12 17.3 6.4 20.3l1.2-6.3L3 9.6l6.3-.8z"/></svg><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.7 5.8 6.3.8-4.6 4.4 1.2 6.3L12 17.3 6.4 20.3l1.2-6.3L3 9.6l6.3-.8z"/></svg><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.7 5.8 6.3.8-4.6 4.4 1.2 6.3L12 17.3 6.4 20.3l1.2-6.3L3 9.6l6.3-.8z"/></svg><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.7 5.8 6.3.8-4.6 4.4 1.2 6.3L12 17.3 6.4 20.3l1.2-6.3L3 9.6l6.3-.8z"/></svg></div>
         <div class="sub">27 Verified Reviews</div>
       </div>
       <div class="bars">

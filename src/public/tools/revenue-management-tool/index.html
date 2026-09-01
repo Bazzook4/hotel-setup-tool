@@ -111,6 +111,24 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+    /* Icon system - line icons, inherit colour from parent.
+       Sizes are fixed because icon containers are often flex boxes sized for
+       an emoji glyph; without this an SVG child stretches to fill them. */
+    .oh-icon { width: 1.5rem; height: 1.5rem; min-width: 1.5rem; min-height: 1.5rem;
+      flex: 0 0 auto; align-self: center; color: var(--secondary, #89826E);
+      display: inline-block; vertical-align: middle; }
+    /* Inside a decorated tile, the icon sits at a larger fixed size. */
+    .tool-icon > .oh-icon, .area-icon > .oh-icon, .dfy-icon > .oh-icon,
+    .service-icon > .oh-icon, .category-icon > .oh-icon, .card-icon > .oh-icon,
+    .feature-icon > .oh-icon, .value-icon > .oh-icon, .why-icon > .oh-icon,
+    .insight-icon > .oh-icon, .resource-icon > .oh-icon, .pattern-icon > .oh-icon {
+      width: 1.75rem; height: 1.75rem; min-width: 1.75rem; min-height: 1.75rem; }
+    /* Tiles with a dark fill need a light stroke. */
+    .tool-icon > .oh-icon { color: var(--bg, #F8F8F4); }
+    h2 .oh-icon, h3 .oh-icon { width: 1.15em; height: 1.15em;
+      min-width: 1.15em; min-height: 1.15em; margin-right: 0.5rem;
+      position: relative; top: -0.05em; }
+
 
     * {
       margin: 0;
@@ -817,7 +835,7 @@
 
       <!-- Lead Time Patterns -->
       <div class="subsection" style="margin-top: 0; padding-top: 0; border-top: none;">
-        <h3>📅 How far in advance do guests book?</h3>
+        <h3><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/></svg> How far in advance do guests book?</h3>
         <p>Pick the pattern that best describes your booking window. Not sure? We'll recommend one based on your property type.</p>
         <div class="pattern-grid" id="leadTimePatternGrid">
           <!-- Dynamic cards inserted by JS -->
@@ -826,7 +844,7 @@
 
       <!-- Same-Day Booking Patterns -->
       <div class="subsection">
-        <h3>🕐 When do same-day bookings come in?</h3>
+        <h3><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> When do same-day bookings come in?</h3>
         <p>For guests who book and check in on the same day, when does that typically happen?</p>
         <div class="pattern-grid" id="sameDayPatternGrid">
           <!-- Dynamic cards inserted by JS -->
@@ -844,28 +862,28 @@
       <h3>Related Tools &amp; Guides</h3>
       <div class="tools-grid-mini">
         <a href="/tools/demand-calendar/" class="tool-link">
-          <span class="icon">📅</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/></svg></span>
           <div class="text">
             <h4>Demand Calendar 2026</h4>
             <p>Plan for peak pricing dates</p>
           </div>
         </a>
         <a href="/tools/ota-commission-calculator/" class="tool-link">
-          <span class="icon">💰</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12M6 8h12M15 3c0 4-3 5-6 5l7 8"/></svg></span>
           <div class="text">
             <h4>OTA Commission Calculator</h4>
             <p>What you actually settle per booking</p>
           </div>
         </a>
         <a href="/guides/revenue/bar.html" class="tool-link">
-          <span class="icon">📖</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4v16a1 1 0 0 0 1 1h15"/><path d="M20 21V3H6a2 2 0 0 0-2 2"/><path d="M8 8h8M8 12h5"/></svg></span>
           <div class="text">
             <h4>BAR Explained</h4>
             <p>Setting your best available rate</p>
           </div>
         </a>
         <a href="/guides/revenue/revpar.html" class="tool-link">
-          <span class="icon">📖</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4v16a1 1 0 0 0 1 1h15"/><path d="M20 21V3H6a2 2 0 0 0-2 2"/><path d="M8 8h8M8 12h5"/></svg></span>
           <div class="text">
             <h4>RevPAR Guide</h4>
             <p>Revenue per available room</p>
@@ -1015,21 +1033,21 @@
 
     // Hotel Types
     const hotelTypes = [
-      { id: 'business', icon: '🏢', name: 'Business Hotel', description: 'Corporate travelers, MICE events', details: 'High weekday demand, corporate rates. Peak: Mon-Thu. Low: weekends.', examples: 'Marriott, Hyatt, ITC, Taj Business hotels', pattern: 'metro_business' },
-      { id: 'leisure', icon: '🏖️', name: 'Leisure Resort', description: 'Families, couples, weekend getaways', details: 'High weekend demand. Seasonal peaks during holidays & school vacations.', examples: 'Club Mahindra, Sterling, weekend resorts', pattern: 'leisure' },
-      { id: 'hillstation', icon: '⛰️', name: 'Hill Station', description: 'Mountain & hill retreats', details: 'Peak: Apr-Jun (summer), Oct (post-monsoon). Low: monsoon months.', examples: 'Shimla, Manali, Ooty, Mussoorie properties', pattern: 'hill_station' },
-      { id: 'beach', icon: '🏝️', name: 'Beach Resort', description: 'Coastal & beachside properties', details: 'Peak: Oct-Feb (winter). Low: monsoon (Jun-Sep). International tourists.', examples: 'Goa resorts, Kerala backwaters, Andaman', pattern: 'beach' },
-      { id: 'pilgrimage', icon: '🕉️', name: 'Pilgrimage', description: 'Religious & spiritual destinations', details: 'Demand spikes during festivals & auspicious dates. Year-round steady flow.', examples: 'Varanasi, Tirupati, Shirdi, Haridwar hotels', pattern: 'pilgrimage' },
-      { id: 'wildlife', icon: '🐅', name: 'Wildlife Lodge', description: 'Safari & national park stays', details: 'Seasonal: Oct-Jun only. Closed during monsoon. Premium pricing.', examples: 'Jim Corbett, Ranthambore, Bandhavgarh lodges', pattern: 'wildlife' },
-      { id: 'heritage', icon: '🏛️', name: 'Heritage/Boutique', description: 'Palaces, havelis, unique stays', details: 'Premium segment, experience-focused. High wedding season demand.', examples: 'Rajasthan palaces, Neemrana, boutique properties', pattern: 'heritage' },
-      { id: 'budget', icon: '💰', name: 'Budget/Economy', description: 'Value-conscious travelers', details: 'Price-sensitive guests. High volume, lower ADR. OTA dependent.', examples: 'OYO, FabHotels, Treebo, budget chains', pattern: 'budget' }
+      { id: 'business', icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h.01M12 7h.01M16 7h.01M8 11h.01M12 11h.01M16 11h.01M8 15h.01M16 15h.01"/><path d="M11 21v-4h2v4"/></svg>', name: 'Business Hotel', description: 'Corporate travelers, MICE events', details: 'High weekday demand, corporate rates. Peak: Mon-Thu. Low: weekends.', examples: 'Marriott, Hyatt, ITC, Taj Business hotels', pattern: 'metro_business' },
+      { id: 'leisure', icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M22 12h-3M5 12H2M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M18.4 18.4l-2.1-2.1M7.7 7.7L5.6 5.6"/></svg>', name: 'Leisure Resort', description: 'Families, couples, weekend getaways', details: 'High weekend demand. Seasonal peaks during holidays & school vacations.', examples: 'Club Mahindra, Sterling, weekend resorts', pattern: 'leisure' },
+      { id: 'hillstation', icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 10h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg>', name: 'Hill Station', description: 'Mountain & hill retreats', details: 'Peak: Apr-Jun (summer), Oct (post-monsoon). Low: monsoon months.', examples: 'Shimla, Manali, Ooty, Mussoorie properties', pattern: 'hill_station' },
+      { id: 'beach', icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M22 12h-3M5 12H2M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M18.4 18.4l-2.1-2.1M7.7 7.7L5.6 5.6"/></svg>', name: 'Beach Resort', description: 'Coastal & beachside properties', details: 'Peak: Oct-Feb (winter). Low: monsoon (Jun-Sep). International tourists.', examples: 'Goa resorts, Kerala backwaters, Andaman', pattern: 'beach' },
+      { id: 'pilgrimage', icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 10h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg>', name: 'Pilgrimage', description: 'Religious & spiritual destinations', details: 'Demand spikes during festivals & auspicious dates. Year-round steady flow.', examples: 'Varanasi, Tirupati, Shirdi, Haridwar hotels', pattern: 'pilgrimage' },
+      { id: 'wildlife', icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 10h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg>', name: 'Wildlife Lodge', description: 'Safari & national park stays', details: 'Seasonal: Oct-Jun only. Closed during monsoon. Premium pricing.', examples: 'Jim Corbett, Ranthambore, Bandhavgarh lodges', pattern: 'wildlife' },
+      { id: 'heritage', icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 10h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg>', name: 'Heritage/Boutique', description: 'Palaces, havelis, unique stays', details: 'Premium segment, experience-focused. High wedding season demand.', examples: 'Rajasthan palaces, Neemrana, boutique properties', pattern: 'heritage' },
+      { id: 'budget', icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12M6 8h12M15 3c0 4-3 5-6 5l7 8"/></svg>', name: 'Budget/Economy', description: 'Value-conscious travelers', details: 'Price-sensitive guests. High volume, lower ADR. OTA dependent.', examples: 'OYO, FabHotels, Treebo, budget chains', pattern: 'budget' }
     ];
 
     // Lead Time Pattern Definitions
     const leadTimePatterns = [
       {
         id: 'walk_in_heavy',
-        icon: '🚗',
+        icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 17h14"/><path d="M3 17v-4l2-5h14l2 5v4"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="16.5" cy="17" r="1.5"/></svg>',
         name: 'Mostly Walk-in / Same-Day',
         desc: '55% of bookings are same-day or walk-in. Very few advance reservations.',
         bestFor: 'Highway motels, budget hotels, transit stops',
@@ -1039,7 +1057,7 @@
       },
       {
         id: 'same_day_moderate',
-        icon: '📱',
+        icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>',
         name: 'High Same-Day + Some Advance',
         desc: '37% same-day bookings. Good mix of OTA and direct. Most book within 3 days.',
         bestFor: 'City business hotels, urban properties',
@@ -1049,7 +1067,7 @@
       },
       {
         id: 'balanced_mix',
-        icon: '⚖️',
+        icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v18"/><path d="M6 21h12"/><path d="M3 8h18"/><path d="M6 8l-3 6h6z"/><path d="M18 8l-3 6h6z"/></svg>',
         name: 'Balanced Walk-in + Advance',
         desc: '20% same-day. Healthy spread across the week with advance bookings.',
         bestFor: 'Leisure resorts, hill stations, weekend getaways',
@@ -1059,7 +1077,7 @@
       },
       {
         id: 'advance_heavy',
-        icon: '📅',
+        icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/></svg>',
         name: 'Mostly Advance (3-7+ days)',
         desc: '10% same-day. Most guests plan ahead. Strong OTA presence.',
         bestFor: 'Wildlife lodges, heritage hotels, beach resorts',
@@ -1069,7 +1087,7 @@
       },
       {
         id: 'planned_travel',
-        icon: '✈️',
+        icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 13l20-7-7 20-3-8z"/></svg>',
         name: 'Pre-Planned (7+ days ahead)',
         desc: '5% same-day. Guests book weeks/months in advance.',
         bestFor: 'Destination weddings, remote locations, international tourists',
@@ -1083,7 +1101,7 @@
     const sameDayPatterns = [
       {
         id: 'evening_heavy',
-        icon: '🌆',
+        icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h.01M12 7h.01M16 7h.01M8 11h.01M12 11h.01M16 11h.01M8 15h.01M16 15h.01"/><path d="M11 21v-4h2v4"/></svg>',
         name: 'Evening Rush (Walk-in)',
         desc: 'Most same-day guests arrive after 4 PM. Late check-in common.',
         bestFor: 'Highway hotels, transit stops, walk-in heavy',
@@ -1093,7 +1111,7 @@
       },
       {
         id: 'afternoon_peak',
-        icon: '☀️',
+        icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M22 12h-3M5 12H2M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M18.4 18.4l-2.1-2.1M7.7 7.7L5.6 5.6"/></svg>',
         name: 'Afternoon Peak (OTA-driven)',
         desc: 'Bookings peak between 2-6 PM. Typical OTA booking pattern.',
         bestFor: 'Most hotels: city, leisure, resorts',
@@ -1103,7 +1121,7 @@
       },
       {
         id: 'morning_check',
-        icon: '🌅',
+        icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M22 12h-3M5 12H2M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M18.4 18.4l-2.1-2.1M7.7 7.7L5.6 5.6"/></svg>',
         name: 'Morning Decision Makers',
         desc: 'Business guests book by morning. Most bookings before noon.',
         bestFor: 'Business hotels, planned travel',
@@ -1113,7 +1131,7 @@
       },
       {
         id: 'spread_even',
-        icon: '📊',
+        icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><rect x="5" y="11" width="4" height="7"/><rect x="12" y="6" width="4" height="12"/><rect x="19" y="14" width="2" height="4"/></svg>',
         name: 'Evenly Spread',
         desc: 'No clear peak. Bookings come in throughout the day.',
         bestFor: 'Pilgrimage, year-round destinations',

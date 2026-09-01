@@ -37,6 +37,24 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+    /* Icon system - line icons, inherit colour from parent.
+       Sizes are fixed because icon containers are often flex boxes sized for
+       an emoji glyph; without this an SVG child stretches to fill them. */
+    .oh-icon { width: 1.5rem; height: 1.5rem; min-width: 1.5rem; min-height: 1.5rem;
+      flex: 0 0 auto; align-self: center; color: var(--secondary, #89826E);
+      display: inline-block; vertical-align: middle; }
+    /* Inside a decorated tile, the icon sits at a larger fixed size. */
+    .tool-icon > .oh-icon, .area-icon > .oh-icon, .dfy-icon > .oh-icon,
+    .service-icon > .oh-icon, .category-icon > .oh-icon, .card-icon > .oh-icon,
+    .feature-icon > .oh-icon, .value-icon > .oh-icon, .why-icon > .oh-icon,
+    .insight-icon > .oh-icon, .resource-icon > .oh-icon, .pattern-icon > .oh-icon {
+      width: 1.75rem; height: 1.75rem; min-width: 1.75rem; min-height: 1.75rem; }
+    /* Tiles with a dark fill need a light stroke. */
+    .tool-icon > .oh-icon { color: var(--bg, #F8F8F4); }
+    h2 .oh-icon, h3 .oh-icon { width: 1.15em; height: 1.15em;
+      min-width: 1.15em; min-height: 1.15em; margin-right: 0.5rem;
+      position: relative; top: -0.05em; }
+
 
     * {
       margin: 0;
@@ -356,7 +374,7 @@
 
       <!-- Revenue Setup Tool -->
       <div class="tool-card">
-        <div class="tool-icon">📊</div>
+        <div class="tool-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><rect x="5" y="11" width="4" height="7"/><rect x="12" y="6" width="4" height="12"/><rect x="19" y="14" width="2" height="4"/></svg></div>
         <span class="tool-tag">Revenue Management</span>
         <h2>Revenue Management Setup</h2>
         <p>Configure smart dynamic pricing for your hotel. Set room types, occupancy-based pricing slabs, and seasonal adjustments.</p>
@@ -371,7 +389,7 @@
 
       <!-- Guest Acquisition Cost Calculator -->
       <div class="tool-card">
-        <div class="tool-icon">🎯</div>
+        <div class="tool-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
         <span class="tool-tag">OTA vs Direct</span>
         <h2>Guest Acquisition Cost Calculator</h2>
         <p>Compare the true cost of acquiring a guest via OTA vs direct booking. See exactly how much you keep after commission, boosters, payment gateway and ads.</p>
@@ -386,7 +404,7 @@
 
       <!-- Commission Calculator -->
       <div class="tool-card">
-        <div class="tool-icon">💰</div>
+        <div class="tool-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12M6 8h12M15 3c0 4-3 5-6 5l7 8"/></svg></div>
         <span class="tool-tag">OTA Finance</span>
         <h2>OTA Commission Calculator</h2>
         <p>Understand exactly what you receive from OTA bookings. Complete breakup of commissions, GST, TDS, and TCS deductions.</p>
@@ -401,7 +419,7 @@
 
       <!-- Discount Settlement Calculator -->
       <div class="tool-card">
-        <div class="tool-icon">🏷️</div>
+        <div class="tool-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div>
         <span class="tool-tag">OTA Finance</span>
         <h2>Discount Settlement Calculator</h2>
         <p>Calculate your actual earnings when offering hotel-funded discounts. See the real impact on your settlement amount.</p>
@@ -416,7 +434,7 @@
 
       <!-- Revenue & Profit Estimator -->
       <div class="tool-card">
-        <div class="tool-icon">💰</div>
+        <div class="tool-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12M6 8h12M15 3c0 4-3 5-6 5l7 8"/></svg></div>
         <span class="tool-tag">Revenue Management</span>
         <h2>Revenue & Profit Estimator</h2>
         <p>Enter your rooms, occupancy, and ADR, get a full monthly P&L with OTA commission costs, staff expenses, and net profit margin.</p>
@@ -431,7 +449,7 @@
 
       <!-- OTA Dependency Calculator -->
       <div class="tool-card">
-        <div class="tool-icon">📈</div>
+        <div class="tool-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
         <span class="tool-tag">OTA Finance</span>
         <h2>OTA Dependency Calculator</h2>
         <p>Analyze your booking channel mix and see how much revenue you're losing to OTA commissions. Get actionable insights.</p>
@@ -446,7 +464,7 @@
 
       <!-- Rate Shopper -->
       <div class="tool-card">
-        <div class="tool-icon">🔍</div>
+        <div class="tool-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></div>
         <span class="tool-tag">Revenue Management</span>
         <h2>Hotel Rate Shopper</h2>
         <p>Search Google Hotels to compare competitor rates, spot rate parity issues, and identify pricing opportunities in real time.</p>
@@ -461,7 +479,7 @@
 
       <!-- Competitor Rate Intelligence -->
       <div class="tool-card">
-        <div class="tool-icon">🎯</div>
+        <div class="tool-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
         <span class="tool-tag">Revenue Management</span>
         <h2>Competitor Rate Intelligence</h2>
         <p>Search your hotel name to see how you're priced vs nearby competitors. Get distance-based compset analysis with actionable insights.</p>
@@ -476,7 +494,7 @@
 
       <!-- Demand Calendar -->
       <div class="tool-card">
-        <div class="tool-icon">📅</div>
+        <div class="tool-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/></svg></div>
         <span class="tool-tag">Planning</span>
         <h2>Demand Calendar 2026</h2>
         <p>Plan peak pricing around long weekends, wedding muhurats, and festivals. State-specific demand insights.</p>
@@ -491,7 +509,7 @@
 
       <!-- Break Even Calculator -->
       <div class="tool-card">
-        <div class="tool-icon">⚖️</div>
+        <div class="tool-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v18"/><path d="M6 21h12"/><path d="M3 8h18"/><path d="M6 8l-3 6h6z"/><path d="M18 8l-3 6h6z"/></svg></div>
         <span class="tool-tag">Revenue Management</span>
         <h2>Break Even Calculator</h2>
         <p>Find the minimum occupancy and room rate your hotel needs to cover all costs. Includes OTA commission impact and profitability zone analysis.</p>

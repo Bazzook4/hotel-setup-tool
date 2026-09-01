@@ -187,6 +187,24 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+    /* Icon system - line icons, inherit colour from parent.
+       Sizes are fixed because icon containers are often flex boxes sized for
+       an emoji glyph; without this an SVG child stretches to fill them. */
+    .oh-icon { width: 1.5rem; height: 1.5rem; min-width: 1.5rem; min-height: 1.5rem;
+      flex: 0 0 auto; align-self: center; color: var(--secondary, #89826E);
+      display: inline-block; vertical-align: middle; }
+    /* Inside a decorated tile, the icon sits at a larger fixed size. */
+    .tool-icon > .oh-icon, .area-icon > .oh-icon, .dfy-icon > .oh-icon,
+    .service-icon > .oh-icon, .category-icon > .oh-icon, .card-icon > .oh-icon,
+    .feature-icon > .oh-icon, .value-icon > .oh-icon, .why-icon > .oh-icon,
+    .insight-icon > .oh-icon, .resource-icon > .oh-icon, .pattern-icon > .oh-icon {
+      width: 1.75rem; height: 1.75rem; min-width: 1.75rem; min-height: 1.75rem; }
+    /* Tiles with a dark fill need a light stroke. */
+    .tool-icon > .oh-icon { color: var(--bg, #F8F8F4); }
+    h2 .oh-icon, h3 .oh-icon { width: 1.15em; height: 1.15em;
+      min-width: 1.15em; min-height: 1.15em; margin-right: 0.5rem;
+      position: relative; top: -0.05em; }
+
     :root {
       --primary: #3E3D35;
       --secondary: #89826E;
@@ -575,28 +593,28 @@
       <h3>Related Tools &amp; Guides</h3>
       <div class="tools-grid-mini">
         <a href="/tools/rate-shopper/" class="tool-link">
-          <span class="icon">🔍</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></span>
           <div class="text">
             <h4>Hotel Rate Shopper</h4>
             <p>Compare live rates on Google</p>
           </div>
         </a>
         <a href="/tools/ota-commission-calculator/" class="tool-link">
-          <span class="icon">💰</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12M6 8h12M15 3c0 4-3 5-6 5l7 8"/></svg></span>
           <div class="text">
             <h4>OTA Commission Calculator</h4>
             <p>What you actually settle per booking</p>
           </div>
         </a>
         <a href="/guides/revenue/adr.html" class="tool-link">
-          <span class="icon">📖</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4v16a1 1 0 0 0 1 1h15"/><path d="M20 21V3H6a2 2 0 0 0-2 2"/><path d="M8 8h8M8 12h5"/></svg></span>
           <div class="text">
             <h4>ADR Guide</h4>
             <p>What average daily rate means</p>
           </div>
         </a>
         <a href="/guides/revenue/bar.html" class="tool-link">
-          <span class="icon">📖</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4v16a1 1 0 0 0 1 1h15"/><path d="M20 21V3H6a2 2 0 0 0-2 2"/><path d="M8 8h8M8 12h5"/></svg></span>
           <div class="text">
             <h4>BAR Explained</h4>
             <p>Setting your best available rate</p>
@@ -869,7 +887,7 @@
       if (rating) html += '<span class="rating-badge">' + rating + '</span><span class="rating-count">(' + reviews.toLocaleString() + ' reviews)</span>';
       if (hotelClass) {
         var stars = typeof hotelClass === 'number' ? hotelClass : parseInt(hotelClass);
-        if (stars > 0 && stars <= 5) html += '<span class="hotel-class-stars">' + '\u2605'.repeat(stars) + '</span>';
+        if (stars > 0 && stars <= 5) html += '<span class="hotel-class-stars">' + '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.7 5.8 6.3.8-4.6 4.4 1.2 6.3L12 17.3 6.4 20.3l1.2-6.3L3 9.6l6.3-.8z"/></svg>'.repeat(stars) + '</span>';
       }
       html += '</div>';
       if (prop.address) html += '<div class="my-property-address">' + escapeHtml(prop.address) + '</div>';
@@ -1040,27 +1058,27 @@
       // directive, so we describe the market instead of prescribing an action.
       if (!thin && insights.medianRate) {
         if (insights.position === 'above' && insights.positionPercent > 15) {
-          items.push({ icon: '⚠️', text: 'You are priced ' + insights.positionPercent + '% above the median of your matched compset, at the ' + insights.percentile + 'th percentile. Check that your rating and amenities justify that premium, or you may be losing price-sensitive bookings.' });
+          items.push({ icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l9 16H3z"/><path d="M12 9v4M12 17h.01"/></svg>', text: 'You are priced ' + insights.positionPercent + '% above the median of your matched compset, at the ' + insights.percentile + 'th percentile. Check that your rating and amenities justify that premium, or you may be losing price-sensitive bookings.' });
         } else if (insights.position === 'above') {
-          items.push({ icon: '✅', text: 'You sit ' + insights.positionPercent + '% above the compset median at the ' + insights.percentile + 'th percentile. That is a healthy premium if your rating holds up.' });
+          items.push({ icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12l5 5L20 6"/></svg>', text: 'You sit ' + insights.positionPercent + '% above the compset median at the ' + insights.percentile + 'th percentile. That is a healthy premium if your rating holds up.' });
         } else if (insights.position === 'below' && insights.positionPercent > 10) {
-          items.push({ icon: '💡', text: 'You are ' + insights.positionPercent + '% below the compset median, at the ' + insights.percentile + 'th percentile. Comparable hotels are charging more, so there may be room to raise rates.' });
+          items.push({ icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>', text: 'You are ' + insights.positionPercent + '% below the compset median, at the ' + insights.percentile + 'th percentile. Comparable hotels are charging more, so there may be room to raise rates.' });
         } else {
-          items.push({ icon: '📊', text: 'You are priced close to the compset median, at the ' + insights.percentile + 'th percentile. This is a balanced position.' });
+          items.push({ icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><rect x="5" y="11" width="4" height="7"/><rect x="12" y="6" width="4" height="12"/><rect x="19" y="14" width="2" height="4"/></svg>', text: 'You are priced close to the compset median, at the ' + insights.percentile + 'th percentile. This is a balanced position.' });
         }
 
         if (insights.myRate > insights.q3) {
-          items.push({ icon: '📈', text: 'Your rate sits above the typical range (' + formatPrice(insights.q1) + ' to ' + formatPrice(insights.q3) + '). You are outside the band where most of your compset competes.' });
+          items.push({ icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>', text: 'Your rate sits above the typical range (' + formatPrice(insights.q1) + ' to ' + formatPrice(insights.q3) + '). You are outside the band where most of your compset competes.' });
         } else if (insights.myRate < insights.q1) {
-          items.push({ icon: '📉', text: 'Your rate sits below the typical range (' + formatPrice(insights.q1) + ' to ' + formatPrice(insights.q3) + '). Most comparable hotels charge more than you do.' });
+          items.push({ icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 7l6 6 4-4 8 8"/><path d="M15 17h6v-6"/></svg>', text: 'Your rate sits below the typical range (' + formatPrice(insights.q1) + ' to ' + formatPrice(insights.q3) + '). Most comparable hotels charge more than you do.' });
         }
       }
 
       if (insights.myRating && insights.medianCompetitorRating) {
         if (parseFloat(insights.myRating) > insights.medianCompetitorRating) {
-          items.push({ icon: '⭐', text: 'Your rating (' + parseFloat(insights.myRating).toFixed(1) + ') beats the compset median (' + insights.medianCompetitorRating.toFixed(1) + '). That supports pricing at or above the median.' });
+          items.push({ icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.7 5.8 6.3.8-4.6 4.4 1.2 6.3L12 17.3 6.4 20.3l1.2-6.3L3 9.6l6.3-.8z"/></svg>', text: 'Your rating (' + parseFloat(insights.myRating).toFixed(1) + ') beats the compset median (' + insights.medianCompetitorRating.toFixed(1) + '). That supports pricing at or above the median.' });
         } else if (parseFloat(insights.myRating) < insights.medianCompetitorRating) {
-          items.push({ icon: '💬', text: 'Your rating (' + parseFloat(insights.myRating).toFixed(1) + ') trails the compset median (' + insights.medianCompetitorRating.toFixed(1) + '). Closing that gap makes a rate increase easier to defend.' });
+          items.push({ icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/></svg>', text: 'Your rating (' + parseFloat(insights.myRating).toFixed(1) + ') trails the compset median (' + insights.medianCompetitorRating.toFixed(1) + '). Closing that gap makes a rate increase easier to defend.' });
         }
       }
 
@@ -1136,17 +1154,17 @@
       if (c.image) {
         html += '<img class="comp-img" src="' + escapeHtml(c.image) + '" alt="' + escapeHtml(c.name) + '" loading="lazy" onerror="this.style.display=\'none\'">';
       } else {
-        html += '<div class="comp-img" style="display:flex;align-items:center;justify-content:center;color:#bbb;font-size:2rem;">🏨</div>';
+        html += '<div class="comp-img" style="display:flex;align-items:center;justify-content:center;color:#bbb;font-size:2rem;"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M5 21V6l7-3 7 3v15"/><path d="M9 21v-5h6v5"/><path d="M9 9h.01M15 9h.01M9 12h.01M15 12h.01"/></svg></div>';
       }
 
       html += '<div class="comp-info">';
       html += '<div class="comp-name">' + escapeHtml(c.name) + '</div>';
       html += '<div class="comp-meta">';
-      if (c.distance_km !== null) html += '<span class="comp-distance">📍 ' + c.distance_km + ' km</span>';
+      if (c.distance_km !== null) html += '<span class="comp-distance"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> ' + c.distance_km + ' km</span>';
       if (rating) html += '<span class="rating-badge">' + rating + '</span><span class="rating-count">(' + reviews.toLocaleString() + ')</span>';
       if (hotelClass) {
         var stars = typeof hotelClass === 'number' ? hotelClass : parseInt(hotelClass);
-        if (stars > 0 && stars <= 5) html += '<span class="hotel-class-stars">' + '★'.repeat(stars) + '</span>';
+        if (stars > 0 && stars <= 5) html += '<span class="hotel-class-stars">' + '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.7 5.8 6.3.8-4.6 4.4 1.2 6.3L12 17.3 6.4 20.3l1.2-6.3L3 9.6l6.3-.8z"/></svg>'.repeat(stars) + '</span>';
       }
       html += '</div>';
       if (c.amenities && c.amenities.length > 0) {

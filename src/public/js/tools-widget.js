@@ -7,22 +7,22 @@
 
   var BASE = 'https://www.onlinehotelier.com';
   var TOOLS = [
-    { icon: '📊', title: 'Revenue Management Setup',      href: BASE + '/tools/revenue-management-tool/' },
-    { icon: '💰', title: 'OTA Commission Calculator',     href: BASE + '/tools/ota-commission-calculator/' },
-    { icon: '💰', title: 'Revenue & Profit Estimator',    href: BASE + '/tools/revenue-profit-estimator/' },
-    { icon: '🏷️', title: 'Discount Settlement Calculator', href: BASE + '/tools/hotel-discount-calculator/' },
-    { icon: '📈', title: 'OTA Dependency Calculator',     href: BASE + '/tools/ota-dependency-calculator/' },
-    { icon: '🔍', title: 'Hotel Rate Shopper',            href: BASE + '/tools/rate-shopper/' },
-    { icon: '🎯', title: 'Competitor Rate Intelligence',  href: BASE + '/tools/competitor-analysis/' },
-    { icon: '📅', title: 'Demand Calendar 2026',          href: BASE + '/tools/demand-calendar/' },
-    { icon: '⚖️', title: 'Break Even Calculator',         href: BASE + '/tools/break-even-calculator/' },
+    { icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><rect x="5" y="11" width="4" height="7"/><rect x="12" y="6" width="4" height="12"/><rect x="19" y="14" width="2" height="4"/></svg>', title: 'Revenue Management Setup',      href: BASE + '/tools/revenue-management-tool/' },
+    { icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12M6 8h12M15 3c0 4-3 5-6 5l7 8"/></svg>', title: 'OTA Commission Calculator',     href: BASE + '/tools/ota-commission-calculator/' },
+    { icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12M6 8h12M15 3c0 4-3 5-6 5l7 8"/></svg>', title: 'Revenue & Profit Estimator',    href: BASE + '/tools/revenue-profit-estimator/' },
+    { icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>', title: 'Discount Settlement Calculator', href: BASE + '/tools/hotel-discount-calculator/' },
+    { icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>', title: 'OTA Dependency Calculator',     href: BASE + '/tools/ota-dependency-calculator/' },
+    { icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>', title: 'Hotel Rate Shopper',            href: BASE + '/tools/rate-shopper/' },
+    { icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>', title: 'Competitor Rate Intelligence',  href: BASE + '/tools/competitor-analysis/' },
+    { icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/></svg>', title: 'Demand Calendar 2026',          href: BASE + '/tools/demand-calendar/' },
+    { icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v18"/><path d="M6 21h12"/><path d="M3 8h18"/><path d="M6 8l-3 6h6z"/><path d="M18 8l-3 6h6z"/></svg>', title: 'Break Even Calculator',         href: BASE + '/tools/break-even-calculator/' },
   ];
 
   var SERVICES = [
-    { icon: '🔎', title: 'Free OTA Audit',            href: BASE + '/services/ota-audit/' },
-    { icon: '🏨', title: 'Hotel OTA Listing',         href: BASE + '/services/independent-hotel-ota-listing/' },
-    { icon: '🏡', title: 'Vacation Rental Listing',   href: BASE + '/services/vacation-rental-ota-listing/' },
-    { icon: '🌐', title: 'Hotel Website',            href: BASE + '/services/hotel-website/' },
+    { icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>', title: 'Free OTA Audit',            href: BASE + '/services/ota-audit/' },
+    { icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M5 21V6l7-3 7 3v15"/><path d="M9 21v-5h6v5"/><path d="M9 9h.01M15 9h.01M9 12h.01M15 12h.01"/></svg>', title: 'Hotel OTA Listing',         href: BASE + '/services/independent-hotel-ota-listing/' },
+    { icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v11h14V10"/><path d="M10 21v-6h4v6"/></svg>', title: 'Vacation Rental Listing',   href: BASE + '/services/vacation-rental-ota-listing/' },
+    { icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"/></svg>', title: 'Hotel Website',            href: BASE + '/services/hotel-website/' },
   ];
 
   // ── Styles ──────────────────────────────────────────────────────────────────
@@ -104,10 +104,16 @@
       color: #3E3D35;
     }
     .oh-tool-item .oh-tool-icon {
-      font-size: 1.1rem;
-      flex-shrink: 0;
+      flex: 0 0 auto;
       width: 24px;
-      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .oh-tool-item .oh-tool-icon .oh-icon {
+      width: 1.15rem; height: 1.15rem;
+      min-width: 1.15rem; min-height: 1.15rem;
+      color: #89826E;
     }
     .oh-tools-footer {
       padding: 0.75rem 1.25rem;

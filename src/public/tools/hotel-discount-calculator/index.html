@@ -115,6 +115,24 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+    /* Icon system - line icons, inherit colour from parent.
+       Sizes are fixed because icon containers are often flex boxes sized for
+       an emoji glyph; without this an SVG child stretches to fill them. */
+    .oh-icon { width: 1.5rem; height: 1.5rem; min-width: 1.5rem; min-height: 1.5rem;
+      flex: 0 0 auto; align-self: center; color: var(--secondary, #89826E);
+      display: inline-block; vertical-align: middle; }
+    /* Inside a decorated tile, the icon sits at a larger fixed size. */
+    .tool-icon > .oh-icon, .area-icon > .oh-icon, .dfy-icon > .oh-icon,
+    .service-icon > .oh-icon, .category-icon > .oh-icon, .card-icon > .oh-icon,
+    .feature-icon > .oh-icon, .value-icon > .oh-icon, .why-icon > .oh-icon,
+    .insight-icon > .oh-icon, .resource-icon > .oh-icon, .pattern-icon > .oh-icon {
+      width: 1.75rem; height: 1.75rem; min-width: 1.75rem; min-height: 1.75rem; }
+    /* Tiles with a dark fill need a light stroke. */
+    .tool-icon > .oh-icon { color: var(--bg, #F8F8F4); }
+    h2 .oh-icon, h3 .oh-icon { width: 1.15em; height: 1.15em;
+      min-width: 1.15em; min-height: 1.15em; margin-right: 0.5rem;
+      position: relative; top: -0.05em; }
+
 
     * {
       margin: 0;
@@ -879,7 +897,7 @@
 
     <!-- Input Section -->
     <div class="section-card">
-      <h2>💰 Enter Booking Details</h2>
+      <h2><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12M6 8h12M15 3c0 4-3 5-6 5l7 8"/></svg> Enter Booking Details</h2>
 
       <div class="input-grid">
         <div class="form-group">
@@ -1014,19 +1032,19 @@
           <h4>Learn More</h4>
           <div class="resource-grid">
             <a href="/guides/revenue/bar.html" class="resource-link">
-              <span class="resource-icon">📖</span>
+              <span class="resource-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4v16a1 1 0 0 0 1 1h15"/><path d="M20 21V3H6a2 2 0 0 0-2 2"/><path d="M8 8h8M8 12h5"/></svg></span>
               <span>BAR Pricing Guide</span>
             </a>
             <a href="/guides/revenue/adr.html" class="resource-link">
-              <span class="resource-icon">📊</span>
+              <span class="resource-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><rect x="5" y="11" width="4" height="7"/><rect x="12" y="6" width="4" height="12"/><rect x="19" y="14" width="2" height="4"/></svg></span>
               <span>ADR Guide</span>
             </a>
             <a href="/tools/ota-commission-calculator/" class="resource-link">
-              <span class="resource-icon">💰</span>
+              <span class="resource-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12M6 8h12M15 3c0 4-3 5-6 5l7 8"/></svg></span>
               <span>Commission Calculator</span>
             </a>
             <a href="/tools/ota-dependency-calculator/" class="resource-link">
-              <span class="resource-icon">📈</span>
+              <span class="resource-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
               <span>OTA Dependency Tool</span>
             </a>
           </div>
@@ -1040,28 +1058,28 @@
       <h3>Related Tools &amp; Guides</h3>
       <div class="tools-grid-mini">
         <a href="/tools/ota-commission-calculator/" class="tool-link">
-          <span class="icon">💰</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12M6 8h12M15 3c0 4-3 5-6 5l7 8"/></svg></span>
           <div class="text">
             <h4>OTA Commission Calculator</h4>
             <p>What you actually settle per booking</p>
           </div>
         </a>
         <a href="/tools/revenue-profit-estimator/" class="tool-link">
-          <span class="icon">💰</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12M6 8h12M15 3c0 4-3 5-6 5l7 8"/></svg></span>
           <div class="text">
             <h4>Revenue &amp; Profit Estimator</h4>
             <p>Turn ADR and occupancy into P&amp;L</p>
           </div>
         </a>
         <a href="/guides/revenue/adr.html" class="tool-link">
-          <span class="icon">📖</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4v16a1 1 0 0 0 1 1h15"/><path d="M20 21V3H6a2 2 0 0 0-2 2"/><path d="M8 8h8M8 12h5"/></svg></span>
           <div class="text">
             <h4>ADR Guide</h4>
             <p>What average daily rate means</p>
           </div>
         </a>
         <a href="/guides/revenue/rate-linkage.html" class="tool-link">
-          <span class="icon">📖</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4v16a1 1 0 0 0 1 1h15"/><path d="M20 21V3H6a2 2 0 0 0-2 2"/><path d="M8 8h8M8 12h5"/></svg></span>
           <div class="text">
             <h4>Rate Linkage Guide</h4>
             <p>Deriving rates from a base</p>

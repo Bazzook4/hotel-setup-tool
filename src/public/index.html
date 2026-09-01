@@ -113,6 +113,24 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+    /* Icon system - line icons, inherit colour from parent.
+       Sizes are fixed because icon containers are often flex boxes sized for
+       an emoji glyph; without this an SVG child stretches to fill them. */
+    .oh-icon { width: 1.5rem; height: 1.5rem; min-width: 1.5rem; min-height: 1.5rem;
+      flex: 0 0 auto; align-self: center; color: var(--secondary, #89826E);
+      display: inline-block; vertical-align: middle; }
+    /* Inside a decorated tile, the icon sits at a larger fixed size. */
+    .tool-icon > .oh-icon, .area-icon > .oh-icon, .dfy-icon > .oh-icon,
+    .service-icon > .oh-icon, .category-icon > .oh-icon, .card-icon > .oh-icon,
+    .feature-icon > .oh-icon, .value-icon > .oh-icon, .why-icon > .oh-icon,
+    .insight-icon > .oh-icon, .resource-icon > .oh-icon, .pattern-icon > .oh-icon {
+      width: 1.75rem; height: 1.75rem; min-width: 1.75rem; min-height: 1.75rem; }
+    /* Tiles with a dark fill need a light stroke. */
+    .tool-icon > .oh-icon { color: var(--bg, #F8F8F4); }
+    h2 .oh-icon, h3 .oh-icon { width: 1.15em; height: 1.15em;
+      min-width: 1.15em; min-height: 1.15em; margin-right: 0.5rem;
+      position: relative; top: -0.05em; }
+
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -660,7 +678,7 @@
 
       <div class="areas">
         <div class="area">
-          <div class="area-icon">🏨</div>
+          <div class="area-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M5 21V6l7-3 7 3v15"/><path d="M9 21v-5h6v5"/><path d="M9 9h.01M15 9h.01M9 12h.01M15 12h.01"/></svg></div>
           <div class="area-body">
             <h3>Getting Listed on the Right Channels</h3>
             <p>MakeMyTrip, Goibibo, Booking.com, Agoda, Airbnb. Each one suits a different kind of property and guest. The first decision is not how to list, it is where listing is worth your time.</p>
@@ -678,7 +696,7 @@
         </div>
 
         <div class="area">
-          <div class="area-icon">🔗</div>
+          <div class="area-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg></div>
           <div class="area-body">
             <h3>Building Your Direct Booking Channel</h3>
             <p>Every direct booking is a booking with no commission attached. That needs a website guests can find, a Google presence, and rates that do not undercut you elsewhere.</p>
@@ -696,7 +714,7 @@
         </div>
 
         <div class="area">
-          <div class="area-icon">⚙️</div>
+          <div class="area-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M22 12h-3M5 12H2M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M18.4 18.4l-2.1-2.1M7.7 7.7L5.6 5.6"/></svg></div>
           <div class="area-body">
             <h3>Choosing the Software You Actually Need</h3>
             <p>PMS, <strong>channel manager</strong>, booking engine, RMS, POS. Most small hotels are sold more than they need. We explain what each one does before you spend anything.</p>
@@ -714,7 +732,7 @@
         </div>
 
         <div class="area">
-          <div class="area-icon">📈</div>
+          <div class="area-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
           <div class="area-body">
             <h3>Pricing Rooms and Reading Your Numbers</h3>
             <p>ADR, RevPAR, occupancy, rate plans, and the reports that tell you whether a busy month was actually a profitable one.</p>
@@ -732,7 +750,7 @@
         </div>
 
         <div class="area">
-          <div class="area-icon">✅</div>
+          <div class="area-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12l5 5L20 6"/></svg></div>
           <div class="area-body">
             <h3>Staying Compliant and Running Smoothly</h3>
             <p>GST, TDS and TCS on OTA payments, Form C for foreign guests, plus the day-to-day operations that keep reviews high and refunds low.</p>
@@ -767,28 +785,28 @@
 
       <div class="tools-grid">
         <a href="/tools/ota-commission-calculator/" class="tool-card">
-          <div class="tool-icon">💰</div>
+          <div class="tool-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12M6 8h12M15 3c0 4-3 5-6 5l7 8"/></svg></div>
           <h3>OTA Commission Calculator</h3>
           <p>See exactly what reaches your account in ₹ from an OTA booking, after commission, GST, TDS, and TCS.</p>
           <span class="tool-tag">Most Popular</span>
         </a>
 
         <a href="/tools/ota-dependency-calculator/" class="tool-card">
-          <div class="tool-icon">📊</div>
+          <div class="tool-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><rect x="5" y="11" width="4" height="7"/><rect x="12" y="6" width="4" height="12"/><rect x="19" y="14" width="2" height="4"/></svg></div>
           <h3>OTA Dependency Analyzer</h3>
           <p>Find out how much of your revenue leaves as commission, and how exposed you are to one channel.</p>
           <span class="tool-tag">Eye Opener</span>
         </a>
 
         <a href="/tools/break-even-calculator/" class="tool-card">
-          <div class="tool-icon">⚖️</div>
+          <div class="tool-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v18"/><path d="M6 21h12"/><path d="M3 8h18"/><path d="M6 8l-3 6h6z"/><path d="M18 8l-3 6h6z"/></svg></div>
           <h3>Break-Even Calculator</h3>
           <p>Work out the occupancy and room rate you need just to cover your monthly running costs.</p>
           <span class="tool-tag">Planning</span>
         </a>
 
         <a href="/tools/hotel-discount-calculator/" class="tool-card">
-          <div class="tool-icon">🏷️</div>
+          <div class="tool-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div>
           <h3>Discount Settlement Calculator</h3>
           <p>See what a hotel-funded OTA discount really costs you once the settlement lands.</p>
           <span class="tool-tag">Before You Discount</span>
@@ -812,7 +830,7 @@
 
       <div class="dfy-list">
         <a href="/services/independent-hotel-ota-listing/" class="dfy-item">
-          <div class="dfy-icon">🏨</div>
+          <div class="dfy-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M5 21V6l7-3 7 3v15"/><path d="M9 21v-5h6v5"/><path d="M9 9h.01M15 9h.01M9 12h.01M15 12h.01"/></svg></div>
           <div>
             <h3>Independent Hotel OTA Listing</h3>
             <p>Listed and ranking on MakeMyTrip, Goibibo, Booking.com, and Agoda, with photos, content, and rate plans done properly the first time.</p>
@@ -820,7 +838,7 @@
         </a>
 
         <a href="/services/vacation-rental-ota-listing/" class="dfy-item">
-          <div class="dfy-icon">🏡</div>
+          <div class="dfy-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v11h14V10"/><path d="M10 21v-6h4v6"/></svg></div>
           <div>
             <h3>Vacation Rental OTA Listing</h3>
             <p>Homestays, villas, and service apartments listed on Airbnb, Booking.com, and Agoda with pricing suited to your property type.</p>
@@ -829,7 +847,7 @@
 
 
         <a href="/services/hotel-website/" class="dfy-item">
-          <div class="dfy-icon">🌐</div>
+          <div class="dfy-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"/></svg></div>
           <div>
             <h3>Hotel Website</h3>
             <p>A clean, fast marketing website for your property. Guest enquiries come straight to your WhatsApp. From ₹15,000, live in 7 days.</p>
@@ -837,7 +855,7 @@
         </a>
 
         <a href="/services/" class="dfy-item">
-          <div class="dfy-icon">💬</div>
+          <div class="dfy-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/></svg></div>
           <div>
             <h3>Not Sure What You Need?</h3>
             <p>Tell us about your property and we will tell you honestly what is worth doing, including when the answer is nothing yet.</p>

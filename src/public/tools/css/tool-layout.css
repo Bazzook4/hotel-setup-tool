@@ -113,8 +113,17 @@ body {
 }
 
 .tool-nav-icon {
-  font-size: 0.9rem;
   margin-right: 0.15rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tool-nav-icon .oh-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  min-width: 1.05rem;
+  min-height: 1.05rem;
+  color: var(--secondary, #89826E);
 }
 
 /* ----- Main Content Area ----- */

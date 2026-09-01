@@ -118,6 +118,24 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+    /* Icon system - line icons, inherit colour from parent.
+       Sizes are fixed because icon containers are often flex boxes sized for
+       an emoji glyph; without this an SVG child stretches to fill them. */
+    .oh-icon { width: 1.5rem; height: 1.5rem; min-width: 1.5rem; min-height: 1.5rem;
+      flex: 0 0 auto; align-self: center; color: var(--secondary, #89826E);
+      display: inline-block; vertical-align: middle; }
+    /* Inside a decorated tile, the icon sits at a larger fixed size. */
+    .tool-icon > .oh-icon, .area-icon > .oh-icon, .dfy-icon > .oh-icon,
+    .service-icon > .oh-icon, .category-icon > .oh-icon, .card-icon > .oh-icon,
+    .feature-icon > .oh-icon, .value-icon > .oh-icon, .why-icon > .oh-icon,
+    .insight-icon > .oh-icon, .resource-icon > .oh-icon, .pattern-icon > .oh-icon {
+      width: 1.75rem; height: 1.75rem; min-width: 1.75rem; min-height: 1.75rem; }
+    /* Tiles with a dark fill need a light stroke. */
+    .tool-icon > .oh-icon { color: var(--bg, #F8F8F4); }
+    h2 .oh-icon, h3 .oh-icon { width: 1.15em; height: 1.15em;
+      min-width: 1.15em; min-height: 1.15em; margin-right: 0.5rem;
+      position: relative; top: -0.05em; }
+
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -500,28 +518,28 @@
       <h3>Related Tools &amp; Guides</h3>
       <div class="tools-grid-mini">
         <a href="/tools/break-even-calculator/" class="tool-link">
-          <span class="icon">⚖️</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v18"/><path d="M6 21h12"/><path d="M3 8h18"/><path d="M6 8l-3 6h6z"/><path d="M18 8l-3 6h6z"/></svg></span>
           <div class="text">
             <h4>Break Even Calculator</h4>
             <p>The occupancy you must hit</p>
           </div>
         </a>
         <a href="/tools/ota-commission-calculator/" class="tool-link">
-          <span class="icon">💰</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12M6 8h12M15 3c0 4-3 5-6 5l7 8"/></svg></span>
           <div class="text">
             <h4>OTA Commission Calculator</h4>
             <p>What you actually settle per booking</p>
           </div>
         </a>
         <a href="/guides/revenue/adr.html" class="tool-link">
-          <span class="icon">📖</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4v16a1 1 0 0 0 1 1h15"/><path d="M20 21V3H6a2 2 0 0 0-2 2"/><path d="M8 8h8M8 12h5"/></svg></span>
           <div class="text">
             <h4>ADR Guide</h4>
             <p>What average daily rate means</p>
           </div>
         </a>
         <a href="/guides/revenue/revpar.html" class="tool-link">
-          <span class="icon">📖</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4v16a1 1 0 0 0 1 1h15"/><path d="M20 21V3H6a2 2 0 0 0-2 2"/><path d="M8 8h8M8 12h5"/></svg></span>
           <div class="text">
             <h4>RevPAR Guide</h4>
             <p>Revenue per available room</p>
@@ -683,22 +701,22 @@
       // Recommendations
       const recs = [];
       if (otaShare > 0.6) {
-        recs.push({ icon: '📉', title: 'Reduce OTA Dependency', text: 'Over 60% OTA bookings is costing you ' + fmt(otaCommissionCost) + '/month. A booking engine + Best Rate Guarantee can shift 15–20% to direct.' });
+        recs.push({ icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 7l6 6 4-4 8 8"/><path d="M15 17h6v-6"/></svg>', title: 'Reduce OTA Dependency', text: 'Over 60% OTA bookings is costing you ' + fmt(otaCommissionCost) + '/month. A booking engine + Best Rate Guarantee can shift 15–20% to direct.' });
       }
       if (occ < 0.60) {
-        recs.push({ icon: '📈', title: 'Improve Occupancy First', text: 'At ' + Math.round(occ * 100) + '% occupancy, filling 5 more rooms/night adds ' + fmt(5 * adr * 30) + '/month revenue with near-zero extra cost.' });
+        recs.push({ icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>', title: 'Improve Occupancy First', text: 'At ' + Math.round(occ * 100) + '% occupancy, filling 5 more rooms/night adds ' + fmt(5 * adr * 30) + '/month revenue with near-zero extra cost.' });
       }
       if (ancillary === 0) {
-        recs.push({ icon: '🍽', title: 'Add Ancillary Revenue', text: 'F&B, airport transfers, or laundry can add ₹200–₹500 per room night with minimal investment. Explore what your guests ask for.' });
+        recs.push({ icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3v8a3 3 0 0 0 6 0V3"/><path d="M8 11v10"/><path d="M17 3c-1.5 2-2 4-2 6s1 3 2 3 2-1 2-3-.5-4-2-6z"/><path d="M17 12v9"/></svg>', title: 'Add Ancillary Revenue', text: 'F&B, airport transfers, or laundry can add ₹200–₹500 per room night with minimal investment. Explore what your guests ask for.' });
       }
       if (netMarginPct > 0 && netMarginPct < 20) {
-        recs.push({ icon: '💡', title: 'Review Fixed Costs', text: 'Rent/EMI at ' + fmt(rent) + '/month and staff at ' + fmt(staff) + '/month are your largest controllables. Benchmark against similar properties in your city.' });
+        recs.push({ icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>', title: 'Review Fixed Costs', text: 'Rent/EMI at ' + fmt(rent) + '/month and staff at ' + fmt(staff) + '/month are your largest controllables. Benchmark against similar properties in your city.' });
       }
       if (otaComm > 0.18) {
-        recs.push({ icon: '🤝', title: 'Renegotiate OTA Commission', text: 'At ' + Math.round(otaComm * 100) + '% commission, you\'re paying above average. Properties with strong reviews can negotiate preferred rates with MMT and Booking.com.' });
+        recs.push({ icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 8l-3-2-6 4v5l4 3 2-2 2 2 2-2 2 2 4-3v-5l-6-4z"/></svg>', title: 'Renegotiate OTA Commission', text: 'At ' + Math.round(otaComm * 100) + '% commission, you\'re paying above average. Properties with strong reviews can negotiate preferred rates with MMT and Booking.com.' });
       }
       if (recs.length === 0) {
-        recs.push({ icon: '✅', title: 'Strong Performance', text: 'Your P&L looks healthy. Focus on maintaining direct booking share and protecting occupancy during lean season with MLOS and strategic rate plans.' });
+        recs.push({ icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12l5 5L20 6"/></svg>', title: 'Strong Performance', text: 'Your P&L looks healthy. Focus on maintaining direct booking share and protecting occupancy during lean season with MLOS and strategic rate plans.' });
       }
 
       const recList = document.getElementById('recList');

@@ -34,6 +34,24 @@
   <script src="/js/calendar-data.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+    /* Icon system - line icons, inherit colour from parent.
+       Sizes are fixed because icon containers are often flex boxes sized for
+       an emoji glyph; without this an SVG child stretches to fill them. */
+    .oh-icon { width: 1.5rem; height: 1.5rem; min-width: 1.5rem; min-height: 1.5rem;
+      flex: 0 0 auto; align-self: center; color: var(--secondary, #89826E);
+      display: inline-block; vertical-align: middle; }
+    /* Inside a decorated tile, the icon sits at a larger fixed size. */
+    .tool-icon > .oh-icon, .area-icon > .oh-icon, .dfy-icon > .oh-icon,
+    .service-icon > .oh-icon, .category-icon > .oh-icon, .card-icon > .oh-icon,
+    .feature-icon > .oh-icon, .value-icon > .oh-icon, .why-icon > .oh-icon,
+    .insight-icon > .oh-icon, .resource-icon > .oh-icon, .pattern-icon > .oh-icon {
+      width: 1.75rem; height: 1.75rem; min-width: 1.75rem; min-height: 1.75rem; }
+    /* Tiles with a dark fill need a light stroke. */
+    .tool-icon > .oh-icon { color: var(--bg, #F8F8F4); }
+    h2 .oh-icon, h3 .oh-icon { width: 1.15em; height: 1.15em;
+      min-width: 1.15em; min-height: 1.15em; margin-right: 0.5rem;
+      position: relative; top: -0.05em; }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -740,7 +758,7 @@
     <!-- UPCOMING DEMAND PEAKS WIDGET -->
     <div class="peaks-widget" id="peaksWidget">
       <div class="peaks-widget-header">
-        <h3>⚡ Upcoming Demand Peaks, Next 90 Days</h3>
+        <h3><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg> Upcoming Demand Peaks, Next 90 Days</h3>
         <a href="/tools/demand-calendar/">View Full Calendar →</a>
       </div>
       <div class="peaks-grid" id="peaksGrid">
@@ -752,7 +770,7 @@
     <div class="action-card expanded" id="card-occupancy">
       <div class="action-card-header" onclick="toggleCard('card-occupancy')">
         <div class="action-card-title">
-          <span class="card-icon">📈</span>
+          <span class="card-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
           <h3>Action 1: Adjust Rates by Occupancy</h3>
         </div>
         <div style="display:flex;align-items:center;gap:0.75rem;">
@@ -795,7 +813,7 @@
     <div class="action-card expanded" id="card-overbooking">
       <div class="action-card-header" onclick="toggleCard('card-overbooking')">
         <div class="action-card-title">
-          <span class="card-icon">🔄</span>
+          <span class="card-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M3 21v-5h5M21 3v5h-5"/></svg></span>
           <h3>Action 2: Overbook Your Base Category</h3>
         </div>
         <div style="display:flex;align-items:center;gap:0.75rem;">
@@ -821,7 +839,7 @@
     <div class="action-card expanded" id="card-inventory">
       <div class="action-card-header" onclick="toggleCard('card-inventory')">
         <div class="action-card-title">
-          <span class="card-icon">🏨</span>
+          <span class="card-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M5 21V6l7-3 7 3v15"/><path d="M9 21v-5h6v5"/><path d="M9 9h.01M15 9h.01M9 12h.01M15 12h.01"/></svg></span>
           <h3>Action 3: Pool Similar Room Categories</h3>
         </div>
         <div style="display:flex;align-items:center;gap:0.75rem;">
@@ -864,7 +882,7 @@
     <div class="action-card expanded" id="card-demand">
       <div class="action-card-header" onclick="toggleCard('card-demand')">
         <div class="action-card-title">
-          <span class="card-icon">📊</span>
+          <span class="card-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><rect x="5" y="11" width="4" height="7"/><rect x="12" y="6" width="4" height="12"/><rect x="19" y="14" width="2" height="4"/></svg></span>
           <h3>Action 4: Apply Weekday/Weekend & Seasonal Markups</h3>
         </div>
         <div style="display:flex;align-items:center;gap:0.75rem;">
@@ -904,7 +922,7 @@
     <div class="action-card expanded" id="card-calendar">
       <div class="action-card-header" onclick="toggleCard('card-calendar')">
         <div class="action-card-title">
-          <span class="card-icon">📅</span>
+          <span class="card-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/></svg></span>
           <h3>Action 5: Mark Up for Events, Festivals & Wedding Dates</h3>
         </div>
         <div style="display:flex;align-items:center;gap:0.75rem;">
@@ -945,7 +963,7 @@
     <div class="action-card expanded" id="card-time">
       <div class="action-card-header" onclick="toggleCard('card-time')">
         <div class="action-card-title">
-          <span class="card-icon">🕐</span>
+          <span class="card-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
           <h3>Action 6: Adjust Prices by Time of Day</h3>
         </div>
         <div style="display:flex;align-items:center;gap:0.75rem;">
@@ -987,7 +1005,7 @@
     <div class="action-card" id="destinationInsights" style="display: none;">
       <div class="action-card-header" onclick="toggleCard('destinationInsights')">
         <div class="action-card-title">
-          <span class="card-icon">📍</span>
+          <span class="card-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
           <h3>Your Destination Profile</h3>
         </div>
         <span class="expand-icon">&#9660;</span>
@@ -1002,28 +1020,28 @@
       <h3>Related Tools &amp; Guides</h3>
       <div class="tools-grid-mini">
         <a href="/tools/revenue-management-tool/" class="tool-link">
-          <span class="icon">📊</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><rect x="5" y="11" width="4" height="7"/><rect x="12" y="6" width="4" height="12"/><rect x="19" y="14" width="2" height="4"/></svg></span>
           <div class="text">
             <h4>Revenue Management Setup</h4>
             <p>Build your pricing playbook</p>
           </div>
         </a>
         <a href="/tools/demand-calendar/" class="tool-link">
-          <span class="icon">📅</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/></svg></span>
           <div class="text">
             <h4>Demand Calendar 2026</h4>
             <p>Plan for peak pricing dates</p>
           </div>
         </a>
         <a href="/guides/revenue/revpar.html" class="tool-link">
-          <span class="icon">📖</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4v16a1 1 0 0 0 1 1h15"/><path d="M20 21V3H6a2 2 0 0 0-2 2"/><path d="M8 8h8M8 12h5"/></svg></span>
           <div class="text">
             <h4>RevPAR Guide</h4>
             <p>Revenue per available room</p>
           </div>
         </a>
         <a href="/guides/revenue/bar.html" class="tool-link">
-          <span class="icon">📖</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4v16a1 1 0 0 0 1 1h15"/><path d="M20 21V3H6a2 2 0 0 0-2 2"/><path d="M8 8h8M8 12h5"/></svg></span>
           <div class="text">
             <h4>BAR Explained</h4>
             <p>Setting your best available rate</p>
@@ -1273,8 +1291,8 @@
     }
 
     function getTravelerIcon(type) {
-      const icons = { 'Business Travelers': '💼', 'Business & Government': '🏛️', 'Leisure Tourists': '🏖️', 'Medical Tourists': '🏥', 'Entertainment Industry': '🎬', 'Leisure & Weddings': '💒', 'Heritage Tourists': '🏰', 'Wedding Groups': '💍', 'MICE & Events': '🎪', 'Luxury Tourists': '👑', 'International Tourists': '✈️', 'Day Trippers': '🚌', 'Golden Triangle Tourists': '🗺️', 'Family Vacationers': '👨‍👩‍👧‍👦', 'Honeymooners': '💑', 'Corporate Groups': '👔', 'Adventure Tourists': '🧗', 'Backpackers': '🎒', 'Pilgrims': '🙏', 'Spiritual Seekers': '🕉️', 'Cultural Tourists': '🎭', 'Yoga & Wellness': '🧘', 'Spiritual Pilgrims': '⛩️', 'Sikh Pilgrims': '🏛️', 'Domestic Tourists': '🇮🇳', 'Yoga Students': '🧘‍♀️', 'Dussehra Visitors': '🎉', 'Weekend Getaway': '🌅', 'Nature Enthusiasts': '🌲', 'Weekend Tourists': '🌴', 'Heritage Enthusiasts': '📚', 'Spiritual Tourists': '☸️', 'Weekend Warriors': '🏄', 'Photographers': '📷', 'Houseboat Tourists': '⛵', 'Ayurveda Seekers': '💆', 'Beach Lovers': '🏝️', 'Scuba Divers': '🤿', 'Bikers & Road Trippers': '🏍️', 'Monastery Enthusiasts': '🏯', 'Adventure Travelers': '⛰️', 'Wildlife Enthusiasts': '🐅', 'Luxury Travelers': '💎', 'Wildlife Photographers': '📸', 'Bird Watchers': '🦅', 'Tea Tourism': '🍵', 'School/College Groups': '🎓', 'Remote Workers': '💻', 'Film Shootings': '🎥', 'Cruise Tourists': '🚢', 'Education Related': '🎓', 'MICE': '🎪' };
-      return icons[type] || '👤';
+      const icons = { 'Business Travelers': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="4" width="12" height="17" rx="1"/><path d="M9 4V3h6v1"/><path d="M9 10h6M9 14h4"/></svg>', 'Business & Government': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 10h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg>', 'Leisure Tourists': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M22 12h-3M5 12H2M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M18.4 18.4l-2.1-2.1M7.7 7.7L5.6 5.6"/></svg>', 'Medical Tourists': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h.01M12 7h.01M16 7h.01M8 11h.01M12 11h.01M16 11h.01M8 15h.01M16 15h.01"/><path d="M11 21v-4h2v4"/></svg>', 'Entertainment Industry': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 8h3l2-3h8l2 3h3v12H3z"/><circle cx="12" cy="13" r="4"/></svg>', 'Leisure & Weddings': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 10h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg>', 'Heritage Tourists': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 10h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg>', 'Wedding Groups': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.7 5.8 6.3.8-4.6 4.4 1.2 6.3L12 17.3 6.4 20.3l1.2-6.3L3 9.6l6.3-.8z"/></svg>', 'MICE & Events': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 10h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg>', 'Luxury Tourists': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/><path d="M12 14v4M9 21h6"/></svg>', 'International Tourists': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 13l20-7-7 20-3-8z"/></svg>', 'Day Trippers': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 17h14"/><path d="M3 17v-4l2-5h14l2 5v4"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="16.5" cy="17" r="1.5"/></svg>', 'Golden Triangle Tourists': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg>', 'Family Vacationers': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg>', 'Honeymooners': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/><path d="M17 8.5a3 3 0 0 0 0-5"/><path d="M18 14c2.5.6 4 2.5 4 5"/></svg>', 'Corporate Groups': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg>', 'Adventure Tourists': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="13" cy="4" r="2"/><path d="M11 21l2-6-3-3 1-5 3 3 3 1"/><path d="M10 12l-3 3M13 15l2 6"/></svg>', 'Backpackers': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="4" width="12" height="17" rx="1"/><path d="M9 4V3h6v1"/><path d="M9 10h6M9 14h4"/></svg>', 'Pilgrims': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 10h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg>', 'Spiritual Seekers': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 10h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg>', 'Cultural Tourists': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 10h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg>', 'Yoga & Wellness': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="13" cy="4" r="2"/><path d="M11 21l2-6-3-3 1-5 3 3 3 1"/><path d="M10 12l-3 3M13 15l2 6"/></svg>', 'Spiritual Pilgrims': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 10h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg>', 'Sikh Pilgrims': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 10h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg>', 'Domestic Tourists': '🇮🇳', 'Yoga Students': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="13" cy="4" r="2"/><path d="M11 21l2-6-3-3 1-5 3 3 3 1"/><path d="M10 12l-3 3M13 15l2 6"/></svg>', 'Dussehra Visitors': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.7 5.8 6.3.8-4.6 4.4 1.2 6.3L12 17.3 6.4 20.3l1.2-6.3L3 9.6l6.3-.8z"/></svg>', 'Weekend Getaway': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M22 12h-3M5 12H2M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M18.4 18.4l-2.1-2.1M7.7 7.7L5.6 5.6"/></svg>', 'Nature Enthusiasts': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 10h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg>', 'Weekend Tourists': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M22 12h-3M5 12H2M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M18.4 18.4l-2.1-2.1M7.7 7.7L5.6 5.6"/></svg>', 'Heritage Enthusiasts': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4v16a1 1 0 0 0 1 1h15"/><path d="M20 21V3H6a2 2 0 0 0-2 2"/><path d="M8 8h8M8 12h5"/></svg>', 'Spiritual Tourists': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 10h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg>', 'Weekend Warriors': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 8c3-2 5 2 8 0s5-2 8 0 4 0 4 0"/><path d="M2 14c3-2 5 2 8 0s5-2 8 0 4 0 4 0"/><path d="M2 20c3-2 5 2 8 0s5-2 8 0 4 0 4 0"/></svg>', 'Photographers': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 8h3l2-3h8l2 3h3v12H3z"/><circle cx="12" cy="13" r="4"/></svg>', 'Houseboat Tourists': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 8c3-2 5 2 8 0s5-2 8 0 4 0 4 0"/><path d="M2 14c3-2 5 2 8 0s5-2 8 0 4 0 4 0"/><path d="M2 20c3-2 5 2 8 0s5-2 8 0 4 0 4 0"/></svg>', 'Ayurveda Seekers': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 16v-5a6 6 0 1 0-12 0v5"/><path d="M4 16h16"/><path d="M10 20h4"/></svg>', 'Beach Lovers': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M22 12h-3M5 12H2M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M18.4 18.4l-2.1-2.1M7.7 7.7L5.6 5.6"/></svg>', 'Scuba Divers': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 8c3-2 5 2 8 0s5-2 8 0 4 0 4 0"/><path d="M2 14c3-2 5 2 8 0s5-2 8 0 4 0 4 0"/><path d="M2 20c3-2 5 2 8 0s5-2 8 0 4 0 4 0"/></svg>', 'Bikers & Road Trippers': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 17h14"/><path d="M3 17v-4l2-5h14l2 5v4"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="16.5" cy="17" r="1.5"/></svg>', 'Monastery Enthusiasts': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 10h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg>', 'Adventure Travelers': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 10h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg>', 'Wildlife Enthusiasts': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 10h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg>', 'Luxury Travelers': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.7 5.8 6.3.8-4.6 4.4 1.2 6.3L12 17.3 6.4 20.3l1.2-6.3L3 9.6l6.3-.8z"/></svg>', 'Wildlife Photographers': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 8h3l2-3h8l2 3h3v12H3z"/><circle cx="12" cy="13" r="4"/></svg>', 'Bird Watchers': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 10h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg>', 'Tea Tourism': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3v8a3 3 0 0 0 6 0V3"/><path d="M8 11v10"/><path d="M17 3c-1.5 2-2 4-2 6s1 3 2 3 2-1 2-3-.5-4-2-6z"/><path d="M17 12v9"/></svg>', 'School/College Groups': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4v16a1 1 0 0 0 1 1h15"/><path d="M20 21V3H6a2 2 0 0 0-2 2"/><path d="M8 8h8M8 12h5"/></svg>', 'Remote Workers': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>', 'Film Shootings': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 8h3l2-3h8l2 3h3v12H3z"/><circle cx="12" cy="13" r="4"/></svg>', 'Cruise Tourists': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 8c3-2 5 2 8 0s5-2 8 0 4 0 4 0"/><path d="M2 14c3-2 5 2 8 0s5-2 8 0 4 0 4 0"/><path d="M2 20c3-2 5 2 8 0s5-2 8 0 4 0 4 0"/></svg>', 'Education Related': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4v16a1 1 0 0 0 1 1h15"/><path d="M20 21V3H6a2 2 0 0 0-2 2"/><path d="M8 8h8M8 12h5"/></svg>', 'MICE': '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 10h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg>' };
+      return icons[type] || '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg>';
     }
 
     // =============================================

@@ -137,6 +137,24 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+    /* Icon system - line icons, inherit colour from parent.
+       Sizes are fixed because icon containers are often flex boxes sized for
+       an emoji glyph; without this an SVG child stretches to fill them. */
+    .oh-icon { width: 1.5rem; height: 1.5rem; min-width: 1.5rem; min-height: 1.5rem;
+      flex: 0 0 auto; align-self: center; color: var(--secondary, #89826E);
+      display: inline-block; vertical-align: middle; }
+    /* Inside a decorated tile, the icon sits at a larger fixed size. */
+    .tool-icon > .oh-icon, .area-icon > .oh-icon, .dfy-icon > .oh-icon,
+    .service-icon > .oh-icon, .category-icon > .oh-icon, .card-icon > .oh-icon,
+    .feature-icon > .oh-icon, .value-icon > .oh-icon, .why-icon > .oh-icon,
+    .insight-icon > .oh-icon, .resource-icon > .oh-icon, .pattern-icon > .oh-icon {
+      width: 1.75rem; height: 1.75rem; min-width: 1.75rem; min-height: 1.75rem; }
+    /* Tiles with a dark fill need a light stroke. */
+    .tool-icon > .oh-icon { color: var(--bg, #F8F8F4); }
+    h2 .oh-icon, h3 .oh-icon { width: 1.15em; height: 1.15em;
+      min-width: 1.15em; min-height: 1.15em; margin-right: 0.5rem;
+      position: relative; top: -0.05em; }
+
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -569,27 +587,27 @@
           <!-- Amenity strip -->
           <div class="bs-amenity-row">
             <div class="bs-amenity-item">
-              <span class="bs-amenity-icon">📶</span>
+              <span class="bs-amenity-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20v-4M10 20v-8M16 20v-12M22 20V4"/></svg></span>
               <span class="bs-amenity-text">Free Wi-Fi</span>
             </div>
             <div class="bs-amenity-item">
-              <span class="bs-amenity-icon">🚗</span>
+              <span class="bs-amenity-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 17h14"/><path d="M3 17v-4l2-5h14l2 5v4"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="16.5" cy="17" r="1.5"/></svg></span>
               <span class="bs-amenity-text">Free Parking</span>
             </div>
             <div class="bs-amenity-item">
-              <span class="bs-amenity-icon">✈️</span>
+              <span class="bs-amenity-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 13l20-7-7 20-3-8z"/></svg></span>
               <span class="bs-amenity-text">Airport Shuttle</span>
             </div>
             <div class="bs-amenity-item">
-              <span class="bs-amenity-icon">🏋️</span>
+              <span class="bs-amenity-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="13" cy="4" r="2"/><path d="M11 21l2-6-3-3 1-5 3 3 3 1"/><path d="M10 12l-3 3M13 15l2 6"/></svg></span>
               <span class="bs-amenity-text">Gym</span>
             </div>
             <div class="bs-amenity-item">
-              <span class="bs-amenity-icon">🍽️</span>
+              <span class="bs-amenity-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3v8a3 3 0 0 0 6 0V3"/><path d="M8 11v10"/><path d="M17 3c-1.5 2-2 4-2 6s1 3 2 3 2-1 2-3-.5-4-2-6z"/><path d="M17 12v9"/></svg></span>
               <span class="bs-amenity-text">Restaurant</span>
             </div>
             <div class="bs-amenity-item">
-              <span class="bs-amenity-icon">🧾</span>
+              <span class="bs-amenity-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span>
               <span class="bs-amenity-text">GST Invoice</span>
             </div>
           </div>
@@ -636,42 +654,42 @@
         <p class="section-sub">Functional, fast-loading, conversion-focused. No decorative elements that slow down a traveller making a quick decision between three Google results.</p>
         <div class="feature-grid">
           <div class="feature-card">
-            <span class="feature-icon">📌</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
             <h4>Sticky Enquiry Button</h4>
             <p>An enquiry button that stays visible at all times, whether the guest is reading about rooms, amenities or your location. No scrolling back to find it.</p>
           </div>
           <div class="feature-card">
-            <span class="feature-icon">📊</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><rect x="5" y="11" width="4" height="7"/><rect x="12" y="6" width="4" height="12"/><rect x="19" y="14" width="2" height="4"/></svg></span>
             <h4>Stats Bar</h4>
             <p>Room count, distance to airport or tech park, number of conference halls, and 24-hour check-in status, visible immediately, no clicking required.</p>
           </div>
           <div class="feature-card">
-            <span class="feature-icon">🏢</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h.01M12 7h.01M16 7h.01M8 11h.01M12 11h.01M16 11h.01M8 15h.01M16 15h.01"/><path d="M11 21v-4h2v4"/></svg></span>
             <h4>Meetings and Events Section</h4>
             <p>Each conference room or banquet hall gets a listing with capacity, setup options, dimensions and a direct enquiry form. This section captures MICE searches most hotels miss.</p>
           </div>
           <div class="feature-card">
-            <span class="feature-icon">🤝</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 8l-3-2-6 4v5l4 3 2-2 2 2 2-2 2 2 4-3v-5l-6-4z"/></svg></span>
             <h4>Corporate Enquiry Form</h4>
             <p>A dedicated form for travel desks and HR teams, captures company name, room volume, dates, meal preference and GSTIN. Routed to both email and WhatsApp.</p>
           </div>
           <div class="feature-card">
-            <span class="feature-icon">🧾</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span>
             <h4>GST Invoice Section</h4>
             <p>A visible callout that direct bookings include a proper GST invoice under your GSTIN. Corporate guests with ITC requirements look for this before booking.</p>
           </div>
           <div class="feature-card">
-            <span class="feature-icon">🚀</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2c3 2 5 6 5 10l-3 3h-4l-3-3c0-4 2-8 5-10z"/><circle cx="12" cy="9" r="1.5"/><path d="M9 17l-2 5 4-2M15 17l2 5-4-2"/></svg></span>
             <h4>Fast Loading</h4>
             <p>No heavy imagery. Grid-based layout loads in under 2 seconds on 4G. Business travellers booking on the move do not wait for slow websites.</p>
           </div>
           <div class="feature-card">
-            <span class="feature-icon">🗺️</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg></span>
             <h4>Location Section</h4>
             <p>Dedicated section with distances from key landmarks, airport, metro, tech parks, hospitals. Embedded map. Business guests make location decisions first.</p>
           </div>
           <div class="feature-card">
-            <span class="feature-icon">📱</span>
+            <span class="feature-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
             <h4>Mobile-First</h4>
             <p>Clean mobile layout. The sticky enquiry button, room rates, and amenity list all display clearly on any Android or iPhone screen without zooming or horizontal scrolling.</p>
           </div>

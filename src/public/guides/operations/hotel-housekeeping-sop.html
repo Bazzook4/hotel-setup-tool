@@ -28,6 +28,24 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+    /* Icon system - line icons, inherit colour from parent.
+       Sizes are fixed because icon containers are often flex boxes sized for
+       an emoji glyph; without this an SVG child stretches to fill them. */
+    .oh-icon { width: 1.5rem; height: 1.5rem; min-width: 1.5rem; min-height: 1.5rem;
+      flex: 0 0 auto; align-self: center; color: var(--secondary, #89826E);
+      display: inline-block; vertical-align: middle; }
+    /* Inside a decorated tile, the icon sits at a larger fixed size. */
+    .tool-icon > .oh-icon, .area-icon > .oh-icon, .dfy-icon > .oh-icon,
+    .service-icon > .oh-icon, .category-icon > .oh-icon, .card-icon > .oh-icon,
+    .feature-icon > .oh-icon, .value-icon > .oh-icon, .why-icon > .oh-icon,
+    .insight-icon > .oh-icon, .resource-icon > .oh-icon, .pattern-icon > .oh-icon {
+      width: 1.75rem; height: 1.75rem; min-width: 1.75rem; min-height: 1.75rem; }
+    /* Tiles with a dark fill need a light stroke. */
+    .tool-icon > .oh-icon { color: var(--bg, #F8F8F4); }
+    h2 .oh-icon, h3 .oh-icon { width: 1.15em; height: 1.15em;
+      min-width: 1.15em; min-height: 1.15em; margin-right: 0.5rem;
+      position: relative; top: -0.05em; }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Avenir', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #F8F8F4; color: #3E3D35; line-height: 1.7; }
     :root { --primary: #3E3D35; --secondary: #89826E; --accent: #89826E; --secondary-light: rgba(137,130,110,0.1); --accent-light: rgba(137,130,110,0.2); --primary-light: rgba(62,61,53,0.08); }
@@ -347,28 +365,28 @@
         <h3>Related Tools &amp; Guides</h3>
         <div class="tools-grid-mini">
           <a href="/tools/revenue-management-tool/" class="tool-link">
-            <span class="icon">🏨</span>
+            <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M5 21V6l7-3 7 3v15"/><path d="M9 21v-5h6v5"/><path d="M9 9h.01M15 9h.01M9 12h.01M15 12h.01"/></svg></span>
             <div class="text">
               <h4>Revenue Management Tool</h4>
               <p>Track occupancy, ADR and RevPAR in one place</p>
             </div>
           </a>
           <a href="/tools/break-even-calculator/" class="tool-link">
-            <span class="icon">⚖️</span>
+            <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v18"/><path d="M6 21h12"/><path d="M3 8h18"/><path d="M6 8l-3 6h6z"/><path d="M18 8l-3 6h6z"/></svg></span>
             <div class="text">
               <h4>Break-Even Calculator</h4>
               <p>The minimum rate that covers your cost before you take a booking</p>
             </div>
           </a>
           <a href="/guides/operations/hotel-staff-training.html" class="tool-link">
-            <span class="icon">👥</span>
+            <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/><path d="M17 8.5a3 3 0 0 0 0-5"/><path d="M18 14c2.5.6 4 2.5 4 5"/></svg></span>
             <div class="text">
               <h4>Staff Training Guide</h4>
               <p>Train a small hotel team without a training department</p>
             </div>
           </a>
           <a href="/guides/reports/departure-report.html" class="tool-link">
-            <span class="icon">🛫</span>
+            <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 13l20-7-7 20-3-8z"/></svg></span>
             <div class="text">
               <h4>Departure Report</h4>
               <p>Control check-outs, settlements and room release</p>

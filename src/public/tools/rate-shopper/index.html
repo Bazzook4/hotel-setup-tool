@@ -126,6 +126,24 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+    /* Icon system - line icons, inherit colour from parent.
+       Sizes are fixed because icon containers are often flex boxes sized for
+       an emoji glyph; without this an SVG child stretches to fill them. */
+    .oh-icon { width: 1.5rem; height: 1.5rem; min-width: 1.5rem; min-height: 1.5rem;
+      flex: 0 0 auto; align-self: center; color: var(--secondary, #89826E);
+      display: inline-block; vertical-align: middle; }
+    /* Inside a decorated tile, the icon sits at a larger fixed size. */
+    .tool-icon > .oh-icon, .area-icon > .oh-icon, .dfy-icon > .oh-icon,
+    .service-icon > .oh-icon, .category-icon > .oh-icon, .card-icon > .oh-icon,
+    .feature-icon > .oh-icon, .value-icon > .oh-icon, .why-icon > .oh-icon,
+    .insight-icon > .oh-icon, .resource-icon > .oh-icon, .pattern-icon > .oh-icon {
+      width: 1.75rem; height: 1.75rem; min-width: 1.75rem; min-height: 1.75rem; }
+    /* Tiles with a dark fill need a light stroke. */
+    .tool-icon > .oh-icon { color: var(--bg, #F8F8F4); }
+    h2 .oh-icon, h3 .oh-icon { width: 1.15em; height: 1.15em;
+      min-width: 1.15em; min-height: 1.15em; margin-right: 0.5rem;
+      position: relative; top: -0.05em; }
+
     :root {
       --primary: #3E3D35;
       --secondary: #89826E;
@@ -383,7 +401,7 @@
 
       <!-- Search Input -->
       <div class="input-section">
-        <h2>🔍 Search Hotels</h2>
+        <h2><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg> Search Hotels</h2>
         <div class="input-grid">
           <div class="form-group" style="grid-column: span 2;">
             <label for="searchQuery">Hotel Name, City, or Destination</label>
@@ -421,7 +439,7 @@
           </div>
         </div>
         <div class="btn-actions">
-          <button class="btn-search" id="searchBtn">🔍 Search Rates</button>
+          <button class="btn-search" id="searchBtn"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg> Search Rates</button>
           <span id="searchesLeft" style="font-size: 0.8rem; color: #888;"></span>
         </div>
       </div>
@@ -476,28 +494,28 @@
       <h3>Related Tools &amp; Guides</h3>
       <div class="tools-grid-mini">
         <a href="/tools/competitor-analysis/" class="tool-link">
-          <span class="icon">🎯</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
           <div class="text">
             <h4>Competitor Rate Tool</h4>
             <p>See where your rate sits</p>
           </div>
         </a>
         <a href="/tools/ota-commission-calculator/" class="tool-link">
-          <span class="icon">💰</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12M6 8h12M15 3c0 4-3 5-6 5l7 8"/></svg></span>
           <div class="text">
             <h4>OTA Commission Calculator</h4>
             <p>What you actually settle per booking</p>
           </div>
         </a>
         <a href="/guides/revenue/rate-linkage.html" class="tool-link">
-          <span class="icon">📖</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4v16a1 1 0 0 0 1 1h15"/><path d="M20 21V3H6a2 2 0 0 0-2 2"/><path d="M8 8h8M8 12h5"/></svg></span>
           <div class="text">
             <h4>Rate Linkage Guide</h4>
             <p>Deriving rates from a base</p>
           </div>
         </a>
         <a href="/guides/revenue/adr.html" class="tool-link">
-          <span class="icon">📖</span>
+          <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4v16a1 1 0 0 0 1 1h15"/><path d="M20 21V3H6a2 2 0 0 0-2 2"/><path d="M8 8h8M8 12h5"/></svg></span>
           <div class="text">
             <h4>ADR Guide</h4>
             <p>What average daily rate means</p>
@@ -844,7 +862,7 @@
         if (rating) html += '<div class="hotel-rating"><span class="rating-badge">' + rating + '</span><span class="rating-count">(' + reviews.toLocaleString() + ')</span></div>';
         if (hotelClass) {
           var stars = typeof hotelClass === 'number' ? hotelClass : parseInt(hotelClass);
-          if (stars > 0 && stars <= 5) html += '<span class="hotel-class"><span class="hotel-class-stars">' + '★'.repeat(stars) + '</span></span>';
+          if (stars > 0 && stars <= 5) html += '<span class="hotel-class"><span class="hotel-class-stars">' + '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.7 5.8 6.3.8-4.6 4.4 1.2 6.3L12 17.3 6.4 20.3l1.2-6.3L3 9.6l6.3-.8z"/></svg>'.repeat(stars) + '</span></span>';
         }
         html += '</div>';
 
@@ -862,7 +880,7 @@
           var disparity = (sourcePrices.length > 1 && minPrice > 0) ? Math.round(((maxPrice - minPrice) / minPrice) * 100) : 0;
           html += '<div class="rate-sources">';
           html += '<div class="rate-sources-toggle">';
-          html += '<span class="rate-sources-toggle-text">📊 View ' + sources.length + ' OTA rate' + (sources.length > 1 ? 's' : '');
+          html += '<span class="rate-sources-toggle-text"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><rect x="5" y="11" width="4" height="7"/><rect x="12" y="6" width="4" height="12"/><rect x="19" y="14" width="2" height="4"/></svg> View ' + sources.length + ' OTA rate' + (sources.length > 1 ? 's' : '');
           if (disparity > 5) html += '<span class="rate-disparity-badge high">' + disparity + '% disparity</span>';
           else if (sources.length > 1) html += '<span class="rate-disparity-badge low">Parity ✓</span>';
           html += '</span>';
@@ -905,12 +923,12 @@
         var stars = '—';
         if (hotelClass) {
           var n = typeof hotelClass === 'number' ? hotelClass : parseInt(hotelClass);
-          if (n > 0 && n <= 5) stars = '★'.repeat(n);
+          if (n > 0 && n <= 5) stars = '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.7 5.8 6.3.8-4.6 4.4 1.2 6.3L12 17.3 6.4 20.3l1.2-6.3L3 9.6l6.3-.8z"/></svg>'.repeat(n);
         }
         var sources = (p.prices || []).map(function(pr) {
           return { name: pr.source, price: pr.rate_per_night ? pr.rate_per_night.extracted_lowest : null };
         }).filter(function(s) { return s.price; });
-        var freeCancellation = p.free_cancellation ? '✓' : '—';
+        var freeCancellation = p.free_cancellation ? '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12l5 5L20 6"/></svg>' : '—';
 
         var sourcesHtml = '—';
         if (sources.length > 0) {
@@ -969,14 +987,14 @@
       if (rating) html += '<span class="rating-badge">' + rating + '</span><span class="rating-count">(' + reviews.toLocaleString() + ' reviews)</span>';
       if (hotelClass) {
         var stars = typeof hotelClass === 'number' ? hotelClass : parseInt(hotelClass);
-        if (stars > 0 && stars <= 5) html += '<span class="hotel-class-stars">' + '★'.repeat(stars) + '</span>';
+        if (stars > 0 && stars <= 5) html += '<span class="hotel-class-stars">' + '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.7 5.8 6.3.8-4.6 4.4 1.2 6.3L12 17.3 6.4 20.3l1.2-6.3L3 9.6l6.3-.8z"/></svg>'.repeat(stars) + '</span>';
       }
       html += '</div>';
       if (prop.description) html += '<div class="property-detail-desc">' + escapeHtml(prop.description) + '</div>';
       html += '<div class="property-detail-info">';
-      if (prop.address) html += '<span>📍 ' + escapeHtml(prop.address) + '</span>';
-      if (prop.check_in_time) html += '<span>🕐 Check-in: ' + escapeHtml(prop.check_in_time) + '</span>';
-      if (prop.check_out_time) html += '<span>🕐 Check-out: ' + escapeHtml(prop.check_out_time) + '</span>';
+      if (prop.address) html += '<span><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> ' + escapeHtml(prop.address) + '</span>';
+      if (prop.check_in_time) html += '<span><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Check-in: ' + escapeHtml(prop.check_in_time) + '</span>';
+      if (prop.check_out_time) html += '<span><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Check-out: ' + escapeHtml(prop.check_out_time) + '</span>';
       html += '</div>';
       html += '</div>';
 
@@ -994,7 +1012,7 @@
 
       // OTA rates list
       html += '<div class="ota-rates-section">';
-      html += '<h3>📊 All OTA Rates (' + sortedPrices.length + ' sources)</h3>';
+      html += '<h3><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><rect x="5" y="11" width="4" height="7"/><rect x="12" y="6" width="4" height="12"/><rect x="19" y="14" width="2" height="4"/></svg> All OTA Rates (' + sortedPrices.length + ' sources)</h3>';
 
       sortedPrices.forEach(function(pr, idx) {
         var price = pr.rate_per_night.extracted_lowest;
