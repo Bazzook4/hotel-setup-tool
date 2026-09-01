@@ -121,6 +121,7 @@ body {
   min-height: 1.1em;
   flex: 0 0 auto;
   vertical-align: -0.2em;
+  color: inherit;
 }
 
 .tool-nav-icon {

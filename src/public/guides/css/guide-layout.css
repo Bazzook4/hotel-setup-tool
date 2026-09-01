@@ -70,7 +70,7 @@
   min-height: 1.1em;
   flex: 0 0 auto;
   vertical-align: -0.2em;
-  color: currentColor;
+  color: inherit;
 }
 
 .sidebar-category-header > span {

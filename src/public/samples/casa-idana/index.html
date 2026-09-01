@@ -51,23 +51,43 @@
 </script>
 
 <style>
-    /* Icon system - line icons, inherit colour from parent.
-       Sizes are fixed because icon containers are often flex boxes sized for
-       an emoji glyph; without this an SVG child stretches to fill them. */
-    .oh-icon { width: 1.5rem; height: 1.5rem; min-width: 1.5rem; min-height: 1.5rem;
-      flex: 0 0 auto; align-self: center; color: var(--secondary, #89826E);
-      display: inline-block; vertical-align: middle; }
-    /* Inside a decorated tile, the icon sits at a larger fixed size. */
+    /* Icon system - one line-icon language across the site.
+       Size is always explicit: containers are usually flex boxes that were
+       sized for an emoji glyph, and an SVG child would otherwise stretch to
+       fill them. Colour is always inherited, so an icon takes the colour of
+       whatever it sits in; a tile with a dark fill sets its own colour and
+       the icon follows. Never hardcode a colour per container here - that
+       breaks the moment the same class is used on a different background. */
+    .oh-icon {
+      width: 1.5rem; height: 1.5rem;
+      min-width: 1.5rem; min-height: 1.5rem;
+      flex: 0 0 auto; align-self: center;
+      display: inline-block; vertical-align: middle;
+      color: inherit;
+    }
+    /* Default tone wherever nothing else sets a colour. */
+    .oh-icon { color: var(--secondary, #89826E); }
+    /* Inside a decorated tile the icon sits larger and takes the tile's colour. */
     .tool-icon > .oh-icon, .area-icon > .oh-icon, .dfy-icon > .oh-icon,
     .service-icon > .oh-icon, .category-icon > .oh-icon, .card-icon > .oh-icon,
     .feature-icon > .oh-icon, .value-icon > .oh-icon, .why-icon > .oh-icon,
-    .insight-icon > .oh-icon, .resource-icon > .oh-icon, .pattern-icon > .oh-icon {
-      width: 1.75rem; height: 1.75rem; min-width: 1.75rem; min-height: 1.75rem; }
-    /* Tiles with a dark fill need a light stroke. */
-    .tool-icon > .oh-icon { color: var(--bg, #F8F8F4); }
-    h2 .oh-icon, h3 .oh-icon { width: 1.15em; height: 1.15em;
-      min-width: 1.15em; min-height: 1.15em; margin-right: 0.5rem;
-      position: relative; top: -0.05em; }
+    .insight-icon > .oh-icon, .resource-icon > .oh-icon, .pattern-icon > .oh-icon,
+    .section-icon > .oh-icon, .rec-icon > .oh-icon, .source-icon > .oh-icon,
+    .bs-amenity-icon > .oh-icon, .expand-icon > .oh-icon {
+      width: 1.75rem; height: 1.75rem;
+      min-width: 1.75rem; min-height: 1.75rem;
+      color: inherit;
+    }
+    /* Tinted tiles: keep the dark brand stroke against a pale fill. */
+    .tool-icon, .area-icon, .category-icon, .dfy-icon, .service-icon {
+      color: var(--primary, #3E3D35);
+    }
+    h2 .oh-icon, h3 .oh-icon {
+      width: 1.15em; height: 1.15em;
+      min-width: 1.15em; min-height: 1.15em;
+      margin-right: 0.5rem; position: relative; top: -0.05em;
+      color: inherit;
+    }
 
 :root{
   --primary:#3E3D35;
