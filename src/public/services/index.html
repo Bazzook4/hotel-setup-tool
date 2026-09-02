@@ -63,10 +63,15 @@
       min-width: 1.75rem; min-height: 1.75rem;
       color: inherit;
     }
-    /* Tinted tiles: keep the dark brand stroke against a pale fill. */
-    .tool-icon, .area-icon, .category-icon, .dfy-icon, .service-icon {
+    /* Tinted tiles: keep the dark brand stroke against a pale fill.
+       .service-icon is deliberately NOT in this list - it only ever sits in
+       .service-card-top, which is a dark gradient with color:white. Giving it
+       the dark primary stroke there rendered the card logos near-invisible. */
+    .tool-icon, .area-icon, .category-icon, .dfy-icon {
       color: var(--primary, #3E3D35);
     }
+    /* Dark card header: the icon takes the header's white, like the text. */
+    .service-card-top .service-icon { color: inherit; }
     h2 .oh-icon, h3 .oh-icon {
       width: 1.15em; height: 1.15em;
       min-width: 1.15em; min-height: 1.15em;

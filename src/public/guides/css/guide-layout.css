@@ -46,11 +46,20 @@
   top: 64px;
   height: calc(100vh - 64px);
   overflow-y: auto;
+  overscroll-behavior: contain;
   background: white;
   border-right: 1px solid #eee;
-  padding: 1.5rem 0;
+  /* Scroll containers drop trailing padding, so the last category was ending
+     flush against the viewport edge and reading as cut off. The spacer below
+     restores that room; keep padding-bottom off to avoid doubling it. */
+  padding: 1.5rem 0 0;
   z-index: 50;
   scrollbar-width: thin;
+}
+.guide-sidebar nav::after {
+  content: '';
+  display: block;
+  height: 2.5rem;
 }
 .guide-sidebar::-webkit-scrollbar { width: 4px; }
 .guide-sidebar::-webkit-scrollbar-thumb { background: #ddd; border-radius: 4px; }
@@ -78,6 +87,21 @@
   align-items: center;
   gap: 0.5rem;
   min-width: 0;
+}
+
+/* Category icons are sized and coloured to match .tool-nav-icon on the tools
+   sidebar. Without this they inherit the 0.8rem uppercase header font and its
+   grey, so they rendered smaller and duller than their tools counterparts. */
+.guide-nav-icon {
+  display: inline-flex;
+  align-items: center;
+}
+.guide-nav-icon .oh-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  min-width: 1.05rem;
+  min-height: 1.05rem;
+  color: var(--secondary, #89826E);
 }
 
 .sidebar-category-header {
@@ -117,9 +141,28 @@
   display: block;
 }
 
+/* Each guide is a subtopic of its category, so it carries a bullet and hangs
+   off a rail. Without a marker the titles read as siblings of the header. */
+.sidebar-guide-list {
+  position: relative;
+}
+.sidebar-guide-list::before {
+  content: '';
+  position: absolute;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  /* 3px active-border + 1.5rem padding + 0.125rem bullet offset + half the
+     5px bullet = 31.5px, so the rail runs through the bullet centres. */
+  left: 31px;
+  width: 1px;
+  background: rgba(137, 130, 110, 0.22);
+}
+
 .sidebar-guide-list li a {
-  display: block;
-  padding: 0.35rem 1.25rem 0.35rem 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  padding: 0.35rem 1.25rem 0.35rem 1.5rem;
   font-size: 0.85rem;
   color: #555;
   text-decoration: none;
@@ -127,15 +170,38 @@
   transition: all 0.15s;
   line-height: 1.4;
 }
+
+.guide-nav-bullet {
+  flex: 0 0 auto;
+  width: 5px;
+  height: 5px;
+  margin-left: 0.125rem;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--secondary, #89826E);
+  /* Centre the bullet on the first line: (1.4em line - 5px bullet) / 2. */
+  margin-top: calc((0.85rem * 1.4 - 5px) / 2);
+  transition: background 0.15s, box-shadow 0.15s;
+}
+.guide-nav-label {
+  min-width: 0;
+}
+
 .sidebar-guide-list li a:hover {
   background: #f5f7fa;
   color: var(--primary, #3E3D35);
+}
+.sidebar-guide-list li a:hover .guide-nav-bullet {
+  background: var(--secondary, #89826E);
 }
 .sidebar-guide-list li a.active {
   color: var(--secondary, #89826E);
   border-left-color: var(--secondary, #89826E);
   background: rgba(137, 130, 110, 0.08);
   font-weight: 500;
+}
+.sidebar-guide-list li a.active .guide-nav-bullet {
+  background: var(--secondary, #89826E);
 }
 
 .sidebar-guide-list li.category-overview a {

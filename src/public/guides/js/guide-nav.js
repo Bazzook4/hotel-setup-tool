@@ -95,7 +95,7 @@ const GUIDE_CATEGORIES = [
   {
     id: 'operations',
     label: 'Operations',
-    icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M5 21V6l7-3 7 3v15"/><path d="M9 21v-5h6v5"/><path d="M9 9h.01M15 9h.01M9 12h.01M15 12h.01"/></svg>',
+    icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>',
     basePath: '/guides/operations/',
     guides: [
       { slug: 'hotel-check-in-process.html', title: 'Hotel Check-In Process' },
@@ -395,7 +395,7 @@ function buildSidebar(currentPath) {
 
     html += '<div class="sidebar-category' + expandedClass + '" data-category="' + cat.id + '">';
     html += '<div class="sidebar-category-header">';
-    html += '<span>' + cat.icon + ' ' + cat.label + '</span>';
+    html += '<span><span class="guide-nav-icon">' + cat.icon + '</span>' + cat.label + '</span>';
     html += '<span class="chevron">\u25B8</span>';
     html += '</div>';
     html += '<ul class="sidebar-guide-list">';
@@ -403,7 +403,10 @@ function buildSidebar(currentPath) {
     cat.guides.forEach(function(guide) {
       var href = cat.basePath + guide.slug;
       var isActive = (currentPath.indexOf(guide.slug) !== -1 && currentPath.indexOf(cat.basePath) === 0) ? ' class="active"' : '';
-      html += '<li><a href="' + href + '"' + isActive + '>' + guide.title + '</a></li>';
+      html += '<li><a href="' + href + '"' + isActive + '>';
+      html += '<span class="guide-nav-bullet" aria-hidden="true"></span>';
+      html += '<span class="guide-nav-label">' + guide.title + '</span>';
+      html += '</a></li>';
     });
 
     html += '</ul></div>';
