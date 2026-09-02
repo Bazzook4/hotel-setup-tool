@@ -507,7 +507,16 @@
     }
 
     /* ===== ABOUT / WHY ===== */
-    .about-strip { padding: 5rem 2rem; background: var(--bg); }
+    /* The About block follows "Or Let Us Handle It", which also sits on
+       --bg. Two identical panels in a row read as one long section, so this
+       one takes the brand tint: it stays distinct from the plain --bg and
+       #fff sections either side, and its white cards still read against it. */
+    .about-strip {
+      padding: 5rem 2rem;
+      background: var(--primary-light);
+      border-top: 1px solid var(--secondary-20);
+      border-bottom: 1px solid var(--secondary-20);
+    }
 
     .about-inner {
       max-width: 900px;
