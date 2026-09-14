@@ -135,13 +135,13 @@
             <input type="text" id="oh-wa-location" placeholder="e.g. Goa, Manali, Coorg…" />
           </div>
           <div>
-            <div class="oh-wa-label">How soon do you need this?</div>
-            <select id="oh-wa-timeline">
+            <div class="oh-wa-label">Was it earlier managed by OYO?</div>
+            <select id="oh-wa-oyo">
               <option value="">Select…</option>
-              <option value="ASAP — within a week">ASAP — within a week</option>
-              <option value="within 2–4 weeks">Within 2–4 weeks</option>
-              <option value="within 1–2 months">Within 1–2 months</option>
-              <option value="just exploring for now">Just exploring for now</option>
+              <option value="yes — currently with OYO">Yes — currently with OYO</option>
+              <option value="yes — but left OYO">Yes — but left OYO</option>
+              <option value="no — never with OYO">No — never with OYO</option>
+              <option value="no — but with another chain">No — but with another chain</option>
             </select>
           </div>
           <button class="oh-wa-send" id="oh-wa-send-btn">
@@ -187,13 +187,13 @@
     var service   = document.getElementById('oh-wa-service').value;
     var inventory = document.getElementById('oh-wa-inventory').value;
     var location  = document.getElementById('oh-wa-location').value.trim();
-    var timeline  = document.getElementById('oh-wa-timeline').value;
+    var oyo       = document.getElementById('oh-wa-oyo').value;
 
     var parts = ['Hi! I came across OnlineHotelier and would like to enquire.'];
     if (service)   parts.push('Service interested in: ' + service);
     if (inventory) parts.push('Inventory: ' + inventory);
     if (location)  parts.push('Location: ' + location);
-    if (timeline)  parts.push('Timeline: ' + timeline);
+    if (oyo)       parts.push('Earlier managed by OYO: ' + oyo);
     parts.push('Please get in touch. Thank you.');
 
     // Which page the enquiry came from, always last so it reads as a footnote.

@@ -429,13 +429,13 @@
         </div>
 
         <div class="field">
-          <label for="c-timeline">How soon?</label>
-          <select id="c-timeline">
+          <label for="c-oyo">Earlier managed by OYO?</label>
+          <select id="c-oyo">
             <option value="">Select…</option>
-            <option value="ASAP, within a week">ASAP, within a week</option>
-            <option value="within 2–4 weeks">Within 2–4 weeks</option>
-            <option value="within 1–2 months">Within 1–2 months</option>
-            <option value="just exploring for now">Just exploring for now</option>
+            <option value="yes, currently with OYO">Yes, currently with OYO</option>
+            <option value="yes, but left OYO">Yes, but left OYO</option>
+            <option value="no, never with OYO">No, never with OYO</option>
+            <option value="no, but with another chain">No, but with another chain</option>
           </select>
         </div>
       </div>
@@ -541,7 +541,7 @@
         var service   = val('c-service');
         var inventory = val('c-inventory');
         var location  = val('c-location');
-        var timeline  = val('c-timeline');
+        var oyo       = val('c-oyo');
         var message   = val('c-message');
 
         parts.push('Hi OnlineHotelier,');
@@ -549,7 +549,7 @@
         if (service)   parts.push('Service interested in: ' + service);
         if (inventory) parts.push('Inventory: ' + inventory);
         if (location)  parts.push('Location: ' + location);
-        if (timeline)  parts.push('Timeline: ' + timeline);
+        if (oyo)       parts.push('Earlier managed by OYO: ' + oyo);
         if (message)   { parts.push(''); parts.push(message); }
         parts.push('');
         parts.push('Please get in touch. Thank you.');
