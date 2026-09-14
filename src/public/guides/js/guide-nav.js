@@ -44,7 +44,7 @@ const GUIDE_CATEGORIES = [
       { slug: 'booking-genius-program.html', title: 'Booking.com Genius Program' },
       { slug: 'google-free-booking-links.html', title: 'Google Free Booking Links' },
       { slug: 'booking-com-visibility-booster.html', title: 'Booking.com Visibility Booster' },
-      { slug: 'makemytrip-hotel-listing.html', title: 'MakeMyTrip Hotel Listing Guide' },
+      { slug: 'makemytrip-hotel-listing.html', title: 'MakeMyTrip Hotel Registration & Listing' },
       { slug: 'hotel-direct-booking-strategy.html', title: 'Hotel Direct Booking Strategy' },
       { slug: 'attract-international-guests-india.html', title: 'Attract International Guests' },
     ]
