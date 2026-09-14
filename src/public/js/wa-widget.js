@@ -219,6 +219,12 @@
     if (timeline)  parts.push('Timeline: ' + timeline);
     parts.push('Please get in touch. Thank you.');
 
+    // Which page the enquiry came from, always last so it reads as a footnote.
+    var pageTitle = (document.title || '').replace(/\s*\|\s*OnlineHotelier\s*$/, '').trim();
+    parts.push('—');
+    parts.push('Enquiry sent from: ' + (pageTitle || 'OnlineHotelier'));
+    parts.push(window.location.href);
+
     trackWA('widget_form', service);
 
     var url = 'https://api.whatsapp.com/send?phone=918591756934&text=' + encodeURIComponent(parts.join('\n'));
