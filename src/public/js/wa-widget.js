@@ -112,26 +112,11 @@
             <div class="oh-wa-label">I'm interested in</div>
             <select id="oh-wa-service">
               <option value="">Select a service…</option>
+              <option value="OTA Listing">OTA Listing</option>
               <option value="Free OTA Listing Audit">Free OTA Listing Audit</option>
-          <option value="OTA Listing + Google Business Profile">OTA Listing + Google Business Profile</option>
+              <option value="Google Business Profile">Google Business Profile</option>
               <option value="Hotel Website">Hotel Website</option>
-              <option value="OTA Management (ongoing)">OTA Management (ongoing)</option>
               <option value="multiple services — please advise">Not sure — need advice</option>
-            </select>
-          </div>
-          <div>
-            <div class="oh-wa-label">Property Type</div>
-            <select id="oh-wa-proptype">
-              <option value="">Select…</option>
-              <option value="Homestay">Homestay</option>
-              <option value="Independent Villa">Independent Villa</option>
-              <option value="Holiday Apartment">Holiday Apartment</option>
-              <option value="Boutique Hotel">Boutique Hotel</option>
-              <option value="Farm Stay">Farm Stay</option>
-              <option value="Eco Stay / Beach House">Eco Stay / Beach House</option>
-              <option value="Heritage Property">Heritage Property</option>
-              <option value="Service Apartment">Service Apartment</option>
-              <option value="Other">Other</option>
             </select>
           </div>
           <div>
@@ -148,10 +133,6 @@
           <div>
             <div class="oh-wa-label">City / Location</div>
             <input type="text" id="oh-wa-location" placeholder="e.g. Goa, Manali, Coorg…" />
-          </div>
-          <div>
-            <div class="oh-wa-label">Your Website (if any)</div>
-            <input type="text" id="oh-wa-website" placeholder="e.g. https://myproperty.com" />
           </div>
           <div>
             <div class="oh-wa-label">How soon do you need this?</div>
@@ -204,18 +185,14 @@
 
   document.getElementById('oh-wa-send-btn').addEventListener('click', function () {
     var service   = document.getElementById('oh-wa-service').value;
-    var proptype  = document.getElementById('oh-wa-proptype').value;
     var inventory = document.getElementById('oh-wa-inventory').value;
     var location  = document.getElementById('oh-wa-location').value.trim();
-    var website   = document.getElementById('oh-wa-website').value.trim();
     var timeline  = document.getElementById('oh-wa-timeline').value;
 
     var parts = ['Hi! I came across OnlineHotelier and would like to enquire.'];
     if (service)   parts.push('Service interested in: ' + service);
-    if (proptype)  parts.push('Property type: ' + proptype);
     if (inventory) parts.push('Inventory: ' + inventory);
     if (location)  parts.push('Location: ' + location);
-    if (website)   parts.push('Website: ' + website);
     if (timeline)  parts.push('Timeline: ' + timeline);
     parts.push('Please get in touch. Thank you.');
 

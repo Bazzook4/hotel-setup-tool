@@ -402,31 +402,15 @@
         <label for="c-service">What do you need help with?</label>
         <select id="c-service">
           <option value="">Select…</option>
+          <option value="OTA Listing">OTA Listing</option>
           <option value="Free OTA Listing Audit">Free OTA Listing Audit</option>
-          <option value="OTA Listing + Google Business Profile">OTA Listing + Google Business Profile</option>
+          <option value="Google Business Profile">Google Business Profile</option>
           <option value="Hotel Website">Hotel Website</option>
-          <option value="OTA Management (ongoing)">OTA Management (ongoing)</option>
           <option value="multiple services, please advise">Not sure yet, need advice</option>
         </select>
       </div>
 
       <div class="field-row">
-        <div class="field">
-          <label for="c-proptype">Property type</label>
-          <select id="c-proptype">
-            <option value="">Select…</option>
-            <option value="Homestay">Homestay</option>
-            <option value="Independent Villa">Independent Villa</option>
-            <option value="Holiday Apartment">Holiday Apartment</option>
-            <option value="Boutique Hotel">Boutique Hotel</option>
-            <option value="Farm Stay">Farm Stay</option>
-            <option value="Eco Stay / Beach House">Eco Stay / Beach House</option>
-            <option value="Heritage Property">Heritage Property</option>
-            <option value="Service Apartment">Service Apartment</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-
         <div class="field">
           <label for="c-inventory">Rooms / units</label>
           <select id="c-inventory">
@@ -438,9 +422,7 @@
             <option value="50+ rooms">50+ Rooms</option>
           </select>
         </div>
-      </div>
 
-      <div class="field-row">
         <div class="field">
           <label for="c-location">City / location</label>
           <input type="text" id="c-location" placeholder="e.g. Goa, Manali, Coorg" />
@@ -456,11 +438,6 @@
             <option value="just exploring for now">Just exploring for now</option>
           </select>
         </div>
-      </div>
-
-      <div class="field">
-        <label for="c-website">Your website (if you have one)</label>
-        <input type="text" id="c-website" placeholder="e.g. https://myproperty.com" />
       </div>
 
       <div class="field">
@@ -562,20 +539,16 @@
       document.getElementById('c-send').addEventListener('click', function () {
         var parts = [];
         var service   = val('c-service');
-        var proptype  = val('c-proptype');
         var inventory = val('c-inventory');
         var location  = val('c-location');
         var timeline  = val('c-timeline');
-        var website   = val('c-website');
         var message   = val('c-message');
 
         parts.push('Hi OnlineHotelier,');
         parts.push('');
         if (service)   parts.push('Service interested in: ' + service);
-        if (proptype)  parts.push('Property type: ' + proptype);
         if (inventory) parts.push('Inventory: ' + inventory);
         if (location)  parts.push('Location: ' + location);
-        if (website)   parts.push('Website: ' + website);
         if (timeline)  parts.push('Timeline: ' + timeline);
         if (message)   { parts.push(''); parts.push(message); }
         parts.push('');
