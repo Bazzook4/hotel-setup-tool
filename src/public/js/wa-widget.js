@@ -222,7 +222,8 @@
     // Which page the enquiry came from, always last so it reads as a footnote.
     var pageTitle = (document.title || '').replace(/\s*\|\s*OnlineHotelier\s*$/, '').trim();
     parts.push('—');
-    parts.push('Enquiry sent from: ' + (pageTitle || 'OnlineHotelier'));
+    parts.push('Sent from: OnlineHotelier (' + window.location.hostname + ')');
+    parts.push('Page: ' + (pageTitle || 'Home'));
     parts.push(window.location.href);
 
     trackWA('widget_form', service);
