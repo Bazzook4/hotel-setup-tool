@@ -135,13 +135,14 @@
             <input type="text" id="oh-wa-location" placeholder="e.g. Goa, Manali, Coorg…" />
           </div>
           <div>
-            <div class="oh-wa-label">Was it earlier managed by OYO?</div>
-            <select id="oh-wa-oyo">
+            <div class="oh-wa-label">Managed or leased by anyone else?</div>
+            <select id="oh-wa-managed">
               <option value="">Select…</option>
-              <option value="yes — currently with OYO">Yes — currently with OYO</option>
-              <option value="yes — but left OYO">Yes — but left OYO</option>
-              <option value="no — never with OYO">No — never with OYO</option>
-              <option value="no — but with another chain">No — but with another chain</option>
+              <option value="no — self managed">No, we manage it ourselves</option>
+              <option value="currently with OYO">Currently with OYO</option>
+              <option value="previously with OYO">Previously with OYO</option>
+              <option value="another chain or brand">Another chain or brand</option>
+              <option value="leased to an operator">Leased to an operator</option>
             </select>
           </div>
           <button class="oh-wa-send" id="oh-wa-send-btn">
@@ -187,13 +188,13 @@
     var service   = document.getElementById('oh-wa-service').value;
     var inventory = document.getElementById('oh-wa-inventory').value;
     var location  = document.getElementById('oh-wa-location').value.trim();
-    var oyo       = document.getElementById('oh-wa-oyo').value;
+    var managed   = document.getElementById('oh-wa-managed').value;
 
     var parts = ['Hi! I came across OnlineHotelier and would like to enquire.'];
     if (service)   parts.push('Service interested in: ' + service);
     if (inventory) parts.push('Inventory: ' + inventory);
     if (location)  parts.push('Location: ' + location);
-    if (oyo)       parts.push('Earlier managed by OYO: ' + oyo);
+    if (managed)   parts.push('Management: ' + managed);
     parts.push('Please get in touch. Thank you.');
 
     // Which page the enquiry came from, always last so it reads as a footnote.
