@@ -1,91 +1,123 @@
-# Hotel RMS Setup Tool
+# OnlineHotelier
 
-A smart configuration assistant for hotel Revenue Management Systems. This web-based tool helps hoteliers set up dynamic pricing rules with intelligent recommendations tailored to the Indian hospitality market.
+The content site behind [www.onlinehotelier.com](https://www.onlinehotelier.com) — guides, calculators and services for Indian hotel owners and managers.
 
-## Features
+The project began as a single Revenue Management System setup tool. It has since grown into an 87-page static site: 59 guides, 12 calculators, 8 service pages, and the supporting index and policy pages.
 
-### 1. Room Type Configuration
-- Add multiple room categories (Standard, Deluxe, Suite, etc.)
-- Set base rates, max rates, and inventory for each room type
-- Smart inventory pooling recommendations based on price differentials
+## What is here
 
-### 2. Property & Demand Profile
-- Select from 8 hotel types (Budget, Boutique, Business, Resort, etc.)
-- Location-based demand patterns for all 28 Indian states and 8 Union Territories
-- Automatic demand pattern recommendations based on hotel type
+| Section | Count | What it is |
+|---|---|---|
+| `src/public/guides/` | 59 | Long-form guides across six categories |
+| `src/public/tools/` | 12 | Free browser-based calculators |
+| `src/public/services/` | 8 | Service and service-index pages |
+| `src/public/about/`, `contact/`, `privacy/`, `samples/` | — | Supporting pages (`samples/` is `noindex`) |
 
-### 3. Time-Based Factors
-- **Lead Time Pricing**: Configure pricing based on booking lead time (0-90+ days)
-- **Hourly Pricing**: Set time-of-day based price adjustments
-- Visual chart-based configuration for intuitive setup
+### Guide categories
 
-### 4. Results Dashboard
-- **Occupancy-Based Pricing**: J-curve pricing slabs with intelligent max rate capping
-- **Inventory Reallocation**: Smart room pooling recommendations considering inventory size
-- **Special Dates 2025**: Indian festivals, long weekends, and regional events
-- **Seasonal Patterns**: Monthly and quarterly pricing recommendations
-- Copy-to-clipboard functionality for easy RMS integration
+| Category | Guides | Covers |
+|---|---|---|
+| `revenue/` | 16 | Rate plans, ADR, RevPAR, occupancy, overbooking, no-shows |
+| `ota/` | 14 | OTA basics, Booking.com, MakeMyTrip, direct booking, GDS |
+| `software/` | 9 | PMS, RMS, POS, channel manager, booking engine |
+| `reports/` | 8 | Night audit, P&L, arrival, departure, manager reports |
+| `operations/` | 6 | Check-in, housekeeping SOP, cancellation policy, staff training |
+| `compliance/` | 5 | GST, TDS/TCS, Form C, GRC |
 
-## Installation
+### Tools
+
+Calculators run entirely in the browser and persist state to `localStorage`:
+OTA commission, OTA dependency, break-even, guest acquisition cost, hotel
+discount, revenue profit estimator, demand calendar, revenue management tool
+and results, rate shopper, competitor analysis.
+
+`rate-shopper` and `competitor-analysis` are the two exceptions — they call the
+serverless functions in `api/`.
+
+## Stack
+
+- **Static HTML, CSS and vanilla JavaScript.** No build step, no framework, no bundler.
+- **Hosting:** Vercel, serving `src/public` directly (`vercel.json` sets `outputDirectory`, with an empty `buildCommand`).
+- **Serverless functions:** `api/` — `hotels.js`, `competitors.js`, `inventory/`, `occupancy/`.
+- **Analytics:** GA4 `G-9L2N1S6S9F`, inlined on all 83 indexable pages. No GTM, deliberately. See `memory/analytics-setup.md`.
+- **Styling:** hand-written CSS using the brand design system. No Tailwind, no CSS framework.
+
+`src/server.js` is a local Express server retained for development convenience.
+It is not what runs in production — Vercel serves the static files.
+
+## Running locally
 
 ```bash
 npm install
+npm start          # Express on http://localhost:3000
+npm run dev        # same, with --watch auto-reload
 ```
 
-## Usage
+Because the site is static, you can equally serve `src/public` with any static
+file server. The `api/` routes only resolve when deployed to Vercel or run
+through the Vercel CLI.
 
-### Start the server:
-```bash
-npm start
+## Deploying
+
+Pushes to `main` deploy automatically via Vercel.
+
+**A clean push is not proof the site updated.** Always confirm against the live
+URL rather than git. See `memory/deploy-pipeline.md`.
+
+## Domain and redirects
+
+The site migrated from `insights.onlinehotelier.com` to `www.onlinehotelier.com`.
+That subdomain now 301-redirects here, and `vercel.json` carries 61 redirect
+rules covering the migration plus consolidated pages whose old URLs still hold
+traffic. Canonicals point at `www` and are correct — see `memory/migration-plan.md`
+before flagging any of this as a defect.
+
+## Working on this project
+
+Read **`CLAUDE.md`** first. It defines the agent team, the mandatory workflow for
+every new page, the brand design system, and the content standards.
+
+Then read **`memory/README.md`**, which indexes the durable project knowledge:
+
+- `memory/guide-template.md` — the template for every `/guides/` page
+- `memory/tool-page-standard.md` — the template for every `/tools/` page
+- `memory/writing-standard.md` — audience and the pre-commit content checklist
+- `memory/design-system.md` — brand colours and the dark-panel contrast trap
+- `memory/backlog.md` — what is still open
+
+The templates describe what the pages **actually do**, not an aspiration. If you
+change a page pattern, change its template in the same commit.
+
+## Content standards
+
+- Audience: Indian hotel owners and managers
+- Currency: ₹ (INR), never $ or USD
+- SEO titles 60–70 characters, ending `| OnlineHotelier`
+- Meta descriptions 150–160 characters
+- Guides run 1,200–2,000 words
+
+## Project structure
+
 ```
-
-Then open http://localhost:3000 in your browser.
-
-### Development mode (with auto-reload):
-```bash
-npm run dev
+├── CLAUDE.md            # Team workflow, design system, content standards
+├── memory/              # Durable project knowledge (version-controlled)
+├── api/                 # Vercel serverless functions
+├── scripts/
+│   └── generate-llms-txt.py
+├── vercel.json          # Static config + 61 redirects
+└── src/
+    ├── server.js        # Local dev server only
+    ├── index.js
+    └── public/          # ← the deployed site
+        ├── index.html
+        ├── guides/      # 59 guides in 6 categories + css/, js/
+        ├── tools/       # 12 calculators + css/, js/
+        ├── services/    # 8 service pages
+        ├── about/  contact/  privacy/  samples/
+        ├── css/  js/
+        ├── sitemap.xml  # 83 entries, 1:1 with indexable pages
+        ├── robots.txt   llms.txt   ads.txt
 ```
-
-## How It Works
-
-### Step 1: Room Types
-Define your room categories with their base rates and inventory. The tool will analyze price differentials to suggest inventory pooling strategies.
-
-### Step 2: Property & Demand
-Select your hotel type and location. The tool uses India-specific demand patterns to provide relevant pricing recommendations.
-
-### Step 3: Time Factors
-Configure lead time and hourly pricing using interactive charts. Drag points to set multipliers for different time periods.
-
-### Results
-View comprehensive pricing recommendations:
-- Occupancy slabs with increments that respect your max rate limits
-- Smart inventory reallocation considering both price gaps and inventory percentages
-- Calendar of special dates and long weekends for 2025
-- Seasonal pricing patterns
-
-## Project Structure
-
-```
-src/
-├── server.js          # Express server
-└── public/
-    ├── index.html     # Entry point (redirects to setup)
-    ├── setup.html     # 3-step configuration wizard
-    ├── results.html   # Results dashboard
-    └── _legacy/       # Archived files (not in use)
-```
-
-## Tech Stack
-
-- **Backend**: Node.js with Express
-- **Frontend**: Vanilla HTML, CSS, JavaScript
-- **Storage**: Browser localStorage for data persistence
-- **Styling**: Tailwind CSS via CDN
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 

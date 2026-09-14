@@ -1,7 +1,7 @@
 {
-  "name": "rms-setup-tool",
+  "name": "onlinehotelier",
   "version": "1.0.0",
-  "description": "Hotel Revenue Management System Setup Tool - Smart configuration assistant for dynamic pricing",
+  "description": "OnlineHotelier - guides, calculators and services for Indian hotel owners and managers",
   "main": "src/server.js",
   "type": "module",
   "scripts": {
@@ -10,7 +10,9 @@
   },
   "keywords": [
     "hotel",
-    "rms",
+    "hospitality",
+    "india",
+    "ota",
     "revenue-management",
     "dynamic-pricing",
     "occupancy"
