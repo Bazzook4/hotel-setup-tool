@@ -45,6 +45,7 @@ const GUIDE_CATEGORIES = [
       { slug: 'google-free-booking-links.html', title: 'Google Free Booking Links' },
       { slug: 'booking-com-visibility-booster.html', title: 'Booking.com Visibility Booster' },
       { slug: 'makemytrip-hotel-listing.html', title: 'MakeMyTrip Hotel Registration & Listing' },
+      { slug: 'agoda-rate-discrepancy.html', title: 'Agoda Rate Discrepancy' },
       { slug: 'hotel-direct-booking-strategy.html', title: 'Hotel Direct Booking Strategy' },
       { slug: 'attract-international-guests-india.html', title: 'Attract International Guests' },
     ]

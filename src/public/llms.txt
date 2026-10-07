@@ -15,6 +15,7 @@ OnlineHotelier helps independent and small-chain hotels in India get more direct
 ## OTA Guides
 
 - [OTA Guides for Indian Hotels](https://www.onlinehotelier.com/guides/ota/): Practical OTA guides for Indian independent hotels. Learn how to list on MakeMyTrip, Booking.com, Agoda, and more. Compare commissions, boost visibility, and reduce OTA dependency.
+- [Agoda Rate Discrepancy: Causes & Fixes](https://www.onlinehotelier.com/guides/ota/agoda-rate-discrepancy.html): Why your Agoda rate shows lower than you loaded. Promotion stacking, manual Partner Portal overrides, net vs sell rate, payout reconciliation, AGP and Beds Network.
 - [Attract International Guests to Your Hotel](https://www.onlinehotelier.com/guides/ota/attract-international-guests-india.html): Most Indian hotels are invisible to foreign tourists. Learn which OTA to list on by country. Expedia, Agoda, Trip.com. And use geo-boost to get found first.
 - [Best OTAs for Homestays in India: Airbnb vs Booking](https://www.onlinehotelier.com/guides/ota/best-ota-for-homestays.html): Airbnb charges just 3% host commission vs 15 to 18% on Booking.com. See which OTA works best for Indian homestays, vacation rentals, and unique stays.
 - [Top 10 OTAs in India for Hotels: 2026 Guide](https://www.onlinehotelier.com/guides/ota/best-ota-for-hotels.html): Which OTA gives Indian hotels the most bookings? Compare the top 10 OTA platforms in India, their commission rates, and who each one is best for.

@@ -37,6 +37,7 @@ Use this reference when creating new guides to identify internal linking opportu
 - **Booking.com Hotel Listing** (`booking-com-hotel-listing-guide.html`) - How to list on Booking.com
 - **Booking.com Visibility Booster** (`booking-com-visibility-booster.html`) - Extra commission tool, Preferred Partner, Sponsored Ads comparison
 - **MakeMyTrip Hotel Listing** (`makemytrip-hotel-listing.html`) - Listing and optimising a property on MMT/Goibibo
+- **Agoda Rate Discrepancy** (`agoda-rate-discrepancy.html`) - Diagnosing and fixing Agoda rate discrepancy: promotion stacking, manual Partner Portal overrides, net vs sell rate, payout reconciliation, AGP and Beds Network
 
 ### Direct Booking & Distribution
 - **Google Free Booking Links** (`google-free-booking-links.html`) - FBLs, booking engines that support them, Google Hotel Ads, direct booking strategy

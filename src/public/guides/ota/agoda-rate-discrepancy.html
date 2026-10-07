@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2N1S6S9F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9L2N1S6S9F');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agoda Rate Discrepancy: Causes and How to Fix It | OnlineHotelier</title>
+  <meta name="description" content="Why your Agoda rate shows lower than you loaded, how to fix the discrepancy in Partner Portal, and how to use Agoda promotions and AGP without losing parity.">
+  <meta name="keywords" content="Agoda rate discrepancy, Agoda extranet, Agoda Partner Portal, Agoda YCS, Agoda for hotels, Agoda commission hotels, Agoda promotions, Agoda Growth Program, Agoda net rate, Agoda rate parity, Agoda payout mismatch">
+  <link rel="canonical" href="https://www.onlinehotelier.com/guides/ota/agoda-rate-discrepancy.html">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/guides/css/guide-layout.css">
+  <!-- AI/LLM Crawler Meta Tags -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="google-adsense-account" content="ca-pub-6118286051054894">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+    /* Icon system - one line-icon language across the site.
+       Size is always explicit: containers are usually flex boxes that were
+       sized for an emoji glyph, and an SVG child would otherwise stretch to
+       fill them. Colour is always inherited, so an icon takes the colour of
+       whatever it sits in; a tile with a dark fill sets its own colour and
+       the icon follows. Never hardcode a colour per container here - that
+       breaks the moment the same class is used on a different background. */
+    .oh-icon {
+      width: 1.5rem; height: 1.5rem;
+      min-width: 1.5rem; min-height: 1.5rem;
+      flex: 0 0 auto; align-self: center;
+      display: inline-block; vertical-align: middle;
+      color: inherit;
+    }
+    /* Default tone wherever nothing else sets a colour. */
+    .oh-icon { color: var(--secondary, #89826E); }
+    /* Inside a decorated tile the icon sits larger and takes the tile's colour. */
+    .tool-icon > .oh-icon, .area-icon > .oh-icon, .dfy-icon > .oh-icon,
+    .service-icon > .oh-icon, .category-icon > .oh-icon, .card-icon > .oh-icon,
+    .feature-icon > .oh-icon, .value-icon > .oh-icon, .why-icon > .oh-icon,
+    .insight-icon > .oh-icon, .resource-icon > .oh-icon, .pattern-icon > .oh-icon,
+    .section-icon > .oh-icon, .rec-icon > .oh-icon, .source-icon > .oh-icon,
+    .bs-amenity-icon > .oh-icon, .expand-icon > .oh-icon {
+      width: 1.75rem; height: 1.75rem;
+      min-width: 1.75rem; min-height: 1.75rem;
+      color: inherit;
+    }
+    /* Tinted tiles: keep the dark brand stroke against a pale fill. */
+    .tool-icon, .area-icon, .category-icon, .dfy-icon, .service-icon {
+      color: var(--primary, #3E3D35);
+    }
+    h2 .oh-icon, h3 .oh-icon {
+      width: 1.15em; height: 1.15em;
+      min-width: 1.15em; min-height: 1.15em;
+      margin-right: 0.5rem; position: relative; top: -0.05em;
+      color: inherit;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Avenir', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #F8F8F4; color: #3E3D35; line-height: 1.7; }
+    :root { --primary: #3E3D35; --secondary: #89826E; --accent: #89826E; --secondary-light: rgba(137, 130, 110, 0.1); --accent-light: rgba(137, 130, 110, 0.2); --primary-light: rgba(62,61,53,0.08); }
+    .nav { background: #3E3D35; padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .nav-logo { font-size: 1.3rem; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: -0.02em; }
+    .nav-logo span { color: #89826E; font-weight: 400; }
+    .nav-links { display: flex; gap: 0.25rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: rgba(255,255,255,0.65); font-weight: 500; font-size: 0.9rem; padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,0.08); }
+    .breadcrumb { background: white; padding: 1rem 2rem; border-bottom: 1px solid #eee; }
+    .breadcrumb-container { max-width: 900px; margin: 0 auto; font-size: 0.9rem; color: #666; }
+    .breadcrumb a { color: var(--secondary); text-decoration: none; }
+    .article-container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    .article-header { margin-bottom: 2rem; }
+    .article-header h1 { font-size: 2.25rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.3; }
+    .article-meta { display: flex; gap: 1.5rem; color: #666; font-size: 0.9rem; }
+    .article-content { background: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.07); }
+    .article-content h2 { font-size: 1.5rem; color: var(--primary); margin: 2rem 0 1rem; padding-top: 1rem; border-top: 1px solid #eee; }
+    .article-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .article-content h3 { font-size: 1.15rem; color: var(--primary); margin: 1.5rem 0 0.75rem; }
+    .article-content p { margin-bottom: 1rem; color: #444; }
+    .article-content ul, .article-content ol { margin: 1rem 0 1.5rem 1.5rem; color: #444; }
+    .article-content li { margin-bottom: 0.5rem; }
+    .quick-answer { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; }
+    .quick-answer h2 { color: white !important; border: none !important; margin: 0 0 1rem 0 !important; padding: 0 !important; font-size: 1.3rem; }
+    .quick-answer .big-text { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    /* Scoped past .article-content p (0,1,1), which would otherwise tie and
+       leave this dark panel's copy at #444 on a dark ground if source order
+       ever changed. See memory/guide-template.md section 7. */
+    .article-content .quick-answer p, .quick-answer p { color: white; }
+    .highlight-box { background: var(--secondary-light); border-left: 4px solid var(--secondary); padding: 1.25rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; color: var(--primary); }
+    .highlight-box.tip { background: var(--accent-light); border-left-color: var(--accent); }
+    .highlight-box.warning { background: var(--primary-light); border-left-color: var(--primary); }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+    .comparison-table th, .comparison-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
+    .comparison-table th { background: var(--primary); color: white; }
+    .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+    .step-box { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border-left: 4px solid var(--secondary); }
+    .step-box h4 { color: var(--primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+    .step-box h4 .step-num { background: var(--secondary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; }
+    .nav-cta { background: rgba(137, 130, 110, 0.25) !important; color: #fff !important; border: 1px solid rgba(137, 130, 110, 0.4); }
+    .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+    @media (max-width: 768px) { .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #3E3D35; flex-direction: column; padding: 1rem; gap: 0.25rem; } .nav-links.open { display: flex; } .nav-toggle { display: block; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } }
+    /* Tables carry longer cell copy on this guide than the grid can fit at
+       phone widths. Let each one scroll inside its own box rather than push
+       the page sideways; -webkit-overflow-scrolling keeps it smooth on iOS. */
+    @media (max-width: 768px) {
+      .comparison-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; }
+      .comparison-table td, .comparison-table th { white-space: normal; min-width: 9rem; }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Agoda Rate Discrepancy: Why Your Rate Drops and How to Fix It",
+  "description": "Why your Agoda rate shows lower than you loaded, how to diagnose it in Agoda Partner Portal, and how to use Agoda promotions, AGP and Beds Network without losing rate parity.",
+  "author": {
+    "@type": "Organization",
+    "name": "OnlineHotelier"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OnlineHotelier",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.onlinehotelier.com/favicon.png"
+    }
+  },
+  "mainEntityOfPage": "https://www.onlinehotelier.com/guides/ota/agoda-rate-discrepancy.html",
+  "datePublished": "2026-10-06",
+  "dateModified": "2026-10-06"
+}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"OnlineHotelier","url":"https://www.onlinehotelier.com","logo":"https://www.onlinehotelier.com/favicon.png","sameAs":["https://www.onlinehotelier.com"]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.onlinehotelier.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://www.onlinehotelier.com/guides/"},{"@type":"ListItem","position":3,"name":"OTA","item":"https://www.onlinehotelier.com/guides/ota/"},{"@type":"ListItem","position":4,"name":"Agoda Rate Discrepancy","item":"https://www.onlinehotelier.com/guides/ota/agoda-rate-discrepancy.html"}]}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Find and Fix an Agoda Rate Discrepancy",
+  "description": "Diagnose why your Agoda sell rate differs from the rate you loaded, trace it to its cause in Agoda Partner Portal, and fix it without losing visibility.",
+  "totalTime": "PT90M",
+  "estimatedCost": {"@type": "MonetaryAmount", "currency": "INR", "value": "0"},
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Capture the guest-facing rate",
+      "text": "Search your own property on Agoda in a private browser window, logged out, matching the exact stay dates, room type, occupancy, market and currency. Record the nightly rate and the total before payment. This is the number you are explaining.",
+      "url": "https://www.onlinehotelier.com/guides/ota/agoda-rate-discrepancy.html#diagnose-agoda-discrepancy"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Compare it against the loaded rate",
+      "text": "Open Rates and Availability in Agoda Partner Portal for the same date and room type. Note whether the loaded figure is a net rate or a sell rate, because comparing a net rate against a guest-facing sell rate invents a discrepancy that does not exist.",
+      "url": "https://www.onlinehotelier.com/guides/ota/agoda-rate-discrepancy.html#diagnose-agoda-discrepancy"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Check for a manual override",
+      "text": "Agoda applies the most recent rate update. If someone edited the rate directly in Partner Portal after your channel manager pushed it, the manual edit is live. Check the update history for that date and room type.",
+      "url": "https://www.onlinehotelier.com/guides/ota/agoda-rate-discrepancy.html#manual-override-channel-manager"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Audit active promotions and their stacking",
+      "text": "Open Rates and Availability then Promotions. Check every active promotion for booking dates, stay dates, percentage, products, restrictions and the stacking setting. Stacked promotions are the most common cause of a rate far below what you loaded.",
+      "url": "https://www.onlinehotelier.com/guides/ota/agoda-rate-discrepancy.html#agoda-promotions-stacking"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Fix at the source and re-verify",
+      "text": "If a channel manager controls Agoda, make the correction there, never in Partner Portal, or the next sync overwrites it. Then repeat the logged-out search to confirm the guest now sees the rate you intend.",
+      "url": "https://www.onlinehotelier.com/guides/ota/agoda-rate-discrepancy.html#fix-agoda-discrepancy"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+      {
+        "@type": "Question",
+        "name": "Why is my Agoda rate lower than the rate I loaded?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Four causes account for most of it. A promotion or several stacked promotions are discounting the rate. Someone made a manual edit in Partner Portal that overrode your channel manager push, because Agoda applies the most recent update. You are comparing a net rate against a guest-facing sell rate, which are different numbers. Or an occupancy-based price is showing for a different guest count than the one you checked. Audit promotions first, as that is the usual answer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between Agoda net rate and sell rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The net rate is what you keep. The sell rate is what the guest sees, and it includes Agoda's compensation plus taxes and fees. If you load a net rate of ₹3,000 and Agoda's compensation is 18 percent, the guest-facing sell rate is around ₹3,660 before taxes. Comparing your ₹3,000 against a guest screenshot showing ₹3,660 looks like a discrepancy but is the model working correctly. Confirm which figure your contract and your channel manager are set to send before you raise a ticket."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does a manual edit in Agoda Partner Portal override my channel manager?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, and this is the single most common unexplained discrepancy. Agoda allows booking on the most recently updated rate. If your channel manager pushes a rate and a staff member then edits that date manually in Partner Portal, the manual figure is live until the next push for that exact date and room type. If a channel manager controls Agoda, make every change there and treat Partner Portal as read-only for rates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do Agoda promotions stack?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Agoda groups promotions into Seasonal, Essential and Targeted. Two Seasonal promotions do not stack with each other, and Agoda applies whichever produces the more competitive rate. A Seasonal offer can combine with an eligible Essential or Targeted offer. Essential promotions (Customized, Early Bird, Last Minute, Long Stay) can combine where the stacking controls permit. Multiple Targeted promotions can combine when they belong to different categories. Three stacked offers at 10 percent each do not cost you 30 percent, but they compound, and the result is often well below what you expected."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What commission does Agoda charge Indian hotels?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Agoda does not publish a fixed rate. Its compensation depends on your property's location and, in some cases, the payment model, and it is structured either as a percentage of the reference sell rate or as a markup on your loaded rate. Indian independent hotels commonly sit in the 15 to 22 percent band. On a ₹3,000 net rate at 18 percent, Agoda's share is about ₹540. If you join the Agoda Growth Program you pay an incremental commission on top of that contracted rate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does my Agoda payout not match the reservation total?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A payout is not a per-booking transfer. One payout ID can group several bookings plus adjustments from earlier periods, so one-to-one matching will not work. The gap also comes from the payment model (Agoda Collect versus Property Collect), Agoda's compensation, taxes you collect that are never remitted through Agoda, and amendments, cancellations or no-shows that land in a later batch. Reconcile outward from the booking: identify the payment model, find Agoda's booking-level amount, locate the payout batch, then compare the bank credit against your ledger."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the Agoda Growth Program and is it worth it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AGP is Agoda's paid visibility program. You pay an incremental commission on top of your contracted rate, and the more you elect to pay the more Agoda invests in promoting you, including search placement, the mobile app, affiliate and email campaigns, and bidding on meta search and PPC on your behalf. Properties that do not want to affect their ADR can instead be invoiced a monthly marketing service fee post-paid. It is worth it only once your content, photos and rate integrity are already correct. Paying for traffic to a listing that converts badly raises your cost per booking and nothing else."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Agoda Beds Network?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Beds Network is Agoda's wholesale and B2B distribution arm, launched in December 2021 and live in India. It pushes your inventory to Booking Holdings' network of more than 10,000 affiliate partners, including airlines, offline travel agencies and credit card companies, without you signing separate contracts with each. Rates and inventory stay fully yieldable, so you keep control. The trade-off is that your rate now surfaces in places you do not monitor, which is how parity complaints appear from channels you never listed on."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will fixing my Agoda rate hurt my visibility?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Turning off a promotion usually costs some ranking, because Agoda's sort favours competitive rates. The mistake is treating that as a reason to leave a broken rate live. Remove the stacked or duplicated promotions first, then rebuild visibility deliberately with one controlled promotion or a measured AGP spend. A rate that is wrong by 25 percent is not a marketing strategy, and every booking it takes is margin you cannot recover."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should a homestay or small property use Agoda?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, particularly if you want inbound Southeast Asian and East Asian demand, where Agoda is strongest. Agoda Homes is its section for non-hotel stays, and there is no minimum room count. For a small property the discipline matters more, not less: with few rooms, one stacked promotion selling a peak-season night at ₹1,800 instead of ₹3,000 is a larger share of your month than it would be for a 40 room hotel."
+        }
+      }
+    ]}
+  </script>
+  <script src="/js/nav.js"></script>
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Agoda Rate Discrepancy: Causes and How to Fix It | OnlineHotelier">
+  <meta property="og:description" content="Why your Agoda rate shows lower than you loaded, how to fix the discrepancy in Partner Portal, and how to use Agoda promotions and AGP without losing parity.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.onlinehotelier.com/guides/ota/agoda-rate-discrepancy.html">
+  <meta property="og:site_name" content="OnlineHotelier">
+  <meta property="og:image" content="https://www.onlinehotelier.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="OnlineHotelier: practical guides for Indian hoteliers">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Agoda Rate Discrepancy: Causes and How to Fix It | OnlineHotelier">
+  <meta name="twitter:description" content="Why your Agoda rate shows lower than you loaded, how to fix the discrepancy in Partner Portal, and how to use Agoda promotions and AGP without losing parity.">
+  <meta name="twitter:image" content="https://www.onlinehotelier.com/og-image.png">
+  <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+  <nav id="site-nav"></nav>
+  <div class="sidebar-overlay"></div>
+  <button class="sidebar-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+  <div class="guide-page-layout has-toc">
+    <aside class="guide-sidebar"></aside>
+    <div class="guide-main-content">
+
+      <div class="breadcrumb">
+        <div class="breadcrumb-container">
+          <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; <a href="/guides/ota/">OTA</a> &rsaquo; Agoda Rate Discrepancy
+        </div>
+      </div>
+
+      <article class="article-container">
+        <header class="article-header">
+          <h1>Agoda Rate Discrepancy: Why Your Rate Drops and How to Fix It</h1>
+          <div class="article-meta">
+            <span>By OnlineHotelier Insights Team</span>
+            <span>Updated October 2026</span>
+            <span>11 min read</span>
+          </div>
+        </header>
+
+        <div class="article-content">
+          <div class="quick-answer">
+            <h2 id="agoda-discrepancy-in-short">Agoda Rate Discrepancy in Short</h2>
+            <div class="big-text">Check promotions first, then manual overrides</div>
+            <p>If your Agoda rate shows lower than you loaded, the cause is almost always stacked promotions or a manual edit in Partner Portal that overrode your channel manager. Agoda applies the most recent rate update, so one staff edit beats every sync until the next push. Audit promotions, check who last touched the rate, and confirm you are comparing net against net.</p>
+          </div>
+
+          <div class="highlight-box">
+            <strong>New to OTAs? Start here.</strong> If this is an early listing, read <a href="/guides/ota/what-is-ota.html" style="color: var(--secondary);">what an OTA is and how it works</a> first, then <a href="/guides/revenue/rate-linkage.html" style="color: var(--secondary);">how rate linkage works</a>. This guide assumes you already load rates and know what rate parity means.
+          </div>
+
+          <p>A hotel in Goa called us in January. Their Agoda rate for a peak-season Saturday was showing &#8377;2,240 when they had loaded &#8377;3,400. They had raised three tickets over five weeks and received nothing useful back. They had started to believe Agoda was discounting their rooms without permission.</p>
+
+          <p>Agoda was not. Three promotions were live on that date: a Seasonal campaign the previous manager had opted into, an Early Bird offer, and a Last Minute offer that an automation had left running. Each looked harmless on its own. Together they produced &#8377;2,240. It took forty minutes to find and five minutes to fix.</p>
+
+          <p>That is the pattern in nearly every Agoda discrepancy we have worked on. The platform is doing exactly what it was told. The problem is that nobody can see what it was told, because the instructions are spread across promotions, a channel manager, a contract and whoever last logged in.</p>
+
+          <h2 id="what-agoda-discrepancy-means">What an Agoda Rate Discrepancy Actually Is</h2>
+
+          <p>The phrase gets used for four different problems. They have different causes and different fixes, so naming yours correctly saves most of the work.</p>
+
+          <table class="comparison-table">
+            <tr>
+              <th>What you are seeing</th>
+              <th>What it usually is</th>
+            </tr>
+            <tr>
+              <td>Guest-facing rate is lower than the rate you loaded</td>
+              <td>A real discrepancy. Promotions or a manual override. This guide's main subject.</td>
+            </tr>
+            <tr>
+              <td>Agoda is cheaper than your own website or another OTA</td>
+              <td>A <strong>parity</strong> problem. Often the same root cause, but the complaint arrives from a different direction, sometimes from a B2B channel you did not know you were in.</td>
+            </tr>
+            <tr>
+              <td>Your loaded figure and the guest figure simply differ</td>
+              <td>Often not a discrepancy at all. You are comparing a net rate against a sell rate.</td>
+            </tr>
+            <tr>
+              <td>Payout does not match the booking total</td>
+              <td>A <strong>reconciliation</strong> problem, not a rate problem. Covered further down.</td>
+            </tr>
+          </table>
+
+          <div class="highlight-box warning">
+            <strong>The extranet was renamed.</strong> Agoda's partner dashboard (where you manage rates, content and promotions) is now <strong>Agoda Partner Portal</strong>. It was called YCS, and much of the advice online, plus a fair number of channel manager help pages, still says YCS. They are the same system. If a support agent says YCS, they mean Partner Portal.
+          </div>
+
+          <h2 id="net-rate-vs-sell-rate">Net Rate and Sell Rate Are Different Numbers</h2>
+
+          <p>Settle this before you investigate anything else, because it generates false discrepancies and wasted support tickets.</p>
+
+          <ul>
+            <li><strong>Net rate</strong> is what you keep. Agoda adds its margin on top to build the guest price.</li>
+            <li><strong>Sell rate</strong> is what the guest sees, including Agoda's compensation, plus taxes and fees.</li>
+          </ul>
+
+          <p>Load a net rate of &#8377;3,000 with compensation at 18 percent and the guest-facing sell rate lands near &#8377;3,660 before taxes. A guest screenshot showing &#8377;3,660 against your &#8377;3,000 looks alarming and is correct.</p>
+
+          <p>The reverse trips up more hotels. If your contract is on a sell-rate model and your channel manager is configured to send net rates, every rate you push is low by your full margin. That is not a bug anyone will flag for you. It quietly discounts every room you sell.</p>
+
+          <div class="highlight-box tip">
+            <strong>Confirm this once, in writing.</strong> Ask your market manager which model your contract uses, and ask your channel manager support team which model your Agoda connection is configured to send. Get both answers before you touch a rate. We have found mismatches that ran for over a year.
+          </div>
+
+          <h2 id="diagnose-agoda-discrepancy">How to Diagnose It in 30 Minutes</h2>
+
+          <p>Work in this order. Each step rules out a cause, so you stop as soon as the numbers agree.</p>
+
+          <div class="step-box">
+            <h4><span class="step-num">1</span> Capture what the guest actually sees</h4>
+            <p>Search your property on Agoda in a private window, logged out. Match the stay dates, room type, occupancy, market and currency exactly. Record the nightly rate and the total before the payment screen. Being logged in or in the wrong market gives you a member or geo price and sends you chasing a discrepancy that does not exist for most guests.</p>
+          </div>
+
+          <div class="step-box">
+            <h4><span class="step-num">2</span> Read the loaded rate in Partner Portal</h4>
+            <p>Open Rates and Availability for the same date and room type. Write down the figure and whether it is net or sell. Now you have two comparable numbers and a gap to explain.</p>
+          </div>
+
+          <div class="step-box">
+            <h4><span class="step-num">3</span> Check every active promotion</h4>
+            <p>Go to Rates and Availability, then Promotions. For each live promotion check the booking dates, stay dates, percentage, which products it applies to, the restrictions and the stacking setting. List every one that covers your test date. This is where the Goa property's answer was sitting.</p>
+          </div>
+
+          <div class="step-box">
+            <h4><span class="step-num">4</span> Check who last changed the rate</h4>
+            <p>Look at the update history for that date and room type. A manual Partner Portal edit made after a channel manager push is live, because Agoda books on the most recent update. A rate you "fixed" by hand last Tuesday is still overriding your system today.</p>
+          </div>
+
+          <div class="step-box">
+            <h4><span class="step-num">5</span> Test a date that should not qualify</h4>
+            <p>Search a date outside every promotion window. If that rate is correct, your base rates are fine and a promotion is the cause. If it is also wrong, the problem is in the base rate or the connection, and you can stop looking at promotions entirely.</p>
+          </div>
+
+          <h2 id="agoda-promotions-stacking">Why Stacked Promotions Cost More Than You Think</h2>
+
+          <p>Agoda sorts promotions into three families, and the stacking rules between them are where margin disappears.</p>
+
+          <table class="comparison-table">
+            <tr>
+              <th>Type</th>
+              <th>Examples</th>
+              <th>How it stacks</th>
+            </tr>
+            <tr>
+              <td><strong>Seasonal</strong></td>
+              <td>Campaign and travel-period offers</td>
+              <td>Two Seasonal offers do not stack with each other. Agoda applies whichever gives the guest the better rate. A Seasonal offer <em>can</em> combine with an Essential or Targeted one.</td>
+            </tr>
+            <tr>
+              <td><strong>Essential</strong></td>
+              <td>Customized, Early Bird, Last Minute, Long Stay</td>
+              <td>Can combine with each other where the stacking controls allow it. This is the usual culprit.</td>
+            </tr>
+            <tr>
+              <td><strong>Targeted</strong></td>
+              <td>Product, Loyalty, Geography, Platform, Maximum Gain</td>
+              <td>Multiple Targeted offers can combine when they sit in different categories.</td>
+            </tr>
+          </table>
+
+          <p>Three stacked 10 percent offers do not simply cost you 30 percent. They compound, and they compound off a base you may not have checked. On a &#8377;3,000 net rate, three compounding 10 percent discounts leave about &#8377;2,187. Add an occupancy adjustment and you are below &#8377;2,000 on a rate you believed was &#8377;3,000.</p>
+
+          <div class="highlight-box warning">
+            <strong>The Long Stay and Early Bird trap.</strong> These two run quietly for months because neither looks like a discount when you set it up. Early Bird rewards a booking made far ahead. Long Stay rewards a longer booking. A guest booking four months out for five nights triggers both, on top of whatever Seasonal campaign is live. That booking is often your worst-margin room of the quarter, and it is the one you were most pleased to receive.
+          </div>
+
+          <h2 id="manual-override-channel-manager">The Manual Override Problem</h2>
+
+          <p>This deserves its own section because it is the cause hotels never find on their own.</p>
+
+          <p><strong>Agoda applies the most recent rate update.</strong> It does not rank your channel manager above a human. If your system pushes &#8377;3,400 on Monday and a front desk colleague edits that date to &#8377;2,900 in Partner Portal on Tuesday, Agoda sells at &#8377;2,900 until something pushes that exact date and room type again.</p>
+
+          <p>Two things make this hard to spot. The edit may have been made weeks ago by someone who has since left. And your channel manager dashboard still shows &#8377;3,400, because as far as it knows, it sent &#8377;3,400.</p>
+
+          <div class="highlight-box tip">
+            <strong>The rule that prevents it:</strong> if a channel manager controls Agoda, every rate change happens in the channel manager. Partner Portal is read-only for rates. No exceptions for urgent weekends, because that is exactly when the exceptions get made. Tell every person with a login, in writing, and remove logins from anyone who does not need one.
+          </div>
+
+          <p>If you are not yet on a channel manager and are managing Agoda alongside MMT and Booking.com by hand, that is the real problem to solve. See <a href="/guides/software/channel-manager.html" style="color: var(--secondary);">how a channel manager works</a> and <a href="/guides/software/update-hotel-rates-all-otas.html" style="color: var(--secondary);">how to update rates across all OTAs</a>.</p>
+
+          <h2 id="fix-agoda-discrepancy">Fixing It, Cause by Cause</h2>
+
+          <table class="comparison-table">
+            <tr>
+              <th>Cause</th>
+              <th>The fix</th>
+            </tr>
+            <tr>
+              <td>Stacked promotions</td>
+              <td>Turn off everything, confirm the base rate is correct, then switch on one promotion at a time and re-check the live rate after each. Never diagnose stacking with everything running.</td>
+            </tr>
+            <tr>
+              <td>Manual override</td>
+              <td>Re-push the affected date range from the channel manager. Fixing it inside Partner Portal works until the next sync, then reverts.</td>
+            </tr>
+            <tr>
+              <td>Net against sell confusion</td>
+              <td>Confirm the contract model and the channel manager configuration. If they disagree, correct the connection, not the rate.</td>
+            </tr>
+            <tr>
+              <td>Occupancy pricing</td>
+              <td>Check the rate for each occupancy you sell. A correct double rate with a broken single rate reads as a random discrepancy.</td>
+            </tr>
+            <tr>
+              <td>Rate plan mapping</td>
+              <td>Confirm each Agoda rate plan maps to the right plan in your system. A room-only rate mapped to a breakfast-inclusive plan undercuts you by the cost of breakfast on every booking.</td>
+            </tr>
+          </table>
+
+          <p>Then re-run the logged-out search from step 1. A fix you have not seen from the guest's side is not yet a fix.</p>
+
+          <div class="guide-audit-cta" role="complementary" aria-label="Agoda listing help">
+        <div class="guide-audit-cta-inner">
+          <div class="guide-audit-cta-eyebrow">Done For You</div>
+          <div class="guide-audit-cta-heading">Want us to sort out your Agoda rates for you?</div>
+          <p class="guide-audit-cta-body">We audit your Agoda promotions, rate plan mapping and channel manager connection, find where the rate is leaking, and set it right. Then we do the same on MakeMyTrip, Goibibo and Booking.com so your rates agree across every channel.</p>
+          <a href="/services/independent-hotel-ota-listing/" class="guide-audit-cta-btn">Get Your Agoda Sorted</a>
+        </div>
+      </div>
+
+          <h2 id="agoda-promotions-worth-using">Which Agoda Promotions Are Worth Running</h2>
+
+          <p>Once the rate is honest, promotions become a tool instead of a leak. The question is never whether to discount. It is which weakness you are paying to fix.</p>
+
+          <ul>
+            <li><strong>Last Minute</strong> earns its discount. It fills rooms that were about to go empty, where any revenue beats none. Keep it tightly windowed, inside 48 to 72 hours.</li>
+            <li><strong>Early Bird</strong> buys certainty, so use it only on dates you expect to struggle. Running it across peak season discounts rooms you would have sold at full rate.</li>
+            <li><strong>Long Stay</strong> suits properties with real length-of-stay upside, such as hill station and beach resorts in shoulder season. It is close to pure margin loss on a city hotel doing one-night corporate stays.</li>
+            <li><strong>Seasonal campaigns</strong> give the biggest visibility jump, which is why they are tempting on dates you did not need help with. Opt in for soft periods, not for Diwali.</li>
+            <li><strong>Targeted offers</strong> are the sharpest instrument on the platform. A Geography-targeted offer lets you discount to Southeast Asian travellers, where Agoda is strong, without dropping your rate for domestic guests who would have paid full price.</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>One discipline, applied monthly:</strong> every promotion gets an end date and a reason written down. The Goa property's stray Last Minute offer had neither. Open promotions on the first of each month and close anything whose reason no longer holds.
+          </div>
+
+          <h2 id="agoda-growth-program">The Agoda Growth Program, Honestly Assessed</h2>
+
+          <p>AGP is Agoda's paid visibility program, and your market manager will raise it. You pay an <strong>incremental commission</strong> on top of your contracted rate. The more you elect to pay, the more Agoda invests in promoting you: higher search placement on the site and in the app, affiliate and email campaigns, and algorithmic bidding on meta search and PPC on your behalf.</p>
+
+          <p>If you do not want that to pull your ADR down, there is an alternative. Properties can be invoiced a <strong>monthly marketing service fee</strong> on a post-paid basis instead, which keeps the cost out of the rate.</p>
+
+          <p>Agoda has published global averages for partners on the Standard plan of 1.5x impressions growth, 37 percent revenue growth and 42 percent net room night growth as of 2024. Treat those as what is possible, not what is promised. They are global, self-reported, and measured on properties that chose to join.</p>
+
+          <div class="highlight-box warning">
+            <strong>Do not join AGP to fix a conversion problem.</strong> AGP buys impressions. If your listing converts badly because of thin content, weak photos or a review score below your compset, more impressions mean you pay incremental commission on the same number of bookings. Your cost per booking rises and your ranking does not hold. Fix content and rate integrity first, then buy visibility. In that order it works. Reversed, it is the most expensive mistake available on the platform.
+          </div>
+
+          <p>Before you agree to a percentage, ask your market manager for your current impression-to-booking conversion rate, and what the incremental commission would have cost on last quarter's actual room nights. If the answer is vague, you are not ready to sign.</p>
+
+          <h2 id="agoda-b2b-distribution">Beds Network and the Parity Complaints You Did Not Expect</h2>
+
+          <p>Agoda's reach is wider than its own site, and this matters for parity. <strong>Beds Network</strong> is its wholesale and B2B distribution arm, launched in December 2021 and live in India among 20 markets. It distributes your inventory across Booking Holdings' network of more than 10,000 affiliate partners: airlines, offline travel agencies, credit card companies and others. Rates and inventory remain fully yieldable, so you keep control.</p>
+
+          <p>The upside is real incremental room nights from demand you could never contract individually. The catch is that your rate now appears on sites you do not monitor. When a guest shows you a third-party page selling your room below your website rate, this is often why, and the cause still traces back to the same promotions and overrides in your Agoda setup.</p>
+
+          <p>So the discipline is the same one: fix the rate at source. A discrepancy inside Agoda does not stay inside Agoda. It propagates to every channel Agoda feeds, which is how a single stacked promotion becomes a parity problem across the internet.</p>
+
+          <h2 id="agoda-payout-reconciliation">Why Your Payout Does Not Match the Booking</h2>
+
+          <p>This is a separate problem from rate discrepancy and gets confused with it constantly. A payout is not a per-booking transfer.</p>
+
+          <p>Agoda runs two payment models. Under <strong>Agoda Collect</strong> the guest pays Agoda, and Agoda transfers to you, typically around 30 days after the booking. Under <strong>Property Collect</strong> the guest pays you directly, and Agoda offsets its commission against what it owes you on prepaid bookings rather than invoicing you.</p>
+
+          <p>The gap between a booking total and a bank credit comes from several places at once:</p>
+
+          <ul>
+            <li><strong>Batching.</strong> One payout ID can group several bookings plus adjustments from earlier periods. One-to-one matching will not work, and trying is where finance teams lose days.</li>
+            <li><strong>Compensation.</strong> Agoda's share is deducted before you are paid.</li>
+            <li><strong>Taxes you collect.</strong> Amounts that never flow through Agoda still appear in the guest total.</li>
+            <li><strong>Amendments.</strong> Cancellations, modifications and no-shows change the payable figure and often surface in a later batch.</li>
+            <li><strong>Timing.</strong> Stay date, payable date, card charge date and bank posting date are four different events, frequently in different accounting months.</li>
+          </ul>
+
+          <p>Reconcile outward from the booking, not inward from the bank statement: identify the payment model, find Agoda's booking-level amount, locate the payout batch it sits in, then compare the bank credit against your ledger.</p>
+
+          <div class="highlight-box warning">
+            <strong>The 150 day deadline.</strong> If a booking's payout is not charged within 150 days of its departure date, you lose the ability to claim that earning. Properties using card-based payout methods have written off real money by leaving this unreconciled. Put a monthly check in your closing routine.
+          </div>
+
+          <p>Commission, TDS and GST on OTA payouts are set out in our <a href="/guides/compliance/tds-tcs.html" style="color: var(--secondary);">TDS and TCS guide for OTA payments</a>.</p>
+
+          <h2 id="balancing-agoda-other-otas">Balancing Agoda Without Starving MMT and Booking.com</h2>
+
+          <p>Agoda's strength is inbound Southeast Asian and East Asian demand, and it is part of Booking Holdings. For most Indian independents it is an incremental channel, not a replacement for MMT or Goibibo, which carry domestic volume.</p>
+
+          <p>That makes the balance straightforward in principle and easy to get wrong in practice.</p>
+
+          <ul>
+            <li><strong>Keep base rates identical across channels.</strong> Every deliberate difference should come from a promotion you can name, not from a rate you loaded differently.</li>
+            <li><strong>Differentiate by audience, not by price.</strong> Use Agoda's Geography-targeted offers for international demand rather than cutting your base rate, which would undercut MMT for a domestic guest too.</li>
+            <li><strong>Watch channel mix monthly, not rate alone.</strong> If Agoda's share climbs while your ADR falls, promotions are buying volume at your expense. Our <a href="/tools/ota-dependency-calculator/" style="color: var(--secondary);">OTA dependency calculator</a> shows how exposed you are to any one channel.</li>
+            <li><strong>Hold peak dates firm everywhere.</strong> Diwali, New Year and local festival dates sell without help. Promotions on those dates are pure margin donation.</li>
+            <li><strong>Protect direct.</strong> Whatever you run on Agoda, your own website should never be the most expensive place to book your hotel. See <a href="/guides/ota/hotel-direct-booking-strategy.html" style="color: var(--secondary);">building a direct booking strategy</a>.</li>
+          </ul>
+
+          <p>For how Agoda compares with the rest of the field, see <a href="/guides/ota/best-ota-for-hotels.html" style="color: var(--secondary);">the best OTAs for Indian hotels</a>.</p>
+
+          <h2 id="agoda-30-day-plan">A 30 Day Plan to Get Agoda Under Control</h2>
+
+          <p>If your Agoda setup has drifted, do this in order rather than all at once. Each week's work makes the next week's measurable.</p>
+
+          <ul>
+            <li><strong>Week 1, establish the truth.</strong> Run the five diagnostic steps on three dates: a peak date, a shoulder date and a weak date. Confirm net or sell with your market manager and your channel manager. List every active promotion with its reason and end date.</li>
+            <li><strong>Week 2, stop the leak.</strong> Turn off promotions without a current reason. Re-push the affected date ranges from the channel manager. Fix rate plan mapping and occupancy pricing. Remove Partner Portal rate access from anyone who does not need it.</li>
+            <li><strong>Week 3, rebuild visibility deliberately.</strong> Switch on one promotion matched to a real weakness, usually Last Minute on soft dates. Verify the live rate after each change. Complete your content: photo count, description, amenities and policies.</li>
+            <li><strong>Week 4, reconcile and decide.</strong> Reconcile one full payout batch end to end. Check nothing is near the 150 day limit. Only now consider AGP, with your conversion rate and last quarter's room nights in hand.</li>
+          </ul>
+
+          <p>Expect the first week to be uncomfortable. Most properties find at least one thing that has been costing them money for months, and the usual reaction is annoyance at how simple the cause was. That is the normal outcome, not a sign of unusual mismanagement.</p>
+
+      <p style="margin-top:1.5rem;">Not sure what your Agoda listing is actually doing? Our <a href="/services/ota-audit/" style="color: var(--secondary);">free OTA listing audit</a> checks your Agoda rates, promotions and content against your other channels and tells you where the rate is leaking.</p>
+
+      <div class="explore-tools">
+        <h3>Related Tools &amp; Guides</h3>
+        <div class="tools-grid-mini">
+          <a href="/tools/ota-commission-calculator/" class="tool-link">
+            <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12M6 8h12M15 3c0 4-3 5-6 5l7 8"/></svg></span>
+            <div class="text">
+              <h4>OTA Commission Calculator</h4>
+              <p>What you actually keep after MMT, Goibibo and Booking.com fees</p>
+            </div>
+          </a>
+          <a href="/tools/ota-dependency-calculator/" class="tool-link">
+            <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 21H3V3"/><path d="M7 16l4-5 3 3 5-7"/></svg></span>
+            <div class="text">
+              <h4>OTA Dependency Calculator</h4>
+              <p>How exposed your revenue is to any single channel</p>
+            </div>
+          </a>
+          <a href="/guides/software/channel-manager.html" class="tool-link">
+            <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="3.5"/></svg></span>
+            <div class="text">
+              <h4>Channel Manager Guide</h4>
+              <p>How rate and inventory sync actually works</p>
+            </div>
+          </a>
+          <a href="/guides/ota/best-ota-for-hotels.html" class="tool-link">
+            <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/><path d="M12 14v4M9 21h6"/></svg></span>
+            <div class="text">
+              <h4>Top 10 OTAs in India</h4>
+              <p>Which platforms actually deliver bookings for Indian hotels</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <h2 id="faq">Frequently Asked Questions</h2>
+
+      <div class="faq-section">
+        <div class="faq-item" id="faq-why-is-my-agoda-rate-lower">
+          <div class="faq-question">Why is my Agoda rate lower than the rate I loaded?</div>
+          <div class="faq-answer">Four causes account for most of it. A promotion or several stacked promotions are discounting the rate. Someone made a manual edit in Partner Portal that overrode your channel manager push, because Agoda applies the most recent update. You are comparing a net rate against a guest-facing sell rate, which are different numbers. Or an occupancy-based price is showing for a different guest count than the one you checked. Audit promotions first, as that is the usual answer.</div>
+        </div>
+        <div class="faq-item" id="faq-agoda-net-rate-vs-sell-rate">
+          <div class="faq-question">What is the difference between Agoda net rate and sell rate?</div>
+          <div class="faq-answer">The net rate is what you keep. The sell rate is what the guest sees, and it includes Agoda's compensation plus taxes and fees. If you load a net rate of &#8377;3,000 and Agoda's compensation is 18 percent, the guest-facing sell rate is around &#8377;3,660 before taxes. Comparing your &#8377;3,000 against a guest screenshot showing &#8377;3,660 looks like a discrepancy but is the model working correctly. Confirm which figure your contract and your channel manager are set to send before you raise a ticket.</div>
+        </div>
+        <div class="faq-item" id="faq-manual-edit-overrides-channel-manager">
+          <div class="faq-question">Does a manual edit in Agoda Partner Portal override my channel manager?</div>
+          <div class="faq-answer">Yes, and this is the single most common unexplained discrepancy. Agoda allows booking on the most recently updated rate. If your channel manager pushes a rate and a staff member then edits that date manually in Partner Portal, the manual figure is live until the next push for that exact date and room type. If a channel manager controls Agoda, make every change there and treat Partner Portal as read-only for rates.</div>
+        </div>
+        <div class="faq-item" id="faq-how-do-agoda-promotions-stack">
+          <div class="faq-question">How do Agoda promotions stack?</div>
+          <div class="faq-answer">Agoda groups promotions into Seasonal, Essential and Targeted. Two Seasonal promotions do not stack with each other, and Agoda applies whichever produces the more competitive rate. A Seasonal offer can combine with an eligible Essential or Targeted offer. Essential promotions (Customized, Early Bird, Last Minute, Long Stay) can combine where the stacking controls permit. Multiple Targeted promotions can combine when they belong to different categories. Three stacked offers at 10 percent each do not cost you 30 percent, but they compound, and the result is often well below what you expected.</div>
+        </div>
+        <div class="faq-item" id="faq-what-commission-does-agoda-charge">
+          <div class="faq-question">What commission does Agoda charge Indian hotels?</div>
+          <div class="faq-answer">Agoda does not publish a fixed rate. Its compensation depends on your property's location and, in some cases, the payment model, and it is structured either as a percentage of the reference sell rate or as a markup on your loaded rate. Indian independent hotels commonly sit in the 15 to 22 percent band. On a &#8377;3,000 net rate at 18 percent, Agoda's share is about &#8377;540. If you join the Agoda Growth Program you pay an incremental commission on top of that contracted rate.</div>
+        </div>
+        <div class="faq-item" id="faq-agoda-payout-does-not-match">
+          <div class="faq-question">Why does my Agoda payout not match the reservation total?</div>
+          <div class="faq-answer">A payout is not a per-booking transfer. One payout ID can group several bookings plus adjustments from earlier periods, so one-to-one matching will not work. The gap also comes from the payment model (Agoda Collect versus Property Collect), Agoda's compensation, taxes you collect that are never remitted through Agoda, and amendments, cancellations or no-shows that land in a later batch. Reconcile outward from the booking: identify the payment model, find Agoda's booking-level amount, locate the payout batch, then compare the bank credit against your ledger.</div>
+        </div>
+        <div class="faq-item" id="faq-agoda-growth-program-worth-it">
+          <div class="faq-question">What is the Agoda Growth Program and is it worth it?</div>
+          <div class="faq-answer">AGP is Agoda's paid visibility program. You pay an incremental commission on top of your contracted rate, and the more you elect to pay the more Agoda invests in promoting you, including search placement, the mobile app, affiliate and email campaigns, and bidding on meta search and PPC on your behalf. Properties that do not want to affect their ADR can instead be invoiced a monthly marketing service fee post-paid. It is worth it only once your content, photos and rate integrity are already correct. Paying for traffic to a listing that converts badly raises your cost per booking and nothing else.</div>
+        </div>
+        <div class="faq-item" id="faq-what-is-agoda-beds-network">
+          <div class="faq-question">What is Agoda Beds Network?</div>
+          <div class="faq-answer">Beds Network is Agoda's wholesale and B2B distribution arm, launched in December 2021 and live in India. It pushes your inventory to Booking Holdings' network of more than 10,000 affiliate partners, including airlines, offline travel agencies and credit card companies, without you signing separate contracts with each. Rates and inventory stay fully yieldable, so you keep control. The trade-off is that your rate now surfaces in places you do not monitor, which is how parity complaints appear from channels you never listed on.</div>
+        </div>
+        <div class="faq-item" id="faq-will-fixing-rate-hurt-visibility">
+          <div class="faq-question">Will fixing my Agoda rate hurt my visibility?</div>
+          <div class="faq-answer">Turning off a promotion usually costs some ranking, because Agoda's sort favours competitive rates. The mistake is treating that as a reason to leave a broken rate live. Remove the stacked or duplicated promotions first, then rebuild visibility deliberately with one controlled promotion or a measured AGP spend. A rate that is wrong by 25 percent is not a marketing strategy, and every booking it takes is margin you cannot recover.</div>
+        </div>
+        <div class="faq-item" id="faq-should-small-property-use-agoda">
+          <div class="faq-question">Should a homestay or small property use Agoda?</div>
+          <div class="faq-answer">Yes, particularly if you want inbound Southeast Asian and East Asian demand, where Agoda is strongest. Agoda Homes is its section for non-hotel stays, and there is no minimum room count. For a small property the discipline matters more, not less: with few rooms, one stacked promotion selling a peak-season night at &#8377;1,800 instead of &#8377;3,000 is a larger share of your month than it would be for a 40 room hotel.</div>
+        </div>
+      </div>
+
+    </div>
+
+      </article>
+
+    </div>
+    <aside class="guide-toc"></aside>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4>OnlineHotelier</h4>
+        <p>We help Indian hoteliers find their way through the digital side of the business. Free guides, free tools, and hands-on help when you want it. Built from 8+ years of real-world hospitality experience.</p>
+      </div>
+      <div>
+        <h5>Learn</h5>
+        <ul>
+          <li><a href="/guides/ota/">OTA Guides</a></li>
+          <li><a href="/guides/revenue/">Revenue Guides</a></li>
+          <li><a href="/guides/software/">Software Guides</a></li>
+          <li><a href="/guides/">All Guides</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Free Tools</h5>
+        <ul>
+          <li><a href="/tools/ota-commission-calculator/">Commission Calculator</a></li>
+          <li><a href="/tools/ota-dependency-calculator/">OTA Dependency</a></li>
+          <li><a href="/tools/break-even-calculator/">Break-Even Calculator</a></li>
+          <li><a href="/tools/">All Tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Work With Us</h5>
+        <ul>
+          <li><a href="/services/">All Services</a></li>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 OnlineHotelier. All rights reserved.</p>
+      <a href="/">www.onlinehotelier.com</a>
+    </div>
+  </footer>
+  <script src="/guides/js/guide-nav.js"></script>
+  <script src="/guides/js/guide-blocks.js"></script>
+  <script src="/js/wa-widget.js"></script>
+  <script src="/js/tools-widget.js"></script>
+</body>
+</html>
