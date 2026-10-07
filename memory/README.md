@@ -31,6 +31,7 @@ the `.md`. Every link resolves inside this folder.
 | File | What it is |
 |---|---|
 | [india-hotel-gst-rates.md](india-hotel-gst-rates.md) | Current GST: 5% up to ₹7,500 (no ITC), 18% above. The 0% and 12% slabs died 22 Sept 2025. |
+| [cookie-consent.md](cookie-consent.md) | Analytics denied by default, why AdSense was removed, and the DPDP deadline of ~May 2027. |
 | [analytics-setup.md](analytics-setup.md) | GA4 `G-9L2N1S6S9F`, the whatsapp_click event, and why GTM is deliberately absent. |
 | [brand-positioning.md](brand-positioning.md) | OnlineHotelier is a consultant and guide, not a listing agency. |
 | [migration-plan.md](migration-plan.md) | Wix to Vercel, and folding the insights subdomain into www. Complete; www canonicals are correct and must never be flagged. |

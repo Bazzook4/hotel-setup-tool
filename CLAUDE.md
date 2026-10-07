@@ -44,7 +44,11 @@ Run these agents in order. Do not skip steps.
 
 - **Domain**: www.onlinehotelier.com (migrated from insights.onlinehotelier.com; that subdomain now 301-redirects here)
 - **Analytics**: GA4 `G-9L2N1S6S9F` is the only property. See `memory/analytics-setup.md` before touching tracking; two older properties were retired on 9 Aug 2026.
-- **AdSense**: ca-pub-6118286051054894
+- **AdSense**: removed 7 Oct 2026. No ad units were ever placed, so the loader
+  was a consent liability with no revenue. Do not re-add it to new pages.
+- **Cookie consent**: analytics denied by default via an inline `gtag('consent',
+  'default')` block before the GA4 loader, plus `/js/consent.js` and
+  `/css/consent.css`. See `memory/cookie-consent.md`.
 - **Branch**: main
 - **Stack**: Static HTML/CSS/JS, no build step
 
@@ -92,7 +96,8 @@ template, not a substitute for it.
    one; the other categories still carry them until they get the same pass.
 6. Article schema + BreadcrumbList + Organization schemas
 7. FAQPage schema if page has FAQs
-8. AdSense meta tag + script
+8. Consent default block before the GA4 loader, `/css/consent.css` in the head,
+   `/js/consent.js` before `</body>`
 9. AI crawler meta tags (robots, googlebot, bingbot)
 10. Internal links to 2–3 related guides
 11. `<link rel="stylesheet" href="/css/footer.css">` in the head, and the

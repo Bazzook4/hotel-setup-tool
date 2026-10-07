@@ -16,7 +16,9 @@ section 1; the differences for tools are noted here.
    `/tools/css/tool-blocks.css`.
 4. **AI crawler meta trio** — robots, googlebot, bingbot. See
    [[ai-llm-optimization]].
-5. **AdSense** — `ca-pub-6118286051054894`.
+5. **Consent** — inline `gtag('consent', 'default')` above the GA4 loader,
+   `/css/consent.css`, and `/js/consent.js` before `</body>`. AdSense was
+   removed 7 Oct 2026. See [[cookie-consent]].
 6. **Schema** — SoftwareApplication or WebApplication for the tool itself, plus
    Organization + BreadcrumbList, plus FAQPage generated from the visible FAQ.
 

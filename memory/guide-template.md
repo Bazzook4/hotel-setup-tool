@@ -31,7 +31,10 @@ colours, contrast) and [[ai-llm-optimization]] (crawler meta, schema bodies).
 3. **Stylesheet** — `/guides/css/guide-layout.css`.
 4. **AI crawler meta trio** — robots, googlebot, bingbot, with `max-snippet:-1`.
    Full markup in [[ai-llm-optimization]].
-5. **AdSense** — meta tag `ca-pub-6118286051054894` + async script.
+5. **Consent** — the inline `gtag('consent', 'default')` block sits **above**
+   the GA4 loader, `/css/consent.css` in the head, `/js/consent.js` before
+   `</body>`. AdSense was removed 7 Oct 2026; do not re-add it. See
+   [[cookie-consent]].
 6. **Inline `<style>`** — DM Sans import, reset, CSS variables
    (`--primary: #3E3D35`, `--secondary: #89826E`), nav, breadcrumb, article,
    quick answer, highlight boxes, tables, responsive.

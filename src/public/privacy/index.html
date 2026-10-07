@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2N1S6S9F"></script>
+  <!-- Consent defaults. Must run BEFORE the GA4 loader: once gtag/js has
+       executed with storage allowed, the cookie is already written. Denied
+       until the visitor accepts via the banner in /js/consent.js. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2N1S6S9F"></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-9L2N1S6S9F');
   </script>
@@ -23,8 +34,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
   <!-- Google AdSense -->
-  <meta name="google-adsense-account" content="ca-pub-6118286051054894">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
@@ -245,6 +254,7 @@
   <meta name="twitter:description" content="Privacy Policy for OnlineHotelier Insights. Learn how we handle your data, use cookies, and protect your privacy when you use our free hotel tools and guides.">
   <meta name="twitter:image" content="https://www.onlinehotelier.com/og-image.png">
   <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/consent.css">
 </head>
 <body>
   <!-- Navigation -->
@@ -300,7 +310,7 @@
       <ul>
         <li><strong>To improve our website:</strong> Analytics data helps us understand which guides and tools are most useful</li>
         <li><strong>To respond to inquiries:</strong> Contact form submissions are used only to answer your questions</li>
-        <li><strong>To serve relevant ads:</strong> We use Google AdSense to display ads (see Section 4 below)</li>
+        <li><strong>To respond to WhatsApp enquiries:</strong> Messages you start from the site reach us directly</li>
         <li><strong>To ensure security:</strong> IP addresses and server logs help us prevent abuse and maintain site security</li>
       </ul>
       <p><strong>We do not sell, rent, or share your personal information with third parties</strong> except as required by law or as described in this policy.</p>
@@ -316,12 +326,16 @@
       <h3>Types of Cookies We Use</h3>
       <ul>
         <li><strong>Essential Cookies:</strong> Required for basic site functionality</li>
-        <li><strong>Analytics Cookies (Google Analytics):</strong> Track how visitors use our site to help us improve</li>
-        <li><strong>Advertising Cookies (Google AdSense):</strong> Used to serve relevant ads</li>
+        <li><strong>Analytics Cookies (Google Analytics 4):</strong> Track how visitors use our site to help us improve. These are set only after you accept them</li>
       </ul>
 
-      <h3>How to Control Cookies</h3>
-      <p>You can control or disable cookies through your browser settings. Note that disabling cookies may affect your experience on our site. To learn more about cookies and how to manage them, visit <a href="https://www.aboutcookies.org" target="_blank" style="color: var(--secondary);">aboutcookies.org</a>.</p>
+      <p>We do not run advertising on this site and we set no advertising cookies.</p>
+
+      <h3>Your Consent Comes First</h3>
+      <p>Analytics cookies are <strong>denied by default</strong>. When you first visit, a banner asks whether you accept them, and nothing non-essential is stored until you choose. Declining is a single click and is as easy as accepting. If you decline, the site works exactly the same; we simply receive no analytics about your visit.</p>
+
+      <h3>How to Change Your Mind</h3>
+      <p>Your choice is remembered in your browser. To change it, clear this site's data in your browser settings and the banner will appear again on your next visit. To learn more about cookies generally, visit <a href="https://www.aboutcookies.org" target="_blank" style="color: var(--secondary);">aboutcookies.org</a>.</p>
     </section>
 
     <!-- Third-Party Services -->
@@ -337,9 +351,10 @@
       </ul>
       <p>Google Analytics uses cookies to collect this data. For more information, see <a href="https://policies.google.com/privacy" target="_blank" style="color: var(--secondary);">Google's Privacy Policy</a>.</p>
 
-      <h3>Google AdSense</h3>
-      <p>We use Google AdSense to display ads on our website. Google may use cookies to serve ads based on your browsing activity across websites. You can opt out of personalized ads by visiting <a href="https://www.google.com/settings/ads" target="_blank" style="color: var(--secondary);">Google Ads Settings</a>.</p>
       <p>Learn more about how Google uses data when you use our site: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" style="color: var(--secondary);">Google Partner Sites</a>.</p>
+
+      <h3>Advertising</h3>
+      <p>We do not display ads on this site and we are not part of any advertising network. No ad or profiling cookies are set.</p>
 
       <h3>External Links</h3>
       <p>Our website may contain links to external websites (e.g., Booking.com, MakeMyTrip, OnlineHotelier.com). We are not responsible for the privacy practices of these third-party sites. We encourage you to review their privacy policies.</p>
@@ -363,7 +378,7 @@
         <li><strong>Access:</strong> You can request information about the data we hold about you (if any)</li>
         <li><strong>Correction:</strong> You can request that we correct any inaccurate information</li>
         <li><strong>Deletion:</strong> You can request that we delete your information (e.g., contact form submissions)</li>
-        <li><strong>Opt-Out:</strong> You can opt out of cookies through your browser settings or opt out of personalized ads via Google Ads Settings</li>
+        <li><strong>Withdraw consent:</strong> Analytics cookies are denied until you accept them, and declining the banner costs one click. To change a choice you already made, clear this site's data in your browser and the banner will ask again</li>
       </ul>
       <p>To exercise any of these rights, contact us at: <a href="https://www.onlinehotelier.com/contact" target="_blank" style="color: var(--secondary);">Contact Us</a></p>
     </section>
@@ -435,5 +450,6 @@
   </footer>
   <script src="/js/wa-widget.js"></script>
   <script src="/js/tools-widget.js"></script>
+  <script src="/js/consent.js"></script>
 </body>
 </html>
