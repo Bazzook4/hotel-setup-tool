@@ -32,14 +32,15 @@ worth correcting in stream settings.
 WhatsApp is the primary conversion. Before this, no custom events existed at all,
 so enquiries were invisible in Analytics.
 
-Fires from `src/public/js/wa-widget.js` (site-wide floating widget) and
-`src/public/contact/index.html` (contact page). Marked as a key event in GA4.
+Fires from `src/public/js/wa-widget.js` (site-wide floating widget),
+`src/public/contact/index.html` (contact page) and
+`src/public/services/hotel-pms/index.html` (its direct wa.me CTAs). Marked as a key event in GA4.
 
 Each event carries three parameters, registered as Event-scoped custom dimensions:
 
 | Dimension | Parameter | What it answers |
 |---|---|---|
-| WA Action | `wa_action` | Which button: `widget_open`, `widget_form`, `contact_form`, `contact_direct` |
+| WA Action | `wa_action` | Which button: `widget_open`, `widget_form`, `contact_form`, `contact_direct`, `pms_direct` (pre-filled wa.me CTAs on `/services/hotel-pms/`) |
 | WA Service | `wa_service` | Which service they picked in the dropdown, blank if none |
 | WA Page | `page_path` | Which page they were reading when they clicked |
 

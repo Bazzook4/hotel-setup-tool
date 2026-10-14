@@ -539,4 +539,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Hotel PMS service -->
+  <url>
+    <loc>https://www.onlinehotelier.com/services/hotel-pms/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
