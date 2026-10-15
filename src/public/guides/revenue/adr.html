@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2N1S6S9F"></script>
+  <!-- Consent defaults. Must run BEFORE the GA4 loader: once gtag/js has
+       executed with storage allowed, the cookie is already written. Denied
+       until the visitor accepts via the banner in /js/consent.js. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2N1S6S9F"></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-9L2N1S6S9F');
   </script>
@@ -26,8 +37,6 @@
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
-  <meta name="google-adsense-account" content="ca-pub-6118286051054894">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -229,6 +238,7 @@
   <meta name="twitter:description" content="ADR full form in hotel is Average Daily Rate: revenue per occupied room per night. Formula, India benchmarks by category, and how to tell if your ADR is right.">
   <meta name="twitter:image" content="https://www.onlinehotelier.com/og-image.png">
   <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/consent.css">
 </head>
 <body>
   <nav id="site-nav"></nav>
@@ -371,7 +381,7 @@
         <li><strong>Dynamic Pricing:</strong> Raise rates when demand is strong</li>
       </ol>
 
-      <p>Rate parity and segment mix both depend on where you sell. A <a href="/services/hotel-website/" style="color: var(--secondary);">direct booking website</a> that holds the same rate as your OTA listings protects ADR and keeps the commission, and a free <a href="/services/ota-audit/" style="color: var(--secondary);">OTA listing audit</a> shows which channel is dragging your average down before you start changing prices.</p>
+      <p>Rate parity and segment mix both depend on where you sell. A <a href="/guides/software/booking-engine.html" style="color: var(--secondary);">direct booking website</a> that holds the same rate as your OTA listings protects ADR and keeps the commission, and a free <a href="/services/ota-audit/" style="color: var(--secondary);">OTA listing audit</a> shows which channel is dragging your average down before you start changing prices.</p>
 
       <div class="highlight-box tip">
         <strong>Pro Tip:</strong> Track ADR by segment (<a href="/guides/ota/what-is-ota.html" style="color: var(--secondary);">OTA</a>, direct, corporate, walk-in). You'll often find one channel dragging down your overall ADR. Fix that channel specifically.
@@ -608,5 +618,6 @@
   <script src="/guides/js/guide-blocks.js"></script>
   <script src="/js/wa-widget.js"></script>
   <script src="/js/tools-widget.js"></script>
+  <script src="/js/consent.js"></script>
 </body>
 </html>

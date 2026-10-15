@@ -80,6 +80,7 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://www.onlinehotelier.com/sitemap.xml
+Sitemap: https://www.onlinehotelier.com/software/sitemap.xml
 
 # Curated page map for LLMs (llmstxt.org community proposal).
 # Not read by any major AI vendor as of Aug 2026; kept in sync with sitemap.xml.

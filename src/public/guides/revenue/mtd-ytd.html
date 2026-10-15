@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2N1S6S9F"></script>
+  <!-- Consent defaults. Must run BEFORE the GA4 loader: once gtag/js has
+       executed with storage allowed, the cookie is already written. Denied
+       until the visitor accepts via the banner in /js/consent.js. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2N1S6S9F"></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-9L2N1S6S9F');
   </script>
@@ -26,8 +37,6 @@
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
-  <meta name="google-adsense-account" content="ca-pub-6118286051054894">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
     /* Icon system - one line-icon language across the site.
@@ -225,6 +234,7 @@
   <meta name="twitter:description" content="MTD tracks this month's revenue so far. YTD tracks the full year. See a real ₹ example of how Indian hotel owners use these numbers to catch problems early.">
   <meta name="twitter:image" content="https://www.onlinehotelier.com/og-image.png">
   <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/consent.css">
 </head>
 <body>
   <nav id="site-nav"></nav>
@@ -489,7 +499,7 @@
         </table>
       </div>
 
-      <p>Read the channel split alongside these totals. If OTA room nights climb month after month while direct stays flat, your MTD is telling you the commission line will grow with it. A <a href="/services/hotel-website/" style="color: var(--secondary);">direct booking website</a> adds a direct-channel row with no commission deducted, and a free <a href="/services/ota-audit/" style="color: var(--secondary);">OTA listing audit</a> shows whether weak OTA numbers are a visibility problem or a rate problem.</p>
+      <p>Read the channel split alongside these totals. If OTA room nights climb month after month while direct stays flat, your MTD is telling you the commission line will grow with it. A <a href="/guides/software/booking-engine.html" style="color: var(--secondary);">direct booking website</a> adds a direct-channel row with no commission deducted, and a free <a href="/services/ota-audit/" style="color: var(--secondary);">OTA listing audit</a> shows whether weak OTA numbers are a visibility problem or a rate problem.</p>
 
       <p>Reading this report: The hotel is up 16% in revenue vs April last year, driven mainly by higher occupancy (+8 points), not higher rates (+3%). That tells you the demand is there. You might actually be able to charge a little more.</p>
 
@@ -678,5 +688,6 @@
   <script src="/guides/js/guide-blocks.js"></script>
   <script src="/js/wa-widget.js"></script>
   <script src="/js/tools-widget.js"></script>
+  <script src="/js/consent.js"></script>
 </body>
 </html>

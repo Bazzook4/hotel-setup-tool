@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2N1S6S9F"></script>
+  <!-- Consent defaults. Must run BEFORE the GA4 loader: once gtag/js has
+       executed with storage allowed, the cookie is already written. Denied
+       until the visitor accepts via the banner in /js/consent.js. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2N1S6S9F"></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-9L2N1S6S9F');
   </script>
@@ -40,8 +51,6 @@
   <meta name="twitter:description" content="OTAs, direct bookings, channel managers, hotel software. We help Indian hoteliers understand the options and choose what fits.">
 
   <!-- Google AdSense -->
-  <meta name="google-adsense-account" content="ca-pub-6118286051054894">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -634,6 +643,7 @@
   <!-- Open Graph / Twitter -->
   <meta name="twitter:image" content="https://www.onlinehotelier.com/og-image.png">
   <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/consent.css">
 </head>
 <body>
   <!-- Navigation (shared component) -->
@@ -733,7 +743,7 @@
               <a href="/guides/ota/hotel-direct-booking-strategy.html">Direct booking strategy</a>
               <a href="/guides/software/booking-engine.html">Booking engines explained</a>
               <a href="/guides/ota/google-free-booking-links.html">Google free booking links</a>
-              <a href="/services/hotel-website/" class="is-service">Have us build your website</a>
+              <a href="/software/booking-engine/" class="is-service">Help choosing a booking engine</a>
             </div>
           </div>
           <div class="area-aside">
@@ -875,11 +885,11 @@
         </a>
 
 
-        <a href="/services/hotel-website/" class="dfy-item">
-          <div class="dfy-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"/></svg></div>
+        <a href="/software/" class="dfy-item">
+          <div class="dfy-icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
           <div>
-            <h3>Hotel Website</h3>
-            <p>A clean, fast marketing website for your property. Guest enquiries come straight to your WhatsApp. From ₹15,000, live in 7 days.</p>
+            <h3>Help Choosing Hotel Software</h3>
+            <p>Channel manager, PMS, booking engine or RMS. Compare the companies serving Indian hotels, and we help you shortlist the ones that fit your property.</p>
           </div>
         </a>
 
@@ -1015,5 +1025,6 @@
   </footer>
   <script src="/js/wa-widget.js"></script>
   <script src="/js/tools-widget.js"></script>
+  <script src="/js/consent.js"></script>
 </body>
 </html>

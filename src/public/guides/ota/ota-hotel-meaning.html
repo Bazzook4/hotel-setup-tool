@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2N1S6S9F"></script>
+  <!-- Consent defaults. Must run BEFORE the GA4 loader: once gtag/js has
+       executed with storage allowed, the cookie is already written. Denied
+       until the visitor accepts via the banner in /js/consent.js. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2N1S6S9F"></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-9L2N1S6S9F');
   </script>
@@ -24,8 +35,6 @@
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <meta name="google-adsense-account" content="ca-pub-6118286051054894">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
@@ -299,6 +308,7 @@
   <meta name="twitter:description" content="OTA means Online Travel Agency. For hotel owners: what MakeMyTrip, Goibibo and Booking.com actually charge you, and when an OTA booking beats a direct one.">
   <meta name="twitter:image" content="https://www.onlinehotelier.com/og-image.png">
   <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/consent.css">
 </head>
 <body>
   <nav id="site-nav"></nav>
@@ -571,7 +581,7 @@
 
           <p>This is why hotels with a working <a href="/guides/ota/hotel-direct-booking-strategy.html" style="color: var(--secondary);">direct booking strategy</a> are consistently more profitable than those that rely entirely on OTAs. The OTA is a customer-acquisition channel, not a business model.</p>
 
-          <p>Capturing that ₹900 needs somewhere for the guest to land once they have found your property name. If you do not have a website yet, we build a <a href="/services/hotel-website/" style="color: var(--secondary);">marketing site with a WhatsApp enquiry form</a> in 7 days, so enquiries reach you directly instead of through a channel that takes a cut.</p>
+          <p>Capturing that ₹900 needs somewhere for the guest to land once they have found your property name. If you do not have a website yet, a simple site with a WhatsApp enquiry button is enough to start, so enquiries reach you directly instead of through a channel that takes a cut. Our software directory lists <a href="/software/hotel-website-builder/" style="color: var(--secondary);">hotel website builders</a> to compare.</p>
 
           <!-- Section 7: When OTAs Help or Hurt -->
           <h2 id="when-otas-help">When OTAs Help Your Hotel (And When They Hurt)</h2>
@@ -737,5 +747,6 @@
   <script src="/guides/js/guide-blocks.js"></script>
   <script src="/js/wa-widget.js"></script>
   <script src="/js/tools-widget.js"></script>
+  <script src="/js/consent.js"></script>
 </body>
 </html>

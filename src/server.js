@@ -31,6 +31,17 @@ app.use((req, res, next) => {
 
 app.use(express.static(join(__dirname, 'public')));
 
+// Software directory: same handler Vercel runs for the /software/ rewrites.
+import softwareHandler from '../api/software.js';
+const software = (route) => (req, res) => {
+  req.query = { ...req.query, route, slug: req.params.slug };
+  return softwareHandler(req, res);
+};
+app.get('/software/', software('home'));
+app.get('/software/sitemap.xml', software('sitemap'));
+app.get('/software/vendor/:slug/', software('vendor'));
+app.get('/software/:slug/', software('category'));
+
 // API: Calculate Occupancy Pricing Slabs
 app.post('/api/occupancy/calculate', (req, res) => {
   const { inventory, usualOccupancy, peakOccupancy, baseRate, maxRate } = req.body;

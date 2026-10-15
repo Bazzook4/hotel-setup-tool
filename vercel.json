@@ -119,57 +119,57 @@
     },
     {
       "source": "/hotel-website-development",
-      "destination": "/services/hotel-website/",
+      "destination": "/software/hotel-website-builder/",
       "statusCode": 301
     },
     {
       "source": "/hotel-website-development/",
-      "destination": "/services/hotel-website/",
+      "destination": "/software/hotel-website-builder/",
       "statusCode": 301
     },
     {
       "source": "/services/hotel-website-themes/heritage",
-      "destination": "/services/hotel-website/heritage/",
+      "destination": "/software/hotel-website-builder/",
       "statusCode": 301
     },
     {
       "source": "/services/hotel-website-themes/heritage/",
-      "destination": "/services/hotel-website/heritage/",
+      "destination": "/software/hotel-website-builder/",
       "statusCode": 301
     },
     {
       "source": "/services/hotel-website-themes/coastal",
-      "destination": "/services/hotel-website/coastal/",
+      "destination": "/software/hotel-website-builder/",
       "statusCode": 301
     },
     {
       "source": "/services/hotel-website-themes/coastal/",
-      "destination": "/services/hotel-website/coastal/",
+      "destination": "/software/hotel-website-builder/",
       "statusCode": 301
     },
     {
       "source": "/services/hotel-website-themes/business",
-      "destination": "/services/hotel-website/business/",
+      "destination": "/software/hotel-website-builder/",
       "statusCode": 301
     },
     {
       "source": "/services/hotel-website-themes/business/",
-      "destination": "/services/hotel-website/business/",
+      "destination": "/software/hotel-website-builder/",
       "statusCode": 301
     },
     {
       "source": "/services/hotel-website-themes",
-      "destination": "/services/hotel-website/",
+      "destination": "/software/hotel-website-builder/",
       "statusCode": 301
     },
     {
       "source": "/services/hotel-website-themes/",
-      "destination": "/services/hotel-website/",
+      "destination": "/software/hotel-website-builder/",
       "statusCode": 301
     },
     {
       "source": "/services/hotel-website-themes/:path*",
-      "destination": "/services/hotel-website/",
+      "destination": "/software/hotel-website-builder/",
       "statusCode": 301
     },
     {
@@ -204,17 +204,17 @@
     },
     {
       "source": "/services/direct-booking-website",
-      "destination": "/services/hotel-website/",
+      "destination": "/software/booking-engine/",
       "statusCode": 301
     },
     {
       "source": "/services/direct-booking-website/",
-      "destination": "/services/hotel-website/",
+      "destination": "/software/booking-engine/",
       "statusCode": 301
     },
     {
       "source": "/services/direct-booking-website/:path*",
-      "destination": "/services/hotel-website/",
+      "destination": "/software/booking-engine/",
       "statusCode": 301
     },
     {
@@ -309,7 +309,7 @@
     },
     {
       "source": "/post/building-trust-with-online-visitors-how-your-hotel-website-can-boost-bookings",
-      "destination": "/services/hotel-website/",
+      "destination": "/software/hotel-website-builder/",
       "statusCode": 301
     },
     {
@@ -356,9 +356,55 @@
       "source": "/results.html",
       "destination": "/tools/revenue-management-results/",
       "statusCode": 301
+    },
+    {
+      "source": "/services/hotel-website",
+      "destination": "/software/hotel-website-builder/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/hotel-website/",
+      "destination": "/software/hotel-website-builder/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/hotel-website/:path*",
+      "destination": "/software/hotel-website-builder/",
+      "statusCode": 301
+    },
+    {
+      "source": "/software",
+      "destination": "/software/",
+      "statusCode": 301
+    },
+    {
+      "source": "/software/vendor/:slug([a-z0-9-]+)",
+      "destination": "/software/vendor/:slug/",
+      "statusCode": 301
+    },
+    {
+      "source": "/software/:slug([a-z0-9-]+)",
+      "destination": "/software/:slug/",
+      "statusCode": 301
     }
   ],
   "rewrites": [
+    {
+      "source": "/software/",
+      "destination": "/api/software?route=home"
+    },
+    {
+      "source": "/software/sitemap.xml",
+      "destination": "/api/software?route=sitemap"
+    },
+    {
+      "source": "/software/vendor/:slug/",
+      "destination": "/api/software?route=vendor&slug=:slug"
+    },
+    {
+      "source": "/software/:slug/",
+      "destination": "/api/software?route=category&slug=:slug"
+    },
     {
       "source": "/api/:path*",
       "destination": "/api/:path*"

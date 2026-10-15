@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2N1S6S9F"></script>
+  <!-- Consent defaults. Must run BEFORE the GA4 loader: once gtag/js has
+       executed with storage allowed, the cookie is already written. Denied
+       until the visitor accepts via the banner in /js/consent.js. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2N1S6S9F"></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-9L2N1S6S9F');
   </script>
@@ -26,8 +37,6 @@
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
-  <meta name="google-adsense-account" content="ca-pub-6118286051054894">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
     /* Icon system - one line-icon language across the site.
@@ -219,6 +228,7 @@
   <meta name="twitter:description" content="RevPAR = ADR × Occupancy. A 30-room hotel at ₹4,000 rate and 75% fill earns ₹3,000 RevPAR. See what's good for your city and how to push it higher.">
   <meta name="twitter:image" content="https://www.onlinehotelier.com/og-image.png">
   <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/consent.css">
 </head>
 <body>
   <nav id="site-nav"></nav>
@@ -365,7 +375,7 @@
             <li><strong>Demand Forecasting:</strong> Predict busy periods and price accordingly</li>
           </ol>
 
-          <p>Channel mix is where most Indian hotels leave RevPAR on the table. A <a href="/services/hotel-website/" style="color: var(--secondary);">direct booking website</a> that undercuts your OTA rate moves volume to a zero-commission channel, so net RevPAR rises even when gross RevPAR holds flat. If occupancy is the constraint instead, widening your <a href="/services/independent-hotel-ota-listing/" style="color: var(--secondary);">OTA listing</a> to platforms you are not on yet adds distribution without adding fixed cost.</p>
+          <p>Channel mix is where most Indian hotels leave RevPAR on the table. A <a href="/guides/software/booking-engine.html" style="color: var(--secondary);">direct booking website</a> that undercuts your OTA rate moves volume to a zero-commission channel, so net RevPAR rises even when gross RevPAR holds flat. If occupancy is the constraint instead, widening your <a href="/services/independent-hotel-ota-listing/" style="color: var(--secondary);">OTA listing</a> to platforms you are not on yet adds distribution without adding fixed cost.</p>
 
           <div class="highlight-box tip">
             <strong>Pro Tip:</strong> Track RevPAR daily, weekly, and monthly. Compare same day last week, same day last year. Look for patterns to optimize your pricing strategy.
@@ -520,5 +530,6 @@
   <script src="/guides/js/guide-blocks.js"></script>
   <script src="/js/wa-widget.js"></script>
   <script src="/js/tools-widget.js"></script>
+  <script src="/js/consent.js"></script>
 </body>
 </html>

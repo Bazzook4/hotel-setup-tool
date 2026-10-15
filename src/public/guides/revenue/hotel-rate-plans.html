@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2N1S6S9F"></script>
+  <!-- Consent defaults. Must run BEFORE the GA4 loader: once gtag/js has
+       executed with storage allowed, the cookie is already written. Denied
+       until the visitor accepts via the banner in /js/consent.js. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2N1S6S9F"></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-9L2N1S6S9F');
   </script>
@@ -34,8 +45,6 @@
   <meta property="og:url" content="https://www.onlinehotelier.com/guides/revenue/hotel-rate-plans.html">
 
   <!-- Google AdSense -->
-  <meta name="google-adsense-account" content="ca-pub-6118286051054894">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6118286051054894" crossorigin="anonymous"></script>
 
   <!-- Article Schema -->
   <script type="application/ld+json">
@@ -646,6 +655,7 @@
   <meta name="twitter:description" content="Set up EP, CP, MAP and AP rate plans on MakeMyTrip and Booking.com. Pricing formulas, RO BB HB FB codes, GST rules and commission maths for Indian hotels.">
   <meta name="twitter:image" content="https://www.onlinehotelier.com/og-image.png">
   <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/consent.css">
 </head>
 <body>
   <!-- Navigation -->
@@ -1205,8 +1215,8 @@
           <div style="background: linear-gradient(135deg, #3E3D35 0%, #6E6959 100%); border-radius: 12px; padding: 1.75rem 2rem; margin: 2rem 0; color: white;">
             <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; margin-bottom: 0.4rem;">Keep More of Each Booking</div>
             <div style="font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem;">Sell the Same Plans Without the Commission</div>
-            <p style="color: #fff; opacity: 0.92; margin-bottom: 1.25rem; font-size: 0.95rem;">Every CP and MAP booking through an OTA costs you 15 to 18% on the meal component too. The same plans on your own website cost you nothing. We build the site and connect the booking engine.</p>
-            <a href="/services/hotel-website/" style="display: inline-block; background: white; color: #3E3D35; padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.95rem;">See Website Service →</a>
+            <p style="color: #fff; opacity: 0.92; margin-bottom: 1.25rem; font-size: 0.95rem;">Every CP and MAP booking through an OTA costs you 15 to 18% on the meal component too. The same plans sold through a booking engine on your own website carry no commission. Compare booking engines built for Indian hotels, or ask us which one fits your property.</p>
+            <a href="/software/booking-engine/" style="display: inline-block; background: white; color: #3E3D35; padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.95rem;">Compare Booking Engines →</a>
           </div>
 
         
@@ -1264,5 +1274,6 @@
   <script src="/guides/js/guide-blocks.js"></script>
   <script src="/js/wa-widget.js"></script>
   <script src="/js/tools-widget.js"></script>
+  <script src="/js/consent.js"></script>
 </body>
 </html>
