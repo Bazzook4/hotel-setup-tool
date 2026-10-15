@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Consent defaults. Must run BEFORE the GA4 loader: once gtag/js has
+       executed with storage allowed, the cookie is already written. Denied
+       until the visitor accepts via the banner in /js/consent.js. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2N1S6S9F"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-9L2N1S6S9F');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List Your Hotel on Agoda: Registration Guide | OnlineHotelier</title>
+  <meta name="description" content="How to list your hotel on Agoda: sign-up steps, documents, Agoda Partner Portal setup, approval time, photo tips, and TDS on payouts for Indian hotels.">
+  <meta name="keywords" content="list hotel on Agoda, Agoda hotel registration India, Agoda partner sign up, Agoda YCS login, how to register hotel on Agoda, add my hotel to Agoda, Agoda partner portal India, Agoda listing approval time, Agoda TDS deduction hotels, Agoda listing tips India">
+  <link rel="canonical" href="https://www.onlinehotelier.com/guides/ota/agoda-hotel-listing.html">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/guides/css/guide-layout.css">
+  <!-- AI/LLM Crawler Meta Tags -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+    /* Icon system - one line-icon language across the site.
+       Size is always explicit: containers are usually flex boxes that were
+       sized for an emoji glyph, and an SVG child would otherwise stretch to
+       fill them. Colour is always inherited, so an icon takes the colour of
+       whatever it sits in; a tile with a dark fill sets its own colour and
+       the icon follows. Never hardcode a colour per container here - that
+       breaks the moment the same class is used on a different background. */
+    .oh-icon {
+      width: 1.5rem; height: 1.5rem;
+      min-width: 1.5rem; min-height: 1.5rem;
+      flex: 0 0 auto; align-self: center;
+      display: inline-block; vertical-align: middle;
+      color: inherit;
+    }
+    /* Default tone wherever nothing else sets a colour. */
+    .oh-icon { color: var(--secondary, #89826E); }
+    /* Inside a decorated tile the icon sits larger and takes the tile's colour. */
+    .tool-icon > .oh-icon, .area-icon > .oh-icon, .dfy-icon > .oh-icon,
+    .service-icon > .oh-icon, .category-icon > .oh-icon, .card-icon > .oh-icon,
+    .feature-icon > .oh-icon, .value-icon > .oh-icon, .why-icon > .oh-icon,
+    .insight-icon > .oh-icon, .resource-icon > .oh-icon, .pattern-icon > .oh-icon,
+    .section-icon > .oh-icon, .rec-icon > .oh-icon, .source-icon > .oh-icon,
+    .bs-amenity-icon > .oh-icon, .expand-icon > .oh-icon {
+      width: 1.75rem; height: 1.75rem;
+      min-width: 1.75rem; min-height: 1.75rem;
+      color: inherit;
+    }
+    /* Tinted tiles: keep the dark brand stroke against a pale fill. */
+    .tool-icon, .area-icon, .category-icon, .dfy-icon, .service-icon {
+      color: var(--primary, #3E3D35);
+    }
+    h2 .oh-icon, h3 .oh-icon {
+      width: 1.15em; height: 1.15em;
+      min-width: 1.15em; min-height: 1.15em;
+      margin-right: 0.5rem; position: relative; top: -0.05em;
+      color: inherit;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Avenir', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #F8F8F4; color: #3E3D35; line-height: 1.7; }
+    :root { --primary: #3E3D35; --secondary: #89826E; --accent: #89826E; --secondary-light: rgba(137, 130, 110, 0.1); --accent-light: rgba(137, 130, 110, 0.2); --primary-light: rgba(62,61,53,0.08); }
+    .nav { background: #3E3D35; padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .nav-logo { font-size: 1.3rem; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: -0.02em; }
+    .nav-logo span { color: #89826E; font-weight: 400; }
+    .nav-links { display: flex; gap: 0.25rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: rgba(255,255,255,0.65); font-weight: 500; font-size: 0.9rem; padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,0.08); }
+    .breadcrumb { background: white; padding: 1rem 2rem; border-bottom: 1px solid #eee; }
+    .breadcrumb-container { max-width: 900px; margin: 0 auto; font-size: 0.9rem; color: #666; }
+    .breadcrumb a { color: var(--secondary); text-decoration: none; }
+    .article-container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    .article-header { margin-bottom: 2rem; }
+    .article-header h1 { font-size: 2.25rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.3; }
+    .article-meta { display: flex; gap: 1.5rem; color: #666; font-size: 0.9rem; }
+    .article-content { background: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.07); }
+    .article-content h2 { font-size: 1.5rem; color: var(--primary); margin: 2rem 0 1rem; padding-top: 1rem; border-top: 1px solid #eee; }
+    .article-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .article-content h3 { font-size: 1.15rem; color: var(--primary); margin: 1.5rem 0 0.75rem; }
+    .article-content p { margin-bottom: 1rem; color: #444; }
+    .article-content ul, .article-content ol { margin: 1rem 0 1.5rem 1.5rem; color: #444; }
+    .article-content li { margin-bottom: 0.5rem; }
+    .quick-answer { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; }
+    .quick-answer h2 { color: white !important; border: none !important; margin: 0 0 1rem 0 !important; padding: 0 !important; font-size: 1.3rem; }
+    .quick-answer .big-text { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    /* Scoped past .article-content p (0,1,1), which would otherwise tie and
+       leave this dark panel's copy at #444 on a dark ground if source order
+       ever changed. See memory/guide-template.md section 7. */
+    .article-content .quick-answer p, .quick-answer p { color: white; }
+    .highlight-box { background: var(--secondary-light); border-left: 4px solid var(--secondary); padding: 1.25rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; color: var(--primary); }
+    .highlight-box.tip { background: var(--accent-light); border-left-color: var(--accent); }
+    .highlight-box.warning { background: var(--primary-light); border-left-color: var(--primary); }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+    .comparison-table th, .comparison-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
+    .comparison-table th { background: var(--primary); color: white; }
+    .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+    .step-box { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border-left: 4px solid var(--secondary); }
+    .step-box h4 { color: var(--primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+    .step-box h4 .step-num { background: var(--secondary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; }
+    .nav-cta { background: rgba(137, 130, 110, 0.25) !important; color: #fff !important; border: 1px solid rgba(137, 130, 110, 0.4); }
+    .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+    @media (max-width: 768px) { .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #3E3D35; flex-direction: column; padding: 1rem; gap: 0.25rem; } .nav-links.open { display: flex; } .nav-toggle { display: block; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } }
+    /* Tables carry longer cell copy on this guide than the grid can fit at
+       phone widths. Let each one scroll inside its own box rather than push
+       the page sideways; -webkit-overflow-scrolling keeps it smooth on iOS. */
+    @media (max-width: 768px) {
+      .comparison-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; }
+      .comparison-table td, .comparison-table th { white-space: normal; min-width: 9rem; }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Agoda Hotel Registration: How to List Your Hotel on Agoda",
+  "description": "Step-by-step guide to Agoda hotel registration: documents, partner sign-up, listing setup, photo tips, TDS on payouts, and first 30 days in the Agoda Partner Portal.",
+  "author": {
+    "@type": "Organization",
+    "name": "OnlineHotelier"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OnlineHotelier",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.onlinehotelier.com/favicon.png"
+    }
+  },
+  "mainEntityOfPage": "https://www.onlinehotelier.com/guides/ota/agoda-hotel-listing.html",
+  "datePublished": "2026-10-15",
+  "dateModified": "2026-10-15"
+}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"OnlineHotelier","url":"https://www.onlinehotelier.com","logo":"https://www.onlinehotelier.com/favicon.png","sameAs":["https://www.onlinehotelier.com"]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.onlinehotelier.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://www.onlinehotelier.com/guides/"},{"@type":"ListItem","position":3,"name":"OTA","item":"https://www.onlinehotelier.com/guides/ota/"},{"@type":"ListItem","position":4,"name":"Agoda Hotel Listing","item":"https://www.onlinehotelier.com/guides/ota/agoda-hotel-listing.html"}]}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Register and List Your Hotel on Agoda",
+  "description": "Sign up at agoda.com/list-my-property, complete fraud validation, build your listing in the Agoda Partner Portal, load rates, and go live.",
+  "totalTime": "P5D",
+  "estimatedCost": {"@type": "MonetaryAmount", "currency": "INR", "value": "0"},
+  "supply": [
+    {"@type": "HowToSupply", "name": "GSTIN certificate (if GST-registered)"},
+    {"@type": "HowToSupply", "name": "PAN card"},
+    {"@type": "HowToSupply", "name": "Bank account details matching the PAN"},
+    {"@type": "HowToSupply", "name": "Hotel registration or trade licence"},
+    {"@type": "HowToSupply", "name": "Property photos: jpg or png, min 800x600px, max 4 MB each"}
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Start your application at agoda.com/list-my-property",
+      "text": "Go to agoda.com/list-my-property and sign in or create an Agoda account. Choose \"Create listing manually\" to enter your property details directly, or 'Import listings from other travel sites' if you are already on Airbnb or Booking.com. Enter your property name, city, address, room count and contact details.",
+      "url": "https://www.onlinehotelier.com/guides/ota/agoda-hotel-listing.html#how-to-list-hotel-agoda"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Complete fraud validation and sign the contract",
+      "text": "Agoda puts new listings through a fraud validation step that typically takes up to 72 hours, during which the listing is offline. Once cleared, you sign the Agoda partner contract. Have your PAN, GSTIN (if registered), bank account details and trade licence ready for this stage.",
+      "url": "https://www.onlinehotelier.com/guides/ota/agoda-hotel-listing.html#how-to-list-hotel-agoda"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Build your property listing in the Partner Portal",
+      "text": "Log in to the Agoda Partner Portal at portal.agoda.com. Complete your property profile: room types, amenities, check-in policy, cancellation terms, and photos. Incomplete listings rank lower in Agoda search results.",
+      "url": "https://www.onlinehotelier.com/guides/ota/agoda-hotel-listing.html#how-to-list-hotel-agoda"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Load rates and availability",
+      "text": "Set your rates for each room type and open inventory for the dates you want to sell. Use the Partner Portal directly, or connect a channel manager to push rates automatically.",
+      "url": "https://www.onlinehotelier.com/guides/ota/agoda-hotel-listing.html#how-to-list-hotel-agoda"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Go live and monitor performance",
+      "text": "Your listing goes live once content and rates are complete and Agoda's review is done. Monitor ranking, review score, and bookings from the Agoda Partner Portal at portal.agoda.com.",
+      "url": "https://www.onlinehotelier.com/guides/ota/agoda-hotel-listing.html#how-to-list-hotel-agoda"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+      {
+        "@type": "Question",
+        "name": "How do I list my hotel on Agoda?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Go to agoda.com/list-my-property and sign in or create an account. Choose \"Create listing manually\" or import from Airbnb or Booking.com. Agoda runs a fraud validation step that typically takes up to 72 hours, after which you sign the partner contract. Then complete your listing in the Agoda Partner Portal at portal.agoda.com with room types, photos and policies, load your rates, and go live."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does Agoda listing approval take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Agoda's fraud validation step typically takes up to 72 hours, during which the listing is offline. After that you sign the contract, complete your listing content, and load rates. Allow a few days to a week in total from sign-up to going live; budget about two weeks to your first booking."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What documents are needed to register on Agoda?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Agoda does not publish a fixed document checklist, but keep these ready: PAN card, GSTIN certificate (if you are GST-registered), bank account details with the account name matching your PAN, hotel registration or trade licence, and property photos in jpg or png format at 800x600px minimum and max 4 MB each."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Agoda hotel registration free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Agoda charges no joining fee, no annual listing fee, and no sign-up cost. You pay commission only on bookings that come through the platform. Indian independent hotels typically sit in the 15 to 22 percent commission band."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a homestay or guest house register on Agoda?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Agoda accepts hotels, guest houses, homestays, villas, apartments, and resorts. There is no minimum room count. You need a valid trade licence or state tourism registration, a GSTIN (or a declaration if below the GST threshold), and a bank account matching your PAN."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Agoda YCS, and is it the same as the Partner Portal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "YCS (Yield and Channel System) is Agoda's long-standing partner extranet, still referenced in many Agoda help articles and by hoteliers who have been on the platform for years. Newer accounts manage listings in the Agoda Partner Portal at portal.agoda.com. Both systems give you the same core functions: rates, availability, reservations, promotions and finance. If your account was set up on YCS, log in at ycs.agoda.com; if it was created through the newer list-my-property flow, log in at portal.agoda.com."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is TDS deducted on Agoda payouts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Agoda deducts TDS at 0.1% of the gross booking value under Section 194-O of the Income Tax Act. On a ₹3,000 booking, that is ₹3. This amount is deposited with the government under your PAN and appears in your Form 26AS and AIS, where you can claim it as a credit when filing your income tax return. Provide your accurate PAN during registration so the credit reaches you. For GST treatment on Agoda settlements, consult your CA."
+        }
+      }
+    ]}
+  </script>
+  <script src="/js/nav.js"></script>
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="List Your Hotel on Agoda: Registration Guide | OnlineHotelier">
+  <meta property="og:description" content="How to list your hotel on Agoda: sign-up steps, documents, Agoda Partner Portal setup, approval time, photo tips, and TDS on payouts for Indian hotels.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.onlinehotelier.com/guides/ota/agoda-hotel-listing.html">
+  <meta property="og:site_name" content="OnlineHotelier">
+  <meta property="og:image" content="https://www.onlinehotelier.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="OnlineHotelier: practical guides for Indian hoteliers">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="List Your Hotel on Agoda: Registration Guide | OnlineHotelier">
+  <meta name="twitter:description" content="How to list your hotel on Agoda: sign-up steps, documents, Agoda Partner Portal setup, approval time, photo tips, and TDS on payouts for Indian hotels.">
+  <meta name="twitter:image" content="https://www.onlinehotelier.com/og-image.png">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/consent.css">
+</head>
+<body>
+  <nav id="site-nav"></nav>
+  <div class="sidebar-overlay"></div>
+  <button class="sidebar-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+  <div class="guide-page-layout has-toc">
+    <aside class="guide-sidebar"></aside>
+    <div class="guide-main-content">
+
+      <div class="breadcrumb">
+        <div class="breadcrumb-container">
+          <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; <a href="/guides/ota/">OTA</a> &rsaquo; Agoda Hotel Listing
+        </div>
+      </div>
+
+      <article class="article-container">
+        <header class="article-header">
+          <h1>Agoda Hotel Registration: How to List Your Hotel on Agoda</h1>
+          <div class="article-meta">
+            <span>By OnlineHotelier Insights Team</span>
+            <span>Updated October 2026</span>
+            <span>8 min read</span>
+          </div>
+        </header>
+
+        <div class="article-content">
+          <div class="quick-answer">
+            <h2 id="agoda-registration-in-short">Agoda Hotel Registration in Short</h2>
+            <div class="big-text">Register free at agoda.com/list-my-property, live within a few days</div>
+            <p>Listing your hotel on Agoda costs nothing to start. You apply at agoda.com/list-my-property, Agoda runs a fraud validation that typically takes up to 72 hours, then you sign the contract, build your listing in the Agoda Partner Portal, and load your rates. You pay only when a booking comes in, as commission on the booking value. Indian independent hotels typically sit in the 15 to 22 percent band.</p>
+          </div>
+
+          <div class="highlight-box">
+            <strong>New to OTAs?</strong> If this is your first platform listing, read <a href="/guides/ota/what-is-ota.html" style="color: var(--secondary);">what an OTA is and how it works</a> first. It explains commission, extranets and rate parity before you commit to a contract.
+          </div>
+
+          <p>A resort owner in Coorg had been on MakeMyTrip and Booking.com for two years. Both channels were working. Then her Google Analytics showed consistent visitors from Singapore and Thailand, but no bookings from them. She was not listed on Agoda, the dominant platform for Southeast Asian travellers coming to India. She listed in March. By June, two-thirds of her international bookings came through that one channel.</p>
+
+          <p>This guide tells you exactly how to <strong>list your hotel on Agoda</strong>, what documents to keep ready, how to navigate the Agoda Partner Portal, and what to expect on your first settlement.</p>
+
+          <h2 id="agoda-registration-requirements">What You Need Before You Register on Agoda</h2>
+
+          <p>Agoda does not publish a fixed document checklist for India. Keep these ready before you start. You will need them at different points: during sign-up, for the contract, and when Agoda sets up tax deductions on your account.</p>
+
+          <table class="comparison-table">
+            <tr>
+              <th>What to Have Ready</th>
+              <th>Why You Need It</th>
+            </tr>
+            <tr>
+              <td>PAN card</td>
+              <td>Of the hotel entity, or of the proprietor. Required for TDS deduction on payouts; an incorrect PAN means credits do not reach you in Form 26AS.</td>
+            </tr>
+            <tr>
+              <td>GSTIN certificate</td>
+              <td>If your annual turnover crosses the GST threshold. Properties below it can proceed without one.</td>
+            </tr>
+            <tr>
+              <td>Bank account details</td>
+              <td>Account number and IFSC for payout setup. The account name should match the PAN name to avoid payout holds.</td>
+            </tr>
+            <tr>
+              <td>Trade licence or registration</td>
+              <td>Municipal trade licence, shop and establishment certificate, or state tourism registration. Needed to confirm you can legally accept paying guests.</td>
+            </tr>
+            <tr>
+              <td>Property photos</td>
+              <td>Agoda's spec: jpg or png, minimum 800&#215;600px, recommended 2048&#215;1536px, max 4 MB per image. At least one main photo required; photos of each room type strongly recommended.</td>
+            </tr>
+            <tr>
+              <td>Registration fee</td>
+              <td>None. Agoda charges no joining fee and no listing charge. You pay commission only on bookings that come through.</td>
+            </tr>
+          </table>
+
+          <h3>Who Can Register</h3>
+          <p>Agoda accepts hotels, resorts, guest houses, homestays, villas, serviced apartments and boutique properties. There is no minimum room count. Your property needs a physical address, at least one bookable room type, and the legal right to accept paying guests.</p>
+
+          <h2 id="how-to-list-hotel-agoda">How to Register and List Your Hotel on Agoda: Step-by-Step</h2>
+
+          <div class="step-box">
+            <h4><span class="step-num">1</span> Start Your Application</h4>
+            <p>Go to <strong><a href="https://www.agoda.com/list-my-property" target="_blank" rel="noopener" style="color: var(--secondary);">agoda.com/list-my-property</a></strong> and sign in or create an Agoda account. You will be offered two options: "Create listing manually" to enter your property details from scratch, or "Import listings from other travel sites" if you are already on Airbnb or Booking.com. Fill in your property name, city, full address, star rating, room count and contact details.</p>
+            <p>Use an email address and mobile number you will keep long-term. Every booking confirmation, rate alert and payout notice goes there, and changing them later requires a support ticket.</p>
+          </div>
+
+          <div class="step-box">
+            <h4><span class="step-num">2</span> Fraud Validation and Contract</h4>
+            <p>After submitting your property details, Agoda puts every new listing through a fraud validation step. Agoda says this <strong>typically takes up to 72 hours</strong>, during which the listing is offline and not bookable. Once cleared, you sign the Agoda partner contract. Have your PAN, GSTIN (if registered), bank account details and trade licence ready at this point.</p>
+            <p>Agoda may contact your property to verify the address and contact person. Brief whoever answers the phone so they are ready for that call.</p>
+          </div>
+
+          <div class="step-box">
+            <h4><span class="step-num">3</span> Build Your Property Listing</h4>
+            <p>Log in to the Agoda Partner Portal at <strong><a href="https://portal.agoda.com" target="_blank" rel="noopener" style="color: var(--secondary);">portal.agoda.com</a></strong>. Complete your property profile: room types with bed configuration and photos, amenities, check-in and cancellation policies, and a description of 200 or more words with key landmarks and travel distances. Incomplete listings rank lower in Agoda's search results. Fill every field before you load rates.</p>
+          </div>
+
+          <div class="step-box">
+            <h4><span class="step-num">4</span> Load Rates and Availability</h4>
+            <p>Set your rates for each room type and open inventory for the dates you want to sell. You can do this directly in the Partner Portal at portal.agoda.com, or connect a <a href="/guides/software/channel-manager.html" style="color: var(--secondary);"><strong>channel manager</strong></a> to push rates automatically from a single system.</p>
+            <div class="highlight-box tip">
+              <strong>Important:</strong> If you use a <strong>channel manager</strong>, always make rate changes there. Never edit rates manually in the Partner Portal while a <strong>channel manager</strong> is connected. Agoda applies the most recent update, so a manual edit overrides your channel manager sync until the next push. This is the most common cause of Agoda rate discrepancies.
+            </div>
+          </div>
+
+          <div class="step-box">
+            <h4><span class="step-num">5</span> Go Live and Monitor</h4>
+            <p>Your listing goes live once content is complete, rates are loaded, and Agoda's review team approves the property. This can happen within the same day as document approval, or take a day or two longer.</p>
+            <p>Expect a slow first month. New listings carry no reviews, and Agoda ranks unreviewed properties lower. Most properties see volume pick up after the first 5 to 10 reviews.</p>
+          </div>
+
+          <h2 id="agoda-registration-time-cost">How Long Agoda Registration Takes, and What It Costs</h2>
+
+          <p>Here are the honest answers to the two questions that come up before every listing.</p>
+
+          <ul>
+            <li><strong>Time to register.</strong> The sign-up form itself takes 20 to 30 minutes. Agoda's fraud validation step typically takes up to 72 hours, per Agoda's own help pages. After that, contract signing and content setup take another day or two. Budget about a week to go live; allow two weeks to your first booking.</li>
+            <li><strong>Cost to register.</strong> Nothing. No joining fee, no annual fee, no listing charge.</li>
+            <li><strong>Cost to sell.</strong> Commission on each booking. Indian independent hotels typically sit in the 15 to 22 percent band. On a &#8377;3,000 booking at 18 percent, Agoda's share is &#8377;540.</li>
+            <li><strong>Optional programs.</strong> The Agoda Growth Program (AGP) allows you to increase your visibility by paying an additional commission on top of your base rate. This is opt-in and not required at registration.</li>
+          </ul>
+
+          <h3>Why Agoda Applications Get Rejected or Delayed</h3>
+          <ul>
+            <li>Bank account name does not match the PAN name</li>
+            <li>Trade licence expired (the most common single reason)</li>
+            <li>Blurred or cropped document scans</li>
+            <li>Property address does not match the address entered during registration</li>
+            <li>Photos below Agoda's minimum specification (800&#215;600px, max 4 MB, jpg or png only)</li>
+          </ul>
+
+          <h2 id="agoda-ycs">Agoda Partner Portal: First 30 Days</h2>
+
+          <p>The Agoda Partner Portal at <a href="https://portal.agoda.com" target="_blank" rel="noopener" style="color: var(--secondary);">portal.agoda.com</a> is where you manage everything after going live. Agoda's long-standing extranet is called YCS (Yield and Channel System), and many help articles on Agoda's own Partner Hub (partnerhub.agoda.com) still use that name. Hoteliers who have been on Agoda for years may also say "YCS login" out of habit. Both names refer to the same management system: rates, reservations, promotions, content and finance are all there.</p>
+
+          <table class="comparison-table">
+            <tr>
+              <th>Task</th>
+              <th>Where to Find It in Partner Portal</th>
+            </tr>
+            <tr>
+              <td>Update rates and availability</td>
+              <td>Rates and Availability section</td>
+            </tr>
+            <tr>
+              <td>View and manage bookings</td>
+              <td>Reservations tab</td>
+            </tr>
+            <tr>
+              <td>Update photos and property content</td>
+              <td>Property Content section</td>
+            </tr>
+            <tr>
+              <td>View and respond to reviews</td>
+              <td>Reviews section</td>
+            </tr>
+            <tr>
+              <td>Download payout and settlement reports</td>
+              <td>Finance section</td>
+            </tr>
+            <tr>
+              <td>Create promotions and offers</td>
+              <td>Promotions section</td>
+            </tr>
+          </table>
+
+          <h3>Your First 30-Day Priority List</h3>
+          <ul>
+            <li>Confirm your listing is visible on agoda.com by searching in a private browser window</li>
+            <li>Check that the guest-facing rate matches what you loaded (net vs sell rate confusion is common on day one)</li>
+            <li>Set your cancellation policy accurately: an overly permissive free-cancellation cutoff invites high cancellations</li>
+            <li>Reply to your first reviews within 48 hours</li>
+            <li>Avoid stacking multiple promotions in the first month until you understand how they compound</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Going beyond onboarding?</strong> Once you are live and taking bookings, the next step is managing your rates and promotions without causing discrepancies. Read our guide on <a href="/guides/ota/agoda-rate-discrepancy.html" style="color: var(--secondary);">Agoda rate discrepancies: causes and fixes</a> before you start experimenting with promotions.
+          </div>
+
+          <h2 id="agoda-content-photos">Photos and Content That Drive Bookings on Agoda</h2>
+
+          <p>Agoda's search algorithm ranks listings partly on content quality. Properties with stronger content get more impressions. More impressions means more bookings.</p>
+
+          <h3>Photo Specifications and Best Practice</h3>
+          <p>Agoda's published photo requirements: jpg or png format, minimum 800&#215;600px, recommended 2048&#215;1536px, max 4 MB per image. At least one main photo is required to publish the listing, plus photos of the property and of every room type.</p>
+          <ul>
+            <li><strong>Our recommendation: aim for 20 or more photos.</strong> Agoda does not publish a minimum count, but more photos give travellers more confidence and reduce abandoned searches. Cover the property exterior, lobby, every room type with its bathroom, and any key amenity (pool, restaurant, garden, view).</li>
+            <li><strong>Shoot at the recommended resolution</strong> (2048&#215;1536px): images display better on mobile, where most Agoda travellers browse.</li>
+            <li><strong>No watermarks, no text overlays, no heavy filters.</strong> Agoda's content review team rejects these.</li>
+            <li><strong>Caption every photo.</strong> Agoda uses captions to index your property in relevant searches.</li>
+          </ul>
+
+          <h3>Content That Converts</h3>
+          <ul>
+            <li><strong>Property description:</strong> 200 or more words. Mention the nearest airport, railway station, and key landmarks with distances. "10 minutes from Jim Corbett National Park entrance" converts better than "conveniently located".</li>
+            <li><strong>Amenities:</strong> Mark every available amenity accurately. Inaccurate listings generate poor reviews.</li>
+            <li><strong>Room types:</strong> Create a separate room type for each category you sell. Bundling all rooms into one type reduces upsell revenue.</li>
+            <li><strong>Policies:</strong> Specify check-in time, check-out time, child age policy and extra bed charges. Ambiguous policies lead to complaints.</li>
+          </ul>
+
+          <div class="highlight-box tip">
+            <strong>Agoda targets Asian inbound travellers.</strong> If your property is in Goa, Rajasthan, Kerala, or any destination popular with visitors from Singapore, Thailand, South Korea or Japan, Agoda can be a significant channel. Use English in your descriptions but mention local attractions by their common international names, for example "Amber Fort" not just "Amer Kila".
+          </div>
+
+          <p>For side-by-side comparison with other platforms, see <a href="/guides/ota/booking-com-hotel-listing-guide.html" style="color: var(--secondary);">how to list on Booking.com</a>, which targets European and international travellers with a different audience profile.</p>
+
+          <h2 id="agoda-tds">TDS on Agoda Payouts: What Indian Hotels Must Know</h2>
+
+          <p>When Agoda settles a booking with you, it deducts TDS (Tax Deducted at Source) before remitting. This is not an additional cost. It is an advance payment towards your income tax liability, which you get back when you file your annual income tax return.</p>
+
+          <table class="comparison-table">
+            <tr>
+              <th>Deduction</th>
+              <th>Rate</th>
+              <th>On &#8377;3,000 Booking</th>
+            </tr>
+            <tr>
+              <td>TDS (Section 194-O)</td>
+              <td>0.1% of gross booking value</td>
+              <td>&#8377;3</td>
+            </tr>
+          </table>
+
+          <div class="highlight-box warning">
+            <strong>How TDS works in practice:</strong> Agoda deducts TDS at 0.1% from your gross booking value under Section 194-O. On a &#8377;3,000 booking, that is &#8377;3. This amount is deposited with the government under your PAN and appears in your Form 26AS and AIS. Claim it as a credit when filing your income tax return. Provide your accurate PAN during registration; an incorrect PAN means the credit cannot be matched to you. For GST treatment on Agoda settlements, check with your CA.
+          </div>
+
+          <p>On commission: Agoda does not publish a fixed rate; Indian independent hotels typically sit in the 15 to 22 percent band depending on property type and city. For commission mechanics, net vs sell rate, and payout reconciliation, see our guide on <a href="/guides/ota/agoda-rate-discrepancy.html" style="color: var(--secondary);">Agoda rate discrepancy and payout mechanics</a>.</p>
+
+          <p>For TDS on all your OTA settlements, see our <a href="/guides/compliance/tds-tcs.html" style="color: var(--secondary);">TDS guide for OTA payments</a>.</p>
+
+          <div class="guide-audit-cta" role="complementary" aria-label="Agoda listing help">
+            <div class="guide-audit-cta-inner">
+              <div class="guide-audit-cta-eyebrow">Done For You</div>
+              <div class="guide-audit-cta-heading">Want us to list and set up your hotel on Agoda for you?</div>
+              <p class="guide-audit-cta-body">We handle the full Agoda registration: documents, property content, photos, rate setup, and the same on MakeMyTrip and Booking.com. You stay out of the extranet and start taking bookings.</p>
+              <a href="/services/independent-hotel-ota-listing/" class="guide-audit-cta-btn">Get Your Hotel Listed</a>
+            </div>
+          </div>
+
+          <p style="margin-top:1.5rem;">Already listed on Agoda but not getting bookings? Our <a href="/services/ota-audit/" style="color: var(--secondary);">free OTA listing audit</a> checks your Agoda content, rates and photos and tells you exactly what is holding the listing back.</p>
+
+          <div class="explore-tools">
+            <h3>Related Tools &amp; Guides</h3>
+            <div class="tools-grid-mini">
+              <a href="/tools/ota-commission-calculator/" class="tool-link">
+                <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12M6 8h12M15 3c0 4-3 5-6 5l7 8"/></svg></span>
+                <div class="text">
+                  <h4>OTA Commission Calculator</h4>
+                  <p>What you actually keep after Agoda, MMT and Booking.com fees</p>
+                </div>
+              </a>
+              <a href="/tools/rate-shopper/" class="tool-link">
+                <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.4a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"/></svg></span>
+                <div class="text">
+                  <h4>Rate Shopper</h4>
+                  <p>Monitor live competitor rates across OTAs without logging in</p>
+                </div>
+              </a>
+              <a href="/guides/ota/best-ota-for-hotels.html" class="tool-link">
+                <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/><path d="M12 14v4M9 21h6"/></svg></span>
+                <div class="text">
+                  <h4>Top 10 OTAs in India</h4>
+                  <p>Which platforms actually deliver bookings for Indian hotels</p>
+                </div>
+              </a>
+              <a href="/guides/compliance/tds-tcs.html" class="tool-link">
+                <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 8h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg></span>
+                <div class="text">
+                  <h4>TDS &amp; TCS on OTAs</h4>
+                  <p>Tax deducted on your OTA payouts, explained</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <h2 id="faq">Frequently Asked Questions</h2>
+
+          <div class="faq-section">
+            <div class="faq-item" id="faq-how-do-i-list-my-hotel-on-agoda">
+              <div class="faq-question">How do I list my hotel on Agoda?</div>
+              <div class="faq-answer">Go to agoda.com/list-my-property and sign in or create an account. Choose "Create listing manually" or import from Airbnb or Booking.com. Agoda runs a fraud validation step that typically takes up to 72 hours, after which you sign the partner contract. Then complete your listing in the Agoda Partner Portal at portal.agoda.com with room types, photos and policies, load your rates, and go live.</div>
+            </div>
+            <div class="faq-item" id="faq-how-long-does-agoda-listing-approval-take">
+              <div class="faq-question">How long does Agoda listing approval take?</div>
+              <div class="faq-answer">Agoda's fraud validation step typically takes up to 72 hours, during which the listing is offline. After that you sign the contract, complete your listing content, and load rates. Allow a few days to a week in total from sign-up to going live; budget about two weeks to your first booking.</div>
+            </div>
+            <div class="faq-item" id="faq-what-documents-are-needed-to-register-on-agoda">
+              <div class="faq-question">What documents are needed to register on Agoda?</div>
+              <div class="faq-answer">Agoda does not publish a fixed document checklist, but keep these ready: PAN card, GSTIN certificate (if you are GST-registered), bank account details with the account name matching your PAN, hotel registration or trade licence, and property photos in jpg or png format at 800x600px minimum and max 4 MB each.</div>
+            </div>
+            <div class="faq-item" id="faq-is-agoda-hotel-registration-free">
+              <div class="faq-question">Is Agoda hotel registration free?</div>
+              <div class="faq-answer">Yes. Agoda charges no joining fee, no annual listing fee, and no sign-up cost. You pay commission only on bookings that come through the platform. Indian independent hotels typically sit in the 15 to 22 percent commission band.</div>
+            </div>
+            <div class="faq-item" id="faq-can-a-homestay-or-guest-house-register-on-agoda">
+              <div class="faq-question">Can a homestay or guest house register on Agoda?</div>
+              <div class="faq-answer">Yes. Agoda accepts hotels, guest houses, homestays, villas, apartments, and resorts. There is no minimum room count. You need a valid trade licence or state tourism registration, a GSTIN (or a declaration if below the GST threshold), and a bank account matching your PAN.</div>
+            </div>
+            <div class="faq-item" id="faq-what-is-agoda-ycs-partner-portal">
+              <div class="faq-question">What is Agoda YCS, and is it the same as the Partner Portal?</div>
+              <div class="faq-answer">YCS (Yield and Channel System) is Agoda's long-standing partner extranet, still referenced in many Agoda help articles and by hoteliers who have been on the platform for years. Newer accounts manage listings in the Agoda Partner Portal at portal.agoda.com. Both systems give you the same core functions: rates, availability, reservations, promotions and finance. If your account was set up on YCS, log in at ycs.agoda.com; if it was created through the newer list-my-property flow, log in at portal.agoda.com.</div>
+            </div>
+            <div class="faq-item" id="faq-how-is-tds-deducted-on-agoda-payouts">
+              <div class="faq-question">How is TDS deducted on Agoda payouts?</div>
+              <div class="faq-answer">Agoda deducts TDS at 0.1% of the gross booking value under Section 194-O of the Income Tax Act. On a &#8377;3,000 booking, that is &#8377;3. This amount is deposited with the government under your PAN and appears in your Form 26AS and AIS, where you can claim it as a credit when filing your income tax return. Provide your accurate PAN during registration so the credit reaches you. For GST treatment on Agoda settlements, consult your CA.</div>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+    </div>
+    <aside class="guide-toc"></aside>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4>OnlineHotelier</h4>
+        <p>We help Indian hoteliers find their way through the digital side of the business. Free guides, free tools, and hands-on help when you want it. Built from 8+ years of real-world hospitality experience.</p>
+      </div>
+      <div>
+        <h5>Learn</h5>
+        <ul>
+          <li><a href="/guides/ota/">OTA Guides</a></li>
+          <li><a href="/guides/revenue/">Revenue Guides</a></li>
+          <li><a href="/guides/software/">Software Guides</a></li>
+          <li><a href="/guides/">All Guides</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Free Tools</h5>
+        <ul>
+          <li><a href="/tools/ota-commission-calculator/">Commission Calculator</a></li>
+          <li><a href="/tools/ota-dependency-calculator/">OTA Dependency</a></li>
+          <li><a href="/tools/break-even-calculator/">Break-Even Calculator</a></li>
+          <li><a href="/tools/">All Tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Work With Us</h5>
+        <ul>
+          <li><a href="/services/">All Services</a></li>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 OnlineHotelier. All rights reserved.</p>
+      <a href="/">www.onlinehotelier.com</a>
+    </div>
+  </footer>
+  <script src="/guides/js/guide-nav.js"></script>
+  <script src="/guides/js/guide-blocks.js"></script>
+  <script src="/js/wa-widget.js"></script>
+  <script src="/js/tools-widget.js"></script>
+  <script src="/js/consent.js"></script>
+</body>
+</html>
