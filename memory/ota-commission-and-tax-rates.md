@@ -25,6 +25,6 @@ Before 18 Oct 2026 the site said 12-18, 15-20, 15-25, 18-22 and 18-23 on differe
 
 These values change through Finance Acts and GST notifications, so search current sources before republishing any of them. When one changes, grep the whole repo: it appears in body copy, meta descriptions, FAQPage schema (keep it identical to the visible FAQ), comparison tables, worked examples, and the calculator's JS constants (`tools/ota-commission-calculator/`, `tools/break-even-calculator/`). Recompute worked examples; don't just relabel the rate.
 
-The canonical page for this topic is `guides/compliance/tds-tcs.html`. A dedicated MakeMyTrip commission guide is proposed but not built.
+Canonical pages: `guides/ota/makemytrip-commission.html` for MMT commission and net payout, `guides/compliance/tds-tcs.html` for the tax mechanics. Their ₹5,000 worked examples must stay identical (₹4,040 settled).
 
 Related: [[india-hotel-gst-rates]], [[working-practice]], [[published-guides]]

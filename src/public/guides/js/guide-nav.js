@@ -45,6 +45,7 @@ const GUIDE_CATEGORIES = [
       { slug: 'google-free-booking-links.html', title: 'Google Free Booking Links' },
       { slug: 'booking-com-visibility-booster.html', title: 'Booking.com Visibility Booster' },
       { slug: 'makemytrip-hotel-listing.html', title: 'MakeMyTrip Hotel Registration & Listing' },
+      { slug: 'makemytrip-commission.html', title: 'MakeMyTrip Commission for Hotels' },
       { slug: 'agoda-hotel-listing.html', title: 'Agoda Hotel Registration & Listing' },
       { slug: 'agoda-rate-discrepancy.html', title: 'Agoda Rate Discrepancy' },
       { slug: 'hotel-direct-booking-strategy.html', title: 'Hotel Direct Booking Strategy' },
@@ -298,6 +299,11 @@ const RELATED_CONTENT = {
   ],
 
   // OTA
+  '/guides/ota/makemytrip-commission.html': [
+    { href: '/guides/compliance/tds-tcs.html', title: 'TDS & TCS on OTAs', category: 'Compliance', desc: 'The tax lines on every MMT settlement' },
+    { href: '/guides/ota/makemytrip-hotel-listing.html', title: 'MakeMyTrip Listing Guide', category: 'OTA', desc: 'Register and set up your MMT listing' },
+    { href: '/guides/ota/hotel-direct-booking-strategy.html', title: 'Direct Booking Strategy', category: 'OTA', desc: 'Keep the commission on repeat guests' },
+  ],
   '/guides/ota/makemytrip-hotel-listing.html': [
     { href: '/guides/ota/best-ota-for-hotels.html', title: 'Best OTAs for Hotels', category: 'OTA', desc: 'Compare MMT, Goibibo, Booking.com and Agoda' },
     { href: '/guides/ota/booking-com-hotel-listing-guide.html', title: 'Booking.com Listing Guide', category: 'OTA', desc: 'List on the other channel that matters' },

@@ -36,7 +36,8 @@ Use this reference when creating new guides to identify internal linking opportu
 - **Booking.com Genius Program** (`booking-genius-program.html`) - Requirements, benefits, levels, ROI
 - **Booking.com Hotel Listing** (`booking-com-hotel-listing-guide.html`) - How to list on Booking.com
 - **Booking.com Visibility Booster** (`booking-com-visibility-booster.html`) - Extra commission tool, Preferred Partner, Sponsored Ads comparison
-- **MakeMyTrip Hotel Listing** (`makemytrip-hotel-listing.html`) - Listing and optimising a property on MMT/Goibibo
+- **MakeMyTrip Hotel Listing** (`makemytrip-hotel-listing.html`) - Listing and optimising a property on MMT/Goibibo. Its commission H2 is a short summary that links to the commission guide.
+- **MakeMyTrip Commission for Hotels** (`makemytrip-commission.html`) - Owns the MMT commission query: 15-25% band, ₹5,000 net payout table (₹4,040 settled, ₹3,790 kept), hotel-side costs beyond commission, guest convenience fee, is MMT worth it. Published 18 Oct 2026.
 - **Agoda Hotel Listing** (`agoda-hotel-listing.html`) - How to register and list a hotel on Agoda: sign-up steps, documents, Agoda Partner Portal setup, approval time, photo and content tips, TDS on payouts
 - **Agoda Rate Discrepancy** (`agoda-rate-discrepancy.html`) - Diagnosing and fixing Agoda rate discrepancy: promotion stacking, manual Partner Portal overrides, net vs sell rate, payout reconciliation, AGP and Beds Network
 
