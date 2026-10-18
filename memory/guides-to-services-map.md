@@ -102,8 +102,7 @@ PMS or channel manager: `ota/best-ota-for-hotels`, `revenue/hotel-rate-plans`
 (`#revenue-management`), `revenue/increase-hotel-revenue`,
 `operations/hotel-check-in-process`, `operations/foc-hotel`, `reports/night-audit`,
 and the `/guides/software/` hub intro. The homepage "Done For You" list has a card,
-the shared footer's "Work With Us" column has a "Free Hotel PMS" link on every page
-(including the server-rendered `/software/` directory in `api/software.js`), and the
+the shared footer's "Work With Us" column has a "Free Hotel PMS" link on every page, and the
 JS tool nav and tools widget list it under services.
 
 **Deliberately not linked:** sentences where the link would claim a feature the

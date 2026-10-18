@@ -119,57 +119,57 @@
     },
     {
       "source": "/hotel-website-development",
-      "destination": "/software/hotel-website-builder/",
+      "destination": "/guides/ota/hotel-direct-booking-strategy.html",
       "statusCode": 301
     },
     {
       "source": "/hotel-website-development/",
-      "destination": "/software/hotel-website-builder/",
+      "destination": "/guides/ota/hotel-direct-booking-strategy.html",
       "statusCode": 301
     },
     {
       "source": "/services/hotel-website-themes/heritage",
-      "destination": "/software/hotel-website-builder/",
+      "destination": "/guides/ota/hotel-direct-booking-strategy.html",
       "statusCode": 301
     },
     {
       "source": "/services/hotel-website-themes/heritage/",
-      "destination": "/software/hotel-website-builder/",
+      "destination": "/guides/ota/hotel-direct-booking-strategy.html",
       "statusCode": 301
     },
     {
       "source": "/services/hotel-website-themes/coastal",
-      "destination": "/software/hotel-website-builder/",
+      "destination": "/guides/ota/hotel-direct-booking-strategy.html",
       "statusCode": 301
     },
     {
       "source": "/services/hotel-website-themes/coastal/",
-      "destination": "/software/hotel-website-builder/",
+      "destination": "/guides/ota/hotel-direct-booking-strategy.html",
       "statusCode": 301
     },
     {
       "source": "/services/hotel-website-themes/business",
-      "destination": "/software/hotel-website-builder/",
+      "destination": "/guides/ota/hotel-direct-booking-strategy.html",
       "statusCode": 301
     },
     {
       "source": "/services/hotel-website-themes/business/",
-      "destination": "/software/hotel-website-builder/",
+      "destination": "/guides/ota/hotel-direct-booking-strategy.html",
       "statusCode": 301
     },
     {
       "source": "/services/hotel-website-themes",
-      "destination": "/software/hotel-website-builder/",
+      "destination": "/guides/ota/hotel-direct-booking-strategy.html",
       "statusCode": 301
     },
     {
       "source": "/services/hotel-website-themes/",
-      "destination": "/software/hotel-website-builder/",
+      "destination": "/guides/ota/hotel-direct-booking-strategy.html",
       "statusCode": 301
     },
     {
       "source": "/services/hotel-website-themes/:path*",
-      "destination": "/software/hotel-website-builder/",
+      "destination": "/guides/ota/hotel-direct-booking-strategy.html",
       "statusCode": 301
     },
     {
@@ -204,17 +204,17 @@
     },
     {
       "source": "/services/direct-booking-website",
-      "destination": "/software/booking-engine/",
+      "destination": "/guides/software/booking-engine.html",
       "statusCode": 301
     },
     {
       "source": "/services/direct-booking-website/",
-      "destination": "/software/booking-engine/",
+      "destination": "/guides/software/booking-engine.html",
       "statusCode": 301
     },
     {
       "source": "/services/direct-booking-website/:path*",
-      "destination": "/software/booking-engine/",
+      "destination": "/guides/software/booking-engine.html",
       "statusCode": 301
     },
     {
@@ -309,7 +309,7 @@
     },
     {
       "source": "/post/building-trust-with-online-visitors-how-your-hotel-website-can-boost-bookings",
-      "destination": "/software/hotel-website-builder/",
+      "destination": "/guides/ota/hotel-direct-booking-strategy.html",
       "statusCode": 301
     },
     {
@@ -359,52 +359,31 @@
     },
     {
       "source": "/services/hotel-website",
-      "destination": "/software/hotel-website-builder/",
+      "destination": "/guides/ota/hotel-direct-booking-strategy.html",
       "statusCode": 301
     },
     {
       "source": "/services/hotel-website/",
-      "destination": "/software/hotel-website-builder/",
+      "destination": "/guides/ota/hotel-direct-booking-strategy.html",
       "statusCode": 301
     },
     {
       "source": "/services/hotel-website/:path*",
-      "destination": "/software/hotel-website-builder/",
+      "destination": "/guides/ota/hotel-direct-booking-strategy.html",
       "statusCode": 301
     },
     {
       "source": "/software",
-      "destination": "/software/",
+      "destination": "/guides/software/",
       "statusCode": 301
     },
     {
-      "source": "/software/vendor/:slug([a-z0-9-]+)",
-      "destination": "/software/vendor/:slug/",
-      "statusCode": 301
-    },
-    {
-      "source": "/software/:slug([a-z0-9-]+)",
-      "destination": "/software/:slug/",
+      "source": "/software/:path*",
+      "destination": "/guides/software/",
       "statusCode": 301
     }
   ],
   "rewrites": [
-    {
-      "source": "/software/",
-      "destination": "/api/software?route=home"
-    },
-    {
-      "source": "/software/sitemap.xml",
-      "destination": "/api/software?route=sitemap"
-    },
-    {
-      "source": "/software/vendor/:slug/",
-      "destination": "/api/software?route=vendor&slug=:slug"
-    },
-    {
-      "source": "/software/:slug/",
-      "destination": "/api/software?route=category&slug=:slug"
-    },
     {
       "source": "/api/:path*",
       "destination": "/api/:path*"
