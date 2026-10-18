@@ -1,17 +1,14 @@
 # Guides → Services Linking Map
 
-> **Status 2026-08-25 — the linking pass is DONE; the service gap is NOT.**
-> All **52 of 52** guides now carry a service link: an audit CTA panel pointing to
-> `/services/ota-audit/` (commit `15c9beb`, verified 52/52). The "only 2 guides link
-> out" problem below is **solved** and is kept as background.
+> **Status 2026-10-18: the channel manager gap is CLOSED.** `/services/hotel-pms/`
+> (free PMS, paid channel manager add-on, revenue help bundled with the add-on) went
+> live 14 Oct 2026 and is the destination for the section 6 cluster. All 8 of those
+> guides now carry a PMS / channel manager CTA box instead of the generic OTA audit
+> one. See section 6 for the full link list.
 >
-> **What is still open and still matters: `/services/channel-manager-setup/` does not
-> exist.** Section 6 below is the live finding — the guide cluster with the most search
-> traffic behind it (~16,258 impressions) has no page to point at. The generic OTA-audit
-> CTA is a stopgap, not the right destination for those 8 guides.
->
-> Counts below say "57 guides"; the library is **52** (EP/CP/AP/MAP were consolidated
-> into `hotel-rate-plans.html`). Impressions are still the 2026-07-28 Search Console pull
+> Background, 2026-08-25: all 52 guides carry a service link (commit `15c9beb`). Counts
+> below say "57 guides"; the library was 52 then (EP/CP/AP/MAP were consolidated into
+> `hotel-rate-plans.html`). Impressions are still the 2026-07-28 Search Console pull
 > and have not been refreshed.
 
 **Original problem (solved):** Only 2 of 57 guides linked to any service page (`ota/what-is-ota.html`, `ota/hotel-direct-booking-strategy.html`). Guides attract search traffic but offered no route to the commercial offer. This is the missing last link in the chain: land → read → trust → hire.
@@ -80,28 +77,39 @@ Impressions are from Search Console, last 16 months, pulled 2026-07-28.
 
 ---
 
-## 6. Channel Manager Setup — 16,258 impr / 8 guides — **NO SERVICE PAGE EXISTS**
+## 6. Hotel PMS + Channel Manager: 16,258 impr / 8 guides
 
-| Guide | Impressions |
-|---|---|
-| revenue/no-show.html | 14,194 |
-| software/what-is-pms-hotel.html | 468 |
-| software/what-is-rms-hotel.html | 459 |
-| software/channel-manager.html | 377 |
-| revenue/overbooking.html | 321 |
-| software/hotel-inventory-management.html | 261 |
-| revenue/mlos.html | 127 |
-| software/update-hotel-rates-all-otas.html | 51 |
+`/services/hotel-pms/` (anchors: `#free-vs-paid` for the channel manager add-on,
+`#revenue-management` for the bundled revenue help)
 
-**This is the single biggest finding.** The service with the most guide traffic behind it — nearly double the OTA listing cluster — has no page to link to. It is advertised on `/services/` index with no destination.
+The 8 cluster guides had their `.guide-audit-cta` box re-pointed from
+`/services/ota-audit/` to this page on 2026-10-18, each with copy written for that
+guide's topic:
 
-`no-show` alone (14,194 impr, position 6.6) is a natural channel-manager conversion path: overbookings and no-shows are exactly what a channel manager prevents.
+| Guide | Impressions | CTA target |
+|---|---|---|
+| revenue/no-show.html | 14,194 | `/services/hotel-pms/` |
+| software/what-is-pms-hotel.html | 468 | `/services/hotel-pms/` (plus an existing FAQ link) |
+| software/what-is-rms-hotel.html | 459 | `#revenue-management` |
+| software/channel-manager.html | 377 | `#free-vs-paid` (plus an existing FAQ link) |
+| revenue/overbooking.html | 321 | `#free-vs-paid` |
+| software/hotel-inventory-management.html | 261 | `/services/hotel-pms/` |
+| revenue/mlos.html | 127 | `#free-vs-paid` (in-body OTA audit link kept) |
+| software/update-hotel-rates-all-otas.html | 51 | `#free-vs-paid` |
 
-**Action: build `/services/channel-manager-setup/`.** Still not built as of 2026-08-25
-(`src/public/services/` holds only `hotel-website`, `independent-hotel-ota-listing`,
-`ota-audit`, `vacation-rental-ota-listing`). The linking pass went ahead without it, so
-these 8 guides currently point at the generic OTA audit instead. Re-point them once the
-page exists. **This is the highest-value open item in this file.**
+One in-text link was added to each of these, where the sentence already discussed a
+PMS or channel manager: `ota/best-ota-for-hotels`, `revenue/hotel-rate-plans`
+(`#revenue-management`), `revenue/increase-hotel-revenue`,
+`operations/hotel-check-in-process`, `operations/foc-hotel`, `reports/night-audit`,
+and the `/guides/software/` hub intro. The homepage "Done For You" list has a card,
+the shared footer's "Work With Us" column has a "Free Hotel PMS" link on every page
+(including the server-rendered `/software/` directory in `api/software.js`), and the
+JS tool nav and tools widget list it under services.
+
+**Deliberately not linked:** sentences where the link would claim a feature the
+service page does not state (POS integration, accounting/Tally sync, automated night
+audit, MTD flash reports, Form C automation). Add those only if the service page
+confirms the feature.
 
 ---
 
@@ -113,6 +121,6 @@ page exists. **This is the highest-value open item in this file.**
 
 **Ordering:** work top-down by impressions. `no-show`, `hotel-rate-plans`, `booking-genius-program`, `best-ota-for-hotels` are the first four — together ~35k impressions.
 
-**Do not link:** compliance guides (gst-hotels, tds-tcs, form-c-hotel, grc-form-c) and reports guides have no matching service. Forcing a link there would read as a non-sequitur. Leave them; they build authority and feed internal links to other guides.
+**Do not link:** compliance guides (gst-hotels, tds-tcs, form-c-hotel, grc-form-c) have no matching service. Reports guides now have one in `/services/hotel-pms/` where the guide is about running the front desk (night audit is linked); keep it to that. Forcing a link there would read as a non-sequitur. Leave them; they build authority and feed internal links to other guides.
 
 Related: [[brand-positioning]], [[backlog]], [[migration-plan]]

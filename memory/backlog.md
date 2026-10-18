@@ -31,9 +31,7 @@ which had gone stale (it still said the work was unmerged and unpushed).
    Follow [[guide-template]]. OTA is the natural next one: largest category and
    the strongest fit for the OTA listing service keywords.
 
-6. **`/services/channel-manager-setup/` does not exist** while guides carry
-   roughly 16k impressions of intent with nowhere to point. See
-   [[guides-to-services-map]].
+6. **Closed 18 Oct 2026, see below.** (Was: no channel manager service page.)
 
 7. **No GA4 click tracking on `.guide-audit-cta-btn`.** Use a GA4 event with a
    category dimension. **Not** UTM params: they fragment session attribution on
@@ -63,6 +61,11 @@ acted on, because the same agent was wrong about GST in the same review.
   are real homestay markets.
 
 ## Closed, kept only as record
+
+- **Channel manager service gap, closed 18 Oct 2026.** `/services/hotel-pms/`
+  (free PMS, paid channel manager add-on) now takes the CTA box on the 8 guides
+  behind ~16k impressions, plus in-text links in 7 more pages, the homepage and the
+  site-wide footer. See [[guides-to-services-map]] section 6.
 
 - **Aug 2026 guide audit** (83 pages, branch `guide-cta-faq-internal-links`):
   audit CTA on 52/52 guides, JS-injected links made static, 150 hidden FAQ Q&As
