@@ -383,7 +383,7 @@
       "statusCode": 301
     },
     {
-      "source": "/software/:path*",
+      "source": "/software/:path(.*)",
       "destination": "/guides/software/",
       "statusCode": 301
     }
