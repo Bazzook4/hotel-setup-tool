@@ -31,6 +31,7 @@ the `.md`. Every link resolves inside this folder.
 | File | What it is |
 |---|---|
 | [india-hotel-gst-rates.md](india-hotel-gst-rates.md) | Current GST: 5% up to ₹7,500 (no ITC), 18% above. The 0% and 12% slabs died 22 Sept 2025. |
+| [ota-commission-and-tax-rates.md](ota-commission-and-tax-rates.md) | One set of OTA figures for every page: MMT 15–25% (most 18–22%), TDS 0.1% (194-O), TCS 0.5% under **GST s.52**, not income tax 206C(1H). |
 | [cookie-consent.md](cookie-consent.md) | Analytics denied by default, why AdSense was removed, and the DPDP deadline of ~May 2027. |
 | [analytics-setup.md](analytics-setup.md) | GA4 `G-9L2N1S6S9F`, the whatsapp_click event, and why GTM is deliberately absent. |
 | [brand-positioning.md](brand-positioning.md) | OnlineHotelier is a consultant and guide, not a listing agency. |
