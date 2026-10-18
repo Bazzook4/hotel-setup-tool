@@ -378,6 +378,11 @@
       "statusCode": 301
     },
     {
+      "source": "/software/",
+      "destination": "/guides/software/",
+      "statusCode": 301
+    },
+    {
       "source": "/software/:path*",
       "destination": "/guides/software/",
       "statusCode": 301
