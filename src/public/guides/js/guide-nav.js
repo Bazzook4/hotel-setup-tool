@@ -40,6 +40,9 @@ const GUIDE_CATEGORIES = [
       { slug: 'best-ota-for-hotels.html', title: 'Best OTA for Hotels' },
       { slug: 'best-ota-for-resorts.html', title: 'Best OTA for Resorts' },
       { slug: 'best-ota-for-homestays.html', title: 'Best OTA for Homestays' },
+      { slug: 'best-ota-for-hotels-in-goa.html', title: 'Best OTA for Hotels in Goa' },
+      { slug: 'best-ota-for-hotels-in-mumbai.html', title: 'Best OTA for Hotels in Mumbai' },
+      { slug: 'best-ota-for-hotels-in-pune.html', title: 'Best OTA for Hotels in Pune' },
       { slug: 'booking-com-hotel-listing-guide.html', title: 'Booking.com Listing Guide' },
       { slug: 'booking-genius-program.html', title: 'Booking.com Genius Program' },
       { slug: 'google-free-booking-links.html', title: 'Google Free Booking Links' },
@@ -261,6 +264,21 @@ const RELATED_CONTENT = {
     { href: '/guides/compliance/gst-hotels.html', title: 'GST for Hotels', category: 'Compliance', desc: 'GST rules for homestays' },
     { href: '/guides/compliance/grc-form-c.html', title: 'GRC & Form C', category: 'Compliance', desc: 'Guest registration requirements' },
     { href: '/guides/ota/what-is-ota.html', title: 'What is OTA?', category: 'OTA', desc: 'How OTAs work' },
+  ],
+  '/guides/ota/best-ota-for-hotels-in-goa.html': [
+    { href: '/guides/ota/best-ota-for-homestays.html', title: 'Best OTA for Homestays', category: 'OTA', desc: 'Airbnb and Booking.com for villas' },
+    { href: '/guides/ota/attract-international-guests-india.html', title: 'Attract International Guests', category: 'OTA', desc: 'Right OTA by guest nationality' },
+    { href: '/guides/compliance/grc-form-c.html', title: 'GRC & Form C', category: 'Compliance', desc: 'Registering foreign guests in Goa' },
+  ],
+  '/guides/ota/best-ota-for-hotels-in-mumbai.html': [
+    { href: '/guides/ota/makemytrip-commission.html', title: 'MakeMyTrip Commission', category: 'OTA', desc: 'What MMT takes from every booking' },
+    { href: '/guides/ota/google-free-booking-links.html', title: 'Google Free Booking Links', category: 'OTA', desc: 'Show your direct rate on Google' },
+    { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Sync rates across Mumbai channels' },
+  ],
+  '/guides/ota/best-ota-for-hotels-in-pune.html': [
+    { href: '/guides/revenue/mlos.html', title: 'MLOS', category: 'Revenue', desc: 'Protect Mumbai weekend demand' },
+    { href: '/guides/ota/makemytrip-ranking.html', title: 'Rank Higher on MakeMyTrip', category: 'OTA', desc: 'Climb MMT search without price cuts' },
+    { href: '/guides/ota/hotel-direct-booking-strategy.html', title: 'Direct Booking Strategy', category: 'OTA', desc: 'Win corporate and repeat guests direct' },
   ],
   '/guides/ota/attract-international-guests-india.html': [
     { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Sync inventory across Booking.com, Expedia, and Agoda' },

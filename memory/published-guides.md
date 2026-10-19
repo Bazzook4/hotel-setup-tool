@@ -51,6 +51,10 @@ Use this reference when creating new guides to identify internal linking opportu
 - **Best OTA for Hotels** (`best-ota-for-hotels.html`)
 - **Best OTA for Resorts** (`best-ota-for-resorts.html`)
 - **Best OTA for Homestays** (`best-ota-for-homestays.html`)
+- **Best OTA for Hotels in Goa** (`best-ota-for-hotels-in-goa.html`) - City series. Channels scored 1-5 on promotional tools, presence (from source-market mix) and presentation, weighted 40/30/30; top 5 OTAs + Direct as a separate row. Owns North/South Goa micro-areas, Russian guests via charter operators and direct (Booking.com, Expedia, Airbnb exited Russia in 2022), Hostelworld, Airbnb villas (15.5% host-only fee), Goa tourism registration enforcement (Apr 2026). Published 19 Oct 2026.
+- **Best OTA for Hotels in Mumbai** (`best-ota-for-hotels-in-mumbai.html`) - City series, weights presence 45 / promo 30 / presentation 25. Owns corporate and transit demand: myBiz (no separate hotel enrolment), BKC/Lower Parel/Powai/Andheri, CSMIA and NMIA, Expedia for North American corporates, direct corporate rate contracts. Published 19 Oct 2026.
+- **Best OTA for Hotels in Pune** (`best-ota-for-hotels-in-pune.html`) - City series, weights presence 45 / promo 35 / presentation 20. Owns IT-corridor weekdays (Hinjewadi, Kharadi, Chakan) vs Mumbai drive-in weekends, Lonavala/Mulshi/Panchgani resorts with MLOS, Cleartrip vs EaseMyTrip, direct corporate contracts. Published 19 Oct 2026.
+- City series rules: no paragraph may be liftable to another city page; OYO is never listed (management firm, not a channel); direct booking always covered at equal depth; each page links up to `best-ota-for-hotels.html`, which must not be cannibalised.
 
 ## Software & Technology (Category: /guides/software/)
 
