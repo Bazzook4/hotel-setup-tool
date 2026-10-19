@@ -28,8 +28,7 @@ Use this reference when creating new guides to identify internal linking opportu
 ## OTA Management (Category: /guides/ota/)
 
 ### OTA Basics
-- **OTA Full Form & Meaning** (`ota-hotel-meaning.html`) - Definition page: OTA = Online Travel Agency, acronym breakdown, SVG diagrams, India commission table, OTA vs direct ₹5,000 example, FAQ schema. Top-of-funnel complement to what-is-ota.html.
-- **What is OTA** (`what-is-ota.html`) - Complete OTA guide, commission structures, major OTAs
+- **OTA Full Form & Meaning** (`what-is-ota.html`) - Merged guide (Oct 2026): OTA = Online Travel Agency, full-form breakdown with acronym visual, India commission table, OTA vs direct ₹5,000 example, when OTAs help/hurt framework, reducing dependency. 301 from `ota-hotel-meaning.html`.
 - **What is GDS** (`what-is-gds.html`) - Global Distribution Systems
 
 ### Platform-Specific Guides

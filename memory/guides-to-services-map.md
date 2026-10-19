@@ -31,9 +31,8 @@ Impressions are from Search Console, last 16 months, pulled 2026-07-28.
 | ota/booking-com-hotel-listing-guide.html | 438 |
 | ota/what-is-gds.html | 299 |
 | ota/best-ota-for-resorts.html | 271 |
-| ota/what-is-ota.html | 64 | ✅ already linked |
+| ota/what-is-ota.html | 64 | ✅ already linked — merged with ota-hotel-meaning.html Oct 2026 |
 | ota/makemytrip-hotel-listing.html | 0 |
-| ota/ota-hotel-meaning.html | 0 |
 | ota/attract-international-guests-india.html | 0 |
 
 ## 2. Direct Booking Website — 4,843 impr / 6 guides

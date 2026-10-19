@@ -34,8 +34,7 @@ const GUIDE_CATEGORIES = [
     icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M5 21V6l7-3 7 3v15"/><path d="M9 21v-5h6v5"/><path d="M9 9h.01M15 9h.01M9 12h.01M15 12h.01"/></svg>',
     basePath: '/guides/ota/',
     guides: [
-      { slug: 'ota-hotel-meaning.html', title: 'OTA Full Form & Meaning' },
-      { slug: 'what-is-ota.html', title: 'What is OTA?' },
+      { slug: 'what-is-ota.html', title: 'OTA Full Form & Meaning' },
       { slug: 'what-is-gds.html', title: 'What is GDS?' },
       { slug: 'best-ota-for-hotels.html', title: 'Best OTA for Hotels' },
       { slug: 'best-ota-for-resorts.html', title: 'Best OTA for Resorts' },
@@ -240,7 +239,7 @@ const RELATED_CONTENT = {
   ],
   // OTA
   '/guides/ota/what-is-ota.html': [
-    { href: '/guides/ota/ota-hotel-meaning.html', title: 'OTA Meaning in Hotels', category: 'OTA', desc: 'The short definition, in plain terms' },
+    { href: '/guides/ota/best-ota-for-hotels.html', title: 'Best OTAs for Hotels', category: 'OTA', desc: 'Which channels suit your property' },
     { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Sync rates across all OTAs' },
     { href: '/guides/compliance/tds-tcs.html', title: 'TDS & TCS', category: 'Compliance', desc: 'Tax deductions on OTA payments' },
     { href: '/guides/revenue/revpar.html', title: 'RevPAR', category: 'Revenue', desc: 'Measure revenue performance' },
@@ -332,11 +331,6 @@ const RELATED_CONTENT = {
     { href: '/guides/ota/best-ota-for-hotels.html', title: 'Best OTAs for Hotels', category: 'OTA', desc: 'Compare MMT, Goibibo, Booking.com and Agoda' },
     { href: '/guides/ota/booking-com-hotel-listing-guide.html', title: 'Booking.com Listing Guide', category: 'OTA', desc: 'List on the other channel that matters' },
     { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Stop updating rates in every extranet' },
-  ],
-  '/guides/ota/ota-hotel-meaning.html': [
-    { href: '/guides/ota/what-is-ota.html', title: 'What Is an OTA?', category: 'OTA', desc: 'How online travel agents actually work' },
-    { href: '/guides/ota/best-ota-for-hotels.html', title: 'Best OTAs for Hotels', category: 'OTA', desc: 'Which channels suit your property' },
-    { href: '/guides/ota/hotel-direct-booking-strategy.html', title: 'Direct Booking Strategy', category: 'OTA', desc: 'Keep more of every booking' },
   ],
   '/guides/ota/hotel-direct-booking-strategy.html': [
     { href: '/guides/software/booking-engine.html', title: 'Booking Engine', category: 'Software', desc: 'Take reservations on your own site' },

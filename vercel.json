@@ -229,7 +229,12 @@
     },
     {
       "source": "/post/ota-hotel-meaning-definition-india",
-      "destination": "/guides/ota/ota-hotel-meaning.html",
+      "destination": "/guides/ota/what-is-ota.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides/ota/ota-hotel-meaning.html",
+      "destination": "/guides/ota/what-is-ota.html",
       "statusCode": 301
     },
     {
