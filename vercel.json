@@ -269,7 +269,12 @@
     },
     {
       "source": "/post/increase-hotel-bookings-on-makemytrip-goibibo-gommt",
-      "destination": "/guides/ota/makemytrip-hotel-listing.html",
+      "destination": "/guides/ota/makemytrip-ranking.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/post/tips-to-improve-your-hotel-listing-on-makemytrip-goibibo",
+      "destination": "/guides/ota/makemytrip-ranking.html",
       "statusCode": 301
     },
     {

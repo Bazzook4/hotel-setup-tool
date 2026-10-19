@@ -46,6 +46,7 @@ const GUIDE_CATEGORIES = [
       { slug: 'booking-com-visibility-booster.html', title: 'Booking.com Visibility Booster' },
       { slug: 'makemytrip-hotel-listing.html', title: 'MakeMyTrip Hotel Registration & Listing' },
       { slug: 'makemytrip-commission.html', title: 'MakeMyTrip Commission for Hotels' },
+      { slug: 'makemytrip-ranking.html', title: 'Rank Higher on MakeMyTrip' },
       { slug: 'agoda-hotel-listing.html', title: 'Agoda Hotel Registration & Listing' },
       { slug: 'agoda-rate-discrepancy.html', title: 'Agoda Rate Discrepancy' },
       { slug: 'hotel-direct-booking-strategy.html', title: 'Hotel Direct Booking Strategy' },
@@ -299,6 +300,11 @@ const RELATED_CONTENT = {
   ],
 
   // OTA
+  '/guides/ota/makemytrip-ranking.html': [
+    { href: '/guides/ota/makemytrip-hotel-listing.html', title: 'MakeMyTrip Listing Guide', category: 'OTA', desc: 'Register and set up your MMT listing' },
+    { href: '/guides/ota/makemytrip-commission.html', title: 'MakeMyTrip Commission', category: 'OTA', desc: 'What MMT takes from every booking' },
+    { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Stop overbookings that cost you rank' },
+  ],
   '/guides/ota/makemytrip-commission.html': [
     { href: '/guides/compliance/tds-tcs.html', title: 'TDS & TCS on OTAs', category: 'Compliance', desc: 'The tax lines on every MMT settlement' },
     { href: '/guides/ota/makemytrip-hotel-listing.html', title: 'MakeMyTrip Listing Guide', category: 'OTA', desc: 'Register and set up your MMT listing' },
