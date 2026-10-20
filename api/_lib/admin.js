@@ -11,7 +11,7 @@ export function supabaseConfig() {
   // Accept the project URL with or without the /rest/v1 suffix the Supabase
   // dashboard shows next to it.
   const url = (process.env.SUPABASE_URL || '').trim().replace(/\/+$/, '').replace(/\/(rest|auth)\/v1$/, '');
-  const anonKey = process.env.SUPABASE_ANON_KEY || '';
+  const anonKey = (process.env.SUPABASE_ANON_KEY || '').trim();
   return url && anonKey ? { url, anonKey } : null;
 }
 

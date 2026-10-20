@@ -20,20 +20,28 @@ function isSameSite(req) {
   return !site || site === 'same-origin';
 }
 
+// The answer is always 204; X-Capture says what happened (stored, skipped,
+// not_configured, rejected, error) without revealing anything about a lead.
+function done(res, status) {
+  res.setHeader('X-Capture', status);
+  return res.status(204).end();
+}
+
 export default async function handler(req, res) {
   res.setHeader('Cache-Control', 'no-store');
   if (req.method !== 'POST') return res.status(405).end();
-  if (!isSameSite(req)) return res.status(204).end();
+  if (!isSameSite(req)) return done(res, 'skipped');
 
   const raw = typeof req.body === 'string' ? req.body : JSON.stringify(req.body || {});
-  if (raw.length > MAX_BYTES) return res.status(204).end();
+  if (raw.length > MAX_BYTES) return done(res, 'skipped');
 
   const body = parseBody(req);
-  if (!body || body.website) return res.status(204).end(); // honeypot filled: a bot
+  if (!body || body.website) return done(res, 'skipped'); // honeypot filled: a bot
 
   const cfg = supabaseConfig();
-  const secret = process.env.LEAD_CAPTURE_SECRET;
-  if (!cfg || !secret) return res.status(204).end();
+  // trim: a pasted env value often carries a trailing newline or space
+  const secret = (process.env.LEAD_CAPTURE_SECRET || '').trim();
+  if (!cfg || !secret) return done(res, 'not_configured');
 
   const payload = {};
   for (const k of FIELDS) {
@@ -54,9 +62,13 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({ p_secret: secret, p_ip_hash: hashIp(ip, secret), p_payload: payload }),
     });
-    if (!r.ok) console.error('capture_lead failed', r.status, await r.text());
+    if (!r.ok) {
+      console.error('capture_lead failed', r.status, await r.text());
+      return done(res, r.status === 401 || r.status === 403 ? 'rejected' : 'error');
+    }
   } catch (err) {
     console.error('capture_lead error', err.message);
+    return done(res, 'error');
   }
-  return res.status(204).end();
+  return done(res, 'stored');
 }
