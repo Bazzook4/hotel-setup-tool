@@ -40,6 +40,16 @@ with a **leads CRM** and a **page tracker**. Full design and reasoning:
   [[deploy-pipeline]].
 - The repo is public: tracker logs print paths and counts only, never leads.
 
+## If website enquiries stop appearing in Leads
+
+`/api/leads` always answers 204 but sets an `X-Capture` header: `stored`,
+`skipped`, `not_configured`, `rejected` (secret mismatch) or `error`. POST a
+test payload with an `Origin: https://www.onlinehotelier.com` header and read
+it. On launch day (20 Oct 2026) every capture was silently `rejected` because
+the pasted `LEAD_CAPTURE_SECRET` carried a trailing newline; env values are
+trimmed now, but check the secret first. Vercel → Logs → search
+`capture_lead` shows the database's reply.
+
 ## Adding or removing a team member
 
 Add: Supabase → Authentication → Add user (auto-confirm), then
