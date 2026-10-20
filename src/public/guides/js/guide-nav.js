@@ -43,6 +43,7 @@ const GUIDE_CATEGORIES = [
       { slug: 'best-ota-for-hotels-in-mumbai.html', title: 'Best OTA for Hotels in Mumbai' },
       { slug: 'best-ota-for-hotels-in-pune.html', title: 'Best OTA for Hotels in Pune' },
       { slug: 'best-ota-for-hotels-in-hyderabad.html', title: 'Best OTA for Hotels in Hyderabad' },
+      { slug: 'best-ota-for-hotels-in-jaipur.html', title: 'Best OTA for Hotels in Jaipur' },
       { slug: 'booking-com-hotel-listing-guide.html', title: 'Booking.com Listing Guide' },
       { slug: 'booking-genius-program.html', title: 'Booking.com Genius Program' },
       { slug: 'google-free-booking-links.html', title: 'Google Free Booking Links' },
@@ -285,6 +286,11 @@ const RELATED_CONTENT = {
     { href: '/guides/ota/attract-international-guests-india.html', title: 'Attract International Guests', category: 'OTA', desc: 'Right OTA by guest nationality for Hyderabad' },
     { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Sync rates across Hyderabad GCC channels' },
     { href: '/guides/ota/hotel-direct-booking-strategy.html', title: 'Direct Booking Strategy', category: 'OTA', desc: 'Win GCC corporate and pharma guests direct' },
+  ],
+  '/guides/ota/best-ota-for-hotels-in-jaipur.html': [
+    { href: '/guides/ota/attract-international-guests-india.html', title: 'Attract International Guests', category: 'OTA', desc: 'Right OTA by guest nationality for Jaipur heritage and wedding demand' },
+    { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Sync rates across OTAs with wedding block inventory' },
+    { href: '/guides/ota/hotel-direct-booking-strategy.html', title: 'Direct Booking Strategy', category: 'OTA', desc: 'Wedding planner contracts and repeat leisure guests direct' },
   ],
   '/guides/ota/attract-international-guests-india.html': [
     { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Sync inventory across Booking.com, Expedia, and Agoda' },
