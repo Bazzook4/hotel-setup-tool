@@ -406,7 +406,7 @@
   ],
   "headers": [
     {
-      "source": "/admin/:path*",
+      "source": "/admin(.*)",
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
         { "key": "Cache-Control", "value": "no-store" },
@@ -416,7 +416,7 @@
       ]
     },
     {
-      "source": "/api/admin/:path*",
+      "source": "/api/admin(.*)",
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
         { "key": "Cache-Control", "value": "no-store" }
