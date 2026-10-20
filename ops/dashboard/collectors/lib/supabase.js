@@ -1,6 +1,7 @@
 // Calls the secret-checked tracker functions in Supabase (migration 003).
 export function trackerConfig() {
-  const url = (process.env.SUPABASE_URL || '').replace(/\/+$/, '');
+  // Accept the project URL with or without the /rest/v1 suffix.
+  const url = (process.env.SUPABASE_URL || '').trim().replace(/\/+$/, '').replace(/\/(rest|auth)\/v1$/, '');
   const anonKey = process.env.SUPABASE_ANON_KEY;
   const secret = process.env.TRACKER_SECRET;
   return url && anonKey && secret ? { url, anonKey, secret } : null;

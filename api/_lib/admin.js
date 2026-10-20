@@ -8,7 +8,9 @@ export const COOKIE = '__Secure-oh_admin_rt';
 const COOKIE_MAX_AGE = 7 * 24 * 3600; // idle timeout: rotated on every page load
 
 export function supabaseConfig() {
-  const url = (process.env.SUPABASE_URL || '').replace(/\/+$/, '');
+  // Accept the project URL with or without the /rest/v1 suffix the Supabase
+  // dashboard shows next to it.
+  const url = (process.env.SUPABASE_URL || '').trim().replace(/\/+$/, '').replace(/\/(rest|auth)\/v1$/, '');
   const anonKey = process.env.SUPABASE_ANON_KEY || '';
   return url && anonKey ? { url, anonKey } : null;
 }
