@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Leads | OnlineHotelier Admin</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body class="hidden">
+  <main>
+    <div class="page-head">
+      <div>
+        <h1>Leads</h1>
+        <p class="muted">Enquiries from the website and anything added by hand.</p>
+      </div>
+      <div class="btn-row">
+        <button class="btn secondary" type="button" id="export-btn">Export CSV</button>
+        <button class="btn" type="button" id="add-btn">Add lead</button>
+      </div>
+    </div>
+
+    <div class="stats" id="stats"></div>
+
+    <div class="filters">
+      <input type="search" id="f-search" placeholder="Search ref, name, phone, hotel…">
+      <select id="f-status">
+        <option value="open">Open leads</option>
+        <option value="">All statuses</option>
+      </select>
+      <select id="f-source"><option value="">All sources</option></select>
+      <input type="search" id="f-page" placeholder="Source page contains…">
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Ref</th><th>Lead</th><th>Service</th><th>From page</th>
+            <th>Status</th><th>Follow-up</th><th>Value</th><th>Received</th>
+          </tr>
+        </thead>
+        <tbody id="rows"><tr><td colspan="8" class="empty">Loading…</td></tr></tbody>
+      </table>
+    </div>
+  </main>
+
+  <dialog id="add-dialog">
+    <form id="add-form" novalidate>
+      <h2>Add a lead</h2>
+      <div class="alert hidden" id="add-error" role="alert"></div>
+      <div class="fields">
+        <div class="field"><label for="a-name">Name</label><input id="a-name" name="name"></div>
+        <div class="field"><label for="a-phone">Phone</label><input id="a-phone" name="phone" inputmode="tel"></div>
+        <div class="field"><label for="a-email">Email</label><input id="a-email" name="email" type="email"></div>
+        <div class="field"><label for="a-hotel">Hotel name</label><input id="a-hotel" name="hotel_name"></div>
+        <div class="field"><label for="a-city">City</label><input id="a-city" name="city"></div>
+        <div class="field"><label for="a-rooms">Rooms</label><input id="a-rooms" name="rooms" type="number" min="0"></div>
+        <div class="field"><label for="a-service">Service interested in</label><input id="a-service" name="service"></div>
+        <div class="field"><label for="a-source">Source</label><select id="a-source" name="source"></select></div>
+        <div class="field"><label for="a-follow">Next follow-up</label><input id="a-follow" name="next_follow_up" type="date"></div>
+        <div class="field"><label for="a-page">From page (optional)</label><input id="a-page" name="page_path" placeholder="/guides/ota/what-is-ota.html"></div>
+      </div>
+      <div class="field"><label for="a-message">Notes</label><textarea id="a-message" name="message"></textarea></div>
+      <div class="btn-row">
+        <button class="btn" type="submit">Save lead</button>
+        <button class="btn secondary" type="button" id="add-cancel">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="/admin/js/core.js"></script>
+  <script src="/admin/js/crm.js"></script>
+  <script src="/admin/js/leads.js"></script>
+</body>
+</html>

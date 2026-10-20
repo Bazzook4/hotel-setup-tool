@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Sign in | OnlineHotelier Admin</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body>
+  <div class="login-wrap">
+    <form class="login-card" id="login-form" novalidate>
+      <h1>OnlineHotelier Admin</h1>
+      <div class="alert hidden" id="login-error" role="alert"></div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" type="email" autocomplete="username" required>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" required>
+      </div>
+      <button class="btn" type="submit" id="login-btn">Sign in</button>
+      <p class="muted small">Internal use only. Accounts are created by the owner.</p>
+    </form>
+  </div>
+  <script src="/admin/js/core.js"></script>
+  <script src="/admin/js/login.js"></script>
+</body>
+</html>

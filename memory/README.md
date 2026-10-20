@@ -37,6 +37,7 @@ the `.md`. Every link resolves inside this folder.
 | [brand-positioning.md](brand-positioning.md) | OnlineHotelier is a consultant and guide, not a listing agency. |
 | [migration-plan.md](migration-plan.md) | Wix to Vercel, and folding the insights subdomain into www. Complete; www canonicals are correct and must never be flagged. |
 | [deploy-pipeline.md](deploy-pipeline.md) | How the Vercel deploy works, and why a clean push is not proof the site updated. Check the live URL, not git. |
+| [admin-area.md](admin-area.md) | The private `/admin/` area: leads CRM and page tracker on Supabase. Exempt from page templates; never holds data or secrets in `src/public/`. |
 
 ## How to work here
 

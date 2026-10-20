@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Account | OnlineHotelier Admin</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body class="hidden">
+  <main>
+    <div class="page-head"><div><h1>Account</h1><p class="muted" id="acct-email"></p></div></div>
+    <form class="card" id="pw-form" novalidate>
+      <h2>Change password</h2>
+      <div class="alert hidden" id="pw-error" role="alert"></div>
+      <div class="fields">
+        <div class="field">
+          <label for="pw1">New password (at least 12 characters)</label>
+          <input id="pw1" type="password" autocomplete="new-password" minlength="12" required>
+        </div>
+        <div class="field">
+          <label for="pw2">Repeat new password</label>
+          <input id="pw2" type="password" autocomplete="new-password" minlength="12" required>
+        </div>
+      </div>
+      <button class="btn" type="submit">Change password</button>
+    </form>
+  </main>
+  <script src="/admin/js/core.js"></script>
+  <script src="/admin/js/account.js"></script>
+</body>
+</html>

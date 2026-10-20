@@ -185,6 +185,38 @@
     });
   }
 
+  // Records the enquiry in the admin CRM before WhatsApp opens, and returns a
+  // short reference that goes into the message so the chat can be matched to
+  // the page it came from. No personal data is sent: the visitor's name and
+  // number only ever reach WhatsApp. sendBeacon survives the tab switch and
+  // never delays it. See ops/dashboard/ARCHITECTURE.md §6.1.
+  function captureLead(source, fields) {
+    var chars = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+    var ref = 'OH-';
+    try {
+      var rnd = window.crypto.getRandomValues(new Uint32Array(5));
+      for (var i = 0; i < 5; i++) ref += chars[rnd[i] % chars.length];
+    } catch (e) {
+      for (var j = 0; j < 5; j++) ref += chars[Math.floor(Math.random() * chars.length)];
+    }
+    var q = new URLSearchParams(window.location.search);
+    var payload = {
+      ref: ref,
+      source: source,
+      page_path: window.location.pathname,
+      referrer: document.referrer || '',
+      utm_source: q.get('utm_source') || '',
+      utm_medium: q.get('utm_medium') || '',
+      utm_campaign: q.get('utm_campaign') || ''
+    };
+    for (var k in fields) if (fields[k]) payload[k] = fields[k];
+    try {
+      navigator.sendBeacon('/api/leads', new Blob([JSON.stringify(payload)], { type: 'text/plain' }));
+    } catch (e) { /* the WhatsApp message still goes out */ }
+    return ref;
+  }
+  window.ohLead = { capture: captureLead };
+
   document.getElementById('oh-wa-send-btn').addEventListener('click', function () {
     var service   = document.getElementById('oh-wa-service').value;
     var inventory = document.getElementById('oh-wa-inventory').value;
@@ -198,9 +230,14 @@
     if (managed)   parts.push('Management: ' + managed);
     parts.push('Please get in touch. Thank you.');
 
+    var ref = captureLead('widget_form', {
+      service: service, inventory: inventory, location: location, managed: managed
+    });
+
     // Which page the enquiry came from, always last so it reads as a footnote.
     var pageTitle = (document.title || '').replace(/\s*\|\s*OnlineHotelier\s*$/, '').trim();
     parts.push('—');
+    parts.push('Ref: ' + ref);
     parts.push('Sent from: OnlineHotelier (' + window.location.hostname + ')');
     parts.push('Page: ' + (pageTitle || 'Home'));
     parts.push(window.location.href);

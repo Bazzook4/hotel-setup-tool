@@ -681,7 +681,14 @@
     // wa-widget.js does not see. Send the same whatsapp_click key event so PMS
     // enquiries show up in GA4 (memory/analytics-setup.md).
     document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function(a) {
+      var baseHref = a.href;
       a.addEventListener('click', function() {
+        // Record the enquiry in the admin CRM and add its reference to the
+        // pre-filled message (helper in /js/wa-widget.js).
+        if (window.ohLead) {
+          var ref = window.ohLead.capture('pms_direct', { service: 'OnlineHotelier PMS' });
+          a.href = baseHref + encodeURIComponent('\n\nRef: ' + ref);
+        }
         if (typeof gtag !== 'function') return;
         gtag('event', 'whatsapp_click', {
           wa_action: 'pms_direct',

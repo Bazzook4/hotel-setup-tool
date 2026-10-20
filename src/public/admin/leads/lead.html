@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Lead | OnlineHotelier Admin</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body class="hidden">
+  <main>
+    <p class="small"><a href="/admin/leads/">← All leads</a></p>
+    <div class="page-head">
+      <div>
+        <h1 id="lead-title">Lead</h1>
+        <p class="muted" id="lead-sub"></p>
+      </div>
+      <div class="btn-row">
+        <button class="btn secondary small" type="button" id="q-whatsapp">Log WhatsApp</button>
+        <button class="btn secondary small" type="button" id="q-follow">Follow-up +3 days</button>
+        <button class="btn small" type="button" id="q-won">Mark won</button>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <form class="card" id="lead-form" novalidate>
+          <h2>Details</h2>
+          <div class="alert hidden" id="lead-error" role="alert"></div>
+          <div class="fields">
+            <div class="field"><label for="l-status">Status</label><select id="l-status" name="status"></select></div>
+            <div class="field"><label for="l-follow">Next follow-up</label><input id="l-follow" name="next_follow_up" type="date"></div>
+            <div class="field"><label for="l-value">Deal value (₹)</label><input id="l-value" name="value_inr" type="number" min="0" step="1"></div>
+            <div class="field hidden" id="lost-field"><label for="l-lost">Reason lost (required)</label><input id="l-lost" name="lost_reason"></div>
+            <div class="field"><label for="l-name">Name</label><input id="l-name" name="name"></div>
+            <div class="field"><label for="l-phone">Phone</label><input id="l-phone" name="phone" inputmode="tel"></div>
+            <div class="field"><label for="l-email">Email</label><input id="l-email" name="email" type="email"></div>
+            <div class="field"><label for="l-hotel">Hotel name</label><input id="l-hotel" name="hotel_name"></div>
+            <div class="field"><label for="l-city">City</label><input id="l-city" name="city"></div>
+            <div class="field"><label for="l-rooms">Rooms</label><input id="l-rooms" name="rooms" type="number" min="0"></div>
+            <div class="field"><label for="l-service">Service</label><input id="l-service" name="service"></div>
+          </div>
+          <div class="btn-row">
+            <button class="btn" type="submit">Save changes</button>
+          </div>
+        </form>
+
+        <div class="card">
+          <h2>From the website</h2>
+          <dl class="kv" id="captured"></dl>
+        </div>
+
+        <div class="card">
+          <h2>Delete</h2>
+          <p class="muted small">Removes this lead and its timeline permanently, for example on a data deletion request.</p>
+          <button class="btn danger small" type="button" id="delete-btn">Delete lead</button>
+        </div>
+      </div>
+
+      <div>
+        <form class="card" id="note-form" novalidate>
+          <h2>Add to timeline</h2>
+          <div class="fields">
+            <div class="field"><label for="n-type">Type</label><select id="n-type" name="type"></select></div>
+          </div>
+          <div class="field"><label for="n-body">What happened</label><textarea id="n-body" name="body" required></textarea></div>
+          <button class="btn" type="submit">Add</button>
+        </form>
+        <div class="card">
+          <h2>Timeline</h2>
+          <ul class="timeline" id="timeline"></ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/admin/js/core.js"></script>
+  <script src="/admin/js/crm.js"></script>
+  <script src="/admin/js/lead.js"></script>
+</body>
+</html>

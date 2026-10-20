@@ -567,6 +567,15 @@
         parts.push('');
         parts.push('Please get in touch. Thank you.');
 
+        // Records the enquiry in the admin CRM (helper in /js/wa-widget.js).
+        if (window.ohLead) {
+          var ref = window.ohLead.capture('contact_form', {
+            service: service, inventory: inventory, location: location,
+            managed: managed, message: message
+          });
+          parts.push('Ref: ' + ref);
+        }
+
         if (typeof gtag === 'function') {
           gtag('event', 'whatsapp_click', {
             wa_action: 'contact_form',

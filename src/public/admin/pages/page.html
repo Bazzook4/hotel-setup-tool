@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Page | OnlineHotelier Admin</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body class="hidden">
+  <main>
+    <p class="small"><a href="/admin/pages/">← All pages</a></p>
+    <div class="page-head">
+      <div>
+        <h1 id="p-title">Page</h1>
+        <p class="muted" id="p-sub"></p>
+      </div>
+      <div class="btn-row"><a class="btn secondary small" id="p-open" target="_blank" rel="noopener">Open live page ↗</a></div>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <div class="card"><h2>Status</h2><dl class="kv" id="p-status"></dl></div>
+        <div class="card"><h2>Template checks</h2><ul class="checks" id="p-checks"></ul></div>
+        <div class="card"><h2>Details</h2><dl class="kv" id="p-details"></dl></div>
+      </div>
+      <div>
+        <div class="card"><h2>Change history</h2><ul class="timeline" id="p-changes"></ul></div>
+        <div class="card"><h2>Leads from this page</h2><div id="p-leads"></div></div>
+        <div class="card"><h2>Live checks (last 30 days)</h2><div id="p-live"></div></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/admin/js/core.js"></script>
+  <script src="/admin/js/crm.js"></script>
+  <script src="/admin/js/tracker.js"></script>
+  <script src="/admin/js/page.js"></script>
+</body>
+</html>

@@ -51,6 +51,9 @@ Run these agents in order. Do not skip steps.
   `/css/consent.css`. See `memory/cookie-consent.md`.
 - **Branch**: main
 - **Stack**: Static HTML/CSS/JS, no build step
+- **Admin area**: `/admin/` is a private leads CRM and page tracker on Supabase.
+  Its pages are exempt from every page rule below (no GA4, consent, footer,
+  schema or sitemap entry). Do not audit or "fix" them. See `memory/admin-area.md`.
 
 > **Values drift, rules do not.** Anything here that is a *value* (an ID, a
 > domain, a tax rate) can go stale between sessions. Two false "critical"

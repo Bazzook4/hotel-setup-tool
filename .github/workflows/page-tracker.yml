@@ -1,0 +1,44 @@
+# Page tracker for the admin area (/admin/pages/).
+# Records every page, its git history, template checks and whether the live
+# site is serving the committed version. Fails, and so emails the owner, when a
+# pushed change has not gone live within 10 minutes.
+# Design: ops/dashboard/ARCHITECTURE.md §8. This repo is public, so the job
+# prints only page paths and counts.
+name: Page tracker
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/public/**'
+      - 'vercel.json'
+  schedule:
+    - cron: '30 0 * * *'   # 06:00 IST daily; also keeps the free Supabase project awake
+  workflow_dispatch:
+
+concurrency:
+  group: page-tracker
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history: every add and edit since the first commit
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Record pages and check they are live
+        run: node ops/dashboard/collectors/run.js --mode=${{ github.event_name == 'push' && 'push' || 'daily' }}
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          TRACKER_SECRET: ${{ secrets.TRACKER_SECRET }}
