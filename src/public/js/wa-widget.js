@@ -114,13 +114,14 @@
         <p class="oh-wa-intro">Hi! Tell us a little about your property and we'll get back to you right away.</p>
         <div class="oh-wa-fields">
           <div>
+            <div class="oh-wa-label">Your name <span class="oh-wa-req">*</span></div>
+            <input type="text" id="oh-wa-name" autocomplete="name" placeholder="e.g. Ravi Kumar" />
+            <div class="oh-wa-error" id="oh-wa-name-error">Please enter your name.</div>
+          </div>
+          <div>
             <div class="oh-wa-label">Your WhatsApp number <span class="oh-wa-req">*</span></div>
             <input type="tel" id="oh-wa-phone" inputmode="tel" autocomplete="tel" placeholder="e.g. 98765 43210" />
             <div class="oh-wa-error" id="oh-wa-phone-error">Please enter a valid mobile number.</div>
-          </div>
-          <div>
-            <div class="oh-wa-label">Your name</div>
-            <input type="text" id="oh-wa-name" autocomplete="name" placeholder="Optional" />
           </div>
           <div>
             <div class="oh-wa-label">I'm interested in</div>
@@ -202,7 +203,7 @@
   // Records the enquiry in the admin CRM before WhatsApp opens, and returns a
   // short reference that goes into the message so the chat can be matched to
   // the page it came from. The widget and contact form include the visitor's
-  // mobile number (required) and name (optional); the privacy page says so.
+  // name and mobile number (both required); the privacy page says so.
   // sendBeacon survives the tab switch and never delays it.
   // See ops/dashboard/ARCHITECTURE.md §6.1.
   function captureLead(source, fields) {
@@ -246,22 +247,25 @@
 
   window.ohLead = { capture: captureLead, normalisePhone: normalisePhone };
 
+  var nameInput  = document.getElementById('oh-wa-name');
+  var nameError  = document.getElementById('oh-wa-name-error');
   var phoneInput = document.getElementById('oh-wa-phone');
   var phoneError = document.getElementById('oh-wa-phone-error');
-  phoneInput.addEventListener('input', function () {
-    phoneInput.classList.remove('oh-wa-invalid');
-    phoneError.style.display = 'none';
-  });
+  function showError(input, error, on) {
+    input.classList.toggle('oh-wa-invalid', on);
+    error.style.display = on ? 'block' : 'none';
+  }
+  nameInput.addEventListener('input', function () { showError(nameInput, nameError, false); });
+  phoneInput.addEventListener('input', function () { showError(phoneInput, phoneError, false); });
 
   document.getElementById('oh-wa-send-btn').addEventListener('click', function () {
+    // Name and number are both required.
+    var name  = nameInput.value.trim();
     var phone = normalisePhone(phoneInput.value);
-    if (!phone) {
-      phoneInput.classList.add('oh-wa-invalid');
-      phoneError.style.display = 'block';
-      phoneInput.focus();
-      return;
-    }
-    var name      = document.getElementById('oh-wa-name').value.trim();
+    showError(nameInput, nameError, name.length < 2);
+    showError(phoneInput, phoneError, !phone);
+    if (name.length < 2) { nameInput.focus(); return; }
+    if (!phone) { phoneInput.focus(); return; }
     var service   = document.getElementById('oh-wa-service').value;
     var inventory = document.getElementById('oh-wa-inventory').value;
     var location  = document.getElementById('oh-wa-location').value.trim();

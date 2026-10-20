@@ -416,14 +416,15 @@
 
       <div class="field-row">
         <div class="field">
-          <label for="c-phone">Your WhatsApp number <span class="req">*</span></label>
-          <input type="tel" id="c-phone" inputmode="tel" autocomplete="tel" placeholder="e.g. 98765 43210" />
-          <p class="field-error" id="c-phone-error">Please enter a valid mobile number.</p>
+          <label for="c-name">Your name <span class="req">*</span></label>
+          <input type="text" id="c-name" autocomplete="name" placeholder="e.g. Ravi Kumar" />
+          <p class="field-error" id="c-name-error">Please enter your name.</p>
         </div>
 
         <div class="field">
-          <label for="c-name">Your name</label>
-          <input type="text" id="c-name" autocomplete="name" placeholder="Optional" />
+          <label for="c-phone">Your WhatsApp number <span class="req">*</span></label>
+          <input type="tel" id="c-phone" inputmode="tel" autocomplete="tel" placeholder="e.g. 98765 43210" />
+          <p class="field-error" id="c-phone-error">Please enter a valid mobile number.</p>
         </div>
       </div>
 
@@ -568,24 +569,27 @@
         return el ? el.value.trim() : '';
       }
 
+      var nameInput  = document.getElementById('c-name');
+      var nameError  = document.getElementById('c-name-error');
       var phoneInput = document.getElementById('c-phone');
       var phoneError = document.getElementById('c-phone-error');
-      phoneInput.addEventListener('input', function () {
-        phoneInput.classList.remove('is-invalid');
-        phoneError.classList.remove('show');
-      });
+      function showError(input, error, on) {
+        input.classList.toggle('is-invalid', on);
+        error.classList.toggle('show', on);
+      }
+      nameInput.addEventListener('input', function () { showError(nameInput, nameError, false); });
+      phoneInput.addEventListener('input', function () { showError(phoneInput, phoneError, false); });
 
       document.getElementById('c-send').addEventListener('click', function () {
-        // The number is required. normalisePhone lives in /js/wa-widget.js;
-        // if that script failed to load, the enquiry still goes to WhatsApp.
+        // Name and number are both required. normalisePhone lives in
+        // /js/wa-widget.js; if that script failed to load, the number is
+        // only checked for being filled in.
+        var name  = val('c-name');
         var phone = window.ohLead ? window.ohLead.normalisePhone(val('c-phone')) : val('c-phone');
-        if (!phone) {
-          phoneInput.classList.add('is-invalid');
-          phoneError.classList.add('show');
-          phoneInput.focus();
-          return;
-        }
-        var name      = val('c-name');
+        showError(nameInput, nameError, name.length < 2);
+        showError(phoneInput, phoneError, !phone);
+        if (name.length < 2) { nameInput.focus(); return; }
+        if (!phone) { phoneInput.focus(); return; }
         var parts = [];
         var service   = val('c-service');
         var inventory = val('c-inventory');

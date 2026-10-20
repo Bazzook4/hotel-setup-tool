@@ -1,7 +1,7 @@
 // POST /api/leads: records a WhatsApp enquiry in the admin CRM.
 // Called with navigator.sendBeacon from wa-widget.js, the contact form and the
 // PMS page CTAs, just before WhatsApp opens. The widget and contact form send
-// the visitor's mobile number (required) and name (optional); the privacy page
+// the visitor's name and mobile number (both required); the privacy page
 // says so. Always answers 204 so it never
 // reveals anything, and never blocks the enquiry itself.
 // Design: ops/dashboard/ARCHITECTURE.md §6.1.

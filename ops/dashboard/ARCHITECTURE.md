@@ -32,7 +32,7 @@ needs a Google account or API key.
 | `/admin/` shares the `www` origin with ~90 public pages that run GA4's third-party script | Any script on a public page can read `localStorage` for the whole origin. The login token is therefore never put in browser storage (§5). |
 | The public site is static, and Vercel functions have no persistent disk | Data lives in Supabase Postgres. |
 | Enquiries go straight to WhatsApp (`wa-widget.js`, `contact/index.html`) and are never stored | The CRM needs a small capture step when the visitor clicks Send (§6.1). |
-| The forms ask for a WhatsApp number (required, since 20 Oct 2026) and name (optional) as well as service, inventory, location and management type | Every captured lead is reachable, even when the visitor opens WhatsApp but never sends. The privacy page says the details are saved on Send. |
+| The forms ask for a name and WhatsApp number (both required, since 20 Oct 2026) as well as service, inventory, location and management type | Every captured lead is reachable, even when the visitor opens WhatsApp but never sends. The privacy page says the details are saved on Send. |
 | A clean push has not always meant a deploy: on 1 Sept 2026 four commits never built (`memory/deploy-pipeline.md`) | The page tracker checks the **live** site after every push, not git, and says so when a change has not gone live (§8.2). |
 | *(Later)* GA4 `G-9L2N1S6S9F` starts on **9 Aug 2026**; consent mode went live **7 Oct 2026** | GA4 series start on 9 Aug. A fixed marker on 7 Oct explains the drop in sessions, which is measurement, not traffic. |
 | *(Later)* Search Console data lags 2–3 days and is kept for only 16 months | Every sync re-pulls the last 4 days. History is stored so it outlives Google's window. |
@@ -293,7 +293,7 @@ When a visitor clicks **Send on WhatsApp** (widget or contact form) or a
 visitor's experience is unchanged. If the beacon fails, the WhatsApp message
 still goes out, and the owner can add the lead by hand.
 
-The lead arrives with the visitor's number and, if given, name. When the chat
+The lead arrives with the visitor's name and number. When the chat
 arrives, the `Ref:` in the message matches it to that lead, already tagged with
 the page that produced it; the owner adds hotel details and notes. Visitors who
 open WhatsApp but never send can still be followed up from the number.
