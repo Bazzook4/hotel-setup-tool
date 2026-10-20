@@ -81,7 +81,8 @@ Use this reference when creating new guides to identify internal linking opportu
 
 ## Compliance (Category: /guides/compliance/)
 
-- **GST for Hotels** (`gst-hotels.html`) - GST rates, filing, compliance
+- **GST on Hotel Rooms: Rates & Slabs** (`gst-on-hotel-rooms.html`) - Current GST slabs (5%/18%), worked examples, lodge/resort rates, CGST/SGST rules (NEW, 2026-10-19)
+- **Hotel GST Rules: ITC, Filing & Invoices** (`gst-hotels.html`) - ITC eligibility, valid invoice requirements, GSTR-1/3B filing, OTA commission GST (reworked 2026-10-19)
 - **TDS & TCS** (`tds-tcs.html`) - Tax deductions on OTA settlements
 - **GRC Form C** (`grc-form-c.html`) - GRC full form in hotel: Guest Registration Card & Form C
 - **Form C for Hotels** (`form-c-hotel.html`) - Form C filing for foreign guests, FRRO, C-form procedure

@@ -92,7 +92,8 @@ const GUIDE_CATEGORIES = [
     icon: '<svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="4" width="12" height="17" rx="1"/><path d="M9 4V3h6v1"/><path d="M9 10h6M9 14h4"/></svg>',
     basePath: '/guides/compliance/',
     guides: [
-      { slug: 'gst-hotels.html', title: 'GST for Hotels' },
+      { slug: 'gst-on-hotel-rooms.html', title: 'GST on Hotel Rooms: Rates & Slabs' },
+      { slug: 'gst-hotels.html', title: 'Hotel GST Rules: ITC, Filing & Invoices' },
       { slug: 'tds-tcs.html', title: 'TDS & TCS on OTA Payments' },
       { slug: 'grc-form-c.html', title: 'GRC & Form C' },
       { slug: 'form-c-hotel.html', title: 'Form C for Hotels' },
@@ -119,7 +120,7 @@ const RELATED_CONTENT = {
   '/guides/revenue/hotel-rate-plans.html': [
     { href: '/guides/software/booking-engine.html', title: 'Booking Engine', category: 'Software', desc: 'Display rate plans on your website' },
     { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Sync rates across OTAs' },
-    { href: '/guides/compliance/gst-hotels.html', title: 'GST for Hotels', category: 'Compliance', desc: 'Tax implications of rate plans' },
+    { href: '/guides/compliance/gst-on-hotel-rooms.html', title: 'GST on Hotel Rooms', category: 'Compliance', desc: 'Tax implications of rate plans' },
   ],
   '/guides/revenue/revpar.html': [
     { href: '/guides/reports/manager-report.html', title: 'Manager Report', category: 'Reports', desc: 'Daily RevPAR tracking' },
@@ -173,7 +174,7 @@ const RELATED_CONTENT = {
   // Software
   '/guides/software/what-is-pms-hotel.html': [
     { href: '/guides/reports/night-audit.html', title: 'Night Audit', category: 'Reports', desc: 'PMS night audit process' },
-    { href: '/guides/compliance/gst-hotels.html', title: 'GST for Hotels', category: 'Compliance', desc: 'GST invoicing from PMS' },
+    { href: '/guides/compliance/gst-hotels.html', title: 'Hotel GST Rules', category: 'Compliance', desc: 'GST invoicing from PMS' },
     { href: '/guides/revenue/revpar.html', title: 'RevPAR', category: 'Revenue', desc: 'Track in your PMS' },
   ],
   '/guides/software/channel-manager.html': [
@@ -188,7 +189,7 @@ const RELATED_CONTENT = {
   ],
   '/guides/software/booking-engine.html': [
     { href: '/guides/revenue/hotel-rate-plans.html', title: 'Rate Plans', category: 'Revenue', desc: 'Display plans on your site' },
-    { href: '/guides/compliance/gst-hotels.html', title: 'GST for Hotels', category: 'Compliance', desc: 'Direct booking tax rules' },
+    { href: '/guides/compliance/gst-hotels.html', title: 'Hotel GST Rules', category: 'Compliance', desc: 'Direct booking tax rules' },
   ],
   '/guides/software/what-is-rms-hotel.html': [
     { href: '/guides/revenue/revpar.html', title: 'RevPAR', category: 'Revenue', desc: 'Key metric for RMS' },
@@ -197,14 +198,14 @@ const RELATED_CONTENT = {
   ],
   '/guides/software/what-is-pos-hotel.html': [
     { href: '/guides/reports/expenses-report.html', title: 'Expenses Report', category: 'Reports', desc: 'F&B cost tracking' },
-    { href: '/guides/compliance/gst-hotels.html', title: 'GST for Hotels', category: 'Compliance', desc: 'F&B GST billing' },
+    { href: '/guides/compliance/gst-hotels.html', title: 'Hotel GST Rules', category: 'Compliance', desc: 'F&B GST billing' },
   ],
   '/guides/software/hotel-inventory-management.html': [
     { href: '/guides/reports/expenses-report.html', title: 'Expenses Report', category: 'Reports', desc: 'Material cost tracking' },
     { href: '/guides/reports/profit-loss-report.html', title: 'P&L Report', category: 'Reports', desc: 'Cost impact on profitability' },
   ],
   '/guides/software/hotel-accounting-software.html': [
-    { href: '/guides/compliance/gst-hotels.html', title: 'GST for Hotels', category: 'Compliance', desc: 'GST-compliant invoicing' },
+    { href: '/guides/compliance/gst-hotels.html', title: 'Hotel GST Rules', category: 'Compliance', desc: 'GST-compliant invoicing' },
     { href: '/guides/compliance/tds-tcs.html', title: 'TDS & TCS', category: 'Compliance', desc: 'Tax deduction accounting' },
     { href: '/guides/reports/profit-loss-report.html', title: 'P&L Report', category: 'Reports', desc: 'Financial reporting' },
   ],
@@ -215,7 +216,7 @@ const RELATED_CONTENT = {
   ],
   '/guides/reports/night-audit.html': [
     { href: '/guides/software/what-is-pms-hotel.html', title: 'PMS', category: 'Software', desc: 'Night audit in PMS' },
-    { href: '/guides/compliance/gst-hotels.html', title: 'GST for Hotels', category: 'Compliance', desc: 'Tax reconciliation' },
+    { href: '/guides/compliance/gst-hotels.html', title: 'Hotel GST Rules', category: 'Compliance', desc: 'Tax reconciliation' },
   ],
   '/guides/reports/arrival-report.html': [
     { href: '/guides/compliance/grc-form-c.html', title: 'GRC & Form C', category: 'Compliance', desc: 'Registration for arrivals' },
@@ -260,7 +261,7 @@ const RELATED_CONTENT = {
     { href: '/guides/revenue/bar.html', title: 'BAR Pricing', category: 'Revenue', desc: 'Dynamic pricing for resorts' },
   ],
   '/guides/ota/best-ota-for-homestays.html': [
-    { href: '/guides/compliance/gst-hotels.html', title: 'GST for Hotels', category: 'Compliance', desc: 'GST rules for homestays' },
+    { href: '/guides/compliance/gst-hotels.html', title: 'Hotel GST Rules', category: 'Compliance', desc: 'GST rules for homestays' },
     { href: '/guides/compliance/grc-form-c.html', title: 'GRC & Form C', category: 'Compliance', desc: 'Guest registration requirements' },
     { href: '/guides/ota/what-is-ota.html', title: 'What is OTA?', category: 'OTA', desc: 'How OTAs work' },
   ],
@@ -290,7 +291,12 @@ const RELATED_CONTENT = {
     { href: '/guides/compliance/tds-tcs.html', title: 'TDS & TCS', category: 'Compliance', desc: 'Tax on Booking.com invoices' },
   ],
   // Compliance
+  '/guides/compliance/gst-on-hotel-rooms.html': [
+    { href: '/guides/compliance/gst-hotels.html', title: 'Hotel GST Rules', category: 'Compliance', desc: 'ITC, invoicing and filing' },
+    { href: '/guides/compliance/tds-tcs.html', title: 'TDS & TCS on OTAs', category: 'Compliance', desc: 'Tax deductions on OTA payouts' },
+  ],
   '/guides/compliance/gst-hotels.html': [
+    { href: '/guides/compliance/gst-on-hotel-rooms.html', title: 'GST on Hotel Rooms', category: 'Compliance', desc: 'Current rates and examples' },
     { href: '/guides/software/hotel-accounting-software.html', title: 'Accounting Software', category: 'Software', desc: 'GST-compliant invoicing' },
     { href: '/guides/reports/profit-loss-report.html', title: 'P&L Report', category: 'Reports', desc: 'Tax impact on profits' },
   ],
