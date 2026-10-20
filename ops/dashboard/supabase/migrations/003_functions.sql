@@ -25,6 +25,7 @@ returns void language plpgsql security definer set search_path = '' as $$
 declare
   v_ref    text;
   v_source text;
+  v_phone  text;
 begin
   if not site_admin.check_secret('lead_capture', p_secret) then
     raise exception 'forbidden' using errcode = '42501';
@@ -49,11 +50,17 @@ begin
     v_source := 'other';
   end if;
 
+  -- The site sends +919876543210 style; keep only a plausible number.
+  v_phone := '+' || regexp_replace(coalesce(p_payload ->> 'phone', ''), '[^0-9]', '', 'g');
+  if v_phone !~ '^\+[0-9]{8,15}$' then v_phone := null; end if;
+
   insert into site_admin.leads (
-    ref, source, page_path, referrer, utm_source, utm_medium, utm_campaign,
+    ref, source, name, phone, page_path, referrer, utm_source, utm_medium, utm_campaign,
     service, inventory, location, managed, message
   ) values (
     v_ref, v_source,
+    nullif(left(trim(p_payload ->> 'name'), 120), ''),
+    v_phone,
     nullif(left(trim(p_payload ->> 'page_path'),    300), ''),
     nullif(left(trim(p_payload ->> 'referrer'),     500), ''),
     nullif(left(trim(p_payload ->> 'utm_source'),   100), ''),

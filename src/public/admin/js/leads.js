@@ -70,8 +70,10 @@
       return;
     }
     tbody.innerHTML = rows.map(function (l) {
-      var who = l.name || l.hotel_name
-        ? esc(l.name || '') + (l.hotel_name ? '<div class="sub">' + esc(l.hotel_name) + (l.city ? ', ' + esc(l.city) : '') + '</div>' : '')
+      var who = l.name || l.hotel_name || l.phone
+        ? esc(l.name || l.phone || '') +
+          (l.name && l.phone ? '<div class="sub">' + esc(l.phone) + '</div>' : '') +
+          (l.hotel_name ? '<div class="sub">' + esc(l.hotel_name) + (l.city ? ', ' + esc(l.city) : '') + '</div>' : '')
         : '<span class="muted">Not identified yet</span>' + (l.location ? '<div class="sub">' + esc(l.location) + '</div>' : '');
       var follow = l.next_follow_up
         ? (CRM.isOverdue(l) ? '<span class="badge bad">' + OH.fmtDate(l.next_follow_up) + '</span>' : OH.fmtDate(l.next_follow_up))

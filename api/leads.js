@@ -1,6 +1,8 @@
 // POST /api/leads: records a WhatsApp enquiry in the admin CRM.
 // Called with navigator.sendBeacon from wa-widget.js, the contact form and the
-// PMS page CTAs, just before WhatsApp opens. Always answers 204 so it never
+// PMS page CTAs, just before WhatsApp opens. The widget and contact form send
+// the visitor's mobile number (required) and name (optional); the privacy page
+// says so. Always answers 204 so it never
 // reveals anything, and never blocks the enquiry itself.
 // Design: ops/dashboard/ARCHITECTURE.md §6.1.
 
@@ -8,7 +10,7 @@ import { supabaseConfig, parseBody, hashIp } from './_lib/admin.js';
 
 const MAX_BYTES = 4096;
 const FIELDS = ['ref', 'source', 'page_path', 'referrer', 'utm_source', 'utm_medium',
-  'utm_campaign', 'service', 'inventory', 'location', 'managed', 'message'];
+  'utm_campaign', 'service', 'inventory', 'location', 'managed', 'message', 'name', 'phone'];
 
 function isSameSite(req) {
   const host = req.headers['x-forwarded-host'] || req.headers.host;

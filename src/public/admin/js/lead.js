@@ -20,7 +20,7 @@
 
   function fill() {
     document.getElementById('lead-title').textContent =
-      lead.name || lead.hotel_name || (lead.ref ? 'Enquiry ' + lead.ref : 'Lead #' + lead.id);
+      lead.name || lead.hotel_name || lead.phone || (lead.ref ? 'Enquiry ' + lead.ref : 'Lead #' + lead.id);
     document.getElementById('lead-sub').innerHTML =
       (lead.ref ? '<span class="mono">' + esc(lead.ref) + '</span> · ' : '') +
       esc(CRM.label(CRM.SOURCES, lead.source)) + ' · received ' + OH.fmtDateTime(lead.created_at) +

@@ -15,8 +15,13 @@
       display: none; background: #fff; border-radius: 16px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.15); padding: 1.25rem 1.5rem;
       width: 320px; animation: ohSlideUp 0.25s ease;
+      max-height: calc(100vh - 7rem); overflow-y: auto;
     }
     #oh-wa-bubble.oh-open { display: block; }
+    .oh-wa-req { color: #8E3B2E; }
+    .oh-wa-error { display: none; font-size: 0.75rem; color: #8E3B2E; margin-top: 0.3rem; }
+    .oh-wa-fields input.oh-wa-invalid { border-color: #8E3B2E; }
+    .oh-wa-note a { color: inherit; text-decoration: underline; }
     @keyframes ohSlideUp {
       from { opacity: 0; transform: translateY(12px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -109,6 +114,15 @@
         <p class="oh-wa-intro">Hi! Tell us a little about your property and we'll get back to you right away.</p>
         <div class="oh-wa-fields">
           <div>
+            <div class="oh-wa-label">Your WhatsApp number <span class="oh-wa-req">*</span></div>
+            <input type="tel" id="oh-wa-phone" inputmode="tel" autocomplete="tel" placeholder="e.g. 98765 43210" />
+            <div class="oh-wa-error" id="oh-wa-phone-error">Please enter a valid mobile number.</div>
+          </div>
+          <div>
+            <div class="oh-wa-label">Your name</div>
+            <input type="text" id="oh-wa-name" autocomplete="name" placeholder="Optional" />
+          </div>
+          <div>
             <div class="oh-wa-label">I'm interested in</div>
             <select id="oh-wa-service">
               <option value="">Select a service…</option>
@@ -150,7 +164,7 @@
             ${WA_SVG}
             Send on WhatsApp
           </button>
-          <div class="oh-wa-note">Opens WhatsApp with your details pre-filled</div>
+          <div class="oh-wa-note">Opens WhatsApp with your details pre-filled. By sending, you agree to our <a href="/privacy/">Privacy Policy</a>.</div>
         </div>
       </div>
       <button id="oh-wa-fab" aria-label="Chat on WhatsApp">
@@ -187,9 +201,10 @@
 
   // Records the enquiry in the admin CRM before WhatsApp opens, and returns a
   // short reference that goes into the message so the chat can be matched to
-  // the page it came from. No personal data is sent: the visitor's name and
-  // number only ever reach WhatsApp. sendBeacon survives the tab switch and
-  // never delays it. See ops/dashboard/ARCHITECTURE.md §6.1.
+  // the page it came from. The widget and contact form include the visitor's
+  // mobile number (required) and name (optional); the privacy page says so.
+  // sendBeacon survives the tab switch and never delays it.
+  // See ops/dashboard/ARCHITECTURE.md §6.1.
   function captureLead(source, fields) {
     var chars = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
     var ref = 'OH-';
@@ -215,15 +230,45 @@
     } catch (e) { /* the WhatsApp message still goes out */ }
     return ref;
   }
-  window.ohLead = { capture: captureLead };
+  // Indian mobiles typed any common way (98765 43210, 098765..., +91-98765...)
+  // become +919876543210. Numbers starting with another country code are kept
+  // as typed if they have 8–15 digits. Anything else returns null.
+  function normalisePhone(raw) {
+    var s = String(raw || '').trim();
+    var digits = s.replace(/\D/g, '');
+    if (s.charAt(0) === '+' && digits.indexOf('91') !== 0) {
+      return digits.length >= 8 && digits.length <= 15 ? '+' + digits : null;
+    }
+    if (digits.length === 12 && digits.indexOf('91') === 0) digits = digits.slice(2);
+    else if (digits.length === 11 && digits.charAt(0) === '0') digits = digits.slice(1);
+    return /^[6-9]\d{9}$/.test(digits) ? '+91' + digits : null;
+  }
+
+  window.ohLead = { capture: captureLead, normalisePhone: normalisePhone };
+
+  var phoneInput = document.getElementById('oh-wa-phone');
+  var phoneError = document.getElementById('oh-wa-phone-error');
+  phoneInput.addEventListener('input', function () {
+    phoneInput.classList.remove('oh-wa-invalid');
+    phoneError.style.display = 'none';
+  });
 
   document.getElementById('oh-wa-send-btn').addEventListener('click', function () {
+    var phone = normalisePhone(phoneInput.value);
+    if (!phone) {
+      phoneInput.classList.add('oh-wa-invalid');
+      phoneError.style.display = 'block';
+      phoneInput.focus();
+      return;
+    }
+    var name      = document.getElementById('oh-wa-name').value.trim();
     var service   = document.getElementById('oh-wa-service').value;
     var inventory = document.getElementById('oh-wa-inventory').value;
     var location  = document.getElementById('oh-wa-location').value.trim();
     var managed   = document.getElementById('oh-wa-managed').value;
 
     var parts = ['Hi! I came across OnlineHotelier and would like to enquire.'];
+    if (name)      parts.push('Name: ' + name);
     if (service)   parts.push('Service interested in: ' + service);
     if (inventory) parts.push('Inventory: ' + inventory);
     if (location)  parts.push('Location: ' + location);
@@ -231,6 +276,7 @@
     parts.push('Please get in touch. Thank you.');
 
     var ref = captureLead('widget_form', {
+      name: name, phone: phone,
       service: service, inventory: inventory, location: location, managed: managed
     });
 

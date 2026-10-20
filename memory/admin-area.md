@@ -28,6 +28,10 @@ with a **leads CRM** and a **page tracker**. Full design and reasoning:
 - **The login token never goes in localStorage.** `/admin/` shares an origin
   with every public page and GA4. Access token in memory, refresh token in an
   HttpOnly cookie scoped to `/api/admin`.
+- **The widget and contact form require a WhatsApp number** and save it,
+  with the optional name, on Send (before WhatsApp opens). The privacy page
+  and the "By sending, you agree to our Privacy Policy" line under each form
+  say so. Change the forms and the privacy page together, never one alone.
 - **Every WhatsApp enquiry carries `Ref: OH-XXXXX`.** It is how a chat is
   matched to its lead and source page. Keep it when editing the widget,
   contact form or PMS CTAs.
