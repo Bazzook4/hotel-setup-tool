@@ -29,7 +29,10 @@ const log = (...m) => console.log('[tracker]', ...m);
 const startedAt = new Date().toISOString();
 const cfg = trackerConfig();
 if (!cfg && !dryRun) {
-  log('SUPABASE_URL, SUPABASE_ANON_KEY or TRACKER_SECRET is not set. Skipping (nothing to write to yet).');
+  // Shown as a yellow annotation on the run, so a skipped run is not mistaken for a real one.
+  const missing = ['SUPABASE_URL', 'SUPABASE_ANON_KEY', 'TRACKER_SECRET'].filter((k) => !process.env[k]);
+  console.log(`::warning title=Page tracker skipped::Missing repository secret(s): ${missing.join(', ')}. ` +
+    'Add them under Settings > Secrets and variables > Actions > Secrets tab (Repository secrets).');
   process.exit(0);
 }
 
