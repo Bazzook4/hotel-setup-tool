@@ -27,6 +27,7 @@
     var weekAgo = new Date(Date.now() - 7 * 86400000).toISOString();
     var stats = [
       ['Pages on the site', current.length],
+      ['Live', current.filter(function (p) { return p.live_status === 'live'; }).length],
       ['Changed in last 7 days', current.filter(function (p) { return p.last_changed >= weekAgo; }).length],
       ['Not live', pages.filter(TR.isProblem).length],
       ['Failing checks', current.filter(function (p) { return p.checks_failed > 0; }).length],
@@ -91,6 +92,8 @@
   var aType = document.getElementById('a-type');
   var aCat = document.getElementById('a-cat');
   var aProblem = document.getElementById('a-problem');
+  var aLive = document.getElementById('a-live');
+  var aChanged = document.getElementById('a-changed');
 
   function fillFilterOptions() {
     Object.keys(TR.TYPES).forEach(function (t) {
@@ -125,18 +128,23 @@
 
   function renderAll() {
     var q = aSearch.value.trim().toLowerCase();
+    var changedSince = aChanged.value ?
+      new Date(Date.now() - parseInt(aChanged.value, 10) * 86400000).toISOString() : '';
     var rows = pages.filter(function (p) {
       var removedView = aProblem.value === 'removed';
       if (removedView !== !!p.deleted_at) return false;
       if (aType.value && p.type !== aType.value) return false;
       if (aCat.value && p.category !== aCat.value) return false;
-      if (aProblem.value === 'notlive' && !TR.isProblem(p)) return false;
+      if (aLive.value === 'live' && p.live_status !== 'live') return false;
+      if (aLive.value === 'notlive' && !TR.isProblem(p)) return false;
+      if (changedSince && !(p.last_changed >= changedSince)) return false;
       if (aProblem.value === 'checks' && !(p.checks_failed > 0)) return false;
       if (aProblem.value === 'unlisted' && listedOk(p)) return false;
       if (q && ((p.title || '') + ' ' + p.path).toLowerCase().indexOf(q) === -1) return false;
       return true;
     }).sort(function (a, b) { return (a.last_changed || '') < (b.last_changed || '') ? 1 : -1; });
 
+    document.getElementById('a-count').textContent = rows.length + ' of ' + pages.length + ' pages';
     var tbody = document.getElementById('all-rows');
     if (!rows.length) { tbody.innerHTML = '<tr><td colspan="7" class="empty">No pages match.</td></tr>'; return; }
     tbody.innerHTML = rows.map(function (p) {
@@ -157,7 +165,7 @@
   }
 
   [aSearch].forEach(function (el) { el.addEventListener('input', renderAll); });
-  [aType, aCat, aProblem].forEach(function (el) { el.addEventListener('change', renderAll); });
+  [aType, aCat, aLive, aChanged, aProblem].forEach(function (el) { el.addEventListener('change', renderAll); });
 
   // ── Load ──────────────────────────────────────────────────────────────
   try {

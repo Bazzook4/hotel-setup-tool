@@ -57,14 +57,26 @@
         <input type="search" id="a-search" placeholder="Search title or path…">
         <select id="a-type"><option value="">All types</option></select>
         <select id="a-cat"><option value="">All categories</option></select>
+        <select id="a-live">
+          <option value="">Any live status</option>
+          <option value="live">Live</option>
+          <option value="notlive">Not live</option>
+        </select>
+        <select id="a-changed">
+          <option value="">Changed any time</option>
+          <option value="1">Changed in last 24 hours</option>
+          <option value="7">Changed in last 7 days</option>
+          <option value="30">Changed in last 30 days</option>
+          <option value="90">Changed in last 90 days</option>
+        </select>
         <select id="a-problem">
           <option value="">All current pages</option>
-          <option value="notlive">Not live</option>
           <option value="checks">Failing checks</option>
           <option value="unlisted">Not listed</option>
           <option value="removed">Removed pages</option>
         </select>
       </div>
+      <p class="muted small" id="a-count"></p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Page</th><th>Type</th><th>Added</th><th>Last changed</th><th>Live</th><th>Listed in</th><th>Checks</th></tr></thead>
