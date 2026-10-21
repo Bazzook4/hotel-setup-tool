@@ -13,53 +13,20 @@
     <div class="page-head">
       <div>
         <h1>Pages</h1>
-        <p class="muted" id="sync-note">Every page on the site, what changed, and whether it is live.</p>
+        <p class="muted" id="sync-note">Every page on the site and whether it is live. Click a page to see its changes.</p>
       </div>
     </div>
 
     <div class="stats" id="stats"></div>
 
-    <div class="tabs" role="tablist">
-      <button type="button" class="active" data-tab="recent">Recent changes</button>
-      <button type="button" data-tab="all">All pages</button>
-    </div>
-
-    <section id="tab-recent">
-      <div class="filters">
-        <select id="r-days">
-          <option value="7">Last 7 days</option>
-          <option value="30" selected>Last 30 days</option>
-          <option value="90">Last 90 days</option>
-          <option value="365">Last 12 months</option>
-        </select>
-        <select id="r-type">
-          <option value="">All changes</option>
-          <option value="added">Added</option>
-          <option value="modified">Edited</option>
-          <option value="deleted">Removed</option>
-          <option value="renamed">Moved</option>
-        </select>
-        <select id="r-live">
-          <option value="">Any live status</option>
-          <option value="not_live">Not live</option>
-        </select>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>When</th><th>Page</th><th>Change</th><th>What changed</th><th>Commit</th><th>Live</th></tr></thead>
-          <tbody id="recent-rows"><tr><td colspan="6" class="empty">Loading…</td></tr></tbody>
-        </table>
-      </div>
-    </section>
-
-    <section id="tab-all" class="hidden">
+    <section>
       <div class="filters">
         <input type="search" id="a-search" placeholder="Search title or path…">
         <select id="a-type"><option value="">All types</option></select>
         <select id="a-cat"><option value="">All categories</option></select>
         <select id="a-live">
           <option value="">Any live status</option>
-          <option value="live">Live</option>
+          <option value="live" selected>Live</option>
           <option value="notlive">Not live</option>
         </select>
         <select id="a-changed">
@@ -79,8 +46,8 @@
       <p class="muted small" id="a-count"></p>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Page</th><th>Type</th><th>Added</th><th>Last changed</th><th>Live</th><th>Listed in</th><th>Checks</th></tr></thead>
-          <tbody id="all-rows"></tbody>
+          <thead><tr><th></th><th>Page</th><th>Type</th><th>Added</th><th>Last changed</th><th>Live</th><th>Listed in</th><th>Checks</th></tr></thead>
+          <tbody id="all-rows"><tr><td colspan="8" class="empty">Loading…</td></tr></tbody>
         </table>
       </div>
       <p class="muted small">Listed in: S = sitemap, N = guide menu (guide-nav.js), G = /guides/ page. Guides need all three.</p>
