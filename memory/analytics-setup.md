@@ -40,7 +40,7 @@ Each event carries three parameters, registered as Event-scoped custom dimension
 
 | Dimension | Parameter | What it answers |
 |---|---|---|
-| WA Action | `wa_action` | Which button: `widget_open`, `widget_form`, `contact_form`, `contact_direct`, `pms_direct` (pre-filled wa.me CTAs on `/services/hotel-pms/`) |
+| WA Action | `wa_action` | Which button: `widget_open`, `widget_form`, `contact_form`, `contact_direct`, `pms_direct` (retired 21 Oct 2026: the PMS page CTAs now open the widget, so they report `widget_open`/`widget_form`) |
 | WA Service | `wa_service` | Which service they picked in the dropdown, blank if none |
 | WA Page | `page_path` | Which page they were reading when they clicked |
 

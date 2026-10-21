@@ -298,9 +298,20 @@
     window.open(url, '_blank', 'noopener');
   });
 
-  // Public API — pages can call ohWA.open() from their own CTAs
+  // Public API — pages can call ohWA.open() from their own CTAs. Pass the
+  // value of a service <option> (e.g. ohWA.open('OnlineHotelier PMS')) to
+  // pre-select it; the visitor can still change it.
+  var serviceSelect = document.getElementById('oh-wa-service');
   window.ohWA = {
-    open:   function () { trackWA('widget_open'); bubble.classList.add('oh-open'); },
+    open: function (service) {
+      if (typeof service === 'string' && service &&
+          serviceSelect.querySelector('option[value="' + service + '"]')) {
+        serviceSelect.value = service;
+      }
+      trackWA('widget_open', service);
+      bubble.classList.add('oh-open');
+      if (!nameInput.value) nameInput.focus({ preventScroll: true });
+    },
     close:  function () { bubble.classList.remove('oh-open'); },
     toggle: function () { trackWA('widget_open'); bubble.classList.toggle('oh-open'); }
   };

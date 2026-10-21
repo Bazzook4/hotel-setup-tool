@@ -279,8 +279,10 @@ endpoint.
 
 ### 6.1 Capturing enquiries from the site
 
-When a visitor clicks **Send on WhatsApp** (widget or contact form) or a
-`pms_direct` link, the page:
+When a visitor clicks **Send on WhatsApp** (widget or contact form), the page:
+(Service-page CTAs, including `/services/hotel-pms/`, open the widget with
+their service pre-selected via `ohWA.open(service)`. The `pms_direct` wa.me
+links were removed on 21 Oct 2026; the source value stays valid for old rows.)
 
 1. Generates a short reference such as `OH-7K2MX` in the browser.
 2. Appends `Ref: OH-7K2MX` to the pre-filled WhatsApp message.
