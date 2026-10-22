@@ -54,6 +54,14 @@ open the widget and abandon the form.
 Custom dimensions only collect from creation onward, so the first 6 clicks
 (9–10 Aug) have no breakdown.
 
+## pms_signup_click event
+
+Added 22 Oct 2026. Fires from the self-serve "Sign Up Now" links on
+`src/public/services/hotel-pms/index.html`, which go to the PMS onboarding page
+on `hms.onlinehotelier.com`. One parameter, `cta_position`: `hero`, `faq` or
+`bottom`. Not yet a key event or a registered custom dimension; do both in GA4
+if sign-ups are to be compared with `whatsapp_click`.
+
 ## Reading the data
 
 - Use **Reports → Realtime** to check the tag is firing. **DebugView shows nothing
