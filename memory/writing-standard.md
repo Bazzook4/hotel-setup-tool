@@ -20,6 +20,9 @@ Run this checklist on every guide before commit.
    - Keep one base figure (₹3,000, ₹5,000) across a whole guide so the examples
      compare cleanly.
    - Currency is ₹ throughout. Never `$` or USD.
+   - **Scoped exception:** the country PMS pages under
+     `/services/hotel-pms/<country>/` use that country's currency, because their
+     readers are not Indian. See [[country-pms-pages]].
 
 3. **Story first.** Open with a scene the reader recognises, not a definition:
    "You just listed on MMT and Booking.com. Now you need to update your rate for

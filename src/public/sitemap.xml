@@ -573,8 +573,39 @@
   <!-- Hotel PMS service -->
   <url>
     <loc>https://www.onlinehotelier.com/services/hotel-pms/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <!-- Hotel PMS country pages -->
+  <url>
+    <loc>https://www.onlinehotelier.com/services/hotel-pms/sri-lanka/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.onlinehotelier.com/services/hotel-pms/thailand/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.onlinehotelier.com/services/hotel-pms/malaysia/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.onlinehotelier.com/services/hotel-pms/indonesia/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.onlinehotelier.com/services/hotel-pms/kenya/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

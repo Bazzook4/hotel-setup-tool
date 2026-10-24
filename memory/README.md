@@ -25,6 +25,7 @@ the `.md`. Every link resolves inside this folder.
 | [backlog.md](backlog.md) | **Everything still open**, verified against the repo 31 Aug 2026. Also records what closed, so finished work does not get re-reported. |
 | [published-guides.md](published-guides.md) | Every published guide by category. Use it to find internal linking opportunities. |
 | [guides-to-services-map.md](guides-to-services-map.md) | Which guide points at which service, and the gaps. |
+| [country-pms-pages.md](country-pms-pages.md) | Free PMS pages for countries outside India: the Thailand pattern, owner decisions on what may be claimed, which countries are live or held, and the tax facts that tripped the first drafts. |
 
 ## Facts worth not re-deriving
 
