@@ -12,8 +12,11 @@ to very small properties outside India. Started 24 Oct 2026.
 | 1 | Indonesia | `indonesia` | Live |
 | 1 | Kenya | `kenya` | Live |
 | 2 | Sri Lanka | `sri-lanka` | Live (owner asked for it early) |
-| 2 | Philippines, Vietnam, Tanzania | | SEO brief done, not written |
-| 3 | Nepal, Maldives | | SEO brief done, not written |
+| 2 | Philippines | `philippines` | Live |
+| 2 | Vietnam | `vietnam` | Live |
+| 2 | Tanzania (incl. Zanzibar) | `tanzania` | Live |
+| 3 | Nepal | `nepal` | Live |
+| 3 | Maldives | `maldives` | Live (USD billing; local-island guesthouses only) |
 | Hold | Singapore, Cambodia | | Owner decision: too little demand or local material |
 
 ## The pattern
@@ -64,6 +67,15 @@ before editing, because several moved during 2026:
   June 2026); the SSCL threshold did fall to Rs 36m from 1 July 2026. TDL is not
   on the guest bill.
 - **Thailand:** 7% VAT runs to 30 Sept 2027 (Royal Decree 807). Recheck after.
+- **Vietnam:** the 8% VAT rate ends 31 Dec 2026 unless extended. Recheck in
+  January 2027; the sample bill uses 8%.
+- **Tanzania:** the 2% council hotel levy is kept off the bill (assessed on
+  turnover). No Zanzibar sample bill: its VAT and infrastructure tax rates came
+  only from secondary sources.
+- **Nepal:** the mandatory 10% service charge was struck down by the Supreme
+  Court in Jan 2023; the page shows it as optional.
+- **Weak sources:** beancount.io blog posts surfaced for Sri Lanka, Nepal and
+  the Maldives. Never use them as the only source for a figure.
 
 ## Linked from
 
