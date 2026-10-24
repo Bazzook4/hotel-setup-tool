@@ -124,6 +124,7 @@
       return '<li><a href="' + link.href + '"' + active + '>' + link.label + '</a></li>';
     }).join('');
 
+    linksHtml += '<li><a href="https://hms.onlinehotelier.com/login">PMS Login</a></li>';
     linksHtml += '<li><a href="/contact/" class="nav-cta">Contact Us</a></li>';
 
     nav.innerHTML =
