@@ -17,7 +17,14 @@ to very small properties outside India. Started 24 Oct 2026.
 | 2 | Tanzania (incl. Zanzibar) | `tanzania` | Live |
 | 3 | Nepal | `nepal` | Live |
 | 3 | Maldives | `maldives` | Live (USD billing; local-island guesthouses only) |
+| 4 | Morocco | `morocco` | Live |
+| 4 | Egypt | `egypt` | Live |
+| 4 | Madagascar | `madagascar` | Live |
 | Hold | Singapore, Cambodia | | Owner decision: too little demand or local material |
+
+**Language (owner, 24 Oct 2026):** every country page is in English, including
+French- and Arabic-speaking markets. No French or Arabic versions for now: the
+pages serve owners who search in English. Do not reopen without the owner.
 
 ## The pattern
 
@@ -74,6 +81,14 @@ before editing, because several moved during 2026:
   only from secondary sources.
 - **Nepal:** the mandatory 10% service charge was struck down by the Supreme
   Court in Jan 2023; the page shows it as optional.
+- **Madagascar:** the vignette touristique scale is from a 2005 arrêté (Ar 600
+  to 3,000 per night by category, via FHORM); many properties charge more now,
+  so it is kept off the sample bill.
+- **Egypt:** the 12% service charge and 1% city tax are standard hotel practice
+  but no statute was found; the page says so.
+- **og:title:** most country pages use a shorter social title without the
+  "| OnlineHotelier" suffix, like the main PMS page. That is intended; a review
+  once flagged it as a defect by mistake.
 - **Weak sources:** beancount.io blog posts surfaced for Sri Lanka, Nepal and
   the Maldives. Never use them as the only source for a figure.
 
