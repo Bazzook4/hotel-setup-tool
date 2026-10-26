@@ -17,6 +17,7 @@ the `.md`. Every link resolves inside this folder.
 | [ai-llm-optimization.md](ai-llm-optimization.md) | AI crawler meta trio, Organization and BreadcrumbList schema bodies, H2 id rules. |
 | [crawlable-static-links.md](crawlable-static-links.md) | Internal links must be static HTML, never JS-injected, plus the internal-linking rules. |
 | [footer-standard.md](footer-standard.md) | One footer everywhere, styled only from `/css/footer.css`, and always a direct child of `<body>`. |
+| [site-nav.md](site-nav.md) | The header mega menu: where its content lives (`MEGA` in `nav.js`), how it opens, and what to update by hand when guides, tools or services change. |
 
 ## What to work on
 
