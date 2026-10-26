@@ -190,12 +190,12 @@
     #site-nav .mega-all small { display: block; font-size: 0.78rem; color: rgba(255,255,255,0.75); margin-top: 2px; font-weight: 400; }
     #site-nav .mega-cols { display: grid; gap: 0.5rem 1.5rem; grid-template-columns: repeat(var(--cols), minmax(0, 1fr)); }
     #site-nav .mega-col-head { border-bottom: 1px solid rgba(62,61,53,0.14); padding-bottom: 0.6rem; margin-bottom: 0.4rem; }
-    #site-nav .mega-col-head b { display: block; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: #3E3D35; }
-    #site-nav .mega-col-head span { display: block; font-size: 0.8rem; color: rgba(62,61,53,0.7); margin-top: 2px; }
+    #site-nav .mega-col-head b { display: block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(62,61,53,0.62); }
+    #site-nav .mega-col-head span { display: none; }
     #site-nav .mega-col ul { list-style: none; margin: 0; padding: 0; }
     #site-nav .nav-links .mega-col a {
       display: block; padding: 0.45rem 0.5rem; margin: 0 -0.5rem; border-radius: 6px;
-      color: #3E3D35; font-size: 0.88rem; font-weight: 500; background: none;
+      color: #3E3D35; font-size: 0.95rem; font-weight: 700; background: none;
     }
     #site-nav .nav-links .mega-col a:hover { background: rgba(137,130,110,0.12); color: #3E3D35; }
     #site-nav .mega-col a small { display: block; font-size: 0.78rem; font-weight: 400; color: rgba(62,61,53,0.7); margin-top: 1px; }
