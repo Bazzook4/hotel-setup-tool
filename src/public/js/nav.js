@@ -160,6 +160,7 @@
       padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.2s;
       display: inline-flex; align-items: center; gap: 0.35rem;
     }
+    #site-nav .nav-trigger:focus-visible { outline: 2px solid rgba(255,255,255,0.6); outline-offset: 2px; }
     #site-nav .nav-trigger::after {
       content: ''; width: 6px; height: 6px; margin-top: -3px;
       border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
@@ -176,29 +177,33 @@
     #site-nav .has-mega.open .mega { display: block; }
     #site-nav .mega-panel {
       max-width: 1200px; margin: 0 auto; background: #F8F8F4; color: #3E3D35;
-      border-radius: 0 0 14px 14px; padding: 1.25rem 1.5rem 1.5rem;
-      box-shadow: 0 18px 40px rgba(62,61,53,0.22);
+      border-radius: 0 0 14px 14px; padding: 1.5rem 1.75rem 1.75rem;
+      box-shadow: 0 20px 48px rgba(62,61,53,0.20), 0 4px 12px rgba(62,61,53,0.08);
       border: 1px solid rgba(62,61,53,0.08); border-top: 0;
     }
     #site-nav .nav-links .mega-all {
       display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-      background: #3E3D35; color: #fff; padding: 0.8rem 1.1rem; border-radius: 10px;
-      margin-bottom: 1.1rem; max-width: 380px;
+      background: linear-gradient(135deg, #3E3D35 0%, #6E6959 100%);
+      color: #fff; padding: 0.9rem 1.25rem; border-radius: 10px;
+      margin-bottom: 1.25rem; max-width: 400px;
+      transition: opacity 0.15s;
     }
-    #site-nav .nav-links .mega-all:hover { background: #4a493f; color: #fff; }
-    #site-nav .mega-all strong { display: block; font-size: 0.95rem; }
-    #site-nav .mega-all small { display: block; font-size: 0.78rem; color: rgba(255,255,255,0.75); margin-top: 2px; font-weight: 400; }
+    #site-nav .nav-links .mega-all:hover { opacity: 0.88; color: #fff; background: linear-gradient(135deg, #3E3D35 0%, #6E6959 100%); }
+    #site-nav .mega-all strong { display: block; font-size: 0.95rem; font-weight: 700; }
+    #site-nav .mega-all small { display: block; font-size: 0.78rem; color: rgba(255,255,255,0.72); margin-top: 2px; font-weight: 400; }
     #site-nav .mega-cols { display: grid; gap: 0.5rem 1.5rem; grid-template-columns: repeat(var(--cols), minmax(0, 1fr)); }
-    #site-nav .mega-col-head { border-bottom: 1px solid rgba(62,61,53,0.14); padding-bottom: 0.6rem; margin-bottom: 0.4rem; }
-    #site-nav .mega-col-head b { display: block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(62,61,53,0.62); }
-    #site-nav .mega-col-head span { display: none; }
+    #site-nav .mega-col-head { border-bottom: 1px solid rgba(62,61,53,0.12); padding-bottom: 0.65rem; margin-bottom: 0.5rem; }
+    #site-nav .mega-col-head b { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--primary, #3E3D35); }
+    #site-nav .mega-col-head span { display: block; font-size: 0.72rem; color: rgba(62,61,53,0.52); font-weight: 400; margin-top: 1px; }
     #site-nav .mega-col ul { list-style: none; margin: 0; padding: 0; }
     #site-nav .nav-links .mega-col a {
-      display: block; padding: 0.45rem 0.5rem; margin: 0 -0.5rem; border-radius: 6px;
-      color: #3E3D35; font-size: 0.95rem; font-weight: 700; background: none;
+      display: block; padding: 0.5rem 0.6rem; margin: 0 -0.6rem; border-radius: 7px;
+      color: #3E3D35; font-size: 0.9rem; font-weight: 600; background: none;
+      line-height: 1.35; transition: background 0.12s;
     }
-    #site-nav .nav-links .mega-col a:hover { background: rgba(137,130,110,0.12); color: #3E3D35; }
-    #site-nav .mega-col a small { display: block; font-size: 0.78rem; font-weight: 400; color: rgba(62,61,53,0.7); margin-top: 1px; }
+    #site-nav .nav-links .mega-col a:hover { background: rgba(137,130,110,0.13); color: #3E3D35; }
+    #site-nav .nav-links .mega-col a:focus-visible { outline: 2px solid var(--secondary, #89826E); outline-offset: 1px; }
+    #site-nav .mega-col a small { display: block; font-size: 0.76rem; font-weight: 400; color: rgba(62,61,53,0.65); margin-top: 2px; line-height: 1.4; }
     #site-nav .nav-links .mega-col .mega-more { font-size: 0.8rem; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
     @media (max-width: 1000px) {
       #site-nav .mega-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -227,6 +232,14 @@
         z-index: 99;
       }
       #site-nav .nav-links.open { display: flex; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #site-nav .nav-trigger,
+      #site-nav .nav-links .mega-col a,
+      #site-nav .nav-links .mega-all {
+        transition: none !important;
+        animation: none !important;
+      }
     }
   `;
 

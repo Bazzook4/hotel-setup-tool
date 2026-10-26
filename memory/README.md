@@ -13,7 +13,7 @@ the `.md`. Every link resolves inside this folder.
 | [guide-template.md](guide-template.md) | **THE template for every `/guides/` page.** Head, layout, content order, shared blocks, schema parity, post-creation checklist, pre-ship checks, and the CSS cascade trap. |
 | [tool-page-standard.md](tool-page-standard.md) | **THE template for every `/tools/` page.** Head, scaffolding, shared blocks, FAQ, audit CTA, when the CEO reviews, pre-ship checks. |
 | [writing-standard.md](writing-standard.md) | Who the reader is and the 10-point checklist every guide passes before commit. Jargon, ₹ examples, story-first, sentence length, no em dashes. |
-| [design-system.md](design-system.md) | Brand colours, component rules, and the dark-panel white-text trap including the WCAG contrast limit on `#89826E`. |
+| [design-system.md](design-system.md) | Brand colours, component rules, the dark-panel white-text trap including the WCAG contrast limit on `#89826E`, and the anti-generic design bans plus the focus/state/feedback floor. |
 | [ai-llm-optimization.md](ai-llm-optimization.md) | AI crawler meta trio, Organization and BreadcrumbList schema bodies, H2 id rules. |
 | [crawlable-static-links.md](crawlable-static-links.md) | Internal links must be static HTML, never JS-injected, plus the internal-linking rules. |
 | [footer-standard.md](footer-standard.md) | One footer everywhere, styled only from `/css/footer.css`, and always a direct child of `<body>`. |

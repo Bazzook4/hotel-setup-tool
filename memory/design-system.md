@@ -69,3 +69,29 @@ Every guide carries one `.guide-audit-cta` block pointing at `/services/ota-audi
 ## Table Overflow (site-wide rule)
 
 `.article-content table { display: block; overflow-x: auto; max-width: 100%; }` in `guide-layout.css`. Wide tables previously pushed the whole page sideways on mobile across 48 guides. `display: block` is what makes `overflow` apply to a table. The rule (0,1,1) outranks the pages' own inline `.comparison-table` (0,1,0), so page-level styles do not need editing.
+
+## Looks Designed, Not Generated (added 2026-10-26)
+
+Adapted from the owner's web-design standards file and a UI/UX video. **The brand system above wins wherever they conflict**: the font stays `'Avenir', 'DM Sans'`, the palette stays the five brand values, and the dark brand gradients (`#3E3D35 → #6E6959`) are fine. What carries over is the anti-generic discipline.
+
+**Hard bans on any page:**
+- Purple, violet or indigo as a colour, and purple/blue/pink gradients. Already covered by the Material colour ban.
+- Gradient-filled headline words.
+- Stat rows of big numbers with vague labels. Show a number only if it is real and sourced (a GST rate, a commission band, a figure from `memory/ota-commission-and-tax-rates.md`).
+- Emoji in headings or section titles. Use the `oh-icon` SVG set.
+- "Why Choose Us?" blocks and interchangeable SaaS slogans.
+- Frosted-glass cards, pill-badge clutter under a hero, and soft shadows on every card. Shadow is an accent: low opacity, high blur, popovers heavier than cards.
+- Decorative numbering (`01 / 02 / 03`) unless the content is a real sequence.
+
+**Interaction floor (every page, every tool):**
+- Visible `:focus-visible` ring on every link, button, FAQ question and card: `outline: 2px solid var(--secondary); outline-offset: 2px` (white-ish on the dark nav).
+- Buttons carry default, hover, pressed and disabled states; inputs carry focus and error states. Error uses `var(--secondary)` border plus `--secondary-light` fill, never red.
+- Every action gets a response: a loading state while calculating, a confirmation when something is copied.
+- Large headings (guide `.article-header h1`, tool `.page-header h1`) use `letter-spacing: -0.02em` and a line-height of 1.1–1.3.
+- No more than about six font sizes on a content page.
+- Respect `prefers-reduced-motion` on any animation. One considered motion beats scattered effects.
+- Keep clutter out of the first screen: one job per page, most characteristic content first.
+
+**Check before shipping:** screenshot at 375, 768, 1024 and 1440px; tab through the page and confirm every interactive element shows focus; read the copy and rewrite anything that could sit on any competitor's site; remove one thing that is not earning its place.
+
+Status of the 26 Oct 2026 pass: focus rings, H1 tracking and calculate-button states are in shared CSS. Input error states, loading states, FAQ animation and the OTA calculator's roughly ten font sizes are still open. Related: [[tool-page-standard]], [[guide-template]].

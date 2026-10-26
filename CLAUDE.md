@@ -76,6 +76,12 @@ Font:          'Avenir', 'DM Sans', system fonts
 
 **NEVER use** Material Design colors on any page (no red #c62828, green #2e7d32, blue #1565c0, orange #e65100, purple #7b1fa2).
 
+**Design standards:** the brand above always wins on font and colour, but pages
+must also pass the anti-generic rules in `memory/design-system.md` ("Looks
+Designed, Not Generated"): no gradient headline words, no meaningless stat
+rows, no emoji in headings, no "Why Choose Us?" blocks, visible focus states,
+full button and input states, and a screenshot check at 375/768/1024/1440px.
+
 ## Page Templates
 
 **Before building or editing any page, read the template for it.** Both live in

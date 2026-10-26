@@ -705,3 +705,161 @@
 
   .tools-grid-mini { grid-template-columns: 1fr; }
 }
+
+/* =====================================================
+   UI/UX PASS — 27 Oct 2026
+   Hierarchy, spacing, Quick Answer, card hover polish.
+   All selectors deliberately specific so they win the
+   cascade over per-page inline styles without touching
+   the 70 guide HTML files.
+   ===================================================== */
+
+/* --- Heading scale & rhythm (guide page body) ---
+   Per-page inline styles set .article-header h1 at 2.25rem
+   and .article-content h2/h3 at 1.5/1.2rem. The cascade
+   trap memo (guide-template §7) says to match specificity;
+   these are 0,2,1 which beats the per-page 0,1,1. */
+.article-content .article-header h1,
+.guide-main-content .article-header h1 {
+  font-size: clamp(1.85rem, 4vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+.article-content h2 {
+  font-size: 1.6rem;
+  margin-top: 2.75rem;
+  margin-bottom: 1.1rem;
+  padding-top: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.article-content h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.article-content h3 {
+  font-size: 1.175rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+
+/* More generous vertical rhythm between paragraphs */
+.article-content p {
+  line-height: 1.75;
+  margin-bottom: 1.15rem;
+}
+
+/* --- Quick Answer Box (promoted prominence) ---
+   Per-page inline sets .quick-answer at bg #3E3D35, 2rem
+   padding. Specificity 0,2,1 beats 0,1,0 page inline. */
+.article-content .quick-answer {
+  padding: 2rem 2.25rem;
+  margin-bottom: 2rem;
+  border-radius: 14px;
+  border-left: 5px solid #89826E;
+  box-shadow: 0 4px 24px rgba(62,61,53,0.18);
+}
+
+.article-content .quick-answer h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin: 0 0 0.85rem 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  color: rgba(255,255,255,0.72) !important;
+}
+
+.article-content .quick-answer .big-text {
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+/* Wins the cascade coin-flip described in §7 */
+.article-content .quick-answer p,
+.quick-answer p {
+  color: rgba(255,255,255,0.9);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+/* --- Section spacing between H2 blocks ---
+   Articles feel cramped when each section runs directly
+   into the next. Adding scroll-margin keeps anchors clear
+   of the sticky nav and adds breathing room per section. */
+.article-content h2[id] {
+  scroll-margin-top: 80px;
+}
+
+/* --- Article card — lift shadow slightly at rest --- */
+.article-content {
+  box-shadow: 0 2px 12px rgba(62,61,53,0.07), 0 0 0 1px rgba(62,61,53,0.04);
+}
+
+/* --- Related cards & explore-tools: lighter shadow + hover lift --- */
+.related-card {
+  box-shadow: 0 1px 4px rgba(62,61,53,0.06);
+  border: 1px solid rgba(62,61,53,0.07);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.related-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(62,61,53,0.11);
+  border-color: rgba(137,130,110,0.25);
+}
+
+.tool-link {
+  border: 1px solid rgba(62,61,53,0.07);
+  box-shadow: none;
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.tool-link:hover {
+  background: rgba(137,130,110,0.10);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(62,61,53,0.09);
+  border-color: rgba(137,130,110,0.28);
+}
+
+/* --- Highlight boxes: stronger left accent --- */
+.article-content .highlight-box {
+  border-left-width: 4px;
+  padding: 1.25rem 1.5rem;
+}
+
+/* --- Keyboard focus rings and heading tracking --- */
+.article-header h1 { letter-spacing: -0.02em; }
+
+.faq-question:focus-visible,
+.tool-link:focus-visible,
+.related-card:focus-visible {
+  outline: 2px solid var(--secondary, #89826E);
+  outline-offset: 2px;
+}
+
+/* --- prefers-reduced-motion: suppress all transitions/transforms --- */
+@media (prefers-reduced-motion: reduce) {
+  .related-card,
+  .tool-link,
+  .prev-next-link,
+  .guide-audit-cta-btn,
+  .sidebar-guide-list li a,
+  .sidebar-category-header,
+  .guide-toc ul li a {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}

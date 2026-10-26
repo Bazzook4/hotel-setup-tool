@@ -400,3 +400,160 @@ body.service-page .tool-page-layout {
     font-size: 1.5rem;
   }
 }
+
+.page-header h1 {
+  letter-spacing: -0.02em;
+}
+
+/* =====================================================
+   UI/UX PASS — 27 Oct 2026
+   Error states, loading feedback, focus rings,
+   reduced-motion, font-size consolidation.
+   ===================================================== */
+
+/* Pressed and disabled states for calculate buttons */
+.btn-calculate:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: none;
+}
+.btn-calculate:disabled,
+.btn-calculate:disabled:hover {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+.btn-calculate:focus-visible {
+  outline: 2px solid var(--secondary, #89826E);
+  outline-offset: 2px;
+}
+
+/* --- Input error state ---
+   Uses brand secondary (#89826E) per design-system note:
+   "Error uses var(--secondary) border plus --secondary-light fill,
+   never red." The inline message appears as a sibling span. */
+input.error,
+select.error,
+textarea.error {
+  border-color: var(--secondary, #89826E) !important;
+  background: var(--secondary-light, rgba(137,130,110,0.10)) !important;
+  outline: none;
+}
+
+input.error:focus,
+select.error:focus,
+textarea.error:focus {
+  outline: 2px solid var(--secondary, #89826E);
+  outline-offset: 1px;
+}
+
+/* Inline error message sits immediately after the input */
+.field-error {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--secondary, #89826E);
+  font-weight: 500;
+}
+
+/* --- Calculating / loading state ---
+   JS adds .is-loading to the button. Spinner uses a
+   pseudo-element so no extra markup is needed. */
+.btn-calculate.is-loading {
+  pointer-events: none;
+  opacity: 0.75;
+  cursor: wait;
+  position: relative;
+  padding-left: 2.75rem;
+}
+
+.btn-calculate.is-loading::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: oh-spin 0.7s linear infinite;
+}
+
+@keyframes oh-spin {
+  to { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* --- Copied confirmation ---
+   JS adds .copied to the share/copy button. Fades out. */
+.btn-copy {
+  transition: color 0.2s, background 0.2s;
+}
+.btn-copy.copied {
+  color: var(--primary, #3E3D35) !important;
+  background: rgba(62,61,53,0.08) !important;
+}
+
+/* --- Result display font-size consolidation (target ~6 sizes) ---
+   Before this pass, some tools had ~10 sizes. Mapping them to
+   the 6-rung scale: 0.75rem label / 0.85rem small / 0.95rem body /
+   1rem base / 1.35rem stat / 2rem hero stat. */
+.result-label,
+.stat-label,
+.breakdown-label,
+.result-row-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #888;
+  font-weight: 600;
+}
+
+.result-note,
+.stat-note,
+.breakdown-note {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.result-value,
+.breakdown-value,
+.result-row-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary, #3E3D35);
+}
+
+.stat-value,
+.metric-value {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--primary, #3E3D35);
+  letter-spacing: -0.02em;
+}
+
+.hero-stat,
+.result-hero-value {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--primary, #3E3D35);
+}
+
+/* --- prefers-reduced-motion: suppress animations/transitions on tool pages --- */
+@media (prefers-reduced-motion: reduce) {
+  .btn-calculate,
+  .btn-calculate.is-loading::before,
+  .btn-copy,
+  .tool-link,
+  .faq-question,
+  .prev-next-link {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  .btn-calculate.is-loading::before {
+    display: none;
+  }
+}
