@@ -10,7 +10,7 @@ Run after a deploy is confirmed live (see memory/deploy-pipeline.md):
 Only URLs listed in sitemap.xml are ever sent, so admin, samples and noindex
 pages cannot leak out. The key file must be live at the web root first.
 """
-import json, re, subprocess, sys, urllib.request
+import json, re, subprocess, sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
@@ -54,15 +54,18 @@ def main(args):
     if dry: return
 
     body = json.dumps({"host": HOST, "key": KEY, "keyLocation": f"{BASE}/{KEY}.txt",
-                       "urlList": urls}).encode()
-    req = urllib.request.Request(ENDPOINT, data=body,
-                                 headers={"Content-Type": "application/json; charset=utf-8"})
-    try:
-        with urllib.request.urlopen(req, timeout=30) as r:
-            print("IndexNow:", r.status, "(200/202 = accepted)")
-    except urllib.error.HTTPError as e:
-        # 403 = key file not live yet; 422 = URL not on HOST; 429 = slow down
-        sys.exit(f"IndexNow: {e.code} {e.read().decode(errors='ignore')[:300]}")
+                       "urlList": urls})
+    # curl, not urllib: python.org builds on macOS ship without a CA bundle and
+    # fail TLS verification until "Install Certificates.command" is run.
+    r = subprocess.run(["curl", "-sS", "-m", "30", "-X", "POST", ENDPOINT,
+                        "-H", "Content-Type: application/json; charset=utf-8",
+                        "--data-binary", "@-", "-w", "\n%{http_code}"],
+                       input=body, capture_output=True, text=True)
+    if r.returncode: sys.exit(f"IndexNow: curl failed: {r.stderr.strip()}")
+    text, _, code = r.stdout.rpartition("\n")
+    # 403 = key file not live yet; 422 = URL not on HOST; 429 = slow down
+    if code not in ("200", "202"): sys.exit(f"IndexNow: {code} {text[:300]}")
+    print("IndexNow:", code, "accepted")
 
 if __name__ == "__main__":
     main(sys.argv[1:])
