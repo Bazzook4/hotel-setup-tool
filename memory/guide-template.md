@@ -58,7 +58,7 @@ colours, contrast) and [[ai-llm-optimization]] (crawler meta, schema bodies).
       <header class="article-header">
         <h1>[40-60 chars]</h1>
         <div class="article-meta">
-          <span>By OnlineHotelier Insights Team</span>
+          <span>By OnlineHotelier Team</span>
           <span>[X] min read</span>
         </div>
       </header>
