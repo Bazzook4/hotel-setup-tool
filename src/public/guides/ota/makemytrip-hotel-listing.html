@@ -2,16 +2,25 @@
 <html lang="en">
 <head>
   <!-- Consent defaults. Must run BEFORE the GA4 loader: once gtag/js has
-       executed with storage allowed, the cookie is already written. Denied
-       until the visitor accepts via the banner in /js/consent.js. -->
+       executed with storage allowed, the cookie is already written. Granted by default,
+       except in the EEA, UK and Switzerland. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    // Analytics on by default. EEA, UK and Switzerland stay denied (GDPR):
+    // the region-specific default overrides the global one there.
+    gtag('consent', 'default', {
+      analytics_storage: 'granted',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
     gtag('consent', 'default', {
       analytics_storage: 'denied',
       ad_storage: 'denied',
       ad_user_data: 'denied',
-      ad_personalization: 'denied'
+      ad_personalization: 'denied',
+      region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']
     });
   </script>
   <!-- Google tag (gtag.js) -->
@@ -438,7 +447,7 @@
 
           <h2 id="mmt-extranet">MMT Extranet: Managing Your Listing Day-to-Day</h2>
 
-          <p>The GoMMT extranet, which older guides still call Partner Central, is where you manage everything after going live:</p>
+          <p>The GoMMT extranet, which older guides still call Partner Central, is where you manage everything after going live. Because Goibibo shares this same portal, everything here also applies to <a href="/guides/ota/goibibo-hotel-listing.html" style="color: var(--secondary);">how Goibibo appears in the GoMMT extranet</a>.</p>
 
           <table class="comparison-table">
             <tr>

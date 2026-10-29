@@ -46,9 +46,11 @@ Run these agents in order. Do not skip steps.
 - **Analytics**: GA4 `G-9L2N1S6S9F` is the only property. See `memory/analytics-setup.md` before touching tracking; two older properties were retired on 9 Aug 2026.
 - **AdSense**: removed 7 Oct 2026. No ad units were ever placed, so the loader
   was a consent liability with no revenue. Do not re-add it to new pages.
-- **Cookie consent**: analytics denied by default via an inline `gtag('consent',
-  'default')` block before the GA4 loader, plus `/js/consent.js` and
-  `/css/consent.css`. See `memory/cookie-consent.md`.
+- **Cookie consent**: since 28 Oct 2026 analytics is granted by default except
+  in the EEA/UK/Switzerland (region-specific `gtag('consent','default')` calls
+  in an inline block before the GA4 loader), and the banner in `/js/consent.js`
+  is switched off. Copy the block from an existing page. Revisit before DPDP
+  full compliance, ~May 2027. See `memory/cookie-consent.md`.
 - **Branch**: main
 - **Stack**: Static HTML/CSS/JS, no build step
 - **Admin area**: `/admin/` is a private leads CRM and page tracker on Supabase.

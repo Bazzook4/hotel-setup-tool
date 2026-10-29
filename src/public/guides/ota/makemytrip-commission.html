@@ -2,16 +2,25 @@
 <html lang="en">
 <head>
   <!-- Consent defaults. Must run BEFORE the GA4 loader: once gtag/js has
-       executed with storage allowed, the cookie is already written. Denied
-       until the visitor accepts via the banner in /js/consent.js. -->
+       executed with storage allowed, the cookie is already written. Granted by default,
+       except in the EEA, UK and Switzerland. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    // Analytics on by default. EEA, UK and Switzerland stay denied (GDPR):
+    // the region-specific default overrides the global one there.
+    gtag('consent', 'default', {
+      analytics_storage: 'granted',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
     gtag('consent', 'default', {
       analytics_storage: 'denied',
       ad_storage: 'denied',
       ad_user_data: 'denied',
-      ad_personalization: 'denied'
+      ad_personalization: 'denied',
+      region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']
     });
   </script>
   <!-- Google tag (gtag.js) -->
@@ -274,7 +283,7 @@
           </ul>
 
           <h3>Goibibo Shares the Same Contract</h3>
-          <p>MakeMyTrip and Goibibo operate under the same parent company (MakeMyTrip Ltd) and share the <strong>GoMMT extranet</strong> (the partner dashboard where you manage your listing on both platforms). When you sign with MMT, your property is automatically listed on Goibibo too, under the same commission terms. You do not negotiate two separate rates.</p>
+          <p>MakeMyTrip and Goibibo operate under the same parent company (MakeMyTrip Ltd) and share the <strong>GoMMT extranet</strong> (the partner dashboard where you manage your listing on both platforms). When you sign with MMT, your property is automatically listed on Goibibo too, under the same commission terms. You do not negotiate two separate rates. See the <a href="/guides/ota/goibibo-hotel-listing.html" style="color: var(--secondary);">Goibibo hotel registration guide</a> for how the shared extranet works.</p>
 
           <h3>Negotiation Levers</h3>
           <p>Commission is negotiable. New properties have little room, because MMT has no performance data on them. After six months of consistent bookings, a good review score, and low cancellations, contact your MMT relationship manager and ask for a review. Properties in high-demand destinations often achieve a reduction of 2 to 4 percent. Bring three months of performance data from the MMT extranet: bookings per month, conversion rate, and average room rate.</p>

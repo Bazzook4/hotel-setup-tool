@@ -2,16 +2,25 @@
 <html lang="en">
 <head>
   <!-- Consent defaults. Must run BEFORE the GA4 loader: once gtag/js has
-       executed with storage allowed, the cookie is already written. Denied
-       until the visitor accepts via the banner in /js/consent.js. -->
+       executed with storage allowed, the cookie is already written. Granted by default,
+       except in the EEA, UK and Switzerland. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    // Analytics on by default. EEA, UK and Switzerland stay denied (GDPR):
+    // the region-specific default overrides the global one there.
+    gtag('consent', 'default', {
+      analytics_storage: 'granted',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
     gtag('consent', 'default', {
       analytics_storage: 'denied',
       ad_storage: 'denied',
       ad_user_data: 'denied',
-      ad_personalization: 'denied'
+      ad_personalization: 'denied',
+      region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']
     });
   </script>
   <!-- Google tag (gtag.js) -->
@@ -414,7 +423,7 @@
 
           <h2 id="makemytrip-goibibo">1 and 2. MakeMyTrip and Goibibo: Best for Domestic Bookings</h2>
 
-          <p>MakeMyTrip and Goibibo are owned by the same parent company, MakeMyTrip Group. When you list on one, you are visible on both. This is the single most important fact for any Indian hotelier.</p>
+          <p>MakeMyTrip and Goibibo are owned by the same parent company, MakeMyTrip Group. When you list on one, you are visible on both. This is the single most important fact for any Indian hotelier. See the <a href="/guides/ota/goibibo-hotel-listing.html" style="color: var(--secondary);">Goibibo hotel registration guide</a> for how the shared GoMMT extranet works.</p>
 
           <p>Together, MakeMyTrip and Goibibo control over 60% of online hotel bookings made by Indian travellers. If a family in Pune is planning a trip to Mahabaleshwar, there is a very high chance they open the MakeMyTrip app first. If a young couple in Delhi is looking for a weekend getaway in Mussoorie, Goibibo is usually in their top two options.</p>
 
@@ -498,7 +507,7 @@
 
           <p>Yatra is one of India's oldest OTAs. It began as a flight booking site and expanded into hotels. Yatra has carved out a strong niche in Indian corporate travel. Many mid-size and large companies in India use Yatra's corporate booking platform for employee travel.</p>
 
-          <p>If your hotel is in a business city (Delhi, Mumbai, Bengaluru, Hyderabad, Pune, Chennai), Yatra deserves a spot in your distribution mix. Corporate travellers book on weekdays, pay on time, and often return. For channel scores built on one city's guest mix, see our guides to the best OTAs in <a href="/guides/ota/best-ota-for-hotels-in-mumbai.html" style="color: var(--secondary);">Mumbai</a>, <a href="/guides/ota/best-ota-for-hotels-in-pune.html" style="color: var(--secondary);">Pune</a>, <a href="/guides/ota/best-ota-for-hotels-in-goa.html" style="color: var(--secondary);">Goa</a>, <a href="/guides/ota/best-ota-for-hotels-in-hyderabad.html" style="color: var(--secondary);">Hyderabad</a>, <a href="/guides/ota/best-ota-for-hotels-in-jaipur.html" style="color: var(--secondary);">Jaipur</a> and <a href="/guides/ota/best-ota-for-hotels-in-delhi.html" style="color: var(--secondary);">Delhi NCR</a>.</p>
+          <p>If your hotel is in a business city (Delhi, Mumbai, Bengaluru, Hyderabad, Pune, Chennai), Yatra deserves a spot in your distribution mix. Corporate travellers book on weekdays, pay on time, and often return. For channel scores built on one city's guest mix, see our guides to the best OTAs in <a href="/guides/ota/best-ota-for-hotels-in-mumbai.html" style="color: var(--secondary);">Mumbai</a>, <a href="/guides/ota/best-ota-for-hotels-in-pune.html" style="color: var(--secondary);">Pune</a>, <a href="/guides/ota/best-ota-for-hotels-in-goa.html" style="color: var(--secondary);">Goa</a>, <a href="/guides/ota/best-ota-for-hotels-in-hyderabad.html" style="color: var(--secondary);">Hyderabad</a>, <a href="/guides/ota/best-ota-for-hotels-in-jaipur.html" style="color: var(--secondary);">Jaipur</a>, <a href="/guides/ota/best-ota-for-hotels-in-delhi.html" style="color: var(--secondary);">Delhi NCR</a> and <a href="/guides/ota/best-ota-for-hotels-in-lucknow.html" style="color: var(--secondary);">Lucknow</a>.</p>
 
           <p>Yatra's commission is typically 10 to 18%, lower than most OTAs. This is partly because corporate bookings are negotiated through contracts. Settlement is weekly or bi-weekly.</p>
 

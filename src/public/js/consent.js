@@ -96,14 +96,22 @@
     document.body.appendChild(wrap);
   }
 
+  /* Banner off since 28 Oct 2026. Analytics is granted by default outside the
+     EEA, UK and Switzerland (see the inline default in each page's head), and
+     there is no geo lookup to show the banner only there, so EU visitors stay
+     denied with no prompt. DPDP full compliance is due around May 2027: before
+     then, set this to true and make the inline default denied for India. */
+  var SHOW_BANNER = false;
+
   function start() {
     var saved = read();
     if (saved) {
-      /* Returning visitor: re-send their choice, show nothing. */
+      /* Returning visitor: re-send their choice, show nothing. A visitor who
+         declined while the banner was live stays declined. */
       apply(saved);
       return;
     }
-    render();
+    if (SHOW_BANNER) render();
   }
 
   if (document.readyState === 'loading') {

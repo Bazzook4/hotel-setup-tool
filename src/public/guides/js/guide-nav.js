@@ -45,6 +45,7 @@ const GUIDE_CATEGORIES = [
       { slug: 'best-ota-for-hotels-in-hyderabad.html', title: 'Best OTA for Hotels in Hyderabad' },
       { slug: 'best-ota-for-hotels-in-jaipur.html', title: 'Best OTA for Hotels in Jaipur' },
       { slug: 'best-ota-for-hotels-in-delhi.html', title: 'Best OTA for Hotels in Delhi NCR' },
+      { slug: 'best-ota-for-hotels-in-lucknow.html', title: 'Best OTA for Hotels in Lucknow' },
       { slug: 'booking-com-hotel-listing-guide.html', title: 'Booking.com Listing Guide' },
       { slug: 'booking-genius-program.html', title: 'Booking.com Genius Program' },
       { slug: 'google-free-booking-links.html', title: 'Google Free Booking Links' },
@@ -52,6 +53,7 @@ const GUIDE_CATEGORIES = [
       { slug: 'makemytrip-hotel-listing.html', title: 'MakeMyTrip Hotel Registration & Listing' },
       { slug: 'makemytrip-commission.html', title: 'MakeMyTrip Commission for Hotels' },
       { slug: 'makemytrip-ranking.html', title: 'Rank Higher on MakeMyTrip' },
+      { slug: 'goibibo-hotel-listing.html', title: 'Goibibo Hotel Registration & Listing' },
       { slug: 'agoda-hotel-listing.html', title: 'Agoda Hotel Registration & Listing' },
       { slug: 'agoda-rate-discrepancy.html', title: 'Agoda Rate Discrepancy' },
       { slug: 'hotel-direct-booking-strategy.html', title: 'Hotel Direct Booking Strategy' },
@@ -298,6 +300,11 @@ const RELATED_CONTENT = {
     { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Sync rates across Booking.com, MMT, Expedia and Agoda with corporate blocks' },
     { href: '/guides/ota/hotel-direct-booking-strategy.html', title: 'Direct Booking Strategy', category: 'OTA', desc: 'GeM contracts, embassy rate agreements and Gurugram corporate direct' },
   ],
+  '/guides/ota/best-ota-for-hotels-in-lucknow.html': [
+    { href: '/guides/ota/attract-international-guests-india.html', title: 'Attract International Guests', category: 'OTA', desc: 'Right OTA by guest nationality for Lucknow heritage, Ayodhya pilgrimage and Buddhist circuit demand' },
+    { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Sync rates across MMT, Booking.com and Agoda with pilgrimage season blocks' },
+    { href: '/guides/ota/hotel-direct-booking-strategy.html', title: 'Direct Booking Strategy', category: 'OTA', desc: 'Government travel rate letters, UP state secretariat and repeat pilgrimage guests direct' },
+  ],
   '/guides/ota/attract-international-guests-india.html': [
     { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Sync inventory across Booking.com, Expedia, and Agoda' },
     { href: '/guides/ota/booking-com-visibility-booster.html', title: 'Booking.com Visibility Booster', category: 'OTA', desc: 'Step-by-step guide to geo-targeting international travellers' },
@@ -355,6 +362,11 @@ const RELATED_CONTENT = {
     { href: '/guides/ota/best-ota-for-hotels.html', title: 'Best OTAs for Hotels', category: 'OTA', desc: 'Compare MMT, Goibibo, Booking.com and Agoda' },
     { href: '/guides/ota/booking-com-hotel-listing-guide.html', title: 'Booking.com Listing Guide', category: 'OTA', desc: 'List on the other channel that matters' },
     { href: '/guides/software/channel-manager.html', title: 'Channel Manager', category: 'Software', desc: 'Stop updating rates in every extranet' },
+  ],
+  '/guides/ota/goibibo-hotel-listing.html': [
+    { href: '/guides/ota/makemytrip-hotel-listing.html', title: 'MakeMyTrip Listing Guide', category: 'OTA', desc: 'Full registration walkthrough for the GoMMT portal' },
+    { href: '/guides/ota/makemytrip-commission.html', title: 'MakeMyTrip Commission', category: 'OTA', desc: 'What a GoMMT booking pays out after deductions' },
+    { href: '/guides/ota/hotel-direct-booking-strategy.html', title: 'Direct Booking Strategy', category: 'OTA', desc: 'Keep the commission on repeat guests' },
   ],
   '/guides/ota/hotel-direct-booking-strategy.html': [
     { href: '/guides/software/booking-engine.html', title: 'Booking Engine', category: 'Software', desc: 'Take reservations on your own site' },

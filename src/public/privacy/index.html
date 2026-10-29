@@ -2,16 +2,25 @@
 <html lang="en">
 <head>
   <!-- Consent defaults. Must run BEFORE the GA4 loader: once gtag/js has
-       executed with storage allowed, the cookie is already written. Denied
-       until the visitor accepts via the banner in /js/consent.js. -->
+       executed with storage allowed, the cookie is already written. Granted by default,
+       except in the EEA, UK and Switzerland. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    // Analytics on by default. EEA, UK and Switzerland stay denied (GDPR):
+    // the region-specific default overrides the global one there.
+    gtag('consent', 'default', {
+      analytics_storage: 'granted',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
     gtag('consent', 'default', {
       analytics_storage: 'denied',
       ad_storage: 'denied',
       ad_user_data: 'denied',
-      ad_personalization: 'denied'
+      ad_personalization: 'denied',
+      region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']
     });
   </script>
   <!-- Google tag (gtag.js) -->
@@ -274,7 +283,7 @@
       <h2>Introduction</h2>
       <p>At <strong>OnlineHotelier Insights</strong> (www.onlinehotelier.com), your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our website, tools, and guides.</p>
       <p>By using our website, you agree to the terms outlined in this Privacy Policy.</p>
-      <p class="last-updated"><strong>Last Updated:</strong> February 15, 2026</p>
+      <p class="last-updated"><strong>Last Updated:</strong> October 28, 2026</p>
     </section>
 
     <!-- Information We Collect -->
@@ -328,16 +337,16 @@
       <h3>Types of Cookies We Use</h3>
       <ul>
         <li><strong>Essential Cookies:</strong> Required for basic site functionality</li>
-        <li><strong>Analytics Cookies (Google Analytics 4):</strong> Track how visitors use our site to help us improve. These are set only after you accept them</li>
+        <li><strong>Analytics Cookies (Google Analytics 4):</strong> Track how visitors use our site to help us improve. Outside the EEA, UK and Switzerland these are on by default; inside those regions they are not set</li>
       </ul>
 
       <p>We do not run advertising on this site and we set no advertising cookies.</p>
 
-      <h3>Your Consent Comes First</h3>
-      <p>Analytics cookies are <strong>denied by default</strong>. When you first visit, a banner asks whether you accept them, and nothing non-essential is stored until you choose. Declining is a single click and is as easy as accepting. If you decline, the site works exactly the same; we simply receive no analytics about your visit.</p>
+      <h3>Where Analytics Is On</h3>
+      <p>For visitors in the EEA, UK and Switzerland, analytics cookies are <strong>never set</strong>. Everywhere else, including India, Google Analytics runs by default to show us which guides and tools people use. If you declined analytics on an earlier visit, that choice is still remembered and respected.</p>
 
-      <h3>How to Change Your Mind</h3>
-      <p>Your choice is remembered in your browser. To change it, clear this site's data in your browser settings and the banner will appear again on your next visit. To learn more about cookies generally, visit <a href="https://www.aboutcookies.org" target="_blank" style="color: var(--secondary);">aboutcookies.org</a>.</p>
+      <h3>How to Opt Out</h3>
+      <p>You can block Google Analytics on every site with Google's <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" style="color: var(--secondary);">opt-out browser add-on</a>, or by blocking cookies for this site in your browser settings. The site works exactly the same either way. To learn more about cookies generally, visit <a href="https://www.aboutcookies.org" target="_blank" style="color: var(--secondary);">aboutcookies.org</a>.</p>
     </section>
 
     <!-- Third-Party Services -->
@@ -380,7 +389,7 @@
         <li><strong>Access:</strong> You can request information about the data we hold about you (if any)</li>
         <li><strong>Correction:</strong> You can request that we correct any inaccurate information</li>
         <li><strong>Deletion:</strong> You can request that we delete your information (e.g., contact form submissions)</li>
-        <li><strong>Withdraw consent:</strong> Analytics cookies are denied until you accept them, and declining the banner costs one click. To change a choice you already made, clear this site's data in your browser and the banner will ask again</li>
+        <li><strong>Opt out of analytics:</strong> Use Google's opt-out add-on or block this site's cookies, as described in section 3</li>
       </ul>
       <p>To exercise any of these rights, contact us at: <a href="https://www.onlinehotelier.com/contact" target="_blank" style="color: var(--secondary);">Contact Us</a></p>
     </section>

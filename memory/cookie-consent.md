@@ -1,7 +1,39 @@
 # Cookie Consent
 
-Analytics cookies are **denied by default** on every page. GA4 sends cookieless
-pings until the visitor accepts via the banner. Set up 7 Oct 2026.
+**Changed 28 Oct 2026: analytics is granted by default everywhere except the
+EEA, UK and Switzerland, and the banner is switched off.** The 7 Oct setup
+(denied for everyone until they accept) is described further down for history.
+
+## Current setup (since 28 Oct 2026)
+
+- Each page's inline head block sends two `gtag('consent','default')` calls: a
+  global one with `analytics_storage: 'granted'` (all `ad_*` denied), then one
+  with `region: [EEA + IS, LI, NO, GB, CH]` that denies everything. Google
+  applies the region-specific default over the global one.
+- `/js/consent.js` has `SHOW_BANNER = false`. It still re-applies a stored
+  `oh_consent` choice, so anyone who declined while the banner was live stays
+  declined. EU/UK visitors get no prompt and are simply never counted: a static
+  site has no geo lookup to show the banner only to them.
+- `/css/consent.css` and the `consent.js` include stay on every page so the
+  banner can come back without touching 104 heads again.
+- Verified locally 28 Oct in headless Chrome from India: collect hits carry
+  `gcs=G101` (analytics granted, ads denied), no banner rendered.
+
+**Why:** the owner judged that a mostly Indian audience did not need the
+prompt yet. Banner-gated GA4 had cut reported guide traffic to near zero from
+mid-October while Search Console clicks held flat, which made GA unusable for
+judging enquiries. Measured data before ~15 Oct and after 28 Oct is comparable;
+the window in between is depressed by consent, not by traffic.
+
+**Deadline: revisit before May 2027.** DPDP full compliance (below) requires
+opt-in for India. To restore: set `SHOW_BANNER = true` and make the global
+default `'denied'` in every page's inline block, then update the privacy
+policy section 3, which was rewritten on 28 Oct to describe the current setup.
+
+## Original setup (7 to 28 Oct 2026)
+
+Analytics cookies were **denied by default** on every page. GA4 sent cookieless
+pings until the visitor accepted via the banner.
 
 ## Why this exists
 

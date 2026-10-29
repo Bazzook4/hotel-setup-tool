@@ -2,16 +2,25 @@
 <html lang="en">
 <head>
   <!-- Consent defaults. Must run BEFORE the GA4 loader: once gtag/js has
-       executed with storage allowed, the cookie is already written. Denied
-       until the visitor accepts via the banner in /js/consent.js. -->
+       executed with storage allowed, the cookie is already written. Granted by default,
+       except in the EEA, UK and Switzerland. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    // Analytics on by default. EEA, UK and Switzerland stay denied (GDPR):
+    // the region-specific default overrides the global one there.
+    gtag('consent', 'default', {
+      analytics_storage: 'granted',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
     gtag('consent', 'default', {
       analytics_storage: 'denied',
       ad_storage: 'denied',
       ad_user_data: 'denied',
-      ad_personalization: 'denied'
+      ad_personalization: 'denied',
+      region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']
     });
   </script>
   <!-- Google tag (gtag.js) -->
@@ -334,7 +343,7 @@
 
           <p><strong>Gurugram corporate demand.</strong> Cyber City, Golf Course Road and Udyog Vihar house IT, fintech and MNC regional headquarters. Flexible workspace leasing in NCR rose 65% in Q2 2025, with large enterprises at 55 to 60% of demand (CorporatEdge, realtynmore.com, 2025).</p>
 
-          <p><strong>Exhibition demand.</strong> Yashobhoomi (IICC, Dwarka Sector 25) holds up to 11,000 delegates (Wikipedia, 2026). Bharat Mandapam hosts 70-plus exhibitions annually (Wikipedia, 2024). India Expo Mart (IEML), Greater Noida, hosts India ITME 2026 (4 to 9 December 2026, fibre2fashion.com). These three venues create sharp demand spikes. For the international source-market breakdown, see the <a href="/guides/ota/attract-international-guests-india.html" style="color: var(--secondary);">guide to attracting international guests</a>.</p>
+          <p><strong>Exhibition demand.</strong> Yashobhoomi (IICC, Dwarka Sector 25) holds up to 11,000 delegates (Wikipedia, 2026). Bharat Mandapam hosts 70-plus exhibitions annually (Wikipedia, 2024). India Expo Mart (IEML), Greater Noida, hosts India ITME 2026 (4 to 9 December 2026, fibre2fashion.com). These three venues create sharp demand spikes. For the international source-market breakdown, see the <a href="/guides/ota/attract-international-guests-india.html" style="color: var(--secondary);">guide to attracting international guests</a>. For a different UP demand mix, dominated by pilgrimage and government travel rather than exhibitions, see the <a href="/guides/ota/best-ota-for-hotels-in-lucknow.html" style="color: var(--secondary);">Lucknow OTA guide</a>.</p>
 
           <h2 id="makemytrip-goibibo-delhi">MakeMyTrip and Goibibo for Delhi Hotels</h2>
 

@@ -2,16 +2,25 @@
 <html lang="en">
 <head>
   <!-- Consent defaults. Must run BEFORE the GA4 loader: once gtag/js has
-       executed with storage allowed, the cookie is already written. Denied
-       until the visitor accepts via the banner in /js/consent.js. -->
+       executed with storage allowed, the cookie is already written. Granted by default,
+       except in the EEA, UK and Switzerland. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    // Analytics on by default. EEA, UK and Switzerland stay denied (GDPR):
+    // the region-specific default overrides the global one there.
+    gtag('consent', 'default', {
+      analytics_storage: 'granted',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
     gtag('consent', 'default', {
       analytics_storage: 'denied',
       ad_storage: 'denied',
       ad_user_data: 'denied',
-      ad_personalization: 'denied'
+      ad_personalization: 'denied',
+      region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']
     });
   </script>
   <!-- Google tag (gtag.js) -->
@@ -147,6 +156,8 @@
           <a href="/guides/ota/best-ota-for-hotels-in-hyderabad.html" class="guide-card"><div class="guide-card-num">Guide 19</div><div class="guide-card-title">Best OTA for Hotels in Hyderabad</div><div class="guide-card-arrow">Read guide →</div></a>
           <a href="/guides/ota/best-ota-for-hotels-in-jaipur.html" class="guide-card"><div class="guide-card-num">Guide 20</div><div class="guide-card-title">Best OTA for Hotels in Jaipur</div><div class="guide-card-arrow">Read guide →</div></a>
           <a href="/guides/ota/best-ota-for-hotels-in-delhi.html" class="guide-card"><div class="guide-card-num">Guide 21</div><div class="guide-card-title">Best OTA for Hotels in Delhi NCR</div><div class="guide-card-arrow">Read guide →</div></a>
+          <a href="/guides/ota/best-ota-for-hotels-in-lucknow.html" class="guide-card"><div class="guide-card-num">Guide 22</div><div class="guide-card-title">Best OTA for Hotels in Lucknow</div><div class="guide-card-arrow">Read guide →</div></a>
+          <a href="/guides/ota/goibibo-hotel-listing.html" class="guide-card"><div class="guide-card-num">Guide 23</div><div class="guide-card-title">Goibibo Hotel Registration &amp; Listing</div><div class="guide-card-arrow">Read guide →</div></a>
         </div>
       </div>
       </div></div>

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Consent defaults. Must run BEFORE the GA4 loader: once gtag/js has
+       executed with storage allowed, the cookie is already written. Granted by default,
+       except in the EEA, UK and Switzerland. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    // Analytics on by default. EEA, UK and Switzerland stay denied (GDPR):
+    // the region-specific default overrides the global one there.
+    gtag('consent', 'default', {
+      analytics_storage: 'granted',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']
+    });
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2N1S6S9F"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-9L2N1S6S9F');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goibibo Hotel Registration: How to List on GoMMT | OnlineHotelier</title>
+  <meta name="description" content="Goibibo shares an extranet with MakeMyTrip (GoMMT). Register once to go live on both OTAs. Documents, steps and rate parity controls for Indian hotel owners.">
+  <meta name="keywords" content="goibibo hotel registration, list property on goibibo, goibibo extranet login, gommt extranet, goibibo vs makemytrip for hotels, goibibo commission, goibibo hotel listing, register hotel goibibo, goibibo partner login, gommt hotel registration">
+  <link rel="canonical" href="https://www.onlinehotelier.com/guides/ota/goibibo-hotel-listing.html">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/guides/css/guide-layout.css">
+  <!-- AI/LLM Crawler Meta Tags -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+    .oh-icon {
+      width: 1.5rem; height: 1.5rem;
+      min-width: 1.5rem; min-height: 1.5rem;
+      flex: 0 0 auto; align-self: center;
+      display: inline-block; vertical-align: middle;
+      color: inherit;
+    }
+    .oh-icon { color: var(--secondary, #89826E); }
+    .tool-icon > .oh-icon, .area-icon > .oh-icon, .dfy-icon > .oh-icon,
+    .service-icon > .oh-icon, .category-icon > .oh-icon, .card-icon > .oh-icon,
+    .feature-icon > .oh-icon, .value-icon > .oh-icon, .why-icon > .oh-icon,
+    .insight-icon > .oh-icon, .resource-icon > .oh-icon, .pattern-icon > .oh-icon,
+    .section-icon > .oh-icon, .rec-icon > .oh-icon, .source-icon > .oh-icon,
+    .bs-amenity-icon > .oh-icon, .expand-icon > .oh-icon {
+      width: 1.75rem; height: 1.75rem;
+      min-width: 1.75rem; min-height: 1.75rem;
+      color: inherit;
+    }
+    .tool-icon, .area-icon, .category-icon, .dfy-icon, .service-icon {
+      color: var(--primary, #3E3D35);
+    }
+    h2 .oh-icon, h3 .oh-icon {
+      width: 1.15em; height: 1.15em;
+      min-width: 1.15em; min-height: 1.15em;
+      margin-right: 0.5rem; position: relative; top: -0.05em;
+      color: inherit;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Avenir', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #F8F8F4; color: #3E3D35; line-height: 1.7; }
+    :root { --primary: #3E3D35; --secondary: #89826E; --accent: #89826E; --secondary-light: rgba(137, 130, 110, 0.1); --accent-light: rgba(137, 130, 110, 0.2); --primary-light: rgba(62,61,53,0.08); }
+    .nav { background: #3E3D35; padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .nav-logo { font-size: 1.3rem; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: -0.02em; }
+    .nav-logo span { color: #89826E; font-weight: 400; }
+    .nav-links { display: flex; gap: 0.25rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: rgba(255,255,255,0.65); font-weight: 500; font-size: 0.9rem; padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,0.08); }
+    .breadcrumb { background: white; padding: 1rem 2rem; border-bottom: 1px solid #eee; }
+    .breadcrumb-container { max-width: 900px; margin: 0 auto; font-size: 0.9rem; color: #666; }
+    .breadcrumb a { color: var(--secondary); text-decoration: none; }
+    .article-container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    .article-header { margin-bottom: 2rem; }
+    .article-header h1 { font-size: 2.25rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.3; letter-spacing: -0.02em; }
+    .article-meta { display: flex; gap: 1.5rem; color: #666; font-size: 0.9rem; }
+    .article-content { background: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.07); }
+    .article-content h2 { font-size: 1.5rem; color: var(--primary); margin: 2rem 0 1rem; padding-top: 1rem; border-top: 1px solid #eee; }
+    .article-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .article-content h3 { font-size: 1.15rem; color: var(--primary); margin: 1.5rem 0 0.75rem; }
+    .article-content p { margin-bottom: 1rem; color: #444; }
+    .article-content ul, .article-content ol { margin: 1rem 0 1.5rem 1.5rem; color: #444; }
+    .article-content li { margin-bottom: 0.5rem; }
+    .quick-answer { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; }
+    .quick-answer h2 { color: white !important; border: none !important; margin: 0 0 1rem 0 !important; padding: 0 !important; font-size: 1.3rem; }
+    .quick-answer .big-text { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .article-content .quick-answer p, .quick-answer p { color: #fff; }
+    .highlight-box { background: var(--secondary-light); border-left: 4px solid var(--secondary); padding: 1.25rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; color: var(--primary); }
+    .highlight-box.tip { background: var(--accent-light); border-left-color: var(--accent); }
+    .highlight-box.warning { background: var(--primary-light); border-left-color: var(--primary); }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+    .comparison-table th, .comparison-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
+    .comparison-table th { background: var(--primary); color: white; }
+    .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+    .nav-cta { background: rgba(137, 130, 110, 0.25) !important; color: #fff !important; border: 1px solid rgba(137, 130, 110, 0.4); }
+    .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+    @media (max-width: 768px) { .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #3E3D35; flex-direction: column; padding: 1rem; gap: 0.25rem; } .nav-links.open { display: flex; } .nav-toggle { display: block; } .article-header h1 { font-size: 1.75rem; } .article-content { padding: 1.5rem; } }
+    @media (max-width: 768px) {
+      .comparison-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; }
+      .comparison-table td, .comparison-table th { white-space: normal; min-width: 9rem; }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Goibibo Hotel Registration: How to List on GoMMT",
+  "description": "Goibibo shares an extranet with MakeMyTrip (GoMMT). Register once to go live on both OTAs. Documents, steps and rate parity controls for Indian hotel owners.",
+  "author": {
+    "@type": "Organization",
+    "name": "OnlineHotelier"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OnlineHotelier",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.onlinehotelier.com/favicon.png"
+    }
+  },
+  "mainEntityOfPage": "https://www.onlinehotelier.com/guides/ota/goibibo-hotel-listing.html",
+  "datePublished": "2026-10-29",
+  "dateModified": "2026-10-29"
+}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"OnlineHotelier","url":"https://www.onlinehotelier.com","logo":"https://www.onlinehotelier.com/favicon.png","sameAs":["https://www.onlinehotelier.com"]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.onlinehotelier.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://www.onlinehotelier.com/guides/"},{"@type":"ListItem","position":3,"name":"OTA","item":"https://www.onlinehotelier.com/guides/ota/"},{"@type":"ListItem","position":4,"name":"Goibibo Hotel Listing","item":"https://www.onlinehotelier.com/guides/ota/goibibo-hotel-listing.html"}]}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Goibibo registration separate from MakeMyTrip?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Goibibo and MakeMyTrip share a single partner portal called the GoMMT extranet (in.goibibo.com/newextranet/login). Registering once lists your property on both platforms. You manage rates, inventory and bookings for both from the same dashboard."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What commission does Goibibo charge hotels?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Goibibo operates under the same GoMMT group contract as MakeMyTrip, so the commission band is the same: typically 15 to 25 percent depending on your property type, city, and the programs you opt into. Most independent hotels pay 18 to 22 percent. For a full breakdown of what a booking pays out after commission, GST, TDS and TCS, see the MakeMyTrip commission guide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do I log in to the Goibibo hotel extranet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Goibibo hotel extranet is the GoMMT extranet at in.goibibo.com/newextranet/login. This is the same portal used for MakeMyTrip. One login manages both properties."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I have to show the same rates on Goibibo and MakeMyTrip?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because both platforms share the GoMMT extranet, the rates and inventory you load apply to both. You cannot set different rates for Goibibo and MakeMyTrip separately within the extranet. If you need platform-level rate variation, you would need to work through a channel manager that supports individual rate pushes per OTA, subject to your GoMMT contract terms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I take direct bookings while listed on Goibibo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. There is nothing in the GoMMT registration process that prevents you from taking direct bookings through your own website, phone or walk-in. Running a direct booking channel alongside Goibibo reduces your dependency on OTA commission and gives you full-margin reservations. See the hotel direct booking strategy guide for practical steps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does Goibibo hotel registration take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The registration form takes about 30 minutes to complete. KYC document verification takes 3 to 7 working days. Once approved and content is loaded, your property goes live on both Goibibo and MakeMyTrip."
+      }
+    }
+  ]
+}
+  </script>
+  <script src="/js/nav.js"></script>
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Goibibo Hotel Registration: How to List on GoMMT | OnlineHotelier">
+  <meta property="og:description" content="Goibibo shares an extranet with MakeMyTrip (GoMMT). Register once to go live on both OTAs. Documents, steps and rate parity controls for Indian hotel owners.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.onlinehotelier.com/guides/ota/goibibo-hotel-listing.html">
+  <meta property="og:site_name" content="OnlineHotelier">
+  <meta property="og:image" content="https://www.onlinehotelier.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="OnlineHotelier: practical guides for Indian hoteliers">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Goibibo Hotel Registration: How to List on GoMMT | OnlineHotelier">
+  <meta name="twitter:description" content="Goibibo shares an extranet with MakeMyTrip (GoMMT). Register once to go live on both OTAs. Documents, steps and rate parity controls for Indian hotel owners.">
+  <meta name="twitter:image" content="https://www.onlinehotelier.com/og-image.png">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/consent.css">
+</head>
+<body>
+  <nav id="site-nav"></nav>
+  <div class="sidebar-overlay"></div>
+  <button class="sidebar-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+  <div class="guide-page-layout has-toc">
+    <aside class="guide-sidebar"></aside>
+    <div class="guide-main-content">
+
+      <div class="breadcrumb">
+        <div class="breadcrumb-container">
+          <a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; <a href="/guides/ota/">OTA</a> &rsaquo; Goibibo Hotel Listing
+        </div>
+      </div>
+
+      <article class="article-container">
+        <header class="article-header">
+          <h1>Goibibo Hotel Registration: Go Live on Both MMT and Goibibo</h1>
+          <div class="article-meta">
+            <span>By OnlineHotelier Insights Team</span>
+            <span>Published October 2026</span>
+            <span>7 min read</span>
+          </div>
+        </header>
+
+        <div class="article-content">
+
+          <div class="quick-answer">
+            <h2 id="goibibo-registration-in-short">Goibibo Registration in Short</h2>
+            <div class="big-text">One extranet. Two OTAs. Zero extra steps.</div>
+            <p>Goibibo and MakeMyTrip share a single partner portal called the GoMMT extranet (<strong>in.goibibo.com/newextranet/login</strong>). Register your hotel once and your property goes live on both platforms. There is no separate Goibibo registration form, no separate KYC, and no separate contract.</p>
+          </div>
+
+          <h2 id="what-is-goibibo">What Is Goibibo?</h2>
+
+          <p>Goibibo is an Indian online travel agency (OTA) for booking hotels, flights, buses and trains, through its website and mobile app. Most of the guests who book hotels on it are domestic travellers, so many of them may never search on Booking.com or Agoda. If your property is not on Goibibo, those guests cannot find you there.</p>
+
+          <p>For hotel owners, the important thing to understand is this: Goibibo is not a standalone OTA to manage separately. It is part of the GoMMT group alongside MakeMyTrip, and the two platforms are operated from a single partner portal. Your listing, your rates, your photos and your inventory are managed in one place and appear on both sites.</p>
+
+          <p>If you have not yet listed on any OTA and want to understand how commission and extranets work before signing up, read the <a href="/guides/ota/what-is-ota.html" style="color: var(--secondary);">OTA guide</a> first.</p>
+
+          <h2 id="goibibo-makemytrip-relationship">The Goibibo and MakeMyTrip Relationship</h2>
+
+          <p>In a deal announced in October 2016 and completed in January 2017, MakeMyTrip Limited acquired the Ibibo Group's India travel business, which included Goibibo. Since then, both brands operate under the same parent company and share back-end infrastructure, including the partner extranet.</p>
+
+          <p>This matters in practice because:</p>
+
+          <ul>
+            <li>One registration on the GoMMT extranet lists your hotel on both MakeMyTrip and Goibibo simultaneously.</li>
+            <li>Rates and inventory you set in the extranet apply to both platforms.</li>
+            <li>Bookings from both platforms appear in the same reservations dashboard.</li>
+            <li>Payouts from both platforms are processed together in your settlement statement.</li>
+            <li>The commission contract covers both platforms. You do not negotiate separate rates for Goibibo and MakeMyTrip.</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>Both platforms, one contract.</strong> When hotel owners ask "should I list on Goibibo or MakeMyTrip?", the answer is: you list on both at the same time through the same registration. The real question is whether the GoMMT group as a whole makes sense for your distribution mix.
+          </div>
+
+          <p>The two apps and websites do have separate branding and separate customer bases. Guests who use Goibibo are not the same as guests who use MakeMyTrip, even though both bookings arrive in the same extranet. Listing on the GoMMT platform gives your property visibility to both audiences without additional effort.</p>
+
+          <h2 id="goibibo-registration-steps">How to Register on Goibibo (GoMMT Extranet)</h2>
+
+          <p>The registration process is the same as MakeMyTrip because it uses the same portal. In brief:</p>
+
+          <ul>
+            <li>Go to <strong><a href="https://in.goibibo.com/newextranet/login" target="_blank" rel="noopener" style="color: var(--secondary);">in.goibibo.com/newextranet/login</a></strong> and select the option to list a new property.</li>
+            <li>Enter your property details (name, city, room count, contact), verify your mobile OTP, and create your account.</li>
+            <li>Upload KYC documents: GSTIN certificate, PAN card, cancelled cheque, and trade licence or hotel registration. Add at least 25 property photos at 1280x960px or higher.</li>
+            <li>Wait 3 to 7 working days for document verification, then complete your listing profile with room types, amenities and policies.</li>
+          </ul>
+
+          <p>For the full step-by-step walkthrough including the KYC document requirements, photo specifications and common rejection reasons, see the <a href="/guides/ota/makemytrip-hotel-listing.html" style="color: var(--secondary);">MakeMyTrip Hotel Registration guide</a>. That guide covers the same process in detail because it is the same portal.</p>
+
+          <h2 id="goibibo-vs-makemytrip-rates">Rate Parity: Goibibo Rates vs MakeMyTrip Rates</h2>
+
+          <p>Because both platforms draw rates from the same GoMMT extranet, the rates you load are the rates that appear on both Goibibo and MakeMyTrip. You cannot set &#8377;2,800 on Goibibo and &#8377;3,000 on MakeMyTrip from within the extranet itself.</p>
+
+          <p>This is not unique to GoMMT. Most OTA contracts include a rate parity clause requiring that the rate on their platform is no higher than what you offer elsewhere. GoMMT's contract applies to both platforms jointly.</p>
+
+          <h3>What this means for your pricing strategy</h3>
+
+          <p>If you want to offer a lower rate through one specific channel, you would need to do it via promotions or member-only deals within the extranet (which apply platform-wide) rather than by setting different base rates per platform. Check the Promotions tab in your GoMMT extranet to see which offer types are available to you.</p>
+
+          <p>If you are managing rates across several OTAs including Goibibo, MakeMyTrip, Booking.com and Agoda, a <strong>channel manager</strong> makes it easier to push updates across all platforms from one place and avoid rate mismatches. Rate parity errors can result in your listing being deprioritised in search results.</p>
+
+          <p>For a full breakdown of what a booking pays out after commission, GST on commission, TDS and TCS, see the <a href="/guides/ota/makemytrip-commission.html" style="color: var(--secondary);">MakeMyTrip commission guide</a>. The same deductions apply to Goibibo bookings because both operate under the same GoMMT contract.</p>
+
+          <h2 id="goibibo-extranet-features">GoMMT Extranet: What You Manage After Going Live</h2>
+
+          <p>Once your hotel is live on Goibibo and MakeMyTrip, you manage everything from the GoMMT extranet dashboard. Here is what the main sections cover:</p>
+
+          <table class="comparison-table">
+            <tr>
+              <th>Function</th>
+              <th>Where to Find It</th>
+            </tr>
+            <tr>
+              <td>Update rates and availability</td>
+              <td>Inventory &amp; Rates section</td>
+            </tr>
+            <tr>
+              <td>View and manage bookings (both platforms)</td>
+              <td>Reservations tab</td>
+            </tr>
+            <tr>
+              <td>Update photos and property content</td>
+              <td>Property Details section</td>
+            </tr>
+            <tr>
+              <td>Read and respond to guest reviews</td>
+              <td>Reviews &amp; Ratings tab</td>
+            </tr>
+            <tr>
+              <td>Download settlement reports</td>
+              <td>Finance &gt; Invoices</td>
+            </tr>
+            <tr>
+              <td>Create promotions and discounted offers</td>
+              <td>Promotions section</td>
+            </tr>
+            <tr>
+              <td>Access Connect by MakeMyTrip partner app</td>
+              <td>Mobile app linked to your extranet account</td>
+            </tr>
+          </table>
+
+          <div class="highlight-box tip">
+            <strong>Pro Tip:</strong> The Connect by MakeMyTrip app (available on Android and iOS) gives you a mobile view of your GoMMT dashboard. You can update rates, confirm bookings and check reviews without logging into the desktop extranet. Useful when you are not at the front desk.
+          </div>
+
+          <h3>Content quality affects both listings equally</h3>
+
+          <p>Because Goibibo and MakeMyTrip pull your content from the same extranet profile, the content and photo quality you maintain affects both listings simultaneously. A listing with fewer than 25 photos or an incomplete amenity list will rank worse on both platforms, not just one of them.</p>
+
+          <p>Keeping your content up to date is one of the highest-return tasks you can do in the extranet. It costs nothing, takes a couple of hours, and improves visibility on two platforms at once.</p>
+
+          <h2 id="direct-booking-alongside-goibibo">Running Direct Bookings Alongside Goibibo</h2>
+
+          <p>Listing on Goibibo and MakeMyTrip does not prevent you from also taking direct bookings. In fact, a direct booking channel is one of the most effective ways to reduce your dependence on OTA commission over time.</p>
+
+          <p>On a &#8377;3,000 room night, paying 20% commission to GoMMT costs &#8377;600 per booking. That is &#8377;600 you keep if the same guest books directly with you. A few direct bookings per month adds up quickly.</p>
+
+          <p>Building a direct channel does not have to be complicated. A simple booking link, a clear "Book Direct" message to returning guests, and a visible rate advantage on your own website or WhatsApp are enough to start. Over time, you reduce the share of revenue going to OTAs while keeping the volume that OTAs bring in for new guest acquisition.</p>
+
+          <p>For a practical plan to build direct bookings without abandoning your OTA presence, read the <a href="/guides/ota/hotel-direct-booking-strategy.html" style="color: var(--secondary);">hotel direct booking strategy guide</a>.</p>
+
+          <div class="guide-audit-cta" role="complementary" aria-label="Goibibo listing help">
+            <div class="guide-audit-cta-inner">
+              <div class="guide-audit-cta-eyebrow">Done For You</div>
+              <div class="guide-audit-cta-heading">Want us to set up your Goibibo and MMT listing for you?</div>
+              <p class="guide-audit-cta-body">We handle the full GoMMT registration: KYC paperwork, property content, photos and rate setup. Your hotel goes live on both Goibibo and MakeMyTrip without you touching the extranet.</p>
+              <a href="/services/ota-audit/" class="guide-audit-cta-btn">Get Your Free OTA Audit</a>
+            </div>
+          </div>
+
+          <div class="explore-tools">
+            <h3>Related Tools &amp; Guides</h3>
+            <div class="tools-grid-mini">
+              <a href="/tools/ota-commission-calculator/" class="tool-link">
+                <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12M6 8h12M15 3c0 4-3 5-6 5l7 8"/></svg></span>
+                <div class="text">
+                  <h4>OTA Commission Calculator</h4>
+                  <p>What you actually keep after MMT, Goibibo and Booking.com fees</p>
+                </div>
+              </a>
+              <a href="/tools/ota-dependency-calculator/" class="tool-link">
+                <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></span>
+                <div class="text">
+                  <h4>OTA Dependency Calculator</h4>
+                  <p>How reliant is your hotel on OTA bookings?</p>
+                </div>
+              </a>
+              <a href="/guides/ota/makemytrip-commission.html" class="tool-link">
+                <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M4 10h16"/><path d="M12 3L3 8h18z"/><path d="M6 10v11M10 10v11M14 10v11M18 10v11"/></svg></span>
+                <div class="text">
+                  <h4>MakeMyTrip Commission Guide</h4>
+                  <p>Line-by-line breakdown of what a GoMMT booking actually pays you</p>
+                </div>
+              </a>
+              <a href="/guides/ota/hotel-direct-booking-strategy.html" class="tool-link">
+                <span class="icon"><svg class="oh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+                <div class="text">
+                  <h4>Direct Booking Strategy</h4>
+                  <p>Reduce OTA dependency and keep more of every booking</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <h2 id="faq">Frequently Asked Questions</h2>
+
+          <div class="faq-section">
+            <div class="faq-item" id="faq-is-goibibo-registration-separate-from-makemytrip">
+              <div class="faq-question">Is Goibibo registration separate from MakeMyTrip?</div>
+              <div class="faq-answer">No. Goibibo and MakeMyTrip share a single partner portal called the GoMMT extranet (in.goibibo.com/newextranet/login). Registering once lists your property on both platforms. You manage rates, inventory and bookings for both from the same dashboard.</div>
+            </div>
+            <div class="faq-item" id="faq-what-commission-does-goibibo-charge-hotels">
+              <div class="faq-question">What commission does Goibibo charge hotels?</div>
+              <div class="faq-answer">Goibibo operates under the same GoMMT group contract as MakeMyTrip, so the commission band is the same: typically 15 to 25 percent depending on your property type, city, and the programs you opt into. Most independent hotels pay 18 to 22 percent. For a full breakdown of what a booking pays out after commission, GST, TDS and TCS, see the <a href="/guides/ota/makemytrip-commission.html" style="color: var(--secondary);">MakeMyTrip commission guide</a>.</div>
+            </div>
+            <div class="faq-item" id="faq-where-do-i-log-in-to-goibibo-extranet">
+              <div class="faq-question">Where do I log in to the Goibibo hotel extranet?</div>
+              <div class="faq-answer">The Goibibo hotel extranet is the GoMMT extranet at in.goibibo.com/newextranet/login. This is the same portal used for MakeMyTrip. One login manages both properties.</div>
+            </div>
+            <div class="faq-item" id="faq-same-rates-goibibo-makemytrip">
+              <div class="faq-question">Do I have to show the same rates on Goibibo and MakeMyTrip?</div>
+              <div class="faq-answer">Because both platforms share the GoMMT extranet, the rates and inventory you load apply to both. You cannot set different rates for Goibibo and MakeMyTrip separately within the extranet. If you need platform-level rate variation, you would need to work through a <strong>channel manager</strong> that supports individual rate pushes per OTA, subject to your GoMMT contract terms.</div>
+            </div>
+            <div class="faq-item" id="faq-can-i-take-direct-bookings-while-listed-on-goibibo">
+              <div class="faq-question">Can I take direct bookings while listed on Goibibo?</div>
+              <div class="faq-answer">Yes. There is nothing in the GoMMT registration process that prevents you from taking direct bookings through your own website, phone or walk-in. Running a direct booking channel alongside Goibibo reduces your dependency on OTA commission and gives you full-margin reservations. See the <a href="/guides/ota/hotel-direct-booking-strategy.html" style="color: var(--secondary);">hotel direct booking strategy guide</a> for practical steps.</div>
+            </div>
+            <div class="faq-item" id="faq-how-long-does-goibibo-registration-take">
+              <div class="faq-question">How long does Goibibo hotel registration take?</div>
+              <div class="faq-answer">The registration form takes about 30 minutes to complete. KYC document verification takes 3 to 7 working days. Once approved and content is loaded, your property goes live on both Goibibo and MakeMyTrip.</div>
+            </div>
+          </div>
+
+        </div>
+
+      </article>
+
+      <div class="prev-next-nav"></div>
+      <div class="related-cards-section"></div>
+
+    </div>
+    <aside class="guide-toc"></aside>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4>OnlineHotelier</h4>
+        <p>We help Indian hoteliers find their way through the digital side of the business. Free guides, free tools, and hands-on help when you want it. Built from 8+ years of real-world hospitality experience.</p>
+      </div>
+      <div>
+        <h5>Learn</h5>
+        <ul>
+          <li><a href="/guides/ota/">OTA Guides</a></li>
+          <li><a href="/guides/revenue/">Revenue Guides</a></li>
+          <li><a href="/guides/software/">Software Guides</a></li>
+          <li><a href="/guides/">All Guides</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Free Tools</h5>
+        <ul>
+          <li><a href="/tools/ota-commission-calculator/">Commission Calculator</a></li>
+          <li><a href="/tools/ota-dependency-calculator/">OTA Dependency</a></li>
+          <li><a href="/tools/break-even-calculator/">Break-Even Calculator</a></li>
+          <li><a href="/tools/">All Tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Work With Us</h5>
+        <ul>
+          <li><a href="/services/">All Services</a></li>
+          <li><a href="/services/hotel-pms/">Free Hotel PMS</a></li>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 OnlineHotelier. All rights reserved.</p>
+      <a href="/">www.onlinehotelier.com</a>
+    </div>
+  </footer>
+  <script src="/guides/js/guide-nav.js"></script>
+  <script src="/guides/js/guide-blocks.js"></script>
+  <script src="/js/wa-widget.js"></script>
+  <script src="/js/tools-widget.js"></script>
+  <script src="/js/consent.js"></script>
+</body>
+</html>

@@ -6,12 +6,13 @@ Set up 9–11 August 2026, after the domain migration.
 
 **`G-9L2N1S6S9F`** — the only property the site uses. Hardcoded in all 89 pages.
 
-> **Consent gates this property as of 7 Oct 2026.** `analytics_storage` defaults
-> to `'denied'`, so GA4 receives cookieless pings until a visitor accepts the
-> banner. **Expect reported sessions and users to drop**, by however large a
-> share of visitors decline or ignore the banner. That is a measurement change,
-> not a traffic change, and the step down in the data is the consent rollout
-> rather than a real decline. See [[cookie-consent]].
+> **Consent history affects the data.** The banner-gated default (shipped 7 Oct,
+> live roughly 15 Oct 2026, as pushes did not deploy reliably) cut reported guide
+> traffic to near zero while Search Console clicks stayed flat at ~20-30/day.
+> That was measurement, not a traffic loss. **Since 28 Oct 2026 analytics is
+> granted by default outside the EEA/UK/CH and the banner is off**, so numbers
+> should recover to the pre-October level. Do not compare the ~15-28 Oct window
+> with anything. See [[cookie-consent]].
 
 Two older properties were removed: `G-Q2BPYRGZTM` (was on all 89 pages) and
 `G-MKV3LKQJW1` (was on 69). Both were firing at once, so 69 pages double-counted

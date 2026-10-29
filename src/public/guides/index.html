@@ -2,16 +2,25 @@
 <html lang="en">
 <head>
   <!-- Consent defaults. Must run BEFORE the GA4 loader: once gtag/js has
-       executed with storage allowed, the cookie is already written. Denied
-       until the visitor accepts via the banner in /js/consent.js. -->
+       executed with storage allowed, the cookie is already written. Granted by default,
+       except in the EEA, UK and Switzerland. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    // Analytics on by default. EEA, UK and Switzerland stay denied (GDPR):
+    // the region-specific default overrides the global one there.
+    gtag('consent', 'default', {
+      analytics_storage: 'granted',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
     gtag('consent', 'default', {
       analytics_storage: 'denied',
       ad_storage: 'denied',
       ad_user_data: 'denied',
-      ad_personalization: 'denied'
+      ad_personalization: 'denied',
+      region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']
     });
   </script>
   <!-- Google tag (gtag.js) -->
@@ -459,6 +468,14 @@
             <span>9 min read</span>
           </div>
         </a>
+        <a href="/guides/ota/best-ota-for-hotels-in-lucknow.html" class="guide-card">
+          <h3>Best OTA for Hotels in Lucknow</h3>
+          <p>Channel scores for Ayodhya pilgrimage surges, UP capital government travel and the Gorakhpur Buddhist circuit. MMT, Booking.com, Agoda, Ixigo and Yatra ranked.</p>
+          <div class="guide-meta">
+            <span class="guide-tag">Lucknow</span>
+            <span>9 min read</span>
+          </div>
+        </a>
         <a href="/guides/ota/booking-com-hotel-listing-guide.html" class="guide-card">
           <h3>Booking.com Hotel Listing Guide</h3>
           <p>Step-by-step guide to listing your hotel on Booking.com.</p>
@@ -489,6 +506,14 @@
           <div class="guide-meta">
             <span class="guide-tag">Ranking</span>
             <span>9 min read</span>
+          </div>
+        </a>
+        <a href="/guides/ota/goibibo-hotel-listing.html" class="guide-card">
+          <h3>Goibibo Hotel Registration &amp; Listing</h3>
+          <p>Register once on the GoMMT extranet and go live on both Goibibo and MakeMyTrip. Documents, steps and rate parity explained.</p>
+          <div class="guide-meta">
+            <span class="guide-tag">Registration</span>
+            <span>7 min read</span>
           </div>
         </a>
         <a href="/guides/ota/agoda-hotel-listing.html" class="guide-card">
