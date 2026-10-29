@@ -74,3 +74,12 @@ resolved itself; if it needs another empty commit, the Git integration needs
 reconnecting under Vercel Settings → Git.
 
 Related: [[working-practice]], [[migration-plan]]
+
+## After a confirmed deploy: ping Bing (IndexNow)
+
+`python3 scripts/indexnow.py --changed <last-deployed-ref>` sends changed pages
+to IndexNow (Bing, Yandex, Seznam, Naver). Google ignores IndexNow and has no
+request-indexing API for normal pages, so Google stays manual (URL Inspection →
+Request indexing, ~10/day). The key file `src/public/72b2f2e174ab49fb866a9cf36f86a3f1.txt`
+must stay at the web root; deleting it makes every ping fail with 403. The
+script only sends URLs that are in `sitemap.xml`. Added 29 Oct 2026.
