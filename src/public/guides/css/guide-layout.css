@@ -863,3 +863,36 @@
     animation: none !important;
   }
 }
+
+/* Guide diagrams (added 2026-10-30). Inline SVG explainers inside a
+   <figure class="guide-diagram">: a wide SVG for desktop and a tall SVG for
+   phones, brand colours only, text kept as real SVG text. Animation is SMIL
+   inside the SVG and is hidden for prefers-reduced-motion. First use:
+   guides/software/channel-manager.html. See memory/diagram-standard.md. */
+.guide-diagram { margin: 2rem 0; }
+.guide-diagram svg { display: block; width: 100%; height: auto; font-family: inherit; }
+.guide-diagram .gd-tall { display: none; }
+/* Switch on the figure's own width, not the viewport: the guide sidebars
+   appear from ~800px, so the column is narrower at 820px than at 768px.
+   Below 580px the wide drawing's text drops under ~11px. */
+.guide-diagram { container-type: inline-size; }
+@container (max-width: 579px) {
+  .guide-diagram .gd-wide { display: none; }
+  .guide-diagram .gd-tall { display: block; max-width: 360px; margin: 0 auto; }
+}
+.guide-diagram figcaption { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid rgba(62,61,53,0.12); font-size: 0.88rem; line-height: 1.6; color: #6E6959; }
+
+.gd-box { fill: #fff; stroke: rgba(62,61,53,0.28); stroke-width: 1.2; }
+.gd-box.gd-main { stroke: #3E3D35; stroke-width: 2; }
+.gd-box.gd-direct { stroke: #3E3D35; stroke-width: 1.8; }
+.gd-label { fill: #3E3D35; font-size: 15px; font-weight: 600; }
+.gd-sub { fill: #6E6959; font-size: 12.5px; }
+.gd-note { fill: #6E6959; font-size: 12.5px; font-style: italic; }
+.gd-line { fill: none; stroke: #89826E; stroke-width: 1.5; }
+.gd-line.gd-hot { stroke: #3E3D35; stroke-width: 2.2; }
+.gd-line.gd-dash { stroke-dasharray: 5 4; }
+.gd-icon { fill: none; stroke: #3E3D35; stroke-width: 1.4; }
+.gd-tag { fill: #3E3D35; font-size: 13px; font-weight: 700; }
+.gd-status { fill: #3E3D35; font-size: 14px; font-weight: 600; }
+.gd-sub, .gd-note { font-size: 13.5px; }
+@media (prefers-reduced-motion: reduce) { .gd-anim { display: none; } }

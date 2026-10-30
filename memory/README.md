@@ -14,6 +14,7 @@ the `.md`. Every link resolves inside this folder.
 | [tool-page-standard.md](tool-page-standard.md) | **THE template for every `/tools/` page.** Head, scaffolding, shared blocks, FAQ, audit CTA, when the CEO reviews, pre-ship checks. |
 | [writing-standard.md](writing-standard.md) | Who the reader is and the 10-point checklist every guide passes before commit. Jargon, ₹ examples, story-first, sentence length, no em dashes. |
 | [design-system.md](design-system.md) | Brand colours, component rules, the dark-panel white-text trap including the WCAG contrast limit on `#89826E`, and the anti-generic design bans plus the focus/state/feedback floor. |
+| [diagram-standard.md](diagram-standard.md) | Explainer diagrams in guides: inline animated SVG, wide + tall versions, SEO wiring (share image, Article `image`), and the two rejected styles. Benchmark is the channel manager guide. |
 | [ai-llm-optimization.md](ai-llm-optimization.md) | AI crawler meta trio, Organization and BreadcrumbList schema bodies, H2 id rules. |
 | [crawlable-static-links.md](crawlable-static-links.md) | Internal links must be static HTML, never JS-injected, plus the internal-linking rules. |
 | [footer-standard.md](footer-standard.md) | One footer everywhere, styled only from `/css/footer.css`, and always a direct child of `<body>`. |
