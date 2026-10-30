@@ -98,3 +98,23 @@ Screenshot inside the real page (local server, not a standalone file) at
 the page in a 375px iframe. Freeze the animation with `pauseAnimations()` +
 `setCurrentTime()` to check each phase. Related: [[design-system]],
 [[guide-template]].
+
+## Toolkit: build diagrams from a spec (added 2026-10-30)
+
+From the OTA listing batch on, every diagram is a spec file in
+`scripts/diagrams/`, built with `python3 scripts/diagrams/<spec>.py` from the
+repo root (`--preview <file.html>` writes a standalone preview instead).
+
+- `gd.py`: the `SVG` drawing helpers (`card`, `line`, `note`, `dot`,
+  `highlight`, `steps`) and `build()`, which inserts or replaces the
+  `<figure id>` in the guide, renders the 1200x630 share image with headless
+  Chrome, and wires og/twitter image and alt, the Article schema `image`,
+  `dateModified` and the sitemap `lastmod`. Rerunning a spec is safe: it
+  replaces the figure in place.
+- `layouts.py`: reusable layouts. `timeline()` is the five-step process with a
+  duration bracket and two note boxes (MakeMyTrip and Agoda listing guides).
+- Labels that a line may pass behind get `gd-halo` (a 12px white outline).
+  It must be drawn *after* the lines, and 6px was too thin: lines showed in
+  the gaps between words.
+- The first three diagrams (channel manager, MakeMyTrip commission, RevPAR)
+  were hand-built before the toolkit existed and have no spec file.
