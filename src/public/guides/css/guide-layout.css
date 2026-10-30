@@ -894,5 +894,7 @@
 .gd-icon { fill: none; stroke: #3E3D35; stroke-width: 1.4; }
 .gd-tag { fill: #3E3D35; font-size: 13px; font-weight: 700; }
 .gd-status { fill: #3E3D35; font-size: 14px; font-weight: 600; }
+.gd-figure { fill: #3E3D35; font-size: 22px; font-weight: 700; }
+.gd-total { fill: #3E3D35; font-size: 17px; font-weight: 700; }
 .gd-sub, .gd-note { font-size: 13.5px; }
 @media (prefers-reduced-motion: reduce) { .gd-anim { display: none; } }

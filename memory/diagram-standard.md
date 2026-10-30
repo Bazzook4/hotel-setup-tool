@@ -24,6 +24,21 @@ Three versions were built before approval:
 
 So: draw the system, keep it plain, and let motion tell the story.
 
+A fourth attempt, for the MakeMyTrip commission guide on 30 Oct 2026, was a
+proportional flow (Sankey) diagram with bands sized to each rupee amount. The
+owner rejected it twice: first because a left-to-right reveal left the
+diagram blank on load ("people won't understand there is something"), then
+the whole style ("looks rubbish"). Rebuilt in the box-and-line format it was
+approved, and the owner ruled: **stick to this format for every diagram.**
+
+**The locked format:** white `gd-box` nodes with a label and a one-line sub,
+thin `gd-line` connectors with arrowheads, one dark `gd-hot` path for the
+main story, dashed `gd-dash` for anything that comes back, a dark-bordered
+box (`gd-direct`) for the outcome the reader cares about. Everything is
+visible from the first frame; animation only adds a travelling dot and a
+numbered `gd-status` line. Never hide content and reveal it, and never size
+shapes by value.
+
 ## Build rules
 
 - **Inline SVG inside `<figure class="guide-diagram" id="...-diagram">`**, not
