@@ -75,7 +75,8 @@
       all: { href: '/services/', title: 'All services', desc: 'Hands-on help from OnlineHotelier' },
       cols: [
         { title: 'Software', tag: 'Free to start', href: '/services/', links: [
-          { href: '/services/hotel-pms/', label: 'Free Hotel PMS', desc: 'Reservations, billing and taxes for small hotels' } ] },
+          { href: '/services/hotel-pms/', label: 'Free Hotel PMS', desc: 'Reservations, billing and taxes for small hotels' },
+          { href: '/services/hotel-booking-engine/', label: 'Free Booking Engine', desc: 'Accept direct bookings and get paid on your own UPI' } ] },
         { title: 'OTA listing', tag: 'Get found and booked', href: '/services/', links: [
           { href: '/services/independent-hotel-ota-listing/', label: 'Hotel OTA Listing', desc: 'MakeMyTrip, Booking.com and more, set up for you' },
           { href: '/services/vacation-rental-ota-listing/', label: 'Vacation Rental Listing', desc: 'Homestays, villas and apartments on OTAs' } ] },

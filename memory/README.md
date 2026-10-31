@@ -28,6 +28,7 @@ the `.md`. Every link resolves inside this folder.
 | [published-guides.md](published-guides.md) | Every published guide by category. Use it to find internal linking opportunities. |
 | [guides-to-services-map.md](guides-to-services-map.md) | Which guide points at which service, and the gaps. |
 | [country-pms-pages.md](country-pms-pages.md) | Free PMS pages for countries outside India: the Thailand pattern, owner decisions on what may be claimed, which countries are live or held, and the tax facts that tripped the first drafts. |
+| [booking-engine-service-page.md](booking-engine-service-page.md) | `/services/hotel-booking-engine/`: owner-confirmed claim boundary (UPI-direct, no PG, manual hotel confirmation), the not-claimed list, page wiring, schema and GA4 event details. |
 
 ## Facts worth not re-deriving
 

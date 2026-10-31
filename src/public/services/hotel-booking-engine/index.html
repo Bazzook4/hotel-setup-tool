@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Consent defaults. Must run BEFORE the GA4 loader: once gtag/js has
+       executed with storage allowed, the cookie is already written. Granted by default,
+       except in the EEA, UK and Switzerland. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    // Analytics on by default. EEA, UK and Switzerland stay denied (GDPR):
+    // the region-specific default overrides the global one there.
+    gtag('consent', 'default', {
+      analytics_storage: 'granted',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']
+    });
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2N1S6S9F"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-9L2N1S6S9F');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Hotel Booking Engine for Hotels in India | OnlineHotelier</title>
+  <meta name="description" content="Accept direct hotel bookings on your own UPI. No payment gateway, no commission, no PG fees. OnlineHotelier's free booking engine is ready to use today.">
+  <meta name="keywords" content="free hotel booking engine India, hotel booking engine without payment gateway India, direct booking engine for small hotels India, free online hotel reservation system, commission-free direct booking">
+  <link rel="canonical" href="https://www.onlinehotelier.com/services/hotel-booking-engine/">
+
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <!-- AI/LLM Crawler Meta Tags -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Free Hotel Booking Engine: Accept Direct Bookings on Your Own UPI">
+  <meta property="og:description" content="Accept direct hotel bookings on your own UPI. No payment gateway, no commission, no PG fees. OnlineHotelier's free booking engine is ready to use today.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.onlinehotelier.com/services/hotel-booking-engine/">
+  <meta property="og:site_name" content="OnlineHotelier">
+  <meta property="og:image" content="https://www.onlinehotelier.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="OnlineHotelier Free Hotel Booking Engine: accept direct bookings on your own UPI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Hotel Booking Engine for Hotels in India | OnlineHotelier">
+  <meta name="twitter:description" content="Accept direct hotel bookings on your own UPI. No payment gateway, no commission, no PG fees. OnlineHotelier's free booking engine is ready to use today.">
+  <meta name="twitter:image" content="https://www.onlinehotelier.com/og-image.png">
+  <meta name="twitter:image:alt" content="OnlineHotelier Free Hotel Booking Engine">
+
+  <!-- Structured Data: SoftwareApplication -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "OnlineHotelier Booking Engine",
+  "alternateName": "OnlineHotelier Free Hotel Booking Engine",
+  "description": "Free hotel booking engine for Indian hotels. Guests request a booking and pay on the hotel's own UPI. No payment gateway required. No commission. No PG fees. Available to hotels across India.",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "Hotel Booking Engine",
+  "operatingSystem": "Web browser",
+  "url": "https://www.onlinehotelier.com/services/hotel-booking-engine/",
+  "isAccessibleForFree": true,
+  "dateModified": "2026-10-31",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR",
+    "url": "https://hms.onlinehotelier.com/onboard?token=HrepaM3YgCvIu4f7LYUW9jtgh-L8lSAISaDo4j8fqjs",
+    "description": "Free to use. No subscription, no trial period. The channel manager is the only paid add-on."
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "OnlineHotelier",
+    "url": "https://www.onlinehotelier.com"
+  }
+}
+  </script>
+  <!-- Structured Data: Service -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "OnlineHotelier Booking Engine",
+  "description": "A free hotel booking engine for hotels in India. Guests request a booking, the hotel shares its own UPI details, the guest pays the hotel directly, and the hotel confirms the reservation in the OnlineHotelier system. No payment gateway, no commission, no PG fees.",
+  "provider": {
+    "@type": "Organization",
+    "name": "OnlineHotelier",
+    "url": "https://www.onlinehotelier.com"
+  },
+  "areaServed": "IN",
+  "serviceType": "Hotel Booking Engine Software",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  }
+}
+  </script>
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is the booking engine really free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The booking engine is free to use. No subscription, no trial period. It is part of the same OnlineHotelier system as the free PMS. The only paid option is the channel manager add-on, which syncs your availability to OTAs. Pricing for that is shared on WhatsApp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a payment gateway to accept direct bookings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The OnlineHotelier booking engine does not use a payment gateway. Guests pay the hotel directly on its own UPI or bank account. The hotel checks the payment in its own UPI app or bank statement and then confirms the reservation in the software. There are no PG fees because no gateway is involved."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the guest pay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "After the guest requests a booking, the hotel shares its own UPI or bank details with the guest. The guest pays the hotel directly, the way they would pay any other UPI contact. The money goes straight to the hotel. OnlineHotelier does not process, hold or settle any payments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the booking confirm automatically once the guest pays?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. There is no automatic payment detection. The hotel checks the payment in its own UPI app or bank statement, then confirms the reservation in the software. If you need automatic payment confirmation or card payments at the time of booking, this engine is not the right fit for your property."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between this and a standard booking engine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A standard booking engine (such as those that connect to Razorpay or CCAvenue) uses a payment gateway so the guest's card or UPI is charged in real time and the booking confirms automatically. The OnlineHotelier booking engine skips the gateway: the guest pays the hotel's own UPI directly and the hotel confirms manually. This means no PG fees, no commission and no gateway setup, but also no automatic confirmation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this the same as the OnlineHotelier PMS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The booking engine is part of the same free OnlineHotelier system. When a guest makes a booking request, that reservation goes into the same OnlineHotelier system your front desk uses for walk-ins and OTA bookings. There is no separate app or login."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sign up for the free OnlineHotelier PMS. The booking engine is part of the same system. If you need help with setup, message us on WhatsApp with your property name and number of rooms and we will walk you through it at no charge."
+      }
+    }
+  ]
+}
+  </script>
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "OnlineHotelier",
+  "url": "https://www.onlinehotelier.com",
+  "logo": "https://www.onlinehotelier.com/favicon.png",
+  "sameAs": [
+    "https://www.onlinehotelier.com"
+  ]
+}
+  </script>
+  <!-- Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.onlinehotelier.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://www.onlinehotelier.com/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Hotel Booking Engine",
+      "item": "https://www.onlinehotelier.com/services/hotel-booking-engine/"
+    }
+  ]
+}
+  </script>
+
+  <style>
+    /* ── Base ── */
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Avenir', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #F8F8F4; color: #3E3D35; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    :root {
+      --primary: #3E3D35;
+      --secondary: #89826E;
+      --primary-light: rgba(62,61,53,0.08);
+      --secondary-light: rgba(137,130,110,0.12);
+    }
+
+    /* ── Page wrapper ── */
+    .page-wrapper { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 0; }
+
+    /* ── Hero ── */
+    .service-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #6E6959 100%);
+      color: white;
+      padding: 3.5rem 2rem;
+      margin-bottom: 2rem;
+      border-radius: 16px;
+    }
+    .hero-eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.75; margin-bottom: 0.75rem; }
+    .service-hero h1 { font-size: 2.2rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .service-hero p { font-size: 1.05rem; color: #fff; opacity: 0.9; max-width: 600px; line-height: 1.7; margin-bottom: 2rem; }
+    .hero-cta-row { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: white; color: var(--primary); font-weight: 700; font-size: 1rem;
+      padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .hero-cta:focus-visible { outline: 2px solid rgba(255,255,255,0.8); outline-offset: 2px; }
+    .hero-cta-secondary, .cta-btn-secondary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: white; font-weight: 700; font-size: 1rem;
+      padding: 0.85rem 2rem; border: 2px solid rgba(255,255,255,0.7); border-radius: 8px;
+      text-decoration: none; transition: background 0.2s, border-color 0.2s;
+    }
+    .hero-cta-secondary:hover, .cta-btn-secondary:hover { background: rgba(255,255,255,0.12); border-color: white; }
+    .hero-cta-secondary:focus-visible, .cta-btn-secondary:focus-visible { outline: 2px solid rgba(255,255,255,0.8); outline-offset: 2px; }
+    .hero-badge {
+      display: inline-block; background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3); color: white;
+      font-size: 0.88rem; font-weight: 500; padding: 0.6rem 1.25rem; border-radius: 8px;
+    }
+    @media (max-width: 768px) {
+      .page-wrapper { padding: 1.25rem 1rem 0; }
+      .service-hero { padding: 2rem 1.25rem; }
+      .service-hero h1 { font-size: 1.75rem; }
+      .hero-badge { display: none; }
+    }
+
+    /* ── Quick Answer Box ── */
+    .quick-answer {
+      background: var(--primary);
+      color: white;
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2rem;
+    }
+    .quick-answer .qa-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; margin-bottom: 0.5rem; }
+    .quick-answer p { color: #fff; opacity: 0.92; margin: 0; line-height: 1.7; font-size: 0.98rem; }
+
+    /* ── Section blocks ── */
+    .section-block { margin-bottom: 2.5rem; }
+    .section-title { font-size: 1.5rem; font-weight: 700; color: var(--primary); margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--secondary-light); letter-spacing: -0.02em; }
+
+    /* ── Comparison table ── */
+    .comparison-table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(62,61,53,0.06); }
+    .comparison-table th { background: var(--primary); color: white; padding: 0.85rem 1rem; text-align: left; font-size: 0.88rem; font-weight: 600; }
+    .comparison-table td { padding: 0.85rem 1rem; font-size: 0.88rem; color: #444; border-bottom: 1px solid #f0efe8; }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table tr:nth-child(even) td { background: #fafaf7; }
+    .facts-table th { width: 28%; vertical-align: top; }
+    .table-wrap { overflow-x: auto; margin-bottom: 2rem; }
+
+    /* ── Step boxes ── */
+    .steps { counter-reset: step-counter; margin: 1.5rem 0; }
+    .step-box {
+      background: white; border-radius: 10px; padding: 1.25rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(62,61,53,0.06); border-left: 4px solid var(--secondary);
+      margin-bottom: 1rem; display: flex; gap: 1.25rem; align-items: flex-start;
+    }
+    .step-num {
+      background: var(--secondary); color: white; width: 2rem; height: 2rem;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 0.88rem; font-weight: 700; flex-shrink: 0;
+    }
+    .step-content h4 { font-size: 0.95rem; font-weight: 700; color: var(--primary); margin-bottom: 0.35rem; }
+    .step-content p { font-size: 0.88rem; color: #555; line-height: 1.6; margin: 0; }
+
+    /* ── Feature grid ── */
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1.25rem; }
+    .feature-card {
+      background: white; border-radius: 10px; padding: 1.25rem;
+      box-shadow: 0 2px 8px rgba(62,61,53,0.06); border-left: 4px solid var(--secondary);
+    }
+    .feature-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--primary); margin-bottom: 0.35rem; }
+    .feature-card p { font-size: 0.85rem; color: #555; line-height: 1.6; margin: 0; }
+
+    /* ── Highlight box ── */
+    .highlight-box { background: var(--secondary-light); border-left: 4px solid var(--secondary); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+    .highlight-box strong { color: var(--primary); }
+    .highlight-box p { color: #444; margin: 0; line-height: 1.7; }
+
+    /* ── Who-for cards ── */
+    .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.25rem; }
+    .who-card { background: white; border-radius: 10px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(62,61,53,0.06); border-top: 4px solid var(--secondary); }
+    .who-card.not-for { border-top-color: #aaa; }
+    .who-card .card-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--secondary); margin-bottom: 0.5rem; }
+    .who-card.not-for .card-label { color: #888; }
+    .who-card ul { list-style: none; padding: 0; margin: 0; }
+    .who-card ul li { font-size: 0.88rem; color: #444; padding: 0.25rem 0; display: flex; gap: 0.5rem; align-items: flex-start; }
+    .who-card ul li::before { content: "✓"; color: var(--secondary); font-weight: 700; flex-shrink: 0; }
+    .who-card.not-for ul li::before { content: "–"; color: #aaa; }
+
+    /* ── Mid-page CTA ── */
+    .mid-cta {
+      background: linear-gradient(135deg, #3E3D35 0%, #6E6959 100%);
+      border-radius: 12px; padding: 1.75rem 2rem; margin: 2rem 0; color: white;
+    }
+    .mid-cta .eyebrow { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; margin-bottom: 0.4rem; }
+    .mid-cta .headline { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .mid-cta p { color: #fff; opacity: 0.92; margin-bottom: 1.25rem; font-size: 0.95rem; }
+    .mid-cta p a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+    .mid-cta > a { display: inline-block; background: white; color: #3E3D35; padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.95rem; transition: transform 0.2s, box-shadow 0.2s; }
+    .mid-cta > a:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+    .mid-cta > a:focus-visible { outline: 2px solid rgba(255,255,255,0.8); outline-offset: 2px; }
+
+    /* ── FAQ ── */
+    .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .faq-item { background: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(62,61,53,0.05); overflow: hidden; }
+    .faq-question {
+      width: 100%; text-align: left; background: none; border: none;
+      padding: 1.1rem 1.5rem; font-size: 0.95rem; font-weight: 600;
+      color: var(--primary); cursor: pointer; display: flex;
+      justify-content: space-between; align-items: center; gap: 1rem; font-family: inherit;
+    }
+    .faq-question::after { content: "+"; font-size: 1.25rem; color: var(--secondary); flex-shrink: 0; transition: transform 0.2s; }
+    .faq-item.open .faq-question::after { transform: rotate(45deg); }
+    .faq-question:focus-visible { outline: 2px solid var(--secondary); outline-offset: 2px; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-item.open .faq-answer { max-height: 500px; }
+    .faq-answer-inner { padding: 0 1.5rem 1.25rem; font-size: 0.9rem; color: #555; line-height: 1.7; }
+
+    /* ── CTA Banner ── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--primary) 0%, #6E6959 100%);
+      color: white; padding: 2.5rem 2rem; border-radius: 16px;
+      text-align: center; margin-bottom: 3rem;
+    }
+    .cta-banner h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+    .cta-banner p { color: #fff; opacity: 0.88; margin-bottom: 1.75rem; font-size: 1rem; line-height: 1.6; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: white; color: var(--primary); font-weight: 700;
+      font-size: 1rem; padding: 0.9rem 2.25rem; border-radius: 8px;
+      text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .cta-btn:focus-visible { outline: 2px solid rgba(255,255,255,0.8); outline-offset: 2px; }
+    .cta-btn-row { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    @media (max-width: 768px) {
+      .cta-banner { padding: 2rem 1.25rem; }
+      .cta-banner h2 { font-size: 1.3rem; }
+    }
+
+    /* ── Explore Tools ── */
+    .explore-tools { margin: 2rem 0; }
+    .explore-tools h3 { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; }
+    .tools-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .tool-link {
+      background: white; border-radius: 10px; padding: 1.1rem 1.25rem;
+      box-shadow: 0 2px 8px rgba(62,61,53,0.06); text-decoration: none;
+      border-left: 4px solid var(--secondary); display: block;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .tool-link:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(62,61,53,0.1); }
+    .tool-link:focus-visible { outline: 2px solid var(--secondary); outline-offset: 2px; }
+    .tool-link .tl-type { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--secondary); margin-bottom: 0.3rem; }
+    .tool-link .tl-name { font-size: 0.92rem; font-weight: 700; color: var(--primary); margin-bottom: 0.2rem; }
+    .tool-link .tl-desc { font-size: 0.82rem; color: #666; line-height: 1.5; }
+    @media (max-width: 600px) {
+      .tools-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-cta, .hero-cta-secondary, .cta-btn-secondary, .mid-cta > a, .cta-btn, .tool-link {
+        transition: none !important;
+      }
+    }
+  </style>
+
+  <script src="/js/nav.js"></script>
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/consent.css">
+</head>
+<body>
+
+  <nav id="site-nav"></nav>
+
+  <div class="page-wrapper">
+
+    <!-- Breadcrumb -->
+    <div style="font-size:0.85rem; color:#888; margin-bottom:1.5rem;">
+      <a href="/" style="color:var(--secondary); text-decoration:none;">Home</a> ›
+      <a href="/services/" style="color:var(--secondary); text-decoration:none;">Services</a> ›
+      Hotel Booking Engine
+    </div>
+
+    <!-- Hero (no screenshot; og:image falls back to /og-image.png) -->
+    <section class="service-hero">
+      <div class="hero-eyebrow">Free to Use</div>
+      <h1>Free Hotel Booking Engine: Accept Direct Bookings on Your Own UPI</h1>
+      <p>Most booking engines need a payment gateway like Razorpay or CCAvenue and charge 1.5 to 2% per transaction. This one does not. Your guests pay on your UPI directly. No gateway, no commission, no PG fees. It is part of the same free OnlineHotelier system your front desk already uses.</p>
+      <div class="hero-cta-row">
+        <a class="hero-cta" href="https://hms.onlinehotelier.com/onboard?token=HrepaM3YgCvIu4f7LYUW9jtgh-L8lSAISaDo4j8fqjs" target="_blank" rel="noopener" onclick="if (typeof gtag === 'function') gtag('event', 'pms_signup_click', { cta_position: 'hero' });">Sign Up Free</a>
+        <a class="hero-cta-secondary" href="#" onclick="event.preventDefault(); ohWA.open('OnlineHotelier PMS');">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Set Up on WhatsApp
+        </a>
+        <span class="hero-badge">Free · No subscription</span>
+      </div>
+    </section>
+
+    <!-- Quick Answer Box -->
+    <div class="quick-answer">
+      <div class="qa-label">Quick Answer</div>
+      <p>The <strong>OnlineHotelier booking engine</strong> is a free direct booking tool for Indian hotels. Guests request a booking, your hotel shares its own UPI or bank details, the guest pays your hotel directly, and you confirm the reservation in the software. No payment gateway, no OTA commission, no PG fees. It is part of the same free <a href="/services/hotel-pms/" style="color:#fff; text-decoration:underline; opacity:0.9;">OnlineHotelier PMS</a>. The only paid add-on is the <strong>channel manager</strong>, which connects your property to OTAs.</p>
+    </div>
+
+    <!-- Key facts -->
+    <section class="section-block" id="key-facts">
+      <h2 class="section-title">At a glance</h2>
+      <div class="table-wrap">
+        <table class="comparison-table facts-table">
+          <tbody>
+            <tr><th scope="row">Product</th><td>OnlineHotelier Booking Engine, part of the free OnlineHotelier system</td></tr>
+            <tr><th scope="row">Price</th><td>Free. No subscription, no trial period</td></tr>
+            <tr><th scope="row">Payment gateway</th><td>Not required. Guests pay the hotel's own UPI directly</td></tr>
+            <tr><th scope="row">Commission</th><td>None. OnlineHotelier takes no commission on any booking</td></tr>
+            <tr><th scope="row">PG fees</th><td>None, because no gateway is involved</td></tr>
+            <tr><th scope="row">How payment works</th><td>Hotel shares its UPI or bank details. Guest pays the hotel. Hotel checks its own bank and confirms in the software</td></tr>
+            <tr><th scope="row">Auto-confirmation</th><td>No. The hotel confirms manually after checking the payment in its own UPI app or bank</td></tr>
+            <tr><th scope="row">Built for</th><td>Hotels in India. The UPI workflow is designed for the Indian market</td></tr>
+            <tr><th scope="row">Paid add-on</th><td>Channel manager that syncs availability to MakeMyTrip, Goibibo, Booking.com. Pricing on WhatsApp</td></tr>
+            <tr><th scope="row">How to start</th><td><a href="https://hms.onlinehotelier.com/onboard?token=HrepaM3YgCvIu4f7LYUW9jtgh-L8lSAISaDo4j8fqjs" target="_blank" rel="noopener" onclick="if (typeof gtag === 'function') gtag('event', 'pms_signup_click', { cta_position: 'facts' });">Sign up online</a>, or message us on WhatsApp for help</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- What is the booking engine -->
+    <section class="section-block" id="what-is-the-onlinehotelier-booking-engine">
+      <h2 class="section-title">What is the OnlineHotelier Booking Engine?</h2>
+      <p>A <strong>hotel booking engine</strong> is a tool that lets guests check room availability and make a reservation directly with your hotel, without going through an OTA. Most engines process payment at the time of booking using a payment gateway. Gateways charge 1.5 to 2% per transaction and require a merchant account to be set up.</p>
+      <p>The OnlineHotelier booking engine works differently. It is built for hotels in India where UPI is the natural way to pay. Your guests request a booking. Your hotel shares its own UPI or bank details. The guest pays your hotel directly. You see the payment in your own UPI app or bank statement, then confirm the reservation in the software.</p>
+      <p>This means no gateway to connect, no gateway fees on every transaction, and no commission to a third party. The money goes from the guest's account to your hotel's account.</p>
+      <p>Reservations from the booking engine go into the same OnlineHotelier system your front desk uses. One calendar, one place to see all your bookings: walk-ins, OTA reservations entered manually, and direct bookings from the engine.</p>
+
+      <div class="highlight-box">
+        <p><strong>Available to hotels in India.</strong> The UPI payment workflow is designed specifically for the Indian market. Any type of property can use it: a 10-room guesthouse in Jaipur, a hill-station resort in Mussoorie, a homestay in Goa, a budget hotel in Chennai. Your guests pay the same way they pay any other UPI contact.</p>
+      </div>
+    </section>
+
+    <!-- How UPI booking works -->
+    <section class="section-block" id="how-upi-booking-works">
+      <h2 class="section-title">How the UPI Booking Workflow Works</h2>
+      <p>Four steps, from booking request to confirmed reservation.</p>
+
+      <div class="steps">
+        <div class="step-box">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Guest requests a booking</h4>
+            <p>The guest fills in the booking form: dates, room type, number of guests. The request comes into your OnlineHotelier system as a pending reservation.</p>
+          </div>
+        </div>
+        <div class="step-box">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Hotel shares UPI details with the guest</h4>
+            <p>You share your hotel's own UPI ID or bank account details with the guest. Think of it the way you would share bank details for any other payment or transfer. OnlineHotelier supplies the software only. It does not process, hold or settle any money.</p>
+          </div>
+        </div>
+        <div class="step-box">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Guest pays the hotel directly</h4>
+            <p>The guest pays on your hotel's own UPI. The money goes straight to your account. No intermediary, no gateway, no third party between the guest's payment and your bank.</p>
+          </div>
+        </div>
+        <div class="step-box">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>Hotel checks the payment and confirms in the software</h4>
+            <p>You check the payment in your own UPI app or bank statement. Once you see it, you confirm the reservation in the OnlineHotelier software. The booking is now confirmed and shows in your calendar. <strong>This confirmation step is done by your hotel, not by the software.</strong> There is no automatic detection of incoming payments.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <p><strong>No automatic confirmation.</strong> Because there is no payment gateway, the software cannot detect when a payment arrives. Your front desk checks the UPI app or bank statement and then confirms the booking manually. This takes a minute and is the trade-off for having no PG fees. If your property needs bookings to confirm the moment payment is made, see the <a href="#who-its-for" style="color: var(--secondary);">not the right fit</a> section below.</p>
+      </div>
+    </section>
+
+    <!-- No payment gateway -->
+    <section class="section-block" id="no-payment-gateway">
+      <h2 class="section-title">What "No Payment Gateway" Means for Your Hotel</h2>
+      <p>Payment gateways like Razorpay and CCAvenue are services that connect your booking page to the card networks and UPI rails so payment processes in real time. They are not free.</p>
+
+      <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Standard booking engine with a gateway</th>
+              <th>OnlineHotelier booking engine</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Payment gateway required</td>
+              <td>Yes. You need to set one up and get it approved</td>
+              <td>No. Guests pay your own UPI directly</td>
+            </tr>
+            <tr>
+              <td>PG fee per booking</td>
+              <td>Typically 1.5 to 2% of booking value</td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <td>Commission</td>
+              <td>Varies by provider</td>
+              <td>None. OnlineHotelier takes no commission</td>
+            </tr>
+            <tr>
+              <td>Payment confirmation</td>
+              <td>Automatic when gateway approves the transaction</td>
+              <td>Manual: hotel checks its bank and confirms in the software</td>
+            </tr>
+            <tr>
+              <td>Payment modes</td>
+              <td>Credit card, debit card, UPI, net banking</td>
+              <td>UPI and bank transfer (your hotel's own account)</td>
+            </tr>
+            <tr>
+              <td>Setup complexity</td>
+              <td>Merchant account, KYC, gateway integration</td>
+              <td>Share your UPI ID with guests, like sharing bank details</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="highlight-box">
+        <p><strong>OnlineHotelier only supplies the software.</strong> The hotel shares its own UPI or bank details with guests. OnlineHotelier does not process, hold or settle any money. Checking each payment and confirming each reservation is done by your hotel.</p>
+      </div>
+    </section>
+
+    <!-- Mid-page CTA -->
+    <div class="mid-cta">
+      <div class="eyebrow">Free Direct Booking</div>
+      <div class="headline">Ready to accept direct bookings on your own UPI?</div>
+      <p>Sign up for the free OnlineHotelier PMS. The booking engine is part of the same system. Or message us on WhatsApp and we will walk you through setup.</p>
+      <a href="https://hms.onlinehotelier.com/onboard?token=HrepaM3YgCvIu4f7LYUW9jtgh-L8lSAISaDo4j8fqjs" target="_blank" rel="noopener" onclick="if (typeof gtag === 'function') gtag('event', 'pms_signup_click', { cta_position: 'mid' });">Sign Up Free</a>
+    </div>
+
+    <!-- Who it is for -->
+    <section class="section-block" id="who-its-for">
+      <h2 class="section-title">Who it is for, and who it is not for</h2>
+      <p>This is honest positioning. The UPI workflow works well for most Indian hotels, but not all situations.</p>
+
+      <div class="who-grid">
+        <div class="who-card">
+          <div class="card-label">Good fit</div>
+          <ul>
+            <li>Hotels in India where UPI is already how guests pay</li>
+            <li>Independent properties of any size: budget hotels, guesthouses, homestays, resorts</li>
+            <li>Hotels that currently handle direct bookings by phone or WhatsApp</li>
+            <li>Properties where the front desk can check UPI and confirm within a few minutes</li>
+            <li>New properties setting up a direct booking channel for the first time</li>
+            <li>Hotels paying 15 to 20% OTA commission and wanting to shift some bookings direct</li>
+          </ul>
+        </div>
+        <div class="who-card not-for">
+          <div class="card-label">Not the right fit</div>
+          <ul>
+            <li>If you need bookings to confirm automatically the moment payment arrives</li>
+            <li>If you need to accept credit or debit card payments at the time of booking</li>
+            <li>If your guests are predominantly international and cannot pay on Indian UPI</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box" style="margin-top: 1.5rem;">
+        <p>If you are not sure whether this fits your property's workflow, message us on WhatsApp. We will tell you honestly whether it is the right call or whether a standard booking engine with a payment gateway makes more sense for you.</p>
+      </div>
+    </section>
+
+    <!-- Free vs Paid -->
+    <section class="section-block" id="free-vs-paid">
+      <h2 class="section-title">What is free and what is paid</h2>
+      <p>The booking engine is free. The <strong>channel manager</strong> (software that syncs your room availability and rates to OTAs like MakeMyTrip, Goibibo and Booking.com in real time) is an optional paid add-on. You can use the booking engine without it.</p>
+
+      <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Free</th>
+              <th>Channel manager add-on (paid)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Direct booking engine (UPI payments)</td>
+              <td>Included</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Reservations calendar</td>
+              <td>Included</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Room status and inventory</td>
+              <td>Included</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Check-in, check-out, billing</td>
+              <td>Included</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>GST invoices</td>
+              <td>Included</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>OTA availability sync (MakeMyTrip, Goibibo, Booking.com)</td>
+              <td></td>
+              <td>Add-on</td>
+            </tr>
+            <tr>
+              <td>Real-time rate updates across OTAs</td>
+              <td></td>
+              <td>Add-on</td>
+            </tr>
+            <tr>
+              <td>Pricing</td>
+              <td>Free</td>
+              <td>Paid: ask on WhatsApp</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- How it fits -->
+    <section class="section-block" id="how-it-fits">
+      <h2 class="section-title">How the booking engine fits your hotel's tech setup</h2>
+      <p>The booking engine is not a standalone product. It is part of the <a href="/services/hotel-pms/" style="color: var(--secondary);">free OnlineHotelier PMS</a>, which sits at the centre of your operations.</p>
+
+      <ul style="margin: 1rem 0 1rem 1.5rem; line-height: 2;">
+        <li>Bookings from the engine go into the same OnlineHotelier system your front desk uses. One calendar, one system of record.</li>
+        <li>Walk-ins and phone bookings are added at the front desk in the same system.</li>
+        <li>OTA bookings (from MakeMyTrip, Goibibo, Booking.com) can be entered manually or synced automatically via the paid <strong>channel manager</strong> add-on.</li>
+        <li>Billing, GST invoices, housekeeping and daily reports all come from the same free system.</li>
+      </ul>
+
+      <p>If you want to understand direct booking strategy more broadly, read our guide on <a href="/guides/ota/hotel-direct-booking-strategy.html" style="color: var(--secondary);">hotel direct booking strategy</a>. If you are curious about other booking engine options, the <a href="/guides/software/booking-engine.html" style="color: var(--secondary);">booking engine guide</a> explains what to look for and how they compare.</p>
+
+      <div class="explore-tools">
+        <h3>Related Tools and Guides</h3>
+        <div class="tools-grid">
+          <a href="/services/hotel-pms/" class="tool-link">
+            <div class="tl-type">Free Service</div>
+            <div class="tl-name">Free Hotel PMS</div>
+            <div class="tl-desc">The same system the booking engine is part of: reservations, billing, GST invoices, housekeeping and daily reports.</div>
+          </a>
+          <a href="/tools/ota-commission-calculator/" class="tool-link">
+            <div class="tl-type">Free Tool</div>
+            <div class="tl-name">OTA Commission Calculator</div>
+            <div class="tl-desc">See exactly how much MakeMyTrip, Goibibo and Booking.com take from each booking.</div>
+          </a>
+          <a href="/guides/software/booking-engine.html" class="tool-link">
+            <div class="tl-type">Guide</div>
+            <div class="tl-name">Hotel Booking Engine Guide</div>
+            <div class="tl-desc">What to look for in a booking engine, how they compare, and how to drive direct bookings.</div>
+          </a>
+          <a href="/guides/ota/hotel-direct-booking-strategy.html" class="tool-link">
+            <div class="tl-type">Guide</div>
+            <div class="tl-name">Direct Booking Strategy</div>
+            <div class="tl-desc">A step-by-step plan to shift bookings from OTAs to your own channels.</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-block" id="faq">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question">Is the booking engine really free?</button>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes. The booking engine is free to use. No subscription, no trial period. It is part of the same OnlineHotelier system as the free PMS. The only paid option is the channel manager add-on, which syncs your availability to OTAs. Pricing for that is shared on WhatsApp.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Do I need a payment gateway to accept direct bookings?</button>
+          <div class="faq-answer"><div class="faq-answer-inner">No. The OnlineHotelier booking engine does not use a payment gateway. Guests pay the hotel directly on its own UPI or bank account. The hotel checks the payment in its own UPI app or bank statement and then confirms the reservation in the software. There are no PG fees because no gateway is involved.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">How does the guest pay?</button>
+          <div class="faq-answer"><div class="faq-answer-inner">After the guest requests a booking, the hotel shares its own UPI or bank details with the guest. The guest pays the hotel directly, the way they would pay any other UPI contact. The money goes straight to the hotel. OnlineHotelier does not process, hold or settle any payments.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Does the booking confirm automatically once the guest pays?</button>
+          <div class="faq-answer"><div class="faq-answer-inner">No. There is no automatic payment detection. The hotel checks the payment in its own UPI app or bank statement, then confirms the reservation in the software. If you need automatic payment confirmation or card payments at the time of booking, this engine is not the right fit for your property.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What is the difference between this and a standard booking engine?</button>
+          <div class="faq-answer"><div class="faq-answer-inner">A standard booking engine (such as those that connect to Razorpay or CCAvenue) uses a payment gateway so the guest's card or UPI is charged in real time and the booking confirms automatically. The OnlineHotelier booking engine skips the gateway: the guest pays the hotel's own UPI directly and the hotel confirms manually. This means no PG fees, no commission and no gateway setup, but also no automatic confirmation.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Is this the same as the OnlineHotelier PMS?</button>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes. The booking engine is part of the same free OnlineHotelier system. When a guest makes a booking request, that reservation goes into the same OnlineHotelier system your front desk uses for walk-ins and OTA bookings. There is no separate app or login.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">How do I start?</button>
+          <div class="faq-answer"><div class="faq-answer-inner"><a href="https://hms.onlinehotelier.com/onboard?token=HrepaM3YgCvIu4f7LYUW9jtgh-L8lSAISaDo4j8fqjs" target="_blank" rel="noopener" onclick="if (typeof gtag === 'function') gtag('event', 'pms_signup_click', { cta_position: 'faq' });">Sign up for the free OnlineHotelier PMS.</a> The booking engine is part of the same system. If you need help with setup, message us on WhatsApp with your property name and number of rooms and we will walk you through it at no charge.</div></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <div class="cta-banner">
+      <h2>Start Accepting Direct Bookings on Your Own UPI</h2>
+      <p>Sign up yourself, or message us on WhatsApp with your property name and number of rooms. We will set it up with you at no charge.</p>
+      <div class="cta-btn-row">
+        <a class="cta-btn" href="https://hms.onlinehotelier.com/onboard?token=HrepaM3YgCvIu4f7LYUW9jtgh-L8lSAISaDo4j8fqjs" target="_blank" rel="noopener" onclick="if (typeof gtag === 'function') gtag('event', 'pms_signup_click', { cta_position: 'bottom' });">Sign Up Free</a>
+        <a class="cta-btn-secondary" href="#" onclick="event.preventDefault(); ohWA.open('OnlineHotelier PMS');">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Set Up on WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4>OnlineHotelier</h4>
+        <p>We help Indian hoteliers find their way through the digital side of the business. Free guides, free tools, and hands-on help when you want it. Built from 8+ years of real-world hospitality experience.</p>
+      </div>
+      <div>
+        <h5>Learn</h5>
+        <ul>
+          <li><a href="/guides/ota/">OTA Guides</a></li>
+          <li><a href="/guides/revenue/">Revenue Guides</a></li>
+          <li><a href="/guides/software/">Software Guides</a></li>
+          <li><a href="/guides/">All Guides</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Free Tools</h5>
+        <ul>
+          <li><a href="/tools/ota-commission-calculator/">Commission Calculator</a></li>
+          <li><a href="/tools/ota-dependency-calculator/">OTA Dependency</a></li>
+          <li><a href="/tools/break-even-calculator/">Break-Even Calculator</a></li>
+          <li><a href="/tools/">All Tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Work With Us</h5>
+        <ul>
+          <li><a href="/services/">All Services</a></li>
+          <li><a href="/services/hotel-pms/">Free Hotel PMS</a></li>
+          <li><a href="/services/hotel-booking-engine/">Free Booking Engine</a></li>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 OnlineHotelier. All rights reserved.</p>
+      <a href="/">www.onlinehotelier.com</a>
+    </div>
+  </footer>
+
+  <script src="/js/wa-widget.js"></script>
+  <script src="/js/tools-widget.js"></script>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(function(el) { el.classList.remove('open'); });
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+
+  <script src="/js/consent.js"></script>
+</body>
+</html>
