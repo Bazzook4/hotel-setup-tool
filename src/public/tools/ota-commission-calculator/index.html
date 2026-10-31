@@ -31,8 +31,8 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OTA Commission Calculator for Hotels | OnlineHotelier</title>
-  <meta name="description" content="Free OTA commission calculator for Indian hotels. Calculate MakeMyTrip, Booking.com, Goibibo settlements. Understand GST, TDS, TCS deductions on hotel bookings.">
+  <title>OTA Commission Calculator with Meal Plan Builder | OnlineHotelier</title>
+  <meta name="description" content="Free OTA commission calculator for Indian hotels. Calculate room-only and CP, MAP, AP meal plan settlements. See GST, TDS, TCS deductions and net payout.">
   <meta name="keywords" content="OTA commission calculator, hotel OTA settlement, MakeMyTrip commission, Booking.com hotel fees, GST on hotel, TDS TCS hotel, OTA deductions India">
   <link rel="canonical" href="https://www.onlinehotelier.com/tools/ota-commission-calculator/">
   <!-- AI/LLM Crawler Meta Tags -->
@@ -108,6 +108,30 @@
         "@type": "Answer",
         "text": "MakeMyTrip and Goibibo usually settle within 7 to 15 working days after the guest checks out. Booking.com settles monthly for most Indian hotels, with payment by the 15th of the following month covering all checkouts in the prior month. Agoda follows a monthly cycle too. Every settlement arrives net of commission, GST on that commission, and TDS. You get a remittance statement with each transfer, and you should keep those for your GST input credit reconciliation."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "What is CP, MAP and AP in hotel rate plans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CP (Continental Plan) is room plus breakfast. MAP (Modified American Plan) is room plus breakfast and dinner. AP (American Plan) is room plus all three meals: breakfast, lunch and dinner. The AI suffix stands for All Indian and means the meals served are Indian cuisine. CPAI is Indian breakfast, MAPAI is Indian breakfast and dinner, and APAI is all three meals in Indian cuisine. These are common at hill stations and pilgrimage properties."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I price a meal plan on OTAs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Price bundled meals at 60 to 80 percent of your walk-in restaurant price. If your breakfast costs ₹400 at the restaurant, add ₹240 to ₹320 on top of your EP base to get your CP rate. This makes the bundled option feel like value versus ordering separately. Enter your walk-in prices and discount percentage into the Rate Plan Builder on this page to get your exact CP, MAP and AP sell prices and net settlement after OTA commission, GST, TDS and TCS."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does GST change when I add a meal plan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, potentially. When meals are bundled into a single room rate it is a composite supply and GST applies to the total price charged, not just the room portion. So the total sell price determines whether you are in the 5% slab (up to ₹7,500 per night) or the 18% slab (above ₹7,500 per night). If your EP rate is ₹7,200 and your CP rate becomes ₹7,700, the CP booking crosses into 18% GST. A restaurant meal billed separately follows a different rule: 18% with ITC if the hotel was a specified premises in the previous year (any unit exceeded ₹7,500 per day), otherwise 5% without ITC."
+      }
     }
   ]
 }
@@ -118,9 +142,16 @@
     "@type": "WebApplication",
     "name": "OTA Commission Calculator",
     "url": "https://www.onlinehotelier.com/tools/ota-commission-calculator/",
-    "description": "Free calculator to determine your exact hotel settlement from OTA bookings including GST, TDS, and TCS deductions.",
+    "description": "Free calculator to determine your exact hotel settlement from OTA bookings. Room-only mode shows commission, GST, TDS and TCS deductions. Rate Plan Builder mode computes CP, MAP and AP (CPAI, MAPAI, APAI) sell prices, commission and net payout for Indian hotel meal plans.",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Any",
+    "featureList": [
+      "Room-only OTA settlement calculation",
+      "Meal plan builder: CP, MAP, AP (CPAI, MAPAI, APAI)",
+      "GST slab detection (5% / 18%)",
+      "TDS and TCS deduction breakdown",
+      "Monthly and yearly commission loss projection"
+    ],
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -318,6 +349,11 @@
     .btn-calculate:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(62,61,53,0.3);
+    }
+
+    .btn-calculate:focus-visible {
+      outline: 2px solid var(--secondary);
+      outline-offset: 2px;
     }
 
     /* Results Container */
@@ -630,8 +666,199 @@
 
     /* FAQ Section */
 
+    /* Mode toggle */
+    .mode-toggle {
+      display: flex;
+      gap: 0;
+      background: var(--primary-light);
+      border-radius: 8px;
+      padding: 4px;
+      margin-bottom: 1.5rem;
+      width: fit-content;
+    }
 
+    .mode-btn {
+      padding: 0.6rem 1.25rem;
+      border: none;
+      background: transparent;
+      color: var(--primary);
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
 
+    .mode-btn[aria-pressed="true"] {
+      background: var(--primary);
+      color: white;
+    }
+
+    .mode-btn:focus-visible {
+      outline: 2px solid var(--secondary);
+      outline-offset: 2px;
+    }
+
+    .mode-btn:not([aria-pressed="true"]):hover {
+      background: rgba(62,61,53,0.15);
+    }
+
+    /* Meal plan builder section */
+    .meal-plan-section {
+      display: none;
+    }
+
+    .meal-plan-section.active {
+      display: block;
+    }
+
+    .room-only-section.hidden {
+      display: none;
+    }
+
+    /* Meal plan inputs */
+    .mp-input-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .mp-input-group label {
+      display: block;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+      font-size: 0.875rem;
+    }
+
+    .mp-input-group input {
+      width: 100%;
+      padding: 0.65rem 0.9rem;
+      border: 2px solid #e1e5eb;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+
+    .mp-input-group input:focus {
+      outline: none;
+      border-color: var(--secondary);
+    }
+
+    .mp-input-group input:focus-visible {
+      outline: 2px solid var(--secondary);
+      outline-offset: 1px;
+    }
+
+    .mp-input-group input.input-error {
+      border-color: var(--secondary);
+      background: var(--secondary-light);
+    }
+
+    .mp-input-group .hint {
+      font-size: 0.72rem;
+      color: #888;
+      margin-top: 0.25rem;
+    }
+
+    .mp-error-msg {
+      color: var(--secondary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      min-height: 1.2em;
+    }
+
+    /* Meal plan results table */
+    .mp-results {
+      display: none;
+    }
+
+    .mp-results.show {
+      display: block;
+    }
+
+    .mp-results-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .mp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      min-width: 560px;
+    }
+
+    .mp-table th {
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .mp-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #eee;
+      white-space: nowrap;
+    }
+
+    .mp-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .mp-table tr:nth-child(even) td {
+      background: #f8f8f4;
+    }
+
+    .mp-table .best-plan td {
+      background: var(--primary-light);
+      font-weight: 600;
+    }
+
+    .mp-table .plan-label {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .mp-table .best-badge {
+      display: inline-block;
+      background: #6E6959;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+
+    .mp-note {
+      background: var(--secondary-light);
+      border-left: 4px solid var(--secondary);
+      padding: 0.9rem 1.1rem;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.875rem;
+      color: var(--primary);
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .mp-input-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .mp-input-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
 
 
@@ -672,8 +899,8 @@
   <link rel="stylesheet" href="/tools/css/tool-blocks.css">
 
   <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="OTA Commission Calculator for Hotels | OnlineHotelier">
-  <meta property="og:description" content="Free OTA commission calculator for Indian hotels. Calculate MakeMyTrip, Booking.com, Goibibo settlements. Understand GST, TDS, TCS deductions on hotel bookings.">
+  <meta property="og:title" content="OTA Commission Calculator with Meal Plan Builder | OnlineHotelier">
+  <meta property="og:description" content="Free OTA commission calculator for Indian hotels. Calculate room-only and CP, MAP, AP meal plan settlements. See GST, TDS, TCS deductions and net payout.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.onlinehotelier.com/tools/ota-commission-calculator/">
   <meta property="og:site_name" content="OnlineHotelier">
@@ -682,8 +909,8 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="OnlineHotelier: practical guides for Indian hoteliers">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="OTA Commission Calculator for Hotels | OnlineHotelier">
-  <meta name="twitter:description" content="Free OTA commission calculator for Indian hotels. Calculate MakeMyTrip, Booking.com, Goibibo settlements. Understand GST, TDS, TCS deductions on hotel bookings.">
+  <meta name="twitter:title" content="OTA Commission Calculator with Meal Plan Builder | OnlineHotelier">
+  <meta name="twitter:description" content="Free OTA commission calculator for Indian hotels. Calculate room-only and CP, MAP, AP meal plan settlements. See GST, TDS, TCS deductions and net payout.">
   <meta name="twitter:image" content="https://www.onlinehotelier.com/og-image.png">
   <link rel="stylesheet" href="/css/footer.css">
   <link rel="stylesheet" href="/css/consent.css">
@@ -706,6 +933,13 @@
       <h1>OTA Commission Calculator</h1>
       <p class="page-subtitle">See How Much OTAs Take From You</p>
     </div>
+
+    <!-- Mode toggle -->
+    <div role="group" aria-label="Calculator mode" class="mode-toggle">
+      <button class="mode-btn" id="modeRoomOnly" aria-pressed="true" type="button">Room only</button>
+      <button class="mode-btn" id="modeMealPlans" aria-pressed="false" type="button">With meal plans</button>
+    </div>
+
     <!-- SEO Intro Section -->
     <div class="seo-intro">
       <div class="seo-question">Do you really know how much OTAs take from each booking?</div>
@@ -717,6 +951,7 @@
       </div>
     </div>
 
+    <div class="room-only-section" id="roomOnlySection">
     <!-- Input Section -->
     <div class="input-section">
       <div class="input-row">
@@ -843,6 +1078,79 @@
         </div>
       </div>
     </div>
+    </div><!-- /room-only-section -->
+
+    <!-- Meal Plan Builder Section -->
+    <div class="meal-plan-section" id="mealPlanSection">
+    <h2 id="rate-plan-builder">Meal Plan Builder: CP, MAP and AP Net Settlement</h2>
+
+      <div class="input-section">
+        <div class="mp-input-grid">
+          <div class="mp-input-group">
+            <label for="mpEpRate">EP base rate (₹)</label>
+            <input type="number" id="mpEpRate" placeholder="e.g., 3000" min="1">
+            <div class="hint">Your room-only OTA rate</div>
+          </div>
+          <div class="mp-input-group">
+            <label for="mpBreakfastWalkin">Breakfast walk-in price (₹)</label>
+            <input type="number" id="mpBreakfastWalkin" placeholder="e.g., 300" min="0">
+            <div class="hint">Per-person restaurant price</div>
+          </div>
+          <div class="mp-input-group">
+            <label for="mpLunchWalkin">Lunch walk-in price (₹)</label>
+            <input type="number" id="mpLunchWalkin" placeholder="e.g., 500" min="0">
+            <div class="hint">Per-person restaurant price</div>
+          </div>
+          <div class="mp-input-group">
+            <label for="mpDinnerWalkin">Dinner walk-in price (₹)</label>
+            <input type="number" id="mpDinnerWalkin" placeholder="e.g., 600" min="0">
+            <div class="hint">Per-person restaurant price</div>
+          </div>
+          <div class="mp-input-group">
+            <label for="mpGuests">Guests per room</label>
+            <input type="number" id="mpGuests" placeholder="2" min="1" value="2">
+            <div class="hint">Meals are multiplied by this</div>
+          </div>
+          <div class="mp-input-group">
+            <label for="mpDiscount">Meal discount %</label>
+            <input type="number" id="mpDiscount" placeholder="30" min="0" max="100" value="30">
+            <div class="hint">60-80% of walk-in = 20-40% off</div>
+          </div>
+          <div class="mp-input-group">
+            <label for="mpCommission">OTA Commission %</label>
+            <input type="number" id="mpCommission" placeholder="21" min="1" max="50" value="21">
+            <div class="hint">MakeMyTrip: 18-22%, Booking: 15-18%</div>
+          </div>
+        </div>
+        <div class="mp-error-msg" id="mpErrorMsg" role="alert" aria-live="polite"></div>
+        <button class="btn-calculate" id="mpCalculateBtn" type="button">Calculate Meal Plan Net</button>
+      </div>
+
+      <div class="mp-results" id="mpResults">
+        <div class="mp-results-wrapper">
+          <table class="mp-table">
+            <thead>
+              <tr>
+                <th>Plan</th>
+                <th>Sell price</th>
+                <th>GST rate</th>
+                <th>Commission</th>
+                <th>GST on comm.</th>
+                <th>TDS</th>
+                <th>TCS</th>
+                <th>Net to hotel</th>
+              </tr>
+            </thead>
+            <tbody id="mpTableBody">
+            </tbody>
+          </table>
+        </div>
+        <div class="mp-note" id="mpNote">
+          <strong>CPAI / MAPAI / APAI</strong> use the same calculation. The AI suffix means "All Indian": the meals are Indian cuisine. CPAI = Indian breakfast, MAPAI = Indian breakfast and dinner, APAI = all three meals in Indian cuisine. The maths is identical to CP, MAP and AP above.
+        </div>
+      </div>
+
+    </div><!-- /meal-plan-section -->
 
                     <div class="explore-tools">
       <h3>Related Tools &amp; Guides</h3>
@@ -930,77 +1238,163 @@
         <div class="faq-question">How long does MakeMyTrip or Booking.com take to pay a hotel?</div>
         <div class="faq-answer">MakeMyTrip and Goibibo usually settle within 7 to 15 working days after the guest checks out. Booking.com settles monthly for most Indian hotels, with payment by the 15th of the following month covering all checkouts in the prior month. Agoda follows a monthly cycle too. Every settlement arrives net of commission, GST on that commission, and TDS. You get a remittance statement with each transfer, and you should keep those for your GST input credit reconciliation.</div>
       </div>
+
+        <div class="faq-item">
+          <div class="faq-question">What is CP, MAP and AP in hotel rate plans?</div>
+          <div class="faq-answer">
+            CP (Continental Plan) is room plus breakfast. MAP (Modified American Plan) is room plus breakfast and dinner. AP (American Plan) is room plus all three meals: breakfast, lunch and dinner. The AI suffix stands for All Indian and means the meals are Indian cuisine. CPAI is Indian breakfast, MAPAI is Indian breakfast and dinner, APAI is all three meals in Indian cuisine. These codes are common at hill stations and pilgrimage properties where guests expect Indian food by default.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">How do I price a meal plan on OTAs?</div>
+          <div class="faq-answer">
+            Price bundled meals at 60 to 80 percent of your walk-in restaurant price. If your breakfast costs ₹400 at the restaurant, add ₹240 to ₹320 on top of your EP base to get your CP rate. This makes the bundled option feel like value versus ordering separately. Enter your walk-in prices and discount percentage into the <a href="#rate-plan-builder" style="color: var(--secondary);">Rate Plan Builder</a> on this page to get your exact CP, MAP and AP sell prices and net settlement after OTA commission, GST, TDS and TCS.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Does GST change when I add a meal plan?</div>
+          <div class="faq-answer">
+            Yes, potentially. When meals are bundled into a single room rate it is a composite supply and GST applies to the total price charged, not just the room portion. So the total sell price determines the slab: 5% on the full amount up to ₹7,500 per night, 18% on the full amount above ₹7,500 per night. If your EP rate is ₹7,200 and your CP rate becomes ₹7,700, the CP booking crosses into the 18% slab. A restaurant meal billed separately follows a different test: 18% with ITC if the hotel was a specified premises in the previous financial year (any unit exceeded ₹7,500 per day), otherwise 5% without ITC. See the <a href="/guides/compliance/gst-hotels.html" style="color: var(--secondary);">hotel GST guide</a> for full details.
+          </div>
+        </div>
+
 </div>
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const calculateBtn = document.getElementById('calculateBtn');
-      const baseRateInput = document.getElementById('baseRate');
-      const commissionInput = document.getElementById('commission');
-      const monthlyBookingsInput = document.getElementById('monthlyBookings');
-      const resultsContainer = document.getElementById('resultsContainer');
+    // GST constants: effective 22 Sept 2025 per 56th GST Council
+    // Up to ₹7,500 (inclusive) = 5%, above ₹7,500 = 18%
+    var GST_THRESHOLD = 7500;
+    var GST_LOW = 0.05;
+    var GST_HIGH = 0.18;
+    var GST_ON_COMMISSION = 0.18;
+    var TDS_RATE = 0.001;
+    var TCS_RATE = 0.005;
 
+    function gstRate(totalSellPrice) {
+      return totalSellPrice > GST_THRESHOLD ? GST_HIGH : GST_LOW;
+    }
+
+    function calcSettlement(sellPrice, commissionPct) {
+      var taxRate = gstRate(sellPrice);
+      var commission = (commissionPct / 100) * sellPrice;
+      var gstOnComm = commission * GST_ON_COMMISSION;
+      var tds = sellPrice * TDS_RATE;
+      var tcs = sellPrice * TCS_RATE;
+      var totalDeductions = commission + gstOnComm + tds + tcs;
+      return {
+        taxRate: taxRate,
+        commission: commission,
+        gstOnComm: gstOnComm,
+        tds: tds,
+        tcs: tcs,
+        totalDeductions: totalDeductions,
+        net: sellPrice - totalDeductions
+      };
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var calculateBtn = document.getElementById('calculateBtn');
+      var baseRateInput = document.getElementById('baseRate');
+      var commissionInput = document.getElementById('commission');
+      var monthlyBookingsInput = document.getElementById('monthlyBookings');
+      var resultsContainer = document.getElementById('resultsContainer');
+
+      var modeRoomOnly = document.getElementById('modeRoomOnly');
+      var modeMealPlans = document.getElementById('modeMealPlans');
+      var roomOnlySection = document.getElementById('roomOnlySection');
+      var mealPlanSection = document.getElementById('mealPlanSection');
+      var h2Builder = document.getElementById('rate-plan-builder');
+
+      // ---- Mode toggle ----
+      function switchMode(mode, trackGA) {
+        if (mode === 'meal_plans') {
+          if (trackGA) {
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'rate_plan_mode_switch', {
+                mode_from: 'room_only',
+                mode_to: 'meal_plans',
+                page_path: location.pathname
+              });
+            }
+          }
+          var mpCommissionInput = document.getElementById('mpCommission');
+          if (mpCommissionInput && commissionInput.value) mpCommissionInput.value = commissionInput.value;
+          modeRoomOnly.setAttribute('aria-pressed', 'false');
+          modeMealPlans.setAttribute('aria-pressed', 'true');
+          roomOnlySection.classList.add('hidden');
+          mealPlanSection.classList.add('active');
+        } else {
+          modeRoomOnly.setAttribute('aria-pressed', 'true');
+          modeMealPlans.setAttribute('aria-pressed', 'false');
+          roomOnlySection.classList.remove('hidden');
+          mealPlanSection.classList.remove('active');
+        }
+      }
+
+      modeRoomOnly.addEventListener('click', function() {
+        switchMode('room_only', false);
+      });
+
+      modeMealPlans.addEventListener('click', function() {
+        switchMode('meal_plans', true);
+      });
+
+      // Open the builder when arriving via, or clicking, a #rate-plan-builder link
+      function openBuilderFromHash() {
+        if (location.hash !== '#rate-plan-builder') return;
+        switchMode('meal_plans', false);
+        setTimeout(function() {
+          if (h2Builder) h2Builder.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+      openBuilderFromHash();
+      window.addEventListener('hashchange', openBuilderFromHash);
+
+      // ---- Room-only calculation ----
       calculateBtn.addEventListener('click', calculateOTA);
 
-      // Allow Enter key to trigger calculation
-      [baseRateInput, commissionInput, monthlyBookingsInput].forEach(input => {
-        input.addEventListener('keypress', (e) => {
+      [baseRateInput, commissionInput, monthlyBookingsInput].forEach(function(input) {
+        input.addEventListener('keypress', function(e) {
           if (e.key === 'Enter') calculateOTA();
         });
       });
 
       function calculateOTA() {
-        const baseRate = parseFloat(baseRateInput.value) || 0;
-        const commissionRate = parseFloat(commissionInput.value) || 21;
-        const monthlyBookings = parseFloat(monthlyBookingsInput.value) || 50;
+        var baseRate = parseFloat(baseRateInput.value) || 0;
+        var commissionRate = parseFloat(commissionInput.value) || 21;
+        var monthlyBookings = parseFloat(monthlyBookingsInput.value) || 50;
 
         if (baseRate <= 0) {
           alert('Please enter a valid room rate');
           return;
         }
 
-        // GST rate: 5% for rooms <= 7499, 18% for rooms > 7499
-        const taxRate = baseRate > 7499 ? 0.18 : 0.05;
-        const gstOnRoom = baseRate * taxRate;
-        const totalGuestPays = baseRate + gstOnRoom;
+        var s = calcSettlement(baseRate, commissionRate);
+        var taxRate = s.taxRate;
+        var commission = s.commission;
+        var gstOnCommission = s.gstOnComm;
+        var tds = s.tds;
+        var tcs = s.tcs;
+        var lossPerBooking = s.totalDeductions;
+        var gstOnRoom = baseRate * taxRate;
+        var totalGuestPays = baseRate + gstOnRoom;
+        var hotelSettlement = totalGuestPays - lossPerBooking;
+        var effectiveEarning = baseRate - lossPerBooking;
+        var effectiveCommPercent = (lossPerBooking / baseRate * 100).toFixed(1);
+        var otaTakesPercent = (lossPerBooking / totalGuestPays * 100).toFixed(0);
+        var youKeepPercent = (100 - parseFloat(otaTakesPercent)).toFixed(0);
 
-        // Commission calculation
-        const commission = (commissionRate / 100) * baseRate;
-        const gstOnCommission = commission * 0.18;
-        const totalCommission = commission + gstOnCommission;
+        var weeklyBookings = Math.round(monthlyBookings / 4);
+        var yearlyBookings = monthlyBookings * 12;
+        var weeklyLoss = lossPerBooking * weeklyBookings;
+        var monthlyLoss = lossPerBooking * monthlyBookings;
+        var yearlyLoss = lossPerBooking * yearlyBookings;
 
-        // TDS and TCS
-        const tds = baseRate * 0.001;
-        const tcs = baseRate * 0.005;
-        const totalTdsTcs = tds + tcs;
-
-        // Total deductions (commission loss per booking)
-        const lossPerBooking = totalCommission + totalTdsTcs;
-
-        // Final settlement amount hotel receives
-        const hotelSettlement = totalGuestPays - lossPerBooking;
-
-        // Effective earning rate
-        const effectiveEarning = baseRate - lossPerBooking;
-
-        // Percentage calculations
-        const effectiveCommPercent = (lossPerBooking / baseRate * 100).toFixed(1);
-        const otaTakesPercent = (lossPerBooking / totalGuestPays * 100).toFixed(0);
-        const youKeepPercent = (100 - parseFloat(otaTakesPercent)).toFixed(0);
-
-        // Projection calculations
-        const weeklyBookings = Math.round(monthlyBookings / 4);
-        const yearlyBookings = monthlyBookings * 12;
-        const weeklyLoss = lossPerBooking * weeklyBookings;
-        const monthlyLoss = lossPerBooking * monthlyBookings;
-        const yearlyLoss = lossPerBooking * yearlyBookings;
-
-        // Update UI - Big Alert
         document.getElementById('lossPerBooking').textContent = formatCurrency(lossPerBooking);
         document.getElementById('effectiveCommPercent').textContent = effectiveCommPercent + '%';
-
-        // Update UI - Deduction Breakdown
         document.getElementById('resBaseRate').textContent = formatCurrency(baseRate);
         document.getElementById('resCommPercent').textContent = commissionRate;
         document.getElementById('resCommission').textContent = '−' + formatCurrency(commission);
@@ -1008,8 +1402,6 @@
         document.getElementById('resTds').textContent = '−' + formatCurrency(tds);
         document.getElementById('resTcs').textContent = '−' + formatCurrency(tcs);
         document.getElementById('effectiveEarning').textContent = formatCurrency(effectiveEarning);
-
-        // Update UI - Loss Projections
         document.getElementById('monthlyBookingsDisplay').textContent = monthlyBookings;
         document.getElementById('weeklyLoss').textContent = formatCurrency(weeklyLoss);
         document.getElementById('weeklyBookings').textContent = '~' + weeklyBookings + ' bookings';
@@ -1017,36 +1409,115 @@
         document.getElementById('monthlyBookingsText').textContent = monthlyBookings + ' bookings';
         document.getElementById('yearlyLoss').textContent = formatCurrency(yearlyLoss);
         document.getElementById('yearlyBookings').textContent = yearlyBookings + ' bookings';
-
-        // Update UI - Comparison Bar
         document.getElementById('barOta').style.width = otaTakesPercent + '%';
         document.getElementById('barOta').textContent = 'OTA ' + otaTakesPercent + '%';
         document.getElementById('barHotel').style.width = youKeepPercent + '%';
         document.getElementById('barHotel').textContent = 'You ' + youKeepPercent + '%';
         document.getElementById('otaTakesPercent').textContent = otaTakesPercent + '%';
         document.getElementById('youKeepPercent').textContent = youKeepPercent + '%';
-
-        // Update UI - Summary Cards
         document.getElementById('guestPays').textContent = formatCurrency(totalGuestPays);
         document.getElementById('gstPercent').textContent = (taxRate * 100).toFixed(0);
         document.getElementById('hotelSettlement').textContent = formatCurrency(hotelSettlement);
-
-        // Show results
         resultsContainer.classList.add('show');
         resultsContainer.scrollIntoView({ behavior: 'smooth' });
       }
 
+      // ---- Meal plan calculation ----
+      var mpCalculateBtn = document.getElementById('mpCalculateBtn');
+      mpCalculateBtn.addEventListener('click', calculateMealPlans);
+
+      ['mpEpRate','mpBreakfastWalkin','mpLunchWalkin','mpDinnerWalkin','mpGuests','mpDiscount','mpCommission'].forEach(function(id) {
+        document.getElementById(id).addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') calculateMealPlans();
+        });
+      });
+
+      function validateMPInputs(epRate, breakfastWI, lunchWI, dinnerWI, guests, discount, commission) {
+        if (!epRate || epRate <= 0) return 'Enter a valid EP base rate.';
+        if (guests <= 0 || !Number.isInteger(guests)) return 'Guests per room must be 1 or more.';
+        if (discount < 0 || discount > 100) return 'Meal discount must be between 0 and 100%.';
+        if (commission <= 0 || commission > 100) return 'Commission must be between 1 and 100%.';
+        if (breakfastWI < 0 || lunchWI < 0 || dinnerWI < 0) return 'Meal prices cannot be negative.';
+        return null;
+      }
+
+      function calculateMealPlans() {
+        var epRate    = parseFloat(document.getElementById('mpEpRate').value) || 0;
+        var breakWI   = parseFloat(document.getElementById('mpBreakfastWalkin').value) || 0;
+        var lunchWI   = parseFloat(document.getElementById('mpLunchWalkin').value) || 0;
+        var dinnerWI  = parseFloat(document.getElementById('mpDinnerWalkin').value) || 0;
+        var guests    = parseInt(document.getElementById('mpGuests').value, 10) || 0;
+        var discount  = parseFloat(document.getElementById('mpDiscount').value);
+        if (isNaN(discount)) discount = 30;
+        var commPct   = parseFloat(document.getElementById('mpCommission').value) || 21;
+
+        var errorEl = document.getElementById('mpErrorMsg');
+        var err = validateMPInputs(epRate, breakWI, lunchWI, dinnerWI, guests, discount, commPct);
+        if (err) {
+          errorEl.textContent = err;
+          return;
+        }
+        errorEl.textContent = '';
+
+        var discountFactor = 1 - (discount / 100);
+
+        // Discounted meal cost per person (bundled price = walk-in * discountFactor)
+        var breakMealCost = breakWI * discountFactor * guests;
+        var lunchMealCost = lunchWI * discountFactor * guests;
+        var dinnerMealCost = dinnerWI * discountFactor * guests;
+
+        var plans = [
+          { name: 'EP', label: 'EP (Room only)', sellPrice: epRate },
+          { name: 'CP', label: 'CP (Room + breakfast)', sellPrice: epRate + breakMealCost },
+          { name: 'MAP', label: 'MAP (Room + breakfast + dinner)', sellPrice: epRate + breakMealCost + dinnerMealCost },
+          { name: 'AP', label: 'AP (Room + all meals)', sellPrice: epRate + breakMealCost + lunchMealCost + dinnerMealCost }
+        ];
+
+        // Find best-net plan
+        var bestNet = -Infinity;
+        plans.forEach(function(p) {
+          var s = calcSettlement(p.sellPrice, commPct);
+          p.s = s;
+          if (s.net > bestNet) bestNet = s.net;
+        });
+
+        var tbody = document.getElementById('mpTableBody');
+        tbody.innerHTML = '';
+        plans.forEach(function(p) {
+          var s = p.s;
+          var isBest = Math.abs(s.net - bestNet) < 0.01;
+          var tr = document.createElement('tr');
+          if (isBest) tr.className = 'best-plan';
+          var badge = isBest ? '<span class="best-badge">Best net</span>' : '';
+          tr.innerHTML =
+            '<td class="plan-label">' + p.label + badge + '</td>' +
+            '<td>' + formatCurrency(p.sellPrice) + '</td>' +
+            '<td>' + (s.taxRate * 100).toFixed(0) + '%</td>' +
+            '<td>' + formatCurrency(s.commission) + '</td>' +
+            '<td>' + formatCurrency(s.gstOnComm) + '</td>' +
+            '<td>' + formatCurrency(s.tds) + '</td>' +
+            '<td>' + formatCurrency(s.tcs) + '</td>' +
+            '<td><strong>' + formatCurrency(s.net) + '</strong></td>';
+          tbody.appendChild(tr);
+        });
+
+        document.getElementById('mpResults').classList.add('show');
+        document.getElementById('mpResults').scrollIntoView({ behavior: 'smooth' });
+      }
+
+      // ---- Shared helpers ----
       function formatCurrency(amount) {
-        return '₹' + amount.toLocaleString('en-IN', {
+        if (isNaN(amount)) return '₹0';
+        return '₹' + Math.round(amount).toLocaleString('en-IN', {
           minimumFractionDigits: 0,
           maximumFractionDigits: 0
         });
       }
 
       // FAQ Toggle
-      document.querySelectorAll('.faq-question').forEach(question => {
-        question.addEventListener('click', () => {
-          const item = question.parentElement;
+      document.querySelectorAll('.faq-question').forEach(function(question) {
+        question.addEventListener('click', function() {
+          var item = question.parentElement;
           item.classList.toggle('open');
         });
       });
